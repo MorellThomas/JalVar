@@ -1,0 +1,6 @@
+j2s.class.replacements=org.apache.log4j.->jalview.javascript.log4j.
+j2s.compiler.java.version=11
+j2s.compiler.status=enable
+j2s.excluded.paths=test;testng;util
+j2s.site.directory=./build/jalviewjs/tmp/site_js
+j2s.template.html=utils/jalviewjs/template.html
