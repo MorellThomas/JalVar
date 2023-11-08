@@ -1,0 +1,267 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>The Chimera PDB Viewer</title>
+</head>
+<body>
+  <p>
+    <strong>The Chimera and ChimeraX Viewers</strong>
+  </p>
+  <p>
+    Since Jalview 2.8.2, <a href="http://www.cgl.ucsf.edu/chimera/">Chimera</a>
+    (http://www.cgl.ucsf.edu/chimera/) can be used for viewing
+    structures opened via the <a href="structurechooser.html"><strong>&quot;View
+    Structure Data..&quot;</strong> dialog</a>. In Jalview 2.11.2, support 
+    was also added for ChimeraX, and <a href="pymol.html">Pymol</a>.
+  </p>
+  <p>
+    You can set a default choice of Jmol or Chimera structure viewer in
+    <a href="preferences.html#structure"> Preferences</a>. You can also
+    optionally specify the path to the Chimera program here (if it
+    differs from the standard paths searched by Jalview).<br /> <strong>Please
+      make sure your version of Chimera is up to date. Jalview requires
+      at least Chimera version 1.11.1</strong>
+  </p>
+  <p>
+    If you save your Jalview session as a project file, the state of any
+    open Chimera windows will also be saved, and can be reopened by
+    loading the project file on any machine with Chimera installed. <em>Since
+      Jalview 2.9.</em>
+  <p>
+    <a name="align"><strong>Superposing structures based on
+        their aligned sequences</strong></a><br> If several structures are
+    available on the alignment, you may add additional structures to an
+    existing Chimera view by selecting their entry in the appropriate
+    pop-up menu. Jalview will ask you if you wish to add the structure
+    to the existing alignment, and if you do, it will import and
+    superimpose the new PDB file using the corresponding positions from
+    the alignment. If the alignment is subsequently edited, you can use
+    the <a href="#sAlign"><em>Chimera&#8594;Align</em></a> menu option
+    from the menu bar of the structure view window to superpose the
+    structures using the updated alignment.<br>
+  </p>
+  <p>
+    <strong>Chimera Controls</strong><br> The structure is by
+    default rendered as a ribbon diagram. Moving the mouse over the
+    structure brings up tooltips giving the residue name, PDB residue
+    number and chain code ([RES]Num:Chain). Moving the mouse over an
+    associated residue in an alignment window highlights the associated
+    atoms in the displayed structures. When residues are selected in the
+    Chimera window, they are highlighted on the alignment.
+  <p>For comprehensive details of Chimera's commands, refer to the
+    tool's Help menu.</p>
+  <p>
+    <strong>Selecting residues in Jalview from Chimera</strong><br />
+    When a selection is highlighted in a Jalview window, use the
+    <em>Select&#8594;Select Highlighted Region</em> or press <em>B</em>
+    to add the mapped positions to the alignment window's column
+    selection.<br /> <em>Hint: Use your machine's 'switch
+      application' key combination (Alt-Tab on Windows and Linux,
+      Cmd-Tab on OSX) to quickly switch between UCSF Chimera and Jalview
+      before pressing 'B' to select highlighted regions.</em>
+  </p>
+  <p>
+    Basic screen operations (see <a
+      href="http://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/mouse.html">Chimera
+      help</a> at
+    http://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/mouse.html
+    for full details).
+  <table border="1">
+    <tr>
+      <td><strong>Action</strong></td>
+      <td><strong>Windows</strong></td>
+      <td><strong>Unix</strong></td>
+      <td><strong>Mac/OSX</strong></td>
+    </tr>
+    <tr>
+      <td>Rotate View</td>
+      <td>Left Click and Drag</td>
+      <td>Left Click and Drag</td>
+      <td>Left Click and Drag</td>
+    </tr>
+    <tr>
+      <td>Zoom</td>
+      <td>Right Click<br> drag mouse up or down
+      </td>
+      <td>Right Click<br>drag mouse up or down
+      </td>
+      <td>cmd or Right + Click and drag mouse up or down, <br>or
+        use mouse scroll button
+      </td>
+    </tr>
+    <tr>
+      <td>Move Origin</td>
+      <td>Middle Button + Drag</td>
+      <td>Middle Button and drag</td>
+      <td>alt + Click<br> and drag
+      </td>
+    </tr>
+    <tr>
+      <td>Select Residues</td>
+      <td>Ctrl + Click (and drag to select a region)</td>
+      <td>Ctrl + Click (and drag)</td>
+      <td>Ctrl + Click (and drag)</td>
+    </tr>
+  </table>
+  </p>
+  <p>
+    <strong>Jalview Controls</strong>
+  <p>The Jalview Chimera View window has up to five menus:</p>
+  <ul>
+    <li><Strong>File<br>
+    </strong>
+      <ul>
+        <li><strong>View Mapping<br>
+        </strong><em> Opens a text window showing the alignment between the
+            residues corresponding to alpha-carbon atoms in the PDB
+            structure and the residues in the associated sequence.</em></li>
+      </ul></li>
+    <li><strong>View</strong>
+      <ul>
+        <li><strong>Show Chains<br>
+        </strong><em>Select which of the PDB file's chains (if more than
+            one) are to be displayed.</em></li>
+        <li><strong>Colour by ..<br></strong><em>Submenu
+            allowing specific alignment views to be selected for
+            colouring associated chains in the structure display. This
+            menu contains all the alignment views associated with the
+            structure view, with those used to colour the view indicated
+            by ticks. Addditionally, it contains the following menu
+            entries:</em>
+          <ul>
+            <li><strong>Select many views<br></strong><em>When
+                this option is enabled, selecting an alignment view adds
+                it to the set used to colour the structures. Use this
+                when colouring structures related to a number of
+                alignments involving different domains or chains which
+                are shown in the same structure view.</em></li>
+            <li><strong>Select all views<br></strong><em>This
+                is only enabled when </em><strong>Select many views</strong><em>
+                is also enabled, and will add all associated views to
+                the set used to colour the structure display.</em></li>
+            <li><strong>Invert selection<br></strong><em>This
+                is only enabled when </em><strong>Select many views</strong><em>
+                is also enabled, and will replace the current set of
+                views with any remaining views not currently used to
+                colour the structure display.</em></li>
+          </ul></li>
+      </ul>
+    <li><strong>Colours<br>
+    </strong>
+      <ul>
+        <li><strong>By Sequence<br>
+        </strong><em> Colours each residue in the structure with the colour
+            of its corresponding residue in the associated sequence as
+            rendered in the associated alignment views, including any
+            UniProt sequence features or region colourings.<br />Pick
+            which of the associated alignment views are used to colour
+            the structures using the <strong>View&#8594;Colour
+              by ..</strong> sub menu.
+        </em><br> Residues which only exist in the PDB structure are
+          coloured white if they are insertions (relative to the
+          associated sequence in the alignment) and grey if they are N
+          or C terminal flanks outside the region mapped to the
+          alignment window's sequence.</em></li>
+        <li><strong>By Chain<br>
+        </strong><em>Uses the Chimera 'rainbow chain' command to apply a
+            different colour to each chain.</em></li>
+        <li><strong>Charge &amp; Cysteine<br>
+        </strong><em> Highlights cysteines in yellow, anionic (Aspartic Acid
+            or Glutamic Acid) residues in red, and cationic (Lysine or
+            Arginine) residues in blue.</em></li>
+        <li><strong>Colour with Chimera<br></strong><em>Defers
+            any colouring operations to Chimera. Select this if you want
+            to use the Chimera scripting interface or menu to modify the
+            view directly.</em></li>
+        <li><strong>Standard and User Defined Jalview
+            colourschemes.<br>
+        </strong><em>The remaining entries apply the colourschemes available
+            from the standard and user defined <a
+            href="../colourSchemes/index.html">amino acid
+              colours</a>.
+        </em></li>
+      </ul></li>
+    <li><strong>Chimera<br>
+    </strong><em>This pulldown menu is only displayed if there are multiple
+        structures shown in the Chimera window, and Jalview can also
+        locate at least two of the structures in the currently
+        associated alignment view.</em>
+      <ul>
+        <li><strong><a name="sAlign">Align</a> <br> </strong><em>
+            When selected, the associated alignment will be used to
+            superimpose all the structures in the view onto the first
+            structure in the alignment. The regions used to calculate
+            the superposition will be highlighted using the 'Cartoon'
+            rendering style, and the remaining data shown as a chain
+            trace.<br />
+          <br />
+        </em></li>
+        <li><a name="annotxfer"><strong>Write Jalview
+              features</strong></a><br /> <em>Selecting this option will create
+            new residue attributes for any features currently visible in
+            the associated alignment views, allowing those positions to
+            be selected and analysed with via Chimera's 'Render by
+            Attribute' tool (found in the Tools submenu called Structure
+            Analysis).<br /> <br />If you use this option, please
+            remember to select the <em>Refresh Menus</em> option in
+            Chimera's Render by Attribute dialog box in order to see the
+            attributes derived from Jalview sequence features.
+        </em></li>
+        <li><strong>Fetch Chimera Attributes</strong><br /> <em>This
+            submenu lists available Chimera residue attributes that can
+            be imported as Jalview features on associated sequences.<br />This
+            is particularly useful for transferring quantitative
+            positional annotation. For example, structure similarity for
+            an alignment can be visualised by transferring the local
+            RMSD attributes generated by Chimera's Match->Align tool
+            onto aligned sequences and displayed with a <a
+            href="featureschemes.html">Graduated feature colour
+              scheme</a>. </li>
+      </ul></li>
+    <li><strong>Help<br>
+    </strong>
+      <ul>
+        <li><strong>Chimera Help<br>
+        </strong><em>Access the Chimera Help documentation in a new browser
+            window.</em></li>
+      </ul></li>
+  </ul>
+  <p>
+    <strong>Chimera and Windows Firewall</strong>
+  </p>
+  Jalview and Chimera communicate using Chimera's
+  <a
+    href="http://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/restserver/restserver.html">REST
+    service</a>
+  (http://www.cgl.ucsf.edu/chimera/current/docs/ContributedSoftware/restserver/restserver.html).
+  <br> Technically this requires both Chimera and Jalview to open
+  ports on the local network, and this may be blocked by Windows
+  Firewall with a warning message such as
+  <br /> "Windows Firewall has blocked some features of this program"
+  (where the program may be jp2launcher.exe for Jalview Webstart, or
+  java.exe or javaw.exe for the InstallAnywhere version).
+  <br /> To allow Jalview and Chimera to interact, you may need to add
+  permission for the program to communicate over the network. This can
+  be done from the warning dialogue, or in Control Panel, Firewall
+  settings.
+</body>
+</html>

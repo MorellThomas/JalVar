@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.datamodel.AlignmentAnnotationTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:13:43" hostname="wer3eng" time="0.008">
+  <properties/>
+  <testcase name="testAdjustForAlignment" classname="jalview.datamodel.AlignmentAnnotationTests" time="0.0"/>
+  <testcase name="testCopyConstructor" classname="jalview.datamodel.AlignmentAnnotationTests" time="0.0"/>
+  <testcase name="testGetDefaultRnaHelixSymbol" classname="jalview.datamodel.AlignmentAnnotationTests" time="0.0"/>
+  <testcase name="testIsQuantitative" classname="jalview.datamodel.AlignmentAnnotationTests" time="0.001"/>
+  <testcase name="testLiftOver" classname="jalview.datamodel.AlignmentAnnotationTests" time="0.006"/>
+  <testcase name="testMakeVisibleAnnotation" classname="jalview.datamodel.AlignmentAnnotationTests" time="0.0"/>
+  <system-out><![CDATA[# STOCKHOLM 1.0
+fromLong/10-18         QQQCDEWGH
+fromLong/12-16         QCDEW
+toShort/20-24          RCDEW
+toShort/20-24          RCDEW
+//
+
+# STOCKHOLM 1.0
+fromLong/12-16         QCDEW
+toShort/20-24          RCDEW
+//
+
+Pos 0 mismatch
+]]></system-out>
+  <system-err><![CDATA[Warning : Unknown Stockholm annotation type: For fromLong
+Warning : Unknown Stockholm annotation type: For toShort
+Warning : Unknown Stockholm annotation type: For toShort
+Warning : Unknown Stockholm annotation type: For fromLong
+]]></system-err>
+</testsuite>

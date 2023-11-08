@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.datamodel.PDBEntryTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:59" hostname="wer3eng" time="0.003">
+  <properties/>
+  <testcase name="testConstructor_fromDbref" classname="jalview.datamodel.PDBEntryTest" time="0.0"/>
+  <testcase name="testEquals" classname="jalview.datamodel.PDBEntryTest" time="0.0"/>
+  <testcase name="testGetType" classname="jalview.datamodel.PDBEntryTest" time="0.0"/>
+  <testcase name="testSetChainCode" classname="jalview.datamodel.PDBEntryTest" time="0.0"/>
+  <testcase name="testTypeMatches" classname="jalview.datamodel.PDBEntryTest" time="0.0"/>
+  <testcase name="testUpdateFrom" classname="jalview.datamodel.PDBEntryTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,17 @@
+JAL-958 Normalised logo feature todo
+
+* add gui switches in applet for normalised logo display
+* add flags for normalised logo display to AnnotationFile and Jalview Project
+* add preference for application
+* consider rationalising flag model for N types of consensus/logo calculation methods
+
+JAL-976 JABAWS 2 services todo
+* document aacons
+* allow aacons calculation setting to be restored
+* fix aacon service description bug - each calculation should be an option.
+* test store/recall of settings for AACons service
+* decide where AACons job stats should be stored (this is a report for the current view, rather than alignment as a whole)
+* make disorder calculation more intelligent
+-* only calculate for sequences where no calculation has already been performed ?
+-* if parameters are changed, old features should be replaced with new ones
+..? calcId for features, too ?

@@ -1,0 +1,44 @@
+To set up benchmarking:
+
+You will need to install Maven: https://maven.apache.org/install.html
+
+1. Run the makedist target of build.xml in Eclipse, or in the jalview directory run 
+  ant makedist
+
+This builds a jalview.jar file and puts it into dist/
+
+
+2. Make a lib directory in benchmarking/ if not already present and cd into this directory.
+
+
+3. Purge any previous maven dependencies:
+   mvn dependency:purge-local-repository -DactTransitively=false -DreResolve=false
+
+
+4. Run
+  mvn install:install-file -Dfile=../dist/jalview.jar -DgroupId=jalview.org -DartifactId=jalview -Dversion=1.0 -Dpackaging=jar -DlocalRepositoryPath=lib
+to install the jalview.jar file in the local maven repository. The pom.xml in the benchmarking references this installation, so if you change the names the pom.xml file will also need to be updated.
+
+
+5. Build and run jmh benchmarking. In the benchmarking directory:
+  mvn clean install
+  java -jar target/benchmarks.jar
+  
+  To get JSON output instead use:
+  java -jar target/benchmarks.jar -rf json
+  
+  To run a specific benchmark file use:
+  java -jar target/benchmarks.jar <Benchmark class name> 
+  
+  JSON output can be viewed quickly by drag-dropping on http://jmh.morethan.io/
+  
+  To get help use the standard -h option:
+  	java -jar target/benchmarks.jar -h
+  	
+  More information here:
+  	http://openjdk.java.net/projects/code-tools/jmh/
+  	http://java-performance.info/jmh/
+  
+  
+ 6. If you make changes to the Jalview code everything will need to be refreshed, by performing steps 3-5 again.
+

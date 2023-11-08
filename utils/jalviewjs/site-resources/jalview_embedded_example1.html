@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Embedded JalviewJS Example 1</title><meta charset="utf-8" />
+<script src="swingjs/swingjs2.js"></script>
+<script>
+
+// BH 2019.10.06 adds Tree and Pca functionality
+// BH see issue JAL-3451
+
+if (!self.SwingJS)alert('swingjs2.js was not found. It needs to be in swingjs folder in the same directory as ' + document.location.href)
+Info = {
+  code: null,
+  main: "jalview.bin.JalviewJS2",
+//  core: "NONE",
+	core:"_jalview",
+  readyFunction: null,
+	serverURL: 'https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php',
+	j2sPath: 'swingjs/j2s',
+	console:'none',
+	allowjavascript: true
+}
+
+jvGet = function(what) {
+	switch(what) {
+	case "tree":
+		testApplet.app.openTreePanel$jalview_gui_AlignFrame$S$S(null, "NJ","BLOSUM62")
+		break;
+	case "pca":
+		testApplet.app.openPcaPanel$jalview_gui_AlignFrame$S(null, "BLOSUM62")
+		break;
+	case "3D":
+		break;
+	}
+	
+}
+
+$(document).ready(function() {
+
+  SwingJS.getApplet('testApplet', Info);
+
+});
+
+</script>
+</head>
+<body style="background-image: url(images/coolVeryLightBG.png);">
+<table style="width:1400px;border:2px solid lightblue;border-spacing:0;font-size:16pt;" padding="10" valign="top">
+<tr>
+<td style="font-size:24;font-weight:bold;background-color:lightblue" colspan=2><center>Demonstration of embedded JalviewJS components</center>
+</td>
+
+
+</tr><tr>
+
+
+<td valign=top style="padding:20px;background-color:lightgray">
+<div style="padding:20px;width:600px;height:400px;overflow-y:auto;background-color:white">
+This simple page illustrates how one can embed the JalviewJS desktop into a web page. 
+The basic idea is that we have something interesting to say &mdash; some sort of scientific context &mdash; something we want to get 
+across to our visitors with more than just text and images. The idea is to have a <b>dynamic</b> page that will involve <b>user interaction</b>. 
+<br><br>
+We start with a Jalview desktop. You can't see it, because I have placed it in a <code>div</code> tag with style <i>width:0px;height:0px</i> just after the period that ends this sentence.
+<div id="jalview-desktop-div" style="width:0px;height:0px;"></div>
+<br>
+The idea is NOT to teach visitors how to use Jalview. The idea is to seamlessly integrate components of Jalview that can be used to enrich a discussion. 
+Like JSmol in <a target="_blank" href="http://proteopedia.org/wiki/index.php/Main_Page"><img src=https://pbs.twimg.com/profile_images/818051034/proteopedia_135x200_small_logo_for_Twitter_400x400.png width=16 height=16/>Proteopedia</a>.
+For example, in the space to the right, after a few seconds, you will see an alignment frame. This alignment is for 15 genes that code for one of the domains in the ferredoxin family (<a href=https://pfam.xfam.org/family/NIR_SIR_ferr target=_blank>NIR_SIR_ferr (PF03460)</a>). 
+<br><br>
+What you see initially is just the first few residues. Doesn't look like much of an alignment, does it? But <b>scroll to the right</b>. 
+See the big block of red color? That's the <i>Ferredoxin fold</i>domain.
+
+</div>
+</td><td style="background-color:lightgray;padding:20px">
+<div id="jalview-alignment-div" style="padding:20px;position:relative;top:0px;left:0px;width:680px;height:400px">
+<br><br>
+The alignment frame will appear here momentarily. When it does, you can go ahead and manipulate the alignment with your mouse.
+</div>
+</td>
+
+
+</tr><tr>
+
+
+<td colspan=2 valign=top style="padding:0px 0px 0px 0px"> 
+<table style="background-color:lightgray"><tr><td  style="padding:0px 0px 0px 20px">
+<b>Select a few alignments</b> by left-dragging across a few rows of the alignment to make a selection box. 
+Then click one of the buttons below to see more information about your selected subset of the alignment.
+<ul>
+<li><button onclick='jvGet("tree")'>similarity tree</button></li>
+<li><button onclick='jvGet("pca")'>principal component analysis</button></li>
+</ul>
+
+
+
+
+</td><td style="padding:0px 0px 0px 0px">
+<table style="border-spacing:0"><tr><td style="background-color:lightgray;padding:10px 0px 10px 20px">
+<div id="jalview-tree-div" style="position:relative;top:0px;left:0px;width:500px;height:500px">
+<br><br><br><br>
+jalview-tree-div
+</div>
+</td><td style="background-color:lightgray;padding:10px 20px 10px 0px">
+<div id="jalview-pca-div" style="position:relative;top:0px;left:0px;width:500px;height:500px">
+<br><br><br><br>
+jalview-pca-div
+</div>
+</td></tr></table>
+
+</td></tr></table>
+
+
+</td></tr>
+
+<tr>
+
+<td valign=top style="padding:20px;height:650px" >
+
+<div id="jalview-structureviewer-div" style="position:relative;top:0px;left:0px;width:600px;height:600px">
+jalview-strucddtureviewer-div
+</div>
+</td>
+<td valign=top style="padding:20px;background-color:white" >
+One more thing. Let's take a look at the 3D structure of one these proteins. Ferredoxins are important, because they have 
+iron-sulfur clusters that can accept and deliver electrons in metabolic processes. Let's see if we can find it. 
+<br><center><button onclick='jvGet("3D")'>add the 3D structure</button>
+</td></tr></table>
+
+
+<!-- debugging (hidden) -->
+<script>getClassList = function(){J2S._saveFile('_j2sclasslist.txt', Clazz.ClassFilesLoaded.sort().join('\n'))}</script>
+<div style="display:none;position:absolute;left:900px;top:30px;width:600px;height:300px;">
+<div id="sysoutdiv" style="border:1px solid green;width:100%;height:95%;overflow:auto"></div>
+This is System.out. <a href="javascript:testApplet._clearConsole()">clear it</a> <br>Add ?j2snocore to URL to see full class list; ?j2sdebug to use uncompressed j2s/core files <br><a href="javascript:getClassList()">get _j2sClassList.txt</a>
+</div>
+
+</body>
+</html>

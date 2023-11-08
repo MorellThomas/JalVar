@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.schemes.ColourSchemesTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:02" hostname="wer3eng" time="0.089">
+  <properties/>
+  <testcase name="testGetColourScheme" classname="jalview.schemes.ColourSchemesTest" time="0.048"/>
+  <testcase name="testGetColourSchemes" classname="jalview.schemes.ColourSchemesTest" time="0.0"/>
+  <testcase name="testNameExists" classname="jalview.schemes.ColourSchemesTest" time="0.0"/>
+  <testcase name="testRegisterColourScheme" classname="jalview.schemes.ColourSchemesTest" time="0.041"/>
+  <system-out><![CDATA[File format identified as Fasta
+File format identified as Fasta
+INFO: I18N missing key with root label.colourScheme_: en_GB	label.colourScheme_stripy
+INFO: I18N missing key with root label.colourScheme_: en_GB	label.colourScheme_myclustal
+]]></system-out>
+  <system-err><![CDATA[DEBUG - Filechooser init thread finished.
+DEBUG - Exception downloading identifiers.org datahttps://www.jalview.org/services/identifiers
+DEBUG - Aborting 1 JABAWS discovery threads.
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@39160d24, jalview.ws.jws2.jabaws2.Jws2Instance@59d41672, jalview.ws.jws2.jabaws2.Jws2Instance@3ac76d41]
+]]></system-err>
+</testsuite>

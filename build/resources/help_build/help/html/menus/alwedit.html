@@ -1,0 +1,124 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Alignment Window Menus</title>
+</head>
+
+<body>
+  <p>
+    <strong>Alignment Window Edit Menu</strong>
+  </p>
+  <ul>
+    <li><strong>Undo (Control Z)</strong><em><br> This
+        will undo any edits you make to the alignment. This applies to
+        insertion or deletion of gaps, cutting residues or sequences
+        from the alignment or pasting sequences to the current alignment
+        or sorting the alignment. <strong>NOTE:</strong> It DOES NOT
+        undo colour changes, adjustments to group sizes, or changes to
+        the annotation panel. </em></li>
+    <li><strong>Redo (Control Y)<br>
+    </strong><em>Any actions which you undo can be redone using redo. </em></li>
+    <li><strong>Cut (Control X)<br>
+    </strong><em>This will make a copy of the currently selected residues
+        before removing them from your alignment. Click on a sequence
+        name if you wish to select a whole sequence. <br> Use
+        &lt;CTRL&gt; and X (&lt;APPLE&gt; and X on MacOSX) to cut.
+    </em></li>
+    <li><strong>Copy (Control C)</strong><br> <em>Copies
+        the currently selected residues to the system clipboard - you
+        can also do this by pressing &lt;CTRL&gt; and C (&lt;APPLE&gt;
+        and C on MacOSX). <br> If you try to paste the clipboard
+        contents to a text editor, you will see the format of the copied
+        residues FASTA.
+    </em></li>    
+    <li><strong>Copy Highlighted region (Control Shift C)</strong><br> <em>Copies
+        each stretch of highlighted residues as a new sequence on the
+        system clipboard - you can also do this by pressing &lt;CTRL&gt;
+        &lt;SHIFT&gt; and C (&lt;APPLE&gt; &lt;SHIFT&gt; and C on
+        MacOSX). <br>Use this when you want to extract sequence regions
+        highlighted as a result of a Find operation, or due to
+        mouseovers or selections made in other views such as an
+        assocated 3D structure viewer.
+    </em></li>
+    <li><strong>Paste </strong>
+      <ul>
+        <li><strong>To New Alignment (Control Shift V)<br>
+        </strong><em>A new alignment window will be created from sequences
+            previously copied or cut to the system clipboard. <br>
+            Use &lt;CTRL&gt; and &lt;SHIFT&gt; and V(&lt;APPLE&gt; and
+            &lt;SHIFT;&gt; and and V on MacOSX) to paste.
+        </em></li>
+        <li><strong>Add To This Alignment (Control V)<br>
+        </strong><em>Copied sequences from another alignment window can be
+            added to the current Jalview alignment. </em></li>
+      </ul></li>
+    <li><strong>Delete (Backspace)<br>
+    </strong><em>This will delete the currently selected residues without
+        copying them to the clipboard. Like the other edit operations,
+        this can be undone with <strong>Undo</strong>.
+    </em></li>
+    <li><strong>Remove Left (Control L)<br>
+    </strong><em>If the alignment has marked columns, the alignment will be
+        trimmed to the left of the leftmost marked column. To mark a
+        column, mouse click the scale bar above the alignment. Click
+        again to unmark a column, or select &quot;Deselect All&quot; to
+        deselect all columns.</em></li>
+    <li><strong>Remove Right (Control R)<br>
+    </strong><em>If the alignment has marked columns, the alignment will be
+        trimmed to the right of the rightmost marked column. To mark a
+        column, mouse click the scale bar above the alignment. Click
+        again to unmark a column, or select &quot;Deselect All&quot; to
+        deselect all columns.</em></li>
+    <li><strong>Remove Empty Columns (Control E)<br>
+    </strong><em>All columns which only contain gap characters
+        (&quot;-&quot;, &quot;.&quot;) will be deleted.<br> You may
+        set the default gap character in <a
+        href="../features/preferences.html">preferences</a>.
+    </em></li>
+    <li><strong>Remove All Gaps (Control Shift E)</strong><br>
+      <em>Gap characters (&quot;-&quot;, &quot;.&quot;) will be
+        deleted from the selected area of the alignment. If no selection
+        is made, ALL the gaps in the alignment will be removed.<br>
+        You may set the default gap character in <a
+        href="../features/preferences.html">preferences</a>.
+    </em></li>
+    <li><strong>Remove Redundancy (Control D)<br>
+    </strong><em>Selecting this option brings up a window asking you to
+        select a threshold. If the percentage identity between any two
+        sequences (under the current alignment) exceeds this value then
+        one of the sequences (the shorter) is discarded. Press the
+        &quot;Apply&quot; button to remove redundant sequences. The
+        &quot;Undo&quot; button will undo the last redundancy deletion.</em></li>
+    <li><strong>Pad Gaps<br>
+    </strong><em>When selected, the alignment will be kept at minimal width
+        (so there are no empty columns before or after the first or last
+        aligned residue) and all sequences will be padded with gap
+        characters before and after their terminating residues.<br>
+        This switch is useful when making a tree using unaligned
+        sequences and when working with alignment analysis programs
+        which require 'properly aligned sequences' to be all the same
+        length.<br> You may set the default for <strong>Pad
+          Gaps</strong> in the <a href="../features/preferences.html">preferences</a>.
+    </em></li>
+  </ul>
+</body>
+</html>

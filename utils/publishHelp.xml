@@ -1,0 +1,64 @@
+<project name="Publish Help Webpages for Jalview" default="pubhtmlhelp">
+
+<target name="pubhtmlhelp">
+  <property name="appletHelpDir" value="../build/distributions/help"/>
+        <!-- finally, publish the help files -->
+        <javac srcdir="." destdir="." includes="help2Website.java"/>
+        <java fork="true" dir="${helpBuildDir}" classpath="." classname="help2Website"/>
+        <delete dir="${appletHelpDir}"/>
+        <copy preservelastmodified="true" overwrite="true" 
+           todir="${appletHelpDir}">
+          <fileset dir="${helpBuildDir}">
+            <include name="*htm*"/>
+            <include name="icons/**.*"/>
+            <include name="html/**/*.*"/>
+            <exclude name="**/CVS"/>
+            <exclude name="CVS"/>
+          </fileset>
+        </copy>
+        <replace dir="${appletHelpDir}">
+        <include name="**/*.htm*"/>
+        <replacetoken><![CDATA[</body>]]></replacetoken>
+        <replacevalue><![CDATA[
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ?
+        "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src=\'" + gaJsHost +
+        "google-analytics.com/ga.js\' type=\'text/javascript\'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try{
+    var pageTracker = _gat._getTracker("'UA-9060947-1'");
+    pageTracker._trackPageview();
+} catch(err) {}
+</script>
+</body>
+]]></replacevalue>
+</replace>
+<echo file="${appletHelpDir}/help.html">
+<![CDATA[<html><head>
+<title>Jalview Documentation</title>
+</head>
+<frameset cols="300,*">
+<frame src="helpTOC.html" name=tocframe scrolling=yes >
+<frame src="html/index.html" name=bodyframe >
+<noframes><body>
+This page requires a browser that supports frames.
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ?
+        "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src=\'" + gaJsHost +
+        "google-analytics.com/ga.js\' type=\'text/javascript\'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try{
+    var pageTracker = _gat._getTracker("'UA-9060947-1'");
+    pageTracker._trackPageview();
+} catch(err) {}
+</script></body>
+<noframes></frameset>
+</html>
+]]></echo>
+
+  </target>
+</project>

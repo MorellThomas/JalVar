@@ -1,0 +1,568 @@
+/* Convention for properties.  Read from gradle.properties, use lower_case_underlines for property names.
+ * For properties set within build.gradle, use camelCaseNoSpace.
+ */
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+  id 'java'
+  id 'application'
+}
+
+// in ext the values are cast to Object. Ensure string values are cast as String (and not GStringImpl) for later use
+def string(Object o) {
+  return o == null ? "" : o.toString()
+}
+
+def overrideProperties(String propsFileName, boolean output = false) {
+  if (propsFileName == null) {
+    return
+  }
+  def propsFile = file(propsFileName)
+  if (propsFile != null && propsFile.exists()) {
+    println("Using properties from file '${propsFileName}'")
+    try {
+      def p = new Properties()
+      def localPropsFIS = new FileInputStream(propsFile)
+      p.load(localPropsFIS)
+      localPropsFIS.close()
+      p.each {
+        key, val -> 
+          def oldval
+          if (project.hasProperty(key)) {
+            oldval = project.findProperty(key)
+            project.setProperty(key, val)
+            if (output) {
+              println("Overriding property '${key}' ('${oldval}') with ${file(propsFile).getName()} value '${val}'")
+            }
+          } else {
+            ext.setProperty(key, val)
+            if (output) {
+              println("Setting ext property '${key}' with ${file(propsFile).getName()}s value '${val}'")
+            }
+          }
+      }
+    } catch (Exception e) {
+      println("Exception reading local.properties")
+      e.printStackTrace()
+    }
+  }
+}
+
+project.ext {
+  jalviewDirAbsolutePath = file(jalviewDir).getAbsolutePath()
+  jalviewDirRelativePath = jalviewDir
+
+  propertiesChannelName = "release"
+  channelDir = string("${jalviewDir}/${channel_properties_dir}/${propertiesChannelName}")
+  channelGradleProperties = string("${channelDir}/channel_gradle.properties")
+  overrideProperties(channelGradleProperties, false)
+  
+  ////  
+  // Import releaseProps from the RELEASE file
+  // or a file specified via JALVIEW_RELEASE_FILE if defined
+  // Expect jalview.version and target release branch in jalview.release        
+  def releaseProps = new Properties();
+  def releasePropFile = findProperty("JALVIEW_RELEASE_FILE");
+  def defaultReleasePropFile = "${jalviewDirAbsolutePath}/RELEASE";
+  try {
+    (new File(releasePropFile!=null ? releasePropFile : defaultReleasePropFile)).withInputStream { 
+     releaseProps.load(it)
+    }
+  } catch (Exception fileLoadError) {
+    throw new Error("Couldn't load release properties file "+(releasePropFile==null ? defaultReleasePropFile : "from custom location: releasePropFile"),fileLoadError);
+  }
+  ////
+  // Set JALVIEW_VERSION if it is not already set
+  if (findProperty("JALVIEW_VERSION")==null || "".equals(JALVIEW_VERSION)) {
+    JALVIEW_VERSION = releaseProps.get("jalview.version")
+  }
+
+  // essentials
+  bareSourceDir = string(source_dir)
+  sourceDir = string("${jalviewDir}/${bareSourceDir}")
+  resourceDir = string("${jalviewDir}/${resource_dir}")
+  bareTestSourceDir = string(test_source_dir)
+  testDir = string("${jalviewDir}/${bareTestSourceDir}")
+
+  classesDir = string("${jalviewDir}/${classes_dir}")
+
+  useClover = false
+
+  resourceClassesDir = classesDir
+
+  testSourceDir = testDir
+  testClassesDir = "${jalviewDir}/${test_output_dir}"
+
+  buildProperties = string("${classesDir}/${build_properties_file}")
+  getdownSetAppBaseProperty = false // whether to pass the appbase and appdistdir to the application
+
+  install4jApplicationName = "${jalview_name}"
+  
+  println("Using a ${CHANNEL} profile.")
+
+  additional_compiler_args = []
+  // configure classpath/args for j8/j11 compilation
+  if (JAVA_VERSION.equals("1.8")) {
+    JAVA_INTEGER_VERSION = string("8")
+    //libDir = j8libDir
+    libDir = j11libDir
+    libDistDir = j8libDir
+    compile_source_compatibility = 1.8
+    compile_target_compatibility = 1.8
+  } else if (JAVA_VERSION.equals("11")) {
+    JAVA_INTEGER_VERSION = string("11")
+    libDir = j11libDir
+    libDistDir = j11libDir
+    compile_source_compatibility = 11
+    compile_target_compatibility = 11
+  } else {
+    throw new GradleException("JAVA_VERSION=${JAVA_VERSION} not currently supported by Jalview")
+  }
+
+  resourceBuildDir = string("${buildDir}/resources")
+  resourcesBuildDir = string("${resourceBuildDir}/resources_build")
+  helpBuildDir = string("${resourceBuildDir}/help_build")
+  docBuildDir = string("${resourceBuildDir}/doc_build")
+
+  if (buildProperties == null) {
+    buildProperties = string("${resourcesBuildDir}/${build_properties_file}")
+  }
+  buildingHTML = string("${jalviewDir}/${doc_dir}/building.html")
+  helpParentDir = string("${jalviewDir}/${help_parent_dir}")
+  helpSourceDir = string("${helpParentDir}/${help_dir}")
+  helpFile = string("${helpBuildDir}/${help_dir}/help.jhm")
+
+  // ENDEXT
+}
+
+
+sourceSets {
+  main {
+    java {
+      srcDirs sourceDir
+      outputDir = file(classesDir)
+    }
+
+    resources {
+      srcDirs = [ resourcesBuildDir, docBuildDir, helpBuildDir ]
+    }
+
+    compileClasspath = files(sourceSets.main.java.outputDir)
+    compileClasspath += fileTree(dir: "${jalviewDir}/${libDir}", include: ["*.jar"])
+
+
+    compileClasspath = files(sourceSets.main.java.outputDir)
+    compileClasspath += fileTree(dir: "${jalviewDir}/${libDir}", include: ["*.jar"])
+
+    runtimeClasspath = compileClasspath
+    runtimeClasspath += files(sourceSets.main.resources.srcDirs)
+  }
+
+  test {
+    java {
+      srcDirs testSourceDir
+      outputDir = file(testClassesDir)
+    }
+
+    resources {
+      srcDirs = useClover ? sourceSets.clover.resources.srcDirs : sourceSets.main.resources.srcDirs
+    }
+
+    compileClasspath = files( sourceSets.test.java.outputDir )
+    compileClasspath += useClover ? sourceSets.clover.compileClasspath : sourceSets.main.compileClasspath
+    compileClasspath += fileTree(dir: "${jalviewDir}/${utils_dir}/testnglibs", include: ["**/*.jar"])
+
+    runtimeClasspath = compileClasspath
+    runtimeClasspath += files(sourceSets.test.resources.srcDirs)
+  }
+ /*  test {
+    java {
+      srcDirs testSourceDir
+      outputDir = file(testClassesDir)
+    }
+
+    resources {
+      srcDirs = sourceSets.main.resources.srcDirs
+    }
+
+    compileClasspath = files( sourceSets.test.java.outputDir )
+    compileClasspath += sourceSets.main.compileClasspath
+    compileClasspath += fileTree(dir: "${jalviewDir}/${utils_dir}/testnglibs", include: ["**   REMOVE_THIS_GAP  /*.jar"])
+
+    runtimeClasspath = compileClasspath
+  }
+*/
+}
+
+
+compileJava {
+  sourceCompatibility = compile_source_compatibility
+  targetCompatibility = compile_target_compatibility
+  options.compilerArgs = additional_compiler_args
+  doFirst {
+    print ("Setting target compatibility to "+compile_target_compatibility+"\n")
+  }
+}
+
+
+compileTestJava {
+  doFirst {
+    sourceCompatibility = compile_source_compatibility
+    targetCompatibility = compile_target_compatibility
+    options.compilerArgs = additional_compiler_args
+    print ("Setting target compatibility to "+targetCompatibility+"\n")
+  }
+}
+
+
+clean {
+  doFirst {
+    delete sourceSets.main.java.outputDir
+  }
+}
+
+
+cleanTest {
+  doFirst {
+    delete sourceSets.test.java.outputDir
+  }
+}
+
+
+// format is a string like date.format("dd MMMM yyyy")
+def getDate(format) {
+  def date = new Date()
+  return date.format(format)
+}
+
+
+task copyDocs(type: Copy) {
+  def inputDir = "${jalviewDir}/${doc_dir}"
+  def outputDir = "${docBuildDir}/${doc_dir}"
+  from(inputDir) {
+    include('**/*.txt')
+    include('**/*.md')
+    include('**/*.html')
+    include('**/*.xml')
+    filter(ReplaceTokens,
+      beginToken: '$$',
+      endToken: '$$',
+      tokens: [
+        'Version-Rel': JALVIEW_VERSION,
+        'Year-Rel': getDate("yyyy")
+      ]
+    )
+  }
+  from(inputDir) {
+    exclude('**/*.txt')
+    exclude('**/*.md')
+    exclude('**/*.html')
+    exclude('**/*.xml')
+  }
+  into outputDir
+
+  inputs.dir(inputDir)
+  outputs.dir(outputDir)
+}
+
+
+task copyHelp(type: Copy) {
+  def inputDir = helpSourceDir
+  def outputDir = "${helpBuildDir}/${help_dir}"
+  from(inputDir) {
+    include('**/*.txt')
+    include('**/*.md')
+    include('**/*.html')
+    include('**/*.hs')
+    include('**/*.xml')
+    include('**/*.jhm')
+    filter(ReplaceTokens,
+      beginToken: '$$',
+      endToken: '$$',
+      tokens: [
+        'Version-Rel': JALVIEW_VERSION,
+        'Year-Rel': getDate("yyyy")
+      ]
+    )
+  }
+  from(inputDir) {
+    exclude('**/*.txt')
+    exclude('**/*.md')
+    exclude('**/*.html')
+    exclude('**/*.hs')
+    exclude('**/*.xml')
+    exclude('**/*.jhm')
+  }
+  into outputDir
+
+  inputs.dir(inputDir)
+  outputs.files(helpFile)
+  outputs.dir(outputDir)
+}
+
+task releasesTemplates {
+  group "help"
+  description "Recreate whatsNew.html and releases.html from markdown files and templates in help"
+
+  dependsOn copyHelp
+
+  def releasesTemplateFile = file("${jalviewDir}/${releases_template}")
+  def whatsnewTemplateFile = file("${jalviewDir}/${whatsnew_template}")
+  def releasesHtmlFile = file("${helpBuildDir}/${help_dir}/${releases_html}")
+  def whatsnewHtmlFile = file("${helpBuildDir}/${help_dir}/${whatsnew_html}")
+  def releasesMdDir = "${jalviewDir}/${releases_dir}"
+  def whatsnewMdDir = "${jalviewDir}/${whatsnew_dir}"
+
+  doFirst {
+    def JALVIEW_VERSION_UNDERSCORES = JALVIEW_VERSION.replaceAll("\\.", "_")
+    def releaseMdFile = file("${releasesMdDir}/release-${JALVIEW_VERSION_UNDERSCORES}.md")
+    def whatsnewMdFile = file("${whatsnewMdDir}/whatsnew-${JALVIEW_VERSION_UNDERSCORES}.md")
+
+    if (CHANNEL == "RELEASE") {
+      if (!releaseMdFile.exists()) {
+        throw new GradleException("File ${releaseMdFile} must be created for RELEASE")
+      }
+      if (!whatsnewMdFile.exists()) {
+        throw new GradleException("File ${whatsnewMdFile} must be created for RELEASE")
+      }
+    }
+
+    def releaseFiles = fileTree(dir: releasesMdDir, include: "release-*.md")
+    def releaseFilesDates = releaseFiles.collectEntries {
+      [(it): getDate("")]
+    }
+    releaseFiles = releaseFiles.sort { a,b -> releaseFilesDates[a].compareTo(releaseFilesDates[b]) }
+
+    def releasesTemplate = releasesTemplateFile.text
+    def m = releasesTemplate =~ /(?s)__VERSION_LOOP_START__(.*)__VERSION_LOOP_END__/
+    def versionTemplate = m[0][1]
+
+    def versionsHtml = ""
+    def linkedVersions = []
+
+    releasesTemplate = releasesTemplate.replaceAll("(?s)__VERSION_LOOP_START__.*__VERSION_LOOP_END__", versionsHtml)
+    releasesHtmlFile.text = releasesTemplate
+
+    whatsnewHtmlFile.text = "Debian build " + getDate("yyyy-MM-dd HH:mm:ss")
+  }
+
+  inputs.file(releasesTemplateFile)
+  inputs.file(whatsnewTemplateFile)
+  inputs.dir(releasesMdDir)
+  inputs.dir(whatsnewMdDir)
+  outputs.file(releasesHtmlFile)
+  outputs.file(whatsnewHtmlFile)
+}
+
+task copyResources(type: Copy) {
+  group = "build"
+  description = "Copy (and make text substitutions in) the resources dir to the build area"
+
+  def inputDir = resourceDir
+  def outputDir = resourcesBuildDir
+  from(inputDir) {
+    include('**/*.txt')
+    include('**/*.md')
+    include('**/*.html')
+    include('**/*.xml')
+    filter(ReplaceTokens,
+      beginToken: '$$',
+      endToken: '$$',
+      tokens: [
+        'Version-Rel': JALVIEW_VERSION,
+        'Year-Rel': getDate("yyyy")
+      ]
+    )
+  }
+  from(inputDir) {
+    exclude('**/*.txt')
+    exclude('**/*.md')
+    exclude('**/*.html')
+    exclude('**/*.xml')
+  }
+  into outputDir
+
+  inputs.dir(inputDir)
+  outputs.dir(outputDir)
+}
+
+task copyChannelResources(type: Copy) {
+  dependsOn copyResources
+  group = "build"
+  description = "Copy the channel resources dir to the build resources area"
+
+  def inputDir = "${channelDir}/${resource_dir}"
+  def outputDir = resourcesBuildDir
+  from inputDir
+  into outputDir
+
+  inputs.dir(inputDir)
+  outputs.dir(outputDir)
+}
+
+task createBuildProperties(type: Copy) {
+  // using the build_properties already included in the source tarball
+  def inputFile = "build_properties"
+  def outputFile = buildProperties
+  from inputFile
+  into file(outputFile).getParent()
+  rename(file(inputFile).getName(), file(outputFile).getName())
+
+  inputs.file(inputFile)
+  outputs.file(outputFile)
+}
+
+
+task buildIndices(type: JavaExec) {
+  dependsOn copyHelp
+  classpath = sourceSets.main.compileClasspath
+  main = "com.sun.java.help.search.Indexer"
+  workingDir = "${helpBuildDir}/${help_dir}"
+  def argDir = "html"
+  args = [ argDir ]
+  inputs.dir("${workingDir}/${argDir}")
+
+  outputs.dir("${classesDir}/doc")
+  outputs.dir("${classesDir}/help")
+  outputs.file("${workingDir}/JavaHelpSearch/DOCS")
+  outputs.file("${workingDir}/JavaHelpSearch/DOCS.TAB")
+  outputs.file("${workingDir}/JavaHelpSearch/OFFSETS")
+  outputs.file("${workingDir}/JavaHelpSearch/POSITIONS")
+  outputs.file("${workingDir}/JavaHelpSearch/SCHEMA")
+  outputs.file("${workingDir}/JavaHelpSearch/TMAP")
+}
+
+task buildResources {
+  dependsOn copyResources
+  dependsOn copyChannelResources
+  dependsOn createBuildProperties
+}
+
+task prepare {
+  dependsOn buildResources
+  dependsOn copyDocs
+  dependsOn copyHelp
+  dependsOn releasesTemplates
+  dependsOn buildIndices
+}
+
+
+compileJava.dependsOn prepare
+run.dependsOn compileJava
+//run.dependsOn prepare
+
+
+//testReportDirName = "test-reports" // note that test workingDir will be $jalviewDir
+test {
+  dependsOn prepare
+  dependsOn compileJava //?
+
+  useTestNG() {
+    includeGroups testng_groups
+    excludeGroups testng_excluded_groups
+    preserveOrder true
+    useDefaultListeners=true
+  }
+
+  maxHeapSize = "1024m"
+
+  workingDir = jalviewDir
+  //systemProperties 'clover.jar' System.properties.clover.jar
+  def testLaf = project.findProperty("test_laf")
+  if (testLaf != null) {
+    println("Setting Test LaF to '${testLaf}'")
+    systemProperty "laf", testLaf
+  }
+  def testHiDPIScale = project.findProperty("test_HiDPIScale")
+  if (testHiDPIScale != null) {
+    println("Setting Test HiDPI Scale to '${testHiDPIScale}'")
+    systemProperty "sun.java2d.uiScale", testHiDPIScale
+  }
+  sourceCompatibility = compile_source_compatibility
+  targetCompatibility = compile_target_compatibility
+  jvmArgs += additional_compiler_args
+
+  doFirst {
+  }
+}
+
+
+task compileLinkCheck(type: JavaCompile) {
+  options.fork = true
+  classpath = files("${jalviewDir}/${utils_dir}")
+  destinationDir = file("${jalviewDir}/${utils_dir}")
+  source = fileTree(dir: "${jalviewDir}/${utils_dir}", include: ["HelpLinksChecker.java", "BufferedLineReader.java"])
+
+  inputs.file("${jalviewDir}/${utils_dir}/HelpLinksChecker.java")
+  inputs.file("${jalviewDir}/${utils_dir}/HelpLinksChecker.java")
+  outputs.file("${jalviewDir}/${utils_dir}/HelpLinksChecker.class")
+  outputs.file("${jalviewDir}/${utils_dir}/BufferedLineReader.class")
+}
+
+
+task linkCheck(type: JavaExec) {
+  dependsOn prepare
+  dependsOn compileLinkCheck
+
+  def helpLinksCheckerOutFile = file("${jalviewDir}/${utils_dir}/HelpLinksChecker.out")
+  classpath = files("${jalviewDir}/${utils_dir}")
+  main = "HelpLinksChecker"
+  workingDir = "${helpBuildDir}"
+  args = [ "${helpBuildDir}/${help_dir}", "-nointernet" ]
+
+  def outFOS = new FileOutputStream(helpLinksCheckerOutFile, false) // false == don't append
+  standardOutput = new org.apache.tools.ant.util.TeeOutputStream(
+    outFOS,
+    System.out)
+  errorOutput = new org.apache.tools.ant.util.TeeOutputStream(
+    outFOS,
+    System.err)
+
+  inputs.dir(helpBuildDir)
+  outputs.file(helpLinksCheckerOutFile)
+}
+
+
+// import the pubhtmlhelp target
+ant.properties.basedir = "${jalviewDir}"
+ant.properties.helpBuildDir = "${helpBuildDir}/${help_dir}"
+ant.importBuild "${utils_dir}/publishHelp.xml"
+
+
+task cleanPackageDir(type: Delete) {
+  doFirst {
+    delete fileTree(dir: "${jalviewDir}/${package_dir}", include: "*.jar")
+  }
+}
+
+
+jar {
+  dependsOn prepare
+  dependsOn linkCheck
+
+  manifest {
+    attributes "Main-Class": main_class,
+    "Permissions": "all-permissions",
+    "Application-Name": install4jApplicationName,
+    "Codebase": application_codebase,
+    "Implementation-Version": JALVIEW_VERSION
+  }
+
+  def outputDir = "${jalviewDir}/${package_dir}"
+  destinationDirectory = file(outputDir)
+  archiveFileName = rootProject.name+".jar"
+
+  exclude "cache*/**"
+  exclude "*.jar"
+  exclude "*.jar.*"
+  exclude "**/*.jar"
+  exclude "**/*.jar.*"
+
+  inputs.dir(sourceSets.main.java.outputDir)
+  sourceSets.main.resources.srcDirs.each{ dir ->
+    inputs.dir(dir)
+  }
+
+  outputs.file("${outputDir}/${archiveFileName}")
+}
+

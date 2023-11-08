@@ -1,0 +1,1226 @@
+<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="generator" content="flexmark" />
+  <title>Building Jalview from Source</title>
+    <style type="text/css">code{white-space: pre;}</style>
+<style>
+@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  width: 728px;
+  max-width: 99%;
+  box-sizing: border-box;
+  padding: 30px 30px 8rem 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body a {
+  background-color: transparent;
+}
+
+body a:active,
+body a:hover {
+  outline: 0;
+}
+
+body strong {
+  font-weight: bold;
+}
+
+body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+body img {
+  border: 0;
+}
+
+body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+body pre {
+  overflow: auto;
+}
+
+body code,
+body kbd,
+body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+body html input[disabled] {
+  cursor: default;
+}
+
+body input {
+  line-height: normal;
+}
+
+body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body td,
+body th {
+  padding: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+body input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+body a:hover,
+body a:active {
+  text-decoration: underline;
+}
+
+body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+body hr:before {
+  display: table;
+  content: "";
+}
+
+body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+body h1 {
+  font-size: 30px;
+}
+
+body h2 {
+  font-size: 21px;
+}
+
+body h3 {
+  font-size: 16px;
+}
+
+body h4 {
+  font-size: 14px;
+}
+
+body h5 {
+  font-size: 12px;
+}
+
+body h6 {
+  font-size: 11px;
+}
+
+body blockquote {
+  margin: 0;
+}
+
+body ul,
+body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body ol ol,
+body ul ol {
+  list-style-type: lower-roman;
+}
+
+body ul ul ol,
+body ul ol ol,
+body ol ul ol,
+body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+body dd {
+  margin-left: 0;
+}
+
+body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+body .select::-ms-expand {
+  opacity: 0;
+}
+
+body .octicon {
+  font: normal normal normal 16px/1 octicons-link;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body .octicon-link:before {
+  content: '\f05c';
+}
+
+body:before {
+  display: table;
+  content: "";
+}
+
+body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+body .anchor:focus {
+  outline: none;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+body h1 .octicon-link,
+body h2 .octicon-link,
+body h3 .octicon-link,
+body h4 .octicon-link,
+body h5 .octicon-link,
+body h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+body h1:hover .anchor,
+body h2:hover .anchor,
+body h3:hover .anchor,
+body h4:hover .anchor,
+body h5:hover .anchor,
+body h6:hover .anchor {
+  text-decoration: none;
+}
+
+body h1:hover .anchor .octicon-link,
+body h2:hover .anchor .octicon-link,
+body h3:hover .anchor .octicon-link,
+body h4:hover .anchor .octicon-link,
+body h5:hover .anchor .octicon-link,
+body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+body h1 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.2;
+}
+
+body h1 .anchor {
+  line-height: 1;
+}
+
+body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+  line-height: 1.225;
+}
+
+body h2 .anchor {
+  line-height: 1;
+}
+
+body h3 {
+  font-size: 1.25em;
+  line-height: 1.43;
+}
+
+body h3 .anchor {
+  line-height: 1.2;
+}
+
+body h4 {
+  font-size: 1em;
+}
+
+body h4 .anchor {
+  line-height: 1.2;
+}
+
+body h5 {
+  font-size: 1em;
+}
+
+body h5 .anchor {
+  line-height: 1.1;
+}
+
+body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+body h6 .anchor {
+  line-height: 1.1;
+}
+
+body p,
+body blockquote,
+body ul,
+body ol,
+body dl,
+body table,
+body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+body ul,
+body ol {
+  padding-left: 2em;
+}
+
+body ul ul,
+body ul ol,
+body ol ol,
+body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body li>p {
+  margin-top: 16px;
+}
+
+body dl {
+  padding: 0;
+}
+
+body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+body blockquote>:first-child {
+  margin-top: 0;
+}
+
+body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+body table th {
+  font-weight: bold;
+}
+
+body table th,
+body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+body code {
+  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+body code:before,
+body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+body .highlight {
+  margin-bottom: 16px;
+}
+
+body .highlight pre,
+body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+body pre {
+  word-wrap: normal;
+}
+
+body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+body pre code:before,
+body pre code:after {
+  content: normal;
+}
+
+body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+body .pl-c {
+  color: #969896;
+}
+
+body .pl-c1,
+body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+body .pl-e,
+body .pl-en {
+  color: #795da3;
+}
+
+body .pl-s .pl-s1,
+body .pl-smi {
+  color: #333;
+}
+
+body .pl-ent {
+  color: #63a35c;
+}
+
+body .pl-k {
+  color: #a71d5d;
+}
+
+body .pl-pds,
+body .pl-s,
+body .pl-s .pl-pse .pl-s1,
+body .pl-sr,
+body .pl-sr .pl-cce,
+body .pl-sr .pl-sra,
+body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+body .pl-v {
+  color: #ed6a43;
+}
+
+body .pl-id {
+  color: #b52a1d;
+}
+
+body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+body .pl-ml {
+  color: #693a17;
+}
+
+body .pl-mh,
+body .pl-mh .pl-en,
+body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+body .pl-mq {
+  color: #008080;
+}
+
+body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+body .pl-mo {
+  color: #1d3e81;
+}
+
+body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+body .task-list-item {
+  list-style-type: none;
+}
+
+body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+</style>
+</head>
+  <body>
+<ul>
+<li><a href="#tldr">tl;dr</a></li>
+<li><a href="#setting-up">Setting up</a>
+<ul>
+<li><a href="#java-11-compliant-jdk">Java 11 compliant JDK</a></li>
+<li><a href="#gradle-and-git">gradle and git</a></li>
+</ul>
+</li>
+<li><a href="#downloading-the-jalview-source-tree">Downloading the Jalview source tree</a>
+<ul>
+<li><a href="#whats-in-the-source-tree">What's in the source tree?</a></li>
+</ul>
+</li>
+<li><a href="#building-jalview">Building Jalview</a>
+<ul>
+<li><a href="#minimal-jalview-build">Minimal Jalview Build</a></li>
+<li><a href="#jalview-in-a-jar-file">Jalview in a Jar File</a></li>
+<li><a href="#distributed-jar-files">Distributed Jar Files</a></li>
+<li><a href="#single-shadow-jar-file">Single <em>shadow</em> Jar File</a></li>
+<li><a href="#building-the-getdown-launcher">Building the <code>getdown</code> launcher</a></li>
+<li><a href="#running-tests">Running tests</a></li>
+<li><a href="#installer-packaging-with-install4j">Installer packaging with <em>install4j</em></a></li>
+</ul>
+</li>
+<li><a href="#gradle-properties">Gradle properties</a></li>
+<li><a href="#enabling-code-coverage-with-openclover">Enabling Code Coverage with OpenClover</a></li>
+<li><a href="#setting-up-in-eclipse-ide">Setting up in Eclipse IDE</a>
+<ul>
+<li><a href="#installing-eclipse-ide">Installing Eclipse IDE</a></li>
+<li><a href="#importing-jalview-as-an-eclipse-project">Importing Jalview as an Eclipse project</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="building-jalview-from-source"><a href="#building-jalview-from-source" name="building-jalview-from-source" class="anchor"><span class="octicon octicon-link"></span>Building Jalview from Source</a></h1>
+<h2 id="tldr"><a href="#tldr" name="tldr" class="anchor"><span class="octicon octicon-link"></span>tl;dr</a></h2>
+<pre><code># download
+git clone http://source.jalview.org/git/jalview.git
+# compile
+cd jalview
+gradle shadowJar
+# run
+java -jar build/libs/jalview-all-*-j11.jar
+
+# and/or create launcher
+gradle getdown
+# use launcher
+cd getdown/files
+java -jar getdown-launcher.jar . jalview
+</code></pre>
+<h2 id="setting-up"><a href="#setting-up" name="setting-up" class="anchor"><span class="octicon octicon-link"></span>Setting up</a></h2>
+<blockquote>
+<p>To get set up using <em>only</em> the Eclipse IDE (<a href="https://www.eclipse.org/">https://www.eclipse.org/</a>) then please see the section <a href="#setting-up-in-eclipse-ide">Setting up in Eclipse IDE</a></p>
+</blockquote>
+<p>The method here is described in terms of using a command line.  You can easily do this on linux or in a Terminal window in macOS.  You can do it in Windows.</p>
+<ul>
+<li>Java 11 compliant JDK</li>
+<li>gradle 5.2 or above <em>(NB gradle 6.6 and above currently produces NullPointerExceptions during the build. This is non-fatal and does not affect the build. Use gradle 6.5.1 to avoid this)</em></li>
+<li>git</li>
+</ul>
+<blockquote>
+<p>The versions and installation methods here are just suggestions (which we have tested
+so are known to work).  If you need or wish to use different implementations (particularly
+you might need a bespoke JDK if you are on an exotic architecture) then the general
+build instructions should work with any gradle 5+.  You should be able to compile the
+bytecode with any JDK Java 11+.  The resulting bytecode (in particular the shadow jar)
+should be runnable in any JRE Java 1.8+.  Remember that because Jalview and the getdown launcher
+are Java bytecode you can build on one system where you might have gradle, and run
+on another where you don't (JRE 1.8+ required).</p>
+</blockquote>
+<h3 id="java-11-compliant-jdk"><a href="#java-11-compliant-jdk" name="java-11-compliant-jdk" class="anchor"><span class="octicon octicon-link"></span>Java 11 compliant JDK</a></h3>
+<h4 id="all-platforms"><a href="#all-platforms" name="all-platforms" class="anchor"><span class="octicon octicon-link"></span>All platforms</a></h4>
+<p>We recommend obtaining an OpenJDK JDK 11 (since 11 is the long term support release) from AdoptOpenJDK: <a href="https://adoptopenjdk.net/?variant=openjdk11&amp;jvmVariant=hotspot">https://adoptopenjdk.net/?variant=openjdk11&amp;jvmVariant=hotspot</a>, either the <em>Installer</em> or <code>.zip</code>/<code>.tar.gz</code> variants whichever you prefer (if you're not sure, choose the <em>Installer</em>).</p>
+<blockquote>
+<h5 id="alternativecli-install-of-adoptopenjdk-11"><a href="#alternativecli-install-of-adoptopenjdk-11" name="alternativecli-install-of-adoptopenjdk-11" class="anchor"><span class="octicon octicon-link"></span>Alternative/CLI install of AdoptOpenJDK 11</a></h5>
+<p>You can also install adoptopenjdk11 using either <code>brew</code> (macOS), <code>choco</code> (Windows)
+(see the section on <code>gradle</code> and <code>git</code> for more informaiton on <code>brew</code> and <code>choco</code>)
+or <code>yum</code> or <code>apt</code> (Linux):</p>
+<h6 id="alternative-for-macos-and-homebrew"><a href="#alternative-for-macos-and-homebrew" name="alternative-for-macos-and-homebrew" class="anchor"><span class="octicon octicon-link"></span>alternative for MacOS and Homebrew</a></h6>
+<pre><code>brew tap adoptopenjdk/openjdk
+brew cask install adoptopenjdk11
+</code></pre>
+<h6 id="alternative-for-windows-and-chocolatey"><a href="#alternative-for-windows-and-chocolatey" name="alternative-for-windows-and-chocolatey" class="anchor"><span class="octicon octicon-link"></span>alternative for Windows and Chocolatey</a></h6>
+<pre><code>choco install adoptopenjdk11
+</code></pre>
+<h6 id="alternative-for-linux-with-yumapt"><a href="#alternative-for-linux-with-yumapt" name="alternative-for-linux-with-yumapt" class="anchor"><span class="octicon octicon-link"></span>alternative for Linux with yum/apt</a></h6>
+<p>see <a href="https://adoptopenjdk.net/installation.html#linux-pkg">https://adoptopenjdk.net/installation.html#linux-pkg</a></p>
+</blockquote>
+<h3 id="gradle-and-git"><a href="#gradle-and-git" name="gradle-and-git" class="anchor"><span class="octicon octicon-link"></span>gradle and git</a></h3>
+<p>You should be able to install the latest (or sufficiently recent) versions of gradle and git using your OS package manager.</p>
+<h4 id="macos"><a href="#macos" name="macos" class="anchor"><span class="octicon octicon-link"></span>MacOS</a></h4>
+<p>we recommend using <code>brew</code>, which can be installed following the instructions at <a href="https://brew.sh/">https://brew.sh/</a>.
+After installing <code>brew</code>, open a Terminal window and type in (using an Administrator privileged user):</p>
+<pre><code class="language-bash">brew install gradle git
+</code></pre>
+<p>or if you aready have them installed but need to upgrade the version:</p>
+<pre><code class="language-bash">brew upgrade gradle git
+</code></pre>
+<h4 id="windows"><a href="#windows" name="windows" class="anchor"><span class="octicon octicon-link"></span>Windows</a></h4>
+<p>we suggest using the <strong>Chocolatey</strong> package manager.  See install instructions at <a href="https://chocolatey.org/">https://chocolatey.org/</a>, and you will just need</p>
+<pre><code class="language-bash">choco install gradle
+choco install git
+</code></pre>
+<p>Alternatively, you could install a real <code>bash</code> shell and install both <code>gradle</code> and <code>git</code> through <code>apt-get</code>.
+See <a href="https://devblogs.microsoft.com/commandline/bash-on-ubuntu-on-windows-download-now-3/">https://devblogs.microsoft.com/commandline/bash-on-ubuntu-on-windows-download-now-3/</a>
+for how to install the ubuntu bash shell in Windows 10.</p>
+<p>Another alternative would be to install them separately. For <code>gradle</code> follow the instructions at <a href="https://gradle.org/install/">https://gradle.org/install/</a>, and for <code>git</code> here are a couple of suggestions: Git for Windows <a href="https://gitforwindows.org/">https://gitforwindows.org/</a>.
+Getting the individual installs working together on the command line will be trickier
+so we recommend using Chocolatey or bash.</p>
+<h4 id="linux"><a href="#linux" name="linux" class="anchor"><span class="octicon octicon-link"></span>Linux</a></h4>
+<p>this will depend on which distribution you're using.</p>
+<h5 id="for-debian-based-distributions-eg-mint-ubuntu-debian"><a href="#for-debian-based-distributions-eg-mint-ubuntu-debian" name="for-debian-based-distributions-eg-mint-ubuntu-debian" class="anchor"><span class="octicon octicon-link"></span>For <em>Debian</em> based distributions (e.g. Mint, Ubuntu, Debian)</a></h5>
+<p>run</p>
+<pre><code class="language-bash"> sudo apt-get install gradle git
+</code></pre>
+<h5 id="for-rpm-based-distributions-eg-fedora-centos-redhat"><a href="#for-rpm-based-distributions-eg-fedora-centos-redhat" name="for-rpm-based-distributions-eg-fedora-centos-redhat" class="anchor"><span class="octicon octicon-link"></span>for RPM-based distributions (e.g. Fedora, CentOS, RedHat)</a></h5>
+<p>run</p>
+<pre><code class="language-bash">sudo yum install gradle git
+</code></pre>
+<p>If you have some other version of linux you'll probably be able to work it out!</p>
+<h2 id="downloading-the-jalview-source-tree"><a href="#downloading-the-jalview-source-tree" name="downloading-the-jalview-source-tree" class="anchor"><span class="octicon octicon-link"></span>Downloading the Jalview source tree</a></h2>
+<p>This can be done with <code>git</code>.
+On the command line, change directory to where you want to download Jalview's build-tree
+top level directory.  Then run</p>
+<pre><code class="language-bash">git clone http://source.jalview.org/git/jalview.git
+</code></pre>
+<p>You'll get some progress output and after a minute or two you should have the full
+Jalview build-tree in the folder <code>jalview</code>.</p>
+<h3 id="whats-in-the-source-tree"><a href="#whats-in-the-source-tree" name="whats-in-the-source-tree" class="anchor"><span class="octicon octicon-link"></span>What's in the source tree?</a></h3>
+<p>Jalview is a mature product with its codebase going back many years.  As such it doesn't
+have a folder structure that most new gradle projects would have, so you might not
+find everything in the place you might expect.  Here's a brief description of what
+you might find in the main folders under the <code>jalview</code> tree.</p>
+<p>Within the <code>jalview</code> folder you will find (of possible interest):</p>
+<table>
+<thead>
+<tr><th>dir/ or file</th><th>contains</th></tr>
+</thead>
+<tbody>
+<tr><td><code>bin/</code></td><td>used by eclipse for compiled classes -- no need to touch this</td></tr>
+<tr><td><code>build/</code></td><td>the gradle build dir</td></tr>
+<tr><td><code>classes/</code></td><td>contains the compiled Java classes for the Jalview application</td></tr>
+<tr><td><code>dist/</code></td><td>assembled <code>.jar</code> files needed to run Jalview application</td></tr>
+<tr><td><code>examples/</code></td><td>example input files usable by Jalview</td></tr>
+<tr><td><code>getdown/</code></td><td>the libraries used by the Javliew launcher (getdown)</td></tr>
+<tr><td><code>getdown/src/</code></td><td>our modified source for <code>getdown</code></td></tr>
+<tr><td><code>getdown/website/</code></td><td>the assembled &quot;download&quot; folder used by getdown for downloads/upgrades</td></tr>
+<tr><td><code>getdown/files/</code></td><td>the minimal fileset to launch the Jalview launcher, which can then download the rest of the Jalview application</td></tr>
+<tr><td><code>help/</code></td><td>the help documents</td></tr>
+<tr><td><code>j8lib/</code></td><td>libraries needed to run Jalview under Java 1.8</td></tr>
+<tr><td><code>j11lib/</code></td><td>libraries needed to run Jalivew under Java 11</td></tr>
+<tr><td><code>resource/</code></td><td>non-java resources used in the Jalview application</td></tr>
+<tr><td><code>src/</code></td><td>the Jalview application source <code>.java</code> files</td></tr>
+<tr><td><code>test/</code></td><td>Test class source files</td></tr>
+<tr><td><code>utils/</code></td><td>helper applications used in the build process</td></tr>
+<tr><td><code>utils/install4j/</code></td><td>files used by the packaging tool, install4j</td></tr>
+<tr><td><code>build.gradle</code></td><td>the build file used by gradle</td></tr>
+<tr><td><code>gradle.properties</code></td><td>configurable properties for the build process</td></tr>
+<tr><td><code>RELEASE</code></td><td>propertyfile configuring JALVIEW_VERSION (from jalview.version) and the release branch (from jalview.release). An alternative file can be specified via JALVIEW_RELEASE_FILE property</td></tr>
+</tbody>
+</table>
+<p>Note that you need a Java 11 JDK to compile Jalview whether your target build is Java 1.8 or Java 11.</p>
+<h2 id="building-jalview"><a href="#building-jalview" name="building-jalview" class="anchor"><span class="octicon octicon-link"></span>Building Jalview</a></h2>
+<p>You will need to have the Java 11 <code>javac</code> in your path, or alternatively you can configure
+gradle to know where this is by putting</p>
+<pre><code>org.gradle.java.home=/path_to_jdk_directory
+</code></pre>
+<p>in the <code>gradle.properties</code> file.</p>
+<blockquote>
+<p><em>You may want to see some of the other properties you can change at the end of this document.</em></p>
+</blockquote>
+<h3 id="minimal-jalview-build"><a href="#minimal-jalview-build" name="minimal-jalview-build" class="anchor"><span class="octicon octicon-link"></span>Minimal Jalview Build</a></h3>
+<p>To compile the necessary class files, just run</p>
+<pre><code class="language-bash">gradle compileJava
+</code></pre>
+<p>to compile the classes into the <code>classes</code> folder.
+You should now be able to run the Jalview application directly with</p>
+<pre><code class="language-bash">java -cp &quot;classes:resources:help:j11lib/*&quot; jalview.bin.Jalview
+</code></pre>
+<p>You can also run with an automatic large memory setting (which will set the maximum
+memory heap of the Jalview JVM to 90% of your local physical memory) and docked icon setting
+(if possible in your OS) with</p>
+<pre><code class="language-bash">java -cp &quot;classes:resources:help:j11lib/*&quot; jalview.bin.Launcher
+</code></pre>
+<blockquote>
+<p><em>You must use just &quot;<code>j11lib/*</code>&quot; and not &quot;<code>j11lib/*.jar</code>&quot; as this is a special Java
+classpath argument wildcard interpreted by <code>java</code>, <strong>not</strong> a shell expansion wildcard interpreted
+by the shell.</em></p>
+</blockquote>
+<p>Note that <code>jalview.bin.Launcher</code> is a simplified launcher class that re-launches <code>jalview.bin.Jalview</code>
+with the same JRE (<em>not</em> the same JVM instance), classpath and arguments, but with an automatically determined <code>-Xmx...</code>
+memory setting if one hasn't been provided.</p>
+<h3 id="jalview-in-a-jar-file"><a href="#jalview-in-a-jar-file" name="jalview-in-a-jar-file" class="anchor"><span class="octicon octicon-link"></span>Jalview in a Jar File</a></h3>
+<p>To package the <code>classes</code>, <code>resources</code>, and <code>help</code> into one jar, you can run</p>
+<pre><code class="language-bash">gradle jar
+</code></pre>
+<p>which assembles the Jalview classes and resources into <code>dist/jalview.jar</code></p>
+<p>To run this, use</p>
+<pre><code class="language-bash">java -cp &quot;dist/jalview.jar:j11lib/*&quot; jalview.bin.Jalview
+</code></pre>
+<h3 id="distributed-jar-files"><a href="#distributed-jar-files" name="distributed-jar-files" class="anchor"><span class="octicon octicon-link"></span>Distributed Jar Files</a></h3>
+<p>To simplify this, all required <code>.jar</code> files can be assembled into the <code>dist</code> folder
+using</p>
+<pre><code class="language-bash">gradle makeDist
+</code></pre>
+<p>which puts all required jar files into <code>dist</code> so you can run with</p>
+<pre><code class="language-bash">java -cp &quot;dist/*&quot; jalview.bin.Jalview
+</code></pre>
+<h3 id="single-shadow-jar-file"><a href="#single-shadow-jar-file" name="single-shadow-jar-file" class="anchor"><span class="octicon octicon-link"></span>Single <em>shadow</em> Jar File</a></h3>
+<p>The shadow jar file is a single <code>.jar</code> that contains all required classes and resources from <code>jalview.jar</code>
+and all of the supporting libraries in <code>j11lib/*.jar</code> merged into one <code>.jar</code> archive
+file.  A default launching class (<code>MAIN-CLASS: jalview.bin.Launcher</code>) is specified in the <code>.jar</code>
+manifest file (<code>META/MANIFEST.MF</code>) so a start class doesn't need to be specified.</p>
+<p>Build the shadow jar file in <code>build/libs/jalview-all-VERSION-j11.jar</code> with</p>
+<pre><code class="language-bash">gradle shadowJar
+</code></pre>
+<p><strong>NB</strong> <code>VERSION</code> will be replaced with a version number or &quot;<code>DEVELOPMENT</code>&quot; or &quot;<code>TEST</code>&quot; depending on how the branch is set up.</p>
+<p>Run it with</p>
+<pre><code class="language-bash">java -jar build/libs/jalview-all-VERSION-j11.jar
+</code></pre>
+<p>Because no arguments are required, most OSes will associate a <code>.jar</code> file with the
+<code>java</code> application (if this has been installed through the OS and not just a local
+unzip) as a <code>-jar</code> argument so you may find you can launch <code>jalview-all-VERSION-j11.jar</code>
+just by double-clicking on it)!</p>
+<blockquote>
+<p>The <code>shadowJar</code> task is not a requirement for any other task, so to build the shadow
+jar file you must specify the <code>shadowJar</code> task.</p>
+</blockquote>
+<blockquote>
+<p>The shadow jar file represents probably the simplest way to distribute the Jalview application to machines that already have a Java 11 installed,
+although without the many and compelling benefits of the <code>getdown</code> launcher.</p>
+</blockquote>
+<h3 id="building-the-getdown-launcher"><a href="#building-the-getdown-launcher" name="building-the-getdown-launcher" class="anchor"><span class="octicon octicon-link"></span>Building the <code>getdown</code> launcher</a></h3>
+<p>We have made significant customisations to the <code>getdown</code> launcher which you can find
+in <code>getdown/src/getdown</code>.</p>
+<blockquote>
+<p>You don't need to build this afresh as the required <code>gradle-core.jar</code>
+and <code>gradle-launcher.jar</code> files are already distributed in <code>j11lib</code> and <code>getdown/lib</code> but if you want to, then
+you'll need a working Maven and also a Java 8 JDK.  Ensure the Java 8 <code>javac</code> is forefront
+in your path and do</p>
+<pre><code class="language-bash">cd getdown/src/getdown
+mvn clean package -Dgetdown.host.whitelist=&quot;jalview.org,*.jalview.org&quot;
+</code></pre>
+<p>and you will find the required <code>.jar</code> files in <code>core/target/gradle-core-XXX.jar</code>
+and <code>launcher/target/gradle-launcher-XXX.jar</code>.  The <code>gradle-core.jar</code> should then be copied
+to all three of the <code>j8lib</code>, <code>j11lib</code> and <code>getdown/lib</code> folders, whilst the <code>gradle-launcher.jar</code> only
+needs to be copied to <code>getdown/lib</code>.</p>
+<p>The <code>mvn</code> command should ideally include the <code>-Dgetdown.host.whitelist=*.jalview.org</code> setting.
+This, and the necessary file copying commands, can be found in <code>getdown/src/getdown/mvn_cmd</code>.</p>
+</blockquote>
+<p>To assemble Jalview with <code>getdown</code> use the following gradle task:</p>
+<pre><code class="language-bash">gradle getdown
+</code></pre>
+<p>This puts all the necessary files to launch Jalview with <code>getdown</code>
+into <code>getdown/website/11/</code>.  This could be treated as the reference folder
+for <code>getdown</code>, which is where a getdown launcher will check to see if the Jalview application
+files it has are up to date, and download if they aren't or it simply doesn't have
+them.</p>
+<p>A minimal getdown-launcher can be found in <code>getdown/files/11/</code> which checks its up-to-date
+status with (the absolute path to) <code>getdown/website/11/</code>.</p>
+<p>This can be launched with</p>
+<pre><code class="language-bash">java -jar getdown/files/11/getdown-launcher.jar getdown/files/11/ jalview
+</code></pre>
+<blockquote>
+<p>We've already met the <code>-jar file.jar</code> arguments.  The next argument is the working folder for
+getdown, and the final argument, &quot;<code>jalview</code>&quot;, is a getdown application id (only &quot;<code>jalview</code>&quot;
+is defined here).</p>
+</blockquote>
+<h3 id="running-tests"><a href="#running-tests" name="running-tests" class="anchor"><span class="octicon octicon-link"></span>Running tests</a></h3>
+<p>There are substantial tests written for Jalview that use TestNG, which you can run with</p>
+<pre><code class="language-bash">gradle test
+</code></pre>
+<p>These normally take around 5 - 10 minutes to complete and outputs its full results into
+the <code>tests/</code> folder.  A summary of results should appear in your console.</p>
+<p>You can run different defined groups of tests with</p>
+<pre><code class="language-bash">gradle test -PtestngGroups=Network
+</code></pre>
+<p>Available groups include Functional (default), Network, External.</p>
+<h4 id="excluding-some-tests"><a href="#excluding-some-tests" name="excluding-some-tests" class="anchor"><span class="octicon octicon-link"></span>Excluding some tests</a></h4>
+<p>Some of Jalview's Functional tests don't pass reliably in all environments. We tag these tests with a group like 'Not-bamboo' to mark them for exclusion when we run tests as part of continuous integration.</p>
+<p>To exclude one or more groups of tests, add them as a comma separated list in testngExcludedGroups.</p>
+<pre><code class="language-bash">gradle test -PtestngExcludedGroups=Not-bamboo
+</code></pre>
+<h3 id="installer-packaging-with-install4j"><a href="#installer-packaging-with-install4j" name="installer-packaging-with-install4j" class="anchor"><span class="octicon octicon-link"></span>Installer packaging with <em>install4j</em></a></h3>
+<p>Jalview is currently using <em>install4j</em> <a href="https://www.ej-technologies.com/products/install4j/overview.html">https://www.ej-technologies.com/products/install4j/overview.html</a>
+as its installer packaging tool.</p>
+<p>If you have a licensed installation of <em>install4j</em> you can build Jalview installers
+by running</p>
+<pre><code class="language-bash">gradle installers
+</code></pre>
+<p>though you may need to fiddle with the <code>install4j</code> and <code>copyInstall4jTemplate</code> tasks
+in <code>build.gradle</code> file to point to your installation of <em>install4j</em> and also to bundled
+JREs if you want to bundle those into the installers.</p>
+<p>If you want more details, get in touch on our development mailing list <a href="mailto:jalview-dev@jalview.org">jalview-dev@jalview.org</a>.
+Sign up at <a href="http://www.compbio.dundee.ac.uk/mailman/listinfo/jalview-dev">http://www.compbio.dundee.ac.uk/mailman/listinfo/jalview-dev</a>.</p>
+<h2 id="gradle-properties"><a href="#gradle-properties" name="gradle-properties" class="anchor"><span class="octicon octicon-link"></span>Gradle properties</a></h2>
+<p>There are a lot of properties configured in <code>gradle.properties</code> which we strongly recommend
+being left as they are unless you have a specific problem with the build process.</p>
+<p>There are a few gradle properties you might want to set on the command line with the
+<code>-P</code> flag when building a version of Jalview with specific requirements:</p>
+<h4 id="java-version"><a href="#java-version" name="java-version" class="anchor"><span class="octicon octicon-link"></span><code>JAVA_VERSION</code></a></h4>
+<p>This changes the <em>target</em> java bytecode version</p>
+<blockquote>
+<p>NOTE that you will need to use a Java 11 (or greater) JDK Java compiler to build
+Jalview for any byte-code target version.</p>
+</blockquote>
+<p>Valid values are <code>11</code> and <code>1.8</code>.</p>
+<p>e.g.</p>
+<pre><code class="language-bash">gradle shadowJar -PJAVA_VERSION=1.8
+</code></pre>
+<p>When using <code>-PJAVA_VERSION=1.8</code> the libraries from <code>j8lib</code> (instead of <code>j11lib</code>) will be used in the compile<br />
+and runtime classpath and also used in the <code>makeDist</code> build step.  Where a Java version of <code>11</code> is used in folder and file names, it will
+instead use <code>1.8</code>.  Also if you are building installer packages with <em>install4j</em> the
+package builder will look for JRE 1.8 bundles to package in the installers.</p>
+<blockquote>
+<p>Note that continued development of Jalview will assume a Java 11+ runtime environment,
+the 2.11.0 release will run under a Java 1.8 JRE with a few minor features disabled.</p>
+</blockquote>
+<h4 id="channel"><a href="#channel" name="channel" class="anchor"><span class="octicon octicon-link"></span><code>CHANNEL</code></a></h4>
+<p>This changes the <code>appbase</code> setting in <code>getdown.txt</code> (<code>appbase</code> is where the getdown launcher
+looks to see if there's an updated file) to point to a particular Jalview channel or some other appropriate
+place to look for required files.  If the selected channel type requires the getdown <code>appbase</code> to be a local
+directory on the filesystem (instead of a website URL) then a modified version of the <code>getdown-launcher.jar</code> will
+be used to allow this.  The two versions of the <code>getdown-launcher.jar</code> can be found in <code>getdown/lib</code>.
+Some other variables used in the build process might also be set differently depending on the value of <code>CHANNEL</code>
+to allow smooth operation of getdown in the given context.</p>
+<p>There are several values of <code>CHANNEL</code> that can be chosen, with a default of <code>LOCAL</code>.  Here's what they're for and what they do:</p>
+<ul>
+<li><code>LOCAL</code>: This is for running the compiled application from the development directory.
+It will set
+<ul>
+<li><code>appbase</code> as <code>file://PATH/TO/YOUR/DEVELOPMENT/getdown/files/JAVA_VERSION</code>
+(e.g. <code>file://home/user/git/jalview/getdown/files/11</code>)</li>
+<li>application subdir as <code>alt</code></li>
+<li>Getdown launcher can use a <code>file://</code> scheme appbase.</li>
+</ul>
+</li>
+<li><code>BUILD</code>: This is for creating an appbase channel on the build server by an automatic or manually started build.
+It will set
+<ul>
+<li><code>appbase</code> as <code>https://builds.jalview.org/browse/${bamboo_planKey}/latest/artifact/shared/getdown-channel/JAVA_VERSION</code>
+Note that bamboo_planKey should be set by the build plan with <code>-Pbamboo_planKey=${bamboo.planKey}</code></li>
+<li>application subdir as <code>alt</code></li>
+<li>Getdown launcher cannot use a <code>file://</code> scheme appbase.</li>
+</ul>
+</li>
+<li><code>DEVELOP</code>: This is for creating a <code>develop</code> appbase channel on the main web server. This won't become live until the actual getdown artefact is synced to the web server.
+It will set
+<ul>
+<li><code>appbase</code> as <code>http://www.jalview.org/getdown/develop/JAVA_VERSION</code></li>
+<li>application subdir as <code>alt</code></li>
+<li>Getdown launcher cannot use a <code>file://</code> scheme appbase.</li>
+</ul>
+</li>
+<li><code>SCRATCH-NAME</code>: This is for creating a temporary scratch appbase channel on the main web server.  This won't become live until the actual getdown artefact is synced to the web server.  This is meant for testing an over-the-air update without interfering with the live <code>release</code> or <code>develop</code> channels.  The value of <code>NAME</code> can be any &quot;word-character&quot; [A-Za-z0-9_]
+It will set
+<ul>
+<li><code>appbase</code> as <code>http://www.jalview.org/getdown/SCRATCH-NAME/JAVA_VERSION</code></li>
+<li>application subdir as <code>alt</code></li>
+<li>Getdown launcher cannot use a <code>file://</code> scheme appbase.</li>
+</ul>
+</li>
+<li><code>TEST-LOCAL</code>:  Like <code>SCRATCH</code> but with a specific <code>test-local</code> channel name and a local filesystem appbase.  This is meant for testing an over-the-air update on the local filesystem.  An extra property <code>LOCALDIR</code> must be given (e.g. <code>-PLOCALDIR=/home/user/tmp/test</code>)
+It will set
+<ul>
+<li><code>appbase</code> as <code>file://${LOCALDIR}</code></li>
+<li>application subdir as <code>alt</code></li>
+<li>Getdown launcher can use a <code>file://</code> scheme appbase.</li>
+</ul>
+</li>
+<li><code>TEST-RELEASE</code>:  Like <code>SCRATCH</code> but with a specific <code>test-release</code> channel name.  This won't become live until the actual getdown artefact is synced to the web server.  This is meant for testing an over-the-air update without interfering with the live <code>release</code> or <code>develop</code> channels.
+It will set
+<ul>
+<li><code>appbase</code> as <code>http://www.jalview.org/getdown/test-release/JAVA_VERSION</code></li>
+<li>application subdir as <code>alt</code></li>
+<li>Getdown launcher cannot use a <code>file://</code> scheme appbase.</li>
+</ul>
+</li>
+<li><code>RELEASE</code>:  This is for an actual release build, and will use an appbase on the main web server with the main <code>release</code> channel name.  This won't become live until the actual getdown artefact is synced to the web server.
+It will set
+<ul>
+<li><code>appbase</code> as <code>http://www.jalview.org/getdown/release/JAVA_VERSION</code></li>
+<li>application subdir as <code>release</code></li>
+<li>Getdown launcher cannot use a <code>file://</code> scheme appbase.</li>
+</ul>
+</li>
+<li><code>ARCHIVE</code>:  This is a helper to create a channel for a specific release version, and will use an appbase on the main web server with a specific <code>archive/JALVIEW_VERSION</code> channel name.  This won't become live until the actual getdown artefact is synced to the web server.
+You must also specify an <code>ARCHIVEDIR</code> property that points to an earlier version of Jalview with a <code>dist</code> directory containing the required jar files.  This should create a getdown structure and digest with the older jar files.
+It will set
+<ul>
+<li><code>appbase</code> as <code>http://www.jalview.org/getdown/archive/JALVIEW_VERSION/JAVA_VERSION</code></li>
+<li>application subdir as <code>alt</code></li>
+<li>Getdown launcher cannot use a <code>file://</code> scheme appbase.</li>
+</ul>
+</li>
+<li><code>ARCHIVELOCAL</code>:  Like <code>ARCHIVE</code> but with a local filesystem appbase for local testing.
+You must also specify an <code>ARCHIVEDIR</code> property that points to an earlier version of Jalview with a <code>dist</code> directory containing the required jar files.  This should create a getdown structure and digest with the older jar files.
+It will set
+<ul>
+<li><code>appbase</code> as <code>file://PATH/TO/YOUR/DEVELOPMENT/getdown/website/JAVA_VERSION</code> (where the old jars will have been copied and digested)</li>
+<li>application subdir as <code>alt</code></li>
+<li>Getdown launcher can use a <code>file://</code> scheme appbase.</li>
+</ul>
+</li>
+</ul>
+<p>e.g.</p>
+<pre><code class="language-bash">gradle getdown -PCHANNEL=SCRATCH-my_test_version
+</code></pre>
+<h4 id="jalview-version-and-the-release-file"><a href="#jalview-version-and-the-release-file" name="jalview-version-and-the-release-file" class="anchor"><span class="octicon octicon-link"></span>JALVIEW_VERSION and the RELEASE file</a></h4>
+<p>Any Jalview build will include the value of JALVIEW_VERSION in various places, including the 'About' and Jalview Desktop window title, and in filenames for the stand-alone executable jar. You can specify a custom version for a build via the JALVIEW_VERSION property, but for most situations, JALVIEW_VERSION will be automatically configured according to the value of the CHANNEL property, using the <code>jalview.version</code> property specified in the RELEASE file:</p>
+<ul>
+<li><code>CHANNEL=RELEASE</code> will set version to jalview.version</li>
+<li><code>CHANNEL=TEST or DEVELOP</code> will append '-test' or '-develop' to jalview.version</li>
+</ul>
+<p>It is also possible to specify a custom location for the RELEASE file via an optional JALVIEW_RELEASE_FILE property.</p>
+<h4 id="install4jmediatypes"><a href="#install4jmediatypes" name="install4jmediatypes" class="anchor"><span class="octicon octicon-link"></span><code>install4jMediaTypes</code></a></h4>
+<p>If you are building <em>install4j</em> installers (requires <em>install4j</em> to be installed) then this property specifies a comma-separated
+list of media types (i.e. platform specific installers) <em>install4j</em> should actually build.</p>
+<p>Currently the valid values are
+<code>linuxDeb</code>,
+<code>linuxRPM</code>,
+<code>macosArchive</code>,
+<code>unixArchive</code>,
+<code>unixInstaller</code>,
+<code>windows</code></p>
+<p>The default value is all of them.</p>
+<p>e.g.</p>
+<pre><code class="language-bash">gradle installers -PJAVA_VERSION=1.8 -Pinstall4jMediaTypes=macosArchive
+</code></pre>
+<p>To get an up-to-date list of possible values, you can run</p>
+<pre><code class="language-bash">perl -n -e 'm/^\s*&lt;(\w+)[^&gt;]*\bmediaFileName=/ &amp;&amp; print &quot;$1\n&quot;;' utils/install4j/install4j_template.install4j  | sort -u
+</code></pre>
+<p>in the <code>jalview</code> root folder.</p>
+<h2 id="enabling-code-coverage-with-openclover"><a href="#enabling-code-coverage-with-openclover" name="enabling-code-coverage-with-openclover" class="anchor"><span class="octicon octicon-link"></span>Enabling Code Coverage with OpenClover</a></h2>
+<p>Bytecode instrumentation tasks are enabled by specifying 'true' (or just a non-whitespace non-numeric word) in the 'clover' property. This adds the 'openclover' plugin to the build script's classpath, making it possible to track code execution during test which can be viewed as an HTML report published at build/reports/clover/index.html.</p>
+<p><code>gradle -Pclover=true test cloverReport</code></p>
+<h4 id="troubleshooting-report-generation"><a href="#troubleshooting-report-generation" name="troubleshooting-report-generation" class="anchor"><span class="octicon octicon-link"></span>Troubleshooting report generation</a></h4>
+<p>The build forks a new JVM process to run the clover report generation tools (both XML and HTML reports are generated by default). The following properties can be used to specify additional options or adjust JVM memory settings. Default values for these options are:</p>
+<h5 id="jvm-memory-settings---increase-if-out-of-memory-errors-are-reported"><a href="#jvm-memory-settings---increase-if-out-of-memory-errors-are-reported" name="jvm-memory-settings---increase-if-out-of-memory-errors-are-reported" class="anchor"><span class="octicon octicon-link"></span>JVM Memory settings - increase if out of memory errors are reported</a></h5>
+<p><code>cloverReportJVMHeap = 2g</code></p>
+<h5 id="-dfileencodingutf-8-is-an-essential-parameters-for-report-generation-add-additional-ones-separated-by-a-space"><a href="#-dfileencodingutf-8-is-an-essential-parameters-for-report-generation-add-additional-ones-separated-by-a-space" name="-dfileencodingutf-8-is-an-essential-parameters-for-report-generation-add-additional-ones-separated-by-a-space" class="anchor"><span class="octicon octicon-link"></span>-Dfile.encoding=UTF-8 is an essential parameters for report generation. Add additional ones separated by a space.</a></h5>
+<p><code>cloverReportJVMArgs = -Dfile.encoding=UTF-8</code></p>
+<h5 id="add--v-to-debug-velocity-html-generation-errors-or--d-to-track-more-detailed-issues-with-the-coverage-database"><a href="#add--v-to-debug-velocity-html-generation-errors-or--d-to-track-more-detailed-issues-with-the-coverage-database" name="add--v-to-debug-velocity-html-generation-errors-or--d-to-track-more-detailed-issues-with-the-coverage-database" class="anchor"><span class="octicon octicon-link"></span>Add -v to debug velocity html generation errors, or -d to track more detailed issues with the coverage database</a></h5>
+<p><code>cloverReportHTMLOptions =</code></p>
+<h5 id="-v-for-verbose--d-for-debug-level-messages-as-above"><a href="#-v-for-verbose--d-for-debug-level-messages-as-above" name="-v-for-verbose--d-for-debug-level-messages-as-above" class="anchor"><span class="octicon octicon-link"></span>-v for verbose, -d for debug level messages (as above)</a></h5>
+<p><code>cloverReportXMLOptions =</code></p>
+<p><em>Note</em> do not forget to include the -Dfile.encoding=UTF-8 option: this is essential for some platforms in order for Clover to correctly parse some Jalview source files that contain characters that are UTF-8 encoded.</p>
+<h2 id="setting-up-in-eclipse-ide"><a href="#setting-up-in-eclipse-ide" name="setting-up-in-eclipse-ide" class="anchor"><span class="octicon octicon-link"></span>Setting up in Eclipse IDE</a></h2>
+<h3 id="installing-eclipse-ide"><a href="#installing-eclipse-ide" name="installing-eclipse-ide" class="anchor"><span class="octicon octicon-link"></span>Installing Eclipse IDE</a></h3>
+<p>We develop in Eclipse, and support settings to develop and save Jalview source code
+in our preferred style.  We also support running the Jalview application, debugging
+and running tests with TestNG from within Eclipse.</p>
+<p>To get Jalview set up as a project in Eclipse, we recommend using at least the 2020-03
+version of Eclipse IDE for Java Developers which you can download from the Eclipse
+website: <a href="https://www.eclipse.org/downloads/">https://www.eclipse.org/downloads/</a>.  Since Eclipse 2020-03 you are encouraged to use the Eclipse Installer (see the Eclipse Downloads page).
+In the installer, when given a choice of packages for Eclipse you should choose the &quot;Eclipse IDE for Enterprise Java Developers&quot; package.</p>
+<p><img src="./images/eclipse_installer.png" alt="" title="Eclipse Installer screenshot" /></p>
+<p>Once Eclipse is installed, we also recommend installing several plugins from the Eclipse Marketplace.</p>
+<p>Some of these should already be installed with the Enterprise Java Developer package:</p>
+<ol>
+<li>Buildship Gradle Integration 3.0 (or greater)</li>
+<li>EclEmma Java Code Coverage</li>
+<li>Egit - Git Integration for Eclipse</li>
+</ol>
+<p>To install the others, launch Eclipse, and go to Help-&gt;Eclipse Marketplace...</p>
+<p>Search for and install:</p>
+<ol>
+<li>Groovy Development Tools 3.4.0 (or greater)</li>
+<li>Checkstyle Plug-in (optional)</li>
+<li>TestNG for Eclipse (optional -- only needed if you want to run tests from Eclipse)</li>
+</ol>
+<blockquote>
+<p>At time of writing, TestNG for Eclipse does not show up in the Eclipse Marketplace
+as the latest released version does not install in Eclipse 2020-03.
+However, you can install a working release of TestNG for Eclipse by going to</p>
+<p>Help-&gt;Install New Software...</p>
+<p>and entering</p>
+<p><code>TestNG Release - https://dl.bintray.com/testng-team/testng-eclipse-release</code></p>
+<p>into the <em>Work with</em> box and click on the <em>Add...</em> button.</p>
+<p>Eclipse might pause for a bit with the word <em>Pending</em> in the table below at this point, but it will eventually list TestNG with
+a selection box under the <em>Name</em> column.</p>
+<p>Select <em>TestNG</em> and carry on through the
+install process to install the TestNG plugin.</p>
+</blockquote>
+<p>After installing the plugins, check that Java 11 is set up in Eclipse as the default JRE (see section <a href="#java-11-compliant-jdk">Java 11 compliant JDK</a>).</p>
+<p>To do this go to Preferences (Eclipse-&gt;Preferences in macOS, File-&gt;Preferences
+on Windows or Window-&gt;Preferences on Linux) and find</p>
+<p>Java -&gt; Installed JREs</p>
+<p>If your Java 11 installation is not listed, click on</p>
+<p><em>Add</em> -&gt; Standard VM -&gt; <em>Next</em></p>
+<p>and enter the JRE home.  You can browse to where it is installed. Give it a name (like &quot;AdoptOpenJDK 11&quot;).  Select this JDK
+as the default JRE and click on <em>Apply and Close</em>.</p>
+<p>You can now import Jalview.</p>
+<h3 id="importing-jalview-as-an-eclipse-project"><a href="#importing-jalview-as-an-eclipse-project" name="importing-jalview-as-an-eclipse-project" class="anchor"><span class="octicon octicon-link"></span>Importing Jalview as an Eclipse project</a></h3>
+<h4 id="importing-an-already-downloaded-git-repo"><a href="#importing-an-already-downloaded-git-repo" name="importing-an-already-downloaded-git-repo" class="anchor"><span class="octicon octicon-link"></span>Importing an already downloaded git repo</a></h4>
+<p>If you have already downloaded Jalview using <code>git clone</code> then you can import this folder into Eclipse directly.</p>
+<p><strong>Before importing the cloned git repo you must create the Eclipse project files.</strong> You can do this by either running</p>
+<p><code>gradle eclipse</code></p>
+<p>or</p>
+<p>Unzipping the file <code>utils/eclipse/eclipse_startup_files.zip</code> in the base repo directory (<code>jalview</code>)</p>
+<p>It is important to import
+Jalview as a Gradle project (not as a Java project), so go to</p>
+<p>File-&gt;Import...</p>
+<p>find and select</p>
+<p>Gradle-&gt;Existing Gradle Project</p>
+<p>and then click on the <em>Next</em> button.</p>
+<p>In the following options, it is the <strong>Project Root Directory</strong> you should set to be the
+<code>jalview</code> folder that git downloaded.  Then you can click on the <em>Finish</em> button.</p>
+<h4 id="using-eclipse-ide-to-download-the-git-repo"><a href="#using-eclipse-ide-to-download-the-git-repo" name="using-eclipse-ide-to-download-the-git-repo" class="anchor"><span class="octicon octicon-link"></span>Using Eclipse IDE to download the git repo</a></h4>
+<p>If you don't have git as a command line tool or would prefer to work entirely within Eclipse IDE then
+Eclipse's eGit plugin can set up a git repo of the jalview source.  Go to</p>
+<p>File-&gt;Import...</p>
+<p>Find and select</p>
+<p>Git-&gt;Projects from Git</p>
+<p>and then click on the <em>Next</em> button.</p>
+<p>Then select Clone URI and click on <em>Next</em>.</p>
+<p>In the next window (Source Git Repository) you should put the <code>git clone</code> URL in the text box labelled <code>URI</code>.  If you have a Jalview developer account (with a username and password for the Jalview git repository) then you should enter
+<code>https://source.jalview.org/git/jalview.git</code>.
+If you do not have a Jalview developer account then you should enter
+<code>http://source.jalview.org/git/jalview.git</code>.
+You will not be able to push any of your changes back to the Jalview git repository. However you can still pull all branches of the Jalview source code to your computer and develop the code there.</p>
+<blockquote>
+<p>You can sign up for a Jalview developer account at <a href="https://source.jalview.org/crucible/">https://source.jalview.org/crucible/</a></p>
+</blockquote>
+<p>If you have a Jalview developer account, enter the username and password and decide if you want to use Eclipse's secure storage.  If you don't have an account you can leave the Authentication section blank.</p>
+<p><img src="./images/eclipse_egit_connection.png" alt="Eclipse eGit connection configuration" /></p>
+<p>Click on the <em>Next</em> button.</p>
+<p>The next window (Branch Selection) gives a list of the many Jalview branches, which by default will be all checked.  You probably only want to download one branch (you can always download others at a later time).  This is likely to be the <code>develop</code> branch so you can click on the <em>Deselect All</em> button, find the <code>develop</code> branch (the filter text helps), select that, and then click on the <em>Next</em> button.</p>
+<p>Choose a directory to your copy of the git repo in, and leave the other options as they are and click on the <em>Next</em> button.  The next stage may take a minute or two as it checks out the selected branch(es) from the Jalview git repository.</p>
+<p>When it has finished it is important to select <strong>Import as general project</strong> and then click on <em>Next</em>.</p>
+<blockquote>
+<p>Ideally there would be an <em>Import as gradle project</em> here but there isn't -- we'll sort that out later.</p>
+</blockquote>
+<p><img src="./images/eclipse_egit_import.png" alt="Eclipse eGit import choice" /></p>
+<p>Click on the <em>Next</em> button.</p>
+<p>You can change the project name here.  By default it will show as <strong>jalview</strong> which is fine unless you have another instance of the a Jalview project also called jalview, in which case you could change this project's name now to avoid a conflict within Eclipse.</p>
+<p>Click on <em>Finish</em>!</p>
+<p>However, we haven't finished...</p>
+<p>You should now see, and be able to expand, the jalview project in the Project Explorer.  We need to tell eclipse that this is a Gradle project, which will then allow the Eclipse Buildship plugin to automatically configure almost everything else!</p>
+<p>Right click on the project name (jalview) in the Project Explorer and find Configure towards the bottom of this long context menu, then choose Add Gradle Nature.</p>
+<p><img src="./images/eclipse_add_gradle_nature.png" alt="Eclipse Add Gradle Nature" /></p>
+<p>The project should now reconfigure itself using the <code>build.gradle</code> file to dynamically set various aspects of the project including classpath.</p>
+<h4 id="additional-views"><a href="#additional-views" name="additional-views" class="anchor"><span class="octicon octicon-link"></span>Additional views</a></h4>
+<p>Some views that are automatically added when Importing a Gradle Project are not added when simply Adding a Gradle Nature, but we can add these manually by clicking on
+Window-&gt;Show View-&gt;Console
+and
+Window-&gt;Show View-&gt;Other...
+Filter with the word &quot;gradle&quot; and choose both <strong>Gradle Executions</strong> and <strong>Gradle Tasks</strong> and then click on the <em>Open</em> button.</p>
+<p>Okay, ready to code!  Use of Eclipse is beyond the scope of this document, but you can find more information about developing jalview and our developer workflow in the google doc <a href="https://docs.google.com/document/d/1lZo_pZRkazDBJGNachXr6qCVlw8ByuMYG6e9SZlPUlQ/edit?usp=sharing">https://docs.google.com/document/d/1lZo_pZRkazDBJGNachXr6qCVlw8ByuMYG6e9SZlPUlQ/edit?usp=sharing</a></p>
+<hr />
+<p><a href="mailto:help@jalview.org">Jalview Development Team</a></p>
+
+  </body>
+</html>

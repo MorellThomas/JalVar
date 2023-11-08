@@ -1,0 +1,430 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>The Alignment Annotations File</title>
+</head>
+
+<body>
+  <p>
+    <strong>The Alignment Annotations File</strong>
+  </p>
+  <p>
+    Alignment annotations can be imported onto an alignment since
+    version 2.08 of Jalview, via an annotations file. It is a simple
+    ASCII text file consisting of tab delimited records similar to the <a
+      href="featuresFormat.html">Sequence Features File</a>, and
+    introduced primarily for use with the Jalview applet.
+  </p>
+
+  <p>
+    <strong>Importing annotation files</strong><br /> Alignment
+    annotations files are imported into Jalview in the following ways:<br />
+  <ul>
+    <li>from the command line<strong><pre>
+ --annotations &lt;<em>Annotations filename</em>&gt;</pre></strong></li>
+    <li>Dragging an annotations file onto an alignment window</li>
+    <li>Via the &quot;Load Features / Annotations&quot; entry in
+      the <strong>File</strong> menu of an alignment window.
+    </li>
+  </ul>
+  </p>
+  <p>
+    <strong>Exporting annotation files</strong><br /> An annotation
+    file can be created for any alignment view from the &quot;Export
+    Annotations ...&quot; entry in the <strong>File</strong> menu of an
+    alignment window.
+  </p>
+  <p>
+    <strong>THE ANNOTATION FILE FORMAT</strong> <br />An annotation
+    file consists of lines containing an instruction followed by tab
+    delimited fields. Any lines starting with &quot;#&quot; are
+    considered comments, and ignored. The sections below describe the
+    structure of an annotation file.
+  </p>
+  <ul>
+    <li><a href="#annheader">JALVIEW_ANNOTATION</a> mandatory
+      header</li>
+    <li><a href="#annrows">LINE_GRAPH, BAR_GRAPH and NO_GRAPH</a>
+      to create annotation rows</li>
+    <li><a href="#combine">COMBINE, COLOUR and GRAPHLINE</a> for
+      thresholds and complex line graphs</li>
+    <li><a href="#annrowprops">ROWPROPERTIES</a> control the
+      display of individual annotation rows</li>
+    <li><a href="#groupdefs">SEQUENCE_GROUP</a> to define groups of
+      sequences for further annotation</li>
+    <li><a href="#groupprops">PROPERTIES</a> to set visualisation
+      properties for sequence groups</li>
+    <li><a href="#seqgrprefs">SEQUENCE_REF and GROUP_REF</a> for
+      specifying target sequences and groups for annotation, reference
+      sequence and column visibilty commands.</li>
+    <li><a href="#refsandviews">VIEW_SETREF, VIEW_HIDECOLS and
+        HIDE_INSERTIONS</a> for assigning the reference sequence on the
+      alignment and hiding columns.</li>
+  </ul>
+  <p>
+    At the end of this document, you can also find notes on <a
+      href="#compatibility">compatibility</a> of annotation files
+    across different versions of Jalview. An <a href="#exampleann">example
+      annotation file</a> is also provided along with instructions on how to
+    import it to Jalview.
+  </p>
+  <hr />
+  <p>
+    <strong><em><a name="annheader">Header line</a></em></strong><br />The
+    first non-commented out line of a valid Annotations file must begin
+    with :<strong><pre>JALVIEW_ANNOTATION</pre></strong>
+  </p>
+  <hr />
+  <p>
+    <strong><em><a name="annrows">LINE_GRAPH,
+          BAR_GRAPH and NO_GRAPH</a></em></strong><br /> Labels, secondary structure,
+    histograms and line graphs are added with a line like <strong><pre>
+        <em>GRAPH_TYPE</em>&#9;<em>Label</em>&#9;<em>Description</em> (optional)&#9;<em>Values</em>
+      </pre></strong>
+  </p>
+  <p>
+    Here, the <em>GRAPH_TYPE</em> field in the first column defines the
+    appearance of the annotation row when rendered by Jalview. The next
+    field is the row <em>label</em> for the annotation. This may be
+    followed by a <em>description</em> for the row, which is shown in a
+    tooltip when the user mouses over the annotation row's label. Since
+    Jalview 2.7, the description field may also contain HTML tags (in
+    the same way as a <a href="featuresFormat.html">sequence
+      feature's</a> label), providing the text is enclosed in an
+    &lt;html/&gt; tag.
+  <ul>
+    <em>Please note: URL links embedded in HTML descriptions are
+      not yet supported.</em>
+  </ul>
+  </p>
+  <p>
+    The final <em>Values</em> field contains a series of &quot;|&quot;
+    separated value fields. Each value field is itself a comma separated
+    list of fields of a particular type defined by the annotation row's
+    <em>GRAPH_TYPE</em>. The allowed values of <em>GRAPH_TYPE</em> and
+    corresponding interpretation of each <em>Value</em> are shown below:
+
+
+  
+  <ul>
+    <li><strong>BAR_GRAPH</strong><br> Plots a histogram with
+      labels below each bar.<br> <em>number</em>,<em>text
+        character</em>,<em>Tooltip text</em></li>
+    <li><strong>LINE_GRAPH</strong><br> Draws a line between
+      values on the annotation row.<br> <em>number</em></li>
+    <li><strong>NO_GRAPH</strong><br>For a row consisting of
+      text labels and/or secondary structure symbols.<br> <em>{Secondary
+        Structure Symbol}</em>,<em>text label</em>,<em>Tooltip text</em><br />
+      <br />The type of secondary structure symbol depends on the
+      alignment being annotated being either Protein or RNA. <br />For
+      proteins, structure symbols are <em>H</em> (for helix) and <em>E</em>
+      (for strand)<br /> <br />For RNA structures, VIENNA, WUSS, and
+      extended notations can be used to specify paired positions.
+      <ul>e.g. &quot;(|(||)|)&quot; or
+        &quot;|A|A|A|(|a|a|a|)&quot;)
+      </ul></li>
+  </ul>
+  Any or all value fields may be left empty, as well as the BAR_GRAPH's
+  text character field, and either or both of the text-label and
+  secondary structure symbol fields of the NO_GRAPH type annotation
+  rows.
+  </p>
+  <p>Color strings can be embedded in a value field by enclosing an
+    RGB triplet in square brackets to colour that position in an
+    annotation row.</p>
+  <hr />
+  <p>
+    <strong><a name="combine">COMBINE, COLOUR and GRAPHLINE</a>
+      for line graphs</font></strong><br /> <em>LINE_GRAPH</em> type annotations can be
+    given a colour (specified as 24 bit RGB triplet in hexadecimal or
+    comma separated values), combined onto the same vertical axis, and
+    have ordinate lines (horizontal lines at a particular vertical axis
+    value) using the following commands (respectively):
+  <pre>COLOUR&#9;<em>graph_name</em>&#9;<em>colour</em>
+COMBINE&#9;<em>graph_1_name</em>&#9;<em>graph_2_name</em>
+GRAPHLINE&#9;<em>graph_name</em>&#9;<em>value</em>&#9;<em>label</em>&#9;<em>colour</em><strong><em>
+</em></strong>
+  </pre>
+  </p>
+  <hr />
+  <p>
+    <strong><a name="annrowprops">ROWPROPERTIES</a></strong><br /> The
+    visual display properties for a set of annotation rows can be
+    modified using the following tab-delimited line:
+  </p>
+  <pre>ROWPROPERTIES&#9;<em>Row label</em>&#9;<em>centrelabs=true( or false)</em>&#9;<em>showalllabs=true(default is false)</em>&#9;<em>scaletofit=true (default is false)</em>
+  </pre>
+  <p>
+    This sets the visual display properties according to the given
+    values for all the annotation rows with labels matching <em>Row
+      label</em>. The properties mostly affect the display of multi-character
+    column labels, and are as follows:
+  <ul>
+    <li><em>centrelabs</em> Centre each label on its column.</li>
+    <li><em>showalllabs</em> Show every column label rather than
+      only the first of a run of identical labels (setting this to true
+      can have a drastic effect on secondary structure rows).</li>
+    <li><em>scaletofit</em> Shrink each label's font size so that
+      the label fits within the column. Useful when annotating an
+      alignment with a specific column numbering system. (<em>Not
+        available in Jalview applet due to AWT 1.1 limitations</em>)</li>
+  </ul>
+  </p>
+  <hr />
+  <p>
+    <strong><a name="groupdefs">SEQUENCE_GROUP</a></strong><br />
+    Groups of sequences and column ranges can be defined using a tab
+    delimited statement like:
+  </p>
+  <pre>SEQUENCE_GROUP&#9;Group_Name&#9;Group_Start&#9;Group_End&#9;<em>Sequences</em>
+  </pre>
+  <p>The sequences can be defined by alignment index and a range of
+    sequences can be defined in a comma delimited field such as</p>
+  <p>2-5,8-15,20,22</p>
+  <p>Enter * to select all sequences.</p>
+  <p>Set both <em>Group_Start</em> and <em>Group_End</em> to * to include the full sequence(s) range.
+  <p>
+    <strong>Note:</strong> If the alignment indices are not known, enter
+    -1, followed by a tab and then a tab delimited list of sequence IDs.
+  </p>
+  <p>
+    If a <a href="#seqgrprefs"><strong>SEQUENCE_REF</strong></a> has
+    been defined, then <em>group_start</em> and <em>group_end</em> will
+    be relative to the sequence residue numbering, otherwise the <em>group_start</em>
+    and <em>group_end</em> will be alignment column indices.
+  </p>
+  <hr />
+  <p>
+    <strong><a name="groupprops">PROPERTIES</a></strong><br />This
+    statement allows various visualisation properties to be assigned to
+    a named group. This takes a series of tab-delimited <em>key</em>=<em>value</em>
+    pairs:
+  </p>
+  <pre>PROPERTIES&#9;Group_name&#9;tab_delimited_key_value_pairs
+</pre>
+  <p>The currently supported set of sequence group key-value pairs
+    that can be provided here are :</p>
+  <table border="1">
+    <tbody>
+      <tr>
+        <td width="50%">Key</td>
+        <td>Value</td>
+      </tr>
+      <tr>
+        <td width="50%">description</td>
+        <td>Text - may include simple HTML tags</td>
+      </tr>
+      <tr>
+        <td width="50%">colour</td>
+        <td>A string resolving to a valid Jalview colourscheme
+          (e.g. Helix Propensity)</td>
+      </tr>
+      <tr>
+        <td width="50%">pidThreshold</td>
+        <td>A number from 0-100 specifying the Percent Identity
+          Threshold for colouring columns in the group or alignment</td>
+      </tr>
+      <tr>
+        <td width="50%">consThreshold</td>
+        <td>A number from 0-100 specifying the degree of bleaching
+          applied for conservation colouring</td>
+      </tr>
+      <tr>
+        <td width="50%">outlineColour</td>
+        <td>Line colour used for outlining the group (default is
+          red)</td>
+      </tr>
+      <tr>
+        <td width="50%">displayBoxes</td>
+        <td>Boolean (default true) controlling display of shaded
+          box for each alignment position</td>
+      </tr>
+      <tr>
+        <td width="50%">displayText</td>
+        <td>Boolean (default true) controlling display of text for
+          each alignment position</td>
+      </tr>
+      <tr>
+        <td width="50%">colourText</td>
+        <td>Boolean (default false) specifying whether text should
+          be shaded by applied colourscheme</td>
+      </tr>
+      <tr>
+        <td width="50%">textCol1</td>
+        <td>Colour for text when shown on a light background</td>
+      </tr>
+      <tr>
+        <td width="50%">textCol2</td>
+        <td>Colour for text when shown on a dark background</td>
+      </tr>
+      <tr>
+        <td width="50%">textColThreshold</td>
+        <td>Number from 0-100 specifying switching threshold
+          between light and dark background</td>
+      </tr>
+      <tr>
+        <td width="50%">idColour</td>
+        <td>Colour for highlighting the Sequence ID labels for this
+          group<br />If <em>idColour</em> is given but <em>colour</em>
+          is not, then idColor will also be used for the group
+          background colour.
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">showunconserved</td>
+        <td>Boolean (default false) indicating whether residues
+          should only be shown that are different from current reference
+          or consensus sequence</td>
+      </tr>
+      <tr>
+        <td width="50%">hide</td>
+        <td>Boolean (default false) indicating whether the rows in
+          this group should be marked as hidden.<br /> <em>Note:</em>
+          if the group is sequence associated (specified by
+          SEQUENCE_REF), then all members will be hidden and marked as
+          represented by the reference sequence.
+        </td>
+      </tr>
+      <!-- <tr><td width="50%">hidecols</td><td>Boolean (default false) indicating whether columns in this groushould be marked as hidden</td></tr> -->
+    </tbody>
+  </table>
+
+  <p>
+    <strong>Specifying colours in PROPERTIES key-value pairs</strong><br />
+    The <strong>colour</strong> property can take either a colour scheme
+    name, or a single colour specification (either a colour name like
+    'red' or an RGB triplet like 'ff0066'). If a single colour is
+    specified, then the group will be coloured with that colour.
+  </p>
+  <hr />
+  <p>
+    <strong><a name="seqgrprefs">SEQUENCE_REF and GROUP_REF</a></strong><br />
+    By default, annotation is associated with the alignment as a whole.
+    However, it is also possible to have an annotation row associated
+    with a specific sequence, or a sequence group. Clicking the
+    annotation label for sequence or group associated annotation will
+    highlight the associated rows in the alignment, and double clicking
+    will select those rows, allowing further analysis. While group
+    associated annotation remains associated with a particular
+    alignment, sequence associated annotation can move with a sequence -
+    so copying a sequence to another alignment will also copy its
+    associated annotation.
+  </p>
+  <p>You can associate an annotation with a sequence by preceding
+    its definition with the line:
+  <pre>SEQUENCE_REF&#9;<em>seq_name</em>&#9;<em>[startIndex]</em>
+  </pre>
+  All Annotations defined after a SEQUENCE_REF command will then be
+  associated with that sequence, and the first field in the Value field
+  list will (optionally) be placed at the
+  <em>startIndex</em>'th column.
+  </p>
+
+  <p>Sequence associations are turned off for subsequent annotation
+    definitions by:
+  <pre>SEQUENCE_REF&#9;ALIGNMENT</pre>
+  </p>
+  <p>Similarly, since Jalview 2.5, group associated annotation can
+    be defined by preceding the row definitions with the line:
+  <pre>GROUP_REF&#9;<em>group_name</em>
+  </pre>
+  Group association is turned off for subsequent annotation rows by:
+  <pre>GROUP_REF&#9;<em>ALIGNMENT</em>
+  </pre>
+  </p>
+  <hr />
+  <p>
+    <strong><a name="refsandviews">VIEW_SETREF,
+        VIEW_HIDECOL and HIDE_INSERTIONS</a></strong><br /> Since Jalview 2.9, the
+    Annotations file has also supported the definition of reference
+    sequences and hidden regions for an alignment view.
+  </p>
+  <!-- 	<p>
+		<em>VIEW_DEF</em> allows the current view to be named according to the
+		first argument after the tab character. If a second argument is
+		provided, then a new view is created with the given name, and
+		properties.
+	</p> -->
+  <p>
+    <em>VIEW_SETREF</em><br />Marks the first sequence in the
+    alignment, or alternately, the one specified by the most recent <em>SEQUENCE_REF</em>
+    statement, as the <a href="../calculations/referenceseq.html">reference
+      sequence</a> for the alignment.
+  </p>
+  <p>
+    <em>HIDE_INSERTIONS</em><br />This command hides all gapped
+    positions in the current target sequence. Any columns already hidden
+    will be re-displayed.<br /> <br>The current target sequence is
+    either the one specified by the most recent <em>SEQUENCE_REF</em>
+    statement, the alignment's reference sequence, or the first sequence
+    in the alignment.
+  </p>
+  <p>
+    <em>VIEW_HIDECOLS</em><br />Modifies the visibility of columns in
+    the view. The statement is followed by a single argument consisting
+    of a comma separated series of single integers or integer pairs
+    (like <em>3-4</em>). These define columns (starting from the
+    left-hand column 0) that should be marked as hidden in the alignment
+    view.
+  </p>
+
+  <hr />
+  <p>
+    <strong><a name="compatibility">COMPATIBILITY NOTES</a></strong><br />
+    The interpretation of the COMBINE statement in <em>Version
+      2.8.1</em> was refined so that only annotation line graphs with the
+    given names ands the same <strong>SEQUENCE_REF</strong> and <strong>GROUP_REF</strong>
+    scope are grouped.
+  </p>
+  <hr />
+
+  <p>
+    <strong><a name="exampleann">EXAMPLES</a></strong><br /> An example
+    Annotation file is given below. Copy and paste the contents into a
+    text file and load it onto the Jalview example protein alignment.
+  </p>
+  <pre>#Comment lines follow the hash symbol
+JALVIEW_ANNOTATION
+SEQUENCE_REF&#9;FER1_MESCR&#9;5
+BAR_GRAPH&#9;Bar Graph 1&#9;&lt;html&gt;an &lt;em&gt;html tooltip&lt;/em&gt; for Bar graph 1.&lt;/html&gt;&#9;||-100,-|-200,-|-300,-|-400,-|200,+|300,+|150,+
+LINE_GRAPH&#9;Green Values&#9;1.1|2.2|1.3|3.4|0.7|1.4|3.3|2.2|2.1|-1.1|3.2
+LINE_GRAPH&#9;Red Values&#9;2.1|3.2|1.3|-1.4|5.5|1.4|1.3|4.2|-1.1|1.1|3.2
+BAR_GRAPH&#9;Bar Graph 2&#9;1,.|2,*|3,:|4,.|5,*|4,:|3,.|2|1|1|2|3|4|5|4
+NO_GRAPH&#9;Icons &#9;||||E,Sheet1|E|E||||H,Sheet 2|H|H|H||||||
+NO_GRAPH&#9;Purple Letters&#9;m|y|p|r|o|t|e|i|n
+COLOUR&#9;Bar Graph 2&#9;blue
+COLOUR&#9;Red Values&#9;255,0,0
+COLOUR&#9;Green Values&#9;green
+COLOUR&#9;Purple Letters&#9;151,52,228
+COMBINE&#9;Green Values&#9;Red Values
+GRAPHLINE&#9;Red Values&#9;2.6&#9;threshold&#9;black
+
+SEQUENCE_GROUP&#9;Group_A&#9;30&#9;50&#9;*
+SEQUENCE_GROUP&#9;Group_B&#9;1&#9;351&#9;2-5
+SEQUENCE_GROUP&#9;Group_C&#9;12&#9;14&#9;-1&#9;seq1&#9;seq2&#9;seq3
+PROPERTIES&#9;Group_A&#9;description=This is the description&#9;colour=Helix Propensity&#9;pidThreshold=0&#9;outlineColour=red&#9;displayBoxes=true&#9;displayText=false&#9;colourText=false&#9;textCol1=black&#9;textCol2=black&#9;textColThreshold=0
+PROPERTIES&#9;Group_B&#9;outlineColour=red
+PROPERTIES&#9;Group_C&#9;colour=Clustal
+</pre>
+  </p>
+</body>
+</html>

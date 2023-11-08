@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class jalview.gui.StructureChooserTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class jalview.gui.StructureChooserTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/jalview.gui.html">jalview.gui</a> &gt; StructureChooserTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.781s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">displayTDBQueryTest</td>
+<td class="success">0.291s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">fetchStructuresInfoMockedTest</td>
+<td class="success">0.318s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">populateFilterComboBoxTest</td>
+<td class="success">0.171s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">sanitizeSeqNameTest</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>registry.getSupportedServices: [MSAprobsWS, DisemblWS, TcoffeeWS, RNAalifoldWS, MafftWS, IUPredWS, GlobPlotWS, ProbconsWS, AAConWS, JronnWS, ClustalWS, MuscleWS, ClustalOWS, GLprobsWS]
+Attempting to connect with MafftWS...
+https://www.ebi.ac.uk/pdbe/search/pdb/select?wt=json&amp;fl=pdb_id,title,experimental_method,resolution&amp;rows=500&amp;start=0&amp;q=(uniprot_accession:P38398+OR+uniprot_id:P38398)+AND+molecule_sequence:%5B''+TO+*%5D+AND+status:REL&amp;sort=overall_quality+desc
+query &gt;&gt;&gt;&gt;&gt;&gt;&gt; jalview.fts.core.FTSRestRequest@31560a27
+&gt;&gt;&gt; JOption Message : 400 response (Mocked)
+
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@39160d24
+https://www.ebi.ac.uk/pdbe/pdbe-kb/3dbeacons/api/uniprot/summary/P38398.json
+https://www.ebi.ac.uk/pdbe/search/pdb/select?wt=json&amp;fl=pdb_id,title,experimental_method,resolution&amp;rows=500&amp;start=0&amp;q=(4igk+OR+7lyb+OR+3k0h+OR+3k0k+OR+1t15+OR+3pxc+OR+3pxd+OR+3pxe+OR+1jm7+OR+7jzv+OR+3pxa+OR+3pxb+OR+1y98+OR+1n5o+OR+4ifi+OR+4y2g+OR+3k15+OR+3k16+OR+4jlu+OR+2ing+OR+4ofb+OR+6g2i+OR+3coj+OR+1jnx+OR+4y18+OR+4u4a+OR+1oqa+OR+1t29+OR+1t2u+OR+1t2v)+AND+molecule_sequence:%5B''+TO+*%5D+AND+status:REL&amp;sort=
+query &gt;&gt;&gt;&gt;&gt;&gt;&gt; jalview.fts.core.FTSRestRequest@20e31d20
+Attempting to connect with MuscleWS...
+https://www.ebi.ac.uk/pdbe/pdbe-kb/3dbeacons/api/uniprot/summary/P38398.json
+https://www.ebi.ac.uk/pdbe/search/pdb/select?wt=json&amp;fl=pdb_id,title,experimental_method,resolution&amp;rows=500&amp;start=0&amp;q=(4igk+OR+7lyb+OR+3k0h+OR+3k0k+OR+1t15+OR+3pxc+OR+3pxd+OR+3pxe+OR+1jm7+OR+7jzv+OR+3pxa+OR+3pxb+OR+1y98+OR+1n5o+OR+4ifi+OR+4y2g+OR+3k15+OR+3k16+OR+4jlu+OR+2ing+OR+4ofb+OR+6g2i+OR+3coj+OR+1jnx+OR+4y18+OR+4u4a+OR+1oqa+OR+1t29+OR+1t2u+OR+1t2v)+AND+molecule_sequence:%5B''+TO+*%5D+AND+status:REL&amp;sort=
+query &gt;&gt;&gt;&gt;&gt;&gt;&gt; jalview.fts.core.FTSRestRequest@5d95c7c2
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@59d41672
+https://www.ebi.ac.uk/pdbe/search/pdb/select?wt=json&amp;fl=pdb_id,title,experimental_method,resolution&amp;rows=500&amp;start=0&amp;q=(pdb_id:1tim)+AND+molecule_sequence:%5B''+TO+*%5D+AND+status:REL&amp;sort=overall_quality+desc
+query &gt;&gt;&gt;&gt;&gt;&gt;&gt; jalview.fts.core.FTSRestRequest@23f6732a
+&gt;&gt;&gt; JOption Message : 400 response (Mocked)
+
+Attempting to connect with ClustalWS...
+Items (no data, no cache): 
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+DEBUG - Displaying news.
+Jul 02, 2023 10:12:01 AM compbio.ws.client.Jws2Client connectToRegistry
+INFO: Connected to RegistryWS successfully!
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+java.lang.Exception: 400 response (Mocked)
+	at jalview.fts.service.pdb.PDBFTSRestClient.executeRequest(PDBFTSRestClient.java:232)
+	at jalview.gui.structurechooser.PDBStructureChooserQuerySource.fetchStructuresMetaData(PDBStructureChooserQuerySource.java:254)
+	at jalview.gui.StructureChooser.fetchStructuresMetaData(StructureChooser.java:479)
+	at jalview.gui.StructureChooser.initialStructureDiscovery(StructureChooser.java:242)
+	at jalview.gui.StructureChooser$2.run(StructureChooser.java:209)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+Jul 02, 2023 10:12:01 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Not enabling Google Tracking.
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+Jul 02, 2023 10:12:01 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+java.lang.Exception: 400 response (Mocked)
+	at jalview.fts.service.pdb.PDBFTSRestClient.executeRequest(PDBFTSRestClient.java:232)
+	at jalview.gui.structurechooser.PDBStructureChooserQuerySource.fetchStructuresMetaData(PDBStructureChooserQuerySource.java:254)
+	at jalview.gui.StructureChooser.fetchStructuresMetaData(StructureChooser.java:479)
+	at jalview.gui.StructureChooser.initialStructureDiscovery(StructureChooser.java:242)
+	at jalview.gui.StructureChooser$2.run(StructureChooser.java:209)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.2</a> at 2 Jul 2023, 10:13:45</p>
+</div>
+</div>
+</body>
+</html>

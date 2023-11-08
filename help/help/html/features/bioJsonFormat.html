@@ -1,0 +1,82 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>BioJSON in Jalview</title>
+</head>
+<body>
+  <p>
+    <strong>BioJSON support in Jalview</strong>
+  </p>
+  <p>BioJSON is a JavaScript Object Notation (JSON) specification
+    for the representation and exchange of multiple sequence alignment
+    data.</p>
+  <p>
+    Jalview 2.9 includes support for reading and writing BioJSON v1.0
+    data directly, or embedded in HTML documents. It can also generate
+    HTML pages which employ the <a href="biojsmsa.html">BioJS MSA
+      viewer</a> for interactive display of BioJSON data.
+  </p>
+  <p>
+    <strong>Finding out more about BioJSON</strong>
+  </p>
+  <p>
+    The BioJSON specification is published at <a
+      href="http://jalview.github.io/biojson/">http://jalview.github.io/biojson/</a>.
+  </p>
+  <p>
+    <em>Import of BioJSON data from HTML pages</em>
+  </p>
+  <p>When importing embedded data in an HTML document, Jalview
+    searches for a hidden (usually) input or div element named
+    "seqData":</p>
+  <pre>
+    <code>&lt;div name="seqData" id="seqData" style="display: none;"&gt;#valid BioJSON data#&lt;/div&gt;</code>
+  </pre>
+  <strong>OR</strong>
+  <pre>
+    <code>&lt;input type="hidden" id="seqData" name="seqData" value='#valid BioJSON data#'/&gt;</code>
+  </pre>
+  <p>Jalview can also import BioJSON data directly.</p>
+
+  <p>
+    <strong>Jalview's Support for BioJSON v1.0</strong>
+  </p>
+  <p>BioJSON exports of an alignment view include the following
+    additional data:</p>
+  <ul>
+    <li>Alignment Annotations</li>
+    <li>Alignment Features</li>
+    <li>Alignment Sequences</li>
+    <li>Color Scheme</li>
+    <li>Hidden Columns</li>
+    <li>Hidden Sequences</li>
+    <li>Sequence Groups</li>
+  </ul>
+  <p>The following data are NOT currently preserved on export:</p>
+  <ul>
+    <li>Alignment Reference sequences</li>
+    <li>Representative sequence groups</li>
+    <li>Trees</li>
+    <li>3D Structures</li>
+  </ul>
+</body>
+</html>

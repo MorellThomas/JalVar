@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mc_view.PDBfileTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:44" hostname="wer3eng" time="0.738">
+  <properties/>
+  <testcase name="testIsRna" classname="mc_view.PDBfileTest" time="0.001"/>
+  <testcase name="testParse" classname="mc_view.PDBfileTest" time="0.012"/>
+  <testcase name="testParse_withAnnotations_noSS" classname="mc_view.PDBfileTest" time="0.011"/>
+  <testcase name="testParse_withJmolAddAlignmentAnnotations" classname="mc_view.PDBfileTest" time="0.32"/>
+  <testcase name="testParse_withJmol_noAnnotations" classname="mc_view.PDBfileTest" time="0.386"/>
+  <system-out><![CDATA[CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 70.2/140.5
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@708241ca
+ELECTRON TRANSPORT                      06-FEB-13   3W5V
+CROSS-LINKED COMPLEX BETWEEN FERREDOXIN AND FERREDOXIN-NADP+ R
+found biomolecule 1: A, D
+biomolecule 1: number of transforms: 1
+found biomolecule 2: C, B
+biomolecule 2: number of transforms: 1
+FAD = FLAVIN-ADENINE DINUCLEOTIDE
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 1 21 1
+3W5V
+reading 6290 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+6290 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 34 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 72.8/140.5
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+ELECTRON TRANSPORT                      06-FEB-13   3W5V
+CROSS-LINKED COMPLEX BETWEEN FERREDOXIN AND FERREDOXIN-NADP+ R
+found biomolecule 1: A, D
+biomolecule 1: number of transforms: 1
+found biomolecule 2: C, B
+biomolecule 2: number of transforms: 1
+FAD = FLAVIN-ADENINE DINUCLEOTIDE
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 1 21 1
+3W5V
+reading 6290 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+6290 atoms created
+Attempting to connect with RNAalifoldWS...
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 80 ms
+]]></system-out>
+  <system-err><![CDATA[Jul 02, 2023 10:11:44 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+]]></system-err>
+</testsuite>

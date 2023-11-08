@@ -1,0 +1,417 @@
+{
+  "name": "Jalview",
+  "description": "Jalview is a free program for multiple sequence alignment editing, visualisation and analysis. Use it to view and edit sequence alignments, analyse them with phylogenetic trees and principal components analysis (PCA) plots and explore molecular structures and annotation.",
+  "homepage": "https://www.jalview.org/",
+  "biotoolsID": "Jalview",
+  "biotoolsCURIE": "biotools:Jalview",
+  "version": [
+    "2.11.2.7"
+  ],
+  "relation": [
+    {
+      "biotoolsID": "jabaws",
+      "type": "uses"
+    },
+    {
+      "biotoolsID": "chimera",
+      "type": "uses"
+    },
+    {
+      "biotoolsID": "chimerax",
+      "type": "uses"
+    },
+    {
+      "biotoolsID": "pymol",
+      "type": "uses"
+    },
+    {
+      "biotoolsID": "bioconda",
+      "type": "includedIn"
+    },
+    {
+      "biotoolsID": "3d-beacons",
+      "type": "uses"
+    },
+    {
+      "biotoolsID": "uniprot",
+      "type": "uses"
+    },
+    {
+      "biotoolsID": "pfam",
+      "type": "uses"
+    },
+    {
+      "biotoolsID": "ensembl",
+      "type": "uses"
+    },
+    {
+      "biotoolsID": "pdb",
+      "type": "uses"
+    },
+    {
+      "biotoolsID": "rfam",
+      "type": "uses"
+    }
+  ],
+  "function": [
+    {
+      "operation": [
+        {
+          "uri": "http://edamontology.org/operation_0564",
+          "term": "Sequence visualisation"
+        },
+        {
+          "uri": "http://edamontology.org/operation_0324",
+          "term": "Phylogenetic tree analysis"
+        },
+        {
+          "uri": "http://edamontology.org/operation_3081",
+          "term": "Sequence alignment editing"
+        }
+      ],
+      "input": [
+        {
+          "data": {
+            "uri": "http://edamontology.org/data_0863",
+            "term": "Sequence alignment"
+          },
+          "format": [
+            {
+              "uri": "http://edamontology.org/format_1939",
+              "term": "GFF3-seq"
+            },
+            {
+              "uri": "http://edamontology.org/format_1982",
+              "term": "ClustalW format"
+            },
+            {
+              "uri": "http://edamontology.org/format_1961",
+              "term": "Stockholm format"
+            },
+            {
+              "uri": "http://edamontology.org/format_1984",
+              "term": "FASTA-aln"
+            },
+            {
+              "uri": "http://edamontology.org/format_1938",
+              "term": "GFF2-seq"
+            },
+            {
+              "uri": "http://edamontology.org/format_1929",
+              "term": "FASTA"
+            },
+            {
+              "uri": "http://edamontology.org/format_1948",
+              "term": "nbrf/pir"
+            },
+            {
+              "uri": "http://edamontology.org/format_3774",
+              "term": "BioJSON (Jalview)"
+            },
+            {
+              "uri": "http://edamontology.org/format_1997",
+              "term": "PHYLIP format"
+            },
+            {
+              "uri": "http://edamontology.org/format_3313",
+              "term": "BLC"
+            },
+            {
+              "uri": "http://edamontology.org/format_3311",
+              "term": "RNAML"
+            },
+            {
+              "uri": "http://edamontology.org/format_1947",
+              "term": "GCG MSF"
+            },
+            {
+              "uri": "http://edamontology.org/format_3015",
+              "term": "Pileup"
+            },
+            {
+              "uri": "http://edamontology.org/format_1477",
+              "term": "mmCIF"
+            },
+            {
+              "uri": "http://edamontology.org/format_3016",
+              "term": "VCF"
+            },
+            {
+              "uri": "http://edamontology.org/format_1915",
+              "term": "Format"
+            }
+          ]
+        },
+        {
+          "data": {
+            "uri": "http://edamontology.org/data_0886",
+            "term": "Structure alignment"
+          },
+          "format": [
+            {
+              "uri": "http://edamontology.org/format_1476",
+              "term": "PDB"
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "data": {
+            "uri": "http://edamontology.org/data_0863",
+            "term": "Sequence alignment"
+          },
+          "format": [
+            {
+              "uri": "http://edamontology.org/format_1948",
+              "term": "nbrf/pir"
+            },
+            {
+              "uri": "http://edamontology.org/format_3464",
+              "term": "JSON"
+            },
+            {
+              "uri": "http://edamontology.org/format_1961",
+              "term": "Stockholm format"
+            },
+            {
+              "uri": "http://edamontology.org/format_1929",
+              "term": "FASTA"
+            },
+            {
+              "uri": "http://edamontology.org/format_1997",
+              "term": "PHYLIP format"
+            },
+            {
+              "uri": "http://edamontology.org/format_3313",
+              "term": "BLC"
+            },
+            {
+              "uri": "http://edamontology.org/format_3774",
+              "term": "BioJSON (Jalview)"
+            },
+            {
+              "uri": "http://edamontology.org/format_1947",
+              "term": "GCG MSF"
+            },
+            {
+              "uri": "http://edamontology.org/format_3015",
+              "term": "Pileup"
+            },
+            {
+              "uri": "http://edamontology.org/format_1982",
+              "term": "ClustalW format"
+            }
+          ]
+        },
+        {
+          "data": {
+            "uri": "http://edamontology.org/data_2884",
+            "term": "Plot"
+          },
+          "format": [
+            {
+              "uri": "http://edamontology.org/format_3603",
+              "term": "PNG"
+            },
+            {
+              "uri": "http://edamontology.org/format_2331",
+              "term": "HTML"
+            },
+            {
+              "uri": "http://edamontology.org/format_3466",
+              "term": "EPS"
+            },
+            {
+              "uri": "http://edamontology.org/format_3604",
+              "term": "SVG"
+            },
+            {
+              "uri": "http://edamontology.org/format_1915",
+              "term": "Format"
+            }
+          ]
+        }
+      ],
+      "note": "Other Input formats:\nAMSA (.amsa);\nJnetFile (.concise, .jnet);\nPFAM (.pfam);\nSubstitution matrix (.matrix);\nJalview Project File (.jvp);\nJalview Feature File (.features, .jvfeatures);\nJalview Annotations File (.annotations, .jvannotations);\n\n...\nOther Output formats:\nPFAM (.pfam);\nBioJS (.biojs) (interactive HTML/Javascript);\nJalview Project File (.jvp);"
+    }
+  ],
+  "toolType": [
+    "Desktop application"
+  ],
+  "topic": [
+    {
+      "uri": "http://edamontology.org/topic_0080",
+      "term": "Sequence analysis"
+    },
+    {
+      "uri": "http://edamontology.org/topic_0092",
+      "term": "Data visualisation"
+    }
+  ],
+  "operatingSystem": [
+    "Linux",
+    "Windows",
+    "Mac"
+  ],
+  "license": "GPL-3.0",
+  "maturity": "Mature",
+  "cost": "Free of charge",
+  "accessibility": "Open access",
+  "elixirPlatform": [
+    "Tools"
+  ],
+  "elixirNode": [
+    "UK"
+  ],
+  "link": [
+    {
+      "url": "https://discourse.jalview.org/",
+      "type": [
+        "Discussion forum"
+      ]
+    },
+    {
+      "url": "https://issues.jalview.org/",
+      "type": [
+        "Issue tracker"
+      ]
+    },
+    {
+      "url": "https://www.jalview.org/development/jalview_develop/",
+      "type": [
+        "Other"
+      ],
+      "note": "Latest development version"
+    },
+    {
+      "url": "https://source.jalview.org/crucible/browse/jalview",
+      "type": [
+        "Repository"
+      ]
+    },
+    {
+      "url": "https://twitter.com/Jalview",
+      "type": [
+        "Social media"
+      ],
+      "note": "Twitter feed"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCIjpnvZB770yz7ftbrJ0tfw",
+      "type": [
+        "Social media"
+      ],
+      "note": "YouTube training videos"
+    }
+  ],
+  "download": [
+    {
+      "url": "https://www.jalview.org/download",
+      "type": "Downloads page"
+    },
+    {
+      "url": "https://www.jalview.org/download/source/",
+      "type": "Source code"
+    },
+    {
+      "url": "https://www.jalview.org/download/?os=all",
+      "type": "Binaries",
+      "note": "Binaries for all platforms"
+    },
+    {
+      "url": "https://www.jalview.org/favicon.svg",
+      "type": "Icon"
+    },
+    {
+      "url": "https://www.jalview.org/download/other/jar/",
+      "type": "Binaries",
+      "note": "Executable JAR file"
+    }
+  ],
+  "documentation": [
+    {
+      "url": "https://www.jalview.org/about/citation",
+      "type": [
+        "Citation instructions"
+      ]
+    },
+    {
+      "url": "https://www.jalview.org/training/",
+      "type": [
+        "Training material"
+      ],
+      "note": "Hands-on exercises, Training courses and Training videos"
+    },
+    {
+      "url": "https://www.jalview.org/help/faq",
+      "type": [
+        "FAQ"
+      ]
+    },
+    {
+      "url": "https://www.jalview.org/help/documentation/",
+      "type": [
+        "User manual"
+      ]
+    }
+  ],
+  "publication": [
+    {
+      "doi": "10.1093/bioinformatics/btp033",
+      "metadata": {
+        "title": "Jalview Version 2-A multiple sequence alignment editor and analysis workbench",
+        "abstract": "Summary: Jalview Version 2 is a system for interactive WYSIWYG editing, analysis and annotation of multiple sequence alignments. Core features include keyboard and mouse-based editing, multiple views and alignment overviews, and linked structure display with Jmol. Jalview 2 is available in two forms: a lightweight Java applet for use in web applications, and a powerful desktop application that employs web services for sequence alignment, secondary structure prediction and the retrieval of alignments, sequences, annotation and structures from public databases and any DAS 1.53 compliant sequence or annotation server. © 2009 The Author(s).",
+        "date": "2009-05-07T00:00:00Z",
+        "citationCount": 5999,
+        "authors": [
+          {
+            "name": "Waterhouse A.M."
+          },
+          {
+            "name": "Procter J.B."
+          },
+          {
+            "name": "Martin D.M.A."
+          },
+          {
+            "name": "Clamp M."
+          },
+          {
+            "name": "Barton G.J."
+          }
+        ],
+        "journal": "Bioinformatics"
+      }
+    }
+  ],
+  "credit": [
+    {
+      "name": "Jim Procter",
+      "url": "http://www.lifesci.dundee.ac.uk/people/jim-procter",
+      "orcidid": "https://orcid.org/0000-0002-7865-7382",
+      "typeEntity": "Person",
+      "typeRole": [
+        "Primary contact"
+      ]
+    },
+    {
+      "name": "Geoff Barton",
+      "url": "https://www.lifesci.dundee.ac.uk/people/geoff-barton",
+      "orcidid": "https://orcid.org/0000-0002-9014-5355"
+    }
+  ],
+  "owner": "ben_s",
+  "additionDate": "2019-02-13T17:01:40Z",
+  "lastUpdate": "2023-07-22T09:24:44.755337Z",
+  "editPermission": {
+    "type": "group",
+    "authors": [
+      "ben_s",
+      "jimprocter"
+    ]
+  },
+  "validated": 1,
+  "homepage_status": 0,
+  "elixir_badge": 0
+}

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class jalview.analysis.DnaTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class jalview.analysis.DnaTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/jalview.analysis.html">jalview.analysis</a> &gt; DnaTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">12</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.045s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testCompareCodonPos</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCompareCodonPos_isSymmetric</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCompareCodonPos_oneOnly</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testConvertCodon</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetComplement</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testReverseCdna</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testReverseSequence</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testTranslateCdna_hiddenColumns</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testTranslateCdna_sequenceOrderIndependent</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testTranslateCdna_simple</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testTranslateCdna_withUntranslatableCodons</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testTranslateCdna_withUntranslatableCodonsAndHiddenColumns</td>
+<td class="success">0.031s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>K: AAA  [0, 1, 2]
+G: GGG  [0, 1, 2]
+
+K: GGG  [0, 1, 2]
+G: AAA  [0, 1, 2]
+
+K: AA-A  [0, 1, 3]
+G: GGG  [0, 1, 2]
+
+K: AAA  [0, 1, 2]
+G: GG-G  [0, 1, 3]
+
+K: A-AA  [0, 2, 3]
+G: GG-G  [0, 1, 3]
+
+K: A-A-A  [0, 2, 4]
+G: GG-G  [0, 1, 3]
+
+K: A-AA  [0, 2, 3]
+G: GG--G  [0, 1, 4]
+
+K: AA-A  [0, 1, 3]
+G: G-GG  [0, 2, 3]
+
+K: AA--A  [0, 1, 4]
+G: G-GG  [0, 2, 3]
+
+K: AAA  [0, 1, 2]
+G: G-GG  [0, 2, 3]
+
+K: -AAA  [1, 2, 3]
+G: G-GG  [0, 2, 3]
+
+K: -AA-A  [1, 2, 4]
+G: G-GG  [0, 2, 3]
+
+K: -AAA  [1, 2, 3]
+G: G-G-G  [0, 2, 4]
+
+K: -A-AA  [1, 3, 4]
+G: G-G-G  [0, 2, 4]
+
+K: -A-A-A  [1, 3, 5]
+G: G-G-G  [0, 2, 4]
+
+K: -A-AA  [1, 3, 4]
+G: G-G--G  [0, 2, 5]
+
+K: -AA-A  [1, 2, 4]
+G: G--GG  [0, 3, 4]
+
+K: -AA--A  [1, 2, 5]
+G: G--GG  [0, 3, 4]
+
+K: -AAA  [1, 2, 3]
+G: G--GG  [0, 3, 4]
+
+K: A-AA  [0, 2, 3]
+G: -GGG  [1, 2, 3]
+
+K: A-A-A  [0, 2, 4]
+G: -GGG  [1, 2, 3]
+
+K: A-AA  [0, 2, 3]
+G: -GG-G  [1, 2, 4]
+
+K: A--AA  [0, 3, 4]
+G: -GG-G  [1, 2, 4]
+
+K: A--AA  [0, 3, 4]
+G: -GGG  [1, 2, 3]
+
+K: A--AA  [0, 3, 4]
+G: -GG--G  [1, 2, 5]
+
+K: AA-A  [0, 1, 3]
+G: -GGG  [1, 2, 3]
+
+K: AA--A  [0, 1, 4]
+G: -GGG  [1, 2, 3]
+
+K: AAA  [0, 1, 2]
+G: -GGG  [1, 2, 3]
+
+K: AAA  [0, 1, 2]
+G: GGG  [0, 1, 2]
+
+K: GGG  [0, 1, 2]
+G: AAA  [0, 1, 2]
+
+K: AA-A  [0, 1, 3]
+G: GGG  [0, 1, 2]
+
+K: GGG  [0, 1, 2]
+G: AA-A  [0, 1, 3]
+
+K: AAA  [0, 1, 2]
+G: GG-G  [0, 1, 3]
+
+K: GG-G  [0, 1, 3]
+G: AAA  [0, 1, 2]
+
+K: A-AA  [0, 2, 3]
+G: GG-G  [0, 1, 3]
+
+K: GG-G  [0, 1, 3]
+G: A-AA  [0, 2, 3]
+
+K: A-A-A  [0, 2, 4]
+G: GG-G  [0, 1, 3]
+
+K: GG-G  [0, 1, 3]
+G: A-A-A  [0, 2, 4]
+
+K: A-AA  [0, 2, 3]
+G: GG--G  [0, 1, 4]
+
+K: GG--G  [0, 1, 4]
+G: A-AA  [0, 2, 3]
+
+K: AA-A  [0, 1, 3]
+G: G-GG  [0, 2, 3]
+
+K: G-GG  [0, 2, 3]
+G: AA-A  [0, 1, 3]
+
+K: AA--A  [0, 1, 4]
+G: G-GG  [0, 2, 3]
+
+K: G-GG  [0, 2, 3]
+G: AA--A  [0, 1, 4]
+
+K: AAA  [0, 1, 2]
+G: G-GG  [0, 2, 3]
+
+K: G-GG  [0, 2, 3]
+G: AAA  [0, 1, 2]
+
+K: -AAA  [1, 2, 3]
+G: G-GG  [0, 2, 3]
+
+K: G-GG  [0, 2, 3]
+G: -AAA  [1, 2, 3]
+
+K: -AA-A  [1, 2, 4]
+G: G-GG  [0, 2, 3]
+
+K: G-GG  [0, 2, 3]
+G: -AA-A  [1, 2, 4]
+
+K: -AAA  [1, 2, 3]
+G: G-G-G  [0, 2, 4]
+
+K: G-G-G  [0, 2, 4]
+G: -AAA  [1, 2, 3]
+
+K: -A-AA  [1, 3, 4]
+G: G-G-G  [0, 2, 4]
+
+K: G-G-G  [0, 2, 4]
+G: -A-AA  [1, 3, 4]
+
+K: -A-A-A  [1, 3, 5]
+G: G-G-G  [0, 2, 4]
+
+K: G-G-G  [0, 2, 4]
+G: -A-A-A  [1, 3, 5]
+
+K: -A-AA  [1, 3, 4]
+G: G-G--G  [0, 2, 5]
+
+K: G-G--G  [0, 2, 5]
+G: -A-AA  [1, 3, 4]
+
+K: -AA-A  [1, 2, 4]
+G: G--GG  [0, 3, 4]
+
+K: G--GG  [0, 3, 4]
+G: -AA-A  [1, 2, 4]
+
+K: -AA--A  [1, 2, 5]
+G: G--GG  [0, 3, 4]
+
+K: G--GG  [0, 3, 4]
+G: -AA--A  [1, 2, 5]
+
+K: -AAA  [1, 2, 3]
+G: G--GG  [0, 3, 4]
+
+K: G--GG  [0, 3, 4]
+G: -AAA  [1, 2, 3]
+
+K: A-AA  [0, 2, 3]
+G: -GGG  [1, 2, 3]
+
+K: -GGG  [1, 2, 3]
+G: A-AA  [0, 2, 3]
+
+K: A-A-A  [0, 2, 4]
+G: -GGG  [1, 2, 3]
+
+K: -GGG  [1, 2, 3]
+G: A-A-A  [0, 2, 4]
+
+K: A-AA  [0, 2, 3]
+G: -GG-G  [1, 2, 4]
+
+K: -GG-G  [1, 2, 4]
+G: A-AA  [0, 2, 3]
+
+K: A--AA  [0, 3, 4]
+G: -GG-G  [1, 2, 4]
+
+K: -GG-G  [1, 2, 4]
+G: A--AA  [0, 3, 4]
+
+K: A--AA  [0, 3, 4]
+G: -GGG  [1, 2, 3]
+
+K: -GGG  [1, 2, 3]
+G: A--AA  [0, 3, 4]
+
+K: A--AA  [0, 3, 4]
+G: -GG--G  [1, 2, 5]
+
+K: -GG--G  [1, 2, 5]
+G: A--AA  [0, 3, 4]
+
+K: AA-A  [0, 1, 3]
+G: -GGG  [1, 2, 3]
+
+K: -GGG  [1, 2, 3]
+G: AA-A  [0, 1, 3]
+
+K: AA--A  [0, 1, 4]
+G: -GGG  [1, 2, 3]
+
+K: -GGG  [1, 2, 3]
+G: AA--A  [0, 1, 4]
+
+K: AAA  [0, 1, 2]
+G: -GGG  [1, 2, 3]
+
+K: -GGG  [1, 2, 3]
+G: AAA  [0, 1, 2]
+
+K: -AA--A  [1, 2, 5]
+G: G--GG  [0, 3, 4]
+
+&gt;SEQ1/1-12
+CAGTTCGTAGAA
+&gt;SEQ2/1-12
+TAGTTCGTAGAA
+&gt;SEQ3/1-12
+CAGTTCGTAGAA
+&gt;SEQ4/1-12
+CAGTTCGTAGAA
+&gt;SEQ5/1-12
+CAGTTCGTAGAA
+&gt;SEQ6/1-12
+CAGTTCGTAGAA
+&gt;SEQ7/1-12
+CAGTTCGTAGAA
+&gt;SEQ8/1-12
+CAGTTCGTAGAA
+
+Original
+&gt;SEQ1/1-4
+QFVE
+&gt;SEQ2/1-4
+*FVE
+&gt;SEQ3/1-4
+QFVE
+&gt;SEQ4/1-4
+QFVE
+&gt;SEQ5/1-4
+QFVE
+&gt;SEQ6/1-4
+QFVE
+&gt;SEQ7/1-4
+QFVE
+&gt;SEQ8/1-4
+QFVE
+
+Sorted
+&gt;SEQ7/1-4
+QFVE
+&gt;SEQ8/1-4
+QFVE
+&gt;SEQ4/1-4
+QFVE
+&gt;SEQ5/1-4
+QFVE
+&gt;SEQ3/1-4
+QFVE
+&gt;SEQ1/1-4
+QFVE
+&gt;SEQ2/1-4
+*FVE
+&gt;SEQ6/1-4
+QFVE
+
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+Jul 02, 2023 10:12:00 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+trimming contigs for incomplete terminal codon.
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.2</a> at 2 Jul 2023, 10:13:45</p>
+</div>
+</div>
+</body>
+</html>

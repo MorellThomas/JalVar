@@ -1,0 +1,1140 @@
+Java version: 1.8.0_191
+amd64 Windows 10 10.0
+Error reading author details: java.io.FileNotFoundException: C:\Users\hansonr\git\jalview1\classes (Access is denied)
+Error reading build details: java.io.FileNotFoundException: C:\Users\hansonr\git\jalview1\classes (Access is denied)
+Jalview Version: Test
+INFO - Getting messages for lang: en_US
+Platform: timer mark	0.0	0.0	EG ENSG00000157764
+Platform: timer mark	0.005	0.005	EnsembleRestClient.getJSON0 https://rest.ensembl.org/lookup/id/ENSG00000157764?content-type=application/json
+Platform: timer mark	0.548	0.543	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	0.564	0.016	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	0.564	0.0	EG genIds 1
+Platform: timer mark	0.564	0.0	EG fetch ENSG00000157764
+Platform: timer mark	0.564	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/info/ping?content-type=application/json
+Platform: timer mark	0.685	0.121	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	0.685	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	0.685	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/info/rest?content-type=application/json
+Platform: timer mark	0.817	0.132	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	0.817	0.0	EnsembleRestClient.getJSON2 ...done 
+EnsemblRestClient expected ENSEMBL REST version 7.0 but found 9.0, see https://github.com/Ensembl/ensembl-rest/wiki/Change-log
+Platform: timer mark	0.817	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/info/data?content-type=application/json
+Platform: timer mark	0.949	0.132	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	0.949	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	0.949	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	0.949	0.0	ENS seqproxy
+Platform: timer mark	0.949	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENSG00000157764?type=genomic&Accept=application/json&content-type=application/json&object_type=Gene
+Platform: timer mark	1.118	0.169	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	2.06	0.942	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	2.114	0.054	ENS seqproxy2
+Platform: timer mark	2.198	0.084	ESP.getsequencerec1
+Platform: timer mark	2.198	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/overlap/id/ENSG00000157764?content-type=application/json&object_type=Gene&feature=gene&feature=transcript&feature=exon&feature=cds&feature=variation
+Platform: timer mark	6.487	4.289	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	14.276	7.789	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	15.654	1.378	ESP.getsequencerec2
+Platform: timer mark	15.654	0.0	ESP.transferfeat
+Platform: timer mark	16.434	0.78	ESP.addprotein
+Platform: timer mark	16.434	0.0	ESP.addfeat done
+Platform: timer mark	16.434	0.0	ESP. getdataseq 
+Platform: timer mark	16.434	0.0	ESP. getxref 
+Platform: timer mark	16.435	0.001	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSG00000157764?content-type=application/json&all_levels=1
+Platform: timer mark	17.267	0.832	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	18.09	0.823	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	18.091	0.001	ESP. getxref + 0/266
+Platform: timer mark	18.092	0.001	ESP. getxref + 1/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 2/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 3/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 4/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 5/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 6/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 7/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 8/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 9/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 10/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 11/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 12/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 13/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 14/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 15/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 16/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 17/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 18/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 19/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 20/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 21/266
+Platform: timer mark	18.092	0.0	ESP. getxref + 22/266
+Platform: timer mark	18.093	0.001	ESP. getxref + 23/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 24/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 25/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 26/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 27/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 28/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 29/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 30/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 31/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 32/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 33/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 34/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 35/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 36/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 37/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 38/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 39/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 40/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 41/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 42/266
+Platform: timer mark	18.093	0.0	ESP. getxref + 43/266
+Platform: timer mark	18.094	0.001	ESP. getxref + 44/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 45/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 46/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 47/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 48/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 49/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 50/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 51/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 52/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 53/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 54/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 55/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 56/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 57/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 58/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 59/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 60/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 61/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 62/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 63/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 64/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 65/266
+Platform: timer mark	18.094	0.0	ESP. getxref + 66/266
+Platform: timer mark	18.095	0.001	ESP. getxref + 67/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 68/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 69/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 70/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 71/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 72/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 73/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 74/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 75/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 76/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 77/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 78/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 79/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 80/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 81/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 82/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 83/266
+Platform: timer mark	18.095	0.0	ESP. getxref + 84/266
+Platform: timer mark	18.096	0.001	ESP. getxref + 85/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 86/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 87/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 88/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 89/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 90/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 91/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 92/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 93/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 94/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 95/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 96/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 97/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 98/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 99/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 100/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 101/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 102/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 103/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 104/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 105/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 106/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 107/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 108/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 109/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 110/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 111/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 112/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 113/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 114/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 115/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 116/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 117/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 118/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 119/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 120/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 121/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 122/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 123/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 124/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 125/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 126/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 127/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 128/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 129/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 130/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 131/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 132/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 133/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 134/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 135/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 136/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 137/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 138/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 139/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 140/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 141/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 142/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 143/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 144/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 145/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 146/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 147/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 148/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 149/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 150/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 151/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 152/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 153/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 154/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 155/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 156/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 157/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 158/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 159/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 160/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 161/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 162/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 163/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 164/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 165/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 166/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 167/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 168/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 169/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 170/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 171/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 172/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 173/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 174/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 175/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 176/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 177/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 178/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 179/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 180/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 181/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 182/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 183/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 184/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 185/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 186/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 187/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 188/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 189/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 190/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 191/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 192/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 193/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 194/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 195/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 196/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 197/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 198/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 199/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 200/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 201/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 202/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 203/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 204/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 205/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 206/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 207/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 208/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 209/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 210/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 211/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 212/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 213/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 214/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 215/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 216/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 217/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 218/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 219/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 220/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 221/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 222/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 223/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 224/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 225/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 226/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 227/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 228/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 229/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 230/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 231/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 232/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 233/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 234/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 235/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 236/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 237/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 238/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 239/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 240/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 241/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 242/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 243/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 244/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 245/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 246/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 247/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 248/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 249/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 250/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 251/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 252/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 253/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 254/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 255/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 256/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 257/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 258/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 259/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 260/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 261/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 262/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 263/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 264/266
+Platform: timer mark	18.096	0.0	ESP. getxref + 265/266
+primaries are [ENSEMBL:ENSG00000157764]
+Platform: timer mark	18.111	0.015	ESP. getxref self 
+Platform: timer mark	18.111	0.0	ESP. getxref self add 
+Platform: timer mark	18.113	0.002	ESP. seqprox done 
+Platform: timer mark	18.113	0.0	EG loci ENSG00000157764
+Platform: timer mark	18.113	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/lookup/id/ENSG00000157764?content-type=application/json&object_type=Gene
+Platform: timer mark	18.26	0.147	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	18.26	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	18.26	0.0	EG transcript ENSG00000157764
+Platform: timer mark	18.327	0.067	ESP. getdataseq 
+Platform: timer mark	18.327	0.0	ESP. getxref 
+Platform: timer mark	18.327	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000646891?content-type=application/json&all_levels=1
+Platform: timer mark	18.74	0.413	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	19.112	0.372	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	19.112	0.0	ESP. getxref + 0/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 1/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 2/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 3/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 4/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 5/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 6/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 7/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 8/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 9/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 10/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 11/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 12/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 13/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 14/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 15/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 16/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 17/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 18/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 19/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 20/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 21/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 22/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 23/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 24/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 25/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 26/110
+Platform: timer mark	19.112	0.0	ESP. getxref + 27/110
+Platform: timer mark	19.128	0.016	ESP. getxref + 28/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 29/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 30/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 31/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 32/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 33/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 34/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 35/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 36/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 37/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 38/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 39/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 40/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 41/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 42/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 43/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 44/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 45/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 46/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 47/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 48/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 49/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 50/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 51/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 52/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 53/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 54/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 55/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 56/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 57/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 58/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 59/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 60/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 61/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 62/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 63/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 64/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 65/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 66/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 67/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 68/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 69/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 70/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 71/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 72/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 73/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 74/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 75/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 76/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 77/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 78/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 79/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 80/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 81/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 82/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 83/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 84/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 85/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 86/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 87/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 88/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 89/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 90/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 91/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 92/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 93/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 94/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 95/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 96/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 97/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 98/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 99/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 100/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 101/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 102/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 103/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 104/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 105/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 106/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 107/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 108/110
+Platform: timer mark	19.128	0.0	ESP. getxref + 109/110
+primaries are []
+Platform: timer mark	19.128	0.0	ESP. getxref self 
+Platform: timer mark	19.128	0.0	ESP. getxref self add 
+Platform: timer mark	19.128	0.0	ESP. seqprox done 
+Platform: timer mark	19.131	0.003	EnsembleRestClient.getJSON0 https://rest.ensembl.org/info/ping?content-type=application/json
+Adding protein product for ENST00000646891
+Platform: timer mark	19.313	0.182	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	19.313	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	19.313	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	19.313	0.0	ENS seqproxy
+Platform: timer mark	19.313	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000646891?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark	19.476	0.163	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	19.476	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	19.476	0.0	ENS seqproxy2
+Platform: timer mark	19.485	0.009	ESP. getdataseq 
+Platform: timer mark	19.485	0.0	ESP. getxref 
+Platform: timer mark	19.485	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSP00000493543?content-type=application/json&all_levels=1
+Platform: timer mark	19.711	0.226	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	19.938	0.227	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	19.938	0.0	ESP. getxref + 0/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 1/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 2/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 3/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 4/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 5/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 6/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 7/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 8/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 9/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 10/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 11/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 12/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 13/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 14/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 15/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 16/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 17/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 18/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 19/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 20/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 21/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 22/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 23/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 24/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 25/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 26/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 27/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 28/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 29/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 30/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 31/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 32/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 33/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 34/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 35/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 36/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 37/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 38/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 39/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 40/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 41/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 42/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 43/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 44/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 45/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 46/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 47/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 48/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 49/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 50/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 51/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 52/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 53/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 54/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 55/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 56/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 57/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 58/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 59/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 60/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 61/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 62/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 63/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 64/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 65/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 66/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 67/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 68/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 69/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 70/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 71/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 72/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 73/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 74/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 75/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 76/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 77/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 78/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 79/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 80/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 81/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 82/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 83/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 84/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 85/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 86/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 87/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 88/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 89/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 90/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 91/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 92/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 93/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 94/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 95/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 96/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 97/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 98/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 99/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 100/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 101/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 102/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 103/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 104/106
+Platform: timer mark	19.938	0.0	ESP. getxref + 105/106
+Platform: timer mark	19.938	0.0	ESP. getxref self 
+Platform: timer mark	19.938	0.0	ESP. getxref self add 
+Platform: timer mark	19.938	0.0	ESP. seqprox done 
+primaries are []
+Platform: timer mark	20.185	0.247	ESP. getdataseq 
+Platform: timer mark	20.185	0.0	ESP. getxref 
+Platform: timer mark	20.185	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000496384?content-type=application/json&all_levels=1
+Platform: timer mark	20.439	0.254	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	20.439	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	20.439	0.0	ESP. getxref + 0/11
+Platform: timer mark	20.439	0.0	ESP. getxref + 1/11
+Platform: timer mark	20.439	0.0	ESP. getxref + 2/11
+Platform: timer mark	20.439	0.0	ESP. getxref + 3/11
+Platform: timer mark	20.439	0.0	ESP. getxref + 4/11
+Platform: timer mark	20.439	0.0	ESP. getxref + 5/11
+Platform: timer mark	20.439	0.0	ESP. getxref + 6/11
+Platform: timer mark	20.439	0.0	ESP. getxref + 7/11
+Platform: timer mark	20.439	0.0	ESP. getxref + 8/11
+Platform: timer mark	20.439	0.0	ESP. getxref + 9/11
+Platform: timer mark	20.439	0.0	ESP. getxref + 10/11
+Platform: timer mark	20.439	0.0	ESP. getxref self 
+Platform: timer mark	20.439	0.0	ESP. getxref self add 
+Platform: timer mark	20.439	0.0	ESP. seqprox done 
+Platform: timer mark	20.439	0.0	EnsemblSeqProx.fetchSeq 
+primaries are []
+Adding protein product for ENST00000496384
+Platform: timer mark	20.439	0.0	ENS seqproxy
+Platform: timer mark	20.441	0.002	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000496384?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark	20.624	0.183	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	20.624	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	20.624	0.0	ENS seqproxy2
+Platform: timer mark	20.632	0.008	ESP. getdataseq 
+Platform: timer mark	20.632	0.0	ESP. getxref 
+Platform: timer mark	20.632	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSP00000419060?content-type=application/json&all_levels=1
+Platform: timer mark	20.772	0.14	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	20.772	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	20.772	0.0	ESP. getxref + 0/8
+Platform: timer mark	20.772	0.0	ESP. getxref + 1/8
+Platform: timer mark	20.772	0.0	ESP. getxref + 2/8
+Platform: timer mark	20.772	0.0	ESP. getxref + 3/8
+Platform: timer mark	20.772	0.0	ESP. getxref + 4/8
+Platform: timer mark	20.772	0.0	ESP. getxref + 5/8
+Platform: timer mark	20.772	0.0	ESP. getxref + 6/8
+Platform: timer mark	20.772	0.0	ESP. getxref + 7/8
+primaries are []
+Platform: timer mark	20.772	0.0	ESP. getxref self 
+Platform: timer mark	20.772	0.0	ESP. getxref self add 
+Platform: timer mark	20.772	0.0	ESP. seqprox done 
+Platform: timer mark	20.787	0.015	ESP. getdataseq 
+Platform: timer mark	20.787	0.0	ESP. getxref 
+Platform: timer mark	20.787	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000469930?content-type=application/json&all_levels=1
+Platform: timer mark	20.988	0.201	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	20.988	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	20.988	0.0	ESP. getxref + 0/7
+Platform: timer mark	20.988	0.0	ESP. getxref + 1/7
+Platform: timer mark	20.988	0.0	ESP. getxref + 2/7
+Platform: timer mark	20.988	0.0	ESP. getxref + 3/7
+Platform: timer mark	20.988	0.0	ESP. getxref + 4/7
+Platform: timer mark	20.988	0.0	ESP. getxref + 5/7
+Platform: timer mark	20.988	0.0	ESP. getxref + 6/7
+primaries are []
+Platform: timer mark	20.988	0.0	ESP. getxref self 
+Platform: timer mark	20.988	0.0	ESP. getxref self add 
+Platform: timer mark	20.988	0.0	ESP. seqprox done 
+Adding protein product for ENST00000469930
+Platform: timer mark	20.988	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	20.988	0.0	ENS seqproxy
+Platform: timer mark	20.988	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000469930?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark	21.225	0.237	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	21.225	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	21.225	0.0	ENS seqproxy2
+Platform: timer mark	21.225	0.0	ESP. getdataseq 
+Platform: timer mark	21.225	0.0	ESP. getxref 
+Platform: timer mark	21.225	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSP00000495858?content-type=application/json&all_levels=1
+Platform: timer mark	21.362	0.137	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	21.362	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	21.362	0.0	ESP. getxref + 0/6
+Platform: timer mark	21.362	0.0	ESP. getxref + 1/6
+Platform: timer mark	21.362	0.0	ESP. getxref + 2/6
+Platform: timer mark	21.362	0.0	ESP. getxref + 3/6
+Platform: timer mark	21.362	0.0	ESP. getxref + 4/6
+Platform: timer mark	21.362	0.0	ESP. getxref + 5/6
+Platform: timer mark	21.362	0.0	ESP. getxref self 
+Platform: timer mark	21.362	0.0	ESP. getxref self add 
+Platform: timer mark	21.362	0.0	ESP. seqprox done 
+primaries are []
+Platform: timer mark	21.377	0.015	ESP. getdataseq 
+Platform: timer mark	21.377	0.0	ESP. getxref 
+Platform: timer mark	21.377	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000288602?content-type=application/json&all_levels=1
+Platform: timer mark	21.577	0.2	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	21.577	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	21.577	0.0	ESP. getxref + 0/12
+Platform: timer mark	21.577	0.0	ESP. getxref + 1/12
+Platform: timer mark	21.577	0.0	ESP. getxref + 2/12
+Platform: timer mark	21.577	0.0	ESP. getxref + 3/12
+Platform: timer mark	21.577	0.0	ESP. getxref + 4/12
+Platform: timer mark	21.577	0.0	ESP. getxref + 5/12
+Platform: timer mark	21.577	0.0	ESP. getxref + 6/12
+Platform: timer mark	21.577	0.0	ESP. getxref + 7/12
+Platform: timer mark	21.577	0.0	ESP. getxref + 8/12
+Platform: timer mark	21.577	0.0	ESP. getxref + 9/12
+Platform: timer mark	21.577	0.0	ESP. getxref + 10/12
+Platform: timer mark	21.577	0.0	ESP. getxref + 11/12
+Platform: timer mark	21.577	0.0	ESP. getxref self 
+Platform: timer mark	21.577	0.0	ESP. getxref self add 
+Platform: timer mark	21.577	0.0	ESP. seqprox done 
+primaries are []
+Adding protein product for ENST00000288602
+Platform: timer mark	21.577	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	21.577	0.0	ENS seqproxy
+Platform: timer mark	21.586	0.009	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000288602?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark	21.73	0.144	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	21.73	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	21.73	0.0	ENS seqproxy2
+Platform: timer mark	21.744	0.014	ESP. getdataseq 
+Platform: timer mark	21.744	0.0	ESP. getxref 
+Platform: timer mark	21.744	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSP00000288602?content-type=application/json&all_levels=1
+Platform: timer mark	21.893	0.149	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	21.893	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	21.893	0.0	ESP. getxref + 0/9
+Platform: timer mark	21.893	0.0	ESP. getxref + 1/9
+Platform: timer mark	21.893	0.0	ESP. getxref + 2/9
+Platform: timer mark	21.893	0.0	ESP. getxref + 3/9
+Platform: timer mark	21.893	0.0	ESP. getxref + 4/9
+Platform: timer mark	21.893	0.0	ESP. getxref + 5/9
+Platform: timer mark	21.893	0.0	ESP. getxref + 6/9
+Platform: timer mark	21.893	0.0	ESP. getxref + 7/9
+Platform: timer mark	21.893	0.0	ESP. getxref + 8/9
+primaries are [ENSEMBL:ENSP00000288602]
+Platform: timer mark	21.893	0.0	ESP. getxref self 
+Platform: timer mark	21.893	0.0	ESP. getxref self add 
+Platform: timer mark	21.893	0.0	ESP. seqprox done 
+Platform: timer mark	21.908	0.015	ESP. getdataseq 
+Platform: timer mark	21.908	0.0	ESP. getxref 
+Platform: timer mark	21.908	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000642272?content-type=application/json&all_levels=1
+Platform: timer mark	22.045	0.137	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	22.045	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	22.045	0.0	ESP. getxref + 0/1
+Platform: timer mark	22.045	0.0	ESP. getxref self 
+Platform: timer mark	22.045	0.0	ESP. getxref self add 
+Platform: timer mark	22.045	0.0	ESP. seqprox done 
+primaries are []
+Adding protein product for ENST00000642272
+Platform: timer mark	22.045	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	22.045	0.0	ENS seqproxy
+Platform: timer mark	22.045	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000642272?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000642272
+Response code 400
+Platform: timer mark	22.176	0.131	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	22.176	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	22.192	0.016	ESP. getdataseq 
+Platform: timer mark	22.192	0.0	ESP. getxref 
+Platform: timer mark	22.192	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000643790?content-type=application/json&all_levels=1
+Platform: timer mark	22.562	0.37	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	22.562	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	22.562	0.0	ESP. getxref + 0/2
+Platform: timer mark	22.562	0.0	ESP. getxref + 1/2
+Platform: timer mark	22.562	0.0	ESP. getxref self 
+Platform: timer mark	22.562	0.0	ESP. getxref self add 
+primaries are []
+Platform: timer mark	22.562	0.0	ESP. seqprox done 
+Adding protein product for ENST00000643790
+Platform: timer mark	22.562	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	22.562	0.0	ENS seqproxy
+Platform: timer mark	22.562	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000643790?type=protein&Accept=application/json&content-type=application/json
+Response code 400
+Platform: timer mark	22.709	0.147	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	22.709	0.0	EnsembleRestClient.getJSON2 ...done 
+No protein product found for ENST00000643790
+Platform: timer mark	22.719	0.01	ESP. getdataseq 
+Platform: timer mark	22.719	0.0	ESP. getxref 
+Platform: timer mark	22.719	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000646427?content-type=application/json&all_levels=1
+Platform: timer mark	23.08	0.361	EnsembleRestClient.getJSON1 parsing... 
+primaries are []
+Adding protein product for ENST00000646427
+Platform: timer mark	23.08	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	23.08	0.0	ESP. getxref + 0/1
+Platform: timer mark	23.08	0.0	ESP. getxref self 
+Platform: timer mark	23.08	0.0	ESP. getxref self add 
+Platform: timer mark	23.08	0.0	ESP. seqprox done 
+Platform: timer mark	23.091	0.011	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	23.091	0.0	ENS seqproxy
+Platform: timer mark	23.091	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000646427?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000646427
+Response code 400
+Platform: timer mark	23.233	0.142	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	23.233	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	23.233	0.0	ESP. getdataseq 
+Platform: timer mark	23.233	0.0	ESP. getxref 
+Platform: timer mark	23.233	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000642808?content-type=application/json&all_levels=1
+Platform: timer mark	23.618	0.385	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	23.618	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	23.618	0.0	ESP. getxref + 0/1
+primaries are []
+Platform: timer mark	23.618	0.0	ESP. getxref self 
+Platform: timer mark	23.618	0.0	ESP. getxref self add 
+Platform: timer mark	23.618	0.0	ESP. seqprox done 
+Adding protein product for ENST00000642808
+Platform: timer mark	23.618	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	23.618	0.0	ENS seqproxy
+Platform: timer mark	23.618	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000642808?type=protein&Accept=application/json&content-type=application/json
+Response code 400
+Platform: timer mark	23.758	0.14	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	23.758	0.0	EnsembleRestClient.getJSON2 ...done 
+No protein product found for ENST00000642808
+Platform: timer mark	23.764	0.006	ESP. getdataseq 
+Platform: timer mark	23.764	0.0	ESP. getxref 
+Platform: timer mark	23.764	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000643356?content-type=application/json&all_levels=1
+Platform: timer mark	24.146	0.382	EnsembleRestClient.getJSON1 parsing... 
+primaries are []
+Adding protein product for ENST00000643356
+Platform: timer mark	24.146	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	24.146	0.0	ESP. getxref + 0/1
+Platform: timer mark	24.151	0.005	ESP. getxref self 
+Platform: timer mark	24.151	0.0	ESP. getxref self add 
+Platform: timer mark	24.151	0.0	ESP. seqprox done 
+Platform: timer mark	24.151	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	24.151	0.0	ENS seqproxy
+Platform: timer mark	24.151	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000643356?type=protein&Accept=application/json&content-type=application/json
+Response code 400
+Platform: timer mark	24.279	0.128	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	24.279	0.0	EnsembleRestClient.getJSON2 ...done 
+No protein product found for ENST00000643356
+Platform: timer mark	24.294	0.015	ESP. getdataseq 
+Platform: timer mark	24.294	0.0	ESP. getxref 
+Platform: timer mark	24.294	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000497784?content-type=application/json&all_levels=1
+Platform: timer mark	24.68	0.386	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	24.68	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	24.68	0.0	ESP. getxref + 0/8
+Platform: timer mark	24.68	0.0	ESP. getxref + 1/8
+Platform: timer mark	24.68	0.0	ESP. getxref + 2/8
+Platform: timer mark	24.68	0.0	ESP. getxref + 3/8
+Platform: timer mark	24.68	0.0	ESP. getxref + 4/8
+Platform: timer mark	24.68	0.0	ESP. getxref + 5/8
+Platform: timer mark	24.68	0.0	ESP. getxref + 6/8
+Platform: timer mark	24.68	0.0	ESP. getxref + 7/8
+primaries are []
+Platform: timer mark	24.68	0.0	ESP. getxref self 
+Platform: timer mark	24.68	0.0	ESP. getxref self add 
+Platform: timer mark	24.68	0.0	ESP. seqprox done 
+Adding protein product for ENST00000497784
+Platform: timer mark	24.68	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	24.68	0.0	ENS seqproxy
+Platform: timer mark	24.68	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000497784?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark	24.849	0.169	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	24.849	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	24.849	0.0	ENS seqproxy2
+Platform: timer mark	24.849	0.0	ESP. getdataseq 
+Platform: timer mark	24.849	0.0	ESP. getxref 
+Platform: timer mark	24.849	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSP00000420119?content-type=application/json&all_levels=1
+Platform: timer mark	24.998	0.149	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	24.998	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	24.998	0.0	ESP. getxref + 0/6
+Platform: timer mark	24.998	0.0	ESP. getxref + 1/6
+Platform: timer mark	24.998	0.0	ESP. getxref + 2/6
+Platform: timer mark	24.998	0.0	ESP. getxref + 3/6
+Platform: timer mark	24.998	0.0	ESP. getxref + 4/6
+Platform: timer mark	24.998	0.0	ESP. getxref + 5/6
+primaries are []
+Platform: timer mark	24.998	0.0	ESP. getxref self 
+Platform: timer mark	24.998	0.0	ESP. getxref self add 
+Platform: timer mark	24.998	0.0	ESP. seqprox done 
+Platform: timer mark	25.008	0.01	ESP. getdataseq 
+Platform: timer mark	25.008	0.0	ESP. getxref 
+Platform: timer mark	25.008	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000646334?content-type=application/json&all_levels=1
+Platform: timer mark	25.182	0.174	EnsembleRestClient.getJSON1 parsing... 
+primaries are []
+Adding protein product for ENST00000646334
+Platform: timer mark	25.182	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	25.182	0.0	ESP. getxref + 0/1
+Platform: timer mark	25.182	0.0	ESP. getxref self 
+Platform: timer mark	25.182	0.0	ESP. getxref self add 
+Platform: timer mark	25.182	0.0	ESP. seqprox done 
+Platform: timer mark	25.182	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	25.182	0.0	ENS seqproxy
+Platform: timer mark	25.182	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000646334?type=protein&Accept=application/json&content-type=application/json
+Response code 400
+Platform: timer mark	25.333	0.151	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	25.333	0.0	EnsembleRestClient.getJSON2 ...done 
+No protein product found for ENST00000646334
+Platform: timer mark	25.348	0.015	ESP. getdataseq 
+Platform: timer mark	25.348	0.0	ESP. getxref 
+Platform: timer mark	25.348	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000646730?content-type=application/json&all_levels=1
+Platform: timer mark	25.736	0.388	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	25.736	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	25.736	0.0	ESP. getxref + 0/8
+Platform: timer mark	25.736	0.0	ESP. getxref + 1/8
+Platform: timer mark	25.736	0.0	ESP. getxref + 2/8
+Platform: timer mark	25.736	0.0	ESP. getxref + 3/8
+Platform: timer mark	25.736	0.0	ESP. getxref + 4/8
+Platform: timer mark	25.736	0.0	ESP. getxref + 5/8
+Platform: timer mark	25.736	0.0	ESP. getxref + 6/8
+Platform: timer mark	25.736	0.0	ESP. getxref + 7/8
+primaries are []
+Platform: timer mark	25.736	0.0	ESP. getxref self 
+Platform: timer mark	25.736	0.0	ESP. getxref self add 
+Platform: timer mark	25.736	0.0	ESP. seqprox done 
+Adding protein product for ENST00000646730
+Platform: timer mark	25.736	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	25.736	0.0	ENS seqproxy
+Platform: timer mark	25.736	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000646730?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark	25.904	0.168	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	25.904	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	25.904	0.0	ENS seqproxy2
+Platform: timer mark	25.904	0.0	ESP. getdataseq 
+Platform: timer mark	25.904	0.0	ESP. getxref 
+Platform: timer mark	25.904	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSP00000494784?content-type=application/json&all_levels=1
+Platform: timer mark	26.073	0.169	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	26.073	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	26.073	0.0	ESP. getxref + 0/6
+Platform: timer mark	26.073	0.0	ESP. getxref + 1/6
+Platform: timer mark	26.073	0.0	ESP. getxref + 2/6
+Platform: timer mark	26.073	0.0	ESP. getxref + 3/6
+Platform: timer mark	26.073	0.0	ESP. getxref + 4/6
+Platform: timer mark	26.073	0.0	ESP. getxref + 5/6
+Platform: timer mark	26.073	0.0	ESP. getxref self 
+primaries are []
+Platform: timer mark	26.073	0.0	ESP. getxref self add 
+Platform: timer mark	26.073	0.0	ESP. seqprox done 
+Platform: timer mark	26.078	0.005	ESP. getdataseq 
+Platform: timer mark	26.078	0.0	ESP. getxref 
+Platform: timer mark	26.078	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000644650?content-type=application/json&all_levels=1
+Platform: timer mark	26.254	0.176	EnsembleRestClient.getJSON1 parsing... 
+primaries are []
+Adding protein product for ENST00000644650
+Platform: timer mark	26.254	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	26.254	0.0	ESP. getxref + 0/4
+Platform: timer mark	26.254	0.0	ESP. getxref + 1/4
+Platform: timer mark	26.254	0.0	ESP. getxref + 2/4
+Platform: timer mark	26.254	0.0	ESP. getxref + 3/4
+Platform: timer mark	26.254	0.0	ESP. getxref self 
+Platform: timer mark	26.254	0.0	ESP. getxref self add 
+Platform: timer mark	26.254	0.0	ESP. seqprox done 
+Platform: timer mark	26.254	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	26.254	0.0	ENS seqproxy
+Platform: timer mark	26.254	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000644650?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark	26.408	0.154	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	26.408	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	26.408	0.0	ENS seqproxy2
+Platform: timer mark	26.408	0.0	ESP. getdataseq 
+Platform: timer mark	26.408	0.0	ESP. getxref 
+Platform: timer mark	26.408	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSP00000493783?content-type=application/json&all_levels=1
+Platform: timer mark	26.562	0.154	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	26.562	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	26.562	0.0	ESP. getxref + 0/2
+Platform: timer mark	26.562	0.0	ESP. getxref + 1/2
+Platform: timer mark	26.562	0.0	ESP. getxref self 
+Platform: timer mark	26.562	0.0	ESP. getxref self add 
+Platform: timer mark	26.562	0.0	ESP. seqprox done primaries are []
+
+Platform: timer mark	26.562	0.0	ESP. getdataseq 
+Platform: timer mark	26.562	0.0	ESP. getxref 
+Platform: timer mark	26.562	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000647434?content-type=application/json&all_levels=1
+Platform: timer mark	26.725	0.163	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	26.725	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	26.725	0.0	ESP. getxref + 0/8
+Platform: timer mark	26.725	0.0	ESP. getxref + 1/8
+Platform: timer mark	26.725	0.0	ESP. getxref + 2/8
+Platform: timer mark	26.725	0.0	ESP. getxref + 3/8
+Platform: timer mark	26.725	0.0	ESP. getxref + 4/8
+Platform: timer mark	26.725	0.0	ESP. getxref + 5/8
+Platform: timer mark	26.725	0.0	ESP. getxref + 6/8
+Platform: timer mark	26.725	0.0	ESP. getxref + 7/8
+Platform: timer mark	26.725	0.0	ESP. getxref self 
+Platform: timer mark	26.725	0.0	ESP. getxref self add 
+Platform: timer mark	26.725	0.0	ESP. seqprox done 
+primaries are []
+Adding protein product for ENST00000647434
+Platform: timer mark	26.725	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	26.725	0.0	ENS seqproxy
+Platform: timer mark	26.725	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000647434?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark	26.909	0.184	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	26.909	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	26.909	0.0	ENS seqproxy2
+Platform: timer mark	26.909	0.0	ESP. getdataseq 
+Platform: timer mark	26.909	0.0	ESP. getxref 
+Platform: timer mark	26.909	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSP00000495132?content-type=application/json&all_levels=1
+Platform: timer mark	27.078	0.169	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	27.078	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	27.078	0.0	ESP. getxref + 0/6
+Platform: timer mark	27.078	0.0	ESP. getxref + 1/6
+Platform: timer mark	27.078	0.0	ESP. getxref + 2/6
+Platform: timer mark	27.078	0.0	ESP. getxref + 3/6
+Platform: timer mark	27.078	0.0	ESP. getxref + 4/6
+Platform: timer mark	27.078	0.0	ESP. getxref + 5/6
+Platform: timer mark	27.078	0.0	ESP. getxref self 
+Platform: timer mark	27.078	0.0	ESP. getxref self add 
+Platform: timer mark	27.078	0.0	ESP. seqprox done 
+primaries are []
+Platform: timer mark	27.089	0.011	ESP. getdataseq 
+Platform: timer mark	27.089	0.0	ESP. getxref 
+Platform: timer mark	27.089	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000479537?content-type=application/json&all_levels=1
+Platform: timer mark	27.263	0.174	EnsembleRestClient.getJSON1 parsing... 
+primaries are []
+Adding protein product for ENST00000479537
+Platform: timer mark	27.265	0.002	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	27.265	0.0	ESP. getxref + 0/4
+Platform: timer mark	27.265	0.0	ESP. getxref + 1/4
+Platform: timer mark	27.265	0.0	ESP. getxref + 2/4
+Platform: timer mark	27.265	0.0	ESP. getxref + 3/4
+Platform: timer mark	27.265	0.0	ESP. getxref self 
+Platform: timer mark	27.265	0.0	ESP. getxref self add 
+Platform: timer mark	27.265	0.0	ESP. seqprox done 
+Platform: timer mark	27.265	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	27.265	0.0	ENS seqproxy
+Platform: timer mark	27.265	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000479537?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark	27.411	0.146	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	27.411	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	27.411	0.0	ENS seqproxy2
+Platform: timer mark	27.411	0.0	ESP. getdataseq 
+Platform: timer mark	27.411	0.0	ESP. getxref 
+Platform: timer mark	27.411	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSP00000418033?content-type=application/json&all_levels=1
+Platform: timer mark	27.598	0.187	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	27.598	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	27.598	0.0	ESP. getxref + 0/2
+Platform: timer mark	27.598	0.0	ESP. getxref + 1/2
+Platform: timer mark	27.598	0.0	ESP. getxref self 
+primaries are []
+Platform: timer mark	27.598	0.0	ESP. getxref self add 
+Platform: timer mark	27.598	0.0	ESP. seqprox done 
+Platform: timer mark	27.598	0.0	ESP. getdataseq 
+Platform: timer mark	27.598	0.0	ESP. getxref 
+Platform: timer mark	27.598	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000645443?content-type=application/json&all_levels=1
+Platform: timer mark	27.736	0.138	EnsembleRestClient.getJSON1 parsing... 
+primaries are []
+Adding protein product for ENST00000645443
+Platform: timer mark	27.736	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	27.736	0.0	ESP. getxref + 0/1
+Platform: timer mark	27.736	0.0	ESP. getxref self 
+Platform: timer mark	27.736	0.0	ESP. getxref self add 
+Platform: timer mark	27.736	0.0	ESP. seqprox done 
+Platform: timer mark	27.736	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	27.736	0.0	ENS seqproxy
+Platform: timer mark	27.736	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000645443?type=protein&Accept=application/json&content-type=application/json
+Response code 400
+Platform: timer mark	27.893	0.157	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	27.893	0.0	EnsembleRestClient.getJSON2 ...done 
+No protein product found for ENST00000645443
+Platform: timer mark	27.908	0.015	ESP. getdataseq 
+Platform: timer mark	27.908	0.0	ESP. getxref 
+Platform: timer mark	27.908	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000644905?content-type=application/json&all_levels=1
+Platform: timer mark	28.289	0.381	EnsembleRestClient.getJSON1 parsing... 
+primaries are []
+Adding protein product for ENST00000644905
+Platform: timer mark	28.289	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	28.289	0.0	ESP. getxref + 0/3
+Platform: timer mark	28.289	0.0	ESP. getxref + 1/3
+Platform: timer mark	28.302	0.013	ESP. getxref + 2/3
+Platform: timer mark	28.302	0.0	ESP. getxref self 
+Platform: timer mark	28.302	0.0	ESP. getxref self add 
+Platform: timer mark	28.302	0.0	ESP. seqprox done 
+Platform: timer mark	28.302	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	28.302	0.0	ENS seqproxy
+Platform: timer mark	28.302	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000644905?type=protein&Accept=application/json&content-type=application/json
+Response code 400
+Platform: timer mark	28.425	0.123	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	28.425	0.0	EnsembleRestClient.getJSON2 ...done 
+No protein product found for ENST00000644905
+Platform: timer mark	28.44	0.015	ESP. getdataseq 
+Platform: timer mark	28.44	0.0	ESP. getxref 
+Platform: timer mark	28.44	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000642228?content-type=application/json&all_levels=1
+Platform: timer mark	28.824	0.384	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	28.824	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	28.824	0.0	ESP. getxref + 0/8
+Platform: timer mark	28.824	0.0	ESP. getxref + 1/8
+Platform: timer mark	28.824	0.0	ESP. getxref + 2/8
+Platform: timer mark	28.824	0.0	ESP. getxref + 3/8
+Platform: timer mark	28.824	0.0	ESP. getxref + 4/8
+Platform: timer mark	28.824	0.0	ESP. getxref + 5/8
+Platform: timer mark	28.824	0.0	ESP. getxref + 6/8
+Platform: timer mark	28.824	0.0	ESP. getxref + 7/8
+primaries are []
+Platform: timer mark	28.824	0.0	ESP. getxref self 
+Platform: timer mark	28.824	0.0	ESP. getxref self add 
+Platform: timer mark	28.824	0.0	ESP. seqprox done 
+Adding protein product for ENST00000642228
+Platform: timer mark	28.824	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	28.824	0.0	ENS seqproxy
+Platform: timer mark	28.824	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000642228?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark	29.01	0.186	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	29.01	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	29.01	0.0	ENS seqproxy2
+Platform: timer mark	29.01	0.0	ESP. getdataseq 
+Platform: timer mark	29.01	0.0	ESP. getxref 
+Platform: timer mark	29.01	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSP00000493678?content-type=application/json&all_levels=1
+Platform: timer mark	29.172	0.162	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	29.172	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	29.172	0.0	ESP. getxref + 0/6
+Platform: timer mark	29.172	0.0	ESP. getxref + 1/6
+Platform: timer mark	29.172	0.0	ESP. getxref + 2/6
+Platform: timer mark	29.172	0.0	ESP. getxref + 3/6
+Platform: timer mark	29.172	0.0	ESP. getxref + 4/6
+Platform: timer mark	29.172	0.0	ESP. getxref + 5/6
+Platform: timer mark	29.172	0.0	ESP. getxref self 
+primaries are []
+Platform: timer mark	29.172	0.0	ESP. getxref self add 
+Platform: timer mark	29.172	0.0	ESP. seqprox done 
+Platform: timer mark	29.394	0.222	ESP. getdataseq 
+Platform: timer mark	29.394	0.0	ESP. getxref 
+Platform: timer mark	29.394	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000644969?content-type=application/json&all_levels=1
+Platform: timer mark	29.557	0.163	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	29.557	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	29.557	0.0	ESP. getxref + 0/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 1/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 2/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 3/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 4/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 5/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 6/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 7/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 8/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 9/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 10/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 11/13
+Platform: timer mark	29.557	0.0	ESP. getxref + 12/13
+primaries are []
+Platform: timer mark	29.557	0.0	ESP. getxref self 
+Platform: timer mark	29.557	0.0	ESP. getxref self add 
+Platform: timer mark	29.557	0.0	ESP. seqprox done 
+Platform: timer mark	29.562	0.005	EnsembleRestClient.getJSON0 https://rest.ensembl.org/info/ping?content-type=application/json
+Adding protein product for ENST00000644969
+Platform: timer mark	29.695	0.133	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	29.695	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	29.695	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	29.695	0.0	ENS seqproxy
+Platform: timer mark	29.695	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000644969?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark	29.843	0.148	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	29.843	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	29.843	0.0	ENS seqproxy2
+Platform: timer mark	29.843	0.0	ESP. getdataseq 
+Platform: timer mark	29.843	0.0	ESP. getxref 
+Platform: timer mark	29.843	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENSP00000496776?content-type=application/json&all_levels=1
+Platform: timer mark	30.043	0.2	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	30.043	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	30.043	0.0	ESP. getxref + 0/8
+Platform: timer mark	30.043	0.0	ESP. getxref + 1/8
+Platform: timer mark	30.043	0.0	ESP. getxref + 2/8
+Platform: timer mark	30.043	0.0	ESP. getxref + 3/8
+Platform: timer mark	30.043	0.0	ESP. getxref + 4/8
+Platform: timer mark	30.043	0.0	ESP. getxref + 5/8
+Platform: timer mark	30.043	0.0	ESP. getxref + 6/8
+Platform: timer mark	30.043	0.0	ESP. getxref + 7/8
+Platform: timer mark	30.043	0.0	ESP. getxref self primaries are []
+
+Platform: timer mark	30.043	0.0	ESP. getxref self add 
+Platform: timer mark	30.043	0.0	ESP. seqprox done 
+Platform: timer mark	30.059	0.016	ESP. getdataseq 
+Platform: timer mark	30.059	0.0	ESP. getxref 
+Platform: timer mark	30.059	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000644120?content-type=application/json&all_levels=1
+Platform: timer mark	30.265	0.206	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	30.265	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	30.265	0.0	ESP. getxref + 0/1
+Platform: timer mark	30.265	0.0	ESP. getxref self 
+primaries are []
+Platform: timer mark	30.265	0.0	ESP. getxref self add 
+Platform: timer mark	30.265	0.0	ESP. seqprox done 
+Adding protein product for ENST00000644120
+Platform: timer mark	30.265	0.0	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	30.265	0.0	ENS seqproxy
+Platform: timer mark	30.265	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000644120?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000644120
+Response code 400
+Platform: timer mark	30.41	0.145	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	30.41	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	30.419	0.009	ESP. getdataseq 
+Platform: timer mark	30.419	0.0	ESP. getxref 
+Platform: timer mark	30.419	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/xrefs/id/ENST00000642875?content-type=application/json&all_levels=1
+Platform: timer mark	30.812	0.393	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	30.812	0.0	EnsembleRestClient.getJSON2 ...done 
+Platform: timer mark	30.812	0.0	ESP. getxref + 0/1
+Platform: timer mark	30.812	0.0	ESP. getxref self primaries are []
+
+Platform: timer mark	30.812	0.0	ESP. getxref self add 
+Platform: timer mark	30.812	0.0	ESP. seqprox done 
+Platform: timer mark	30.823	0.011	EnsemblSeqProx.fetchSeq 
+Platform: timer mark	30.823	0.0	ENS seqproxy
+Platform: timer mark	30.823	0.0	EnsembleRestClient.getJSON0 https://rest.ensembl.org/sequence/id/ENST00000642875?type=protein&Accept=application/json&content-type=application/json
+Adding protein product for ENST00000642875
+Response code 400
+Platform: timer mark	30.959	0.136	EnsembleRestClient.getJSON1 parsing... 
+Platform: timer mark	30.959	0.0	EnsembleRestClient.getJSON2 ...done 
+No protein product found for ENST00000642875
+Platform: timer mark	31.087	0.128	EG done
+ALL CLOSED

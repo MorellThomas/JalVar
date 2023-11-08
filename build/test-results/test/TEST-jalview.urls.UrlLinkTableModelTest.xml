@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.urls.UrlLinkTableModelTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:02" hostname="wer3eng" time="0.01">
+  <properties/>
+  <testcase name="testColumns" classname="jalview.urls.UrlLinkTableModelTest" time="0.0"/>
+  <testcase name="testCounts" classname="jalview.urls.UrlLinkTableModelTest" time="0.0"/>
+  <testcase name="testDeletable" classname="jalview.urls.UrlLinkTableModelTest" time="0.0"/>
+  <testcase name="testEditable" classname="jalview.urls.UrlLinkTableModelTest" time="0.0"/>
+  <testcase name="testInitialisation" classname="jalview.urls.UrlLinkTableModelTest" time="0.0"/>
+  <testcase name="testRowDelete" classname="jalview.urls.UrlLinkTableModelTest" time="0.002"/>
+  <testcase name="testRowEditable" classname="jalview.urls.UrlLinkTableModelTest" time="0.0"/>
+  <testcase name="testRowInsert" classname="jalview.urls.UrlLinkTableModelTest" time="0.001"/>
+  <testcase name="testValues" classname="jalview.urls.UrlLinkTableModelTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,22 @@
+application/x-jalview+xml+zip; jalview '%s'; description="Jalview File"; nametemplate=%s.jvp; test=test -n "$DISPLAY"; priority=10
+chemical/x-cif; jalview '%s'; description="CIF File"; nametemplate=%s.cif; test=test -n "$DISPLAY"; priority=4
+chemical/x-mmcif; jalview '%s'; description="mmCIF File"; nametemplate=%s.mcif; test=test -n "$DISPLAY"; priority=4
+chemical/x-pdb; jalview '%s'; description="PDB File"; nametemplate=%s.pdb; test=test -n "$DISPLAY"; priority=4
+application/x-amsa+txt; jalview '%s'; description="AMSA File"; nametemplate=%s.amsa; test=test -n "$DISPLAY"; priority=9
+application/x-jalview-annotations+text; jalview '%s'; description="Jalview Annotations File"; nametemplate=%s.annotations; test=test -n "$DISPLAY"; priority=10
+application/x-jalview-biojson+json; jalview '%s'; description="BioJSON File"; nametemplate=%s.biojson; test=test -n "$DISPLAY"; priority=10
+application/x-blc+txt; jalview '%s'; description="BLC File"; nametemplate=%s.blc; test=test -n "$DISPLAY"; priority=9
+application/x-clustal+txt; jalview '%s'; description="Clustal File"; nametemplate=%s.aln; test=test -n "$DISPLAY"; priority=9
+application/x-fasta+txt; jalview '%s'; description="Fasta File"; nametemplate=%s.fa; test=test -n "$DISPLAY"; priority=9
+application/x-jalview-features+text; jalview '%s'; description="Jalview Features File"; nametemplate=%s.features; test=test -n "$DISPLAY"; priority=10
+application/x-gff2+txt; jalview '%s'; description="Generic Features Format v2 File"; nametemplate=%s.gff2; test=test -n "$DISPLAY"; priority=9
+application/x-gff3+txt; jalview '%s'; description="Generic Features Format v3 File"; nametemplate=%s.gff3; test=test -n "$DISPLAY"; priority=9
+application/x-jalview-jnet+text; jalview '%s'; description="JnetFile File"; nametemplate=%s.concise; test=test -n "$DISPLAY"; priority=10
+application/x-msf+txt; jalview '%s'; description="MSF File"; nametemplate=%s.msf; test=test -n "$DISPLAY"; priority=9
+application/x-pfam+txt; jalview '%s'; description="PFAM File"; nametemplate=%s.pfam; test=test -n "$DISPLAY"; priority=9
+application/x-phylip+txt; jalview '%s'; description="PHYLIP File"; nametemplate=%s.phy; test=test -n "$DISPLAY"; priority=9
+application/x-pileup+txt; jalview '%s'; description="PileUp File"; nametemplate=%s.pileup; test=test -n "$DISPLAY"; priority=9
+application/x-pir+txt; jalview '%s'; description="PIR File"; nametemplate=%s.pir; test=test -n "$DISPLAY"; priority=9
+application/rnaml+xml; jalview '%s'; description="RNAML File"; nametemplate=%s.rnaml; test=test -n "$DISPLAY"; priority=9
+application/x-jalview-scorematrix+text; jalview '%s'; description="Substitution Matrix File"; nametemplate=%s.mat; test=test -n "$DISPLAY"; priority=10
+application/x-stockholm+txt; jalview '%s'; description="Stockholm File"; nametemplate=%s.sto; test=test -n "$DISPLAY"; priority=9

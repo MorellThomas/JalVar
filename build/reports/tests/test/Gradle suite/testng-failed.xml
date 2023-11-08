@@ -1,0 +1,1044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Gradle suite]" verbose="0">
+  <test name="Gradle test(failed)">
+    <groups>
+      <run>
+        <include name="Functional"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="jalview.schemes.FeatureColourTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.schemes.FeatureColourTest -->
+      <class name="jalview.structure.Mapping">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.structure.Mapping -->
+      <class name="jalview.analysis.CodingUtilsTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.CodingUtilsTest -->
+      <class name="jalview.io.CrossRef2xmlTests">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUpBeforeClass"/>
+          <include name="clearDesktop"/>
+          <include name="tearDownAfterClass"/>
+        </methods>
+      </class> <!-- jalview.io.CrossRef2xmlTests -->
+      <class name="jalview.util.Log4jTest">
+        <methods>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- jalview.util.Log4jTest -->
+      <class name="jalview.datamodel.PDBEntryTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- jalview.datamodel.PDBEntryTest -->
+      <class name="jalview.ext.so.SequenceOntologyTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ext.so.SequenceOntologyTest -->
+      <class name="jalview.ext.ensembl.EnsemblXrefTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ext.ensembl.EnsemblXrefTest -->
+      <class name="jalview.gui.AnnotationChooserTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.gui.AnnotationChooserTest -->
+      <class name="jalview.schemes.ColourSchemesTest">
+        <methods>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeClass"/>
+        </methods>
+      </class> <!-- jalview.schemes.ColourSchemesTest -->
+      <class name="jalview.datamodel.VisibleRowsIteratorTest">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jalview.datamodel.VisibleRowsIteratorTest -->
+      <class name="jalview.gui.structurechooser.StructureChooserQuerySourceTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.gui.structurechooser.StructureChooserQuerySourceTest -->
+      <class name="jalview.urls.UrlProviderTest">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jalview.urls.UrlProviderTest -->
+      <class name="jalview.datamodel.SequenceFeatureTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.SequenceFeatureTest -->
+      <class name="jalview.ext.ensembl.EnsemblProteinTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ext.ensembl.EnsemblProteinTest -->
+      <class name="jalview.datamodel.AllRowsIteratorTest">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jalview.datamodel.AllRowsIteratorTest -->
+      <class name="jalview.gui.ScalePanelTest">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.gui.ScalePanelTest -->
+      <class name="jalview.gui.PaintRefresherTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.gui.PaintRefresherTest -->
+      <class name="jalview.util.SparseCountTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.SparseCountTest -->
+      <class name="jalview.io.StockholmFileTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.StockholmFileTest -->
+      <class name="jalview.gui.SeqCanvasTest">
+        <methods>
+          <include name="testCalculateWrappedGeometry_noAnnotations"/>
+          <include name="setUp"/>
+          <include name="testCalculateWrappedGeometry_withAnnotations"/>
+        </methods>
+      </class> <!-- jalview.gui.SeqCanvasTest -->
+      <class name="jalview.analysis.DnaTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.DnaTest -->
+      <class name="jalview.analysis.ConservationTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.ConservationTest -->
+      <class name="mc_view.ResidueTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- mc_view.ResidueTest -->
+      <class name="jalview.fts.core.FTSRestClientTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jalview.fts.core.FTSRestClientTest -->
+      <class name="jalview.util.ComparisonTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.ComparisonTest -->
+      <class name="jalview.util.FormatTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.FormatTest -->
+      <class name="jalview.gui.AlignmentPanelTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="testCalculateIdWidth_withMaxWidth"/>
+          <include name="testGetVisibleWidth"/>
+        </methods>
+      </class> <!-- jalview.gui.AlignmentPanelTest -->
+      <class name="jalview.util.MapListTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.MapListTest -->
+      <class name="jalview.io.cache.JvCacheableInputBoxTest">
+        <methods>
+          <include name="setUpCache"/>
+        </methods>
+      </class> <!-- jalview.io.cache.JvCacheableInputBoxTest -->
+      <class name="jalview.util.ArrayUtilsTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.ArrayUtilsTest -->
+      <class name="jalview.ws.dbsources.RemoteFormatTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.ws.dbsources.RemoteFormatTest -->
+      <class name="jalview.bin.JalviewLiteTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.bin.JalviewLiteTest -->
+      <class name="jalview.viewmodel.styles.ViewStyleTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.viewmodel.styles.ViewStyleTest -->
+      <class name="jalview.io.PfamFormatInputTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.PfamFormatInputTest -->
+      <class name="jalview.datamodel.AlignedCodonTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.AlignedCodonTest -->
+      <class name="jalview.fts.threedbeacons.TDBeaconsPanelTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- jalview.fts.threedbeacons.TDBeaconsPanelTest -->
+      <class name="jalview.datamodel.AlignmentAnnotationTests">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.AlignmentAnnotationTests -->
+      <class name="jalview.io.RNAMLfileTest">
+        <methods>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpBeforeClass"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.RNAMLfileTest -->
+      <class name="jalview.ws.rest.ShmmrRSBSService">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ws.rest.ShmmrRSBSService -->
+      <class name="jalview.gui.SequenceRendererTest">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.gui.SequenceRendererTest -->
+      <class name="jalview.util.StringUtilsTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.StringUtilsTest -->
+      <class name="jalview.io.FormatAdapterTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.FormatAdapterTest -->
+      <class name="jalview.urls.UrlLinkTableModelTest">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jalview.urls.UrlLinkTableModelTest -->
+      <class name="jalview.ws.dbsources.EmblXmlSourceTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.ws.dbsources.EmblXmlSourceTest -->
+      <class name="jalview.io.cache.AppCacheTest">
+        <methods>
+          <include name="setUpCache"/>
+        </methods>
+      </class> <!-- jalview.io.cache.AppCacheTest -->
+      <class name="jalview.renderer.seqfeatures.FeatureColourFinderTest">
+        <methods>
+          <include name="setUpBeforeTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.renderer.seqfeatures.FeatureColourFinderTest -->
+      <class name="jalview.ws.rest.RestClientTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ws.rest.RestClientTest -->
+      <class name="jalview.io.ScoreMatrixFileTest">
+        <methods>
+          <include name="tearDownAfterTest"/>
+        </methods>
+      </class> <!-- jalview.io.ScoreMatrixFileTest -->
+      <class name="jalview.gui.AlignViewportTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUpBeforeClass"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.gui.AlignViewportTest -->
+      <class name="jalview.ext.jmol.JmolCommandsTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.ext.jmol.JmolCommandsTest -->
+      <class name="jalview.gui.AnnotationColumnChooserTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.gui.AnnotationColumnChooserTest -->
+      <class name="jalview.io.PhylipFileTests">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.PhylipFileTests -->
+      <class name="jalview.ext.ensembl.EnsemblGenomeTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ext.ensembl.EnsemblGenomeTest -->
+      <class name="jalview.analysis.CrossRefTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.CrossRefTest -->
+      <class name="jalview.analysis.TestAlignSeq">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.TestAlignSeq -->
+      <class name="jalview.datamodel.AllColsIteratorTest">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jalview.datamodel.AllColsIteratorTest -->
+      <class name="jalview.gui.ProgressBarTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.gui.ProgressBarTest -->
+      <class name="jalview.io.FileFormatsTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.io.FileFormatsTest -->
+      <class name="jalview.io.JSONFileTest">
+        <methods>
+          <include name="setup"/>
+          <include name="setUpJvOptionPane"/>
+          <include name="methodSetup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- jalview.io.JSONFileTest -->
+      <class name="jalview.datamodel.SearchResultsTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.SearchResultsTest -->
+      <class name="jalview.ext.ensembl.EnsemblSeqProxyTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- jalview.ext.ensembl.EnsemblSeqProxyTest -->
+      <class name="jalview.ws.dbsources.UniprotTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ws.dbsources.UniprotTest -->
+      <class name="jalview.io.JalviewExportPropertiesTests">
+        <methods>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUpBeforeClass"/>
+        </methods>
+      </class> <!-- jalview.io.JalviewExportPropertiesTests -->
+      <class name="jalview.datamodel.DBRefEntryTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.DBRefEntryTest -->
+      <class name="jalview.util.MappingUtilsTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.util.MappingUtilsTest -->
+      <class name="jalview.datamodel.SeqCigarTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.SeqCigarTest -->
+      <class name="jalview.fts.service.pdb.PDBFTSRestClientTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- jalview.fts.service.pdb.PDBFTSRestClientTest -->
+      <class name="mc_view.PDBfileTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- mc_view.PDBfileTest -->
+      <class name="jalview.urls.IdentifiersUrlProviderTest">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jalview.urls.IdentifiersUrlProviderTest -->
+      <class name="jalview.io.NewickFileTests">
+        <methods>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUpBeforeClass"/>
+        </methods>
+      </class> <!-- jalview.io.NewickFileTests -->
+      <class name="jalview.util.DnaUtilsTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.DnaUtilsTest -->
+      <class name="jalview.commands.EditCommandTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.commands.EditCommandTest -->
+      <class name="jalview.renderer.ResidueColourFinderTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.renderer.ResidueColourFinderTest -->
+      <class name="jalview.fts.threedbeacons.TDBeaconsFTSRestClientTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.fts.threedbeacons.TDBeaconsFTSRestClientTest -->
+      <class name="jalview.io.vcf.VCFLoaderTest">
+        <methods>
+          <include name="setUpBeforeTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.io.vcf.VCFLoaderTest -->
+      <class name="jalview.analysis.RnaTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.RnaTest -->
+      <class name="jalview.structures.models.AAStructureBindingModelTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.structures.models.AAStructureBindingModelTest -->
+      <class name="jalview.gui.AppVarnaTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.gui.AppVarnaTest -->
+      <class name="jalview.io.gff.InterProScanHelperTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.gff.InterProScanHelperTest -->
+      <class name="jalview.gui.JvSwingUtilsTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.gui.JvSwingUtilsTest -->
+      <class name="jalview.gui.CalculationChooserTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.gui.CalculationChooserTest -->
+      <class name="jalview.ws.dbsources.PfamSeedTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.ws.dbsources.PfamSeedTest -->
+      <class name="jalview.io.TCoffeeScoreFileTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.TCoffeeScoreFileTest -->
+      <class name="jalview.schemes.AnnotationColourGradientTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.schemes.AnnotationColourGradientTest -->
+      <class name="jalview.io.AnnotationFileIOTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.AnnotationFileIOTest -->
+      <class name="jalview.analysis.FinderTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDownAfterTest"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.FinderTest -->
+      <class name="jalview.datamodel.AlignmentTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.AlignmentTest -->
+      <class name="jalview.gui.PopupMenuTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.gui.PopupMenuTest -->
+      <class name="jalview.datamodel.features.FeatureAttributesTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.datamodel.features.FeatureAttributesTest -->
+      <class name="jalview.bin.CommandLineOperations">
+        <methods>
+          <include name="setUpForCommandLineInputOperations"/>
+          <include name="setUpForHeadlessCommandLineInputOperations"/>
+          <include name="initialize"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.bin.CommandLineOperations -->
+      <class name="jalview.gui.StructureViewerTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.gui.StructureViewerTest -->
+      <class name="jalview.io.gff.GffTests">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.gff.GffTests -->
+      <class name="jalview.ext.ensembl.EnsemblCdnaTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ext.ensembl.EnsemblCdnaTest -->
+      <class name="jalview.datamodel.HiddenSequencesTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.HiddenSequencesTest -->
+      <class name="jalview.io.gff.GffHelperBaseTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.gff.GffHelperBaseTest -->
+      <class name="jalview.gui.StructureChooserTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- jalview.gui.StructureChooserTest -->
+      <class name="jalview.schemes.UserColourSchemeTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.schemes.UserColourSchemeTest -->
+      <class name="jalview.io.FileIOTester">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="setUpJvOptionPane"/>
+          <include name="tearDownAfterClass"/>
+        </methods>
+      </class> <!-- jalview.io.FileIOTester -->
+      <class name="jalview.schemes.ResiduePropertiesTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.schemes.ResiduePropertiesTest -->
+      <class name="jalview.io.EmblFlatFileTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.io.EmblFlatFileTest -->
+      <class name="jalview.gui.SeqPanelTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="testFindMousePosition_wrapped_scales_longSequence"/>
+          <include name="setUpBeforeClass"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- jalview.gui.SeqPanelTest -->
+      <class name="jalview.ws.dbsources.RfamSeedTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.ws.dbsources.RfamSeedTest -->
+      <class name="jalview.ext.ensembl.EnsemblCdsTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- jalview.ext.ensembl.EnsemblCdsTest -->
+      <class name="jalview.datamodel.ResidueCountTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.ResidueCountTest -->
+      <class name="jalview.util.UrlLinkTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.UrlLinkTest -->
+      <class name="jalview.analysis.AlignSeqTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.AlignSeqTest -->
+      <class name="jalview.datamodel.AlignedCodonIteratorTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.AlignedCodonIteratorTest -->
+      <class name="jalview.ws.SequenceFetcherTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ws.SequenceFetcherTest -->
+      <class name="mc_view.AtomTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- mc_view.AtomTest -->
+      <class name="jalview.ext.jmol.JmolParserTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ext.jmol.JmolParserTest -->
+      <class name="jalview.io.gff.Gff3HelperTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.gff.Gff3HelperTest -->
+      <class name="jalview.ws.ebi.EBIFetchClientTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ws.ebi.EBIFetchClientTest -->
+      <class name="jalview.datamodel.MappingTypeTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.MappingTypeTest -->
+      <class name="jalview.ext.pymol.PymolCommandsTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.ext.pymol.PymolCommandsTest -->
+      <class name="jalview.datamodel.AlignmentViewTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.AlignmentViewTest -->
+      <class name="jalview.ext.rbvi.chimera.ChimeraXCommandsTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.ext.rbvi.chimera.ChimeraXCommandsTest -->
+      <class name="mc_view.BondTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- mc_view.BondTest -->
+      <class name="jalview.analysis.AnnotationSorterTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.analysis.AnnotationSorterTest -->
+      <class name="jalview.controller.AlignViewControllerTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.controller.AlignViewControllerTest -->
+      <class name="jalview.ws.dbsources.PfamFullTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.ws.dbsources.PfamFullTest -->
+      <class name="jalview.datamodel.ColumnSelectionTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.ColumnSelectionTest -->
+      <class name="jalview.ws.dbsources.RfamFullTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.ws.dbsources.RfamFullTest -->
+      <class name="jalview.gui.ColourMenuHelperTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.gui.ColourMenuHelperTest -->
+      <class name="jalview.gui.AlignFrameTest">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.gui.AlignFrameTest -->
+      <class name="jalview.datamodel.CigarArrayTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.CigarArrayTest -->
+      <class name="jalview.ws.sifts.SiftsClientTest">
+        <methods>
+          <include name="cleanUpSiftsClient"/>
+          <include name="populateExpectedMapping"/>
+          <include name="setUpSiftsClient"/>
+        </methods>
+      </class> <!-- jalview.ws.sifts.SiftsClientTest -->
+      <class name="jalview.commands.TrimRegionCommandTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.commands.TrimRegionCommandTest -->
+      <class name="jalview.ext.android.SparseShortArrayTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ext.android.SparseShortArrayTest -->
+      <class name="jalview.util.ColorUtilsTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.ColorUtilsTest -->
+      <class name="jalview.structure.StructureSelectionManagerTest">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="setUp"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.structure.StructureSelectionManagerTest -->
+      <class name="jalview.fts.service.pdb.PDBFTSPanelTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- jalview.fts.service.pdb.PDBFTSPanelTest -->
+      <class name="jalview.schemes.ResidueColourSchemeTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.schemes.ResidueColourSchemeTest -->
+      <class name="jalview.analysis.AlignmentAnnotationUtilsTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.analysis.AlignmentAnnotationUtilsTest -->
+      <class name="jalview.analysis.SequenceIdMatcherTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.SequenceIdMatcherTest -->
+      <class name="jalview.bin.HiDPISettingTest1">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.bin.HiDPISettingTest1 -->
+      <class name="jalview.datamodel.SequenceTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.SequenceTest -->
+      <class name="jalview.renderer.OverviewResColourFinderTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.renderer.OverviewResColourFinderTest -->
+      <class name="jalview.datamodel.SequenceDummyTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.SequenceDummyTest -->
+      <class name="jalview.io.BioJsHTMLOutputTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.BioJsHTMLOutputTest -->
+      <class name="jalview.analysis.AAFrequencyTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.AAFrequencyTest -->
+      <class name="jalview.io.FeaturesFileTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="tearDownAfterClass"/>
+        </methods>
+      </class> <!-- jalview.io.FeaturesFileTest -->
+      <class name="jalview.workers.AlignCalcManagerTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.workers.AlignCalcManagerTest -->
+      <class name="jalview.datamodel.AlignedCodonFrameTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.AlignedCodonFrameTest -->
+      <class name="jalview.project.Jalview2xmlTests">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.project.Jalview2xmlTests -->
+      <class name="jalview.math.RotatableMatrixTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.math.RotatableMatrixTest -->
+      <class name="jalview.ext.android.SparseIntArrayTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ext.android.SparseIntArrayTest -->
+      <class name="jalview.ext.ensembl.EnsemblGeneTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.ext.ensembl.EnsemblGeneTest -->
+      <class name="jalview.io.BackupFilesTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+          <include name="cleanupTmpFiles"/>
+        </methods>
+      </class> <!-- jalview.io.BackupFilesTest -->
+      <class name="jalview.datamodel.MappingTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.MappingTest -->
+      <class name="jalview.gui.HelpTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.gui.HelpTest -->
+      <class name="jalview.datamodel.MatchTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.datamodel.MatchTest -->
+      <class name="jalview.io.WindowsFileLoadAndSaveTest">
+        <methods>
+          <include name="cleanupTmpFiles"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.WindowsFileLoadAndSaveTest -->
+      <class name="jalview.util.CaseInsensitiveStringTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.CaseInsensitiveStringTest -->
+      <class name="jalview.util.ShiftListTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.ShiftListTest -->
+      <class name="jalview.viewmodel.OverviewDimensionsHideHiddenTest">
+        <methods>
+          <include name="setUpAlignment"/>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- jalview.viewmodel.OverviewDimensionsHideHiddenTest -->
+      <class name="jalview.gui.AnnotationRowFilterTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.gui.AnnotationRowFilterTest -->
+      <class name="jalview.io.AnnotatedPDBFileInputTest">
+        <methods>
+          <include name="tearDownAfterClass"/>
+          <include name="setup"/>
+          <include name="setUpBeforeClass"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.AnnotatedPDBFileInputTest -->
+      <class name="jalview.util.QuickSortTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.QuickSortTest -->
+      <class name="jalview.util.DBRefUtilsTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.DBRefUtilsTest -->
+      <class name="jalview.bin.CacheTest">
+        <methods>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUpBeforeClass"/>
+        </methods>
+      </class> <!-- jalview.bin.CacheTest -->
+      <class name="jalview.util.PlatformTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.PlatformTest -->
+      <class name="jalview.ext.jmol.JmolViewerTest">
+        <methods>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUpBeforeClass"/>
+        </methods>
+      </class> <!-- jalview.ext.jmol.JmolViewerTest -->
+      <class name="jalview.viewmodel.ViewportRangesTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- jalview.viewmodel.ViewportRangesTest -->
+      <class name="jalview.bin.HiDPISettingTest2">
+        <methods>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- jalview.bin.HiDPISettingTest2 -->
+      <class name="jalview.io.GenBankFileTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.io.GenBankFileTest -->
+      <class name="jalview.analysis.GroupingTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.GroupingTest -->
+      <class name="jalview.analysis.scoremodels.FeatureDistanceModelTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.scoremodels.FeatureDistanceModelTest -->
+      <class name="jalview.io.gff.GffHelperFactoryTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.gff.GffHelperFactoryTest -->
+      <class name="jalview.io.IdentifyFileTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.IdentifyFileTest -->
+      <class name="jalview.analysis.AlignmentUtilsTests">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.AlignmentUtilsTests -->
+      <class name="jalview.io.SequenceAnnotationReportTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.SequenceAnnotationReportTest -->
+      <class name="jalview.io.gff.ExonerateHelperTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.io.gff.ExonerateHelperTest -->
+      <class name="jalview.urls.DesktopUrlProviderFactoryTest">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jalview.urls.DesktopUrlProviderFactoryTest -->
+      <class name="jalview.util.ParseHtmlBodyAndLinksTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.util.ParseHtmlBodyAndLinksTest -->
+      <class name="jalview.viewmodel.OverviewDimensionsShowHiddenTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpAlignment"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- jalview.viewmodel.OverviewDimensionsShowHiddenTest -->
+      <class name="jalview.analysis.SeqsetUtilsTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.SeqsetUtilsTest -->
+      <class name="jalview.analysis.ParsePropertiesTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.analysis.ParsePropertiesTest -->
+      <class name="jalview.gui.JvOptionPaneTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.gui.JvOptionPaneTest -->
+      <class name="jalview.datamodel.RangeElementsIteratorTest">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jalview.datamodel.RangeElementsIteratorTest -->
+      <class name="jalview.bin.ArgsParserTest">
+        <methods>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- jalview.bin.ArgsParserTest -->
+      <class name="jalview.ws.seqfetcher.DbRefFetcherTest">
+        <methods>
+          <include name="tearDownAfterClass"/>
+          <include name="setUpJvOptionPane"/>
+          <include name="setUpBeforeClass"/>
+        </methods>
+      </class> <!-- jalview.ws.seqfetcher.DbRefFetcherTest -->
+      <class name="jalview.ext.rbvi.chimera.ChimeraCommandsTest">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- jalview.ext.rbvi.chimera.ChimeraCommandsTest -->
+      <class name="mc_view.PDBChainTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpJvOptionPane"/>
+        </methods>
+      </class> <!-- mc_view.PDBChainTest -->
+    </classes>
+  </test> <!-- Gradle test(failed) -->
+</suite> <!-- Failed suite [Gradle suite] -->

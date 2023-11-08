@@ -1,0 +1,574 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Colour Schemes</title>
+<style type="text/css">
+<!--
+td {
+	font-family: "Courier New", Courier, mono;
+	font-style: normal;
+	font-size: medium;
+}
+-->
+</style>
+</head>
+<body>
+  <p>
+    <strong>Colour schemes</strong>
+  </p>
+  <p>Jalview allows the user to set a colour scheme for the
+    whole alignment view or for each group defined on regions within it.</p>
+  <p>To change the colour for a view, simply select a new colour scheme from
+    the &quot;Colour&quot; menu.</p>
+  <p>To change the colour of a group, right click on any residue
+    within a group and use the popup menu to define the group colour.</p>
+  <p>At the top of the &quot;Colour&quot; menu you'll see a tick box
+    &quot;Apply Colour to all groups&quot;. This is ticked by
+    default so that a chosen colour scheme will be applied to all
+    existing groups. If you wish to maintain the colour scheme for
+    defined groups, make sure you deselect this option before selecting
+    a new scheme in the Colour menu.</p>
+  <p>
+    The <strong>&quot;Colour&#8594;<a
+      href="textcolour.html">Colour Text...</a>&quot;
+    </strong> entry opens a dialog box to set a different text colour for light
+    and dark background, and the intensity threshold for transition
+    between them.
+  </p>
+	<p>
+		<strong>Dynamic colour schemes</strong>
+	</p>
+	<p>
+		Alignments and groups may be coloured according to <a
+			href="annotationColouring.html">associated sequence and alignment
+			annotation</a>. Any applied colour schemes (such as those shown in the
+		table below) can also be <a href="conservation.html">shaded by
+			amino acid physico-chemical property conservation</a> to reveal patterns
+		of variation, or applied selectively to <a href="abovePID.html">Above
+			Identity Threshold</a>.
+	</p>
+	<p>
+		Alignments and groups can also be shaded according to percentage
+		abundance of aligned residues (using <a href="pid.html">Percentage
+			Identity</a>), and for protein alignments, the <a href="blosum.html">BLOSUM
+			62 Score</a> and <a href="clustal.html">ClustalX</a> shading schemes
+		highlight amino acid conservation.
+	</p>
+	<p>
+		The <strong>Sequence ID</strong> colour scheme shades sequences with
+		the same colour assigned to their Sequence ID. Colours are assigned
+		when groups are created by <a href="../calculations/treeviewer.html">partitioning
+			a tree</a> or subdividing the alignment by sequence with <strong>Select&#8594;Make
+			Groups For Selection</strong>.
+	</p>
+	<p>
+		<strong>Amino acid and Nucleotide based colour schemes</strong>
+	<p>The built-in colour schemes based on amino acid and nucleotide symbols are
+		summarised in the table below:
+	
+	<div align="center"><p>&nbsp;</p>
+		<p>
+			<strong>Protein Colour Schemes</strong>
+		</p>
+		<table border="1">
+			<tr>
+				<td>
+					<table border="1">
+						<tr>
+							<td nowrap>Name</td>
+							<td nowrap>CLI name</td>
+							<td>A</td>
+							<td>R</td>
+							<td>N</td>
+							<td>D</td>
+							<td>C</td>
+							<td>Q</td>
+							<td>E</td>
+							<td>G</td>
+							<td>H</td>
+							<td>I</td>
+							<td>L</td>
+							<td>K</td>
+							<td>M</td>
+							<td>F</td>
+							<td>P</td>
+							<td>S</td>
+							<td>T</td>
+							<td>W</td>
+							<td>Y</td>
+							<td>V</td>
+							<td>B</td>
+							<td>X</td>
+							<td>Z</td>
+						</tr>
+						<tr>
+							<td height="24">Clustal</td>
+							<td>clustal</td>
+							<td bgcolor="#80a0f0"></td>
+							<td bgcolor="#f01505"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#c048c0"></td>
+							<td bgcolor="#f08080"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#c048c0"></td>
+							<td bgcolor="#f09048"></td>
+							<td bgcolor="#15a4a4"></td>
+							<td bgcolor="#80a0f0"></td>
+							<td bgcolor="#80a0f0"></td>
+							<td bgcolor="#f01505"></td>
+							<td bgcolor="#80a0f0"></td>
+							<td bgcolor="#80a0f0"></td>
+							<td bgcolor="#ffff00"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#80a0f0"></td>
+							<td bgcolor="#15a4a4"></td>
+							<td bgcolor="#80a0f0"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td height="24">Zappo</td>
+							<td>zappo</td>
+							<td bgcolor="#ffafaf"></td>
+							<td bgcolor="#6464ff"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#ff0000"></td>
+							<td bgcolor="#ffff00"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#ff0000"></td>
+							<td bgcolor="#ff00ff"></td>
+							<td bgcolor="#6464ff"></td>
+							<td bgcolor="#ffafaf"></td>
+							<td bgcolor="#ffafaf"></td>
+							<td bgcolor="#6464ff"></td>
+							<td bgcolor="#ffafaf"></td>
+							<td bgcolor="#ffc800"></td>
+							<td bgcolor="#ff00ff"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#ffc800"></td>
+							<td bgcolor="#ffc800"></td>
+							<td bgcolor="#ffafaf"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Taylor</td>
+							<td>taylor</td>
+							<td bgcolor="#ccff00"></td>
+							<td bgcolor="#0000ff"></td>
+							<td bgcolor="#cc00ff"></td>
+							<td bgcolor="#ff0000"></td>
+							<td bgcolor="#ffff00"></td>
+							<td bgcolor="#ff00cc"></td>
+							<td bgcolor="#ff0066"></td>
+							<td bgcolor="#ff9900"></td>
+							<td bgcolor="#0066ff"></td>
+							<td bgcolor="#66ff00"></td>
+							<td bgcolor="#33ff00"></td>
+							<td bgcolor="#6600ff"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#00ff66"></td>
+							<td bgcolor="#ffcc00"></td>
+							<td bgcolor="#ff3300"></td>
+							<td bgcolor="#ff6600"></td>
+							<td bgcolor="#00ccff"></td>
+							<td bgcolor="#00ffcc"></td>
+							<td bgcolor="#99ff00"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>gecos Flower</td>
+							<td>gecos-flower</td>
+							<td bgcolor="#b18a51"></td>
+							<td bgcolor="#83bff1"></td>
+							<td bgcolor="#0bcec6"></td>
+							<td bgcolor="#01a578"></td>
+							<td bgcolor="#ff5701"></td>
+							<td bgcolor="#7295ae"></td>
+							<td bgcolor="#2da0a1"></td>
+							<td bgcolor="#b1c23c"></td>
+							<td bgcolor="#0194f9"></td>
+							<td bgcolor="#f27663"></td>
+							<td bgcolor="#df6e75"></td>
+							<td bgcolor="#7fc3d7"></td>
+							<td bgcolor="#fe9daf"></td>
+							<td bgcolor="#fa559d"></td>
+							<td bgcolor="#4fa32a"></td>
+							<td bgcolor="#b4bd9b"></td>
+							<td bgcolor="#d2b576"></td>
+							<td bgcolor="#ff2ded"></td>
+							<td bgcolor="#c96ecf"></td>
+							<td bgcolor="#fd997b"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>gecos Blossom</td>
+							<td>gecos-blossom</td>
+							<td bgcolor="#8bc4b4"></td>
+							<td bgcolor="#fc9502"></td>
+							<td bgcolor="#b5c206"></td>
+							<td bgcolor="#5fa505"></td>
+							<td bgcolor="#0893fe"></td>
+							<td bgcolor="#bf8527"></td>
+							<td bgcolor="#dbb501"></td>
+							<td bgcolor="#00d382"></td>
+							<td bgcolor="#ff5701"></td>
+							<td bgcolor="#9abaf3"></td>
+							<td bgcolor="#cda5dc"></td>
+							<td bgcolor="#fea527"></td>
+							<td bgcolor="#f5a1b8"></td>
+							<td bgcolor="#f74fa8"></td>
+							<td bgcolor="#10d631"></td>
+							<td bgcolor="#7e9d59"></td>
+							<td bgcolor="#00a29c"></td>
+							<td bgcolor="#fe08fb"></td>
+							<td bgcolor="#ff4e7a"></td>
+							<td bgcolor="#87c0e4"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>gecos Sunset</td>
+							<td>gecos-sunset</td>
+							<td bgcolor="#fea0fd"></td>
+							<td bgcolor="#85746a"></td>
+							<td bgcolor="#abc8f5"></td>
+							<td bgcolor="#2e7bbe"></td>
+							<td bgcolor="#fc0cfe"></td>
+							<td bgcolor="#8c6e81"></td>
+							<td bgcolor="#677892"></td>
+							<td bgcolor="#2799ff"></td>
+							<td bgcolor="#dbc58e"></td>
+							<td bgcolor="#fa21a1"></td>
+							<td bgcolor="#e01e82"></td>
+							<td bgcolor="#debecc"></td>
+							<td bgcolor="#d13e7b"></td>
+							<td bgcolor="#ff385d"></td>
+							<td bgcolor="#5766f9"></td>
+							<td bgcolor="#e7b4fd"></td>
+							<td bgcolor="#a658b7"></td>
+							<td bgcolor="#ff3701"></td>
+							<td bgcolor="#cb5339"></td>
+							<td bgcolor="#fe51b8"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>gecos Ocean</td>
+							<td>gecos-ocean</td>
+							<td bgcolor="#c6ca9b"></td>
+							<td bgcolor="#0ca0a8"></td>
+							<td bgcolor="#0adfc3"></td>
+							<td bgcolor="#4cdfa1"></td>
+							<td bgcolor="#c68136"></td>
+							<td bgcolor="#8bd3d1"></td>
+							<td bgcolor="#60dac9"></td>
+							<td bgcolor="#33a551"></td>
+							<td bgcolor="#00cffe"></td>
+							<td bgcolor="#f2baaa"></td>
+							<td bgcolor="#bb8a83"></td>
+							<td bgcolor="#40a090"></td>
+							<td bgcolor="#a48b88"></td>
+							<td bgcolor="#ab88ae"></td>
+							<td bgcolor="#afd365"></td>
+							<td bgcolor="#6d9b74"></td>
+							<td bgcolor="#8d9566"></td>
+							<td bgcolor="#758aee"></td>
+							<td bgcolor="#bac3fc"></td>
+							<td bgcolor="#e9bea4"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Hydrophobicity</td>
+							<td>hydrophobicity</td>
+							<td bgcolor="#ad0052"></td>
+							<td bgcolor="#0000ff"></td>
+							<td bgcolor="#0c00f3"></td>
+							<td bgcolor="#0c00f3"></td>
+							<td bgcolor="#c2003d"></td>
+							<td bgcolor="#0c00f3"></td>
+							<td bgcolor="#0c00f3"></td>
+							<td bgcolor="#6a0095"></td>
+							<td bgcolor="#1500ea"></td>
+							<td bgcolor="#ff0000"></td>
+							<td bgcolor="#ea0015"></td>
+							<td bgcolor="#0000ff"></td>
+							<td bgcolor="#b0004f"></td>
+							<td bgcolor="#cb0034"></td>
+							<td bgcolor="#4600b9"></td>
+							<td bgcolor="#5e00a1"></td>
+							<td bgcolor="#61009e"></td>
+							<td bgcolor="#5b00a4"></td>
+							<td bgcolor="#4f00b0"></td>
+							<td bgcolor="#f60009"></td>
+							<td bgcolor="#0c00f3"></td>
+							<td bgcolor="#680097"></td>
+							<td bgcolor="#0c00f3"></td>
+						</tr>
+						<tr>
+							<td>Helix Propensity</td>
+							<td>helix-propensity</td>
+							<td bgcolor="#e718e7"></td>
+							<td bgcolor="#6f906f"></td>
+							<td bgcolor="#1be41b"></td>
+							<td bgcolor="#778877"></td>
+							<td bgcolor="#23dc23"></td>
+							<td bgcolor="#926d92"></td>
+							<td bgcolor="#ff00ff"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#758a75"></td>
+							<td bgcolor="#8a758a"></td>
+							<td bgcolor="#ae51ae"></td>
+							<td bgcolor="#a05fa0"></td>
+							<td bgcolor="#ef10ef"></td>
+							<td bgcolor="#986798"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#36c936"></td>
+							<td bgcolor="#47b847"></td>
+							<td bgcolor="#8a758a"></td>
+							<td bgcolor="#21de21"></td>
+							<td bgcolor="#857a85"></td>
+							<td bgcolor="#49b649"></td>
+							<td bgcolor="#758a75"></td>
+							<td bgcolor="#c936c9"></td>
+						</tr>
+						<tr>
+							<td nowrap>Strand Propensity</td>
+							<td>strand-propensity</td>
+							<td bgcolor="#5858a7"></td>
+							<td bgcolor="#6b6b94"></td>
+							<td bgcolor="#64649b"></td>
+							<td bgcolor="#2121de"></td>
+							<td bgcolor="#9d9d62"></td>
+							<td bgcolor="#8c8c73"></td>
+							<td bgcolor="#0000ff"></td>
+							<td bgcolor="#4949b6"></td>
+							<td bgcolor="#60609f"></td>
+							<td bgcolor="#ecec13"></td>
+							<td bgcolor="#b2b24d"></td>
+							<td bgcolor="#4747b8"></td>
+							<td bgcolor="#82827d"></td>
+							<td bgcolor="#c2c23d"></td>
+							<td bgcolor="#2323dc"></td>
+							<td bgcolor="#4949b6"></td>
+							<td bgcolor="#9d9d62"></td>
+							<td bgcolor="#c0c03f"></td>
+							<td bgcolor="#d3d32c"></td>
+							<td bgcolor="#ffff00"></td>
+							<td bgcolor="#4343bc"></td>
+							<td bgcolor="#797986"></td>
+							<td bgcolor="#4747b8"></td>
+						</tr>
+						<tr>
+							<td>Turn Propensity</td>
+							<td>turn-propensity</td>
+							<td bgcolor="#2cd3d3"></td>
+							<td bgcolor="#708f8f"></td>
+							<td bgcolor="#ff0000"></td>
+							<td bgcolor="#e81717"></td>
+							<td bgcolor="#a85757"></td>
+							<td bgcolor="#3fc0c0"></td>
+							<td bgcolor="#778888"></td>
+							<td bgcolor="#ff0000"></td>
+							<td bgcolor="#708f8f"></td>
+							<td bgcolor="#00ffff"></td>
+							<td bgcolor="#1ce3e3"></td>
+							<td bgcolor="#7e8181"></td>
+							<td bgcolor="#1ee1e1"></td>
+							<td bgcolor="#1ee1e1"></td>
+							<td bgcolor="#f60909"></td>
+							<td bgcolor="#e11e1e"></td>
+							<td bgcolor="#738c8c"></td>
+							<td bgcolor="#738c8c"></td>
+							<td bgcolor="#9d6262"></td>
+							<td bgcolor="#07f8f8"></td>
+							<td bgcolor="#f30c0c"></td>
+							<td bgcolor="#7c8383"></td>
+							<td bgcolor="#5ba4a4"></td>
+						</tr>
+						<tr>
+							<td>Buried Index</td>
+							<td>buried-index</td>
+							<td bgcolor="#00a35c"></td>
+							<td bgcolor="#00fc03"></td>
+							<td bgcolor="#00eb14"></td>
+							<td bgcolor="#00eb14"></td>
+							<td bgcolor="#0000ff"></td>
+							<td bgcolor="#00f10e"></td>
+							<td bgcolor="#00f10e"></td>
+							<td bgcolor="#009d62"></td>
+							<td bgcolor="#00d52a"></td>
+							<td bgcolor="#0054ab"></td>
+							<td bgcolor="#007b84"></td>
+							<td bgcolor="#00ff00"></td>
+							<td bgcolor="#009768"></td>
+							<td bgcolor="#008778"></td>
+							<td bgcolor="#00e01f"></td>
+							<td bgcolor="#00d52a"></td>
+							<td bgcolor="#00db24"></td>
+							<td bgcolor="#00a857"></td>
+							<td bgcolor="#00e619"></td>
+							<td bgcolor="#005fa0"></td>
+							<td bgcolor="#00eb14"></td>
+							<td bgcolor="#00b649"></td>
+							<td bgcolor="#00f10e"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p>
+			<strong>Nucleotide Colour Schemes</strong>
+		</p>
+		<table border="1">
+			<tr>
+				<td>
+					<table border="1">
+						<tr>
+							<td nowrap>Name</td>
+							<td nowrap>CLI name</td>
+							<td>A</td>
+							<!--Adenine-->
+							<td>C</td>
+							<!--Cytosine-->
+							<td>G</td>
+							<!--Guanine-->
+							<td>T</td>
+							<!--Thymine-->
+							<td>U</td>
+							<!--Uracil-->
+							<td>I</td>
+							<!--Inosine-->
+							<td>X</td>
+							<!--Unknown (sometimes Xanthine)-->
+							<td>R</td>
+							<!--Unknown Purine-->
+							<td>Y</td>
+							<!--Unknown Pyrimidine-->
+							<td>W</td>
+							<!--Weak nucleotide (A or T)-->
+							<td>S</td>
+							<!--Strong nucleotide (G or C)-->
+							<td>M</td>
+							<!--Amino (A or C)-->
+							<td>K</td>
+							<!--Keto (G or T)-->
+							<td>B</td>
+							<!--Not A (G or C or T)-->
+							<td>H</td>
+							<!--Not G (A or C or T)-->
+							<td>D</td>
+							<!--Not C (A or G or T)-->
+							<td>V</td>
+							<!--Not T (A or G or C)-->
+							<td>N</td>
+							<!--Unknown-->
+						</tr>
+						<tr>
+							<td height="24">Nucleotide</td>
+							<td>nucleotide</td>
+							<td bgcolor="#64F73F"></td>
+							<td bgcolor="#FFB340"></td>
+							<td bgcolor="#EB413C"></td>
+							<td bgcolor="#3C88EE"></td>
+							<td bgcolor="#3C88EE"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td height="24">Nucleotide Ambiguity</td>
+							<td>nucleotide-ambiguity</td>
+							<td bgcolor="#f0fff0"></td>
+							<td bgcolor="#f0fff0"></td>
+							<td bgcolor="#f0fff0"></td>
+							<td bgcolor="#f0fff0"></td>
+							<td bgcolor="#f0fff0"></td>
+							<td bgcolor="#ffffff"></td>
+							<td bgcolor="#4f6f6f"></td>
+							<td bgcolor="#CD5C5C"></td>
+							<td bgcolor="#008000"></td>
+							<td bgcolor="#4682B4"></td>
+							<td bgcolor="#FF8C00"></td>
+							<td bgcolor="#9ACD32"></td>
+							<td bgcolor="#9932CC"></td>
+							<td bgcolor="#8b4513"></td>
+							<td bgcolor="#808080"></td>
+							<td bgcolor="#483D8B"></td>
+							<td bgcolor="#b8860b"></td>
+							<td bgcolor="#2f4f4f"></td>
+						</tr>
+						<tr>
+							<td height="24">Purine/Pyrimidine</td>
+							<td>purine-pyrimidine</td>
+							<td bgcolor="#FF83FA"></td>
+							<td bgcolor="#40E0D0"></td>
+							<td bgcolor="#FF83FA"></td>
+							<td bgcolor="#40E0D0"></td>
+							<td bgcolor="#40E0D0"></td>
+							<td></td>
+							<td></td>
+							<td bgcolor="#FF83FA"></td>
+							<td bgcolor="#40E0D0"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+
+	</div>
+	<p align="center">&nbsp;</p>
+</body>
+</html>

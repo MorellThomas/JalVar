@@ -1,0 +1,27 @@
+VAqua5-patched.jar - how the patch was created
+
+1. Download VAqua5 source from https://violetlib.org/release/vaqua/5/VAqua5Source.zip
+2. Unzip to a directory and apply this patch
+
+diff --git a/src/org/violetlib/aqua/fc/AquaFileChooserUI.java b/src/org/violetlib/aqua/fc/AquaFileChooserUI.java
+index 833366d..61f66e5 100644
+--- a/src/org/violetlib/aqua/fc/AquaFileChooserUI.java
++++ b/src/org/violetlib/aqua/fc/AquaFileChooserUI.java
+@@ -1171,7 +1171,8 @@ public class AquaFileChooserUI extends BasicFileChooserUI {
+         goToFolderCancelButtonText = getString("FileChooser.goToFolderCancelButtonText", l, "Cancel");
+         goToFolderAcceptButtonText = getString("FileChooser.goToFolderAcceptButtonText", l, "Accept");
+         goToFolderErrorText = getString("FileChooser.goToFolderErrorText", l, "The folder can\u2019t be found.");
+-        defaultInitialSaveFileName = getString("FileChooser.defaultSaveFileName", l, "Untitled");
++        // Don't set an initial filename for saving (or loading) !  
++       // defaultInitialSaveFileName = getString("FileChooser.defaultSaveFileName", l, "Untitled");
+     }
+ 
+     /**
+
+3. Ensure XCode is installed, along with command line tools and the OSX developer packs
+ - you should have /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+
+4. Download the VAqua rendering library from violetlib.org and save to the VAqua source's lib folder as lib/VAquaRendering.jar
+
+5. change to the release directory and execute 'ant' - a few warnings are generated but providing a final jar is created, all is good!
+

@@ -1,0 +1,33 @@
+// The Jalview Authors //
+// /////////////////// //
+
+This file details everyone who has contributed code to Jalview, 
+or might otherwise be considered author of Jalview. 
+
+The people listed below are 'The Jalview Authors', who collectively
+own the copyright to the Jalview source code and permit it to be released under GPL.
+
+This is the authoritative list: it was correct on the last commit date!
+
+If you are releasing a version of Jalview, please make sure any
+statement of authorship in the GUI reflects the list shown here.
+In particular, check the resources/authors.props file ! 
+
+Jim Procter
+Mungo Carstairs
+Ben Soares
+Kira Mourao
+Tochukwu 'Charles' Ofoegbu
+Andrew Waterhouse
+Jan Engelhardt
+Lauren Lui
+Anne Menard
+Natasha Sherstnev
+Daniel Barton
+David Roldan-Martinez
+Michele Clamp
+James Cuff
+Steve Searle
+David Martin
+Geoff Barton
+ 

@@ -1,0 +1,15 @@
+#---JalviewX Properties File---
+# HiDPI screen
+SCREENGEOMETRY_WIDTH=3840
+SCREENGEOMETRY_HEIGHT=2160
+SCREEN_WIDTH=3000
+SCREEN_HEIGHT=2000
+USAGESTATS=false
+STARTUP_FILE=examples/uniref50.fa
+SHOW_STARTUP_FILE=false
+FONT_STYLE=plain
+FONT_SIZE=10
+ANTI_ALIAS=false
+SHOW_JAVA_CONSOLE=false
+DAS_REGISTRY_URL=http\://www.ebi.ac.uk/das-srv/registry/das/
+logs.Jalview.level=DEBUG

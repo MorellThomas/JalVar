@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.controller.AlignViewControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:13:43" hostname="wer3eng" time="0.05">
+  <properties/>
+  <testcase name="testFindColumnsWithFeature" classname="jalview.controller.AlignViewControllerTest" time="0.032"/>
+  <testcase name="testSelectColumnsWithHighlight" classname="jalview.controller.AlignViewControllerTest" time="0.018"/>
+  <system-out><![CDATA[File format identified as Pfam
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

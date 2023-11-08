@@ -1,0 +1,15 @@
+<!--  
+	Binding file stops the nested 'taxon' elements generating invalid Java (nested type hiding enclosing type).
+	The binding converts EntryType/feature/taxon to EntryType$Feature$FeatureTaxon.
+	EntryType/feature/taxon/lineage/taxon generates EntryType$Feature$FeatureTaxon$Lineage$Taxon.  
+-->
+<jaxb:bindings
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" version="2.1">
+	<jaxb:bindings schemaLocation="embl.xsd">
+		<jaxb:bindings
+			node="/xsd:schema/xsd:complexType[@name='EntryType']/xsd:sequence/xsd:element[@name='feature']/xsd:complexType/xsd:sequence/xsd:element[@name='taxon']/xsd:complexType">
+			<jaxb:class name="FeatureTaxon" />
+		</jaxb:bindings>
+	</jaxb:bindings>
+</jaxb:bindings>

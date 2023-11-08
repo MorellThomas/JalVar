@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.analysis.RnaTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:07" hostname="wer3eng" time="0.012">
+  <properties/>
+  <testcase name="testGetHelixMap_oneHelix" classname="jalview.analysis.RnaTest" time="0.001"/>
+  <testcase name="testGetHelixMap_twoHelices" classname="jalview.analysis.RnaTest" time="0.0"/>
+  <testcase name="testGetMatchingOpeningParenthesis" classname="jalview.analysis.RnaTest" time="0.0"/>
+  <testcase name="testGetRNASecStrucState" classname="jalview.analysis.RnaTest" time="0.0"/>
+  <testcase name="testGetSimpleBPs" classname="jalview.analysis.RnaTest" time="0.0"/>
+  <testcase name="testGetSimpleBPs_unmatchedCloser" classname="jalview.analysis.RnaTest" time="0.0"/>
+  <testcase name="testGetSimpleBPs_unmatchedOpener" classname="jalview.analysis.RnaTest" time="0.0"/>
+  <testcase name="testIsCanonicalOrWobblePair" classname="jalview.analysis.RnaTest" time="0.001"/>
+  <testcase name="testIsCanonicalPair" classname="jalview.analysis.RnaTest" time="0.0"/>
+  <testcase name="testIsClosingParenthesis" classname="jalview.analysis.RnaTest" time="0.003"/>
+  <testcase name="testIsOpeningParenthesis" classname="jalview.analysis.RnaTest" time="0.002"/>
+  <testcase name="testIsRnaSecondaryStructureSymbol" classname="jalview.analysis.RnaTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

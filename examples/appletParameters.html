@@ -1,0 +1,366 @@
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+
+
+<div id="view_decorated" name="view_decorated"  style="margin:8px; padding:10px; border: 2px solid red; text-align:center; display:none;"><b>Click <a href="index.html#appletParameters"> here</a> to view decorated page</b></div>
+
+<!-- content start -->
+<h2>JalviewLite Applet Parameter Documentation</h2>
+<p>
+The JalviewLite applet is configured through a series of applet parameters,
+which are described <a href="#parameters"> below</a>. Once initialised,
+the applet can be interacted with <em>via</em> its 
+<a href="javascript:doSubmit('jalviewLiteJs')">Javascript API</a>. 
+</p><p><strong>Issues arising from tightening of Java Security default settings</strong><br/>JalviewLite is provided as a signed applet with 'sandbox' permissions and wildcards that allow it to be run from any website. Unfortunately, earlier versions of Java may not be compatible with these settings. </p>
+    <p>For additional deployment notes, <a href="javascript:doSubmit('appletDeployment')">see Applet Deployment</a>.</p>
+	    <p><h2>Applet Parameters</h2><br/>The applet takes the following initialisation parameters.</p>
+        <a name="parameters"></a>        <table width="97%" class="borderTable" align="center" >
+          <tr> 
+            <td width="103" height="23"><strong>&lt;param name=&quot;&quot;</strong></td>
+            <td width="80" ><strong>value=&quot;&quot;&gt;</strong></td>
+            <td width="100%"><strong>Description</strong></td>
+          </tr>
+          <tr>
+          <td>permissions</td>
+          <td>sandbox</td>
+          <td><strong>This parameter is necessary, and must have the value <em>sandbox</em> to allow the JalviewLite applet to run.</strong></td>
+          </tr>
+          <tr> 
+            <td>file</td>
+            <td>fileName</td>
+            <td>The file to open, must be on same server as the applet.</td>
+          </tr>
+              <tr>
+                <td>file2</td>
+                <td>fileName</td>
+                <td>A second file to open and show linked in a Split Frame
+                  view. If one file is nucleotide and the other peptide, and at
+                  least one peptide sequence matches the translation of one of the
+                  nucleotide sequences, then gaps will be inserted into the
+                  sequences in this file to match the aligned columns for
+                  corresponding positions in the primary alignment file. This
+                  parameter is ignored if enableSplitFrame is set to false (<em>since
+                    2.9</em>).
+                </td>
+              </tr>
+            <tr> 
+            <td>enableSplitFrame</td>
+            <td>true or false (default true)</td>
+            <td>Enable or disable the display of linked cDNA and Protein alignments in a split frame (<em>since 2.9</em>).</td>
+          </tr>
+          <tr> 
+            <td>sequence1,<br>
+              sequence2,<br>
+              sequence3</td>
+            <td>sequence in (preferably) PFAM or Fasta format</td>
+            <td>The alignment can be added as a series of sequences instead of 
+              from a file.</td>
+          </tr>
+          <tr> 
+            <td>tree</td>
+            <td>fileName</td>
+            <td>Tree file in Newick format</td>
+          </tr>
+          <tr> 
+            <td>features</td>
+            <td>fileName</td>
+            <td>Jalview Features file to be applied to the alignment</td>
+          </tr>
+          <tr> 
+            <td>annotations</td>
+            <td>fileName</td>
+            <td>Jalview Annotation file will be added to the alignment</td>
+          </tr>
+          <tr> 
+            <td>jnetfile</td>
+            <td>fileName</td>
+            <td>Secondary structure predictions from a <a
+            href="http://www.compbio.dundee.ac.uk/~www-jpred/">JPred</a> Concise 
+              file will be added to the first sequence in the alignment.<br/>
+              <em>jpredfile</em> can be used interchangeably with this parameter.</td>
+          </tr>
+          <tr> 
+            <td>PDBfile(x)</td>
+            <td><p>fileName seq1 seq2 seq3</p>
+              <p>or</p>
+              <p>fileName A=seq1 B=seq2 C=seq3</p></td>
+            <td>PDB file which is to be associated with a sequence, followed by 
+              space separated list of alignment sequence ids. PDB chains can be 
+              specifed to map to particular sequence by using A=SeqA notation</td>
+          </tr>
+          <tr> 
+            <td><p>PDBSeq<br>
+                *Not needed post Jalview 2.3, use PDBFile instead</p></td>
+            <td>SequenceId</td>
+            <td>The sequence to associate a PDB file with. Note the value is case 
+              sensitive.</td>
+          </tr>
+          <tr> 
+            <td>defaultColour</td>
+            <td> <em>One of: </em><br>
+              Clustal, Blosum62, % Identity, Hydrophobic, Zappo, Taylor, Helix 
+              Propensity, Strand Propensity, Turn Propensity, Buried Index, Nucleotide, Purine/Pyrimidine, T-Coffee Scores, RNA Helices</td>
+            <td>Default is no colour.</td>
+          </tr>
+          <tr> 
+            <td>defaultColourNuc</td>
+            <td>A colour scheme (from the list above) to apply to Nucleotide alignments</td><td>This overrides defaultColour if it is specified.</td>
+          </tr>
+          <tr> 
+            <td>defaultColourProt</td>
+            <td>A colour scheme (from the list above) to apply to Peptide alignments</td><td>This overrides defaultColour if it is specified.</td>
+          </tr>
+          <tr> 
+            <td>userDefinedColour</td>
+            <td><p><em>Example:</em><br>
+                D,E=red; K,R,H=0022FF; c=yellow</p></td>
+            <td>Define residue colours</td>
+          </tr>
+          <tr> 
+            <td height="35">showFullId</td>
+            <td>true <em>or</em> false</td>
+            <td>if true displays start and end residue at the end of sequence 
+              Id.</td>
+          </tr>
+          <tr> 
+            <td>showAnnotation</td>
+            <td>true <em>or</em> false</td>
+            <td>If true shows the annotation panel below the alignment.</td>
+          </tr>
+          <tr> 
+            <td>showConservation</td>
+            <td>true <em>or</em> false</td>
+            <td>Default is true.</td>
+          </tr>
+          <tr> 
+            <td>showQuality</td>
+            <td>true <em>or</em> false</td>
+            <td>Default is true.</td>
+          </tr>
+          <tr> 
+            <td>showConsensus</td>
+            <td>true <em>or</em> false</td>
+            <td>Default is true.</td>
+          </tr>
+          <tr> 
+            <td>showOccupancy</td>
+            <td>true <em>or</em> false</td>
+            <td>Default is true.</td>
+          </tr>
+          <tr> 
+            <td>sortBy</td>
+            <td> Id <em>, </em> Pairwise Identity<em>, or</em> Length</td>
+            <td> Sorts the alignment on startup</td>
+          </tr>
+          <tr> 
+            <td>RGB</td>
+            <td>colour as hex string</td>
+            <td>Background colour for applet button - purely cosmetic to blend 
+              in with your web page. For orange, enter the value FF6600</td>
+          </tr>
+          <tr> 
+            <td>embedded</td>
+            <td>true <em>or</em> false</td>
+            <td>The applet is embedded in the web page, the &quot;Start Jalview&quot; 
+              button is not displayed.</td>
+          </tr>
+          <tr> 
+            <td>windowWidth</td>
+            <td>value</td>
+            <td>frame width</td>
+          </tr>
+          <tr> 
+            <td>windowHeight</td>
+            <td>value</td>
+            <td>frame height</td>
+          </tr>
+          <tr> 
+            <td>label</td>
+            <td>label text</td>
+            <td>Change text for the Launch Jalview Button</td>
+          </tr>
+          <tr> 
+            <td>wrap</td>
+            <td>true <em>or</em> false</td>
+            <td>Opens new windows in wrapped mode</td>
+          </tr>
+          <tr> 
+            <td>linkLabel_1</td>
+            <td>EMBL-EBI Search</td>
+            <td rowspan="2"><p>Right click on sequence id to see list of available 
+                links. Any new links MUST have $SEQUENCE_ID$ as part of the linkURL_n 
+                value. For multiple links, increment the label and url name by 
+                1. ie <br>
+                &lt;param name=&quot;linkLabel_2&quot; ..., <br>
+                &lt;param name=&quot;linkUrl_2&quot;....<br>
+              </p>
+              <p>Regular expressions may also be used (<em>since Jalview 2.4</em>) to process the ID string inserted into the URL:
+              <br>$SEQUENCE_ID=/&lt;regex to extract ID&gt;/=$<br><em>Use the debug flag to check parsing and make sure that special symbols are properly escaped (particularly when generating applet tags from CGI scripts). 
+              <br>Regex URL links are also applied to the description line (since Jalview 2.4.+).</em></p></td>
+          </tr>
+          <tr> 
+            <td> <p>
+            <br>
+                linkUrl_1<br>
+              </p></td>
+            <td><p><br>
+                http://www.ebi.ac.uk/ebisearch/<br/>search.ebi?db=allebi&query=$SEQUENCE_ID$</p>
+						</td>
+          </tr>
+          <tr> 
+            <td>showFeatureSettings</td>
+            <td>true <em>or</em> false</td>
+            <td>Shows the feature settings window when starting the applet</td>
+          </tr>
+          <tr>
+            <td>showfeaturegroups</td>
+            <td><em>separator</em> separated list of feature groups</td>
+            <td>Display the features in the given groups on the alignment</td>
+          </tr>
+          <tr>
+            <td>hidefeaturegroups</td>
+            <td><em>separator</em> separated list of feature groups</td>
+            <td>Hide the features in the given groups on the alignment
+            (will be overridden by showfeaturegroups for group names
+            found in both lists)</td>
+          </tr>
+          <tr> 
+            <td>application_url</td>
+            <td><p><em>URL of dynamic JNLP servlet,</em></p>
+              <p>http://www.jalview.org/services/launchApp</p></td>
+            <td>Launches full application with original alignment, features and 
+              annotations files used in applet</td>
+          </tr>
+          <tr>
+          <td>separator</td>
+          <td><em>non-empty separator string</em><br>default: |</td>
+          <td>string used to separate fields in list parameters (such as <em>showfeaturegroups</em>)</td>
+          </tr>
+          <tr><td>debug</td>
+          <td>true</td>
+          <td>Instruct the applet to output additional debug messages to the java console</td>
+          </tr>
+          <tr><td>nojmol</td>
+          <td>false</td>
+          <td>When set, do not try to find Jmol classes. Set this to supress URL not found errors appearing 
+          in server logs when Jmol is not available.
+          </td>
+          </tr>
+          <tr><td>showbutton</td>
+          <td>true</td>
+          <td>Show the jalview button on the page. When false, JalviewLite will open immediately.</td>
+          </tr>
+          </tr>
+		  <tr><td>sortByTree</td>
+		  <td>true or false (default is false)</td>
+		  <td>automatically sort the associated alignment view by the tree when a new tree is opened.</td>
+		  </tr>
+		  <tr>
+		   <td>showTreeBootstraps</td><td>true or false (default is true)</td><td>show or hide branch bootstraps</td>
+			</tr>
+	<tr><td>showTreeDistances</td><td>true or false (default is true)</td><td>show or hide branch lengths</td></tr>
+	<tr><td>showUnlinkedTreeNodes</td><td>true or false (default is false)</td><td>indicate if unassociated nodes should be highlighted in the tree view</td>
+	</tr>
+          <tr><td>heightScale</td>
+          <td>1.0 or greater</td>
+          <td>Adjust the height of each cell in the alignment grid relative to the height of a character in the alignment font. (<em>since 2.5.1</em>)</td>
+          </tr>
+          <tr><td>widthScale</td>
+          <td>1.0 or greater</td>
+          <td>Adjust the width of each cell in the alignment grid relative to the width of a character in the alignment font. (<em>since 2.5.1</em>)</td>
+          </tr>
+          <tr><td>scaleProteinAsCdna</td><td>true or false (default is false)</td>
+          <td>Set true to shown protein residues the same width as their encoding codons. 
+          For use with parameter file2 when showing a split frame of cDNA and protein. (<em>since 2.9</em>)</td></tr>
+          <tr><td>centrecolumnlabels</td>
+          <td>true or false (default is false)</td>
+          <td>When true, text labels associated with a column in the alignment will be shown centered with respect to the column. (<em>since 2.4</em>)</td>
+          <tr><td>showUnconserved</td>
+          <td>true or false (default is false)</td>
+          <td>When true, only gaps and symbols different to the consensus sequence for a column will be shown. Useful for visualizing alignments exhibiting low sequence variation, where it is important to highlight mutations. (<em>since 2.5</em>)</td>
+          </tr>
+          <tr><td>upperCase</td>
+          <td><em>bold</em> or other value</td>
+          <td>Indicate a text style to apply to uppercase sequence symbols. Currently, only <strong>bold</strong> is supported.</td>
+          </tr>
+          <tr><td>automaticScrolling</td>
+          <td>true or false (default is true)</td>
+          <td>When true, alignment panels will automatically scroll to show any regions of the alignment highlighted due to javascript events or when mousing over a position in an associated structure. (<em>since 2.6</em>)</td>
+          </tr>
+          
+          <tr><td>showGroupConsensus</td>
+          <td>true or false (default is false)</td>
+          <td>When true, shows consensus annotation row for any groups on the alignment. (<em>since 2.7</em>)</td>
+          </tr>
+          
+          <tr><td>showGroupConservation</td>
+          <td>true or false (default is false)</td>
+          <td>When true, shows amino-acid property conservation annotation row for any groups on the alignment. (<em>since 2.7</em>)</td>
+          </tr>
+          <tr><td>showConsensusHistogram</td>
+          <td>true or false (default is true)</td>
+          <td>When true, shows the percentage occurence of the consensus symbol for each column as a histogram above the consensus sequence row. (<em>since 2.7</em>)</td>
+          </tr>
+          <tr><td>showSequenceLogo</td>
+          <td>true or false (default is false)</td>
+          <td>When true, shows a sequence logo above the consensus sequence (overlaid above the Consensus Histogram, if visible, with symbols coloured using the alignment's default colourscheme). (<em>since 2.7</em>)</td>
+          </tr>
+          <tr><td>normaliseSequenceLogo</td>
+          <td>true or false (default is false)</td>
+          <td>When true, all sequence logos will be normalised (all symbol stacks add up to full height of annotation row), rather than being scaled according to the fraction of symbols identical to the consensus. (<em>since 2.8</em>)</td>
+          </tr>
+          <tr><td>oninit</td>
+          <td><em>after_init()</em></td>
+          <td>name of javascript function that will be called after the jalviewLite instance has completed its initialisation. (<em>since 2.7</em>)</td>
+          </tr>
+          <tr><td>relaxedidmatch</td>
+          <td><em>true or false (default is false)</em></td>
+          <td>When true, use stem based matching to identify sequences that match features imported from a GFF or Jalview sequence features file, and for associating PDB data (passed on PDBfile parguments) with sequences (based on a given destination sequence ID). (<em>since 2.7</em>)</td>
+          </tr>
+          <tr><td>alignpdbfiles</td>
+          <td><em>true or false (default is false)</em></td>
+          <td>When true, and jalviewLite is able to use jmol as a structure viewer, attempt to show a superposition of all structures loaded onto the alignment, superimposed using the aligned regions of corresponding sequences. [experimental] (<em>since 2.7</em>)</td>
+          </tr>
+          <tr><td>externalstructureviewer</td>
+          <td><em>true or false (default is false)</em></td>
+          <td>re-route jmol colouring commands, selection and mouseover events to an external viewer using javascript callbacks. [experimental] (<em>since 2.7</em>)</td>
+          
+          </tr>
+          <tr><td>annotationcolour_max</td>
+          <td>colour name or RGB hex triplet (default is red)</td>
+          <td>Default colour used for maximum value when shading by annotation. (<em>since 2.7</em>)</td>
+          </tr>
+          <tr><td>annotationcolour_min</td>
+          <td>colour name or RGB hex triplet (default is orange)</td>
+          <td>Default colour used for minimum value when shading by annotation. (<em>since 2.7</em>)</td>
+          </tr>
+          <tr><td>jalviewhelpurl</td>
+          <td>absolute or relative url or javascript function prefixed by <em>javascript:</em> (default is http://www.jalview.org/help.html)</td>
+          <td>Optional parameter allowing modification of the default Jalview Help URL normally opened when JalviewLite's 'Help' menu item is selected. (<em>since 2.7</em>)</td>
+          </tr>
+          <tr><td>resolvetocodebase</td>
+          <td>True or False (False)</td>
+          <td>Set to true to re-instate pre-JalviewLite 2.7 behaviour where relative URLs were prepended with the applet 'codebase' rather than the current document base URL before resolution. (<em>since 2.7</em>)</td>
+          </tr>
+          <tr><td>scoreFile</td>
+          <td>file</td>
+          <td>Multiple sequences aligment scores file. Currently is supported only the T-Coffee score_ascii file format</td>
+          </tr>
+                  </table>
+                  <!-- content end -->

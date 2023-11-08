@@ -1,0 +1,52 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Alignment Quality Annotation</title>
+</head>
+<body>
+  <p>
+    <strong>Alignment Quality Annotation</strong>
+  </p>
+  <p>Alignment Quality is one of the automatically calculated
+    quantitative alignment annotations displayed below the columns of a
+    multiple sequence alignment (and can be used to shade the
+    alignment). It is an ad-hoc measure of the likelihood of observing
+    the mutations (if any) in a particular column of the alignment.</p>
+  <p>More precisely, the quality score is inversely proportional to
+    the average cost of all pairs of mutations observed in a particular
+    column of the alignment - a high alignment quality score for a
+    column would suggest that there are no mutations, or most mutations
+    observed are favourable.</p>
+
+  <p>
+    <em>The Algorithm</em><br> The quality score is calculated for
+    each column in an alignment by summing, for all mutations, the ratio
+    of the two BLOSUM 62 scores for a mutation pair and each residue's
+    conserved BLOSUM62 score (which is higher). This value is normalised
+    for each column, and then plotted on a scale from 0 to 1.
+  </p>
+  <p>Multiple alignment algorithms using the BLOSUM 62 substitution
+    matrices should, in theory, maximise alignment quality for an
+    un-gapped alignment, and locally maximise quality for gapped
+    alignments.</p>
+</body>
+</html>

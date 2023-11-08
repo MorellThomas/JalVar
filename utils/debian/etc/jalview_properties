@@ -1,0 +1,60 @@
+# global template for ~/.jalview_properties for debian systems
+# 
+# this file is copied into a user's home directory by 
+# the jalview wrapper script when no .jalview_properties file
+# exists. 
+#
+# changes to this file will not affect the jalview configuration
+# for existing users (at least not at the time of writing)
+
+# Configure the automatic display of the Jalview Example Project for new users
+# default is true
+# SHOW_STARTUP_FILE=false
+
+# Location of the file to be loaded in on startup if SHOW_STARTUP_FILE is true
+# default is https://www.jalview.org/examples/exampleFile_2_7.jvp
+# STARTUP_FILE=https://www.jalview.org/examples/exampleFile_2_7.jvp
+
+# 
+# Disable Jalview's connections to various web services
+#
+
+# Connection: https://www.jalview.org/services/identifiers 
+# uncomment to stop jalview retrieving a list of URL templates for
+# biological databases originally provided by identifiers.org
+#
+# NOIDENTIFIERSSERVICE=true
+
+# Connection: https://www.jalview.org/feeds/desktop/rss
+# uncomment to stop Jalview checking the www.jalview.org news feed
+# NONEWS=true
+
+# Connection: https://raw.githubusercontent.com/jalview/exporter-templates/master/biojs/package.json
+# uncomment to disable download of the latest 'BioJS' HTML export template
+# NOHTMLTEMPLATES=true
+
+# Uncomment to disable pings to google analytics 
+# these provide record of launch statistics for the Jalview project
+#
+# default is to prompt user on launch. 
+# Allowed values are 'true', 'false' or undefined
+# USAGESTATS=false
+
+# Uncomment to disable jalview's retrieval of https://www.jalview.org/cgi-bin/questionnaire.pl
+# this service is used to make Jalview users aware 
+# of any community questionnaires currently active on www.jalview.org 
+# Allowed values are true/false. Default is true.
+# NOQUESTIONNAIRES=true
+
+# Uncomment to disable jalview's retrieval of https://www.jalview.org/webstart/jalview.jnlp
+# this document contains the version number of the latest release
+# and used to notify the user if they should consider upgrading their installation.
+# Allowed values are true/false. Default is true.
+# VERSION_CHECK=false
+
+# Uncomment to prevent jalview automatically contacting
+# https://www.compbio.dundee.ac.uk/jabaws/ to discover web services
+# When disabled, users can still initiate service discovery via a button 
+# in the 'Web Services' menu.
+# Allowed values are true or false. Default is true.
+# SHOW_JWS2_SERVICES=false 

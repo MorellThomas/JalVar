@@ -1,0 +1,50 @@
+## There is now a script utils/mk_jalview_icons.sh that creates the .icns and .ico icon files, and also the rotatable icon.
+Run it as
+```
+mk_jalview_icons.sh <BASENAME>-512.png
+```
+Having an existing 512x512 PNG image with the above filename format is important.
+It will then create multiple files
+`<BASENAME>-<N>.png`
+for N being 16, 32, 38, 48, 64, 128, 256.
+**NB** You might want to edit these as described below.  The `mk_jalview_icons.sh` will not overwrite these files, but it
+will overwrite the `.ico` and `.icns` files, so after editing the `<BASENAME>-<N>.png` files, just run the script again.
+
+As below, the script relies on ImageMagick and icnsutils being installed with `convert` and `png2icns` in the PATH.
+
+The rotatable logo will also be created (and overwritten) as
+`rotatable_<BASENAME>-38.png`
+
+
+## Old text
+### Creating the .ico (Windows) and .icns (macOS) files from PNG images in linux
+
+Create multiple square versions of your icon at the following resolutions:
+16x16, 32x32, 48x48, 64x64, 128x128, 256x256, 512x512
+
+> A quick way to do this with ImageMagick is create the 512x512 logo first, saved as logo-512.png, and run
+> `for n in 16 32 48 64 128 256; do convert -geometry ${n}x${n} logo-512.png logo-${n}.png; done`
+> but note that anitaliasing can make a logo look quite blurry, especially for small resolutions.  These should
+> then be hand edited (with e.g. gimp) to neaten the edges.  A nice trick in gimp is to use the Colours->Curves->Alpha
+> and create a curve that makes mostly transparent pixels completely transparent, and slightly transparent pixels
+> completely opaque.
+
+Then use the script `jalview/utils/create_iconfiles.sh` like this:
+```
+create_iconfiles.sh logo-*.png
+```
+and it will create both `logo.ico` and `logo.icns` containing the appropriate different resolution logos.
+It is then up to the OS to display the correct one in different circumstances.
+
+This script uses the utilities convert (ImageMagick) and png2icns (icnsutils) which should be installed and in the path.
+Note that for some reason ICNS files should not contain a 64x64 pixel version of a logo, so the script removes this
+as png2icns complains if it finds one!
+
+### Rotatable icon with white background
+
+This icon is used by the web services progress window, with the rotating Jalview logo.
+It requires some small margin of white pixels around the logo to enable antialiasing around the edge of the logo.
+You can make one form a 38x38 transparent logo with
+```
+convert jalview_logo-38.png -gravity center -background white -extent 60x60 rotatable_jalview_logo-38.png
+```

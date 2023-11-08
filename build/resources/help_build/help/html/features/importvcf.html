@@ -1,0 +1,115 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Importing Variants from VCF</title>
+</head>
+<body>
+  <p>
+    <strong>Importing Genomic Variants from VCF</strong>
+  </p>
+
+  <p>Jalview can annotate nucleotide sequences associated with
+    genomic loci with features representing variants imported from VCF
+    files. This new feature in Jalview 2.11, is currently tuned to work
+    best with tab indexed VCF files produced by the GATK Variant
+    Annotation Pipeline (with or without annotation provided by the
+    Ensembl Variant Effect Predictor), but other sources of VCF files
+    should also work.</p>
+  <p>
+    If your sequences have genomic loci, then a <strong>Taxon
+      name</strong> and <strong>chromosome location</strong> should be shown in
+    the Sequence Details report and the Sequence ID tooltip (providing
+    you have enabled it via the submenu in the <em><strong>View</strong></em>
+    menu). Jalview matches the assembly information provided in the VCF
+    file to the taxon name, using an internal lookup table. If a match
+    is found, Jalview employs the Ensembl API's lift-over services to
+    locate your sequences' loci in the VCF file assembly's reference
+    frame. If all goes well, after loading a VCF, Jalview will report
+    the number of variants added as sequence features via the alignment
+    window's status bar. These are added by default when loci are
+    retrieved from Ensembl.
+  </p>
+  <p>
+    <strong><a name="attribs">Standard Variant Attributes</a></strong>
+  </p>
+  <p>Jalview decorates variant features imported from VCF files with
+    attributes that can be used to filter or shade variant annotation
+    including the following:
+  </p>
+  <ul>
+    <li><em>POS</em> - Chromosomal position as recorded in VCF</li>
+    <li><em>ID</em> - in GNOMAD releases specifies rs identifier of
+      a known dbSNP variant.</li>
+    <li>QUAL is the 'phred-scaled quality score' for the ALT
+      assertion (or quality of SNP call if there are no alternate
+      alleles). Higher is more confident.</li>
+    <li><em>FILTER</em> is 'PASS' if all filters have been passed,
+      else a list of failed filters for the variant (e.g. poor quality,
+      or insufficient sample size).</li>
+  </ul>
+  <p><em>Standard attributes were introduced in Jalview 2.11.1.0.</em> VCF field semantics are highly dependent on the source of your VCF
+    file. See <a
+      href="https://www.internationalgenome.org/wiki/Analysis/vcf4.0">https://www.internationalgenome.org/wiki/Analysis/vcf4.0</a>
+    for more information.
+  </p>
+  <p>
+    <strong>Working with variants without CSQ fields</strong>
+  </p>
+  <p>
+    <a name="computepepvariants">Jalview 2.11.1's new virtual
+      features</a> mean that peptide sequences are no longer annotated
+    directly with protein missense variants. This makes it harder to
+    filter variants when they do not already include the CSQ field. You
+    can rescue the pre-2.11.1 functionality by:
+  </p>
+  <ol>
+    <li>Download the script at
+      https://www.jalview.org/examples/groovy/ComputePeptideVariants.groovy</li>
+    <li>Executing the script via the <a href="groovy.html">Groovy
+        Console</a> on a linked CDS/Protein view to create missense and
+      synonymous peptide variant features.
+    </li>
+  </ol>
+  <p>
+    <strong>Working with variants from organisms other than
+      H.sapiens.</strong>
+  </p>
+  <ol>
+    <li>Look in your VCF file to identify keywords in the
+      ##reference header that define what species and assembly name the
+      VCF was generated against.</li>
+    <li>Look at ensembl.org to identify the species' short name,
+      and the assembly's unique id.</li>
+    <li>Add mappings to the <strong>VCF_SPECIES</strong> and <strong>VCF_ASSEMBLY</strong>
+      properties in your .jalview_properties file. For example:<pre>
+VCF_SPECIES=1000genomes=homo_sapiens,c_elegans=celegans
+VCF_ASSEMBLY=assembly19=GRCh37,hs37=GRCh37</pre><br /> <br />These allow
+      annotations to be mapped from both Human 1000genomes VCF files and
+      C.elegans files.
+    </li>
+  </ol>
+  <strong>Work in Progress!</strong>
+  <p>VCF support in Jalview is under active development. Please get
+    in touch via our discussion forum if you have any questions, problems or
+    otherwise find it useful !</p>
+</body>
+</html>

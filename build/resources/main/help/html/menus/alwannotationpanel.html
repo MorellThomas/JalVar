@@ -1,0 +1,121 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Annotation Panel Menus</title>
+</head>
+<body>
+  <p>
+    <strong>Annotation Panel Menus</strong>
+  </p>
+  <ul>
+    <li><strong>Annotation Label Popup Menu</strong><br> <em>This
+        menu is opened by clicking anywhere on the annotation row labels
+        area (below the sequence ID area).</em> <br />
+    <em><strong>Mac Users:</strong> pressing CTRL whilst clicking
+        the mouse/track pad is the same as a right-click. See your
+        system's settings to configure your track-pad's corners to
+        generate right-clicks.</em>
+      <ul>
+        <li><strong>Add New Row</strong><br> <em>Adds a
+            new, named annotation row (a dialog box will pop up for you
+            to enter the label for the new row). </em></li>
+        <li><strong>Edit Label/Description</strong><br> <em>This
+            opens a dialog where you can change the name (displayed
+            label), or the description (as shown on the label tooltip)
+            of the clicked annotation. </em></li>
+        <li><strong>Hide This Row</strong><br> <em>Hides
+            the annotation row whose label was clicked in order to bring
+            up the menu.</em></li>
+        <li><strong>Hide All <em>&lt;label&gt;</em></strong><br>
+          <em>Hides all annotation rows whose label matches the one
+            clicked. (This option is only shown for annotations that
+            relate to individual sequences, not for whole alignment
+            annotations. Since Jalview 2.8.2.)</em></li>
+        <li><strong>Delete Row</strong><br> <em>Deletes
+            the annotation row whose label was clicked in order to bring
+            up the menu.</em></li>
+        <li><strong>Show All Hidden Rows</strong><br> <em>Shows
+            all hidden annotation rows.</em></li>
+        <li><strong>Export Annotation</strong> <em>(Application
+            only)</em><br> <em>Annotations can be saved to file or
+            output to a text window in either the Jalview annotations
+            format or as a spreadsheet style set of comma separated
+            values (CSV). </em></li>
+        <li><strong>Show Values in Text Box</strong> <em>(applet
+            only)</em><br> <em>Opens a text box with a list of
+            comma-separated values corresponding to the annotation
+            (numerical or otherwise) at each position in the row. This
+            is useful to export alignment quality measurements for
+            further analysis.</em></li>
+      </ul> <em>The following additional entries are available when the
+        popup menu is opened on a consensus sequence annotation row:</em>
+      <ul>
+
+        <li><strong>Ignore Gaps in Consensus</strong><br> If
+          this checkbox is selected, all consensus calculations
+          performed in the current Alignment window will be done without
+          counting gaps as a consensus character.</li>
+        <li><strong>Show Consensus Histogram<br></strong>
+          Enable or disable the display of the histogram above the
+          consensus sequence.</li>
+        <li><strong>Show Consensus Logo<br></strong> Enable or
+          disable the display of the sequence logo above the consensus
+          sequence.</li>
+        <li><strong>Normalise Consensus Logo<br>
+        </strong><em>When enabled, scales all logo stacks to the same
+            height, making it easier to compare symbol diversity in
+            highly variable regions.</em></li>
+
+        <li>
+        <li><strong>Copy Consensus Sequence</strong><br>
+          Copies the consensus sequence to the clipboard in Fasta
+          format, to allow the consensus sequence to be added to an
+          alignment. Note the copied sequence is not accessible to other
+          programs if Jalview is running as an applet in a web page.</li>
+      </ul></li>
+    <li><strong>Annotation Popup Menu<br>
+    </strong><em>This menu is opened when right-clicking on the selected
+        positions of an annotation.</em>
+      <ul>
+        <li><strong>Helix</strong><br> <em>Mark selected
+            positions with a helix glyph (a red oval), and optional text
+            label (see below). Consecutive ovals will be rendered as an
+            unbroken red line.</em></li>
+        <li><strong>Sheet</strong><br> <em>Mark selected
+            positions with a sheet glyph (a green arrow oriented from
+            left to right), and optional text label (see below).
+            Consecutive arrows will be joined together to form a single
+            green arrow.</em></li>
+        <li><strong>Label</strong><br> <em>Sets the text
+            label at the selected positions. If more than one
+            consecutive position is marked with the same label, only the
+            first position's label will be rendered.</em></li>
+        <li><strong>Colour</strong><br> <em>Changes the
+            colour of the annotation text label.</em></li>
+        <li><strong>Remove Annotation</strong><br> <em>Blanks
+            any annotation at the selected positions on the row. Note: <strong>This
+              cannot be undone</strong>
+        </em></li>
+      </ul></li>
+  </ul>
+</body>
+</html>

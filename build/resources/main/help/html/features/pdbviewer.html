@@ -1,0 +1,175 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>PDB Viewer</title>
+</head>
+<body>
+  <p>
+    <strong>The Jalview internal PDB Viewer</strong><br> Since
+    Jalview 2.3, the <a href="jmol.html">Jmol PDB Viewer</a> is the main
+    method for <a href="viewingpdbs.html">viewing PDB structures</a>.
+    The documentation below concerns the original Jalview PDB viewer,
+    which is only used in situations where Jmol is unavailable or cannot
+    operate.
+  </p>
+  <p>
+    <strong>The PDB Viewer Window</strong>
+  <p>
+    This interactive structure viewing window is opened by selecting
+    entries from the <strong>&quot;Structure&#8594;&quot;</strong>
+    submenu of the <a href="../menus/popupMenu.html">sequence id
+      pop-up menu</a>. The internal PDB viewer is not able to show
+    superpositions, so no other options are provided. Structures can
+    only be viewed for sequences which have an <a
+      href="viewingpdbs.html">associated PDB structure</a>, and the
+    PDB Viewer will only be associated with the particular alignment
+    view from which it was opened.
+  </p>
+  <p>
+    <strong>Controls</strong>
+  </p>
+  <p>The structure is rendered as an alpha-carbon trace. Moving the
+    mouse over the structure brings up tooltips with a residue name and
+    PDB sequence position. If a mapping exists to a residue in the
+    associated sequence, then this will be highlighted in the associated
+    view in its alignment window, and vice versa for viewing the
+    coordinates associated with a particular residue in the sequence in
+    a particular view on the alignment.</p>
+  <p>Selecting a residue highlights its associated sequence residue
+    and alpha carbon location.</p>
+  <p>
+  <table>
+    <tr>
+      <td><strong>Action</strong></td>
+      <td><strong>Windows</strong></td>
+      <td><strong>Unix</strong></td>
+      <td><strong>Mac/OSX</strong></td>
+    </tr>
+    <tr>
+      <td>Select/<br> Deselect<br> Residue
+      </td>
+      <td>Left Click</td>
+      <td>Left Click</td>
+      <td>Click</td>
+    </tr>
+    <tr>
+      <td>Rotate View</td>
+      <td>Left Click and Drag</td>
+      <td>Left Click and Drag</td>
+      <td>Click and Drag</td>
+    </tr>
+    <tr>
+      <td>Roll View</td>
+      <td>Right Click and drag</td>
+      <td>Right Click and Drag</td>
+      <td>TODO</td>
+    </tr>
+    <tr>
+      <td>Move Origin</td>
+      <td>Middle-Button and Drag</td>
+      <td>Middle-Button and Drag</td>
+      <td>TODO</td>
+    </tr>
+    <tr>
+      <td>Zoom In</td>
+      <td>Up Arrow</td>
+      <td>Up Arrow</td>
+      <td>Up Arrow</td>
+    </tr>
+    <tr>
+      <td>Zoom Out</td>
+      <td>Down Arrow</td>
+      <td>Down Arrow</td>
+      <td>Down Arrow</td>
+    </tr>
+  </table>
+  </p>
+  <p>There are three menus:
+  <ul>
+    <li><Strong>File<br>
+    </strong>
+      <ul>
+        <li><strong>Save As<br>
+        </strong><em>Saves the current view as an EPS or PNG file.</em></li>
+        <li><strong>View Mapping<br>
+        </strong><em> Opens a text window showing the alignment between the
+            residues corresponding to alpha-carbon atoms in the PDB
+            structure and the residues in the associated sequence.</em></li>
+      </ul></li>
+    <li><strong>Colours<br>
+    </strong>
+      <ul>
+        <li><strong>By Sequence<br>
+        </strong><em> Colours each residue in the structure with the colour
+            of its corresponding residue in the associated sequence as
+            rendered in the associated alignment view, including any
+            UniProt sequence features or region colourings.<br>
+            Residues which only exist in the PDB structure are coloured
+            white if they are insertions (relative to the associated
+            sequence in the alignment) and grey if they are N or C
+            terminal flanks outside the region mapped to the alignment
+            window's sequence.
+        </em></li>
+        <li><strong>By Chain<br>
+        </strong><em> Assigns a random colour to each PDB chain.</em>
+        <li><strong>Charge &amp; Cysteine<br>
+        </strong><em> Highlights cysteines in yellow, anionic (Aspartic Acid
+            or Glutamic Acid) residues in red, and cationic (Lysine or
+            Arginine) residues in blue.</em></li>
+        <li><strong><em>Standard and User Defined
+              Jalview colourschemes.<br>
+          </em></strong> The remaining entries apply the colourschemes available from
+          the standard and user defined <a
+          href="../colourSchemes/index.html">amino acid
+            colours</a>.</em></li>
+      </ul></li>
+    <li><strong>View<br>
+    </strong><em> These options can be turned off to improve performance
+        when viewing large structures, some at the expense of visual
+        clarity.</em>
+      <ul>
+        <li><strong>Wireframe<br>
+        </strong><em> Draws thin lines rather than thick lines for the
+            alpha-carbon trace.</em></li>
+        <li><strong>Depthcue<br>
+        </strong><em>Shades the structure so parts of the structure near the
+            front of the view are brighter than those further away.</em></li>
+        <li><strong>Z Buffering<br>
+        </strong><em> Applies depth sorting to correctly render occluded
+            regions of the backbone trace.</em></li>
+        <li><strong>Show All Chains<br>
+        </strong><em> When turned on, shows all chains in the PDB file, not
+            just the one associated with a sequence in the alignment
+            window.</em></li>
+        <!--  NOT YET IMPLEMENTED <li><strong>Associate View</strong><br>
+		Change which view on the associated sequence's alignment is to be
+		associated with the PDB viewer.-->
+      </ul></li>
+  </ul>
+  </p>
+  <p>
+    <strong>Notes for PDB Viewing in the Jalview Applet</strong>
+  <p>The applet can only load PDB files by copying and pasting the
+    text into the popup window which appears when &quot;Show PDB
+    Structure&quot; is selected after right clicking on a sequence name.</p>
+</body>
+</html>

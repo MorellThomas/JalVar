@@ -1,0 +1,107 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Editing</title>
+</head>
+<body>
+  <p>
+    <strong>Editing</strong>
+  </p>
+  <p>
+    There are two major ways to edit alignments - in 'Normal mode', gaps
+    are inserted and deleted at the mouse pointer in various ways by
+    clicking the left mouse button and pressing a combination of either
+    shift and control (or the alt, option or apple key on Macs) and
+    dragging the mouse. Pressing <em>F2</em> toggles the alternative <a
+      href="../features/cursorMode.html">'Cursor mode'</a> keyboard
+    editing facility, where the space bar and delete keys add and remove
+    gaps at the current editing position. The key strokes for both these
+    modes are summarised in the <a href="../keys.html">keystrokes
+      table</a>.
+  </p>
+  <p>
+    <strong>Tip:</strong> For large alignments, deselect &quot;Calculate
+    -&gt; Autocalculate Consensus&quot; to prevent the alignment
+    performing lengthy calculations after every edit.
+  </p>
+  <p>
+    <em>Inserting / removing gaps</em> - hold down the &quot;Shift&quot;
+    key. Click on a residue with the mouse and drag it to the left or
+    right to insert gaps and remove gaps.<br> If the current
+    selection is a group over all sequences in the alignment, or a group
+    over some sequences or all columns in the alignment, then hold down
+    &quot;Control&quot; key (&quot;Cmd&quot; key on OSX) and drag the residue 
+    left or right to edit all sequences in the defined group at once.
+  </p>
+  <p>
+    <em>Copy/paste/cut/delete</em> - any sequences which are in the
+    current selection box (indicated in red) may be cut and / or copied
+    to a new alignment or deleted.
+  </p>
+  <p>
+    <em>Undo / redo</em> - editing of sequences (insertion/removal of
+    gaps, removal of sequences, trimming sequences etc) may be undone or
+    redone at any time using the appropriate menu items from the edit
+    menu.
+  <p>
+    <em>Trimming alignment</em> - First select a column by clicking the
+    scale indicator (above the sequences) The alignment may then be
+    trimmed to the left or right of this column. If multiple columns are
+    selected, the alignment is trimmed to the right of the rightmost
+    selected column (or to the left of the leftmost selected column)
+  </p>
+  <p>
+    <em>Remove gapped columns</em> - Removes columns within the
+    alignment which contain only space characters (&quot;-&quot; or
+    &quot;.&quot; or &quot; &quot;)
+  </p>
+  <p>
+    <em>Removing gaps</em> - Removes all gaps from the alignment. Gaps
+    are &quot;-&quot; or &quot;.&quot; or &quot; &quot;.
+  </p>
+  <p>
+    <em>Set gap character</em> - Switches the gap character between
+    &quot;.&quot; and &quot;-&quot;. If the &quot;Render Gaps&quot;
+    option from the &quot;View&quot; menu is unticked all gaps will
+    appear as blank spaces.
+  </p>
+  <p>&nbsp;</p>
+  <p>
+    <strong>Editing In Selection Areas</strong>
+  </p>
+  Editing can be restricted to the current selection area. This allows
+  the user to &quot;Lock&quot; the alignment either side of the
+  selection area. Any gap insertions or deletions will only affect the
+  current selection area.
+  <p>
+    <img src="editing.jpg" width="428" height="186" align="top">
+  </p>
+  <p>In this example, if Sequence IL2RA_MACMU has gaps removed from
+    position 98-104, the same number of gaps will be inserted at
+    position 116, (between M and L).</p>
+  <p>
+    <em>Locked selection area based editing was introduced in
+      Jalview 2.08</em>
+  </p>
+  <p>&nbsp;</p>
+</body>
+</html>

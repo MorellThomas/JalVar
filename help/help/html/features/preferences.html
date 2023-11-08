@@ -1,0 +1,445 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Preferences</title>
+</head>
+
+<body>
+  <p>
+    <strong>Preferences</strong>
+  </p>
+  <p>
+    The preferences panel is opened from the Jalview Desktop&rsquo;s <strong><em>Tools</em></strong>
+    menu.
+  </p>
+  <p>There are eight tabs in the Preferences dialog box:
+  <ul>
+    <li>The <a href="#visual"><strong>&quot;Visual&quot;</strong>
+        Preferences</a> tab allows you to configure the default display for
+      a new alignment window.
+    </li>
+    <li>The <a href="#colours"><strong>&quot;Colours&quot;</strong>
+        Preferences</a> tab allows you to configure default colourschemes
+      for a new alignment window.
+    </li>
+    <li>The <a href="#overview"><strong>&quot;Overview&quot;</strong>
+        Preferences</a> tab configures defaults for the overview window.
+    </li>
+    <li>The <a href="#structure"><strong>&quot;Structure&quot;</strong>
+        Preferences</a> tab allows you to configure options for obtaining
+      and displaying structure information.
+    </li>
+    <li>The <a href="#connections"><strong>&quot;Connections&quot;</strong>
+        Preferences</a> tab allows you to configure Jalview's internet
+      settings.
+    </li>
+    <li>The <a href="#links"><strong>&quot;Links&quot;</strong>
+        Preferences</a> tab shows the currently configured <em>URL
+        Links</em> shown in the <strong>Link</strong> submenu in the Sequence
+      ID popup menu.
+    </li>
+    <li>The <a href="#output"><strong>&quot;Output&quot;</strong>
+        Preferences</a> tab contains settings affecting the export of
+      sequence alignments and EPS files.
+    </li>
+    <li>The <a href="#editing"><strong>&quot;Editing&quot;</strong>
+        Preferences</a> tab contains settings affecting behaviour when editing alignments.
+    </li>
+    <li>The <a href="#startup"><strong>&quot;Startup&quot;</strong>
+        Preferences</a> tab allows you to adjust how much memory is
+      allocated to Jalview when it is launched.
+    </li>
+    <li>The <a href="../webServices/webServicesPrefs.html"><strong>&quot;Web
+          Service&quot;</strong> Preferences</a> tab allows you to configure the <a
+      href="http://www.compbio.dundee.ac.uk/jabaws">JABAWS</a>
+      servers that Jalview uses, and change the layout of the
+      alignment's Web Services menu.
+    </li>
+  </ul>
+  </p>
+  <p>
+    <strong><a name="visual">Visual</a> Preferences tab</strong>
+  </p>
+  <p>
+    <em>Maximise Window</em> - If this is selected, a new alignment
+    window will stretch to fit the available space.
+  </p>
+  <p>
+    <em>Open Overview Window</em> - When this is selected, the <a
+      href="overview.html">alignment overview</a> panel is opened
+    by default for a new alignment window.
+  </p>
+  <p>
+    <em>Show Annotations</em> - If this is selected the new window will
+    display an annotation panel below the sequences. This annotation
+    panel may have several rows describing the whole alignment. The 4
+    standard annotations <em>Conservation</em>, <em>Quality</em>, 
+    <em>Occupancy</em> and <em>Consensus</em> for the alignment may 
+    be shown or hidden by default using the checkboxes adjacent and
+    below.
+  </p>
+  <p>
+    <em>Show group: Conservation and Consensus</em> controls the display
+    of per-group automatic annotation.
+  </p>
+  <p>
+    <em>Consensus: Histogram and Logo</em> checkboxes control the
+    display of the consensus histogram and sequence logo for consensus
+    annotation rows.
+  </p>
+  <p>
+    <em>Full Sequence ID</em> - If selected the ID panel will display
+    the name of a sequence plus the start and end residues in the format
+    name/start-end. If not selected, the displayed ID will be the name
+    of the sequence.
+  </p>
+  <p>
+    <em>Right Align IDs</em> - select to align all sequence IDs to the
+    left-hand edge of the sequence alignment, rather than the left-hand
+    edge of the alignment display window.
+  </p>
+  <p>
+    <em>Font</em> - The default font name, size and style can be set for
+    a new alignment window.
+  </p>
+  <p>
+    <em>Sequence ID Tooltip</em>: Control the display of Database
+    References and Non-positional annotation in the tooltip displayed
+    when the mouse is over a sequence's ID.
+  </p>
+  <p>
+    <em>Show Unconserved</em> - When this is selected, all consensus
+    sequence symbols will be rendered as a '.', highlighting mutations
+    in highly conserved alignments.
+  </p>
+  <p>
+    <em>Sequence Name Italics</em> - select to apply the italicised
+    version of the font to sequence labels.
+  </p>
+  <p>
+    <em>Smooth Font</em> - Toggles anti-aliasing on / off for faster
+    rendering of the alignment.
+  </p>
+  <p>
+    <em>Gap Symbol</em> - The default gap symbol may be set to either
+    &quot;-&quot; or &quot;.&quot;
+  </p>
+  <p>
+    <em>Wrap Alignment</em> - Select whether to open new alignment
+    windows in wrapped mode or not.
+  </p>
+  <p>
+    <em>Sort alignment by</em> - When the alignment is loaded in, it can
+    be ordered as read (No sort), or sorted by Id or pairwise identity.
+  </p>
+  <p>
+    <em>Sort annotations by</em> - Annotations can be unsorted, sorted
+    by the order of the related sequences in the alignment, or by label.
+    Autocalculated annotations (e.g. Consensus) can be shown either last
+    (below sequence annotations) or first (above sequence annotations).
+    <em>Since Jalview 2.8.2.</em>
+  </p>
+  <p>
+    <em>Open file</em> - If this is selected then the default alignment
+    file will be opened when Jalview is started. You can change the
+    default file by clicking on file name and either typing in the file
+    path or selecting it from the file chooser window.<br /> <em>Note:
+      The default example alignment is updated periodically to
+      demonstrate new features in Jalview.</em>
+  </p>
+  <p>
+    <a name="colours"><strong>&quot;Colours&quot;
+        Preferences tab</strong>
+  </p>
+  <p>
+    <em>Alignment Colour</em> - The default colour scheme for a new
+    alignment window. If the chosen option is &quot;User Defined&quot;
+    then the last User Defined Colour loaded or saved via the User
+    Defined Colours panel will be loaded.
+  </p>
+  <p>
+    <em>Annotation Shading Default</em> - set the default minimum and
+    maximum colours used when <a
+      href="../colourSchemes/annotationColouring.html">Colour
+      by Annotation...</a> is selected from the alignment window's colours
+    menu.
+  </p>
+   <p>
+    <a name="overview"><strong>&quot;Overview&quot;
+        Preferences tab</strong>
+  </p>
+  <p>
+    <em>Use legacy gap colouring (gaps are white)</em> - when enabled,
+    Jalview's overview shows gaps as white, and sequences with no
+    colourscheme applied as grey.
+  </p>
+  <p>
+    <em>Show Hidden regions when opening overview</em> - default setting
+    for inclusion of hidden regions.
+  </p>
+  <p>
+    <em>Gap Colour</em> - When legacy gap colouring is not enabled, this
+    configures the default colour for gaps in the overview.
+  </p>
+  <p>
+    <em>Hidden Colour</em> - colour used to highlight regions in the
+    overview that are hidden in the alignment.
+  </p>
+  <p>
+    <a name="structure"><strong>&quot;Structure&quot;
+        Preferences tab</strong></a><em> added in Jalview 2.8.2</em>
+  </p>
+  <p>
+    <em>Process secondary structure from PDB</em> - if selected, then
+    structure information read from PDB will be processed and annotation
+    added to associated sequences.
+  <p>
+    <em>Add secondary structure annotation to alignment</em> - if
+    selected, <a href="http://swift.cmbi.ru.nl/gv/dssp/">Jmol's
+      implementation DSSP</a> will be used to add annotation to polypeptide
+    chains in the structure.
+  <p>
+    <em>Add Temperature Factor annotation to alignment</em> - if
+    selected, values extracted from the Temperature Factor column for
+    the backbone atoms in the PDB file will be extracted as annotation
+    lines shown on the alignment.<br/><em>Since 2.11.2, scores from the Temperature Column for structures imported via the 3D-Beacons network may be shown instead as model quality or reliability scores.</em>
+  <p>
+    <em><strong>Default structure viewer</strong></em> - choose Jmol, CHIMERA, CHIMERAX or PYMOL for
+    viewing 3D structures.
+  <p>
+    <em>Path to Chimera/X/Pymol program</em> - Optional, as Jalview will search
+    standard installation paths for Windows, Linux or MacOS. If Jalview cannot locate the installation for your selected structure viewer, a dialog will be shown. If you have
+    installed the chosen viewer in a non-standard location, you can specify it
+    here, by entering the full path to its executable.<br/>For Chimera, locate the path to the chimera program, similarly for ChimeraX and Pymol. Rather than typing in the path, you can also <em>double-click this field</em> to open a file chooser dialog.</p>
+  <p>
+    <em>Sequence &lt;-&gt; Structure Mapping Method</em> - This setting controls whether
+    Jalview attempts to retrieve mappings between Uniprot protein
+    sequences and 3D structures in the PDBe with SIFTS, or constructs a
+    mapping by conservative alignment between the sequences and chains
+    in the 3D structure data using the Needleman and Wunsch algorithm.
+    SIFTS is enabled by default. 
+  <p>
+    <em>PDB Fields shown in Search and Structure Summaries</em> - ticks
+    in this table indicate fields shown by default when browsing results
+    of a free text search via the PDB sequence fetcher, or 3D structures
+    offered by the 3D Structure Chooser.<p>
+  <p>
+    <a name="connections"><strong>&quot;Connections&quot;
+        Preferences tab</strong></a>
+  </p>
+  <p>
+    <em>Default Browser (Unix)</em><br> It's difficult in Java to
+    detect the default web browser for Unix users. If Jalview can't find
+    your default web browser, enter the name or full path to your web
+    browser application.
+  </p>
+  <p>
+    <em>Proxy Server</em><br>
+    There are three settings to choose from:<br>
+    <ul>
+	    <li><em>No proxy servers</em> will configure Jalview to use a
+		    direct internet connection.</li>
+	    <li><em>System proxy servers</em> will configure Jalview to use
+		    the proxy server passed to it by your system at startup.</li>
+	    <li><em>Use these proxy servers:</em> allows you to set a custom
+		    proxy server.</li>
+    </ul>
+    If you normally use a proxy server for using the internet, you must
+    choose one of <em>System proxy servers</em>, or if these have not been
+    passed correctly you should set your own proxy servers to use by selecting
+    <em>Use these proxy servers</em>.
+    You will then need to enter the host and port details as necessary.
+    Web Services will not work if you are using a proxy server and do
+    not choose the system proxy or enter your own settings here.<br>
+    There are separate host and port settings for HTTP and HTTPS proxies.
+    Often these are the same but you should enter the host and port into both
+    rows.<br>
+    You can also check the <em>Authentication required</em> box if your proxy
+    requires username and password authentication.  You can enter both the
+    <em>Username</em> and <em>Password</em> but only the <em>Username</em> will
+    be stored in Jalview's preferences file, the password will only be stored
+    until the end of the current Jalview session.<br>
+    This means that if the proxy settings are still valid, Jalview will ask for
+    the password when it starts the next session.
+  </p>
+  <p>
+    <em>Usage statistics, Questionnaire and Version checks</em><br>
+    Uncheck these options to prevent Jalview from submitting usage
+    statistics to google analytics, checking for Jalview questionnaires
+    or retrieving details of the latest release version (at
+    www.jalview.org). See the <a href="../privacy.html">user privacy
+      statement</a> for more information.
+  </p>
+  <p>
+  <a name="backups"><strong>The &quot;Backups&quot; Preferences Tab</strong></a>
+  </p>
+  <p>Since Jalview 2.11.0, overwriting an existing file when saving
+    or exporting data will by default trigger a backup file to be
+    created. Several options are provided to control how backup files
+    are named, and how many old versions will be kept.</p>
+    <p>
+    <em>Schemes</em> - select from three default schemes <em>Single Backup</em>, <em>Keep All Versions</em>, and <em>Rolled Backup Files</em>, or choose <em>Custom</em> to enable a previously defined custom scheme.
+    </p><p>
+    <em>Custom</em> - Check this box to adjust the parameters of the currently selected scheme. Once <em>OK</em> is selected these parameters will be saved as the <em>Custom</em> scheme in your user preferences. To revert changes hit <em>Cancel</em>. 
+    </p>
+    <p><em>Scheme Examples</em> - shows how backup files will appear according to the currently selected scheme and parameters. 
+    </p>
+    <p><em>Deleting Old Backup Files</em> - these settings control how many backups are kept.</p>
+    <p><em>Backup filename strategy</em> - specify the naming convention for numbered backups and how they are ordered.</p> 
+  <p>
+    <a name="links"><strong>The &quot;Links&quot; Preferences
+        tab</strong></a>
+  </p>
+  <p>
+    This panel shows a table, and two sections - <em>Edit</em> and <em>Filter</em>.
+    The table shows the available URL link definitions (consisting of a
+    database, Name, and URL template string), a checkbox <em>In
+      Menu</em> which indicates if the link is enabled, and <em>Double
+      Click</em> which marks the link that will be opened if a sequence's ID
+    is double clicked. The table can be sorted by clicking on the column headers.
+  </p>
+  <p><em>Edit Links</em><br /> This section contains three buttons,
+    <em>New</em>, <em>Edit</em> and <em>Delete</em>, which allow you to
+    create, modify and remove user-defined URL links from the Sequence
+    ID's links submenu.
+  </p>
+  <p>
+    <em>Filter</em><br /> The <em>Filter text</em> box allows you to
+    quickly show rows in the table containing a particular text string.
+    The <em>Custom only</em> button limits the entries in the table to
+    just those you have configured yourself <em>via</em> the <em>Edit
+      Links</em> buttons. Press <em>Show all</em> to clear any filters.
+  </p>
+  <p>The links table is prepopulated with persistent URLs for many common
+    bioinformatics databases (since 2.10.2). These links are downloaded by Jalview from
+    the <em>identifiers.org</em> website, and the names and URLs are not
+    user editable.
+    <a href="../webServices/urllinks.html#urllinks">Read more about configuring
+      URL links.</a>
+  </p>
+  <p>
+    <a name="output"><strong>Output Preferences tab</strong></a>
+  </p>
+  <p>
+    <em>EPS Rendering Style</em><br> This is a selection box which
+    allows the user to set a default rendering style for EPS export:
+  <ul>
+    <li>&quot;Prompt each time&quot;<br> Choose this to be
+      asked to select between Lineart and Text each time you make an EPS
+      file.
+    </li>
+    <li>&quot;Lineart&quot;<br> EPS files will accurately
+      reproduce the alignment view in Jalview and all characters will be
+      converted into line art. Files generated in this way are large and
+      are not easily editable, but have no font table dependencies.
+    </li>
+    <li>&quot;Text&quot;<br> EPS files will be a mixture of
+      text and lineart. This produces compact files that can be edited
+      easily in programs like Microsoft Word and Adobe Illustrator, but
+      can be problematic if the fonts available to Jalview are not
+      accessible by the program reading the EPS file.
+  </ul>
+  <p>
+    <em>Automatically set ID width</em><br> When enabled, the
+    column containing sequence and annotation labels at the left hand
+    side of an exported figure will be made large enough to display each
+    sequence ID and annotation label in its own line. Enable this if you
+    have particularly long sequence IDs and need to generate EPS or PNG
+    figures or web pages.
+  </p>
+  <p>
+    <em>Figure ID column width</em><br> Manually specify the width
+    of the left hand column where sequence IDs and annotation labels
+    will be rendered in exported alignment figures. This setting will be
+    ignored if <em>&quot;Automatically set ID width&quot;</em> is set.
+  </p>
+  <p>
+    <em>Sequence/Start-End Numbering</em><br> The output tab also
+    has a group of checkboxes for each file format. If these are ticked,
+    then Jalview will write files with the start and end sequence
+    positions appended to each sequence id:
+  <pre>
+  >ID/1-10
+  AACDEAAFEA
+</pre>
+  <p>If the boxes are left unchecked for a particular format, the
+    sequence limits will not be appended to the sequence id.</p>
+  <p>
+    <em>Embed BioJSON to HTML export</em>
+  </p>
+  <p>
+    When this option is enabled, Jalview embeds <a
+      href="bioJsonFormat.html">BioJSON</a> data within HTML files
+    exported from Jalview at generation time. This enables the exported
+    HTML files to be extracted and imported back into the Jalview
+    desktop application at a later time.
+  <p>
+    <em>Use Modeller Output</em>
+  </p>
+  <p>
+    This option only applies to PIR format output. Jalview automatically
+    reads PIR files with sequence descriptions compatible with the
+    program <a href="http://salilab.org/modeller/">Modeller</a>. If this
+    option is selected <a href="../io/modellerpir.html">Jalview will
+      write Modeller style PIR files</a> with correct start/end numbering
+    and PDB file association (if available). The Jalview id/start-end
+    option is ignored if Modeller output is selected.
+  <p>
+    <a name="editing"><strong>&quot;Editing&quot; Preferences tab</strong></a>
+  </p>
+  <p>There are currently three options available which can be
+    selected / deselected.</p>
+  <p>
+    <em>AutoCalculate Consensus</em> - For large alignments it can be
+    useful to deselect &quot;Autocalculate Consensus&quot; when editing.
+    This prevents lengthy calculations which are performed after each
+    sequence edit. New alignment windows will have their
+    &quot;Autocalculate Consensus&quot; option set according to this
+    setting.
+  </p>
+  <p>
+    <em>Pad Gaps when Editing</em> - New alignment windows will
+    &quot;Pad Gaps&quot; according to this setting.
+  </p>
+  <p>
+    <em>Sort with New Tree</em> - When selected, any trees calculated or
+    loaded onto the alignment will automatically sort the alignment.
+  </p>
+  <p>&nbsp;</p>
+  <p>
+    <a name="startup"><strong>Startup</strong></a>
+  </p>
+  <p>
+    When Jalview is launched it by default examines the available memory
+    and requests up to 90% to be allocated to the application, or 32G,
+    which ever is smaller. The <em>Startup</em> tab allows you to adjust
+    the maximum percentage and hard limits for Jalview memory allocation
+    stored in your .jalview_properties file.
+  </p>
+  <p>&nbsp;</p>
+  <em>Web Services Preferences</em> - documentation for this tab is
+  given in the
+  <a href="../webServices/webServicesPrefs.html">Web Services
+    Preferences section</a>.
+  <p>&nbsp;</p>
+</body>
+</html>

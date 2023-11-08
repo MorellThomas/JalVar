@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.ws.dbsources.EmblXmlSourceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:41" hostname="wer3eng" time="0.059">
+  <properties/>
+  <testcase name="testAdjustForProteinLength" classname="jalview.ws.dbsources.EmblXmlSourceTest" time="0.003"/>
+  <testcase name="testGetCdsRanges" classname="jalview.ws.dbsources.EmblXmlSourceTest" time="0.001"/>
+  <testcase name="testGetEmblEntries" classname="jalview.ws.dbsources.EmblXmlSourceTest" time="0.031"/>
+  <testcase name="testGetSequence" classname="jalview.ws.dbsources.EmblXmlSourceTest" time="0.022"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

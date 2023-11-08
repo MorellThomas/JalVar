@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suppressions PUBLIC
+    "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+    "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+
+<suppressions>
+	<!-- 
+		Do not put individual file-level suppressions here.
+		Instead use embedded comments to switch checks on and off.
+    -->
+        
+    <!-- 
+        Suppress check of XML binding generated code packages 
+    --> 
+    <suppress checks="[a-zA-Z0-9]*" files="jalview[\\/]schemabinding[\\/]*"/>
+    <suppress checks="[a-zA-Z0-9]*" files="jalview[\\/]binding[\\/]*"/>
+    <suppress checks="[a-zA-Z0-9]*" files="jalview[\\/]json[\\/]binding[\\/]*"/>
+    <suppress checks="[a-zA-Z0-9]*" files="jalview[\\/]xml[\\/]binding[\\/]*"/>
+        
+    <!-- 
+    	Suppress check of externally sourced code 
+    --> 
+    <suppress checks="[a-zA-Z0-9]*" files="[\\/]com[\\/]github*"/>
+    <suppress checks="[a-zA-Z0-9]*" files="[\\/]com[\\/]stevesoft*"/>
+    <suppress checks="[a-zA-Z0-9]*" files="[\\/]ext[\\/]edu*"/>
+    <suppress checks="[a-zA-Z0-9]*" files="[\\/]ext[\\/]vamsas*"/>
+    <suppress checks="[a-zA-Z0-9]*" files="[\\/]org[\\/]jibble*"/>
+    <suppress checks="[a-zA-Z0-9]*" files="[\\/]org[\\/]stackoverflowusers*"/>
+    <suppress checks="[a-zA-Z0-9]*" files="[\\/]uk[\\/]ac*"/>
+    
+    <!-- 
+    	ImportControl can only handle one top level package
+    -->
+    <suppress checks="ImportControl" files="MCview[\\/]*" />
+    <suppress checks="ImportControl" files="vamsas[\\/]*" />
+    
+    <!--  
+    	Suppress checks by name 
+    -->
+	<suppress checks="FinalLocalVariable" files=".*\.java"/>
+    
+    <!--  
+    	Suppress checks by id 
+    -->
+	<suppress id="InterfaceNaming" files=".*\.java"/>
+	<suppress id="NoStaticInitialization" files=".*\.java"/>
+	  
+</suppressions>

@@ -1,0 +1,6 @@
+  <mime-type type="$$MIMETYPE$$">
+    <comment>$$NAME$$ File</comment>
+    <generic-icon name="$$ICONFILE$$"/>
+$$    <glob pattern="*.EXTENSIONS" weight="$$PRIORITY$$0"/>
+$$  </mime-type>
+

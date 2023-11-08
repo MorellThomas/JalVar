@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.io.JalviewFileViewTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:41" hostname="wer3eng" time="0.006">
+  <properties/>
+  <testcase name="testGetExtension" classname="jalview.io.JalviewFileViewTest" time="0.0"/>
+  <testcase name="testGetImageIcon" classname="jalview.io.JalviewFileViewTest" time="0.005"/>
+  <testcase name="testGetTypeDescription" classname="jalview.io.JalviewFileViewTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[JalviewFileView.createImageIcon: Couldn't find file: /images/nosuchfile.png
+JalviewFileView.createImageIcon: Couldn't find file: images/file.png
+]]></system-err>
+</testsuite>

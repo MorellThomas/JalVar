@@ -1,0 +1,3 @@
+VERSION_CHECK=true
+LATEST_VERSION=test
+logs.Jalview.level=INFO

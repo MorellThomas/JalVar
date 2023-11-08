@@ -1,0 +1,105 @@
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<html>
+<head>
+<title>The Web Services Preferences Dialog Box</title>
+</head>
+<body>
+  <p>
+    <strong>The Web Services Preferences Dialog Box</strong>
+  </p>
+
+  <p>
+    Jalview includes a range of web services clients for data retrieval
+    and analysis. The <em>Web Services</em> menu found in each alignment
+    window provides access to some of these services, and is configured
+    <em>via</em> the web services preference dialog box, available from
+    the <em>Preferences</em> panel from the <strong>Tools&#8594;Preferences...</strong>
+    menu from the Jalview Desktop window's menu bar.
+  </p>
+  <p>
+  <center>
+    <img src="wsprefs.gif" align="center"
+      alt="Web Services Preferences Panel" width="571" height="461"><br>
+    Web Services Preference Panel
+  </center>
+  </p>
+  <p>
+    <strong>Configuring the list of JABAWS servers</strong><br> The
+    main area of the panel shows the list of <a href="JABAWS.html">JABAWS</a>
+    servers that Jalview is currently aware of. The list includes a
+    colour coded status: green indicates that all services are available
+    for a given server, amber signifies that one or more services on the
+    server are not fully functional, and red highlights servers that
+    could not be contacted or are not functional for some other reason.
+  </p>
+  <p>
+    A server's URL may be added, edited by double clicking on it, or
+    deleted by selecting it and using the buttons below. After adding or
+    editing a server's URL, you will be asked if you wish to test the
+    server. If you wish to do so, then first ensure you can view the new
+    server's test report, which will be output on Jalview's standard
+    console output (you can open Jalview's built in console viewer via
+    the <strong>Tools&#8594;Java Console</strong> menu option).
+  </p>
+  <p>
+    <strong>Controlling the layout of the Web Services Menu</strong><br>
+    The range of services that Jalview is able to access depends upon
+    your requirements, and local computational resources. However, when
+    a large number of resources are available, then the entries and sub
+    menus in the <strong>web services</strong> menu can quickly become
+    unwieldly. The options in the lower part of the dialog box enable
+    you to control the display of each type of analysis service client
+    in the web services menu. In addition, indexing options are provided
+    that enable you to define the layout of the menus provided for
+    JABAWS services by sorting them into submenus according to analysis
+    type and/or host server.
+  </p>
+  <p>
+    <em>The web services preferences panel was added in Jalview
+      2.6, and server status indications added in Jalview 2.8.</em>
+  </p>
+  <p>
+    <strong><a name="wswarnings">Web Services Invalid URL
+        warnings</a></strong><br> Jalview may inform you of any problems
+    contacting the web services by showing a dialog box like the one
+    below:<br>
+  <center>
+    <img src="invalidurldialog.gif" align="center"
+      alt="Web Services Invalid URL Warning dialog box" width="389"
+      height="258"><br> Web Services Invalid URL Warning
+    dialog box
+  </center>
+  <br>
+  <strong><em>Note:</em></strong> this warning will be shown if you are
+  running the Jalview desktop without any network connection, or if you
+  have configured
+  <a href="JABAWS.html">JABA services</a> which cannot be accessed from
+  your location. Should you wish to disable these warnings, then uncheck
+  the
+  <em>Display warnings</em> check box in the web services preferences.
+  </p>
+  <p>
+    <em>The web services warnings dialog box was added in Jalview
+      2.6.1</em>
+  </p>
+</body>
+</html>

@@ -1,0 +1,457 @@
+/**
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ * 
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ */
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+/*****************
+HTML 5 Elements
+******************/
+new
+
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section 
+{
+    display: block;
+}
+
+
+.clearfix:after
+ {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+
+/****************
+Body
+****************/
+
+body
+
+{
+  font: 76% arial,Helvetica,sans-serif;
+  text-align:left; 
+  background:#fff; 
+  color:#000;
+  border-top: 20px solid #555555;
+}
+
+
+
+/*********************
+Page Wrapper
+********************/
+
+#pageWrap 
+
+{
+	width: 960px;
+	margin: 0 auto;
+	position:relative;
+}
+
+/**********************
+HEADER
+************************/
+
+#header 
+{
+  display: block;
+  height: 180px;
+  margin: 0 auto 8px;
+  width: 960px;
+  position:relative;
+}
+
+#logo a 
+{
+  background-image: url("../images/logo.jpg");
+  background-repeat: no-repeat;
+  height: 87px;
+  left: 0;
+  position: absolute;
+  top: 50px;
+  width: 361px;
+  margin-bottom:50px;
+}
+
+#buttons
+{
+height:88px;
+width:252px;
+float:right;
+ right: 0;
+  position: absolute;
+  top: 50px;
+}
+
+#buttons li
+{
+margin-bottom:10px;
+}
+
+#buttons #applet a
+{
+  background-image: url("../images/applet.jpg");
+  background-repeat: no-repeat;
+    height:50px;
+  width:250px;
+  position: absolute;
+  	  opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+   text-shadow: 2px 2px 10px #000000;
+}
+
+#buttons #desktop a
+{
+  background-image: url("../images/desk.jpg");
+  background-repeat: no-repeat;
+  height:50px;
+  width:250px;
+  position: absolute;
+  top:45px;
+  	  opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+   text-shadow: 2px 2px 10px #000000;
+}
+
+#buttons #applet a:hover
+{
+ opacity: 0.8;
+}
+
+#buttons #desktop a:hover
+{
+ opacity: 0.8;
+}
+
+/*****************************
+NAV
+*********************************/
+#nav
+{
+width:100%;
+max-width:100%;
+color:#fff;
+background:#555;
+height:80px;
+}
+
+#navInner
+{
+width:960px;
+margin:0 auto;
+position:relative;
+}
+
+
+#sddm
+{	margin: 0;
+	padding: 0;
+	z-index: 30;
+	position:relative;
+	top:27px;
+}
+
+#sddm li
+{	margin: 0;
+	padding:0;
+	list-style: none;
+	float: left;
+}
+
+#sddm li a
+{ 
+	color: #FFFFFF;
+    font-size: 13pt;
+    padding: 27px 15px 25px;
+    text-align: center;
+    text-decoration: none;
+	    font-family: 'Lato',sans-serif;
+}
+
+#sddm li a.community:hover
+{
+background:#F78E1E;
+}
+
+#sddm li a.development:hover
+{
+background:#AEBF45;
+}
+
+#sddm li a.training:hover
+{
+background:#009DDC;
+}
+
+#sddm li a.download-right
+{
+float:right;
+position:relative;
+left:345px;
+display:block;
+clear:left;
+ margin-top: -27px;
+    padding: 27px 15px 25px;
+}
+
+
+ul#sddm li a:hover 
+{	    
+	text-decoration: none;
+	background:#0083A9;
+}
+
+#sddm div
+{	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #555;
+	border: 1px solid #000000;
+	top:50px;
+}
+
+	#sddm div a
+	{	position: relative;
+		display: block;
+		margin: 0;
+		padding:8px;
+		width: 200px;
+		white-space: nowrap;
+		text-align: center;
+		text-decoration: none;
+		background: #555;
+		color: #fff;
+		border: 1px solid #000000;
+		background: #555;
+	}
+	
+
+
+/*****************************
+CONTENT
+*****************************/
+
+#content
+{
+  font-size: 10pt;
+  height: auto;
+  width: 710px;
+  padding-top:23px;
+  padding-bottom:12px;
+  overflow-x:auto; 
+  overflow-y:hidden; 
+}
+#content h1
+{
+	padding-top:29px;
+	font-size: 15pt;
+	font-style: bold;
+}
+#content h2
+{
+	padding-top:27px;
+	font-size: 13pt;
+	font-style: bold;
+}
+#content h3
+{
+	padding-top:25px;
+	font-size: 12pt;
+	font-style: bold italic;
+}
+#content pre
+{
+	font-family: monospace;
+}
+#sideNav
+{
+width:200px;
+float:left;
+padding-top:29px;
+margin-right:50px;
+}
+#content ul
+{
+	list-style-type: disc;
+}
+#content li
+{
+	margin-left: 11px;
+	padding-bottom:11px;
+}
+	
+#sideNav li
+{
+  height: 40px;
+    list-style-image: none;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+#sideNav a
+{
+   color: #555555;
+    display: block;
+    font-size: 13pt;
+    padding: 8px 0 0 15px;
+    text-decoration: none;
+}
+
+#sideNav a:hover
+{
+    text-decoration: underline;
+}
+#sideNav .about-nav-title
+{
+background: url("../images/normal-arrow-3-normal.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-family: 'Lato',sans-serif;
+    font-size: 18pt;
+    font-weight: normal;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+#sideNav .jvlite-nav-title
+{
+background: url("../images/jvlite-arrow-3-small.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-family: 'Lato',sans-serif;
+    font-size: 18pt;
+    font-weight: normal;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+#sideNav .jvlite-nav-small
+{
+background: url("../images/jvlite-arrow-3-small.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-family: 'Lato',sans-serif;
+    font-size: 18pt;
+    font-weight: normal;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 0px;
+}
+
+#sideNav .com-nav-title
+{
+background: url("../images/com-arrow-3-small.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-family: 'Lato',sans-serif;
+    font-size: 18pt;
+    font-weight: normal;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+#sideNav .dev-nav-title
+{
+background: url("../images/dev-arrow-3-normal.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-family: 'Lato',sans-serif;
+    font-size: 18pt;
+    font-weight: normal;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+#sideNav .train-nav-title
+{
+background: url("../images/train-arrow-3-normal.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-family: 'Lato',sans-serif;
+    font-size: 18pt;
+    font-weight: normal;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+#content .borderTable td
+{
+	border: 1px solid black;
+}
+#content .borderTable tr
+{
+	border-bottom: 2px solid black;
+}
+
+td
+{
+    vertical-align: middle;
+}
+
+/********************************
+FOOTER
+***********************************/
+
+#footer
+{
+max-width:100%;
+width:100%;
+color:#fff;
+background:#555;
+height:140px;
+padding-top:10px;
+clear:both;
+}
+#innerFooter a
+{
+	color: #EEEEEE;
+	visited: #DDDDDD;
+	
+}
+
+#innerFooter
+{
+width:960px;
+margin:0 auto;
+height:140px;
+padding-top:10px;
+}
+
+
+#copyright
+{
+float:left;
+}
+
+#cite
+{
+float:right;
+width:555px;
+}

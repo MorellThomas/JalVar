@@ -1,0 +1,103 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Web Service Menu</title>
+</head>
+
+<body>
+  <p>
+    <strong>Web Service Menu</strong><br /> <em>This menu is
+      dynamic, and may contain user-defined web service entries in
+      addition to any of the following ones:</em>
+  <ul>
+    <li><strong>Fetch DB References</strong><br> <em>This submenu
+				contains options for accessing any of the database services that
+				Jalview is aware of (e.g services provided by the EBI) to verify
+				sequence start/end positions and retrieve all database cross
+				references and PDB ids associated with all or just the selected
+				sequences in the alignment.
+				<ul>
+          <li>'Retrieve full Sequence' - when checked, Jalview will
+            retrieve the full sequence for any accessions associated
+            with sequences in the alignment. <br> <strong>Note:
+              This could cause out of memory errors when working with
+              genomic sequence records !</strong><br> <strong>Added
+              in Jalview 2.8.1</strong>
+          </li>
+          <li>'Standard Databases' will check sequences against the
+            EBI databases</li>
+        </ul> Other submenus allow you to pick a specific source to query -
+        sources are listed alphabetically according to their nickname.
+    </em></li>
+  </ul>
+  <p>Selecting items from the following submenus will start a remote
+    service on compute facilities at the University of Dundee, or
+    elsewhere. You need a continuous network connection in order to use
+    these services through Jalview.</p>
+  <ul>
+    <li><strong>Alignment</strong><br /> <em> Align the
+        currently selected sequences or all sequences in the alignment,
+        or re-align unaligned sequences to the aligned sequences.
+        Entries in this menu provide access to the various alignment
+        programs supported by <a href="../webServices/JABAWS.html">JABAWS</a>.
+        See the <a href="../webServices/msaclient.html">Multiple
+          Sequence Alignment webservice client</a> entry for more
+        information.
+    </em></li>
+    <li><strong>Secondary Structure Prediction</strong>
+      <ul>
+        <li><strong>JPred Secondary Structure Prediction</strong><br>
+          <em>Secondary structure prediction by network consensus.
+            See the <a href="../webServices/jnet.html">Jpred</a> client
+            entry for more information. The behaviour of this
+            calculation depends on the current selection:
+            <ul>
+              <li>If nothing is selected, and the displayed
+                sequences appear to be aligned, then a JPred prediction
+                will be run for the first sequence in the alignment,
+                using the current alignment. Otherwise the first
+                sequence will be submitted for prediction.</li>
+              <li>If just one sequence (or a region on one
+                sequence) has been selected, it will be submitted to the
+                automatic JPred prediction server for homolog detection
+                and prediction.</li>
+              <li>If a set of sequences are selected, and they
+                appear to be aligned, then the alignment will be used
+                for a JPred prediction on the <strong>first</strong>
+                sequence in the set (that is, the one that appears first
+                in the alignment window).
+              </li>
+            </ul>
+        </em>
+      </ul></li>
+    <li><strong>Analysis</strong><br />
+      <ul>
+        <li><strong>Multi-Harmony</strong><br> <em>Performs
+            functional residue analysis on a protein family alignment
+            with sub-families defined on it. See the <a
+            href="../webServices/shmr.html">Multi-Harmony
+              service</a> entry for more information.
+        </em></li>
+      </ul></li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Select/Hide Columns by Annotation</title>
+</head>
+
+<body>
+  <p>
+    <strong>Select/Hide Columns by Annotation</strong>
+  </p>
+  <p>
+    The 'Select/Hide by Annotation' window allows columns to be selected
+    or hidden according to annotation rows on the alignment. The dialog
+    box is opened <em>via</em> &quot;<strong>Select&#8594;Select/Hide
+      Columns by Annotation...</strong>&quot;, and different filters are then
+    presented for filtering data according to the selected annotation
+    row.
+  </p>
+  <table>
+    <tr>
+      <td><img src="AnnotationColumnSelectionWithSM.png"></td>
+      <td><img src="AnnotationColumnSelectionWithoutSM.gif"></td>
+    </tr>
+  </table>
+  <p>The drop down menu lists the annotation available on the
+    alignment. Sequence associated annotation rows will be shown with
+    the sequence ID appended to the annotation label. It is only
+    possible to select one row at a time.</p>
+  <p>
+    If an annotation with numeric values is selected, the threshold
+    filter option is activated. For other types of annotation, use the
+    text box and secondary structure check boxes (right). The radio
+    buttons at the bottom of the dialog specify the action applied to
+    columns matching the query.<br /> <em>Note: annotation
+      containing only numeric labels (e.g. T-COFFEE column confidence
+      scores) will not be treated as quantitative data. You will need to
+      enter search expressions to select columns in this case.</em>
+  </p>
+  <ul>
+    <li><strong>Search Filter</strong>
+      <ul>
+        <li>Enter text or regular expressions in the text box to
+          activate the 'Display Label' and 'Description' options.</li>
+        <li>Selecting the description or label options will
+          activate the filter, and any matching columns will be
+          highlighted or hidden.</li>
+      </ul>
+    <li><strong>Structure Filter</strong>
+      <ul>
+        <li>Select the checkboxes to filter by secondary structure
+          type.</li>
+      </ul>
+    <li><strong>Threshold Filter</strong>
+      <ul>
+        <li>This filter is only activated for annotation which
+          contain numeric values</li>
+        <li>Select whether to filter the alignment above or below
+          the threshold.</li>
+        <li>Change the threshold value with the slider, or enter it
+          in the text box.
+	<li>The <em>As Percentage</em> checkbox allows thresholds to
+          be set as a percentage rather than absolute value.</li>
+      </ul>
+    <li><strong>Actions</strong>
+      <ul>
+        <li>'Select' (the default), selects columns matching the
+          query settings.</li>
+        <li>'Hide' causes matching columns to be hidden.</li>
+      </ul></li>
+  </ul>
+  <p>Hit 'Cancel' to restore the alignment view to its previous
+    state before any filtering was applied.</p>
+</body>
+</html>

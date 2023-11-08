@@ -1,0 +1,38 @@
+Jalview Readme
+--------------
+
+
+##################
+
+To run application:
+
+java -classpath "JALVIEW_HOME/lib/*" -jar JALVIEW_HOME/jalview.jar [-help ... ]
+
+Replace JALVIEW_HOME with the full path to Jalview Installation Directory.
+Use -help to see the available command line arguments.
+
+For best results use a Sun java run time environment (not the gcj gnu java, sorry!). 
+
+If you want to use the java runtime bundled with Jalview, then launch jalview like this:
+
+in Windows:
+JAVA_HOME=JALVIEW_HOME/jre JALVIEW_HOME/jre/bin/java -classpath "JALVIEW_HOME/lib/*;JALVIEW_HOME/jalview.jar" jalview.bin.Jalview
+
+in Linux:
+JAVA_HOME=JALVIEW_HOME/jre JALVIEW_HOME/jre/bin/java -classpath "JALVIEW_HOME/lib/*:JALVIEW_HOME/jalview.jar" jalview.bin.Jalview
+
+in macOS:
+JAVA_HOME=JALVIEW_HOME/jre/Contents/Home JALVIEW_HOME/jre/Contents/Home/bin/java -classpath "JALVIEW_HOME/lib/*:JALVIEW_HOME/jalview.jar" jalview.bin.Jalview
+
+Note: ensure the -classpath argument is quoted and only use a terminating wildcard (e.g. 'DIR/*') to refer to all jar files in a directory, don't use e.g. 'DIR/*.jar'
+
+##################
+
+
+If you use a proxy server add 
+
+-Dhttp.proxyServer=YOUR.SERVER -Dhttp.proxyPort=YOURPORT
+
+If the proxy server requires authentication, add
+
+-Dhttp.proxyUser=USERNAME -Dhttp.proxyPassword=PASSWORD

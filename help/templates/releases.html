@@ -1,0 +1,107 @@
+
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Release History</title>
+<style>
+table, th, td {
+  border: solid #cccccc 1px;
+  border-collapse: collapse;
+}
+ul {
+  padding: 2;
+  margin-left: 18;
+  list-style-type: disc;
+}
+ul ul {
+  list-style-type: circle;
+}
+ul ul ul {
+  list-style-type: square;
+}
+li::marker {
+  color: #0084A8;
+}
+li {
+  padding-bottom: 5;
+}
+th {
+  font-size: 100%;
+  text-style: none;
+  font-weight: bold;
+  padding: 5;
+}
+.release {
+  text-align: center;
+}
+.new_features,
+.issues_resolved {
+  text-align: left;
+}
+td {
+  vertical-align: top;
+  padding: 2;
+}
+td.release {
+  width: 8%;
+  font-weight: bold;
+  text-style: italic;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 15;
+}
+td.new_features,
+td.issues_resolved {
+  width: 46%;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+  <p>
+    <strong>Release History</strong>
+  </p>
+  <table border="1">
+    <tr>
+      <th class="release" width="8%" align="center" valign="top" nowrap><a id="Jalview.$$Version-Rel$$">Release</th>
+      <th class="new_features" width="46%" align="left" valign="top">New Features</th>
+      <th class="issues_resolved" width="46%" align="left" valign="top">Issues Resolved</th>
+    </tr>
+    <tr>
+__VERSION_LOOP_START__
+      <td class="release" align="center" valign="top" nowrap>
+        <strong>__VERSION_LINK__</strong>
+        <br />
+        <em>__DISPLAY_DATE__</em>
+      </td>
+      <td class="new_features" align="left" valign="top">
+__NEW_FEATURES__
+      </td>
+      <td class="issues_resolved" align="left" valign="top">
+__ISSUES_RESOLVED__
+      </td>
+    </tr>
+__VERSION_LOOP_END__
+  </table>
+  <p>&nbsp;</p>
+</body>
+</html>

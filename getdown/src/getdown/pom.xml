@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
+  <groupId>com.threerings.getdown</groupId>
+  <artifactId>getdown</artifactId>
+  <packaging>pom</packaging>
+  <version>1.8.3-1.2.14_FJVL</version>
+
+  <name>getdown</name>
+  <description>An application installer and updater.</description>
+  <url>https://github.com/threerings/getdown</url>
+  <issueManagement>
+    <url>https://github.com/threerings/getdown/issues</url>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>The (New) BSD License</name>
+      <url>http://www.opensource.org/licenses/bsd-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>samskivert</id>
+      <name>Michael Bayne</name>
+      <email>mdb@samskivert.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/threerings/getdown.git</connection>
+    <developerConnection>scm:git:git@github.com:threerings/getdown.git</developerConnection>
+    <url>https://github.com/threerings/getdown</url>
+  </scm>
+
+  <modules>
+    <module>core</module>
+    <module>launcher</module>
+    <module>ant</module>
+  </modules>
+
+  <repositories>
+	<repository>
+	   <id>ej-technologies</id>
+	   <url>https://maven.ej-technologies.com/repository</url>
+	</repository>
+  </repositories>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>com.install4j</groupId>
+      <artifactId>install4j-runtime</artifactId>
+      <version>7.0.11</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.8</version>
+        <extensions>true</extensions>
+        <inherited>false</inherited>
+        <configuration>
+          <serverId>ossrh-releases</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <stagingProfileId>aa555c46fc37d0</stagingProfileId>
+        </configuration>
+      </plugin>
+    </plugins>
+
+    <!-- Common plugin configuration for all children -->
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+            <fork>true</fork>
+            <showDeprecation>true</showDeprecation>
+            <showWarnings>true</showWarnings>
+            <compilerArgs>
+              <arg>-Xlint</arg>
+              <arg>-Xlint:-serial</arg>
+              <arg>-Xlint:-path</arg>
+            </compilerArgs>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+          <configuration>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>3.0.0-M1</version>
+          <configuration>
+            <quiet>true</quiet>
+            <show>public</show>
+            <additionalparam>-Xdoclint:all -Xdoclint:-missing</additionalparam>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>eclipse</id>
+      <activation>
+        <property>
+          <name>m2e.version</name>
+        </property>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <!-- Tell m2eclipse to ignore the enforcer plugin from our parent. Otherwise it warns
+                   about not being able to run it. -->
+              <groupId>org.eclipse.m2e</groupId>
+              <artifactId>lifecycle-mapping</artifactId>
+              <version>1.0.0</version>
+              <configuration>
+                <lifecycleMappingMetadata>
+                  <pluginExecutions>
+                    <pluginExecution>
+                      <pluginExecutionFilter>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <versionRange>[1.0,)</versionRange>
+                        <goals>
+                          <goal>enforce</goal>
+                        </goals>
+                      </pluginExecutionFilter>
+                      <action>
+                        <ignore />
+                      </action>
+                    </pluginExecution>
+                  </pluginExecutions>
+                </lifecycleMappingMetadata>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+
+    <profile>
+      <id>release-sign-artifacts</id>
+      <activation>
+        <property><name>performRelease</name><value>true</value></property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <keyname>mdb@samskivert.com</keyname>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

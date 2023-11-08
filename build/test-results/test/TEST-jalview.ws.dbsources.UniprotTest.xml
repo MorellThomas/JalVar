@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.ws.dbsources.UniprotTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:42" hostname="wer3eng" time="0.138">
+  <properties/>
+  <testcase name="testGetDescription" classname="jalview.ws.dbsources.UniprotTest" time="0.002"/>
+  <testcase name="testGetUniprotEntries" classname="jalview.ws.dbsources.UniprotTest" time="0.064"/>
+  <testcase name="testGetUniprotEntryDescription" classname="jalview.ws.dbsources.UniprotTest" time="0.021"/>
+  <testcase name="testGetUniprotEntryId" classname="jalview.ws.dbsources.UniprotTest" time="0.026"/>
+  <testcase name="testGetUniprotSequence" classname="jalview.ws.dbsources.UniprotTest" time="0.024"/>
+  <system-out><![CDATA[Attempting to connect with ProbconsWS...
+Warning: Couldn't promote dbref PDB:2FSQ for sequence A9CKP4_AGRT5|A9CKP4_AGRT6
+Warning: Couldn't promote dbref PDBSUM:2FSR for sequence A9CKP4_AGRT5|A9CKP4_AGRT6
+Warning: Couldn't promote dbref EMBL:AE007869 for sequence A9CKP4_AGRT5|A9CKP4_AGRT6
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

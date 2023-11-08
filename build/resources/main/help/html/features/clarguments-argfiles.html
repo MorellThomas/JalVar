@@ -1,0 +1,168 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ *
+ * This file is part of Jalview.
+ *
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *
+ * Jalview is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.  See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<title>Command Line: argument files</title>
+<body>
+
+  <h1>Command Line: argument files</h1>
+
+  <p>
+  <a href="clarguments.html">Command Line: introduction</a>
+  <br/>
+  <a href="clarguments-basic.html">Command Line: basic usage</a>
+  <br/>
+  <a href="clarguments-advanced.html">Command Line: advanced usage</a>
+  <br/>
+  <a href="clarguments-argfiles.html">Command Line: argument files</a>
+  <br/>
+  <a href="clarguments-reference.html">Command Line: reference</a>
+  </p>
+
+  <hr/>
+
+  <ul>
+  <li><a href="#argumentfiles">Argument files</a></li>
+  <li><a href="#onlyargumentfiles">Only argument files</a></li>
+  <li><a href="#evenmoresubstitutions">Even more substitutions</a></li>
+  </ul>
+
+  <h2><a name="argumentfiles"></a>Argument files</h2>
+
+  <p>
+  If you want to save a set of arguments to reuse, you can save them in a text file, say <code>argfile.txt</code>, and read them into Jalview with
+  <pre>
+  jalview --argfile=argfile.txt
+  </pre>
+  </p>
+
+  <p>
+  The argument file has one argument and value per line, still using the double-dash ('--') before the argument name, and separating the argument and value with an equals sign ('=').
+  <br/>
+  Because the argument file is read by the application and not read by the shell, you do not need to escape any values -- all spaces will be read as part of the value until the end of the line.
+  <br/>
+  You can add comments to a line by starting the line with an hash (octothorpe, pound-sign '#').
+  <br/>
+  e.g.
+  <table border="1">
+  <tr>
+  <td>
+  File <code>argfile.txt</code>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <pre>
+--nonews
+--nosplash
+--open=[nowrap,colour=gecos-flower,showannotations]examples/plantfdx.fa
+--features=examples/plantfdx.features
+--annotations=examples/plantfdx.annotations
+--image=images/alignment.png
+--scale=2.5
+#--scale=10
+# let's see what's happening
+#--headless</pre>
+  </td>
+  </tr>
+  </table>
+  </p>
+
+  <p>
+  Because <code>--argfiles</code> takes a filename argument, and multiple <code>--argfiles</code> can be read on the command line, you can also use file globs to specify multiple <code>--argfile</code> values.  If you produce an argument file for each set of alignment files that you wish to associate then you can act on all of them with, e.g.
+  <pre>
+  jalview --argfile=*/argfile.txt --headless
+  </pre>
+  </p>
+
+  <p>
+  You can even read argument files from within argument files, e.g.
+  <pre>
+  jalview --argfile=argfile*.txt --headless
+  </pre>
+  <table border="1">
+  <tr><td>File <code>argfile1.txt</code></td></tr>
+  <tr><td><pre>
+--open=file1.fa
+--argfile=myfavouriteformattingargfile.txt
+--argfile=mysecondfavouriteimageargfile.txt</pre></td></tr>
+  <tr><td>File <code>myfavouriteformattingargfile.txt</code></td></tr>
+  <tr><td><pre>
+--wrap
+--showannotations
+--annotations={dirname}/{basename}.annots</pre></td></tr>
+  <tr><td>File <code>mysecondfavouriteimageargfile.txt</code></td></tr>
+  <tr><td><pre>
+--image=images/{basename}.png
+--width=1920
+--height=1080</pre></td></tr>
+  </table>
+  </p>
+
+  <p>
+  If an argument file that has already been read is found in a firther argument file, then Jalview will exit with a warning.  This is to avoid loops of argument files.
+  </p>
+
+
+  <h2><a name="onlyargumentfiles"></a>Only argument files</h2>
+
+  <p>
+  When you use an <code>--argfile</code> argument, all other non-initialising arguments on the command line <em>will be ignored</em>.  Only the initialising arguments and any and all <code>--argfiles</code> arguments on the command line will be used.  You can also set initialising arguments in argument files.
+  </p>
+
+
+  <h2><a name="evenmoresubstitutions"></a>Even more substitutions</h2>
+
+  <p>
+  When adding values that can use substitutions within argument files, there are two additional substitutions that can be made:
+  <br/>
+  <code>{argfilebasename}</code> - replaced with the base of the filename of the argument file (i.e. without directory path or file extension).
+  <br/>
+  <code>{argfiledirname}</code> - replaced with the path to the filename of the argument file.
+  </p>
+
+  <p>
+  Another substitution you can make in argument files is the <code>{n}</code> substitution.  Combined with an <code>-npp</code> increment at the start (or end) of the argument file gives the potential to reuse an argument files in the same command but referring to different files, e.g.
+
+  <table border="1">
+  <tr><td>File <code>alignment.argfile</code></td></tr>
+  <tr><td><pre>
+--open={argfilebasename}-{n}.fa
+--wrap
+--output={basename}.stk
+--close
+--npp</pre></td></tr>
+  </table>
+  <pre>
+  jalview --argfile alignment.argfile --argfile alignment.argfile --headless
+  </pre>
+  would be processed the same as
+  <pre>
+  jalview --open=alignment-0.fa --wrap --output=alignment-0.stk --close --open=alignment-1.fa --wrap --output=alignment-1.stk --close --headless
+  </pre>
+  </p>
+
+
+  <hr/>
+  <a href="clarguments-reference.html">Command Line: reference</a>
+
+
+</body>
+</html>

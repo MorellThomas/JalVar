@@ -1,0 +1,1 @@
+https://www.ebi.ac.uk/pdbe/search/pdb/select?wt=json&fl=pdb_id,title,experimental_method,resolution&rows=500&start=0&q=(5e7w+OR+1t1k+OR+4xc4+OR+6jr3+OR+1trz+OR+2qiu+OR+1g7b+OR+1g7a+OR+4cxl+OR+3p2x+OR+4cxn+OR+7md4+OR+1znj+OR+7md5)+AND+molecule_sequence:%5B''+TO+*%5D+AND+status:REL&sort=

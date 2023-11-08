@@ -1,0 +1,110 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+<head>
+<title>Unit testing in Jalview</title>
+</head>
+<body>
+<h1> Unit testing in Jalview </h1>
+
+<p>
+In June 2015, the Jalview team adopted <a href=http://testng.org/doc/index.html>TestNG</a> for handling unit tests, and all existing JUnit tests were ported to TestNG.
+
+
+<h2>Test Groups</h2>
+<a href=http://testng.org/doc/index.html>TestNG</a> provides the ability to perform sophisticated grouping of tests using method annotations. This enables TestNG to be invoked and asked to include a certain set of groups (or regular expression) while excluding another set. This gives maximum flexibility in how tests are partitioned and doesn't require you to recompile anything if you want to run two different sets of tests back to back.
+
+<p>The following test groups are available within the Jalview test environment:
+<ul>
+    <li> Functional - basic unit tests that should always be successfully executed</li> 
+    <li> Network -  depends on network connection to execute successfully</li> 
+    <li> External - depends on external third party resource to execute</li>  
+    <li> Interactive - depends on human interaction to execute successfully</li> 
+</ul>
+
+<h2>Writing new tests</h2>
+To write a new TestNG tests in Jalview, create a new java class and create test methods which are properly annotated with appropriate <a href=http://testng.org/doc/documentation-main.html#annotations>TestNG annotations</a>. Here is a simple example test:
+
+<pre><code>
+    package jalview.test;
+    
+    import org.testng.annotations.*;
+    
+    public class SimpleTest {
+ 
+ 	 @BeforeClass(alwaysRun = true)
+ 	 public void setUp() {
+	   // code that will be invoked when this test is instantiated
+	 }
+ 
+	 @Test(groups = { "Functional" })
+	 public void aFunctionalTest() {
+	   System.out.println("Functional test");
+	 }
+ 
+	 @Test(groups = { "Network" })
+	 public void aNetworkDependentTest() {
+	    System.out.println("Network dependent test");
+	 } 
+
+	 @Test(groups = { "External" })
+	 public void anExternalDependencyTest() {
+	    System.out.println(“Test with external dependence to a third party resource");
+	 } 
+
+	 @Test(groups = { "Interactive" })
+	 public void anInteractiveTest() {
+	    System.out.println("Human interactive test");
+	 }
+     }
+</code></pre>
+
+<h2>Test Execution</h2>
+The TestNG tests for Jalview can be executed in any of the following ways:
+<ul>
+  <li><b>From Eclipse IDE:</b>
+        </br> To execute Jalview unit test in eclipse please take the following steps:
+	<ul>
+            <li>Ensure that you have TestNG plugin correctly install for eclipse</li>
+            <li>Ensure that your test classes are error free and properly annotated</li>
+            <li>Create a launch configuration "Select the Run / Run... (or Run / Debug...) menu and create a new TestNG configuration"</li>
+	    <li>Run the tests by executing the configuration target created above</li>
+        </ul> 
+	A more detailed guide for installing and executing TestNG in eclipse is available at <a href=http://testng.org/doc/eclipse.html>testng.org/doc/eclipse.html</a> <br>&nbsp;
+  </li>
+  <li><b>From Ant:</b> 
+        </br>The ant task 'testng' will run Jalview's tests. You should:
+	<ul>
+            <li>Ensure that you have ant installed</li>
+            <li>Ensure that your test classes are error free and properly annotated</li>
+            <li>Specify the desired group of tests by passing a comma separated list of one or more groups via -Dtestng-groups=""</li>
+        </ul> 
+        A more detailed guide for executing TestNG from ant is available at <a href=http://testng.org/doc/ant.html>http://testng.org/doc/ant.html</a>
+  </li>
+</ul>
+
+<h2>TestNG Tutorial</h2>
+You can find more up-to-date documentations and tutorials on TestNG from the following recommended links:</br>
+<a href=http://http://testng.org/doc/documentation-main.html>http://http://testng.org/doc/documentation-main.html</a></br>
+<a href=http://www.tutorialspoint.com/testng/>http://www.tutorialspoint.com/testng/</a>
+
+
+
+</body>
+</html>

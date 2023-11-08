@@ -1,0 +1,123 @@
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+
+<div id="view_decorated" name="view_decorated"  style="margin:8px; padding:10px; border: 2px solid red; text-align:center; display:none;"><b>Click <a href="index.html#javascriptLaunch"> here</a> to view decorated page</b></div>
+
+<!-- boiler plate link to alternate demopage -->
+<div style="width: 100%">
+
+</div>
+
+<!-- content template start -->
+  <SCRIPT type="text/javascript">
+  /* <![CDATA[ // */
+// From http://snipplr.com/view.php?codeview&id=1272
+//----------------------------------------
+//Wrapper function for constructing a request object.
+//	Parameters:
+//		reqType: The HTTP request type, such as GET or POST.
+//		url: The URL of the server program.
+//		asynch: Whether to send the request asynchronously or not.
+//----------------------------------------
+
+function httpRequest(reqType,url,asynch,respHandle) {
+
+	// Mozilla-based browsers
+	if (window.XMLHttpRequest) {
+		request = new XMLHttpRequest();
+	} else if (window.ActiveXObject) {
+		request = new ActiveXObject("Msxml2.XMLHTTP");
+		if (!request) {
+			request = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}
+	
+	// Request could still be null if neither ActiveXObject
+	//   initialization succeeded
+	if (request) {
+		// If the reqType param is POST, then the fifth arg is the POSTed data
+		if (reqType.toLowerCase() != "post") {
+			initReq(reqType, url, asynch, respHandle);
+		} else {
+			// The POSTed data
+			var args = arguments[5];
+			if (args != null && args.length > 0) {
+				initReq(reqType, url, asynch, respHandle, args);
+			}
+		}
+	} else {
+		alert("Your browser does not permit the use of all " +
+			"of this application's features!");
+	}
+
+}
+
+//----------------------------------------
+//Initialize a request object that is already constructed
+//----------------------------------------
+
+function initReq(reqType, url, bool, respHandle) {
+	try {
+		// Specify the function that will handle the HTTP response
+		request.onreadystatechange = respHandle;
+		request.open(reqType, url, bool);
+		// If the reqType param is POST, then the
+		//   fifth argument to the function is the POSTed data
+		if (reqType.toLowerCase() == "post") {
+			// Set the Content-Type header for a POST request
+			request.setRequestHeader("Content-Type", "application/x-ww-form-urlencoded; charset=UTF-8");
+			request.send(arguments[4]);
+		} else {
+			request.send(null);
+		}
+	} catch (errv) {
+		alert("The application cannot contact the server at the moment. " +
+			"Please try again in a few seconds.\n" +
+			"Error detail: " + errv.message);
+	}
+}
+
+// jalview launching with fetched data
+
+function startJalview(aligURL,title,alwvar) {
+		var aligment = "";
+		httpRequest("get",aligURL,true,function() {
+				if (request.readyState == 4) { 
+					alignment = request.responseText; 
+					eval("var "+alwvar+" = document.JalviewLite.loadAlignment(alignment,title)");
+				}
+		})
+		
+}
+
+/* ]]> */
+</SCRIPT>
+  <form name="Form1">
+<applet name="JalviewLite"  code="jalview.bin.JalviewLite"
+archive="jalviewApplet.jar,JmolApplet-14.6.4_2016.10.26.jar,java-json.jar,json_simple-1.1.jar" width="0" height="0">
+<param name="debug" value="true"/>
+<param name="showbutton" value="false"/>
+</applet>
+
+<h2>Javascript Launch Button</h2><p>The button below demonstrates how JalviewLite can be launched via a javascript action.  <a href="view-source:http://www.jalview.org/builds/develop/examples/javascriptLaunch.html" target="_blank">View the source here to see how it has been done</a> (If the link doesn't work on your browser try going to <a href="http://www.jalview.org/builds/develop/examples/javascriptLaunch.html">this page</a> and viewing the page source manually). </p>
+
+  <input type="button" name="Button1" value="Start"
+onClick="startJalview('plantfdx.fa','Button1.alignment','alwvar')"/>
+  </form>
+<!-- content template end -->

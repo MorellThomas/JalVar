@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				 xmlns:vamsas="www.vamsas.org"
+				 xmlns:jalview="www.jalview.org/colours"
+				 xmlns:jv="www.jalview.org" 
+				 targetNamespace="www.jalview.org" elementFormDefault="qualified" attributeFormDefault="unqualified">
+				 
+	<xs:import schemaLocation="vamsasJvV1.xsd" namespace="www.vamsas.org"/>
+	<xs:import schemaLocation="jalviewUserColours.xsd" namespace="www.jalview.org/colours"/>
+	<xs:complexType name="JalviewModel">
+		<xs:sequence>
+			<xs:element name="creationDate" type="xs:dateTime"/>
+			<xs:element name="version" type="xs:string"/>
+			<xs:element name="vamsasModel" type="vamsas:VAMSAS"/>
+			<xs:sequence>
+				<xs:element name="JSeq" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+						         <xs:element name="features" type="jv:feature" minOccurs="0" maxOccurs="unbounded"/>
+						         <xs:element name="pdbids" type="jv:pdbentry" minOccurs="0" maxOccurs="unbounded"/>
+					      </xs:sequence>
+					      
+						    <xs:attribute name="colour" type="xs:int" use="optional"/>
+							<xs:attribute name="start" type="xs:int" use="required"/>
+							<xs:attribute name="end" type="xs:int" use="required"/>
+							<xs:attribute name="id" type="xs:int" use="required"/>
+						</xs:complexType>
+				</xs:element>
+				<xs:element name="JGroup" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence minOccurs="1">
+							<xs:element name="seq" maxOccurs="unbounded" type="xs:int"/>
+						</xs:sequence>
+						<xs:attribute name="start" type="xs:int"/>
+						<xs:attribute name="end" type="xs:int"/>
+						<xs:attribute name="name" type="xs:string"/>
+						<xs:attribute name="colour" type="xs:string"/>
+						<xs:attribute name="consThreshold" type="xs:int"/>
+						<xs:attribute name="pidThreshold" type="xs:int"/>
+						<xs:attribute name="outlineColour" type="xs:int"/>
+						<xs:attribute name="displayBoxes" type="xs:boolean"/>
+						<xs:attribute name="displayText" type="xs:boolean"/>
+						<xs:attribute name="colourText" type="xs:boolean"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Viewport" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="conservationSelected" type="xs:boolean"/>
+						<xs:attribute name="pidSelected" type="xs:boolean"/>
+						<xs:attribute name="bgColour" type="xs:string"/>
+						<xs:attribute name="consThreshold" type="xs:int"/>
+						<xs:attribute name="pidThreshold" type="xs:int"/>
+						<xs:attribute name="title" type="xs:string"/>
+						<xs:attribute name="showFullId" type="xs:boolean"/>
+						<xs:attribute name="showText" type="xs:boolean"/>
+						<xs:attribute name="showColourText" type="xs:boolean"/>
+						<xs:attribute name="showBoxes" type="xs:boolean"/>
+						<xs:attribute name="wrapAlignment" type="xs:boolean"/>
+						<xs:attribute name="renderGaps" type="xs:boolean"/>
+						<xs:attribute name="showSequenceFeatures" type="xs:boolean"/>
+						<xs:attribute name="showAnnotation" type="xs:boolean"/>
+						<xs:attribute name="showConservation" type="xs:boolean"/>
+						<xs:attribute name="showQuality" type="xs:boolean"/>
+						<xs:attribute name="showIdentity" type="xs:boolean"/>
+						<xs:attribute name="xpos" type="xs:int"/>
+						<xs:attribute name="ypos" type="xs:int"/>
+						<xs:attribute name="width" type="xs:int"/>
+						<xs:attribute name="height" type="xs:int"/>
+						<xs:attribute name="startRes" type="xs:int"/>
+						<xs:attribute name="startSeq" type="xs:int"/>
+						<xs:attribute name="fontName" type="xs:string"/>
+						<xs:attribute name="fontSize" type="xs:int"/>
+						<xs:attribute name="fontStyle" type="xs:int"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="UserColours" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence minOccurs="1">
+							<xs:element name="UserColourScheme" type="jalview:JalviewUserColours"/>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="tree" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="1">
+							<xs:element name="title" type="xs:string"/>
+							<xs:element name="newick" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute name="width" type="xs:int"/>
+						<xs:attribute name="height" type="xs:int"/>
+						<xs:attribute name="xpos" type="xs:int"/>
+						<xs:attribute name="ypos" type="xs:int"/>
+						<xs:attribute name="fontName" type="xs:string"/>
+						<xs:attribute name="fontSize" type="xs:int"/>
+						<xs:attribute name="fontStyle" type="xs:int"/>
+						<xs:attribute name="threshold" type="xs:float"/>
+						<xs:attribute name="showBootstrap" type="xs:boolean"/>
+						<xs:attribute name="showDistances" type="xs:boolean"/>
+						<xs:attribute name="markUnlinked" type="xs:boolean"/>
+						<xs:attribute name="fitToWindow" type="xs:boolean"/>
+						<xs:attribute name="currentTree" type="xs:boolean"/>
+					</xs:complexType>
+				</xs:element>
+				
+				<xs:element name="FeatureSettings" minOccurs="0" maxOccurs="1">
+						<xs:complexType>
+				<xs:sequence>
+					<xs:element name="setting" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="type" type="xs:string" use="required"/>
+							<xs:attribute name="colour" type="xs:int" use="required"/>
+							<xs:attribute name="display" type="xs:boolean" use="required"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				</xs:complexType>
+				</xs:element>
+				
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="feature">
+		<xs:attribute name="begin" type="xs:int" use="required"/>
+		<xs:attribute name="end" type="xs:int" use="required"/>
+		<xs:attribute name="type" type="xs:string" use="required"/>
+		<xs:attribute name="description" type="xs:string" use="optional"/>
+		<xs:attribute name="status" type="xs:string" use="optional"/>
+	</xs:complexType>
+		
+	<xs:complexType name="pdbentry">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="property" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="name" type="xs:string" use="required"/>
+					<xs:attribute name="value" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required"/>
+		<xs:attribute name="type" type="xs:string" use="optional"/>
+	</xs:complexType>
+	
+</xs:schema>

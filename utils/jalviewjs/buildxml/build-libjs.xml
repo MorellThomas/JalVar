@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+ * just a crude zip up of non-Jalview classes for development purposes -BH 2018
+ *
+ * external JAR class treatment for JavaScript: see src2/README_SWINGJS.txt
+ * 
+ -->
+
+<project name="jalviewX" default="zipall" basedir="."
+ xmlns:if="ant:if"
+    xmlns:unless="ant:unless">
+
+  	<!-- inputs directories -->
+    <property name="resource.dir" value="resources" />  	
+    <property name="swingjs.dir" value="swingjs"/>
+	<!-- output directories -->
+  	<property name="site.dir" value="site"/>
+  	<property name="j2s.dir" value="${site.dir}/swingjs/j2s"/>
+  	<property name="libjs.dir" value="libjs"/>
+
+	<target name="zipall" depends="zipvarna,zipmig,zipintervalstore">
+		
+		
+  </target>
+
+  <target name="zipvarna">
+    <!-- VARNA -->
+	    <property name="varna.zip" value="${libjs.dir}/VARNA-site.zip" />	  	  	
+	  	<echo> Zipping up ${varna.zip} </echo>
+	  	<zip destfile="${varna.zip}" basedir="${site.dir}" includes="fr_*.html,swingjs/j2s/fr/**" />
+	</target>
+
+	<target name="zipmig">
+	  <!-- net.miginfo.com MiGLayout -->
+		    <property name="mig.zip" value="${libjs.dir}/MiGLayout-site.zip" />	  	  	
+		  	<echo> Zipping up ${mig.zip} </echo>
+		  	<zip destfile="${mig.zip}" basedir="${site.dir}" includes="swingjs/j2s/net/miginfocom/**" />
+	</target>
+
+	<target name="zipintervalstore">
+	  <!-- intervalstore.impl NCList implementation -->
+		    <property name="intervalstore.zip" value="${libjs.dir}/intervalstore-site.zip" />	  	  	
+		  	<echo> Zipping up ${intervalstore.zip} </echo>
+		  	<zip destfile="${intervalstore.zip}" basedir="${site.dir}" includes="swingjs/j2s/intervalstore/**" />
+	</target>
+
+	<!-- already in SwingJS
+	<target name="zipjson"  already in SwingJS>
+		    <property name="json.zip" value="${libjs.dir}/json-site.zip" />	  	  	
+		  	<echo> Zipping up ${json.zip} </echo>
+		  	<zip destfile="${json.zip}" basedir="${site.dir}" includes="swingjs/j2s/org/json/**" />
+	</target>
+	-->
+
+	<!-- log4j minimal implementation is already in jalview/javascript
+	      and is mapped from org.apache.log4j by the following .j2s line:
+	      
+	      j2s.class.replacements=org.apache.log4j.->jalview.javascript.log4j.
+	       
+	<target name="ziplog4j">
+		  <!- org.apache.log4j ->
+		    <property name="log4j.zip" value="${libjs.dir}/log4j-site.zip" />	  	  	
+		  	<echo> Zipping up ${log4j.zip} </echo>
+		  	<zip destfile="${log4j.zip}" basedir="${site.dir}" includes="swingjs/j2s/org/apache/log4j/**" />
+	</target>
+    -->
+</project>

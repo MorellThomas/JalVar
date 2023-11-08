@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.util.QuickSortTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:13:43" hostname="wer3eng" time="0.003">
+  <properties/>
+  <testcase name="testCharSortByFloat" classname="jalview.util.QuickSortTest" time="0.001"/>
+  <testcase name="testCharSortByInt" classname="jalview.util.QuickSortTest" time="0.0"/>
+  <testcase name="testSortByInt" classname="jalview.util.QuickSortTest" time="0.0"/>
+  <testcase name="testSortByString" classname="jalview.util.QuickSortTest" time="0.001"/>
+  <testcase name="testSort_byDoubleValues" classname="jalview.util.QuickSortTest" time="0.0"/>
+  <testcase name="testSort_byFloatValues" classname="jalview.util.QuickSortTest" time="0.0"/>
+  <testcase name="testSort_byIntValues" classname="jalview.util.QuickSortTest" time="0.0"/>
+  <testcase name="testSort_byStringValues" classname="jalview.util.QuickSortTest" time="0.0"/>
+  <testcase name="testSort_charSortByFloat_mostlyZeroValues" classname="jalview.util.QuickSortTest" time="0.0"/>
+  <testcase name="testSort_charSortByInt_mostlyZeroValues" classname="jalview.util.QuickSortTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

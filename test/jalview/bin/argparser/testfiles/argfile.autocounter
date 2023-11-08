@@ -1,0 +1,7 @@
+--open[{++n}]=test/jalview/bin/argparser/testfiles/test1.fa
+--colour[{n}]=gecos-flower
+--open[{++n}]=test/jalview/bin/argparser/testfiles/test2.fa
+--colour[{n}]=zappo
+--open[{++n}]=test/jalview/bin/argparser/testfiles/test1.fa
+--append[{n}]=test/jalview/bin/argparser/testfiles/test2.fa
+--colour[{n}]=taylor

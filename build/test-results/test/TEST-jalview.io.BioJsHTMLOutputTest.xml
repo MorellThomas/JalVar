@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.io.BioJsHTMLOutputTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:07" hostname="wer3eng" time="3.051">
+  <properties/>
+  <testcase name="expectedNullPointerException" classname="jalview.io.BioJsHTMLOutputTest" time="0.0"/>
+  <testcase name="getBioJsMSAVersions" classname="jalview.io.BioJsHTMLOutputTest" time="0.001"/>
+  <testcase name="getJalviewAlignmentAsJsonString" classname="jalview.io.BioJsHTMLOutputTest" time="3.05"/>
+  <system-out><![CDATA[Number of discovered versions : 3
+version : 0.1.0
+File : /home/thomas/.biojs_templates/BioJsMSA_0.1.0.txt
+version : 0.1.1
+File : /home/thomas/.biojs_templates/Latest_BioJsMSA_0.1.1.txt
+version : 0.2.0
+File : /home/thomas/.biojs_templates/BioJsMSA_0.2.0.txt
+
+Current latest version : /home/thomas/.biojs_templates/Latest_BioJsMSA_0.1.1.txt
+Attempting to connect with ClustalOWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@4639e015
+Attempting to connect with TcoffeeWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@36b33ce5
+Attempting to connect with ProbconsWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@1b17845e
+Attempting to connect with MSAprobsWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@3622ce9
+Attempting to connect with GLprobsWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@720bfbcf
+Attempting to connect with AAConWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@1491b236
+Attempting to connect with RNAalifoldWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@600b7deb
+Attempting to connect with JronnWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@7015a86f
+Attempting to connect with DisemblWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@32fe9557
+Attempting to connect with GlobPlotWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@363e76d4
+]]></system-out>
+  <system-err><![CDATA[Jul 02, 2023 10:12:07 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Jul 02, 2023 10:12:08 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Jul 02, 2023 10:12:08 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Jul 02, 2023 10:12:08 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Jul 02, 2023 10:12:09 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Jul 02, 2023 10:12:09 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Jul 02, 2023 10:12:09 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Jul 02, 2023 10:12:10 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+Jul 02, 2023 10:12:10 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Jul 02, 2023 10:12:10 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+]]></system-err>
+</testsuite>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.structure.Mapping" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:39" hostname="wer3eng" time="1.719">
+  <properties/>
+  <testcase name="compareTransferredToRefPDBAnnot" classname="jalview.structure.Mapping" time="1.378"/>
+  <testcase name="mapFer1From3W5V" classname="jalview.structure.Mapping" time="0.341"/>
+  <system-out><![CDATA[File format identified as PDB
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+registry.getSupportedServices: [MSAprobsWS, DisemblWS, TcoffeeWS, RNAalifoldWS, MafftWS, IUPredWS, GlobPlotWS, ProbconsWS, AAConWS, JronnWS, ClustalWS, MuscleWS, ClustalOWS, GLprobsWS]
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 119.9/245.4
+processors available: 8
+useCommandThread: false
+Attempting to connect with MafftWS...
+The Resolver thinks Pdb
+TYROSINE KINASE                         04-MAY-99   1QCF
+CRYSTAL STRUCTURE OF HCK IN COMPLEX WITH A SRC FAMILY-
+SELECTIVE TYROSINE KINASE INHIBITOR
+found biomolecule 1: A
+biomolecule 1: number of transforms: 1
+PTR = O-PHOSPHOTYROSINE
+PP1 = 1-TER-BUTYL-3-P-TOLYL-1H-PYRAZOLO[3,4-D]PYRIMIDIN-4-
+PP1 = 1-TER-BUTYL-3-P-TOLYL-1H-PYRAZOLO[3,4-D]PYRIMIDIN-4-YLAMINE
+Setting space group name to P 21 21 21
+1QCF
+reading 3959 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+3959 atoms created
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@4dbf777a
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 213 ms
+Attempting to connect with MuscleWS...
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 47.7/140.5
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+TYROSINE KINASE                         04-MAY-99   1QCF
+CRYSTAL STRUCTURE OF HCK IN COMPLEX WITH A SRC FAMILY-
+SELECTIVE TYROSINE KINASE INHIBITOR
+found biomolecule 1: A
+biomolecule 1: number of transforms: 1
+PTR = O-PHOSPHOTYROSINE
+PP1 = 1-TER-BUTYL-3-P-TOLYL-1H-PYRAZOLO[3,4-D]PYRIMIDIN-4-
+PP1 = 1-TER-BUTYL-3-P-TOLYL-1H-PYRAZOLO[3,4-D]PYRIMIDIN-4-YLAMINE
+Setting space group name to P 21 21 21
+1QCF
+reading 3959 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+3959 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 35 ms
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@76fa705d
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 52.9/140.5
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+ELECTRON TRANSPORT                      06-FEB-13   3W5V
+CROSS-LINKED COMPLEX BETWEEN FERREDOXIN AND FERREDOXIN-NADP+ R
+found biomolecule 1: A, D
+biomolecule 1: number of transforms: 1
+found biomolecule 2: C, B
+biomolecule 2: number of transforms: 1
+FAD = FLAVIN-ADENINE DINUCLEOTIDE
+FES = FE2/S2 (INORGANIC) CLUSTER
+Attempting to connect with ClustalWS...
+Setting space group name to P 1 21 1
+3W5V
+reading 6290 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+6290 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 52 ms
+]]></system-out>
+  <system-err><![CDATA[Jul 02, 2023 10:11:39 AM compbio.ws.client.Jws2Client connectToRegistry
+INFO: Connected to RegistryWS successfully!
+Couldn't find file: org/jmol/translation/Jmol/en_GB.po
+Couldn't find file: org/jmol/translation/JmolApplet/en_GB.po
+DEBUG - Scanning news items: newsnew=false and lastDate is null
+DEBUG - Will show jalview news automatically
+DEBUG - Completed construction of reader.
+DEBUG - Completed news thread.
+DEBUG - Displaying news.
+Jul 02, 2023 10:11:40 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Jul 02, 2023 10:11:40 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+]]></system-err>
+</testsuite>

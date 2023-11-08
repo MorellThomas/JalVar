@@ -1,0 +1,274 @@
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+
+
+
+<div id="view_decorated" name="view_decorated"  style="margin:8px; padding:10px; border: 2px solid red; text-align:center; display:none;"><b>Click <a href="index.html#jalviewLiteJs"> here</a> to view decorated page</b></div>
+
+<!-- content start -->
+<p>The jalviewLite applet's application programming interface (API) includes two components. A <a href="javascript/jalview.js">JalviewLite Javascript Library</a> and the <a href="#api">public methods on the JalviewLite applet</a>.
+</p>
+		<h3>Notes</h3>
+		<ul>
+		<li>Unfortunately Javascript - Java communication is not possible
+		using Internet Explorer or Opera on Macs. Please use Safari or
+		Firefox.</li>
+		<li>If more than one Jalview window is open, Jalview returns the
+		alignment in the active window, unless you provide an AlignFrame
+		object reference.</li>
+		<li>The alignment output format can be either Fasta, PFAM, Clustal,
+		MSF, PIR, or BLC.</li>
+		<li>When referring to the Jalview applet in javascript, you must
+		either give Jalview a name in the applet tag or use the document.applets index.</li>
+		<li>When creating javascript functions that are called by jalviewLite (e.g. the <em>oninit</em> parameter, or any mouseOver, selection or structureListener handlers), ensure they complete very quickly, and do not access any jalview API methods that might result in more javascript calls (this which will cause your browser to hang). If you need to do this, we suggest that jalviewLite callbacks are used to add new javascript events to a queue (e.g. using a Jquery timer callback) to avoid any concurrency issues.
+		</li>
+		</ul>
+		<a name="api">
+		<h1>JalviewLite's Javascript API</h1></a>
+		<p>The following public methods on the jalviewLite applet are available to be called from javascript:</p>
+		<pre>//get list of IDs of selected sequences
+public String getSelectedSequences()
+
+// list of IDs of selected sequences terminated by sep or, if sep is null, '&#172;' (&amp;#172;)
+public String getSelectedSequences(sep)
+
+// get list of selected sequences from specific alignFrame. (2.7)
+public String getSelectedSequencesFrom(AlignFrame alf)
+public String getSelectedSequencesFrom(AlignFrame alf, String sep)
+
+// highlight a position in a specific sequence or a column in an alignment containing it
+// provide ID sequence to highlight, integer (range highlighting will be supported in future versions)
+// and flag indicating if position is an alignment column or given according to sequence numbering (2.7)
+public void highlight(String sequenceId, String position, String alignedPosition)
+public void highlightIn(AlignFrame alf, String sequenceId, String position, String alignedPosition)
+
+
+// select regions of the currrent alignment frame using a list of sequence ids and a list of 
+// column numbers and ranges (with minus sign indicating start-end) (separated by default separator) (2.7) 
+public void select(String sequenceIds, String columns)
+public void select(String sequenceIds, String columns, String sep)
+public void selectIn(AlignFrame alf, String sequenceIds, String columns)
+public void selectIn(AlignFrame alf, String sequenceIds, String columns, String sep)
+
+
+// get selected sequences as alignment as format with or without start-end suffix
+public String getSelectedSequencesAsAlignment(String format, boolean suffix)
+
+// get selected sequences as alignment from given view as format with or without start-end suffix
+public String getSelectedSequencesAsAlignmentFrom(AlignFrame alf, String format, boolean suffix)
+
+// get a separator separated list of sequence IDs reflecting the order of the current alignment (2.7)
+public String getAlignmentOrder();
+public String getAlignmentOrderFrom(AlignFrame alf);
+public String getAlignmentOrderFrom(AlignFrame alf, String sep);
+
+// re-order the current alignment using the given list of sequence IDs separated by sep
+// undoName - is string to use when referring to ordering action in undo buffer
+// returns 'true' if alignment was actually reordered. empty string if alignment did not contain sequences.
+// (v2.7)
+public String orderBy(String order, String undoName)
+public String orderBy(String order, String undoName, String sep)
+String orderAlignmentBy(AlignFrame alf, String order, String undoName, String sep)
+
+
+// get alignment as format
+public String getAlignment(String format)
+
+// get alignment as format with jalview 
+// start-end sequence suffix appended
+public String getAlignment(String format, String suffix)
+
+// get alignment displayed in alf as format
+public String getAlignmentFrom(AlignFrame alf, String format)
+
+// get alignment displayed in alf as format 
+// with jalview start-end sequence suffix appended
+public String getAlignmentFrom(AlignFrame alf, String format, String suffix)
+
+// add the given features or annotation to the current alignment
+// if features are loaded, feature display is automatically enabled
+public void loadAnnotation(String annotation)
+
+// add the given features or annotation to the given alignment view
+// if features are loaded, feature display is automatically enabled
+public void loadAnnotationFrom(AlignFrame alf, String annotation)
+
+// parse the given string as a jalview or GFF features file and optionally enable feature display on the current alignment
+// (v2.8)
+public abstract void loadFeatures(String features, boolean autoenabledisplay)
+
+// parse the given string as a jalview or GFF features file and optionally enable feature display on the given alignment
+// (v2.8)
+public abstract void loadFeaturesFrom(AlignFrame alf, String features, boolean autoenabledisplay)
+
+// get the sequence features in the given format (Jalview or GFF)
+public String getFeatures(String format)
+
+// get the sequence features in alf in the given format (Jalview or GFF)
+public String getFeaturesFrom(AlignFrame alf, String format)
+
+// get current alignment's annotation as an annotation file
+public String getAnnotation()
+
+// get alignment view alf's annotation as an annotation file
+public String getAnnotationFrom(AlignFrame alf)
+
+// create a new view and return the alignFrame instance
+public AlignFrame newView()
+
+// create a new view named name and return the alignFrame instance
+public AlignFrame newView(String name)
+
+// create a new view on alf and return the alignFrame instance
+public AlignFrame newViewFrom(AlignFrame alf)
+
+// create a new view named name on alf 
+// and return the alignFrame instance
+public AlignFrame newViewFrom(AlignFrame alf, String name)
+
+// load a new alignment 
+// remember to store the AlignFrame object reference 
+// if you want to manipulate the new alignment view.
+public AlignFrame loadAlignment(String text, String title)
+
+
+// register a javascript function to handle any alignment mouseover events
+// listener is name of javascript function  which will be called
+// with arguments [jalview.appletgui.AlignFrame,String(sequence id),
+// String(column in alignment), String(position in sequence)]
+// (v2.7)
+public void setMouseoverListener(String listener)
+
+// register a javascript function to handle mouseover events for specific alignframe
+// (v2.7)
+public void setMouseoverListener(AlignFrame af, String listener)
+
+// register a javascript function to handle alignment selection events. 
+// Events are generated when the user completes a selection event, or when
+// the user deselects all selected regions.
+// listener is name of javascript function  that will be called with arguments
+//  [jalview.appletgui.AlignFrame, String(sequence set id), 
+//   String(separator separated list of sequences which were selected), 
+//   String(separator separated list of column ranges)]
+// (v2.7)
+public void setSelectionListener(String listener)
+
+// register a selection listener for a specific alignment frame
+// (v2.7)
+public void setSelectionListener(AlignFrame af, String listener)
+
+// register a javascript function to handle events normally routed 
+// to a Jmol structure viewer.
+// listener is a javascript function called with several different types 
+// of arguments, dependent on the type of structure callback event. 
+// See jalview.javascript.MouseOverStructureListener for full details or
+// the embedded Jmol example.
+// modelSet - is a separator separated list of PDB file URIs that this viewer is handling (where position in list equals model number in Jmol).
+// (v2.7)
+public void setStructureListener(String listener, String modelSet)
+
+// remove any callback using the given listener function and associated with
+// the given alignFrame (or null for all callbacks) (v2.7)
+public void removeJavascriptListener(AlignFrame af, String listener)
+
+// send a mouseover message to all the alignment windows associated with the
+// given residue in the pdbfile (v2.7)
+public void mouseOverStructure(String pdbResNum, String chain, String pdbfile)
+
+// bind a pdb file to a sequence in the given alignFrame - this will be searched
+// for sequences matching sequenceId. The PDB file in pdbFile is either the contents
+// of a PDB file or a URI that can be used to retrieve the file, and the pdbEntryString
+// is the user friendly name (or PDBID) shown in jalview's user interface.
+// returns true if binding was as success (v2.7)
+public boolean addPdbFile(AlignFrame alFrame, 
+    String sequenceId, String pdbEntryString, String pdbFile)
+
+// adjust horizontal/vertical scroll in alf to the make 
+// the given location the top left hand corner for given current view (v2.7)
+public void scrollViewToIn(AlignFrame alf, String topRow, String leftHandColumn)
+
+// adjust horizontal scroll in alf to the make 
+// the given location the left hand corner for given current view (v2.7)
+public void scrollViewToColumnIn(AlignFrame alf, String leftHandColumn)
+
+// adjust horizontal/vertical scroll in alf to the make 
+// the given location the top row for given current view (v2.7)
+public void scrollViewToRowIn(AlignFrame alf, String topRow)
+
+
+// return separator separated list of feature groups 
+// on the current alignment
+public String getFeatureGroups()
+
+// return separator separated list of feature groups on alf
+public String getFeatureGroupsOn(AlignFrame alf)
+
+// return separator separated list of feature groups 
+// either visible or hidden
+public String getFeatureGroupsOfState(boolean state)
+
+// return separator separated list of feature groups 
+// either visible or hidden on alf
+public String getFeatureGroupsOfStateOn(AlignFrame alf, boolean state)
+
+// set the separator separated list of feature groups as 
+// visible or hidden on the current alignment
+public void setFeatureGroupState(String groupList, boolean state)
+
+// set the separator separated list of feature groups 
+// as visible or hidden on alf
+public void setFeatureGroupStateOn(AlignFrame alf, String groupList, boolean state)
+
+// helper functions
+
+// Asynchronously retrieve next chunk of a large packet of data made available 
+// for a JalviewLite event handler, or the empty string if no more data is available.
+// messageclass and viewId are keys used to retrieve a specific message related
+// to an event.  
+// Use this in a javascript timer or GUI update thread to retrieve data without 
+// blocking the JalviewLite applet. DO NOT USE IN THE CALLBACK THAT HANDLED THE EVENT
+// (v2.7)
+public String getJsMessage(String messageclass, String viewId)
+
+
+// convert list to a separator separated array
+public String arrayToSeparatorList(String[] list) 
+
+// get a string array from a list
+public String[] separatorListToArray(String list)
+
+// get the current separator
+public String getSeparator()
+
+// set the current separator
+public void setSeparator(String)
+
+//// JalviewLite global state methods and fields
+
+// return the build date as a string
+public static String getBuildDate() 
+
+// return the JalviewLite version as a string
+public static String getVersion()
+
+// debug flag - controls output to standard out
+public static boolean debug
+
+</pre>
+<!-- content end -->

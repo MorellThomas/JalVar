@@ -1,0 +1,60 @@
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+
+
+<div id="view_decorated" name="view_decorated"  style="margin:8px; padding:10px; border: 2px solid red; text-align:center; display:none;"><b>Click <a href="index.html#embedded"> here</a> to view decorated page</b></div>
+
+<!-- boiler plate link to alternate demopage -->
+<div style="width: 100%">
+<div style="width:35%; align:left; float:right;">
+</div>
+</div>
+
+<!-- content template start -->
+<h2>Embedded viewing of Alignments</h2>
+<p>The alignment below was generated from the following files:
+  <ul>
+    <li><a href="plantfdx.fa">plantfdx.fa</a> - Alignment file in
+      FASTA format</li>
+    <li><a href="plantfdx.features">plantfdx.features</a> - Jalview
+      Format Sequence Features file</li>
+    <li><a href="plantfdx.annotations">plantfdx.annotations</a> -
+      Jalview Alignment Annotations File</li>
+  </ul>
+  <a href="view-source:http://www.jalview.org/builds/develop/examples/embedded.html" target="_blank">View the source code for this example here</a> (If the link doesn't work on your browser try going to <a href="http://www.jalview.org/builds/develop/examples/embedded.html">this page</a> and viewing the page source manually).<p>
+  <applet
+   code="jalview.bin.JalviewLite" width="756" height="560"
+   archive="jalviewApplet.jar,JmolApplet-14.6.4_2016.10.26.jar,java-json.jar,json_simple-1.1.jar">
+<param name="permissions" value="sandbox"/>
+<param name="file" value="plantfdx.fa"/>
+<param name="features" value="plantfdx.features"/>
+<param name="userDefinedColour" value="C=yellow; R,K,H=FF5555; D,E=5555FF"/>
+<param name="showFullId" value="false"/>
+<param name="embedded" value="true"/>
+   <param name="linkLabel_1" value="Uniprot"/>
+   <param name="linkUrl_1"
+     value="http://www.uniprot.org/uniprot/$SEQUENCE_ID$"/>
+   <param name="linkLabel_2" value="EMBL-EBI Search"/>
+   <param name="linkUrl_2"
+     value="http://www.ebi.ac.uk/ebisearch/search.ebi?db=allebi&query=$SEQUENCE_ID$"/>
+   <param name="APPLICATION_URL"
+     value="http://www.jalview.org/services/launchApp"/>
+</applet>
+</p>
+<!-- content template end -->

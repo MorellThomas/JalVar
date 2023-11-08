@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+<project name="jalviewInstallAnywhere" default="build" basedir=".">
+  <property name="IA_LOCATION" value="/home/cruisecontrol/InstallAnywhere 2013/"/>
+  <property name="IA_PROJECT" location="Jalview.iap_xml"/>
+  <property name="ABS_PATH" value="/homes/cruisecontrol/jalview"/> <!-- \/utils\/InstallAnywhere"/> --> <!--/home/cruisecontrol/jalview"/> -->
+  <!-- location of top level of jalview distribution directory -->
+  <property name="CUR_PATH" location="../../." />
+  <property name="USER_HOME" location="~" />
+  <property name="DEST_IADIR" location="${CUR_PATH}/JalviewBuild" />
+  <property name="java.awt.headless" value="true"/>
+  <taskdef name="buildinstaller" classname="com.zerog.ia.integration.ant.InstallAnywhereAntTask">
+  <classpath>
+    <fileset dir="${IA_LOCATION}/resource/build">
+      <include name="iaant.jar" />
+    </fileset>
+  </classpath>
+  </taskdef>
+  <target name="build">
+  <copy file="mac_logo.icns" tofile="${CUR_PATH}/mac_logo.icns" overwrite="true"/>
+  <copy file="${IA_PROJECT}" tofile="${IA_PROJECT}_reloc.iap_xml" overwrite="true"/>
+  <replace
+    token="${ABS_PATH}"
+    value="${CUR_PATH}"
+   file="${IA_PROJECT}_reloc.iap_xml" />
+  <buildinstaller 
+     IAlocation="${IA_LOCATION}"
+     IAProjectFile="${IA_PROJECT}_reloc.iap_xml"
+     BuildOutputLocation="${DEST_IADIR}" >
+     <arg value="-nupd"/>
+     </buildinstaller>
+ <delete>
+ 	<fileset dir="${CUR_PATH}">
+ 		<include name="mac_logo.icns"/>
+	</fileset>
+ <fileset dir=".">
+   <include name="${IA_PROJECT}_reloc*"/>
+   <include name="iabuild.xml" />
+   <include name="*locales" />
+</fileset>
+ </delete>
+</target>
+</project>

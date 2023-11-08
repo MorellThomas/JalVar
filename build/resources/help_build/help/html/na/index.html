@@ -1,0 +1,123 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Nucleic Acid Support</title>
+<style type="text/css">
+<!--
+td {
+	font-family: "Courier New", Courier, mono;
+	font-style: normal;
+	font-size: medium;
+}
+-->
+</style>
+</head>
+<body>
+  <p>
+    <strong>Nucleic Acid Support</strong>
+  </p>
+  <p>
+    <em>Colour Schemes</em>
+  </p>
+  <p>Jalview has color schemes for nucleic acid based sequences,
+    ability to fetch sequences from RFAM and RNA secondary structure
+    coloring</p>
+  <p>
+    Information on the <a href="../colourSchemes/nucleotide.html">Nucleotide
+      colour scheme</a> and <a href="../colourSchemes/purinepyrimidine.html">
+      Purine/Pyrimidine colour scheme</a> are available under the Colour
+    Menu. See <a href="../colourSchemes/index.html">Colour Schemes</a>.
+  </p>
+  <p>
+    <em>RNA Support</em>
+  </p>
+  Jalview supports annotation of RNA sequences with secondary structure
+  information. You can interactively
+  <a href="../features/annotation.html#rna">create and edit RNA
+    secondary structure annotation rows</a>, or import data in the following
+  way:
+  <ul>
+    <li><em>RFAM</em> - Sequences can be <a
+      href="../features/seqfetch.html">fetched</a> from the RFAM
+      database by accession number or ID.</li>
+    <li><em>Stockholm files</em> - WUSS (or VIENNA) dot-bracket
+      notation found in the secondary structure annotation line will be
+      imported as sequence or alignment associated secondary structure
+      annotation.</li>
+    <li><em>Clustal files</em> - certain RNA alignment programs,
+      such as <a href="http://rna.informatik.uni-freiburg.de/LocARNA">LocaRNA</a>
+      output consensus RNA secondary structure lines in the line
+      normally reserved for the Clustal consensus line in a clustal
+      file.</li>
+    <li><em>RNAML</em> Jalview can import RNAML files containing
+      sequences and extended secondary structure annotation derived from
+      RNA 3D structure</li>
+  </ul>
+  <p>
+    <strong>RNA Secondary Structure Visualization and Analysis</strong><br />
+    If a sequence or RNA alignment has secondary structure information,
+    the alignment will have a secondary structure line shown below it,
+    and a number of additional options become available:
+  <ul>
+    <li><a href="../colourSchemes/rnahelicesColouring.html">RNA
+        Helix colouring</a> - highlights columns of alignment involved in
+      particular RNA helices, Uses the first displayed secondary
+      structure annotation.</li>
+    <li><a href="../calculations/structureconsensus.html">Base
+        Pair Conservation Analysis</a> - shown as a histogram and base-pair
+      logo below the alignment. Uses the first displayed secondary
+      structure annotation row.</li>
+    <li><a href="../features/varna.html">2D Structure
+        Visualization in VARNA</a> - allows linked viewing of the consensus
+      or an individual sequence's structure. Accessed via the Sequence
+      ID popup menu.</li>
+    <li><strong>per sequence secondary structure
+        annotation</strong><br /> Sequence associated secondary structure
+      annotation imported via stockholm, PDB files, or other sources can
+      be shown on the alignment with the <strong>Colours&#8594;By
+        Annotation</strong> dialog box. Colours are assigned according to RNA
+      helix topology number (number of distinct nested helices).
+      Alignments can also be sorted by RNA helix secondary structure
+      topology number, <em>via</em> the <strong>Calculations&#8594;Sort&#8594;By
+        Annotation&#8594;Secondary Structure</strong> option (only present when
+      per-sequence secondary structure is available).</li>
+  </ul>
+  <p>
+    <strong>Pseudo-knots</strong><br /> Jalview 2.8.2 introduced
+    limited support for working with structures including pseudoknots.
+    Where possible, extended WUSS symbols (e.g. different types of
+    parentheses, or upper and lower case letters) are preserved when
+    parsing RNA structure annotation and will be shaded differently when
+    displayed in the structure.<br /> Extended WUSS annotation is also
+    employed to distinguish different base pair interactions obtained
+    from RNAML files.
+  </p>
+
+  <p>
+    <strong>Limitations when working with RNA in Jalview</strong><br />
+    Currently, Jalview is not able to export RNA secondary structure
+    annotation in any format other than Jalview annotation </br> <em>Jalview's
+      RNA handling capabilities were introduced in v2.8</em>
+  </p>
+  <p align="center">&nbsp;</p>
+</body>
+</html>

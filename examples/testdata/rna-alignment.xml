@@ -1,0 +1,1326 @@
+<?xml version="1.0"?>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (Version 2.8.2)
+ * Copyright (C) 2014 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+<!DOCTYPE rnaml SYSTEM "rnaml.dtd">
+
+<rnaml version="1.0">
+
+   <molecule id="1">
+      <sequence>
+         <numbering-system id="1" used-in-file="false">
+            <numbering-range>
+               <start>1</start>
+               <end>249</end>
+            </numbering-range>
+         </numbering-system>
+         <seq-data>
+            gaggaaaguc cggacUUCGC AGAAAAAGGU GCCAGUGAAA AACUGGGGGC CGUAAGGCUA
+            CGGAAAGUGU AACAGAAAAC AAACCGCUAA UUCUACCUAG GUAAGAUUAG ACAGGAUGAA
+            AAUGUCGAGC UUAUGGCUCG ACCUCUUUGU GGAAACACAA GGACGCUGCA AACCCCACCU
+            GAAGCAAGAA AGAGUUCGUU UCAGUUUUUC GCUCAGGAAC UCUUAGAGUC GCUCGAGGAU
+            UUUGGUGAC
+         </seq-data>
+      </sequence>
+      <structure>
+         <model id="?">
+            <str-annotation>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>15</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>184</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>16</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>183</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>17</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>182</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>18</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>181</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>22</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>210</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>23</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>209</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>24</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>208</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>25</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>207</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>27</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>180</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>28</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>179</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>29</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>178</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>30</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>177</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>31</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>176</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>32</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>46</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>33</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>45</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>34</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>44</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>35</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>43</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>36</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>42</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>47</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>61</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>48</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>59</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>49</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>58</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>50</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>57</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>51</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>56</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>62</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>175</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>63</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>174</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>67</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>173</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>68</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>172</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>69</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>169</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>70</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>168</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>71</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>167</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>84</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>115</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>85</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>114</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>86</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>111</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>87</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>110</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>88</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>109</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>89</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>108</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>90</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>107</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>91</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>106</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>92</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>105</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>93</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>104</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>94</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>103</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>95</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>102</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>96</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>101</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>124</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>142</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>125</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>141</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>126</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>140</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>127</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>139</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>128</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>138</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>129</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>137</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>143</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>165</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>144</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>163</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>145</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>162</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>146</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>161</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>147</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>160</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>148</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>159</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>149</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>158</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>150</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>157</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>151</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>156</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>188</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>230</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>189</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>229</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>190</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>224</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>191</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>223</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>192</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>222</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>193</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>221</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>194</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>220</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>195</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>219</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>196</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>218</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>197</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>217</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>203</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>213</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>204</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>212</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>205</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>211</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>244</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>249</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+            </str-annotation>
+         </model>
+      </structure>
+   </molecule>
+<molecule id="2">
+      <sequence>
+         <numbering-system id="2" used-in-file="false">
+            <numbering-range>
+               <start>1</start>
+               <end>294</end>
+            </numbering-range>
+         </numbering-system>
+         <seq-data>
+            gaggaaaguc cgggCUCCAU AGGGCAGAGU GCCAGGUAAC GCCUGGGAGG CGCGAGCCUA
+            CGGAAAGUGC CACAGAAAAC AACCGCCUAA GCGCGCAAGC GCCGGUAAGG GUGAAAAGGU
+            GCGGUAAGAG CGCACCGCAC GGCUGGCAAC AGUUCGUGGC UAGGUAAACC CCACUCGGAG
+            CAAGACCAAA UAGGGAUCCA UUGGCGUGGC CCGCGCUGGA UCCGGGUAGG UUGCUAAAGG
+            CGGCCAGCGA UGGUCGUCGU AGAGGAAUGA CUGUCCUCGa cagaacccgg cuua
+         </seq-data>
+      </sequence>
+      <structure>
+         <model id="?">
+            <str-annotation>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>6</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>293</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>7</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>292</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>8</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>291</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>10</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>290</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>11</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>289</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>12</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>288</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>13</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>287</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>14</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>286</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>15</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>180</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>16</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>179</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>17</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>178</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>18</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>177</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>22</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>212</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>23</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>211</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>24</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>210</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>25</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>209</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>27</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>176</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>28</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>175</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>29</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>174</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>30</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>173</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>31</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>172</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>32</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>46</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>33</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>45</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>34</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>44</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>35</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>43</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>36</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>42</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>47</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>61</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>48</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>59</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>49</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>58</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>50</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>57</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>51</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>56</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>62</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>171</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>63</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>170</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>67</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>169</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>68</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>168</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>69</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>165</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>70</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>164</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>71</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>163</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>83</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>110</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>84</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>109</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>85</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>106</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>86</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>105</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>87</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>104</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>91</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>102</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>92</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>101</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>93</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>100</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>94</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>99</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>118</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>136</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>119</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>135</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>120</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>134</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>121</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>133</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>122</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>132</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>123</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>131</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>137</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>160</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>138</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>158</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>139</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>157</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>140</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>156</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>141</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>155</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>142</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>154</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>143</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>152</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>144</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>151</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>145</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>150</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>184</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>232</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>185</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>231</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>186</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>230</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>187</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>229</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>194</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>223</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>195</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>222</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>196</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>221</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>197</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>220</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>198</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>219</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>199</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>218</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>203</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>217</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>204</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>216</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>205</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>215</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>206</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>214</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>207</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>213</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>239</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>258</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>240</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>257</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>241</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>256</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>242</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>255</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>243</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>254</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>244</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>253</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>245</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>252</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+               <base-pair comment="?">
+                  <base-id-5p>
+                     <base-id><position>246</position></base-id>
+                  </base-id-5p>
+                  <base-id-3p>
+                     <base-id><position>251</position></base-id>
+                  </base-id-3p>
+               </base-pair>
+            </str-annotation>
+         </model>
+      </structure>
+   </molecule>
+</rnaml>

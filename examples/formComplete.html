@@ -1,0 +1,82 @@
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+
+
+<div id="view_decorated" name="view_decorated"  style="margin:8px; padding:10px; border: 2px solid red; text-align:center; display:none;"><b>Click <a href="index.html#formComplete"> here</a> to view decorated page</b></div>
+
+
+<!-- boiler plate link to alternate demopage -->
+<div style="width: 100%">
+<div style="width:35%; align:left; float:right;">
+
+</div>
+</div>
+
+<!-- content template start -->
+<h2><a href="javascript:doSubmit('jalviewLiteJs')">JalviewLite API</a> Demo</h2>
+<p>Using the Javascript API to fill out forms using data from JalviewLite
+<br/>Click the Javascript buttons below to interact with the Applet
+instance on the page.</p>
+  <a href="view-source:http://www.jalview.org/builds/develop/examples/formComplete.html" target="_blank">View the source here to see how it has been done</a>  (If the link doesn't work on your browser try going to <a href="http://www.jalview.org/builds/develop/examples/formComplete.html">this page</a> and viewing the page source manually).<br/>
+<a name="api">View the full <a href="javascript:doSubmit('jalviewLiteJs')">JalviewLite API documentation</a>.</a>
+<applet code="jalview.bin.JalviewLite" width="0" height="0"
+	archive="jalviewApplet.jar,JmolApplet-14.6.4_2016.10.26.jar,java-json.jar,json_simple-1.1.jar" name="Jalview">
+  
+  <param name="file" value="plantfdx.fa"/>
+  <param name="features" value="plantfdx.features"/>
+  <param name="wrap" value="true"/>
+  <param name="showAnnotation" value="false"/>
+  <param name="windowHeight" value="500"/>
+  <param name="windowWidth" value="650"/>
+  <param name="showFullId" value="false"/>
+  <param name="linkLabel_1" value="Uniprot"/>
+  <param name="linkUrl_1"
+	 value="http://www.uniprot.org/uniprot/$SEQUENCE_ID$"/>
+  <param name="linkLabel_2" value="Expasy">
+  <param name="linkUrl_2"
+	 value="http://us.expasy.org/cgi-bin/niceprot.pl?$SEQUENCE_ID$"/>
+  <param name="hidefeaturegroups" value="uniprot" />
+  <param name="showbutton" value="false" />
+</applet>
+<form name="exampleForm"><br/>
+  <br/>
+  <center><strong>Using the Jalview Applet for Input
+      to an HTML Form</strong></center>
+  <div align="center"><input type="button"
+			     onClick="document.forms.exampleForm.exampleTextarea.value=document.applets.Jalview.getAlignment('fasta', 'false')"
+			     value="Fill Form from Jalview" /> <br/>
+    <br/>
+    <textarea name="exampleTextarea" cols="55" rows="9"></textarea></div>
+</form>
+<center><strong>Make a new View and Get and Set
+    Group Display List</strong></center>
+<form name="groupForm">
+  <div align="center"><input type="button"
+			     onClick="document.forms.groupForm.groups.value=document.applets.Jalview.getFeatureGroups()"
+			     value="Get groups" /> <input type="button"
+							  onClick="document.applets.Jalview.newView()" value="new View" /> <br/>
+    <textarea name="groups" cols="55" rows="9"></textarea> <br/>
+    <input type="button"
+	   onClick="document.applets.Jalview.setFeatureGroupState(document.forms.groupForm.groups.value, true)"
+	   value="Display groups" /> <input type="button"
+					    onClick="document.applets.Jalview.setFeatureGroupState(document.forms.groupForm.groups.value, false)"
+					    value="Hide groups" /></div>
+</form>
+</div>
+<!-- content template end -->

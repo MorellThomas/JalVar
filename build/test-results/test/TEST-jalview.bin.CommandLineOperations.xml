@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.bin.CommandLineOperations" tests="28" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:31" hostname="wer3eng" time="42.478">
+  <properties/>
+  <testcase name="reportCurrentWorkingDirectory" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testAllInputOperations[0](CMD [-color zappo] executed successfully!, Failed command : -color zappo)" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testAllInputOperations[1](CMD [-props test/jalview/bin/testProps.jvprops] executed successfully!, Failed command : -props File)" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testAllInputOperations[2](CMD [-sortbytree] executed successfully!, Failed command : -sortbytree)" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testAllInputOperations[3](CMD [-jabaws http://www.compbio.dundee.ac.uk/jabaws] executed successfully!, Failed command : -jabaws http://www.compbio.dundee.ac.uk/jabaws)" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testAllInputOperations[4](CMD [-open examples/uniref50.fa] executed successfully!, Failed command : -open examples/uniref50.fa)" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testAllInputOperations[5](CMD [-nosortbytree] executed successfully!, Failed command : -nosortbytree)" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testAllInputOperations[6](CMD [-features examples/testdata/plantfdx.features]  executed successfully!, Failed command : -features examples/testdata/plantfdx.features)" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testAllInputOperations[7](CMD [-annotations examples/testdata/plantfdx.annotations] executed successfully!, Failed command : -annotations examples/testdata/plantfdx.annotations)" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testAllInputOperations[8](CMD [-tree examples/testdata/uniref50_test_tree] executed successfully!, Failed command : -tree examples/testdata/uniref50_test_tree)" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testAllInputOperations[9](CMD [-nousagestats] executed successfully!, Failed command : -nousagestats)" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testAllInputOperations[10](CMD [-noquestionnaire] executed successfully!, Failed command : -noquestionnaire)" classname="jalview.bin.CommandLineOperations" time="0.0"/>
+  <testcase name="testHeadlessModeOutputOperations[0](nodisplay -open examples/uniref50.fa,  -eps, test/jalview/bin/test_uniref50_out.eps, true, 4096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.559"/>
+  <testcase name="testHeadlessModeOutputOperations[1](nodisplay -open examples/uniref50.fa,  -eps, test/jalview/bin/test_uniref50_out.eps, false, 4096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.804"/>
+  <testcase name="testHeadlessModeOutputOperations[2](nogui -open examples/uniref50.fa,  -eps, test/jalview/bin/test_uniref50_out.eps, true, 4096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.546"/>
+  <testcase name="testHeadlessModeOutputOperations[3](nogui -open examples/uniref50.fa,  -eps, test/jalview/bin/test_uniref50_out.eps, false, 4096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.825"/>
+  <testcase name="testHeadlessModeOutputOperations[4](headless -open examples/uniref50.fa,  -eps, test/jalview/bin/test_uniref50_out.eps, true, 4096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.521"/>
+  <testcase name="testHeadlessModeOutputOperations[5](headless -open examples/uniref50.fa,  -svg, test/jalview/bin/test_uniref50_out.svg, false, 4096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.837"/>
+  <testcase name="testHeadlessModeOutputOperations[6](headless -open examples/uniref50.fa,  -png, test/jalview/bin/test_uniref50_out.png, true, 4096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.548"/>
+  <testcase name="testHeadlessModeOutputOperations[7](headless -open examples/uniref50.fa,  -html, test/jalview/bin/test_uniref50_out.html, true, 4096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.582"/>
+  <testcase name="testHeadlessModeOutputOperations[8](headless -open examples/uniref50.fa,  -fasta, test/jalview/bin/test_uniref50_out.mfa, true, 2096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.578"/>
+  <testcase name="testHeadlessModeOutputOperations[9](headless -open examples/uniref50.fa,  -clustal, test/jalview/bin/test_uniref50_out.aln, true, 2096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.553"/>
+  <testcase name="testHeadlessModeOutputOperations[10](headless -open examples/uniref50.fa,  -msf, test/jalview/bin/test_uniref50_out.msf, true, 2096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.653"/>
+  <testcase name="testHeadlessModeOutputOperations[11](headless -open examples/uniref50.fa,  -pileup, test/jalview/bin/test_uniref50_out.aln, true, 2096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.678"/>
+  <testcase name="testHeadlessModeOutputOperations[12](headless -open examples/uniref50.fa,  -pir, test/jalview/bin/test_uniref50_out.pir, true, 2096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.581"/>
+  <testcase name="testHeadlessModeOutputOperations[13](headless -open examples/uniref50.fa,  -pfam, test/jalview/bin/test_uniref50_out.pfam, true, 2096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.662"/>
+  <testcase name="testHeadlessModeOutputOperations[14](headless -open examples/uniref50.fa,  -blc, test/jalview/bin/test_uniref50_out.blc, true, 2096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.637"/>
+  <testcase name="testHeadlessModeOutputOperations[15](headless -open examples/uniref50.fa,  -jalview, test/jalview/bin/test_uniref50_out.jvp, true, 2096, 13000)" classname="jalview.bin.CommandLineOperations" time="2.912"/>
+  <system-out><![CDATA[Test CWD is /home/thomas/Studium/Master_2/java-hiwi/jalview
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.ext.jmol.JmolParserTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:42" hostname="wer3eng" time="2.474">
+  <properties/>
+  <testcase name="testAlignmentLoader" classname="jalview.ext.jmol.JmolParserTest" time="0.92"/>
+  <testcase name="testFileParser" classname="jalview.ext.jmol.JmolParserTest" time="0.859"/>
+  <testcase name="testLocalPDBId" classname="jalview.ext.jmol.JmolParserTest" time="0.209"/>
+  <testcase name="testParse_alternativeResidues" classname="jalview.ext.jmol.JmolParserTest" time="0.23"/>
+  <testcase name="testParse_missingResidues" classname="jalview.ext.jmol.JmolParserTest" time="0.243"/>
+  <testcase name="testSetSecondaryStructure" classname="jalview.ext.jmol.JmolParserTest" time="0.0"/>
+  <system-out><![CDATA[File format identified as PDB
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 91.7/140.5
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+OXIDOREDUCTASE/ELECTRON TRANSPORT       08-MAY-00   1GAQ
+1GAQ
+reading 690 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+690 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 14 ms
+File format identified as PDB
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 68.7/140.5
+processors available: 8
+useCommandThread: false
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@7a8047a9
+The Resolver thinks Pdb
+GLYCOSYLTRANSFERASE                     07-JUN-95   1XYZ
+A COMMON PROTEIN FOLD AND SIMILAR ACTIVE SITE IN TWO
+DISTINCT FAMILIES OF BETA-GLYCANASES
+found biomolecule 1: A
+biomolecule 1: number of transforms: 1
+found biomolecule 2: B
+biomolecule 2: number of transforms: 1
+Setting space group name to P 1
+1XYZ
+reading 5621 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+5621 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 48 ms
+File format identified as PDB
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 68.9/140.5
+processors available: 8
+useCommandThread: false
+Attempting to connect with MSAprobsWS...
+The Resolver thinks Pdb
+TYROSINE KINASE                         04-MAY-99   1QCF
+CRYSTAL STRUCTURE OF HCK IN COMPLEX WITH A SRC FAMILY-
+SELECTIVE TYROSINE KINASE INHIBITOR
+found biomolecule 1: A
+biomolecule 1: number of transforms: 1
+PTR = O-PHOSPHOTYROSINE
+PP1 = 1-TER-BUTYL-3-P-TOLYL-1H-PYRAZOLO[3,4-D]PYRIMIDIN-4-
+PP1 = 1-TER-BUTYL-3-P-TOLYL-1H-PYRAZOLO[3,4-D]PYRIMIDIN-4-YLAMINE
+Setting space group name to P 21 21 21
+1QCF
+reading 3959 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+3959 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 31 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 68.3/140.5
+processors available: 8
+useCommandThread: false
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@6b83b427
+The Resolver thinks Pdb
+OXIDOREDUCTASE/ELECTRON TRANSPORT       08-MAY-00   1GAQ
+1GAQ
+reading 690 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+690 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 12 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 62.0/140.5
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+Attempting to connect with GLprobsWS...
+GLYCOSYLTRANSFERASE                     07-JUN-95   1XYZ
+A COMMON PROTEIN FOLD AND SIMILAR ACTIVE SITE IN TWO
+DISTINCT FAMILIES OF BETA-GLYCANASES
+found biomolecule 1: A
+biomolecule 1: number of transforms: 1
+found biomolecule 2: B
+biomolecule 2: number of transforms: 1
+Setting space group name to P 1
+1XYZ
+reading 5621 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+5621 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 45 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 64.4/140.5
+processors available: 8
+useCommandThread: false
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@2a158d58
+The Resolver thinks Pdb
+TYROSINE KINASE                         04-MAY-99   1QCF
+CRYSTAL STRUCTURE OF HCK IN COMPLEX WITH A SRC FAMILY-
+SELECTIVE TYROSINE KINASE INHIBITOR
+found biomolecule 1: A
+biomolecule 1: number of transforms: 1
+PTR = O-PHOSPHOTYROSINE
+PP1 = 1-TER-BUTYL-3-P-TOLYL-1H-PYRAZOLO[3,4-D]PYRIMIDIN-4-
+PP1 = 1-TER-BUTYL-3-P-TOLYL-1H-PYRAZOLO[3,4-D]PYRIMIDIN-4-YLAMINE
+Setting space group name to P 21 21 21
+1QCF
+reading 3959 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+3959 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 24 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 60.3/140.5
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+reading 51 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+51 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Jmol 15.1.53  2021-02-10 09:12 DSSP analysis for model 1.1 - null
+
+W. Kabsch and C. Sander, Biopolymers, vol 22, 1983, pp 2577-2637
+
+We thank Wolfgang Kabsch and Chris Sander for writing the DSSP software,
+and we thank the CMBI for maintaining it to the extent that it was easy to
+re-engineer in Java for our purposes. 
+
+Second generation DSSP 2.0 is used in this analysis. See Int. J. Mol. Sci. 2014, 15, 7841-7864; doi:10.3390/ijms15057841.
+
+All bioshapes have been deleted and must be regenerated.
+
+Time for creating model: 4 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Attempting to connect with AAConWS...
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 58.4/140.5
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+TRANSPORT PROTEIN                       08-APR-15   1EJG
+1EJG
+reading 4 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+model 1.1 alternative locations: AB
+Default Van der Waals type for model set to Jmol
+4 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 1 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 58.4/140.5
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+TRANSPORT PROTEIN                       08-APR-15   4UJ4
+4UJ4
+reading 6 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+6 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 2 ms
+]]></system-out>
+  <system-err><![CDATA[Jul 02, 2023 10:11:42 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+ERROR - Exception when trying to start Rest Job.
+java.lang.NullPointerException: null
+	at jalview.ws.rest.RestJobThread.doPost(RestJobThread.java:204) ~[classes/:?]
+	at jalview.ws.rest.RestJobThread.StartJob(RestJobThread.java:436) [classes/:?]
+	at jalview.ws.AWSThread.run(AWSThread.java:117) [classes/:?]
+Exception in thread "Thread-54" java.lang.NullPointerException
+	at jalview.ws.JobStateSummary.updateJobPanelState(JobStateSummary.java:162)
+	at jalview.ws.AWSThread.run(AWSThread.java:176)
+Jul 02, 2023 10:11:43 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Jul 02, 2023 10:11:43 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+]]></system-err>
+</testsuite>

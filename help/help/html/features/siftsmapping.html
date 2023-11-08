@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SIFTS Mapping from UniProt for PDB Structures</title>
+</head>
+<body>
+
+  <p>
+    <strong>SIFTS Mapping for UniProt sequences and PDB
+      Structures</strong><br /> SIFTS (Structure Integration with Function,
+    Taxonomy and Sequences) is a database of residue-level mappings
+    between UniProt protein sequences, and protein structures found in
+    the PDB. The database is updated for each PDB release, and is
+    provided by the <a href="https://www.ebi.ac.uk/pdbe/docs/sifts/">PDBe
+      at EMBL-EBI</a>.
+  </p>
+  <p>When Jalview imports PDB data for a protein sequence found in
+    UniProt, either via the 'View 3D Structure...' option, or the 'Fetch
+    DB Refs' web services menu, Jalview will also download its SIFTS
+    record and use that information to construct a mapping between the
+    sequence and downloaded structure.</p>
+  <p>If, for some reason, no SIFTS mapping data exists, then Jalview
+    will generate a mapping using the built-in Needleman and Wunsch
+    global alignment algorithm. This is how sequence-structure mappings
+    were created before version 2.10.</p>
+  <p>
+    <strong>Controlling and troubleshooting SIFTS mappings</strong> <br />
+    Configuration options controlling whether SIFTS mappings are used
+    can be found in the <strong>Tools &rarr; Preferences &rarr;
+      Structure tab</strong>, under 'Sequence &harr; Structure method'.<br /> <em>Note:</em>
+    Changing the configuration will only affect how new mappings are
+    created. In order to recompute mappings for structures already
+    loaded, please reload the sequence & structural data.
+  </p>
+
+  <p>
+    <strong>Multi-Chain Mappings</strong> <br />SIFTS gives Jalview the
+    ability to display multi-chain mappings between UniProt sequences
+    and PDB structure data. This is important when working with
+    multimeric proteins, when the biological assembly can contain
+    several structures for the same protein sequence. Multi-chain
+    mapping allows all residues in a structure to be located in the
+    alignment, and also, when shading the structure by sequence colours,
+    enables conservation patterns between oligomer interfaces to be
+    explored.
+  </p>
+  <p>To see this in action, Retrieve the UniProt sequence
+    FER1_MAIZE, and then view one of its structures: 3B2F. Mousing over
+    the sequence results to two positions being highlighted in the
+    structure, and colouring the alignment transfers the color to all
+    the mapped chains in the structure.</p>
+
+  <p>
+    <Strong>Viewing Mapping Output</Strong> <br /> The mapping provided
+    by the SIFTS record is accessible via <strong>File &rarr;
+      View mapping</strong> menu of the structure viewers. The screenshot below
+    shows the mapping created between UniProt sequence FER1_MAIZE and
+    proteins in PDB 3B2F, which reports mappings for two chains. The
+    mapping method is also reported (highlighted with red border).
+  <p>
+
+    &emsp;<img src="sifts_mapping_output.png" align="left"
+      alt="SIFTS mapping output" /> <br />
+  <p>
+    <em>SIFTS Mapping integration was added in Jalview 2.10</em>
+  </p>
+
+</body>
+</html>

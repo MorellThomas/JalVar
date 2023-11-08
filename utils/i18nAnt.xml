@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--
+  Ant utilities to help with internationalisation of Jalview.
+  Require the additional antcontrib targets (jar file).
+-->
+<project name="jalviewLang" default="checkLang" basedir="..">
+
+<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+  <classpath>
+    <pathelement location="${basedir}/utils/ant-contrib-1.0b3.jar"/>
+  </classpath>
+</taskdef>
+<taskdef resource="net/sf/antcontrib/antlib.xml">
+  <classpath>
+    <pathelement location="${basedir}/utils/ant-contrib-1.0b3.jar"/>
+  </classpath>
+</taskdef>
+ 
+<target name="checkLang" description="Reports missing entries in language bundles compared to Message.properties">
+	<!-- adapted from http://stackoverflow.com/questions/14381660/ant-task-to-compare-two-properties-files -->
+	<!-- reduce logging level so 'reportMissingProperty' does not clutter up the output -->
+	<script language="javascript">
+        var logger = project.getBuildListeners( ).firstElement( );
+        logger.setMessageOutputLevel( 1 );
+    </script>
+	<foreach target="compareBundles" param="file2">
+		<path>
+			<fileset dir="${basedir}/resources/lang">
+				<exclude name="Messages.properties" />
+			</fileset>
+		</path>
+	</foreach>
+</target>
+
+<target name="compareBundles" description="compare a properties file with Messages.properties and vice versa">
+	<echo message=" "/>
+	<echo message="Missing message labels in ${file2} compared to Messages.properties"/>
+	<antcall target="compareProperties">
+		<param name="file1" value="resources/lang/Messages.properties"/>
+		<param name="file2" value="${file2}" />
+	</antcall>
+	<echo message=" "/>
+	<echo message="Missing message labels in Messages.properties compare to ${file2}"/>
+	<antcall target="compareProperties">
+		<param name="file2" value="resources/lang/Messages.properties"/>
+		<param name="file1" value="${file2}" />
+	</antcall>
+</target>
+		
+<target name="compareProperties" description="reports missing entries in one message bundle">
+    <loadproperties srcFile="${file1}" prefix="prefixfile1"/>
+    <loadproperties srcFile="${file2}" prefix="prefixfile2"/>
+
+    <propertyselector property="file1.list" delimiter="," match="prefixfile1\.(.+)" select="\1"/>
+    <propertyselector property="file2.list" delimiter="," match="prefixfile2\.(.+)" select="\1"/>
+	
+    <for list="${file1.list}" param="file1.property">
+        <sequential>
+            <if>
+                <not>
+                    <matches pattern=",@{file1.property}," string=",${file2.list}," />
+                </not>
+                <then>
+                    <property name="some_missing" value="true"/>
+                	<antcall target="reportMissingProperty">
+                		<param name="textLabel" value="@{file1.property}"/>
+                		<param name="prefixedPropertyName" value="prefixfile1.@{file1.property}" />
+                	</antcall>
+                </then>
+            </if>
+        </sequential>
+    </for>
+    <if>
+        <not>
+            <isset property="some_missing"/>
+        </not>
+        <then>
+        	<echo>No labels missing :-)</echo>
+        </then>
+    </if>
+</target>
+
+<target name="reportMissingProperty" description="double dereference 'prefixedPropertyName' and report missing language property">
+	<propertycopy name="textValue" from="${prefixedPropertyName}"/>
+	<!-- output the property name (message label) and value (English text) -->
+    <echo message="${textLabel}=${textValue}"/>
+</target>
+
+</project>

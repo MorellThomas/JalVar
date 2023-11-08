@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.datamodel.AlignedCodonFrameTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:13:43" hostname="wer3eng" time="0.003">
+  <properties/>
+  <testcase name="testAddMap" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testCouldReplaceSequence" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testFindAlignedSequence" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testGetCoveringCodonMapping" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testGetCoveringMapping" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testGetMappedCodons" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testGetMappedCodons_dnaVariants" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testGetMappedCodons_forSubSequences" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testGetMappedRegion" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testGetMappedRegion_eitherWay" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testIsRealisableWith" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testMarkMappedRegion" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <testcase name="testRealiseWith" classname="jalview.datamodel.AlignedCodonFrameTest" time="0.0"/>
+  <system-out><![CDATA[Realised mapped sequence Seq1
+Realised mapped sequence Seq1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

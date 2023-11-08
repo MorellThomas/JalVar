@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SwingJS test Jalview</title>
+<meta charset="utf-8" />
+<script src="swingjs/swingjs2.js"></script>
+<script src="swingjs/JalviewApplet.js"></script>
+<script>
+if (!self.SwingJS)alert('swingjs2.js was not found. It needs to be in swingjs folder in the same directory as ' + document.location.href)
+JalviewInfo = {
+	code: null,
+	main: "jalview.bin.Jalview",
+	core: "NONE",
+	//core:"_jalview",
+	resourcePath: "examples",
+	readyFunction: null,
+	serverURL: 'https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php',
+	j2sPath: 'swingjs/j2s',
+	console:'sysout',
+	startButton:'Start Jalview',
+	hideDesktop:true,
+	embedInternalFrames:false,
+	idPrefix:'%ID%',
+	allowjavascript: true
+}
+</script>
+</head>
+<body>
+<!-- content template start
+JalviewApplet.js will add divs such as these:
+<div id="jalview0-desktop-div" style="width:0px;display:none"></div>
+<div id="jalview0-alignment-div" style="width:0px;display:none"></div>
+ -->
+<p align="left">
+<h2>JalviewJS Button Examples</h2>
+Try out JalviewJS by pressing one of the buttons below. 
+<a target="_blank" href="http://www.jalview.org/examples/applets.html">Original Java</a> (requires SeaMonkey browser)
+</p>
+<p>&nbsp;</p><div align="center">
+  <p align="center">
+    <h2>Ferredoxins, chloroplast precursor related UniRef50
+      cluster</h2>
+    <br /> (15 sequences x 150 residues)
+  </p>
+  <table width="90%">
+    <tr>
+      <td width="10%" valign="center">
+      <applet
+   	code="jalview.bin.JalviewLite" width="140" height="35"
+   	archive="jalviewApplet.jar,JmolApplet-14.6.4_2016.10.26.jar,java-json.jar,json_simple-1.1.jar">  
+	<param name="permissions" value="sandbox"/>
+	<param name="file" value="uniref50.fa"/>
+	<param name="treeFile" value="ferredoxin.nw"/>
+	<param name="userDefinedColour" value="C=yellow; R,K,H=FF5555; D,E=5555FF"/>
+	<param name="sortByTree" value="True"/>
+	<param name="showSequenceLogo" value="true"/>
+	<param name="showGroupConsensus" value="true"/>
+	<param name="showFullId" value="false"/>
+   	<param name="linkLabel_1" value="Uniprot"/>
+   	<param name="linkUrl_1" value="http://www.uniprot.org/uniprot/$SEQUENCE_ID$"/>
+   	<param name="linkLabel_2" value="EMBL-EBI Search"/>
+   	<param name="linkUrl_2" value="http://www.ebi.ac.uk/ebisearch/search.ebi?db=allebi&query=$SEQUENCE_ID$"/>
+   	<param name="APPLICATION_URL" value="http://www.jalview.org/services/launchApp"/>
+     </applet>
+</td>
+      <td valign="center">User Defined Colours, loads an associated
+	Newick format tree file which is used to sort the alignment, and
+	group consensus and sequence logos are shown below the alignment.</td>
+    </tr>
+    <tr>
+      <td width="10%" valign="center"><applet
+   code="jalview.bin.JalviewLite" width="140" height="35"
+   archive="jalviewApplet.jar,JmolApplet-14.6.4_2016.10.26.jar,java-json.jar,json_simple-1.1.jar">
+<param name="permissions" value="sandbox"/>
+<param name="file" value="uniref50.fa"/>
+<param name="features" value="exampleFeatures.txt"/>
+<param name="showFullId" value="false"/>
+<param name="windowHeight" value="500"/>
+<param name="windowWidth" value="650"/>
+<param name="showFeatureSettings" value="true"/>
+<param name="wrap" value="true"/>
+<param name="showAnnotation" value="false"/>
+   <param name="linkLabel_1" value="Uniprot"/>
+   <param name="linkUrl_1"
+     value="http://www.uniprot.org/uniprot/$SEQUENCE_ID$"/>
+   <param name="linkLabel_2" value="EMBL-EBI Search"/>
+   <param name="linkUrl_2"
+     value="http://www.ebi.ac.uk/ebisearch/search.ebi?db=allebi&query=$SEQUENCE_ID$"/>
+   <param name="APPLICATION_URL"
+     value="http://www.jalview.org/services/launchApp"/>
+</applet>
+</td>
+      <td valign="center">Displays a features file on the alignment</td>
+    </tr>
+    <tr>
+      <td width="10%" valign="center"><applet
+   code="jalview.bin.JalviewLite" width="140" height="35"
+   archive="jalviewApplet.jar,JmolApplet-14.6.4_2016.10.26.jar,java-json.jar,json_simple-1.1.jar">
+<param name="permissions" value="sandbox"/>
+<param name="file" value="uniref50.fa"/>
+<param name="showFullId" value="false"/>
+<param name="windowHeight" value="500"/>
+<param name="windowWidth" value="650"/>
+<param name="wrap" value="true"/>
+<param name="debug" value="true"/>
+<param name="showAnnotation" value="false"/>
+<param name="defaultColour" value="Strand Propensity"/>
+<param name="PDBfile" value="1gaq.txt FER1_MAIZE"/>
+   <param name="linkLabel_1" value="Uniprot"/>
+   <param name="linkUrl_1"
+     value="http://www.uniprot.org/uniprot/$SEQUENCE_ID$"/>
+   <param name="linkLabel_2" value="EMBL-EBI Search"/>
+   <param name="linkUrl_2"
+     value="http://www.ebi.ac.uk/ebisearch/search.ebi?db=allebi&query=$SEQUENCE_ID$"/>
+   <param name="APPLICATION_URL"
+     value="http://www.jalview.org/services/launchApp"/>
+</applet>
+</td>
+      <td valign="center">Associates PDB file 1GAQ with sequence
+	FER1_MAIZE</td>
+    </tr>
+    <tr>
+      <td width="10%" valign="center"><applet
+   code="jalview.bin.JalviewLite" width="140" height="35"
+   archive="jalviewApplet.jar,JmolApplet-14.6.4_2016.10.26.jar,java-json.jar,json_simple-1.1.jar">
+<param name="permissions" value="sandbox"/>
+<param name="file" value="jpred_msa.fasta"/>
+<param name="jnetfile" value="jpred_msa.seq.concise"/>
+<param name="showFullId" value="false"/>
+<param name="windowHeight" value="515"/>
+<param name="windowWidth" value="650"/>
+<param name="showAnnotation" value="true"/>
+<param name="defaultColour" value="Clustal"/>
+   <param name="linkLabel_1" value="Uniprot"/>
+   <param name="linkUrl_1"
+     value="http://www.uniprot.org/uniprot/$SEQUENCE_ID$"/>
+   <param name="linkLabel_2" value="EMBL-EBI Search"/>
+   <param name="linkUrl_2"
+     value="http://www.ebi.ac.uk/ebisearch/search.ebi?db=allebi&query=$SEQUENCE_ID$"/>
+   <param name="APPLICATION_URL"
+     value="http://www.jalview.org/services/launchApp"/>
+</applet>
+						       </td>
+      <td valign="middle">Displays a Multiple Sequence Alignment
+	Based JPred Prediction for a Sequence</td>
+    </tr>
+  </table>
+  <p>
+    <h2>RF00031 RFAM Alignment with per sequence secondary
+      structure</h2>
+  </p>
+  <table width="90%">
+    <tr>
+      <td width="10%" valign="center"><applet
+   code="jalview.bin.JalviewLite" width="140" height="35"
+   archive="jalviewApplet.jar,JmolApplet-14.6.4_2016.10.26.jar,java-json.jar,json_simple-1.1.jar">
+<param name="permissions" value="sandbox"/>
+<param name="file" value="RF00031_folded.stk"/>
+<param name="showFullId" value="false"/>
+<param name="windowHeight" value="515"/>
+<param name="windowWidth" value="650"/>
+<param name="showAnnotation" value="true"/>
+<param name="defaultColour" value="Purine/Pyrimidine"/>
+   <param name="APPLICATION_URL"
+     value="http://www.jalview.org/services/launchApp"/>
+</applet>
+</td>
+      <td valign="center">Displays an RFAM RNA fold family with
+	secondary structure annotation</td>
+    </tr>
+  </table>
+  <p>
+    <h2>Linked Protein and cDNA alignments for a family of Steroid Receptors</h2>
+  </p>
+  <table width="90%">
+    <tr>
+      <td width="10%" valign="center">
+<applet
+   code="jalview.bin.JalviewLite" width="140" height="35"
+   archive="jalviewApplet.jar,JmolApplet-14.6.4_2016.10.26.jar,java-json.jar,json_simple-1.1.jar">
+<param name="permissions" value="sandbox"/>
+<param name="file2" value="estrogenReceptorCdna_frag.fa"/>
+<param name="file" value="estrogenReceptorProtein_frag.fa"/>
+<param name="enableSplitFrame" value="true"/>
+<param name="scaleProteinAsCdna" value="true"/>
+<param name="showFullId" value="false"/>
+<param name="windowHeight" value="300"/>
+<param name="windowWidth" value="800"/>
+<param name="showAnnotation" value="true"/>
+<param name="showSequenceLogo" value="true"/>
+<param name="defaultColourNuc" value="Purine/Pyrimidine"/>
+<param name="defaultColourProt" value="Clustal"/>
+   <param name="APPLICATION_URL"
+     value="http://www.jalview.org/services/launchApp"/>
+</applet>
+</td>
+      <td valign="center">Displays a split window view showing aligned protein
+        and a reconstructed cDNA alignment.<br />Proteins were aligned with <a
+        href="http://www.drive5.com/muscle">Muscle</a> (version 3.8.31,
+        via the Jalview Desktop).<br />Data retrieved from Uniprot and
+        ENA, after Thornton, Need and Crews, <a
+        href="http://dx.doi.org/10.1126/science.1086185">Science 19
+          September 2003: 301 (5640), 1714-1717</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="sysout" style="width:500px;height:300px;background:yellow;overflow:auto"></div>
+
+</body>
+</html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+

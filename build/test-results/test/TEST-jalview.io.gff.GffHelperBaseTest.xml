@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.io.gff.GffHelperBaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:07" hostname="wer3eng" time="0.002">
+  <properties/>
+  <testcase name="testParseAttributeMap" classname="jalview.io.gff.GffHelperBaseTest" time="0.001"/>
+  <testcase name="testParseNameValuePairs" classname="jalview.io.gff.GffHelperBaseTest" time="0.0"/>
+  <testcase name="testTrimMapping" classname="jalview.io.gff.GffHelperBaseTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Invalid GFF attribute format: =B=Y
+Invalid GFF attribute format: A,B=C
+Invalid GFF attribute format: A=B=C
+Invalid GFF attribute format: A
+Invalid GFF attribute format: A=
+Invalid GFF attribute format: A==C
+Invalid GFF attribute format: =A
+Invalid GFF attribute format: =
+Invalid GFF attribute format: ,
+Invalid GFF attribute format:  
+Invalid GFF attribute format: 
+Invalid GFF attribute format: A=B, =C
+Truncating mapping from [1, 13] to [1, 12]
+Truncating mapping to [20, 33] to [20, 31]
+Truncating mapping from [14, 1] to [14, 3]
+Truncating mapping to [31, 10] to [31, 20]
+Truncating mapping from [1, 20] to [1, 18]
+Truncating mapping from [20, 1] to [20, 3]
+Truncating mapping from [20, 1] to [20, 3]
+Truncating mapping to [1, 20] to [1, 18]
+Truncating mapping to [20, 1] to [20, 3]
+Truncating mapping to [20, 1] to [20, 3]
+Truncating mapping from [4, 10] to [4, 9]
+]]></system-err>
+</testsuite>

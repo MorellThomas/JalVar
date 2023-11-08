@@ -1,0 +1,11 @@
+# see https://github.com/seeq12/eclipse-import-projects-plugin
+# see https://github.com/java2script/java2script
+
+for x in \
+https://github.com/seeq12/eclipse-import-projects-plugin/raw/master/jar/com.seeq.eclipse.importprojects_1.4.0.jar \
+https://github.com/BobHanson/java2script/raw/master/sources/net.sf.j2s.core/dist/swingjs/SwingJS-site.zip \
+https://github.com/BobHanson/java2script/raw/master/sources/net.sf.j2s.core/dist/swingjs/net.sf.j2s.core.jar
+do
+  wget "$x"
+done
+

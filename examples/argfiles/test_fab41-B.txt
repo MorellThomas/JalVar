@@ -1,0 +1,4 @@
+--open[B]=./examples/uniref50.fa
+--colour[B]=clustal
+--image[B]=outputB.html
+--close[B]

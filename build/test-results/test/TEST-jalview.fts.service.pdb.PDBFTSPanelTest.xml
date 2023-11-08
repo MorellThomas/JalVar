@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.fts.service.pdb.PDBFTSPanelTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:42" hostname="wer3eng" time="0.09">
+  <properties/>
+  <testcase name="populateCmbSearchTargetOptionsTest" classname="jalview.fts.service.pdb.PDBFTSPanelTest" time="0.087"/>
+  <testcase name="testDecodeSearchTerm" classname="jalview.fts.service.pdb.PDBFTSPanelTest" time="0.001"/>
+  <testcase name="testgetPDBIdwithSpecifiedChain" classname="jalview.fts.service.pdb.PDBFTSPanelTest" time="0.0"/>
+  <system-out><![CDATA[1 >>>>>>>>>>> 1xyz OR text:2xyz OR text:3xyz
+1 >>>>>>>>>>> 1xyz:A
+2 >>>>>>>>>>> 2xyz
+3 >>>>>>>>>>> 2xyz:A
+]]></system-out>
+  <system-err><![CDATA[Jul 02, 2023 10:11:42 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+]]></system-err>
+</testsuite>

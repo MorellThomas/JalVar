@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.datamodel.SequenceTest" tests="46" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:10" hostname="wer3eng" time="0.016">
+  <properties/>
+  <testcase name="testAddAlignmentAnnotation" classname="jalview.datamodel.SequenceTest" time="0.001"/>
+  <testcase name="testAddDBRef" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testAddPDBId" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testAddSequenceFeatures" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testCheckValidRange" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testCopyConstructor_noDataset" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testCopyConstructor_withDataset" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testCreateDatasetSequence" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testDeleteChars" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testDeleteChars_withDbRefsAndFeatures" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testDeleteChars_withGaps" classname="jalview.datamodel.SequenceTest" time="0.001"/>
+  <testcase name="testDeriveSequence_existingDataset" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testDeriveSequence_noDatasetGapped" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testDeriveSequence_noDatasetUngapped" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testFindFeatures" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testFindIndex" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testFindIndex_withCursor" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testFindPosition" classname="jalview.datamodel.SequenceTest" time="0.001"/>
+  <testcase name="testFindPositionMap" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testFindPosition_withCursor" classname="jalview.datamodel.SequenceTest" time="0.001"/>
+  <testcase name="testFindPosition_withCursorAndEdits" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testFindPositions" classname="jalview.datamodel.SequenceTest" time="0.001"/>
+  <testcase name="testGapBitset" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGapMap" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGetAlignmentAnnotations_forCalcIdAndLabel" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGetAlignmentAnnotations_forCalcIdLabelAndDescription" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGetAnnotation" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGetAnnotation_forLabel" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGetCharAt" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGetPrimaryDBRefs_nucleotide" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGetPrimaryDBRefs_peptide" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGetSequence" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGetSequenceFeatures" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGetStartGetEnd" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testGetSubsequence" classname="jalview.datamodel.SequenceTest" time="0.001"/>
+  <testcase name="testInsertCharAt" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testInsertGapsAndGapmaps" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testIsProtein" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testIsProteinWithXorNAmbiguityCodes" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testLocateVisibleStartofSequence" classname="jalview.datamodel.SequenceTest" time="0.001"/>
+  <testcase name="testReplace" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testSetDatasetSequence_cascading" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testSetDatasetSequence_toSelf" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testSetName" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testTransferAnnotation" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <testcase name="testUpdatePDBIds" classname="jalview.datamodel.SequenceTest" time="0.0"/>
+  <system-out><![CDATA[>>>>>> 2
+>SEQ1/1-50
+PTEIICYRTWRAPNNPMRWNLIDVIILWTGQRPNKGNMIPESDFHI-WDWT
+>SEQ2/1-50
+PTEIKCYRTWEAPNNPMRWNLIDVIILWTGQRPNKENMIPESDFAI-WDWT
+>SEQ3/1-50
+PTEIICYRTWRNPNNPMRWNLIRVIILWTGMRPNKGNMIPESDFHI-WDWT
+>SEQ4/1-50
+PTEIICYRTWRAPNNPMRWNLIDVIILWTGQRSNKGNIIPESDFHI-WDWT
+>SEQ5/1-50
+PTEMICYRTWRAPNNPMRWNLIDVIILWTGQRPNKGNMIPASDFHI-WDWT
+>SEQ6/1-50
+PTEIICYRTNRAPNNPMRWNLIDVIILWTGQRPNKGNMIPESDFHR-WDWT
+>SEQ7/1-50
+PTEIICYRTWRAPNNPMRWNLIDVIILWHGQRPNKGNMIPESDFHI-WDWT
+>SEQ8/1-50
+PTEIICYFTWRAPNNPMRWNLIDVIILWTTQRPNKGNMIPESDFHI-WDAT
+>SEQ9/1-50
+PTEIVCYRTWRAPNNPMRWNIIDVIILWTGQRPNKGNMNPESDFHI-WDWV
+>SEQ10/1-50
+PTEIICYRTWRAPNNPMRWNLIDVIILWTGQRPNKGNMNPESDFHI-WDWT
+>SEQ11/1-50
+PTEAICYRTWRAPNNPMRWNLIDVIILWTQQRPNKGNMIPESDMHI-WDWT
+>SEQ12/1-50
+PTEIICYRTWRAPNNPMRWNLIDVIILWTGQRPNKGNMIPESDFHI-WDWT
+>SEQ13/1-50
+PTEIICYRTWRAPNNPMRWNLIDVIILWTGQRPNKGNMIPESDFHI-WDWT
+>SEQ14/1-50
+PTEIICYRTWRAPNQPMRWNLIDVIILWTGQRPNKGNMPPESDFHI-WDWT
+>SEQ15/1-50
+PTEIICYRTWRAPNNPMRWNLIDVIILWTGQRPNKGNMICESAFHI-WDWT
+>SEQ16/1-50
+PTEICCYRTWRAPNNPMRWNLIDVIILWTGQRPNKGNMIPESDFHI-WDWT
+>SEQ17/1-50
+PTEIICYRTWRAPNNPMTWNLIDVIILWTGQRPNKGNMIPESDFHI-WDWT
+>SEQ18/1-50
+PTEIICYRTIRAPNNPMRWNLIDVIILWTGQRPNKGWMIPESDFHI-WDWN
+>SEQ19/1-50
+PFEIICYRTWRAPNNPMRWNLIDVIILWTGQRPNCGNMIPESDFHI-WWWE
+>SEQ20/1-50
+TTEIICYRTWRAPNNPMRWNLIDVIILWTGQNPNKGNMIPESDFHI-WLWT
+
+]]></system-out>
+  <system-err><![CDATA[SequenceFeature type may not be null: 4 8 null desc
+POSSIBLE IMPLEMENTATION ERROR: null sequence name passed to constructor.
+]]></system-err>
+</testsuite>

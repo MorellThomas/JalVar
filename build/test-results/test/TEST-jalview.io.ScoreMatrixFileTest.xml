@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.io.ScoreMatrixFileTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:56" hostname="wer3eng" time="0.044">
+  <properties/>
+  <testcase name="testParseMatrix_aaIndexBlosum80" classname="jalview.io.ScoreMatrixFileTest" time="0.001"/>
+  <testcase name="testParseMatrix_aaindexFormat" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_aaindex_extraDataLines" classname="jalview.io.ScoreMatrixFileTest" time="0.001"/>
+  <testcase name="testParseMatrix_aaindex_mMissing" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_aaindex_rowColMismatch" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_aaindex_tooFewColumns" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_aaindex_tooManyRows" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_headerMissing" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_ncbiBadDelimiter" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_ncbiBadFloat" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_ncbiBadGuideCharacter" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_ncbiFormat" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_ncbiHeaderRepeated" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_ncbiMixedDelimiters" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_ncbiNameMissing" classname="jalview.io.ScoreMatrixFileTest" time="0.003"/>
+  <testcase name="testParseMatrix_ncbiNotEnoughColumns" classname="jalview.io.ScoreMatrixFileTest" time="0.001"/>
+  <testcase name="testParseMatrix_ncbiNotEnoughRows" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_ncbiTooManyColumns" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParseMatrix_ncbiTooManyRows" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <testcase name="testParse_ncbiFormat" classname="jalview.io.ScoreMatrixFileTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Unexpected character ]]>&#x80;<![CDATA[ in getPairwiseScore
+]]></system-err>
+</testsuite>

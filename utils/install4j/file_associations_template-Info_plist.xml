@@ -1,0 +1,21 @@
+<dict>
+<key>CFBundleTypeExtensions</key>
+<array>
+$$<string>EXTENSIONS</string>
+$$</array>
+<key>CFBundleTypeName</key>
+<string>$$NAME$$ File</string>
+<key>CFBundleTypeIconFile</key>
+<string>$$ICONFILE$$.icns</string>
+<key>CFBundleTypeRole</key>
+<string>$$ROLE$$</string>
+<key>LSHandlerRank</key>
+<string>$$RANK$$</string>
+<key>CFBundleTypeMIMETypes</key>
+<array>
+<string>$$MIMETYPE$$</string>
+</array>
+<key>LSIsAppleDefaultForType</key>
+<$$PRIMARY$$/>
+</dict>
+

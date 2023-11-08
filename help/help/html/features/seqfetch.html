@@ -1,0 +1,111 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Sequence Fetcher</title>
+</head>
+<body>
+  <p>
+    <strong>Sequence Fetcher</strong>
+  </p>
+	<p>Jalview can retrieve sequences from a range of sequence, 3D
+		structure, genomic and domain family databases provided by EMBL-EBI.</p>
+	<p>The Sequence Fetcher can be opened via the &quot;File&quot;
+    menu on the main desktop in order to retrieve sequences as a new
+    alignment, or opened via the &quot;File&quot; menu of an existing
+    alignment to import additional sequences. There may be a short delay
+    when the sequence fetcher is first opened, whilst Jalview contacts each database's web API.</p>
+  <p>
+    Every time a new fetcher is opened, you will need to <strong>select
+      the database you want to retrieve sequences</strong> from the database
+    chooser.
+  </p>
+  <img src="selectfetchdb.gif" align="left"
+    alt="Database selection dialog for fetching sequences (introduced in Jalview 2.8)">
+  <p>
+    The databases are shown as a tree, and ordered alphabetically;
+    tooltips are shown if you mouse over some sources, explaining what
+    the database will retrieve. You can select one by using the up/down
+    arrow keys and hitting return, or by double clicking with the mouse.
+  </p>
+  <p>Once you have selected a sequence database, its fetcher dialog
+    will open. Jalview provides two types of dialog:</p>
+  <ol>
+    <li><strong>The Free-text Search Interface</strong> <br />Free-text
+      search clients are provided for PDB (Since 2.9), and UniProt
+      (Since 2.10). They provide access to each database's own query
+      system, enabling you to retrieve data by accession, free text
+      description, or any other type of supported field. For full
+      details, see each client's help page:
+      <ul>
+        <li><a href="pdbsequencefetcher.html">PDB Sequence
+            Fetcher</a></li>
+        <li><a href="uniprotsequencefetcher.html">UniProt
+            Sequence Fetcher</a></li>
+      </ul></li>
+    <li><strong>Accession based sequence retrieval</strong> <br />
+
+      <img src="seqfetcher.gif" align="center"
+      alt="The Jalview Sequence Fetcher Dialog Box"><br /> To
+      retrieve sequences, simply <strong>enter one or more
+        accession ids</strong> (as a semi-colon separated list), or press the
+      &quot;Example&quot; button to paste the example accession for the
+      currently selected database into the retrieval box. Finally, press
+      &quot;OK&quot; to initiate the retrieval.
+      <br />
+      For the PDB and UniProt sequence fetchers, choose the "Retrieve IDs" tab
+      to search for accession ids.</li>
+  </ol>
+
+  <p>If you use the Sequence Fetcher, please remember to cite the
+    corresponding services (linked to below):</p>
+  <ul>
+    <li>Ensembl - <a
+      href="https://github.com/Ensembl/ensembl-rest/wiki#citing">The
+        Ensembl REST API</a></li>
+    <li>EMBL/EMBLCDS - Provided by the <a
+      href="https://www.ebi.ac.uk/ena/browser/api/#/ENA_Browser_Data_API/getFlatFileUsingGET">European
+        Nucleotide Archive's ENA Data API</a><br />
+    <em>Note: Versions of Jalview prior to 2.11.1.1 employed the
+        XML endpoint of the ENA browser, which was retired in August
+        2020.</em></li>
+    <li>Uniprot - Free Text Search and Retrieval via the <a
+      href="https://www.uniprot.org/help/api">Uniprot REST API</a></li>
+    <li>PDB - Free Text Search via the <a
+      href="https://www.ebi.ac.uk/pdbe/api/doc/search.html">PDBe
+        REST API</a> and retrieval via <a
+      href="https://www.ebi.ac.uk/Tools/dbfetch/">WSDbFetch</a><br />
+      Pillai S., Silventoinen V., Kallio K., Senger M., Sobhany S., Tate
+      J., Velankar S., Golovin A., Henrick K., Rice P., Stoehr P., Lopez
+      R. <br> SOAP-based services provided by the European
+      Bioinformatics Institute.<br> Nucleic Acids Res.
+      33(1):W25-W28 (2005) <br> <br>
+    </li>
+    <li>
+      <a href="https://docs.rfam.org/en/latest/citing-rfam.html#rfam-references">RFAM - a database of RNA families</a>
+    </li>
+    <li>
+      <a href="https://pfam-docs.readthedocs.io/en/latest/citing-pfam.html">PFAM - a database of protein families</a><br/>
+      <a href="https://academic.oup.com/nar/article/49/D1/D344/5958491">Data is provided by the Interpro Web API</a>
+    </li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.gui.AlignFrameTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:55" hostname="wer3eng" time="0.816">
+  <properties/>
+  <testcase name="testChangeColour_background_groupsAndThresholds" classname="jalview.gui.AlignFrameTest" time="0.049"/>
+  <testcase name="testColourThresholdActions" classname="jalview.gui.AlignFrameTest" time="0.144"/>
+  <testcase name="testHideFeatureColumns" classname="jalview.gui.AlignFrameTest" time="0.019"/>
+  <testcase name="testNewView_colourThresholds" classname="jalview.gui.AlignFrameTest" time="0.247"/>
+  <testcase name="testNewView_dsRefPreserved" classname="jalview.gui.AlignFrameTest" time="0.039"/>
+  <system-out><![CDATA[registry.getSupportedServices: [MSAprobsWS, DisemblWS, TcoffeeWS, RNAalifoldWS, MafftWS, IUPredWS, GlobPlotWS, ProbconsWS, AAConWS, JronnWS, ClustalWS, MuscleWS, ClustalOWS, GLprobsWS]
+Attempting to connect with MafftWS...
+Attempting to connect with MuscleWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@6828506f
+Attempting to connect with ClustalWS...
+]]></system-out>
+  <system-err><![CDATA[Jul 02, 2023 10:11:55 AM compbio.ws.client.Jws2Client connectToRegistry
+INFO: Connected to RegistryWS successfully!
+Jul 02, 2023 10:11:56 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 873416483
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 308849812
+Warning - overwriting a sequenceSetId for a viewport!
+]]></system-err>
+</testsuite>

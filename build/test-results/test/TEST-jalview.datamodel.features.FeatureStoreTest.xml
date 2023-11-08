@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.datamodel.features.FeatureStoreTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:31" hostname="wer3eng" time="0.005">
+  <properties/>
+  <testcase name="testAddFeature" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testContains" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testDelete" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testDelete_readd" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testFindFeatures_contactFeatures" classname="jalview.datamodel.features.FeatureStoreTest" time="0.001"/>
+  <testcase name="testFindFeatures_mixed" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testFindFeatures_nested" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testFindFeatures_nonNested" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testGetFeatureGroups" classname="jalview.datamodel.features.FeatureStoreTest" time="0.001"/>
+  <testcase name="testGetFeatureLength" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testGetFeaturesForGroup" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testGetMinimumScore_getMaximumScore" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testGetPositionalFeatures" classname="jalview.datamodel.features.FeatureStoreTest" time="0.001"/>
+  <testcase name="testGetTotalFeatureLength" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testIsEmpty" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testListContains" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testMax" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testMin" classname="jalview.datamodel.features.FeatureStoreTest" time="0.0"/>
+  <testcase name="testShiftFeatures" classname="jalview.datamodel.features.FeatureStoreTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

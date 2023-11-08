@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.io.TCoffeeScoreFileTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:00" hostname="wer3eng" time="0.012">
+  <properties/>
+  <testcase name="testGetAsArray" classname="jalview.io.TCoffeeScoreFileTest" time="0.004"/>
+  <testcase name="testGetAsList" classname="jalview.io.TCoffeeScoreFileTest" time="0.001"/>
+  <testcase name="testHeightAndWidth" classname="jalview.io.TCoffeeScoreFileTest" time="0.001"/>
+  <testcase name="testHeightAndWidthWithResidueNumbers" classname="jalview.io.TCoffeeScoreFileTest" time="0.0"/>
+  <testcase name="testParse" classname="jalview.io.TCoffeeScoreFileTest" time="0.0"/>
+  <testcase name="testReadBlock" classname="jalview.io.TCoffeeScoreFileTest" time="0.0"/>
+  <testcase name="testReadHeader" classname="jalview.io.TCoffeeScoreFileTest" time="0.001"/>
+  <testcase name="testWrongFile" classname="jalview.io.TCoffeeScoreFileTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[DEBUG - Constructing news reader.
+Invalid or corrupt date in property 'JALVIEW_NEWS_RSS_LASTMODIFIED' : value was 'Apr 23, 2014 2:53:26 PM'
+DEBUG - Aborting 1 JABAWS discovery threads.
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@66aedcdd, jalview.ws.jws2.jabaws2.Jws2Instance@15763204, jalview.ws.jws2.jabaws2.Jws2Instance@338ca3a9, jalview.ws.jws2.jabaws2.Jws2Instance@5adb7570]
+DEBUG - Filechooser init thread finished.
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@66aedcdd, jalview.ws.jws2.jabaws2.Jws2Instance@15763204, jalview.ws.jws2.jabaws2.Jws2Instance@338ca3a9, jalview.ws.jws2.jabaws2.Jws2Instance@5adb7570]
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+]]></system-err>
+</testsuite>

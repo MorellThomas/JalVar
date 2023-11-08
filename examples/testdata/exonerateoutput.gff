@@ -1,0 +1,20 @@
+# (exonerate delimits GFF with [START|END] OF GFF DUMP)
+# --- START OF GFF DUMP ---
+#
+#
+##gff-version 2
+##source-version exonerate:protein2genome:local 2.2.0
+##date 2015-01-16
+##type DNA
+#
+#
+# seqname source feature start end score strand frame attributes
+#
+contig_1146	exonerate:protein2genome:local	gene	8534	11269	3652	-	.	gene_id 0 ; sequence DDB_G0269124 ; gene_orientation .
+contig_1146	exonerate:protein2genome:local	cds	8534	11269	.	-	.	
+contig_1146	exonerate:protein2genome:local	exon	8534	11269	.	-	.	insertions 3 ; deletions 6
+#TODO need to understand why GFF features is from 11269 but Align is from 11270
+contig_1146	exonerate:protein2genome:local	similarity	8534	11269	3652	-	.	alignment_id 0 ; Query DDB_G0269124 ; Align 11270 143 120 ; Align 11150 187 282 ; Align 10865 281 888 ; Align 9977 578 1068 ; Align 8909 935 375
+# and a made-up alignment to a sequence in exonerateseqs.fa
+contig_1146	exonerate:protein2genome:local	similarity	8534	11269	3652	-	.	alignment_id 0 ; Query DDB_G0280897 ; Align 11270 143 120 
+# --- END OF GFF DUMP ---

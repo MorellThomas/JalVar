@@ -1,0 +1,72 @@
+Jalview Readme
+--------------
+
+
+The source is available as a tar file and comes complete with the GNU General Public License. 
+
+To build the application you will need a J2SDK 1.7+. 
+
+An Ant build file (build.xml) is provided, you will need to install Apache Ant first. 
+Run ant to view usage which will display a list of useful build targets.
+
+Jalview is primarily developed with eclipse, and a .project file is provided to simplify importing the source into your own eclipse workspace. A NetBeans nbbuild.xml file is also provided for developing Jalview with NetBeans - but this is not officially supported.
+
+You may also be able to use Borland JBuilder to build Jalview. A JBuilder project file 
+(JalviewX.jpx, JalviewApplet.jpx) for both application and applet is provided, 
+but the library dependencies are almost certainly out of date. See the build.xml 
+for current dependencies.
+
+##
+
+Jalview-JS
+
+To enable transpilation of Jalview's code:
+
+1. Locate the 'dropins' directory in your eclipse installation and copy swingjs/net.sf.j2s.core.jar to it.
+  - typically it is at the top of the Eclipse installation, or on OSX under Eclipse.app/Contents/Eclipse
+  
+2. Restart Eclipse
+
+3. If all is well you should see the 'Java2Script' builder is listed as the primary builder for the Jalview project.
+  if not, this is because your properties file needs to have the standard java builder replaced with the following:
+  <name>net.sf.j2s.core.java2scriptbuilder</name>
+
+- otherwise Javascript files will now be generated in the site/swingjs/j2s directory whenever a build occurs
+
+4. Execute the 'unzip-to-site' task (if it isn't automatically run) to update the site directory with the latest versions of SwingJS, varna-js, JSmol and other dependencies required by Jalview.
+
+
+  
+
+
+##
+
+For more help, read the file doc/building.html
+
+
+##################
+
+To run application...
+[ NOTE: when using the -classpath option with the '*' wildcard, the argument must be quoted to avoid shell expansion of the wildcard,
+  ALSO, the wildcard MUST be as DIR/* and not DIR/*.jar etc or it will not be interpreted correctly ]
+
+on Windows use:
+  java -classpath "JALVIEW_HOME/lib/*;JALVIEW_HOME/jalview.jar" jalview.bin.Jalview
+and on MacOS or Linux:
+  java -classpath "JALVIEW_HOME/lib/*:JALVIEW_HOME/jalview.jar" jalview.bin.Jalview
+
+Replace JALVIEW_HOME with the full path to Jalview Installation Directory. If building from source:
+
+  java -classpath "JALVIEW_BUILD/dist/*" jalview.bin.Jalview
+
+
+##################
+
+
+If you use a proxy server add 
+
+-Dhttp.proxyServer=YOUR.SERVER -Dhttp.proxyPort=YOURPORT
+
+If the proxy server requires authentication, add
+
+-Dhttp.proxyUser=USERNAME -Dhttp.proxyPassword=PASSWORD

@@ -1,0 +1,6 @@
+--substitutions
+--new
+--append={argfiledirname}/*.fa
+--colour=gecos-flower
+--image={argfiledirname}/{basename}.png
+--close

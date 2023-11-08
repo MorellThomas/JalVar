@@ -1,0 +1,221 @@
+
+def ulToList(Element ul, int indent) {
+  def list = ""
+  ul.children().each { e ->
+    if (e.tagName().toLowerCase() == "ul") {
+      list = list.stripTrailing() + "\n"
+      list += ulToList(e, indent+1)
+    } else if (e.tagName().toLowerCase() == "li") {
+      def issues = []
+      def issuesText = ""
+      def mdItem = "  " * indent + "- "
+      e.childNodes().any {n ->
+        if (n.nodeName().equals("#comment")) {
+          mdItem += "{{<comment>}}${n.getData()}{{</comment>}} "
+          issuesText = n.getData().trim()
+          issues = n.getData().trim().split(/[,\s]+/).findAll { it.startsWith("JAL-") }
+          return true
+        }
+      }
+      def safeText = issuesText.replaceAll('"', '\"')
+      def joinedIssues = issues.join(",")
+      def issuesLink = (issues.size() > 0) ?
+        " {{< jal issue=\"${joinedIssues}\" alt=\"${safeText}\" >}}"
+        : ""
+      def addedIssues = false
+      e.childNodes().each { node ->
+        if (node.nodeName().toLowerCase() == "ul") {
+          // add issues link before sub list if it's last
+          if (node.nextSibling() == null) {
+            mdItem += "${issuesLink}"
+            addedIssues = true
+          }
+          mdItem = mdItem.stripTrailing() + "\n"
+          mdItem += ulToList(node, indent+1)
+        } else if (node.nodeName() == "#text") {
+          mdItem += node.text()
+        } else if (node.nodeName().toLowerCase() == "strong") {
+          mdItem += "**${node.text()}**"
+        } else if (node.nodeName().toLowerCase() == "em") {
+          // if (true || (node.text().length() > 50 && node.text().count(" ") > 10) || (!node.nextSibling().text().startsWith("\\s*\\n"))) {
+            mdItem += "*${node.text()}*"
+          // } else {
+          //   mdItem += "### "+node.text()
+          // }
+        } else if (node.nodeName().toLowerCase() == "br") {
+          mdItem += "<br/>\n"
+        } else if (node.nodeName().toLowerCase() == "a") {
+          mdItem += "[${node.text()}](${node.attr('href')})"
+        }
+      }
+      if (!addedIssues) {
+        mdItem += issuesLink
+      }
+      list += mdItem.stripTrailing()+"\n"
+    } else if (e.tagName().toLowerCase() == "div") {
+      e.children().each { eee ->
+        list += ulToList(eee, indent)
+      }
+    } else if (e.tagName().toLowerCase() == "strong") {
+      list += "**${e.text()}**"
+    } else if (e.tagName().toLowerCase() == "em") {
+      if (e.text().length() > 50 && e.text().count(" ") > 20) {
+        list += "*${e.text()}*"
+      } else {
+        list += "\n\n### ${e.text()}\n\n"
+      }
+    }
+  }
+  return list
+}
+
+task hugoTemplates {
+  group "website"
+  description "Create partially populated md pages for hugo website build"
+
+  def hugoTemplatesDir = file("${jalviewDir}/${hugo_templates_dir}")
+  def hugoBuildDir = "${jalviewDir}/${hugo_build_dir}"
+  def templateFiles = fileTree(dir: hugoTemplatesDir)
+
+  doFirst {
+    // specific release template for version archive
+    def summary = "${applicationName} ${JALVIEW_VERSION}"
+    def changes = ""
+    def oldDate = null
+    if (CHANNEL == "RELEASE") {
+      def releasesHtmlFile = file("${helpSourceDir}/${releases_html}")
+      //HTMLPARSE
+      def html = releasesHtmlFile.text
+      def doc = Jsoup.parse(html)
+      def table = doc.select("table").first()
+      def headings = table.select("tr").first().select("th").collect { it.text() }
+      def releaseRow = null
+      def trs = table.select("tr")
+      trs.any { tr ->
+        def tds = tr.select("td")
+        if (tds.size() == 0)
+          return false
+        def releaseTd = tds.first()
+        if (releaseTd.text().startsWith("${JALVIEW_VERSION} ")) {
+          releaseRow = tr
+          return true
+        }
+      }
+
+      if (releaseRow != null && headings != null && headings.size() == 3) {
+        def releaseTd = releaseRow.select("td").first()
+        def spaceIndex = releaseTd.text().indexOf(" ")
+        if (spaceIndex >= 0) {
+          oldDate = new Date().parse("dd/MM/yyyy", releaseTd.text().substring(spaceIndex+1))
+        }
+        def releaseCells = releaseRow.select("td")
+        if (releaseCells.size() == 3) {
+          def title1 = headings[1]
+          def title2 = headings[2]
+
+          def lastDotIndex = JALVIEW_VERSION.lastIndexOf(".")
+          if (lastDotIndex > 0) {
+            try {
+              def patchRelease = JALVIEW_VERSION.substring(lastDotIndex+1) as Integer
+              def patchReleaseString = null
+              if (patchRelease == 0) {
+                  patchReleaseString = "first minor"
+              } else if (patchRelease == 1) {
+                  patchReleaseString = "first patch"
+              } else if (patchRelease == 2) {
+                  patchReleaseString = "second patch"
+              } else if (patchRelease == 3) {
+                  patchReleaseString = "third patch"
+              } else if (patchRelease == 4) {
+                  patchReleaseString = "fourth patch"
+              } else if (patchRelease == 5) {
+                  patchReleaseString = "fifth patch"
+              } else if (patchRelease == 6) {
+                  patchReleaseString = "sixth patch"
+              } else if (patchRelease == 7) {
+                  patchReleaseString = "seventh patch"
+              } else if (patchRelease > 13 && (patchRelease % 10 == 1)) {
+                  patchReleaseString += "st"
+              } else if (patchRelease > 13 && (patchRelease % 10 == 2)) {
+                  patchReleaseString += "nd"
+              } else if (patchRelease > 13 && (patchRelease % 10 == 3)) {
+                  patchReleaseString += "rd"
+              } else if (patchRelease != null) {
+                  patchReleaseString += "th"
+              }
+              summary += (patchReleaseString != null) ? " is the ${patchReleaseString} release in the ${JALVIEW_VERSION.substring(0,lastDotIndex)} series." : ""
+            } catch(Exception e) {
+              summary = ""
+            }
+          }
+
+          [1,2].each { col ->
+            def colChanges = ""
+            if (headings[col] != null && headings[col].size() > 0) {
+              releaseCells[col].children().each { e ->
+                if (e.tagName().toLowerCase() == "ul" || e.tagName().toLowerCase() == "div") {
+                  if (colChanges != "") {
+                    colChanges = colChanges.stripTrailing() + "\n"
+                  }
+                  colChanges += ulToList(e, 0)
+                } else if (e.tagName().toLowerCase() == "em") {
+                  colChanges += "\n\n### ${e.text()}\n\n"
+                }
+              }
+            }
+            if (colChanges != "") {
+              def className = headings[col].replaceAll(" ","_").toLowerCase().replaceAll("[^_a-z]","")
+              changes += "<div class=\"${className}\">\n\n## ${headings[col]}\n\n${colChanges}\n</div>\n\n"
+            }
+          }
+
+          if (changes != "") {
+            changes = "<div class=\"release_notes\">\n\n${changes}\n\n</div>"
+          }
+        }
+      }
+    }
+
+    templateFiles.each{ templateFile ->
+      def newFileName = string(hugoTemplateSubstitutions(templateFile.getName()))
+      def relPath = hugoTemplatesDir.toPath().relativize(templateFile.toPath()).getParent()
+      def newRelPathName = hugoTemplateSubstitutions( relPath.toString() )
+
+      def outPathName = string("${hugoBuildDir}/$newRelPathName")
+      
+      copy {
+        from templateFile
+        rename(templateFile.getName(), newFileName)
+        into outPathName
+      }
+
+      def newFile = file("${outPathName}/${newFileName}".toString())
+      def content = newFile.text
+      // summary in version archive release pages only appears from 2.10.2b2 onwards
+      if (oldDate.format("yyyy") as Integer >= 2019 || JALVIEW_VERSION.startsWith("2.10")) {
+        def summaryFile = file("${jalviewDir}/${whatsnew_dir}/whatsnew-${JALVIEW_VERSION_UNDERSCORES}.md")
+        if (summaryFile.exists()) {
+          summary = summaryFile.text
+        } else {
+          summary = ""
+        }
+        content = content.replaceAll("__SUMMARY__", summary)
+      } else {
+        content = content.replaceAll("__SUMMARY__", "")
+      }
+      content = content.replaceAll("__CHANGES__", changes)
+      if (oldDate != null) {
+        if (oldDate[java.util.Calendar.YEAR] < 90) {
+          oldDate[java.util.Calendar.YEAR] += 2000
+        }
+        content = content.replaceAll("__DATE__", oldDate.format("yyyy-MM-dd"))
+      }
+      newFile.text = hugoTemplateSubstitutions(content)
+    }
+  }
+
+  inputs.dir(hugoTemplatesDir)
+  inputs.property("JALVIEW_VERSION", { JALVIEW_VERSION })
+  inputs.property("CHANNEL", { CHANNEL })
+}
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.commands.EditCommandTest" tests="25" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:13:43" hostname="wer3eng" time="0.04">
+  <properties/>
+  <testcase name="testAddEdit_groupInsertGaps" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testAddEdit_multipleDeleteGap" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testAddEdit_multipleInsertGap" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testAddEdit_removeAllGaps" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testAppendEdit_deleteGap" classname="jalview.commands.EditCommandTest" time="0.001"/>
+  <testcase name="testAppendEdit_insertGap" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testCut" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testCut_withFeatures" classname="jalview.commands.EditCommandTest" time="0.001"/>
+  <testcase name="testCut_withFeatures5prime" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testCut_withFeatures_exhaustive" classname="jalview.commands.EditCommandTest" time="0.031"/>
+  <testcase name="testPriorState_multipleInserts" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testPriorState_removeAllGaps" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testPriorState_removeGappedCols" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testPriorState_removeGapsMultipleSeqs" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testPriorState_singleDelete" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testPriorState_singleInsert" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testPriorState_singleInsertWithOffset" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testReplace" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testReplaceFirstResiduesWithGaps" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testReplace_withGaps" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testUndo_cut" classname="jalview.commands.EditCommandTest" time="0.001"/>
+  <testcase name="testUndo_deleteGap" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testUndo_insertGap" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testUndo_multipleCommands" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <testcase name="testUndo_multipleInsertGaps" classname="jalview.commands.EditCommandTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,1126 @@
+<?xml version="1.0"?>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+<project name="jalviewX" default="usage" basedir="."
+ xmlns:if="ant:if"
+    xmlns:unless="ant:unless">
+  <taskdef classpath="${clover.jar}" resource="cloverlib.xml" if:set="clover.jar"/>
+  <clover-env if:set="clover.jar"/>
+
+  <target name="help" depends="usage" />
+  <target name="usage" depends="init">
+    <echo message="~~~Jalview Ant build.xml Usage~~~~" />
+    <echo message="Targets include:" />
+    <echo message="usage - default target, displays this message" />
+    <echo message="buildindices - generates JavaHelpSearch from the help files" />
+    <echo message="build - compiles all necessary files for Application" />
+    <echo message="makedist - compiles and places all necessary jar files into directory dist" />
+    <echo message="makefulldist - signs all jar files and builds jnlp file for full distribution" />
+    <echo message="              this needs a keystore and key."/>
+    <echo message="              Add -Dtimestamp to timestamp signed jars"/>
+    <echo message="              -Djalview.keyalg and -Djalview.keydig are SHA1/SHA1withRSA"/>
+    <echo message="              See docs/building.html for more information." />
+    <echo message="compileApplet - compiles all necessary files for Applet" />
+    <echo message="makeApplet - compiles, then packages and obfuscates the Applet" />
+    <echo message="testng - run jalview's tests via testNG. Default group is '${testng-groups}'" />
+    <echo message="      you can specify particular test groups as a list via -Dtestng-groups=" />
+    <echo message="See docs/building.html and the comments in build file for other targets." />
+    <echo message="note: compile and makeApplet optionally compile/obfuscate applet against a different Java version by specifying -Djava118.home=PathtoJDK/lib which is the lib directory in the JDK install that contains rt.jar " />
+    <echo message="Useful -D flags: -Ddonotobfuscate will prevent applet obfuscation" />
+    <echo message="Useful -D flags: -Dclover.jar to specify path to openclover for testng coverage report" />
+  </target>
+
+
+  <!-- utils is a class path to additional utilities needed for
+    building docs, jars and webstart stuff -->
+  <!--
+        Userdefined build property defaults
+
+        wsdl.server list (plus namespace mapping info ???)  - also want
+                ... to make this a dynamically generatable property
+        WebStart Location
+        Build location - provide a temporary root for speed
+        jarsigner keystore and info
+        Jakarta and axis classpath ?
+        Default argument for starting Jalview (if it exists).
+
+-->
+
+  <target name="init">
+    <path id="axis.classpath">
+      <!-->
+      <fileset dir="/usr/local/axis/lib">
+        <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="/usr/local/jakarta-tomcat-5/webapps/axis/WEB-INF/lib">
+        <include name="**/*.jar"/>
+        <include name="*.jar"/>
+      </fileset> -->
+      </path>
+
+    <!-- Jalview Version String displayed by application on startup and used to check for updates -->
+    <property name="JALVIEW_VERSION" value="DEVELOPMENT" />
+
+    <property name="INSTALLATION" value="Source" />
+
+    <!-- 2.4 (VAMSAS)" -->
+    <!-- Include debugging information in javac true or false -->
+    <property name="javac.debug" value="true" />
+
+    <!-- JarSigner Key Store for Webstart Distribution -->
+    <property name="jalview.keystore" value="./keys/.keystore" />
+    <!-- Keystore Password -->
+    <property name="jalview.keystore.pass" value="alignmentisfun" />
+    <!-- Key Name -->
+    <property name="jalview.key" value="jalview" />
+    <!-- Key Password -->
+    <property name="jalview.key.pass" value="alignmentisfun" />
+    <!-- time stamp server URL -->
+    <property name="jalview.tsaurl" value="" />
+    <!-- locally valid proxy for signing with external time server -->
+    <property name="proxyPort" value="80"/>
+    <property name="proxyHost" value="sqid"/>
+    <!-- key sign/digest algorithms -->
+    <property name="jalview.keyalg" value="SHA1withRSA" description="key algorithm for signing"/>
+    <property name="jalview.keydig" value="SHA1" description="algorithm for jar digest"/>
+
+    <!-- default TestNG groups to run -->
+    <property name="testng-groups" value="Functional" />
+    <!-- default verbosity for TestNG -->
+    <property name="testng-verbosity" value="2"/>
+    <!-- Java 9 JVM args -->
+    <condition property="java9">
+      <equals arg1="${ant.java.version}" arg2="9"/>
+    </condition>
+
+    <!-- Don't change anything below here unless you know what you are doing! -->
+    <!-- Url path for WebStart in JNLP file -->
+    <property name="WebStartLocation" value="http://www.jalview.org/webstart" />
+    <!-- Webstart Image - looked for in resources/images -->
+    <property name="WebStartImage" value="JalviewLogo_big.png" />
+    <!-- J2SE version needed for webstart launch -->
+    <!-- Anne's version needs 1.7 - should rebuild VARNA to java 1.6 for release -->
+    <property name="j2sev" value="1.7+" />
+    <!-- Java Compilation settings - source and target javac version -->
+    <property name="javac.source" value="1.8" />
+    <property name="javac.target" value="1.8" />
+
+    <!-- Permissions for running Java applets and applications. -->
+    <!-- Defaults are those suitable for deploying jalview webstart www.jalview.org -->
+    <property name="application.codebase" value="*.jalview.org" />
+    <!-- and allowing the applet to be deployed from any URL -->
+    <!-- note - if you want to make sure LiveConnect works without any warnings, please rebuild and sign your applet jar with your own domain included in the codebase/allowable-codebase properties -->
+    <property name="applet.codebase" value="*.jalview.org *.dundee.ac.uk *" />
+    <property name="applet.caller-codebase" value="${applet.codebase}" />
+
+    <!-- build directory configuration -->
+    <property name="libDir" value="lib" />
+    <property name="resourceDir" value="resources" />
+    <property name="helpDir" value="help" />
+    <property name="docDir" value="doc" />
+    <property name="sourceDir" value="src" />
+    <property name="schemaDir" value="schemas" />
+    <property name="outputDir" value="classes" unless:set="clover.jar"/>
+    <property name="outputDir" value="cloverclasses" if:set="clover.jar"/>
+    <property name="packageDir" value="dist" />
+    <property name="outputJar" value="jalview.jar" />
+    <!-- Jalview Applet JMol Jar Dependency -->
+    <property name="jmolJar" value="JmolApplet-14.6.4_2016.10.26.jar" />
+    <property name="varnaJar" value="VARNAv3-93.jar" />
+    <property name="jsoup" value="jsoup-1.8.1.jar" />
+    <property name="jsonSimple" value="json_simple-1.1.jar" />
+    <property name="javaJson" value="java-json.jar" />
+    <property name="jalviewLiteJar" value="jalviewApplet.jar" />
+    <property name="reportDir" value="test-reports" />
+    <property name="testDir" value="test" />
+    <property name="testOutputDir" value="tests" />
+  	<property name="cloverOutputDir" value="clover" if:set="clover.jar" />
+    <!-- switch to indicate if we should obfuscate jalviewLite -->
+    <!-- <property name="donotobfuscate" value="true"/> -->
+    <!-- switch to exclude associations from generated jnlp files -->
+    <!-- <property name="nojnlpfileassocs" value="true"/> -->
+
+    <!-- Jalview Web Service Clients - see the comments in 'buildextclients' for details -->
+    <property name="wsdl.File" value="http://www.compbio.dundee.ac.uk/JalviewWS/services/jpred?wsdl" />
+    <property name="wsdl.Files" value="http://www.compbio.dundee.ac.uk/JalviewWS/services/vamsas?wsdlFiles" />
+    <property name="wsdl.MsaWS" value="http://www.compbio.dundee.ac.uk/JalviewWS/services/MuscleWS?wsdl" />
+    <property name="wsdl.MsaWS2" value="http://www.compbio.dundee.ac.uk/JalviewWS/services/ClustalWS?wsdl" />
+    <property name="WSInterf" value="MsaWS" />
+    <property name="wsdl.Namespace" value="vamsas" />
+    <property name="wsdl.ClientNS" value="ext.vamsas" />
+    <!-- the class path for building the application -->
+    <path id="build.classpath">
+      <fileset dir="utils">
+        <include name="*.jar" />
+        <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${libDir}">
+        <include name="*.jar" />
+        <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${java.home}/lib">
+        <include name="plugin.jar" />
+      </fileset>
+      <fileset dir="appletlib">
+        <!-- the JmolApplet includes the JmolApplet console and the application javac seems to always try and build all packages 
+				-->
+        <include name="${jmolJar}" />
+        <include name="${varnaJar}" />
+      </fileset>
+    </path>
+    <path id="test.classpath">
+      <pathelement path="${outputDir}" />
+      <path refid="build.classpath" />
+    </path>
+    <property name="source.dist.name" value="${basedir}/jalview-src.tar.gz" />
+    <!-- The Location of the java 1.1.8 jdk -->
+    <property name="java118.home" value="${java.home}" />
+    <!-- jre for 1.4 version -->
+    <property name="applet.jre.tools" value="${java118.home}/lib/rt.jar" />
+
+    <!-- the classpath for building the 1.1 applet -->
+    <path id="jalviewlite.deps">
+      <fileset dir="${java118.home}">
+        <include name="lib/rt.jar" />
+      </fileset>
+      <fileset dir="${java.home}/lib">
+        <include name="plugin.jar" />
+      </fileset>
+      <pathelement location="appletlib/${jmolJar}" />
+      <pathelement location="lib/${varnaJar}" />
+      <pathelement location="appletlib/${jsoup}" />
+      <pathelement location="appletlib/${jsonSimple}" />
+      <pathelement location="appletlib/${javaJson}" />
+
+    </path>
+    <!-- default location for outputting javadoc -->
+    <property name="javadocDir" value="${packageDir}/javadoc" />
+  </target>
+
+
+  <taskdef classpath="utils/roxes-ant-tasks-1.2-2004-01-30.jar" resource="com/roxes/tools/ant/taskdefs.properties" />
+  <target name="buildPropertiesFile" depends="init">
+    <tstamp prefix="build">
+      <format property="date" pattern="dd MMMM yyyy" />
+    </tstamp>
+    <exec executable="/usr/bin/git" outputproperty="git.commit" failifexecutionfails="false">
+      <arg value="rev-parse" />
+      <arg value="--short" />
+      <arg value="HEAD" />
+    </exec>
+    <exec executable="/usr/bin/git" outputproperty="git.branch" failifexecutionfails="false">
+      <arg value="rev-parse" />
+      <arg value="--abbrev-ref" />
+      <arg value="HEAD" />
+    </exec>
+    <properties file="${outputDir}/.build_properties">
+      <header>
+          ---Jalview Build Details---
+        </header>
+      <property name="VERSION" value="${JALVIEW_VERSION}" />
+      <property name="INSTALLATION" value="${INSTALLATION} git-commit:${git.commit} [${git.branch}]" />
+      <property name="BUILD_DATE" value="${build.date}" />
+    </properties>
+  </target>
+
+
+  <target name="clean" depends="init">
+    <!-- not efficient yet. -->
+    <delete dir="${outputDir}" includes="*,**/*" />
+  </target>
+
+  <target name="distclean" depends="init, clean">
+
+    <echo message="REMOVING ALL BACKUP/AUTOSAVES!" />
+    <delete>
+      <fileset dir=".">
+        <include name="${outputJar}" />
+        <include name="#*#" />
+        <include name="#*.*#" />
+        <include name="**/#*#" />
+        <include name="**/#*.*#" />
+        <include name="*~" />
+        <include name="*.*~" />
+        <include name="**/*~" />
+        <include name="**/*.*~" />
+      </fileset>
+    </delete>
+  </target>
+
+  <target name="prepare" depends="init">
+    <mkdir dir="${outputDir}" />
+    <copy todir="${outputDir}">
+      <fileset dir=".">
+        <include name="${docDir}/**/*.*" />
+        <include name="${helpDir}/**/*.*" />
+        <include name="${libDir}/*.jar" />
+      </fileset>
+      <fileset dir="${resourceDir}">
+        <include name="**/*.*" />
+      </fileset>
+    </copy>
+  	<mkdir dir="${cloverOutputDir}" if:set="clover.jar"/>
+  </target>
+
+  <target name="build" depends="prepare">
+    <!-- not efficient yet. -->
+    <javac source="${javac.source}" target="${javac.target}" srcdir="${sourceDir}" destdir="${outputDir}" debug="${javac.debug}" classpathref="build.classpath">
+      <exclude name="jalview/*applet*" />
+      <exclude name="jalview/appletgui/**" />
+      <exclude name="com/stevesoft/**" />
+    </javac>
+  </target>
+
+
+  <target name="testclean" depends="init">
+    <delete dir="${testOutputDir}" includes="*,**/*" />
+  </target>
+
+  <target name="prepareTests" depends="init,testclean">
+    <mkdir dir="${testOutputDir}" />
+  </target>
+
+  <target name="buildTests" depends="build,buildindices,prepareTests">
+    <javac source="${javac.source}" target="${javac.target}" srcdir="${testDir}" destdir="${testOutputDir}" debug="${javac.debug}" classpathref="test.classpath" includeantruntime="false">
+    </javac>
+  </target>
+
+  <taskdef resource="testngtasks" classpath="utils/testnglibs/testng.jar" />
+
+  <target name="testng" depends="buildTests">
+    <testng outputDir="${reportDir}" haltOnFailure="false" groups="${testng-groups}" mode="testng"
+      verbose="${testng-verbosity}">
+      <classpath>
+        <pathelement location="${testOutputDir}" />
+        <pathelement location="${clover.jar}" if:set="clover.jar"/>
+        <path refid="test.classpath" />
+      </classpath>
+      <jvmarg value="--add-modules=java.se.ee" if:set="java9"/>
+      <jvmarg value="--illegal-access=warn" if:set="java9"/>
+      <classfileset dir="${testOutputDir}" includes="**/*.class" />
+    </testng>
+  </target>
+
+  <target name="buildindices" depends="init, prepare" unless="help.uptodate">
+    <replace value="${JALVIEW_VERSION}">
+      <replacetoken>
+        <![CDATA[$$Version-Rel$$]]>
+      </replacetoken>
+      <fileset dir="${outputDir}/${helpDir}">
+        <include name="help.jhm" />
+      </fileset>
+    </replace>
+
+    <java classname="com.sun.java.help.search.Indexer" classpathref="build.classpath" fork="true" dir="${outputDir}/${helpDir}">
+      <arg line="html" />
+    </java>
+  </target>
+
+  <target name="preparejnlp" depends="makedist">
+    <copy todir="${packageDir}">
+      <fileset dir="${resourceDir}/images">
+        <include name="${WebStartImage}" />
+      </fileset>
+    </copy>
+
+    <taskdef classpathref="build.classpath" resource="com/roxes/tools/ant/taskdefs.properties" />
+
+    <!-- create a dummy jar which will eventually contain the jnlp template -->
+    <jar destfile="${packageDir}/jalview_jnlp_vm.jar" index="true">
+      <fileset dir="${packageDir}">
+        <include name="jalview.jar" />
+      </fileset>
+    </jar>
+
+    <mkdir dir="${packageDir}/JNLP-INF" />
+    <antcall target="writejnlpf">
+      <param name="jnlpFile" value="${packageDir}/JNLP-INF/APPLICATION-TEMPLATE.JNLP" />
+      <param name="inih" value="*" />
+      <param name="maxh" value="*" />
+    </antcall>
+
+    <jar destfile="${packageDir}/jalview_jnlp_vm.jar" index="true">
+      <fileset dir="${packageDir}">
+        <include name="JNLP-INF/APPLICATION-TEMPLATE.JNLP" />
+      </fileset>
+    </jar>
+
+    <antcall target="writejnlpf">
+      <param name="jnlpFile" value="${packageDir}/jalview_256M.jnlp" />
+      <param name="inih" value="10M" />
+      <param name="maxh" value="256M" />
+    </antcall>
+    <antcall target="writejnlpf">
+      <param name="jnlpFile" value="${packageDir}/jalview.jnlp" />
+      <param name="inih" value="800M" />
+      <param name="maxh" value="1024M" />
+    </antcall>
+
+    <antcall target="writejnlpf">
+      <param name="jnlpFile" value="${packageDir}/jalview_1G.jnlp" />
+      <param name="inih" value="128M" />
+      <param name="maxh" value="512M" />
+    </antcall>
+
+    <antcall target="writejnlpf">
+      <param name="jnlpFile" value="${packageDir}/jalview_2G.jnlp" />
+      <param name="inih" value="800M" />
+      <param name="maxh" value="1024M" />
+    </antcall>
+
+    <!-- finally, need to postprocess to add in associations at end of 'information' element 
+			
+			<xslt in="${packageDir}/jalview_noa_1G.jnlp" out="${packageDir}/jalview_1G.jnlp">
+		
+		</xslt>
+			
+			
+			-->
+    <!--
+				<association mime-type="application-x/ext-file" extensions="fa"/>
+        <association mime-type="application-x/ext-file" extensions="fasta"/>
+        <association mime-type="application-x/ext-file" extensions="mfa"/>
+        <association mime-type="application-x/ext-file" extensions="fastq"/>
+        <association mime-type="application-x/ext-file" extensions="blc"/>
+        <association mime-type="application-x/ext-file" extensions="msf"/>
+        <association mime-type="application-x/ext-file" extensions="pfam"/>
+        <association mime-type="application-x/ext-file" extensions="aln"/>
+        <association mime-type="application-x/ext-file" extensions="pir"/>
+        <association mime-type="application-x/ext-file" extensions="amsa"/>
+        <association mime-type="application-x/ext-file" extensions="stk"/>
+        <association mime-type="application-x/ext-file" extensions="jar"/>-->
+  </target>
+
+  <target name="-jarsignwithtsa" depends="makedist,preparejnlp" if="timestamp" unless="nosign">
+    <signjar storepass="${jalview.keystore.pass}" keypass="${jalview.key.pass}" keystore="${jalview.keystore}" alias="${jalview.key}" lazy="false" verbose="false" sigalg="${jalview.keyalg}" digestalg="${jalview.keydig}"
+      tsaproxyhost="${proxyHost}" tsaproxyport="${proxyPort}" tsaurl="${jalview.tsaurl}">
+      <fileset dir="${packageDir}">
+        <include name="*.jar" />
+      </fileset>
+    </signjar>
+  </target>
+  <target name="-jarsignnotsa" depends="makedist,preparejnlp" if:blank="timestamp" unless="nosign">
+    <signjar storepass="${jalview.keystore.pass}" keypass="${jalview.key.pass}" keystore="${jalview.keystore}" alias="${jalview.key}" lazy="false" verbose="false" sigalg="${jalview.keyalg}" digestalg="${jalview.keydig}">
+      <fileset dir="${packageDir}">
+        <include name="*.jar" />
+      </fileset>
+    </signjar>
+  </target>
+
+  <target name="makefulldist" depends="makedist,preparejnlp,-jarsignwithtsa,-jarsignnotsa">
+    <!-- and sign the jars -->
+    <!-- the default keystore details might need to be edited here -->
+  </target>
+
+  <target name="runenv" depends="init">
+    <path id="run.classpath">
+      <pathelement location="${outputDir}" />
+      <fileset dir="${outputDir}">
+        <include name="${libDir}/*.jar" />
+      </fileset>
+    </path>
+    <pathconvert targetos="unix" refid="run.classpath" property="run.classpath" />
+
+    <echo>java -classpath ${run.classpath} jalview.bin.Jalview
+      </echo>
+  </target>
+
+  <target name="-generatejnlpf">
+    <presetdef name="jnlpf">
+      <jnlp codebase="${WebStartLocation}">
+        <information>
+          <title>Jalview</title>
+          <vendor>The Barton Group</vendor>
+          <homepage href="http://www.jalview.org" />
+          <description>Jalview Multiple Alignment Editor</description>
+          <description kind="short">Jalview</description>
+          <icon href="${WebStartImage}" />
+          <offline_allowed />
+        </information>
+        <resources>
+          <j2se version="1.8+" />
+          <jar main="true" href="jalview.jar"/>
+          <fileset dir="${packageDir}">
+            <exclude name="jalview.jar" />
+            <include name="*.jar" />
+            <include name="*_*.jar" />
+            <exclude name="*quaqua*.jar" />
+          </fileset>
+          <property name="jalview.version" value="${JALVIEW_VERSION}" />
+        </resources>
+        <resources os="Mac OS X">
+          <fileset dir="${packageDir}">
+            <include name="quaqua-filechooser-only-8.0.jar"/>
+            <include name="*quaqua64*.jnilib.jar" />
+          </fileset>
+        </resources>
+
+        <application_desc main_class="jalview.bin.Jalview">
+        </application_desc>
+        <security>
+          <all_permissions />
+        </security>
+      </jnlp>
+    </presetdef>
+
+    <jnlpf toFile="${jnlpFile}" />
+    <!-- add the add-modules j2se attribute for java 9 -->
+    <replace file="${jnlpFile}" value="j2se version=&quot;1.8+&quot; initial-heap-size=&quot;${inih}&quot; max-heap-size=&quot;${maxh}&quot; java-vm-args=&quot;--add-modules=java.se.ee --illegal-access=warn&quot;">
+      <replacetoken>j2se version="1.8+"</replacetoken>
+    </replace>
+  </target>
+
+  <target name="-dofakejnlpfileassoc" depends="-generatejnlpf" if="nojnlpfileassocs">
+    <echo message="Not adding JNLP File Associations" />
+  </target>
+
+  <target name="-dojnlpfileassoc" depends="-generatejnlpf" unless="nojnlpfileassocs">
+    <replace file="${jnlpFile}">
+      <replacetoken>
+        <![CDATA[</information>]]></replacetoken>
+      <replacevalue>
+        <![CDATA[
+          <association mime-type="application-x/ext-file" extensions="fa" />
+        <association mime-type="application-x/ext-file" extensions="fasta" />
+        <association mime-type="application-x/ext-file" extensions="mfa" />
+        <association mime-type="application-x/ext-file" extensions="fastq" />
+        <association mime-type="application-x/ext-file" extensions="blc" />
+        <association mime-type="application-x/ext-file" extensions="msf" />
+        <association mime-type="application-x/ext-file" extensions="pfam" />
+        <association mime-type="application-x/ext-file" extensions="aln"/>
+        <association mime-type="application-x/ext-file" extensions="pir"/>
+        <association mime-type="application-x/ext-file" extensions="amsa"/>
+        <association mime-type="application-x/ext-file" extensions="stk"/>
+        <association mime-type="application-x/ext-file" extensions="jvp"/>
+      </information>]]></replacevalue>
+  </replace>
+  <echo message="Added file associations to JNLP file" />
+</target>
+<target name="writejnlpf" depends="-dojnlpfileassoc,-dofakejnlpfileassoc">
+</target>
+
+<target name="buildextclients" depends="init">
+  <input message="Building external client source from WSDLs - Do you really want to do this ? (Yy/Nn)" validargs="Y,y,n,N" defaultvalue="N" addproperty="doextbuild.response" />
+  <condition property="dontextbuild">
+    <equals arg1="n" arg2="${doextbuild.response}" />
+  </condition>
+  <condition property="dontextbuild">
+    <equals arg1="N" arg2="${doextbuild.response}" />
+  </condition>
+  <fail if="dontextbuild">
+        Build External Client Code process aborted by user. Jalview source is unchanged.
+      </fail>
+  <!-- Currently, this doesn't happen automatically.
+     1. Run WSDL2Java as below, which generates an ext.vamsas +
+     vamsas.<datapackages> fileset.
+     2. refactor ext.vamsas.SpecificserviceWS* to
+     ext.vamsas.ServiceclassWS* that implements the ServiceclassWSI interface.
+     3. Update the jalview.ws.*WServices classes to reflect the
+     interface type, and all locations of this wsdl type that Jalview
+     might be using.
+
+-->
+  <path id="axisbuild">
+    <path refid="build.classpath" />
+  </path>
+  <taskdef resource="axis-tasks.properties" classpathref="axisbuild" />
+  <move todir="./bak">
+    <fileset dir="${sourceDir}" id="client">
+      <include name="${wsdl.ClientNS}/*.*" />
+    </fileset>
+  </move>
+
+  <axis-wsdl2java output="${sourceDir}" verbose="true" url="${wsdl.MsaWS2}" serverside="false" deployscope="Request" debug="false" helpergen="true" all="true">
+    <mappingSet>
+      <mapping namespace="${wsdl.Namespace}" package="${wsdl.ClientNS}" />
+      <mapping namespace="http://dataTypes.vamsas" package="${wsdl.ClientNS}" />
+    </mappingSet>
+  </axis-wsdl2java>
+</target>
+
+<target name="makedist" depends="build, buildPropertiesFile, linkcheck, buildindices">
+  <fail if="clover.jar">
+    Ignoring request to build jalview distribution with clover-instrumented classes
+  </fail>
+  <!-- make the package jar if not already existing -->
+  <mkdir dir="${packageDir}" />
+  <!-- clean dir if it already existed -->
+  <delete>
+    <fileset dir="${packageDir}">
+      <include name="*.jar" />
+    </fileset>
+  </delete>
+  <jar destfile="${packageDir}/${outputJar}" index="true">
+    <manifest>
+      <attribute name="Main-Class" value="jalview.bin.Jalview" />
+      <attribute name="Permissions" value="all-permissions" />
+      <attribute name="Application-Name" value="Jalview Desktop" />
+      <attribute name="Codebase" value="${application.codebase}" />
+    </manifest>
+    <fileset dir="${outputDir}/">
+      <exclude name="cache*/**" />
+      <exclude name="*.jar" />
+      <exclude name="*.jar.*" />
+      <exclude name="**/*.jar" />
+      <exclude name="**/*.jar.*" />
+    </fileset>
+  </jar>
+
+  <copy toDir="${packageDir}" flatten="true">
+    <fileset dir="${outputDir}">
+      <include name="*.jar" />
+      <include name="**/*.jar" />
+    </fileset>
+  </copy>
+</target>
+
+
+<!-- jalopy code reformatter -->
+<target name="sourcescrub" depends="init,build">
+  <jalopy destdir="jsrc" classpathref="run.classpath" convention="jalview-jalopy.xml">
+    <fileset dir="${sourceDir}">
+      <include name="*.java" />
+      <include name="**/*.java" />
+      <include name="**/**/*.java" />
+    </fileset>
+  </jalopy>
+</target>
+
+
+
+<!-- Compile, package and obfuscate Jalview Applet -->
+<target name="makeApplet" depends="obfuscate" description="assemble the final jalviewLite applet jar with or without obfuscation" />
+
+<target name="compileApplet" depends="init,clean">
+  <mkdir dir="${outputDir}" />
+  <javac source="${javac.source}" target="${javac.target}" srcdir="${sourceDir}" destdir="${outputDir}" debug="${javac.debug}" classpathref="jalviewlite.deps" includes="jalview/appletgui/**" excludes="ext/**,gui/**,jbgui/**,MCview/**,org/**,vamsas/**,jalview/ext/rbvi/**,jalview/ext/paradise/**,jalview/ext/ensembl/**,jalview/ext/so/**" />
+</target>
+
+<target name="packageApplet" depends="compileApplet, buildPropertiesFile">
+  <copy file="${resourceDir}/images/link.gif" toFile="${outputDir}/images/link.gif" />
+  <copy todir="${outputDir}/lang">
+    <fileset dir="${resourceDir}/lang">
+      <include name="**.*" />
+    </fileset>
+  </copy>
+  <jar destfile="in.jar" index="true">
+    <manifest>
+      <attribute name="Main-Class" value="jalview.bin.JalviewLite" />
+      <attribute name="Application-Name" value="JalviewLite" />
+      <attribute name="Codebase" value="${applet.codebase}" />
+    </manifest>
+    <fileset dir="${outputDir}">
+      <include name="com/**" />
+      <include name="MCview/**" />
+      <include name="jalview/**" />
+      <include name=".build_properties" />
+      <include name="images/link.gif" />
+      <include name="lang/**" />
+    </fileset>
+  </jar>
+</target>
+<target name="obfuscate" depends="-obfuscatefake,-obfuscatereally">
+</target>
+<target name="-obfuscatefake" depends="packageApplet" if="donotobfuscate">
+  <copy file="in.jar" tofile="${jalviewLiteJar}" overwrite="true" />
+  <delete file="in.jar" />
+</target>
+<target name="-obfuscatereally" unless="donotobfuscate">
+
+  <path id="obfuscateDeps.path">
+    <pathelement location="${applet.jre.tools}" />
+    <pathelement location="appletlib/${jmolJar}" />
+    <pathelement location="lib/${varnaJar}" />
+    <pathelement location="appletlib/${jsoup}" />
+    <pathelement location="appletlib/${jsonSimple}" />
+    <pathelement location="appletlib/${javaJson}" />
+    <fileset dir="${java.home}/lib">
+      <include name="plugin.jar" />
+    </fileset>
+  </path>
+  <taskdef resource="proguard/ant/task.properties" classpath="utils/proguard_5.3.3.jar" />
+
+  <proguard verbose="true" >
+    <injar file="in.jar" />
+    <outjar file="${jalviewLiteJar}" />
+    <libraryjar refid="obfuscateDeps.path" />
+    <dontwarn />
+    <keep access="public" type="class" name="jalview.bin.JalviewLite">
+      <field access="public" />
+      <method access="public" />
+      <constructor access="public" />
+    </keep>
+    <keep access="public" type="class" name="jalview.appletgui.AlignFrame">
+      <field access="public" />
+      <method access="public" />
+      <constructor access="public" />
+    </keep>
+
+    <keep name="jalview.json.binding**">
+      <constructor/>
+      <method name="*"/>
+    </keep>
+
+    <keep access="public" type="class" name="MCview.PDBfile">
+      <field access="public" />
+      <method access="public" />
+      <constructor access="public" />
+    </keep>
+
+    <keep access="public" type="class" name="jalview.ws.jws1.Annotate3D">
+      <field access="public" />
+      <method access="public" />
+      <constructor access="public" />
+    </keep>
+
+    <keep access="public" type="class" name="jalview.ext.jmol.JmolParser">
+      <field access="public" />
+      <method access="public" />
+      <constructor access="public" />
+    </keep>
+
+
+    <!--      -libraryjars "${obfuscateDeps}"
+      -injars      in.jar
+      -outjars     jalviewApplet.jar
+      -keep public class jalview.bin.JalviewLite
+       { public * ; } -->
+  </proguard>
+  <delete file="in.jar" />
+</target>
+
+<target name="jaxb-bindings" depends="init" description="Generates JAXB bindings for supported Jalview XML models (needs xjc on the path)">
+  <delete>
+    <fileset dir="${sourceDir}/jalview/xml/binding/jalview">
+      <include name="*.java" />
+    </fileset>
+  </delete>
+  <exec executable="xjc">
+    <arg value="${schemaDir}/jalview.xsd"/>
+    <arg value="-d"/>
+    <arg value="${sourceDir}"/>
+    <arg value="-p"/>
+    <arg value="jalview.xml.binding.jalview"/>
+  </exec>
+  <delete>
+    <fileset dir="${sourceDir}/jalview/xml/binding/embl">
+      <include name="*.java" />
+    </fileset>
+  </delete>
+
+  <exec executable="xjc">
+    <arg value="${schemaDir}/embl.xsd"/>
+    <arg value="-d"/>
+    <arg value="${sourceDir}"/>
+    <arg value="-b"/>
+    <arg value="${schemaDir}/embl_bindings.xml"/>
+    <arg value="-p"/>
+    <arg value="jalview.xml.binding.embl"/>
+  </exec>
+
+  <delete>
+    <fileset dir="${sourceDir}/jalview/xml/binding/uniprot">
+      <include name="*.java" />
+    </fileset>
+  </delete>
+
+  <exec executable="xjc">
+    <arg value="${schemaDir}/uniprot.xsd"/>
+    <arg value="-d"/>
+    <arg value="${sourceDir}"/>
+    <arg value="-p"/>
+    <arg value="jalview.xml.binding.uniprot"/>
+  </exec>
+</target>
+
+<target name="sourcedist" description="create jalview source distribution" depends="init">
+  <delete file="${source.dist.name}" />
+  <!-- temporary copy of source to update timestamps -->
+  <copy todir="_sourcedist">
+    <fileset dir=".">
+      <exclude name=".*" />
+      <exclude name="**/.*" />
+      <exclude name="*.class" />
+      <exclude name="**/*.class" />
+      <include name="LICENSE" />
+      <include name="README" />
+      <include name="build.xml" />
+      <include name="jalview-jalopy.xml" />
+      <include name="JalviewApplet.jpx" />
+      <include name="JalviewX.jpx" />
+      <include name="nbbuild.xml" />
+      <include name="nbproject/genfiles.properties" />
+      <include name="nbproject/project.properties" />
+      <include name="nbproject/project.xml" />
+      <include name="${sourceDir}/*.java" />
+      <include name="${sourceDir}/**/*.java" />
+      <include name="${sourceDir}/**/*.cdr" />
+      <include name="${libDir}/**/*" />
+      <include name="${resourceDir}/**/*" />
+      <include name="${helpDir}/**/*" />
+      <include name="appletlib/${jmolJar}" />
+      <include name="appletlib/${jsonSimple}" />
+      <include name="appletlib/${javaJson}" />
+      <exclude name="**/*locales" />
+      <exclude name="*locales/**" />
+      <exclude name="utils/InstallAnywhere/**Build.iap_xml" />
+      <exclude name="utils/InstallAnywhere/**Build*/**" />
+      <exclude name="utils/InstallAnywhere/**Build*/**" />
+      <exclude name="utils/InstallAnywhere/.build*.*/**" />
+      <exclude name="utils/InstallAnywhere/**locale*" />
+      <exclude name="utils/InstallAnywhere/**locale*/**" />
+      <exclude name="utils/InstallAnywhere/**locale*/**" />
+      <include name="${schemaDir}/**/*" />
+      <include name="utils/**/*" />
+      <include name="${docDir}/**/*" />
+      <include name="examples/**/*" />
+    </fileset>
+  </copy>
+
+  <tstamp prefix="build">
+    <format property="year" pattern="yyyy" />
+  </tstamp>
+  <!-- each replacetoken CDATA body must be on one line - 
+       otherwise the pattern doesn't match -->
+  <replace value="${JALVIEW_VERSION}">
+    <replacetoken>
+      <![CDATA[$$Version-Rel$$]]>
+    </replacetoken>
+    <fileset dir="_sourcedist">
+      <include name="**/*" />
+    </fileset>
+  </replace>
+  <replace dir="_sourcedist" value="${build.year}">
+    <replacetoken>
+      <![CDATA[$$Year-Rel$$]]>
+    </replacetoken>
+    <fileset dir="_sourcedist">
+      <include name="**/*" />
+    </fileset>
+  </replace>
+
+  <tar destfile="${source.dist.name}" compression="gzip">
+    <tarfileset dir="_sourcedist/" prefix="jalview" preserveLeadingSlashes="true">
+    </tarfileset>
+  </tar>
+
+  <delete dir="_sourcedist" />
+</target>
+<target name="prepubapplet_1" depends="makeApplet">
+  <copy todir="${packageDir}/examples">
+    <fileset dir="examples">
+      <include name="**/*" />
+      <include name="javascript/*" />
+      <include name="jmol/*" />
+    </fileset>
+    <fileset dir=".">
+      <include name="${jalviewLiteJar}" />
+    </fileset>
+    <fileset dir="appletlib">
+      <include name="**/*" />
+    </fileset>
+  </copy>
+  <jar update="true" index="true" jarfile="${packageDir}/examples/${jalviewLiteJar}" />
+  <jar update="true" index="true" jarfile="${packageDir}/examples/${javaJson}" />
+  <jar update="true" index="true" jarfile="${packageDir}/examples/${jsonSimple}" />
+  <jar update="true" index="true" jarfile="${packageDir}/examples/${jmolJar}">
+    <manifest>
+      <attribute name="Application-Name" value="Jmol (bundled with JalviewLite)" />
+      <!--          <attribute name="Permissions" value="sandbox" /> -->
+      <!--<attribute name="Trusted-Lib" value="true" /> -->
+      <attribute name="Codebase" value="${applet.codebase}" />
+      <attribute name="Caller-Allowable-Codebase" value="${applet.caller-codebase}" />
+    </manifest>
+  </jar>
+
+  <presetdef name="ap_applet.jar">
+    <!-- build a signed applet with 'all-permissions' - 
+			  Needs 'param name="permissions' value="all-permissions"' in applet tag
+			  JalviewLite+JmolApplet linked sequence/structure fails
+			  Mixed code warnings are raised
+			  -->
+    <jar update="true" index="true">
+      <manifest>
+        <attribute name="Application-Name" value="JalviewLite" />
+        <attribute name="Permissions" value="all-permissions" />
+        <attribute name="Codebase" value="${applet.codebase}" />
+        <attribute name="Caller-Allowable-Codebase" value="${applet.caller-codebase}" />
+        <attribute name="Application-Library-Allowable-Codebase" value="${applet.codebase}" />
+      </manifest>
+    </jar>
+  </presetdef>
+  <presetdef name="applet.jar">
+    <!-- build signed applet with sandbox permissions -
+			  Needs 'param name="permissions' value="sandbox"' in applet tag
+			 Preserves Pre-Java 1.7_u45 behavior once 'permissions' parameter added to applet tag 
+			-->
+
+    <jar update="true" index="true">
+      <manifest>
+        <attribute name="Application-Name" value="JalviewLite" />
+        <attribute name="Permissions" value="sandbox" />
+        <attribute name="Codebase" value="${applet.codebase}" />
+        <attribute name="Caller-Allowable-Codebase" value="${applet.caller-codebase}" />
+        <attribute name="Application-Library-Allowable-Codebase" value="${applet.codebase}" />
+      </manifest>
+    </jar>
+  </presetdef>
+  <presetdef name="tl_applet.jar">
+    <!-- build signed applet with trusted library/trusted permissions -
+			        Needs 'param name="permissions' value="all-permissions"' in applet tag
+			       j1.7_45:
+			       No mixed code warnings raised 
+			       Jmol/JalviewLite sequence/structure example doesn't link structures
+			       Raises dialog asking user to allow page to control applet via LiveConnect javascript
+			       
+			      -->
+
+    <jar update="true" index="true">
+      <manifest>
+        <attribute name="Application-Name" value="JalviewLite" />
+        <attribute name="Permissions" value="all-permissions" />
+        <attribute name="Codebase" value="${applet.codebase}" />
+        <attribute name="Trusted-Only" value="true" />
+        <attribute name="Trusted-Library" value="true" />
+      </manifest>
+    </jar>
+  </presetdef>
+  <presetdef name="to_applet.jar">
+    <!-- not fully test variant (yet) -->
+    <jar update="true" index="true">
+      <manifest>
+        <attribute name="Application-Name" value="JalviewLite" />
+        <attribute name="Permissions" value="all-permissions" />
+        <attribute name="Codebase" value="${applet.codebase}" />
+        <attribute name="Trusted-Only" value="true" />
+      </manifest>
+    </jar>
+  </presetdef>
+  <!-- create differently privileged artefacts -->
+  <copy file="${packageDir}/examples/${jalviewLiteJar}" tofile="${packageDir}/examples/u_${jalviewLiteJar}" />
+  <copy file="${packageDir}/examples/${jmolJar}" tofile="${packageDir}/examples/u_${jmolJar}" overwrite="true" />
+  <copy file="${packageDir}/examples/${javaJson}" tofile="${packageDir}/examples/u_${javaJson}" overwrite="true" />
+  <copy file="${packageDir}/examples/${jsonSimple}" tofile="${packageDir}/examples/u_${jsonSimple}" overwrite="true" />
+  <copy file="${packageDir}/examples/${jalviewLiteJar}" tofile="${packageDir}/examples/ap_${jalviewLiteJar}" />
+  <copy file="${packageDir}/examples/${jmolJar}" tofile="${packageDir}/examples/ap_${jmolJar}" />
+  <copy file="${packageDir}/examples/${javaJson}" tofile="${packageDir}/examples/ap_${javaJson}" />
+  <copy file="${packageDir}/examples/${jsonSimple}" tofile="${packageDir}/examples/ap_${jsonSimple}" />
+  <ap_applet.jar jarfile="${packageDir}/examples/ap_${jalviewLiteJar}" />
+  <ap_applet.jar jarfile="${packageDir}/examples/ap_${jmolJar}" />
+  <ap_applet.jar jarfile="${packageDir}/examples/ap_${javaJson}" />
+  <ap_applet.jar jarfile="${packageDir}/examples/ap_${jsonSimple}" />
+  <copy file="${packageDir}/examples/${jalviewLiteJar}" tofile="${packageDir}/examples/tl_${jalviewLiteJar}" />
+  <copy file="${packageDir}/examples/${jmolJar}" tofile="${packageDir}/examples/tl_${jmolJar}" />
+  <copy file="${packageDir}/examples/${javaJson}" tofile="${packageDir}/examples/tl_${javaJson}" />
+  <copy file="${packageDir}/examples/${jsonSimple}" tofile="${packageDir}/examples/tl_${jsonSimple}" />
+  <tl_applet.jar jarfile="${packageDir}/examples/tl_${jalviewLiteJar}" />
+  <tl_applet.jar jarfile="${packageDir}/examples/tl_${jmolJar}" />
+  <tl_applet.jar jarfile="${packageDir}/examples/tl_${javaJson}" />
+  <tl_applet.jar jarfile="${packageDir}/examples/tl_${jsonSimple}" />
+  <copy file="${packageDir}/examples/${jalviewLiteJar}" tofile="${packageDir}/examples/to_${jalviewLiteJar}" />
+  <copy file="${packageDir}/examples/${jmolJar}" tofile="${packageDir}/examples/to_${jmolJar}" />
+  <copy file="${packageDir}/examples/${javaJson}" tofile="${packageDir}/examples/to_${javaJson}" />
+  <copy file="${packageDir}/examples/${jsonSimple}" tofile="${packageDir}/examples/to_${jsonSimple}" />
+  <to_applet.jar jarfile="${packageDir}/examples/to_${jalviewLiteJar}" />
+  <to_applet.jar jarfile="${packageDir}/examples/to_${jmolJar}" />
+  <to_applet.jar jarfile="${packageDir}/examples/to_${javaJson}" />
+  <to_applet.jar jarfile="${packageDir}/examples/to_${jsonSimple}" />
+  <!-- finally, create manifest for original jars -->
+  <applet.jar jarfile="${packageDir}/examples/${jalviewLiteJar}" />
+  <applet.jar jarfile="${packageDir}/examples/${jmolJar}" />
+  <applet.jar jarfile="${packageDir}/examples/${javaJson}" />
+  <applet.jar jarfile="${packageDir}/examples/${jsonSimple}" />
+
+  <!-- todo - write examples/downloads for alternate versions of the applet 
+    probably don't need to do this now since we don't have alternate versions anymore !-->
+</target>
+<target name="-signapplet" depends="prepubapplet_1">
+  <fileset id="signappletjarset" dir="${packageDir}/examples">
+    <exclude name="u_*.jar" />
+    <include name="${jalviewLiteJar}" />
+    <include name="${jmolJar}" />
+    <include name="${javaJson}" />
+    <include name="${jsonSimple}" />
+    <include name="to_${jalviewLiteJar}" />
+    <include name="to_${jmolJar}" />
+    <include name="to_${javaJson}" />
+    <include name="to_${jsonSimple}" />
+    <include name="tl_${jalviewLiteJar}" />
+    <include name="tl_${jmolJar}" />
+    <include name="tl_${javaJson}" />
+    <include name="tl_${jsonSimple}" />
+    <include name="ap_${jalviewLiteJar}" />
+    <include name="ap_${jmolJar}" />
+    <include name="ap_${javaJson}" />
+    <include name="ap_${jsonSimple}" />
+  </fileset>
+</target>
+<target name="-signappletnotsa" if:blank="timestamp" depends="-signapplet" unless="nosign">
+  <signjar storepass="${jalview.keystore.pass}" keypass="${jalview.key.pass}" keystore="${jalview.keystore}" alias="${jalview.key}" lazy="false" verbose="false">
+    <fileset refid="signappletjarset" />
+  </signjar>
+</target>
+
+<target name="-signapplettsa" if="timestamp" depends="-signapplet" unless="nosign">
+  <signjar storepass="${jalview.keystore.pass}" keypass="${jalview.key.pass}" keystore="${jalview.keystore}" alias="${jalview.key}" lazy="false" verbose="false" tsaproxyhost="${proxyHost}" tsaproxyport="${proxyPort}" tsaurl="${jalview.tsaurl}">
+    <fileset refid="signappletjarset" />
+  </signjar>
+</target>
+
+<target name="signApplet" description="internal target to sign applet" depends="-signappletnotsa,-signapplettsa" />
+<target name="pubapplet" description="Dummy target to keep legacy Jalview build system happy. We don't actually publish the applet anymore."/>
+
+<target name="_pubapplet" description="installs the jalviewLite applet and dependent jars into an applet examples directory built under ${outputDir}" depends="makeApplet, signApplet">
+
+  <!-- bizarre bug causes JmolApplet to always get signed, even if excluded from above. so copy explicitly -->
+  <copy file="appletlib/${jmolJar}" tofile="${packageDir}/examples/u_${jmolJar}" overwrite="true" />
+  <copy file="appletlib/${jsonSimple}" tofile="${packageDir}/examples/u_${jsonSimple}" overwrite="true" />
+  <copy file="appletlib/${javaJson}" tofile="${packageDir}/examples/u_${javaJson}" overwrite="true" />
+  <!-- finally, replace any launchApp servlet tags with a version specification -->
+  <replace value="http://www.jalview.org/services/launchApp?version=${JALVIEW_VERSION}&quot;">
+    <replacetoken>
+      <![CDATA[http://www.jalview.org/services/launchApp"]]>
+    </replacetoken>
+    <fileset dir="${packageDir}/examples">
+      <include name="**/*.html" />
+    </fileset>
+  </replace>
+  <replace value="http://www.jalview.org/services/launchApp?version=${JALVIEW_VERSION}'">
+    <replacetoken>
+      <![CDATA[http://www.jalview.org/services/launchApp']]>
+    </replacetoken>
+    <fileset dir="${packageDir}/examples">
+      <include name="**/*.html" />
+    </fileset>
+  </replace>
+
+</target>
+<target name="sourcedoc" description="Create jalview source documentation pages" depends="init">
+  <javadoc destdir="${javadocDir}">
+    <packageset dir="${sourceDir}" includes="jalview/*,MCView/*">
+    </packageset>
+  </javadoc>
+</target>
+<target name="linkcheck" depends="init,prepare">
+  <javac srcdir="utils" destdir="utils" includes="HelpLinksChecker.java"/>
+  <java fork="true" dir="${helpDir}" classpath="utils" classname="HelpLinksChecker" failonerror="true">
+    <arg file="${helpDir}"/>
+    <arg value="-nointernet" />
+  </java>
+</target>
+
+<target name="eclipse-install" depends="init,prepare">
+
+  <property name="eclipseTempFile" value="eclipse-jee-oxygen-R-linux-gtk-x86_64.tar.gz"/>
+  <property name="eclipseInstallURL" value="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/oxygen/R/eclipse-jee-oxygen-R-linux-gtk-x86_64.tar.gz"/>
+  <property name="java2scriptURL" value="https://github.com/BobHanson/java2script/blob/master/sources/net.sf.j2s.core/dist/dropins/net.sf.j2s.core.jar?raw=true"/>
+
+  <get url="${eclipseInstallURL}" dest="${eclipseTempFile}"/>
+  <untar compression="gzip" src="${eclipseTempFile}" dest="${eclipse-inst}"/>
+
+  <!-- not needed since we ship transpiler with source
+    <get url="${java2scriptURL}" dest="eclipse-inst/dropins/net.sf.j2s.core.jar" /> -->
+
+</target>
+
+<target name="build-site" depends="init,prepare,compile-site,unzip-to-site,make-j2s-cores">
+  <!-- tarball -->
+  <tar compression="gzip" destfile="site.tar.gz">
+    <tarfileset dir="site" />
+  </tar>
+</target>
+<target name="prepare-site" depends="init,prepare">
+  <property name="swingjsdir" value="swingjs"/>
+  <property name="eclipse-inst" value="/home/bamboo/buildtools/eclipse/eclipse-js"/>
+  <property name="eclipse-exec" value="${eclipse-inst}/eclipse"/>
+  <property name="site" value="site"/>
+  <!-- where the eclipse js workspace has been initialised -->
+  <property name="eclipse-work" value="/home/bamboo/buildtools/eclipse/eclipse-js-workspace"/>
+  <!-- git repository linked to project in workspace -->
+  <property name="eclipse-workrepo" value="/home/bamboo/buildtools/eclipse/eclipse-js-workspace/jalview-js"/>
+</target>
+  <target name="clean-site" depends="prepare-site">
+    <delete dir="${eclipse-workrepo}/${site}"/>
+    <mkdir dir="${eclipse-workrepo}/${site}"/>
+  </target>
+<target name="compile-site" depends="prepare-site,clean-site">
+  <!-- update transpiler -->
+  <copy file="${swingjsdir}/net.sf.j2s.core.jar" todir="${eclipse-inst}/dropins" overwrite="true" failonerror="true"/>
+  <!-- update the git repo linked to the eclipse workspace -->
+  <exec executable="/usr/bin/git" outputproperty="git.commit" failifexecutionfails="true">
+    <arg value="rev-parse" />
+    <arg value="--short" />
+    <arg value="HEAD" />
+  </exec>
+  <!-- update and checkout the same commit in the workspace project -->
+  <exec executable="/usr/bin/git" failifexecutionfails="true" dir="${eclipse-workrepo}">
+    <arg value="reset" />
+    <arg value="--hard" />
+  </exec>
+  <exec executable="/usr/bin/git" failifexecutionfails="true" dir="${eclipse-workrepo}">
+      <arg value="pull" />
+  </exec>
+  <exec executable="/usr/bin/git" failifexecutionfails="true" dir="${eclipse-workrepo}">
+    <arg value="checkout" />
+    <arg value="${git.commit}" />
+  </exec>
+  <!-- custom classpath for .js builds -->
+  <copy file=".classpath.js" tofile="${eclipse-workrepo}/.classpath" overwrite="true"/>
+  <!-- clean eclipse log -->
+  <delete file="${eclipse-work}/.metadata/.log"/>
+    
+  <!-- execute the eclipse build - the build may fail but valid javascript may still be produced, so we ignore return codes -->
+  <exec executable="${eclipse-exec}" failonerror="no">
+    <arg value="-nosplash"/>
+    <arg value="--launcher.suppressErrors"/>
+    <arg value="-application"/>
+    <arg value="org.eclipse.jdt.apt.core.aptBuild"/>
+    <arg value="-data"/>
+    <arg value="${eclipse-work}"/>
+  </exec>
+  <!-- report log -->
+  <exec executable="/bin/cat">
+    <arg value="${eclipse-work}/.metadata/.log"/>
+  </exec>
+  <!-- TODO: run jslint and something else here to check we have a complete set of .js files for java -->
+  <!-- possibly compare timestamps between .js files and their mate in source - any newer or not present triggers a new build -->
+  <!-- <mkdir dir="${packageDir}/${site}" /> -->
+  <!--   <property name="swingjs.zipurl" value="https://github.com/BobHanson/java2script/blob/master/sources/net.sf.j2s.java.core/dist/SwingJS-site.zip?raw=true" /> -->
+
+  <!-- and reset the .classpath -->
+  <exec executable="/usr/bin/git" failifexecutionfails="true" dir="${eclipse-workrepo}">
+    <arg value="checkout" />
+    <arg value="${git.commit}"/>
+    <arg value="--"/>
+    <arg value=".classpath" />
+  </exec>
+
+  <!-- finally copy artefacts from eclipse project checkout to the build site -->
+  <copy todir="${site}">
+    <fileset dir="${eclipse-workrepo}/site"/>
+  </copy>
+</target>
+<target name="unzip-to-site" depends="prepare-site">
+  <ant antfile="build-site.xml"/>
+</target>
+
+  <target name="make-j2s-cores" depends="">
+    <ant antfile="buildcore.xml" target="build-all-cores"/>
+  </target>
+</project>

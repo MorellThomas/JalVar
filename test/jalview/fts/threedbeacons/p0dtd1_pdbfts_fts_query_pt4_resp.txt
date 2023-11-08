@@ -1,0 +1,1794 @@
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":4,
+    "params":{
+      "q":"(7ukk OR 5smk OR 7qch OR 7sgh OR 7diy OR 8ehm OR 7dk1 OR 8ehk OR 5smb OR 5sma OR 8ehl OR 5smd OR 7wof OR 6z6i OR 5smc OR 7jw8 OR 5smf OR 5sme OR 5slw OR 5slv OR 5sly OR 5slx OR 8ehj OR 5slz OR 7jun OR 5slo OR 6z5t OR 5sln OR 5slq OR 5slp OR 5sls OR 5slr OR 7lyh OR 5slu OR 7lyi OR 5slt OR 5sp1 OR 5sp0 OR 7lzw OR 7lzx OR 7lzu OR 7lzv OR 7jvz OR 7lzy OR 7djr OR 7lzz OR 7sgu OR 7sgv OR 7lzt OR 7sgw OR 7si9 OR 7qck OR 7qci OR 7qcj OR 7l8i OR 7bfb OR 7l8j OR 7qcm OR 5soj OR 5soi OR 5sol OR 5sok OR 5son OR 5sq0 OR 5som OR 5sop OR 5sq2 OR 5soo OR 5sq1 OR 6x4i OR 7bgp OR 5sp3 OR 5sp2 OR 5sp4 OR 5sp7 OR 7ult OR 5sp6 OR 5sp9 OR 5sp8 OR 5spk OR 5spj OR 5spm OR 5spl OR 5spo OR 5sr1 OR 5spn OR 5sr0 OR 5spq OR 5sr3 OR 5spp OR 5sr2 OR 7jyc OR 7fr5 OR 5spc OR 8acl OR 7fr6 OR 5spb OR 7fr3 OR 5spe OR 7fr4 OR 5spd OR 7fr9 OR 5spg OR 5spf OR 7fr7 OR 5spi OR 7fr8 OR 5sph OR 5soz OR 8acd OR 7qg7 OR 5soy OR 7uo9 OR 7jz0 OR 7fr1 OR 7fr2 OR 5spa OR 7fr0 OR 5sor OR 5sq4 OR 5soq OR 5sq3 OR 7uo4 OR 5sot OR 5sq6 OR 5sos OR 5sq5 OR 5sov OR 5sq8 OR 7uo7 OR 5sou OR 5sq7 OR 5sox OR 5sow OR 5sq9 OR 5sql OR 5sqk OR 5sqn OR 5ss0 OR 5sqm OR 7fra OR 5sqp OR 5ss2 OR 7frb OR 5sqo OR 5ss1 OR 5sqr OR 5ss4 OR 7qgi OR 5sqq OR 5ss3 OR 7ywr OR 5sqd OR 5sqc OR 7jyy OR 5sqf OR 5sqe OR 7uob OR 5sqh OR 5sqg OR 5sqj OR 7uoe OR 5sqi OR 5spz OR 5sqb OR 7bij OR 5sqa OR 5sps OR 5sr5 OR 5spr OR 5sr4 OR 5spu OR 5sr7 OR 5spt OR 5sr6 OR 5spw OR 5sr9 OR 5spv OR 5sr8 OR 5spy OR 5spx OR 5srm OR 5srl OR 5sro OR 5srn OR 5srq OR 5s20 OR 5srp OR 5srs OR 5srr OR 5s22 OR 5sre OR 5srd OR 5srg OR 5srf OR 5sri OR 5srh OR 5srk OR 5srj OR 5sra OR 5src OR 5srb OR 5sqt OR 5ss6 OR 5sqs OR 5ss5 OR 7frc OR 5sqv OR 5ss8 OR 7frd OR 5squ OR 5ss7 OR 5sqx OR 5s18 OR 5sqw OR 5ss9 OR 5sqz OR 5sqy OR 5ssn OR 5s1k OR 5ssm OR 5ssp OR 5s30 OR 5sso OR 5s1m OR 5ssr OR 5s32 OR 5s1o OR 5s31 OR 5ssq OR 5s34 OR 5s33 OR 5s1q OR 5ssf OR 5sse OR 5s1c OR 5ssh OR 5ssg OR 5s1e OR 5ssj OR 5s1g OR 5ssi OR 7qif OR 5ssl OR 5s1i OR 5ssk OR 7mb6 OR 7mb7 OR 7mb4 OR 7mb5 OR 7dok OR 5ssb OR 5ssa OR 5ssd OR 7mb8 OR 5s1a OR 5ssc OR 7mb9 OR 5sru OR 5srt OR 5s24 OR 5srw OR 5s27 OR 5srv OR 5s26 OR 5sry OR 5s29 OR 7mb2 OR 5srx OR 5s28 OR 7mb3 OR 7doi OR 7mb0 OR 5srz OR 7mb1 OR 5s2m OR 5s2l OR 7mbg OR 5s2o OR 5s41 OR 5s2n OR 5s40 OR 5s43 OR 5s2q OR 5s2p OR 5s42 OR 5s2s OR 5s45 OR 5s44 OR 5s2r OR 7mbi OR 5s2e OR 7dpu OR 5s2d OR 7dpv OR 5s2g OR 5s2f OR 5s2i OR 5s2h OR 5s2k OR 5s2j OR 7mau OR 7mav OR 7mc5 OR 7mc6 OR 7mat OR 5s2a OR 7maz OR 5s2c OR 7maw OR 5s2b OR 7max OR 7dpp OR 5s36) AND molecule_sequence:['' TO *] AND status:REL",
+      "fl":"pdb_id,title,experimental_method,resolution",
+      "start":"0",
+      "sort":"",
+      "rows":"500",
+      "wt":"json"}},
+  "response":{"numFound":356,"start":0,"docs":[
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7wof",
+        "resolution":1.72,
+        "title":"SARS-CoV-2 3CLpro"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"7ywr",
+        "title":"NMR structure of the N-terminal domain of Nsp8 from SARS-CoV-2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fr1",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z1423250928"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jvz",
+        "resolution":2.5,
+        "title":"SARS CoV-2 MAIN PROTEASE 3CLpro, ROOM TEMPERATURE, DAMAGE FREE XFEL MONOCLINIC STRUCTURE"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fr0",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2890182452"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fr5",
+        "resolution":1.0,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2890189003"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fr6",
+        "resolution":1.0,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2890147894"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fra",
+        "resolution":1.0,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z1343520564"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fr9",
+        "resolution":1.0,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z1367095370"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fr7",
+        "resolution":1.0,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z431872694"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssc",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCk500000doQ8X"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7maz",
+        "resolution":1.7,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Covalent Inhibitor SM139"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssf",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCmr000000sTGN"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssb",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCmk000007RhkC"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srj",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5265428226"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ss2",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCnt000006kx7L"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssl",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCoj00000doMWF"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ss0",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCn9000000uj1v"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srg",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5265428403"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ss1",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCou000000a2Hm"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sry",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5265428218"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ss3",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCnu000001eLaQ"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb1",
+        "resolution":1.43,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Covalent Inhibitor SM143"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb0",
+        "resolution":1.54,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Covalent Inhibitor SM141"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mav",
+        "resolution":1.91,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Covalent Inhibitor dFFCit-yne"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7maw",
+        "resolution":2.07,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Covalent Inhibitor SM129"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7max",
+        "resolution":1.98,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Covalent Inhibitor SM137"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb2",
+        "resolution":1.89,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Covalent Inhibitor SM144"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8ehk",
+        "resolution":2.18,
+        "title":"Crystal Structure of SARS-CoV-2 Main Protease (Mpro) T135I Mutant"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8ehj",
+        "resolution":2.28,
+        "title":"Crystal Structure of SARS-CoV-2 Main Protease (Mpro) H172Q Mutant"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8ehm",
+        "resolution":1.84,
+        "title":"Crystal Structure of SARS-CoV-2 Main Protease (Mpro) S144F Mutant"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8ehl",
+        "resolution":2.19,
+        "title":"Crystal Structure of SARS-CoV-2 Main Protease (Mpro) S144M Mutant"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo4",
+        "resolution":3.38,
+        "title":"SARS-CoV-2 replication-transcription complex bound to Remdesivir triphosphate, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo4",
+        "resolution":3.38,
+        "title":"SARS-CoV-2 replication-transcription complex bound to Remdesivir triphosphate, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uoe",
+        "resolution":2.67,
+        "title":"SARS-CoV-2 replication-transcription complex bound to CTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uob",
+        "resolution":2.68,
+        "title":"SARS-CoV-2 replication-transcription complex bound to GTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo9",
+        "resolution":3.13,
+        "title":"SARS-CoV-2 replication-transcription complex bound to UTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo9",
+        "resolution":3.13,
+        "title":"SARS-CoV-2 replication-transcription complex bound to UTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo7",
+        "resolution":3.09,
+        "title":"SARS-CoV-2 replication-transcription complex bound to ATP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo7",
+        "resolution":3.09,
+        "title":"SARS-CoV-2 replication-transcription complex bound to ATP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uoe",
+        "resolution":2.67,
+        "title":"SARS-CoV-2 replication-transcription complex bound to CTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uob",
+        "resolution":2.68,
+        "title":"SARS-CoV-2 replication-transcription complex bound to GTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ukk",
+        "resolution":2.0,
+        "title":"Room-temperature X-ray structure of SARS-CoV-2 main protease in complex with GC-376"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7frd",
+        "resolution":1.0,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with PTERA_A25A - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7frc",
+        "resolution":1.0,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with PTERA_A05 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction",
+          "Neutron Diffraction",
+          "Hybrid"],
+        "pdb_id":"7jun",
+        "resolution":2.3,
+        "title":"Joint neutron/X-ray structure of SARS-CoV-2 3CL Mpro at room temperature"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l8j",
+        "resolution":2.45,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Rupintrivir (P21212)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fr8",
+        "resolution":1.0,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2890408258 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fr3",
+        "resolution":1.0,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with PTERA_A01A - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7frb",
+        "resolution":1.0,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5551426009 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fr2",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5551425673 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dpv",
+        "resolution":2.35,
+        "title":"SARS-CoV-2 3CL protease (3CLpro) in complex with 7-O-methyl-dihydromyricetin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssa",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINClv000001jcNa - (r,r) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srt",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5198562791 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssp",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5459166285 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssq",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5459166291"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssi",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCn500000bifGU"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssr",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5459166300"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5src",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5198562500 - (R,R) and (R,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srf",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4175156780 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srn",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2466029596 - (R) and (S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sri",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5278734565 - pyrimido-indole core only"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssg",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCpv000006Li5M - (R,R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srk",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5373433775 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srr",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4158218973 - (S,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ss4",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCns000000RJoU"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srw",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2364914118 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srd",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5373433723 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ss5",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCpE000000mAwk - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srl",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5352447655 - (R,R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srx",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5198562503 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srq",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z3831836449 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ss7",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCnz000004Qo8S"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssn",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894382 - (R,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssk",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCkk00000cjQyM - (R,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sre",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5198562530 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssm",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5459166256 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sro",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5198562509 - (R) and (S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ss8",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCny000002NPIr"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ss9",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCow000000AiWv - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srm",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z3860662215 - (R) and (S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srz",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5281440906 - (R,S) and (S,R) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sru",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5198562523 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sse",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCoD000001aHBe"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srp",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5340019182 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssd",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCm4000007vvRA - (R,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ss6",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINClf00000cdzal"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srs",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2614735107 - (R) and (S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssj",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCno00000broQT"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srv",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5198562533 - (R,R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sso",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5198562519 - (R) and (S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ssh",
+        "resolution":1.15,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINCpx000006Mh4L - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l8i",
+        "resolution":2.1,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Rupintrivir (P21)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mat",
+        "resolution":2.74,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Covalent Inhibitor dFFR"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb3",
+        "resolution":1.81,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Covalent Inhibitor SM145"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lzv",
+        "resolution":1.6,
+        "title":"Structure of SARS-CoV-2 3CL protease in complex with inhibitor 19b"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7bfb",
+        "resolution":2.05,
+        "title":"Crystal structure of ebselen covalently bound to the main protease (3CLpro/Mpro) of SARS-CoV-2."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jw8",
+        "resolution":1.84,
+        "title":"Crystal structure of SARS-CoV-2 3CL protease in complex with compound 4 in space group P1"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7djr",
+        "resolution":1.45,
+        "title":"Crystal structure of SARS-CoV-2 main protease (no ligand)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6z5t",
+        "resolution":1.571,
+        "title":"SARS-CoV-2 Macrodomain in complex with ADP-ribose"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lzu",
+        "resolution":1.6,
+        "title":"Structure of SARS-CoV-2 3CL protease in complex with inhibitor 12b"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lzw",
+        "resolution":2.2,
+        "title":"Structure of SARS-CoV-2 3CL protease in complex with inhibitor 20b (deuterated analog of 19b)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sp3",
+        "resolution":1.01,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000450476923 - (S,R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqh",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894431- (S,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqp",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5028367859 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqv",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894399 - (S,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sps",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with FRESH00012962804 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sok",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000302059710 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqy",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5211314110 - (S,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spw",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with FRESH00004674769 - (R,S,R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sp7",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010903509 - (S,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sr9",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z3562259556 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spf",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4718398569"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sq7",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z1445235880"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5smk",
+        "resolution":1.65,
+        "title":"PanDDA analysis group deposition of ground-state model of SARS-CoV-2 NSP14"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sr5",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5265454473 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spu",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC001364774273 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sov",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000893191027 - (S) and (R) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sln",
+        "resolution":2.208,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z57299529"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spp",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with REAL250002155324"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqs",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC001240411747"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spg",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4718398585"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spn",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with FRESH00010608284"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sr2",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with EN300-36602160"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5soo",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000897286891 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sr6",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z3011799020 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sp0",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000681764827"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sos",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000559260078"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sq3",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5028367848 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spk",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with REAL250003296134 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sou",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000285507655 - (R) and (S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sop",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC001364194305 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spr",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with REAL250002852032 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slv",
+        "resolution":2.049,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2856434942"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqe",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894392- (S,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sq1",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC001601221314 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5soz",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000827900828"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqn",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4914649780 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sor",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000110510893"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sp1",
+        "resolution":1.03,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC001472868186"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sq0",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with REAL300007260658 - (S,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spe",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4718398531 - (S,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqm",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5028367849 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spo",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with FRESH00020289192 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqf",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with REAL250000548538 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spl",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000611664196 - (S,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sp9",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z3508769536 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sp4",
+        "resolution":1.06,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4718398572"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slq",
+        "resolution":2.112,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2856434829"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sq8",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z1445261766"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sot",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000292637864 - (R) and (S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqr",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with REAL300016493575 - (R,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5soy",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000222377450"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spx",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with REAL250003958539"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spq",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with FRESH00014134848 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sra",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5372052920 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spz",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with REAL250001448407 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spm",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with FRESH00002410346"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sph",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4718398515 - (R,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sql",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2689779890"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sp6",
+        "resolution":1.07,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4718398580"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqo",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5030903496 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqz",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z1039058598"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqq",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with FRESH00014649046"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sox",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000043461211"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sp8",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894415 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spy",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with REAL300019621104"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spj",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000893101964"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sq6",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894406"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spv",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with REAL250003774401"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sr4",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2479779298 - (R,S) and (S,R) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sq2",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2976440814 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5som",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000835985505 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sr8",
+        "resolution":1.1,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4914650235 - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sq4",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2364980062 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sol",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000910475722 - (S,R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5son",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000920153280 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5soj",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000642067873 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sr3",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5021669050 - (S,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5soq",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000896845531 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sow",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000118179920"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sr1",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z1272415642 - (R) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sr0",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z3649721459 - (R,S) and (S,R) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqk",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z2479782408 - (R,S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mbi",
+        "resolution":2.15,
+        "title":"Structure of SARS-CoV2 3CL protease covalently bound to peptidomimetic inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lzy",
+        "resolution":1.85,
+        "title":"Structure of SARS-CoV-2 3CL protease in complex with inhibitor 3c"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qg7",
+        "resolution":1.72,
+        "title":"SARS-CoV-2 macrodomain Nsp3b bound to the remdesivir nucleoside GS-441524"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lzz",
+        "resolution":2.0,
+        "title":"Structure of SARS-CoV-2 3CL protease in complex with inhibitor 5c"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7si9",
+        "resolution":2.0,
+        "title":"Room temperature X-ray structure of SARS-CoV-2 main protease (Mpro) in complex with PF-07321332"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qgi",
+        "resolution":1.65,
+        "title":"Crystal structure of SARS-CoV-2 NSP14 in the absence of NSP10"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sgh",
+        "resolution":1.85,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with ML124N"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dok",
+        "resolution":2.73,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase (extended conformation) bound to penciclovir"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dok",
+        "resolution":2.73,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase (extended conformation) bound to penciclovir"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7doi",
+        "resolution":2.6,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to penciclovir."},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7doi",
+        "resolution":2.6,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to penciclovir."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8acd",
+        "resolution":1.39,
+        "title":"Crystal structure of SARS-CoV-2 main protease (MPro) in complex with the non-covalent inhibitor GA-17S"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8acl",
+        "resolution":1.4,
+        "title":"Crystal structure of SARS-CoV-2 main protease (MPro) in complex with the non-covalent inhibitor GC-14"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lzt",
+        "resolution":1.55,
+        "title":"Structure of SARS-CoV-2 3CL protease in complex with inhibitor 8b"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dpp",
+        "resolution":2.1,
+        "title":"SARS-CoV-2 3CL protease (3CLpro) in complex with myricetin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dpu",
+        "resolution":1.75,
+        "title":"SARS-CoV-2 3CL protease (3CLpro) in complex with 7-O-methyl-myricetin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fr4",
+        "resolution":1.0,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with PTERA_A26A - (S) isomer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mbg",
+        "resolution":1.86,
+        "title":"SARS-CoV-2 Main protease in orthorhombic space group"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sp2",
+        "resolution":0.97,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000579359572 - (R) and (S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqg",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894430 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srb",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5198562532 - (R) and (S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqa",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894395 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slu",
+        "resolution":2.09,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1796014543"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slz",
+        "resolution":2.54,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2072621991"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5smf",
+        "resolution":2.011,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z56791867"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqc",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894388 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slp",
+        "resolution":1.819,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z373768898"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sq5",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894407 - (R,S) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sma",
+        "resolution":2.011,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2856434890"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slw",
+        "resolution":2.05,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1310876699"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slx",
+        "resolution":1.76,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z752989138"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5smc",
+        "resolution":2.19,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2033637875"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqi",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5016127255 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sls",
+        "resolution":2.29,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1373445602"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqd",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894382 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sq9",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894420 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sly",
+        "resolution":2.018,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1526504764"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slt",
+        "resolution":1.901,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1816233707"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spi",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4574659604 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqb",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894390 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5smb",
+        "resolution":2.181,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z419995480"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqx",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5183357278 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spd",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4718398539 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spa",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894417 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5smd",
+        "resolution":1.826,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z274575916"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spc",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894387 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slr",
+        "resolution":1.86,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2073741691"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slo",
+        "resolution":1.829,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z56983806"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5srh",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5265470867 - pyrimido-indole core only"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spb",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5010894404 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5soi",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000078036511 - (R) and (S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sme",
+        "resolution":1.91,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z437584380"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqw",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5014193706 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqt",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000833624464 - (R,R) and (S,S) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sr7",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z4914649782 - (R,R,S) and (S,S,R) isomers"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lzx",
+        "resolution":1.65,
+        "title":"Structure of SARS-CoV-2 3CL protease in complex with inhibitor 1c"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lyh",
+        "resolution":1.9,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with inhibitor UAWJ9-36-1"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mau",
+        "resolution":1.95,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with Covalent Inhibitor dFFR-yne"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qif",
+        "resolution":2.53,
+        "title":"Crystal structure of SARS-CoV-2 NSP14 in complex with 7MeGpppG."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb8",
+        "resolution":1.62,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp8/9 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb8",
+        "resolution":1.62,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp8/9 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb4",
+        "resolution":1.83,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp4/5 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb4",
+        "resolution":1.83,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp4/5 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb5",
+        "resolution":1.6,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp5/6 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb5",
+        "resolution":1.6,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp5/6 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb9",
+        "resolution":1.81,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp10/11 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb7",
+        "resolution":2.02,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp7/8 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb7",
+        "resolution":2.02,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp7/8 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb6",
+        "resolution":2.21,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp6/7 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb6",
+        "resolution":2.21,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp6/7 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mb9",
+        "resolution":1.81,
+        "title":"SARS-CoV-2 Main Protease (Mpro) C145A in Complex with Cleavage Site Nsp10/11 (P6-P1)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6x4i",
+        "resolution":1.85,
+        "title":"Crystal Structure of NSP15 Endoribonuclease from SARS CoV-2 in the Complex with 3'-uridinemonophosphate"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lyi",
+        "resolution":1.9,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with inhibitor UAWJ9-36-3"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6z6i",
+        "resolution":2.0,
+        "title":"SARS-CoV-2 Macrodomain in complex with ADP-HPD"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7bij",
+        "resolution":1.47,
+        "title":"Crystal Structure of SARS-CoV-2 main protease (Nsp5) in complex with compound 13"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jyc",
+        "resolution":1.79,
+        "title":"Crystal Structure of SARS-CoV-2 Main Protease (3CLpro/Mpro) in Complex with Covalent Inhibitor Narlaprevir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s1a",
+        "resolution":1.079,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with EN300-43406"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s29",
+        "resolution":1.3,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z199959602"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2f",
+        "resolution":1.186,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z44592329"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2h",
+        "resolution":1.068,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z2856434920"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2a",
+        "resolution":1.08,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z1263529624"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2k",
+        "resolution":1.097,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z445856640"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2c",
+        "resolution":1.092,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z45612755"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s22",
+        "resolution":1.175,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z145120524"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s40",
+        "resolution":1.187,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with NCL-00023824"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s20",
+        "resolution":1.037,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with PB1827975385"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2l",
+        "resolution":1.085,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z2234920345"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5squ",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with REAL250004627335"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2r",
+        "resolution":1.132,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z57292369"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s41",
+        "resolution":1.186,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with NCL-00023825"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s1g",
+        "resolution":1.11,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with EN300-108952"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s45",
+        "resolution":1.16,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with NCL-00024773"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2s",
+        "resolution":1.104,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z2856434894"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s30",
+        "resolution":1.19,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z65532537"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s1m",
+        "resolution":1.184,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with STK497968"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s28",
+        "resolution":1.09,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z409974522"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s33",
+        "resolution":1.06,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z906021418"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s1q",
+        "resolution":1.127,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with EN300-17035"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s43",
+        "resolution":1.11,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with NCL-00024661"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s27",
+        "resolution":1.126,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z1262398530"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s36",
+        "resolution":1.058,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z2856434938"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2m",
+        "resolution":1.136,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z56827661"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s32",
+        "resolution":1.166,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z26781943"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2b",
+        "resolution":1.11,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z373769142"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2e",
+        "resolution":1.116,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z1152242726"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s44",
+        "resolution":1.059,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with NCL-00024890"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2i",
+        "resolution":1.085,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z57299529"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s24",
+        "resolution":1.14,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with EN300-697611"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5spt",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with ZINC000850008207"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2d",
+        "resolution":1.06,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z369936976"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s31",
+        "resolution":1.145,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z1741959530"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2n",
+        "resolution":1.133,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z1787627869"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2q",
+        "resolution":1.28,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z26781952"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s1k",
+        "resolution":1.076,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with EN300-105873"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s26",
+        "resolution":1.125,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z605596346"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2j",
+        "resolution":1.111,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z509756472"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sqj",
+        "resolution":1.05,
+        "title":"PanDDA analysis group deposition -- Crystal structure of SARS-CoV-2 NSP3 macrodomain in complex with Z5021668601"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2g",
+        "resolution":1.19,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z321318226"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2o",
+        "resolution":1.091,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z645232558"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s2p",
+        "resolution":1.033,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z927746322"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7bgp",
+        "resolution":1.68,
+        "title":"Crystal structure of MG-132 covalently bound to the main protease (3CLpro/Mpro) of SARS-CoV-2 in absence of DTT."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sgw",
+        "resolution":1.95,
+        "title":"Papain-Like Protease of SARS CoV-2 in complex with PLP_Snyder630 inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sgu",
+        "resolution":1.79,
+        "title":"Papain-Like Protease of SARS CoV-2, C111S mutant, in complex with PLP_Snyder608 inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sgv",
+        "resolution":2.0,
+        "title":"Papain-Like Protease of SARS CoV-2, C111S mutant, in complex with PLP_Snyder630 inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jz0",
+        "resolution":2.15,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA2m)pUpUpApApA (Cap-1) and S-Adenosyl-L-homocysteine (SAH)."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jyy",
+        "resolution":2.05,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA)pUpUpApApA (Cap-0) and S-Adenosylmethionine (SAM)."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7diy",
+        "resolution":2.693,
+        "title":"Crystal structure of SARS-CoV-2 nsp10 bound to nsp14-exoribonuclease domain"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dk1",
+        "resolution":1.902,
+        "title":"Crystal structure of Zinc bound SARS-CoV-2 main protease"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s1e",
+        "resolution":1.172,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with AB-601_30915014"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s18",
+        "resolution":1.13,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with EN300-321461"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s34",
+        "resolution":1.057,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z2856434941"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s42",
+        "resolution":1.09,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with NCL-00023833"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s1c",
+        "resolution":1.174,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with Z3034471507"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s1i",
+        "resolution":1.068,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with EN300-301084"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5s1o",
+        "resolution":1.09,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 Nsp3 macrodomain in complex with STL414928"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qci",
+        "resolution":1.76,
+        "title":"Structure of SARS-CoV-2 Papain-like Protease bound to N-(3,4-dihydroxybenzylidene)-thiosemicarbazone"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qcj",
+        "resolution":1.84,
+        "title":"Structure of SARS-CoV-2 Papain-like Protease bound to N-(2,4-dihydroxybenzylidene)-thiosemicarbazone"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qcm",
+        "resolution":1.77,
+        "title":"Structure of SARS-CoV-2 Papain-like Protease bound to N-(3-methoxy-4-hydroxy-acetophenone)thiosemicarbazone"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qch",
+        "resolution":1.88,
+        "title":"Structure of SARS-CoV-2 Papain-like Protease bound to N-(3,5-dimethoxy-4-hydroxybenzyliden)thiosemicarbazone"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qck",
+        "resolution":1.92,
+        "title":"Structure of SARS-CoV-2 Papain-like Protease bound to N-(2,5-dihydroxybenzylidene)-thiosemicarbazone"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ult",
+        "resolution":1.9,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer Apo-Form."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ult",
+        "resolution":1.9,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer Apo-Form."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7diy",
+        "resolution":2.693,
+        "title":"Crystal structure of SARS-CoV-2 nsp10 bound to nsp14-exoribonuclease domain"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mc6",
+        "resolution":2.1,
+        "title":"Crystal structure of the SARS-CoV-2 ExoN-nsp10 complex containing Mg2+ ion"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mc6",
+        "resolution":2.1,
+        "title":"Crystal structure of the SARS-CoV-2 ExoN-nsp10 complex containing Mg2+ ion"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mc5",
+        "resolution":1.64,
+        "title":"Crystal structure of the SARS-CoV-2 ExoN-nsp10 complex"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7mc5",
+        "resolution":1.64,
+        "title":"Crystal structure of the SARS-CoV-2 ExoN-nsp10 complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo9",
+        "resolution":3.13,
+        "title":"SARS-CoV-2 replication-transcription complex bound to UTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo4",
+        "resolution":3.38,
+        "title":"SARS-CoV-2 replication-transcription complex bound to Remdesivir triphosphate, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo4",
+        "resolution":3.38,
+        "title":"SARS-CoV-2 replication-transcription complex bound to Remdesivir triphosphate, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uoe",
+        "resolution":2.67,
+        "title":"SARS-CoV-2 replication-transcription complex bound to CTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uoe",
+        "resolution":2.67,
+        "title":"SARS-CoV-2 replication-transcription complex bound to CTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uob",
+        "resolution":2.68,
+        "title":"SARS-CoV-2 replication-transcription complex bound to GTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uob",
+        "resolution":2.68,
+        "title":"SARS-CoV-2 replication-transcription complex bound to GTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo9",
+        "resolution":3.13,
+        "title":"SARS-CoV-2 replication-transcription complex bound to UTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo9",
+        "resolution":3.13,
+        "title":"SARS-CoV-2 replication-transcription complex bound to UTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo4",
+        "resolution":3.38,
+        "title":"SARS-CoV-2 replication-transcription complex bound to Remdesivir triphosphate, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo7",
+        "resolution":3.09,
+        "title":"SARS-CoV-2 replication-transcription complex bound to ATP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo7",
+        "resolution":3.09,
+        "title":"SARS-CoV-2 replication-transcription complex bound to ATP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uo7",
+        "resolution":3.09,
+        "title":"SARS-CoV-2 replication-transcription complex bound to ATP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uoe",
+        "resolution":2.67,
+        "title":"SARS-CoV-2 replication-transcription complex bound to CTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7uob",
+        "resolution":2.68,
+        "title":"SARS-CoV-2 replication-transcription complex bound to GTP, in a pre-catalytic state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dok",
+        "resolution":2.73,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase (extended conformation) bound to penciclovir"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dok",
+        "resolution":2.73,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase (extended conformation) bound to penciclovir"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dok",
+        "resolution":2.73,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase (extended conformation) bound to penciclovir"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7doi",
+        "resolution":2.6,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to penciclovir."},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7doi",
+        "resolution":2.6,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to penciclovir."},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7doi",
+        "resolution":2.6,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to penciclovir."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jz0",
+        "resolution":2.15,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA2m)pUpUpApApA (Cap-1) and S-Adenosyl-L-homocysteine (SAH)."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jz0",
+        "resolution":2.15,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA2m)pUpUpApApA (Cap-1) and S-Adenosyl-L-homocysteine (SAH)."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jyy",
+        "resolution":2.05,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA)pUpUpApApA (Cap-0) and S-Adenosylmethionine (SAM)."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jyy",
+        "resolution":2.05,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA)pUpUpApApA (Cap-0) and S-Adenosylmethionine (SAM)."}]
+  }}

@@ -1,0 +1,13 @@
+##fileformat=VCFv4.2
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##contig=<ID=contig123,length=15>
+##contig=<ID=contig456,length=20>
+##contig=<ID=contig789,length=25>
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##reference=test/jalview/io/vcf/contigs.fasta
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+contig123	8	.	C	A	81.96	.	AC=1;AF=0.1
+contig123	12	.	G	T	1666.64	.	AC=1;AF=0.2
+contig456	15	.	T	C	41.94	.	AC=1;AF=0.3
+contig789	2	.	G	T	224.23	.	AC=1,2;AF=0
+contig789	21	.	G	A	433.35	.	AC=3;AF=0.6

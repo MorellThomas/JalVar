@@ -1,0 +1,11 @@
+        <symlink name="Uninstall Old Jalview (optional).app" target="Jalview.app/Contents/Resources/app/Uninstall Old Jalview.app" />
+        <!--
+        <file name="Uninstall Old Jalview (optional).app/Contents/_CodeSignature/CodeResources" file="${compiler:JALVIEW_DIR}/${compiler:INSTALL4J_UTILS_DIR}/Uninstall Old Jalview.app/Contents/_CodeSignature/CodeResources" />
+        <file name="Uninstall Old Jalview (optional).app/Contents/MacOS/applet" file="${compiler:JALVIEW_DIR}/${compiler:INSTALL4J_UTILS_DIR}/Uninstall Old Jalview.app/Contents/MacOS/applet" />
+        <file name="Uninstall Old Jalview (optional).app/Contents/Resources/applet.rsrc" file="${compiler:JALVIEW_DIR}/${compiler:INSTALL4J_UTILS_DIR}/Uninstall Old Jalview.app/Contents/Resources/applet.rsrc" />
+        <file name="Uninstall Old Jalview (optional).app/Contents/Resources/description.rtfd/TXT.rtf" file="${compiler:JALVIEW_DIR}/${compiler:INSTALL4J_UTILS_DIR}/Uninstall Old Jalview.app/Contents/Resources/description.rtfd/TXT.rtf" />
+        <file name="Uninstall Old Jalview (optional).app/Contents/Resources/Scripts/main.scpt" file="${compiler:JALVIEW_DIR}/${compiler:INSTALL4J_UTILS_DIR}/Uninstall Old Jalview.app/Contents/Resources/Scripts/main.scpt" />
+        <file name="Uninstall Old Jalview (optional).app/Contents/Resources/applet.icns" file="${compiler:JALVIEW_DIR}/${compiler:INSTALL4J_UTILS_DIR}/Uninstall Old Jalview.app/Contents/Resources/applet.icns" />
+        <file name="Uninstall Old Jalview (optional).app/Contents/Info.plist" file="${compiler:JALVIEW_DIR}/${compiler:INSTALL4J_UTILS_DIR}/Uninstall Old Jalview.app/Contents/Info.plist" />
+        <file name="Uninstall Old Jalview (optional).app/Contents/PkgInfo" file="${compiler:JALVIEW_DIR}/${compiler:INSTALL4J_UTILS_DIR}/Uninstall Old Jalview.app/Contents/PkgInfo" />
+        -->

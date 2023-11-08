@@ -1,0 +1,2379 @@
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":5,
+    "params":{
+      "q":"(5hpu OR 2jmn OR 4iuz OR 6s34 OR 1efe OR 6ce7 OR 1w8p OR 1evr OR 8guy OR 1hls OR 5hpr OR 7jp3 OR 3v19 OR 5bts OR 3q6e OR 2m1d OR 2m1e OR 2n2v OR 2n2w OR 2n2x OR 1t1p OR 1t1q OR 2rn5 OR 2m2o OR 4une OR 3v1g OR 2m2p OR 4unh OR 5t7r OR 4ung OR 4gbi OR 4rxw OR 4gbl OR 4gbk OR 4gbn OR 3aiy OR 1ioh OR 1iog OR 5wob OR 4gbc OR 2m2m OR 2m2n OR 5hqi OR 2hiu OR 6ce9 OR 4z76 OR 4z78 OR 4z77 OR 2kqp OR 2kqq OR 5en9 OR 6k59 OR 1mhj OR 1mhi OR 5hrq OR 6ceb OR 1jca OR 4p65 OR 1k3m OR 3kq6 OR 6s4i OR 4f0o OR 6s4j OR 4f0n OR 6gnq OR 5ems OR 2mvc OR 2mvd OR 1sf1 OR 3hyd OR 2l1y OR 1uz9 OR 2l1z OR 7kd6 OR 7nhu OR 3w80 OR 4aiy OR 3utq OR 7stj OR 3ilg OR 7stk OR 5cjo OR 7sth OR 4ak0 OR 7sti OR 6b3q OR 4f1g OR 4wdi OR 1jco OR 1vkt OR 6tyh OR 7u6e OR 4iyd OR 5ena OR 4f1b OR 4f1a OR 4iyf OR 4f1d OR 7yq5 OR 4f1c OR 4f1f OR 7yq3 OR 7yq4 OR 4ajx OR 4ajz OR 1ben OR 1tyl OR 1tym OR 2vk0 OR 6bfc OR 2om0 OR 2om1 OR 3uts OR 3utt OR 3tt8 OR 2omh OR 2omi OR 3u4n OR 6o17 OR 4fg3 OR 2vjz OR 4oga OR 2lgb OR 6ck2 OR 2omg OR 5uoz OR 2oly OR 1zeg OR 2olz OR 3inc OR 1zeh OR 4akj OR 4f51 OR 3w7y OR 3rov OR 3w7z OR 6b70 OR 5co9 OR 1j73 OR 5aiy OR 5co2 OR 1os4 OR 5uqa OR 1os3 OR 4f4t OR 2jv1 OR 5co6 OR 4f4v OR 7bw7 OR 5wdm OR 7bw8 OR 1rwe OR 2ceu OR 2omq OR 2r34 OR 8ez0 OR 2r35 OR 7s4y OR 2r36 OR 5cny OR 2juu OR 2juv OR 5mt9 OR 2jum OR 3exx OR 3ir0 OR 1htv OR 5mt3 OR 7bwa OR 3zqr OR 6h3m OR 8eyx OR 1lkq OR 8eyy OR 5mam OR 3zs2 OR 2mli OR 1ai0 OR 5usp OR 5uu2 OR 5uu4 OR 5uu3 OR 3e7y OR 3e7z OR 4ex0 OR 3jsd OR 6gv0 OR 4ex1 OR 2kxk OR 1sjt OR 1q4v OR 1sju OR 5uru OR 5urt OR 6jk8 OR 1xda OR 6z7y OR 1hui OR 5hyj OR 6z7w OR 4ey9 OR 4eww OR 1a7f OR 2k91 OR 4nib OR 1b9e OR 4ewx OR 4ewz OR 4ey1 OR 1jk8 OR 5uss OR 5usv OR 3zu1 OR 6p4z OR 4efx OR 6x4x OR 1xw7 OR 2kjj OR 7qgf OR 1kmf OR 4eyd OR 1fu2 OR 4exx OR 2wc0 OR 2ws6 OR 1qj0 OR 2ws7 OR 2c8q OR 2c8r OR 5udp OR 5boq OR 7sl2 OR 4f8f OR 7sl3 OR 2ws0 OR 2ws1 OR 7sl1 OR 1guj OR 7sl6 OR 7sl7 OR 2ws4 OR 7sl4 OR 1lph OR 2wby OR 1qiz OR 1qiy OR 3i40 OR 2k9r OR 6sof OR 2wru OR 7rzi OR 4fka OR 4eyp OR 2wrv OR 2wrw OR 2wrx OR 1xgl OR 5bpo OR 1aiy OR 7pg0 OR 5c0d OR 7rze OR 7pg4 OR 2kju OR 7rzf OR 7pg2 OR 4eyn OR 7pg3 OR 7mqs OR 3fq9 OR 3i3z OR 3p33 OR 1hiq OR 2mpg OR 5mwq OR 2mpi OR 7mqr OR 7rkd OR 7mqo OR 1mso OR 7qid OR 2h67 OR 6vep OR 5bqq OR 6ves OR 4y19 OR 6vet OR 1fub OR 6ver OR 6tc2 OR 1t0c OR 1ev6 OR 1ev3 OR 2aiy OR 3zi3 OR 5viz OR 2g54 OR 4y1a OR 6nwv OR 5mhd OR 2g56 OR 3bxq OR 4cy7 OR 1hit OR 1his OR 2hh4 OR 6u46 OR 3w11 OR 2w44 OR 3w12 OR 3w13 OR 6hn5 OR 2hho OR 7v3p) AND molecule_sequence:['' TO *] AND status:REL",
+      "fl":"pdb_id,title,experimental_method,resolution",
+      "start":"0",
+      "sort":"",
+      "rows":"500",
+      "wt":"json"}},
+  "response":{"numFound":715,"start":0,"docs":[
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3hyd",
+        "resolution":1.0,
+        "title":"LVEALYL peptide derived from human insulin chain B, residues 11-17"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1t0c",
+        "title":"Solution Structure of Human Proinsulin C-Peptide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2omq",
+        "resolution":2.0,
+        "title":"VEALYL peptide derived from human insulin chain B, residues 12-17"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"6u46",
+        "title":"Solution Structure of a Heat-Resistant Long-Acting Insulin Analog"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1his",
+        "title":"Structure and dynamics of des-pentapeptide-insulin in solution: the molten-globule hypothesis."},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1efe",
+        "title":"AN ACTIVE MINI-PROINSULIN, M2PI"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1sju",
+        "title":"MINI-PROINSULIN, SINGLE CHAIN INSULIN ANALOG MUTANT: DES B30, HIS(B 10)ASP, PRO(B 28)ASP AND PEPTIDE BOND BETWEEN LYS B 29 AND GLY A 1, NMR, 20 STRUCTURES"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5wdm",
+        "resolution":2.803,
+        "title":"An ultra-stable single-chain insulin analog resists thermal inactivation and exhibits biological signaling duration equivalent to the native protein"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1his",
+        "title":"Structure and dynamics of des-pentapeptide-insulin in solution: the molten-globule hypothesis."},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1hit",
+        "title":"Receptor binding redefined by a structural switch in a mutant Human Insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"6k59",
+        "title":"Structure of Glargine insulin in 20% acetic acid-d4 (pH 1.9)"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"6k59",
+        "title":"Structure of Glargine insulin in 20% acetic acid-d4 (pH 1.9)"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1hiq",
+        "title":"PARADOXICAL STRUCTURE AND FUNCTION IN A MUTANT HUMAN INSULIN ASSOCIATED WITH DIABETES MELLITUS"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1hit",
+        "title":"Receptor binding redefined by a structural switch in a mutant Human Insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2mvc",
+        "title":"Solution structure of human insulin at pH 1.9"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1lkq",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT ILE-A2-GLY, VAL-A3-GLY, HIS-B10-ASP, PRO-B28-LYS, LYS-B29-PRO, 20 STRUCTURES"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2c8q",
+        "resolution":1.95,
+        "title":"insuline(1sec) and UV laser excited fluorescence"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2c8q",
+        "resolution":1.95,
+        "title":"insuline(1sec) and UV laser excited fluorescence"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2c8r",
+        "resolution":1.5,
+        "title":"insuline(60sec) and UV laser excited fluorescence"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2c8r",
+        "resolution":1.5,
+        "title":"insuline(60sec) and UV laser excited fluorescence"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1sjt",
+        "title":"MINI-PROINSULIN, TWO CHAIN INSULIN ANALOG MUTANT: DES B30, HIS(B 10)ASP, PRO(B 28)ASP, NMR, 20 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1hiq",
+        "title":"PARADOXICAL STRUCTURE AND FUNCTION IN A MUTANT HUMAN INSULIN ASSOCIATED WITH DIABETES MELLITUS"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1k3m",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT ILE-A2-ALA, HIS-B10-ASP, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m1e",
+        "title":"Biosynthetic engineered B28K-B29P human insulin monomer structure in in water solutions."},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1vkt",
+        "title":"HUMAN INSULIN TWO DISULFIDE MODEL, NMR, 10 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m2p",
+        "title":"Structure of [D-HisB24] insulin analogue at pH 8.0"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m1d",
+        "title":"Biosynthetic engineered B28K-B29P human insulin monomer structure in in water/acetonitrile solutions."},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2mvd",
+        "title":"Solution structure of [GlnB22]-insulin mutant at pH 1.9"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2mvd",
+        "title":"Solution structure of [GlnB22]-insulin mutant at pH 1.9"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6o17",
+        "resolution":1.58,
+        "title":"Recombinant Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6o17",
+        "resolution":1.58,
+        "title":"Recombinant Human Insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m2o",
+        "title":"Structure of [D-HisB24] insulin analogue at pH 1.9"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m2n",
+        "title":"Structure of [L-HisB24] insulin analogue at pH 8.0"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m2n",
+        "title":"Structure of [L-HisB24] insulin analogue at pH 8.0"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nhu",
+        "resolution":1.4,
+        "title":"Crystal structure of desB30 insulin produced by cell free protein synthesis"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nhu",
+        "resolution":1.4,
+        "title":"Crystal structure of desB30 insulin produced by cell free protein synthesis"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2mvc",
+        "title":"Solution structure of human insulin at pH 1.9"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2ws4",
+        "resolution":1.9,
+        "title":"Semi-synthetic analogue of human insulin ProB26-DTI in monomer form"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2ws4",
+        "resolution":1.9,
+        "title":"Semi-synthetic analogue of human insulin ProB26-DTI in monomer form"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1lkq",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT ILE-A2-GLY, VAL-A3-GLY, HIS-B10-ASP, PRO-B28-LYS, LYS-B29-PRO, 20 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1kmf",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT ILE-A2-ALLO-ILE, HIS-B10-ASP, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1sjt",
+        "title":"MINI-PROINSULIN, TWO CHAIN INSULIN ANALOG MUTANT: DES B30, HIS(B 10)ASP, PRO(B 28)ASP, NMR, 20 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1k3m",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT ILE-A2-ALA, HIS-B10-ASP, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m1e",
+        "title":"Biosynthetic engineered B28K-B29P human insulin monomer structure in in water solutions."},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2kjj",
+        "title":"Dynamics of insulin probed by 1H-NMR amide proton exchange anomalous flexibility of the receptor-binding surface"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1vkt",
+        "title":"HUMAN INSULIN TWO DISULFIDE MODEL, NMR, 10 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2jum",
+        "title":"ThrA3-DKP-insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m2p",
+        "title":"Structure of [D-HisB24] insulin analogue at pH 8.0"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m1d",
+        "title":"Biosynthetic engineered B28K-B29P human insulin monomer structure in in water/acetonitrile solutions."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2r35",
+        "resolution":2.08,
+        "title":"Crystal structure of RB human arg-insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3ilg",
+        "resolution":1.9,
+        "title":"Crystal structure of humnan insulin Sr+2 complex"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3ilg",
+        "resolution":1.9,
+        "title":"Crystal structure of humnan insulin Sr+2 complex"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3u4n",
+        "resolution":1.98,
+        "title":"A novel covalently linked insulin dimer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5en9",
+        "resolution":1.5,
+        "title":"High resolution x-ray crystal structure of isotope-labeled ester-insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5en9",
+        "resolution":1.5,
+        "title":"High resolution x-ray crystal structure of isotope-labeled ester-insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5viz",
+        "resolution":1.7,
+        "title":"X-Ray structure of Insulin Glargine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5viz",
+        "resolution":1.7,
+        "title":"X-Ray structure of Insulin Glargine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ena",
+        "resolution":1.35,
+        "title":"Xray crystal structure of isotope-labeled human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ena",
+        "resolution":1.35,
+        "title":"Xray crystal structure of isotope-labeled human insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m2o",
+        "title":"Structure of [D-HisB24] insulin analogue at pH 1.9"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2wrw",
+        "resolution":2.41,
+        "title":"Semi-synthetic highly active analogue of human insulin D-ProB26-DTI- NH2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2wrw",
+        "resolution":2.41,
+        "title":"Semi-synthetic highly active analogue of human insulin D-ProB26-DTI- NH2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3i3z",
+        "resolution":1.6,
+        "title":"Human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1mso",
+        "resolution":1.0,
+        "title":"T6 Human Insulin at 1.0 A Resolution"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1os4",
+        "resolution":2.25,
+        "title":"Dehydrated T6 human insulin at 295 K"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1kmf",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT ILE-A2-ALLO-ILE, HIS-B10-ASP, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rkd",
+        "resolution":1.25,
+        "title":"X-Ray structure of Insulin Analog GLULISINE"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1a7f",
+        "title":"INSULIN MUTANT B16 GLU, B24 GLY, DES-B30, NMR, 20 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1hls",
+        "title":"NMR STRUCTURE OF THE HUMAN INSULIN-HIS(B16)"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1jco",
+        "title":"Solution structure of the monomeric [Thr(B27)->Pro,Pro(B28)->Thr] insulin mutant (PT insulin)"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1t1p",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT HIS-B10-ASP, VAL-B12-THR, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2l1z",
+        "title":"NMR Structure of human insulin mutant GLY-B20-D-ALA, GLY-B23-D-ALA PRO-B28-LYS, LYS-B29-PRO, 20 Structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2l1z",
+        "title":"NMR Structure of human insulin mutant GLY-B20-D-ALA, GLY-B23-D-ALA PRO-B28-LYS, LYS-B29-PRO, 20 Structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2kju",
+        "title":"NMR structure of human insulin mutant glu-b21-d-glu, his-b10 asp pro-b28-lys, lys-b29-pro, 20 structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1ioh",
+        "title":"INSULIN MUTANT A8 HIS,(B1, B10, B16, B27)GLU, DES-B30, NMR, 26 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2kjj",
+        "title":"Dynamics of insulin probed by 1H-NMR amide proton exchange anomalous flexibility of the receptor-binding surface"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2juv",
+        "title":"AbaA3-DKP-insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1xgl",
+        "title":"HUMAN INSULIN DISULFIDE ISOMER, NMR, 10 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1xgl",
+        "title":"HUMAN INSULIN DISULFIDE ISOMER, NMR, 10 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2jum",
+        "title":"ThrA3-DKP-insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2juu",
+        "title":"allo-ThrA3 DKP-insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2jv1",
+        "title":"NMR structure of human insulin monomer in 35% CD3CN zinc free, 50 structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1hui",
+        "title":"INSULIN MUTANT (B1, B10, B16, B27)GLU, DES-B30, NMR, 25 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1hui",
+        "title":"INSULIN MUTANT (B1, B10, B16, B27)GLU, DES-B30, NMR, 25 STRUCTURES"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3i40",
+        "resolution":1.85,
+        "title":"Human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2r34",
+        "resolution":2.25,
+        "title":"Crystal structure of MN human arg-insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"6x4x",
+        "title":"B24Y DKP insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"6x4x",
+        "title":"B24Y DKP insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3u4n",
+        "resolution":1.98,
+        "title":"A novel covalently linked insulin dimer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3zi3",
+        "resolution":1.7,
+        "title":"Crystal structure of the B24His-insulin - human analogue"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3zi3",
+        "resolution":1.7,
+        "title":"Crystal structure of the B24His-insulin - human analogue"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"5mwq",
+        "title":"Biosynthetic engineered A21K-B31K-B32R human insulin monomer structure in water/acetonitrile solution"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5t7r",
+        "resolution":1.55,
+        "title":"A6-A11 trans-dicarba human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5t7r",
+        "resolution":1.55,
+        "title":"A6-A11 trans-dicarba human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4iyd",
+        "resolution":1.66,
+        "title":"Insulin glargine crystal structure 1"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3w7y",
+        "resolution":0.92,
+        "title":"0.92A structure of 2Zn human insulin at 100K"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3w7z",
+        "resolution":1.15,
+        "title":"1.15A structure of human 2Zn insulin at 293K"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2ws0",
+        "resolution":2.1,
+        "title":"Semi-synthetic analogue of human insulin NMeAlaB26-insulin at pH 7.5"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1iog",
+        "title":"INSULIN MUTANT A3 GLY,(B1, B10, B16, B27)GLU, DES-B30, NMR, 19 STRUCTURES"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4unh",
+        "resolution":2.75,
+        "title":"Human insulin B26Gly mutant crystal structure"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sth",
+        "resolution":3.5,
+        "title":"Full-length insulin receptor bound with unsaturated insulin WT (2 insulin bound) symmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sti",
+        "resolution":4.9,
+        "title":"Full-length insulin receptor bound with unsaturated insulin WT (1 insulin bound) asymmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7stj",
+        "resolution":4.4,
+        "title":"Full-length insulin receptor bound with unsaturated insulin WT (2 insulins bound) asymmetric conformation (Conformation 1)"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7stk",
+        "resolution":4.0,
+        "title":"Full-length insulin receptor bound with unsaturated insulin WT (2 insulins bound) asymmetric conformation (Conformation 2)"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2hiu",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN IN 20% ACETIC ACID, ZINC-FREE, 10 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2hiu",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN IN 20% ACETIC ACID, ZINC-FREE, 10 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m2m",
+        "title":"Structure of [L-HisB24] insulin analogue at pH 1.9"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2m2m",
+        "title":"Structure of [L-HisB24] insulin analogue at pH 1.9"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3i3z",
+        "resolution":1.6,
+        "title":"Human insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2mpg",
+        "title":"Solution structure of the [AibB8,LysB28,ProB29]-insulin analogue"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2wrx",
+        "resolution":1.5,
+        "title":"Semi-synthetic analogue of human insulin NMeAlaB26-insulin at pH 3.0"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3inc",
+        "resolution":1.85,
+        "title":"Crystal structure of human insulin with Ni+2 complex"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2rn5",
+        "title":"Humal Insulin Mutant B31Lys-B32Arg"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ung",
+        "resolution":1.81,
+        "title":"Human insulin B26Asn mutant crystal structure"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1mso",
+        "resolution":1.0,
+        "title":"T6 Human Insulin at 1.0 A Resolution"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2h67",
+        "title":"NMR structure of human insulin mutant HIS-B5-ALA, HIS-B10-ASP PRO-B28-LYS, LYS-B29-PRO, 20 structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2h67",
+        "title":"NMR structure of human insulin mutant HIS-B5-ALA, HIS-B10-ASP PRO-B28-LYS, LYS-B29-PRO, 20 structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2hh4",
+        "title":"NMR structure of human insulin mutant GLY-B8-D-SER, HIS-B10-ASP PRO-B28-LYS, LYS-B29-PRO, 20 structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"3aiy",
+        "title":"R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, REFINED AVERAGE STRUCTURE"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1os4",
+        "resolution":2.25,
+        "title":"Dehydrated T6 human insulin at 295 K"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1os3",
+        "resolution":1.95,
+        "title":"Dehydrated T6 human insulin at 100 K"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rkd",
+        "resolution":1.25,
+        "title":"X-Ray structure of Insulin Analog GLULISINE"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1a7f",
+        "title":"INSULIN MUTANT B16 GLU, B24 GLY, DES-B30, NMR, 20 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"5aiy",
+        "title":"R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 'RED' SUBSTATE, AVERAGE STRUCTURE"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1hls",
+        "title":"NMR STRUCTURE OF THE HUMAN INSULIN-HIS(B16)"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1jco",
+        "title":"Solution structure of the monomeric [Thr(B27)->Pro,Pro(B28)->Thr] insulin mutant (PT insulin)"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1t1p",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT HIS-B10-ASP, VAL-B12-THR, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2kju",
+        "title":"NMR structure of human insulin mutant glu-b21-d-glu, his-b10 asp pro-b28-lys, lys-b29-pro, 20 structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2lgb",
+        "title":"Modified A22Gly-B31Arg Human Insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2lgb",
+        "title":"Modified A22Gly-B31Arg Human Insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1ioh",
+        "title":"INSULIN MUTANT A8 HIS,(B1, B10, B16, B27)GLU, DES-B30, NMR, 26 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2juv",
+        "title":"AbaA3-DKP-insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1t1q",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT HIS-B10-ASP, VAL-B12-ABA, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1t1q",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT HIS-B10-ASP, VAL-B12-ABA, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1sf1",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN under Amyloidogenic Condition, 15 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1sf1",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN under Amyloidogenic Condition, 15 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2juu",
+        "title":"allo-ThrA3 DKP-insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2r35",
+        "resolution":2.08,
+        "title":"Crystal structure of RB human arg-insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2hho",
+        "title":"NMR structure of human insulin mutant GLY-B8-SER, HIS-B10-ASP PRO-B28-LYS, LYS-B29-PRO, 20 structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2aiy",
+        "title":"R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 20 STRUCTURES"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3i40",
+        "resolution":1.85,
+        "title":"Human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2r34",
+        "resolution":2.25,
+        "title":"Crystal structure of MN human arg-insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6s34",
+        "resolution":1.35,
+        "title":"Zinc free, dimeric human insulin determined to 1.35 Angstrom resolution"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6s34",
+        "resolution":1.35,
+        "title":"Zinc free, dimeric human insulin determined to 1.35 Angstrom resolution"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5uoz",
+        "resolution":1.1746387,
+        "title":"Insulin with proline analog FyP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5uoz",
+        "resolution":1.1746387,
+        "title":"Insulin with proline analog FyP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6ves",
+        "resolution":1.85,
+        "title":"Human insulin analog: [GluB10,HisA8,ArgA9]-DOI"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6ves",
+        "resolution":1.85,
+        "title":"Human insulin analog: [GluB10,HisA8,ArgA9]-DOI"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"8eyx",
+        "resolution":4.5,
+        "title":"Cryo-EM structure of 4 insulins bound full-length mouse IR mutant with physically decoupled alpha CTs (C684S/C685S/C687S; denoted as IR-3CS) Asymmetric conformation 1"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"5mwq",
+        "title":"Biosynthetic engineered A21K-B31K-B32R human insulin monomer structure in water/acetonitrile solution"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4iyd",
+        "resolution":1.66,
+        "title":"Insulin glargine crystal structure 1"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4eww",
+        "resolution":2.3,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4iyf",
+        "resolution":1.8,
+        "title":"Insulin glargine crystal structure 2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3tt8",
+        "resolution":1.12,
+        "title":"Crystal Structure Analysis of Cu Human Insulin Derivative"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"4aiy",
+        "title":"R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 'GREEN' SUBSTATE, AVERAGE STRUCTURE"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3w80",
+        "resolution":1.4,
+        "title":"Crystal structure of dodecamer human insulin with double C-axis length of the hexamer 2 Zn insulin cell"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3w7y",
+        "resolution":0.92,
+        "title":"0.92A structure of 2Zn human insulin at 100K"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3w7z",
+        "resolution":1.15,
+        "title":"1.15A structure of human 2Zn insulin at 293K"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2ws0",
+        "resolution":2.1,
+        "title":"Semi-synthetic analogue of human insulin NMeAlaB26-insulin at pH 7.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ewx",
+        "resolution":2.201,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ak0",
+        "resolution":2.28,
+        "title":"Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ak0",
+        "resolution":2.28,
+        "title":"Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1iog",
+        "title":"INSULIN MUTANT A3 GLY,(B1, B10, B16, B27)GLU, DES-B30, NMR, 19 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2jv1",
+        "title":"NMR structure of human insulin monomer in 35% CD3CN zinc free, 50 structures"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4unh",
+        "resolution":2.75,
+        "title":"Human insulin B26Gly mutant crystal structure"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4une",
+        "resolution":1.59,
+        "title":"Human insulin B26Phe mutant crystal structure"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"8eyy",
+        "resolution":4.9,
+        "title":"Cryo-EM structure of 4 insulins bound full-length mouse IR mutant with physically decoupled alpha CTs (C684S/C685S/C687S, denoted as IR-3CS) Asymmetric conformation 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"8ez0",
+        "resolution":3.7,
+        "title":"Cryo-EM structure of 4 insulins bound full-length mouse IR mutant with physically decoupled alpha CTs (C684S/C685S/C687S; denoted as IR-3CS) Symmetric conformation"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jp3",
+        "resolution":1.95,
+        "title":"Des-B29,B30-insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2ws1",
+        "resolution":1.6,
+        "title":"Semi-synthetic analogue of human insulin NMeTyrB26-insulin in monomer form"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2mpi",
+        "title":"Solution structure of B24G insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2mpi",
+        "title":"Solution structure of B24G insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2n2v",
+        "title":"Solution structure of [B26-B29 triazole cross-linked]-insulin analogue at pH 1.9"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2n2x",
+        "title":"Solution structure of [GlyB24,B27-B29 triazole cross-linked]-insulin analogue at pH 1.9"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2wru",
+        "resolution":1.57,
+        "title":"Semi-synthetic highly active analogue of human insulin NMeAlaB26-DTI- NH2"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2mpg",
+        "title":"Solution structure of the [AibB8,LysB28,ProB29]-insulin analogue"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2wrx",
+        "resolution":1.5,
+        "title":"Semi-synthetic analogue of human insulin NMeAlaB26-insulin at pH 3.0"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3inc",
+        "resolution":1.85,
+        "title":"Crystal structure of human insulin with Ni+2 complex"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2rn5",
+        "title":"Humal Insulin Mutant B31Lys-B32Arg"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ung",
+        "resolution":1.81,
+        "title":"Human insulin B26Asn mutant crystal structure"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1mhi",
+        "title":"THREE-DIMENSIONAL SOLUTION STRUCTURE OF AN INSULIN DIMER. A STUDY OF THE B9(ASP) MUTANT OF HUMAN INSULIN USING NUCLEAR MAGNETIC RESONANCE DISTANCE GEOMETRY AND RESTRAINED MOLECULAR DYNAMICS"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1mhi",
+        "title":"THREE-DIMENSIONAL SOLUTION STRUCTURE OF AN INSULIN DIMER. A STUDY OF THE B9(ASP) MUTANT OF HUMAN INSULIN USING NUCLEAR MAGNETIC RESONANCE DISTANCE GEOMETRY AND RESTRAINED MOLECULAR DYNAMICS"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2hh4",
+        "title":"NMR structure of human insulin mutant GLY-B8-D-SER, HIS-B10-ASP PRO-B28-LYS, LYS-B29-PRO, 20 structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"3aiy",
+        "title":"R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, REFINED AVERAGE STRUCTURE"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1mhj",
+        "title":"SOLUTION STRUCTURE OF THE SUPERACTIVE MONOMERIC DES-[PHE(B25)] HUMAN INSULIN MUTANT. ELUCIDATION OF THE STRUCTURAL BASIS FOR THE MONOMERIZATION OF THE DES-[PHE(B25)] INSULIN AND THE DIMERIZATION OF NATIVE INSULIN"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1os3",
+        "resolution":1.95,
+        "title":"Dehydrated T6 human insulin at 100 K"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2g56",
+        "resolution":2.2,
+        "title":"crystal structure of human insulin-degrading enzyme in complex with insulin B chain"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1aiy",
+        "title":"R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 10 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1ai0",
+        "title":"R6 HUMAN INSULIN HEXAMER (NON-SYMMETRIC), NMR, 10 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"5aiy",
+        "title":"R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 'RED' SUBSTATE, AVERAGE STRUCTURE"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2kqq",
+        "title":"NMR structure of human insulin mutant gly-b8-d-ala, his-b10-asp, pro-b28-lys, lys-b29-pro, 20 structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2l1y",
+        "title":"NMR Structure of human insulin mutant GLY-B20-D-ALA, GLY-B23-D-ALA PRO-B28-LYS, LYS-B29-PRO, 20 Structures"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3bxq",
+        "resolution":1.3,
+        "title":"The structure of a mutant insulin uncouples receptor binding from protein allostery. An electrostatic block to the TR transition"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2n2w",
+        "title":"Solution structure of [B26-B29 triazole cross-linked]-insulin analogue at pH 8.0"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2hho",
+        "title":"NMR structure of human insulin mutant GLY-B8-SER, HIS-B10-ASP PRO-B28-LYS, LYS-B29-PRO, 20 structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2aiy",
+        "title":"R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 20 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2mli",
+        "title":"NMR structure of B25-(alpha, beta)-dehydro-phenylalanine insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3q6e",
+        "resolution":2.05,
+        "title":"Human insulin in complex with cucurbit[7]uril"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ex0",
+        "resolution":1.86,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ex1",
+        "resolution":1.657,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1a",
+        "resolution":1.8,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6ver",
+        "resolution":1.047,
+        "title":"Human insulin analog: [GluB10,TyrB20]-DOI"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6ver",
+        "resolution":1.047,
+        "title":"Human insulin analog: [GluB10,TyrB20]-DOI"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7bwa",
+        "resolution":4.9,
+        "title":"Cryo-EM Structure for the Ectodomain of the Full-length Human Insulin Receptor in Complex with 2 Insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"5mhd",
+        "title":"Biosynthetic engineered A22S-B3K-B31R human insulin monomer structure in water/acetonitrile solutions."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5hqi",
+        "resolution":0.97,
+        "title":"Insulin with proline analog HzP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5hqi",
+        "resolution":0.97,
+        "title":"Insulin with proline analog HzP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ey9",
+        "resolution":1.471,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4eww",
+        "resolution":2.3,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ey1",
+        "resolution":1.471,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4iyf",
+        "resolution":1.8,
+        "title":"Insulin glargine crystal structure 2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f0o",
+        "resolution":1.672,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4exx",
+        "resolution":1.55,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f0n",
+        "resolution":1.679,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4eyd",
+        "resolution":1.471,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4eyp",
+        "resolution":1.591,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3tt8",
+        "resolution":1.12,
+        "title":"Crystal Structure Analysis of Cu Human Insulin Derivative"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ewx",
+        "resolution":2.201,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"4aiy",
+        "title":"R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 'GREEN' SUBSTATE, AVERAGE STRUCTURE"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3w80",
+        "resolution":1.4,
+        "title":"Crystal structure of dodecamer human insulin with double C-axis length of the hexamer 2 Zn insulin cell"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"5mhd",
+        "title":"Biosynthetic engineered A22S-B3K-B31R human insulin monomer structure in water/acetonitrile solutions."},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2k91",
+        "title":"Enhancing the activity of insulin by stereospecific unfolding"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2kxk",
+        "title":"Human Insulin Mutant A22Gly-B31Lys-B32Arg"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2kxk",
+        "title":"Human Insulin Mutant A22Gly-B31Lys-B32Arg"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7bw7",
+        "resolution":4.1,
+        "title":"Cryo-EM Structure for the Ectodomain of the Full-length Human Insulin Receptor in Complex with 1 Insulin."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4une",
+        "resolution":1.59,
+        "title":"Human insulin B26Phe mutant crystal structure"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ewz",
+        "resolution":1.791,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4eyn",
+        "resolution":1.532,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qgf",
+        "resolution":1.203,
+        "title":"Cubic Insulin SAD phasing at 14.2 keV"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7rzf",
+        "resolution":3.4,
+        "title":"Insulin Degrading Enzyme O/pC"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7rzf",
+        "resolution":3.4,
+        "title":"Insulin Degrading Enzyme O/pC"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7rze",
+        "resolution":3.3,
+        "title":"Insulin Degrading Enzyme pO/pC"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7rze",
+        "resolution":3.3,
+        "title":"Insulin Degrading Enzyme pO/pC"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7rzi",
+        "resolution":3.0,
+        "title":"Insulin Degrading Enzyme pC/pC"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7rzi",
+        "resolution":3.0,
+        "title":"Insulin Degrading Enzyme pC/pC"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5c0d",
+        "resolution":1.68,
+        "title":"HLA-A02 carrying AQWGPDPAAA"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl1",
+        "resolution":3.4,
+        "title":"Full-length insulin receptor bound with site 1 binding deficient mutant insulin (A-V3E)"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl1",
+        "resolution":3.4,
+        "title":"Full-length insulin receptor bound with site 1 binding deficient mutant insulin (A-V3E)"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl2",
+        "resolution":3.6,
+        "title":"Full-length insulin receptor bound with site 2 binding deficient mutant insulin (A-L13R) -- asymmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl2",
+        "resolution":3.6,
+        "title":"Full-length insulin receptor bound with site 2 binding deficient mutant insulin (A-L13R) -- asymmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl6",
+        "resolution":3.7,
+        "title":"Full-length insulin receptor bound with site 2 binding deficient mutant insulin (B-L17R) -- symmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl3",
+        "resolution":3.4,
+        "title":"Full-length insulin receptor bound with site 2 binding deficient mutant insulin (A-L13R) -- symmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl3",
+        "resolution":3.4,
+        "title":"Full-length insulin receptor bound with site 2 binding deficient mutant insulin (A-L13R) -- symmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl4",
+        "resolution":5.0,
+        "title":"Full-length insulin receptor bound with site 2 binding deficient mutant insulin (B-L17R) -- asymmetric conformation"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2ws1",
+        "resolution":1.6,
+        "title":"Semi-synthetic analogue of human insulin NMeTyrB26-insulin in monomer form"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2vjz",
+        "resolution":1.8,
+        "title":"Crystal structure form ultalente insulin microcrystals"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2n2v",
+        "title":"Solution structure of [B26-B29 triazole cross-linked]-insulin analogue at pH 1.9"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2n2x",
+        "title":"Solution structure of [GlyB24,B27-B29 triazole cross-linked]-insulin analogue at pH 1.9"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2wrv",
+        "resolution":2.15,
+        "title":"Semi-synthetic highly active analogue of human insulin NMeHisB26-DTI- NH2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2wrv",
+        "resolution":2.15,
+        "title":"Semi-synthetic highly active analogue of human insulin NMeHisB26-DTI- NH2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2wru",
+        "resolution":1.57,
+        "title":"Semi-synthetic highly active analogue of human insulin NMeAlaB26-DTI- NH2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3exx",
+        "resolution":1.35,
+        "title":"Structure of the T6 human insulin derivative with nickel at 1.35 A resolution"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3ir0",
+        "resolution":2.2,
+        "title":"Crystal Structure of Human Insulin complexed with Cu+2 metal ion"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1mhj",
+        "title":"SOLUTION STRUCTURE OF THE SUPERACTIVE MONOMERIC DES-[PHE(B25)] HUMAN INSULIN MUTANT. ELUCIDATION OF THE STRUCTURAL BASIS FOR THE MONOMERIZATION OF THE DES-[PHE(B25)] INSULIN AND THE DIMERIZATION OF NATIVE INSULIN"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1aiy",
+        "title":"R6 HUMAN INSULIN HEXAMER (SYMMETRIC), NMR, 10 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1ai0",
+        "title":"R6 HUMAN INSULIN HEXAMER (NON-SYMMETRIC), NMR, 10 STRUCTURES"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1b9e",
+        "resolution":2.5,
+        "title":"HUMAN INSULIN MUTANT SERB9GLU"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1htv",
+        "resolution":1.9,
+        "title":"CRYSTAL STRUCTURE OF DESTRIPEPTIDE (B28-B30) INSULIN"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1jca",
+        "resolution":2.5,
+        "title":"Non-standard Design of Unstable Insulin Analogues with Enhanced Activity"},
+      {
+        "experimental_method":["X-ray powder diffraction"],
+        "pdb_id":"1fub",
+        "title":"FIRST PROTEIN STRUCTURE DETERMINED FROM X-RAY POWDER DIFFRACTION DATA"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2kqq",
+        "title":"NMR structure of human insulin mutant gly-b8-d-ala, his-b10-asp, pro-b28-lys, lys-b29-pro, 20 structures"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2l1y",
+        "title":"NMR Structure of human insulin mutant GLY-B20-D-ALA, GLY-B23-D-ALA PRO-B28-LYS, LYS-B29-PRO, 20 Structures"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1htv",
+        "resolution":1.9,
+        "title":"CRYSTAL STRUCTURE OF DESTRIPEPTIDE (B28-B30) INSULIN"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2n2w",
+        "title":"Solution structure of [B26-B29 triazole cross-linked]-insulin analogue at pH 8.0"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2r36",
+        "resolution":2.0,
+        "title":"Crystal structure of ni human ARG-insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2ceu",
+        "resolution":1.8,
+        "title":"Despentapeptide insulin in acetic acid (pH 2)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2ceu",
+        "resolution":1.8,
+        "title":"Despentapeptide insulin in acetic acid (pH 2)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3q6e",
+        "resolution":2.05,
+        "title":"Human insulin in complex with cucurbit[7]uril"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ex0",
+        "resolution":1.86,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ex1",
+        "resolution":1.657,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1c",
+        "resolution":1.7,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1c",
+        "resolution":1.7,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f4t",
+        "resolution":1.637,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f4t",
+        "resolution":1.637,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6h3m",
+        "resolution":1.821,
+        "title":"The crystal structure of a human seleno-insulin analog"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6h3m",
+        "resolution":1.821,
+        "title":"The crystal structure of a human seleno-insulin analog"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5usp",
+        "resolution":1.174,
+        "title":"Insulin with proline analog Pip at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4rxw",
+        "resolution":1.73,
+        "title":"Crystal Structure of the cobalt human insulin derivative"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4rxw",
+        "resolution":1.73,
+        "title":"Crystal Structure of the cobalt human insulin derivative"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5bpo",
+        "resolution":1.9,
+        "title":"Human insulin with intra-chain chemical crosslink between modified B27 and B29"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5bts",
+        "resolution":1.77,
+        "title":"Structural and biophysical characterization of a covalent insulin dimer formed during storage of neutral formulation of human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5bts",
+        "resolution":1.77,
+        "title":"Structural and biophysical characterization of a covalent insulin dimer formed during storage of neutral formulation of human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5uu2",
+        "resolution":1.223,
+        "title":"Insulin with proline analog ThioP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5usv",
+        "resolution":1.3,
+        "title":"Insulin with proline analog AzeP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5usv",
+        "resolution":1.3,
+        "title":"Insulin with proline analog AzeP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5urt",
+        "resolution":1.18,
+        "title":"Insulin with proline analog DhP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f8f",
+        "resolution":1.676,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f8f",
+        "resolution":1.676,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1a",
+        "resolution":1.8,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ey9",
+        "resolution":1.471,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4fka",
+        "resolution":1.08,
+        "title":"High resolution structure of the manganese derivative of insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ey1",
+        "resolution":1.471,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1d",
+        "resolution":1.637,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1d",
+        "resolution":1.637,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f4v",
+        "resolution":1.637,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f4v",
+        "resolution":1.637,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1f",
+        "resolution":1.684,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1f",
+        "resolution":1.684,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4exx",
+        "resolution":1.55,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f0n",
+        "resolution":1.679,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4eyd",
+        "resolution":1.471,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1g",
+        "resolution":1.637,
+        "title":"Human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1g",
+        "resolution":1.637,
+        "title":"Human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4eyp",
+        "resolution":1.591,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1b",
+        "resolution":1.591,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f1b",
+        "resolution":1.591,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f51",
+        "resolution":1.637,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f51",
+        "resolution":1.637,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2k91",
+        "title":"Enhancing the activity of insulin by stereospecific unfolding"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7bw8",
+        "resolution":3.8,
+        "title":"Cryo-EM Structure for the Insulin Binding Region in the Ectodomain of the Full-length Human Insulin Receptor in Complex with 1 Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ewz",
+        "resolution":1.791,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4eyn",
+        "resolution":1.532,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qgf",
+        "resolution":1.203,
+        "title":"Cubic Insulin SAD phasing at 14.2 keV"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7v3p",
+        "resolution":3.6,
+        "title":"Cryo-EM structure of the IGF1R/insulin complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7v3p",
+        "resolution":3.6,
+        "title":"Cryo-EM structure of the IGF1R/insulin complex"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2jmn",
+        "title":"NMR structure of human insulin mutant His-B10-Asp, Pro-B28-Lys, Lys-B29-Pro, 20 structures"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3utq",
+        "resolution":1.67,
+        "title":"Human HLA-A*0201-ALWGPDPAAA"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"8guy",
+        "resolution":4.18,
+        "title":"human insulin receptor bound with two insulin molecules"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"8guy",
+        "resolution":4.18,
+        "title":"human insulin receptor bound with two insulin molecules"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7mqs",
+        "resolution":4.4,
+        "title":"The insulin receptor ectodomain in complex with three venom hybrid insulin molecules - asymmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7mqs",
+        "resolution":4.4,
+        "title":"The insulin receptor ectodomain in complex with three venom hybrid insulin molecules - asymmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl6",
+        "resolution":3.7,
+        "title":"Full-length insulin receptor bound with site 2 binding deficient mutant insulin (B-L17R) -- symmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl4",
+        "resolution":5.0,
+        "title":"Full-length insulin receptor bound with site 2 binding deficient mutant insulin (B-L17R) -- asymmetric conformation"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3exx",
+        "resolution":1.35,
+        "title":"Structure of the T6 human insulin derivative with nickel at 1.35 A resolution"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3ir0",
+        "resolution":2.2,
+        "title":"Crystal Structure of Human Insulin complexed with Cu+2 metal ion"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2vk0",
+        "resolution":2.2,
+        "title":"Crystal structure form ultalente insulin microcrystals"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1j73",
+        "resolution":2.0,
+        "title":"Crystal structure of an unstable insulin analog with native activity."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2g54",
+        "resolution":2.25,
+        "title":"Crystal structure of Zn-bound human insulin-degrading enzyme in complex with insulin B chain"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1b9e",
+        "resolution":2.5,
+        "title":"HUMAN INSULIN MUTANT SERB9GLU"},
+      {
+        "experimental_method":["X-ray powder diffraction"],
+        "pdb_id":"1fu2",
+        "title":"FIRST PROTEIN STRUCTURE DETERMINED FROM X-RAY POWDER DIFFRACTION DATA"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1jca",
+        "resolution":2.5,
+        "title":"Non-standard Design of Unstable Insulin Analogues with Enhanced Activity"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2k9r",
+        "title":"Enhancing the activity of insulin by stereospecific unfolding"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2omi",
+        "resolution":2.24,
+        "title":"Structure of human insulin cocrystallized with protamine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3bxq",
+        "resolution":1.3,
+        "title":"The structure of a mutant insulin uncouples receptor binding from protein allostery. An electrostatic block to the TR transition"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2mli",
+        "title":"NMR structure of B25-(alpha, beta)-dehydro-phenylalanine insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6vet",
+        "resolution":1.46,
+        "title":"Human insulin analog: [GluB10,HisA8,ArgA9,TyrB20]-DOI"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6vet",
+        "resolution":1.46,
+        "title":"Human insulin analog: [GluB10,HisA8,ArgA9,TyrB20]-DOI"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5usp",
+        "resolution":1.174,
+        "title":"Insulin with proline analog Pip at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4efx",
+        "resolution":1.98,
+        "title":"Highly biologically active insulin with additional disulfide bond"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5bpo",
+        "resolution":1.9,
+        "title":"Human insulin with intra-chain chemical crosslink between modified B27 and B29"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5boq",
+        "resolution":1.7,
+        "title":"Human insulin with intra-chain chemical crosslink between modified B24 and B29"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5co2",
+        "resolution":1.7,
+        "title":"Crystalization of human zinc insulin at pH 5.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5cny",
+        "resolution":1.7,
+        "title":"Crystal Structure of human zinc insulin at pH 5.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5uu2",
+        "resolution":1.223,
+        "title":"Insulin with proline analog ThioP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5urt",
+        "resolution":1.18,
+        "title":"Insulin with proline analog DhP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4gbn",
+        "resolution":1.872,
+        "title":"Crystal structure of aspart insulin at pH 6.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4gbc",
+        "resolution":1.778,
+        "title":"Crystal structure of aspart insulin at pH 6.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4fka",
+        "resolution":1.08,
+        "title":"High resolution structure of the manganese derivative of insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4gbl",
+        "resolution":2.5,
+        "title":"Crystal structure of aspart insulin at pH 8.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4iuz",
+        "resolution":1.6,
+        "title":"High resolution crystal structure of racemic ester insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4f0o",
+        "resolution":1.672,
+        "title":"Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4gbk",
+        "resolution":2.4,
+        "title":"Crystal structure of aspart insulin at pH 8.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4cy7",
+        "resolution":1.4,
+        "title":"Crystal structure of human insulin analogue (NMe-AlaB8)-insulin crystal form II"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4gbi",
+        "resolution":2.502,
+        "title":"Crystal structure of aspart insulin at pH 6.5"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7yq3",
+        "resolution":3.6,
+        "title":"human insulin receptor bound with A43 DNA aptamer and insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2vjz",
+        "resolution":1.8,
+        "title":"Crystal structure form ultalente insulin microcrystals"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2vk0",
+        "resolution":2.2,
+        "title":"Crystal structure form ultalente insulin microcrystals"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1j73",
+        "resolution":2.0,
+        "title":"Crystal structure of an unstable insulin analog with native activity."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1ev3",
+        "resolution":1.78,
+        "title":"Structure of the rhombohedral form of the M-cresol/insulin R6 hexamer"},
+      {
+        "experimental_method":["X-ray powder diffraction"],
+        "pdb_id":"1fub",
+        "title":"FIRST PROTEIN STRUCTURE DETERMINED FROM X-RAY POWDER DIFFRACTION DATA"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2k9r",
+        "title":"Enhancing the activity of insulin by stereospecific unfolding"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1uz9",
+        "resolution":1.6,
+        "title":"Crystallographic and solution studies of N-lithocholyl insulin: a new generation of prolonged-acting insulins."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2omi",
+        "resolution":2.24,
+        "title":"Structure of human insulin cocrystallized with protamine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2r36",
+        "resolution":2.0,
+        "title":"Crystal structure of ni human ARG-insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6gv0",
+        "resolution":1.26,
+        "title":"Insulin glulisine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6s4i",
+        "resolution":1.511,
+        "title":"Crystal structure of zinc free A14E, B25H, B29K(N(eps)-[2-(2-[2-(2-[2-(Octadecandioyl-gamma-Glu)amino]ethoxy)ethoxy]acetylamino)ethoxy]ethoxy)acetyl]), desB30 human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6s4i",
+        "resolution":1.511,
+        "title":"Crystal structure of zinc free A14E, B25H, B29K(N(eps)-[2-(2-[2-(2-[2-(Octadecandioyl-gamma-Glu)amino]ethoxy)ethoxy]acetylamino)ethoxy]ethoxy)acetyl]), desB30 human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6s4j",
+        "resolution":1.5,
+        "title":"Crystal structure of zinc free A14E, B25H, B29K(N(eps)-[2-(2-[2-(2-[2-(Octadecandioyl-gamma-Glu)amino]ethoxy)ethoxy]acetylamino)ethoxy]ethoxy)acetyl]), desB27, desB30 human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6p4z",
+        "resolution":1.8,
+        "title":"Structure of gadolinium-caged cobalt (III) insulin hexamer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4efx",
+        "resolution":1.98,
+        "title":"Highly biologically active insulin with additional disulfide bond"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5boq",
+        "resolution":1.7,
+        "title":"Human insulin with intra-chain chemical crosslink between modified B24 and B29"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5co2",
+        "resolution":1.7,
+        "title":"Crystalization of human zinc insulin at pH 5.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5cny",
+        "resolution":1.7,
+        "title":"Crystal Structure of human zinc insulin at pH 5.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4gbn",
+        "resolution":1.872,
+        "title":"Crystal structure of aspart insulin at pH 6.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4gbc",
+        "resolution":1.778,
+        "title":"Crystal structure of aspart insulin at pH 6.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4gbl",
+        "resolution":2.5,
+        "title":"Crystal structure of aspart insulin at pH 8.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4iuz",
+        "resolution":1.6,
+        "title":"High resolution crystal structure of racemic ester insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4gbk",
+        "resolution":2.4,
+        "title":"Crystal structure of aspart insulin at pH 8.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4cy7",
+        "resolution":1.4,
+        "title":"Crystal structure of human insulin analogue (NMe-AlaB8)-insulin crystal form II"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4nib",
+        "resolution":1.4,
+        "title":"Crystal structure of human insulin mutant B20 D-ala, B23 D-ala"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3zu1",
+        "resolution":1.6,
+        "title":"Structure of LysB29(Nepsilon omega-carboxyheptadecanoyl) des(B30) Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5co9",
+        "resolution":1.92,
+        "title":"Crystal structure of human zinc insulin at pH 6.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4gbi",
+        "resolution":2.502,
+        "title":"Crystal structure of aspart insulin at pH 6.5"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sth",
+        "resolution":3.5,
+        "title":"Full-length insulin receptor bound with unsaturated insulin WT (2 insulin bound) symmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sti",
+        "resolution":4.9,
+        "title":"Full-length insulin receptor bound with unsaturated insulin WT (1 insulin bound) asymmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7stj",
+        "resolution":4.4,
+        "title":"Full-length insulin receptor bound with unsaturated insulin WT (2 insulins bound) asymmetric conformation (Conformation 1)"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7stk",
+        "resolution":4.0,
+        "title":"Full-length insulin receptor bound with unsaturated insulin WT (2 insulins bound) asymmetric conformation (Conformation 2)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2wby",
+        "resolution":2.6,
+        "title":"Crystal structure of human insulin-degrading enzyme in complex with insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2wby",
+        "resolution":2.6,
+        "title":"Crystal structure of human insulin-degrading enzyme in complex with insulin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7pg4",
+        "resolution":9.1,
+        "title":"Low resolution Cryo-EM structure of the full-length insulin receptor bound to 2 insulin, conf 3"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7pg4",
+        "resolution":9.1,
+        "title":"Low resolution Cryo-EM structure of the full-length insulin receptor bound to 2 insulin, conf 3"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7pg3",
+        "resolution":7.3,
+        "title":"Low resolution Cryo-EM structure of the full-length insulin receptor bound to 3 insulin, conf 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7pg3",
+        "resolution":7.3,
+        "title":"Low resolution Cryo-EM structure of the full-length insulin receptor bound to 3 insulin, conf 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7pg0",
+        "resolution":7.6,
+        "title":"Low resolution Cryo-EM structure of full-length insulin receptor bound to 3 insulin with visible ddm micelle, conf 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7pg0",
+        "resolution":7.6,
+        "title":"Low resolution Cryo-EM structure of full-length insulin receptor bound to 3 insulin with visible ddm micelle, conf 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7pg2",
+        "resolution":6.7,
+        "title":"Low resolution Cryo-EM structure of full-length insulin receptor bound to 3 insulin, conf 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7pg2",
+        "resolution":6.7,
+        "title":"Low resolution Cryo-EM structure of full-length insulin receptor bound to 3 insulin, conf 1"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"2jmn",
+        "title":"NMR structure of human insulin mutant His-B10-Asp, Pro-B28-Lys, Lys-B29-Pro, 20 structures"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7u6e",
+        "resolution":3.0,
+        "title":"Head region of insulin receptor ectodomain (A-isoform) bound to the non-insulin agonist IM462"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6ce7",
+        "resolution":7.4,
+        "title":"Insulin Receptor ectodomain in complex with one insulin molecule"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2ws7",
+        "resolution":2.59,
+        "title":"Semi-synthetic analogue of human insulin ProB26-DTI"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2ws7",
+        "resolution":2.59,
+        "title":"Semi-synthetic analogue of human insulin ProB26-DTI"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3e7y",
+        "resolution":1.6,
+        "title":"Structure of human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3e7y",
+        "resolution":1.6,
+        "title":"Structure of human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2w44",
+        "resolution":2.0,
+        "title":"Structure DeltaA1-A4 insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3e7z",
+        "resolution":1.7,
+        "title":"Structure of human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3e7z",
+        "resolution":1.7,
+        "title":"Structure of human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1evr",
+        "resolution":1.9,
+        "title":"The structure of the resorcinol/insulin R6 hexamer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1ev3",
+        "resolution":1.78,
+        "title":"Structure of the rhombohedral form of the M-cresol/insulin R6 hexamer"},
+      {
+        "experimental_method":["X-ray powder diffraction"],
+        "pdb_id":"1fu2",
+        "title":"FIRST PROTEIN STRUCTURE DETERMINED FROM X-RAY POWDER DIFFRACTION DATA"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1ev6",
+        "resolution":1.9,
+        "title":"Structure of the monoclinic form of the M-cresol/insulin R6 hexamer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1ev6",
+        "resolution":1.9,
+        "title":"Structure of the monoclinic form of the M-cresol/insulin R6 hexamer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1w8p",
+        "resolution":2.08,
+        "title":"Structural properties of the B25Tyr-NMe-B26Phe insulin mutant."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1guj",
+        "resolution":1.62,
+        "title":"Insulin at pH 2: structural analysis of the conditions promoting insulin fibre formation."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1guj",
+        "resolution":1.62,
+        "title":"Insulin at pH 2: structural analysis of the conditions promoting insulin fibre formation."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1uz9",
+        "resolution":1.6,
+        "title":"Crystallographic and solution studies of N-lithocholyl insulin: a new generation of prolonged-acting insulins."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2om0",
+        "resolution":2.05,
+        "title":"Structure of human insulin in presence of urea at pH 6.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2olz",
+        "resolution":1.7,
+        "title":"Structure of human insulin in presence of thiocyanate at pH 7.0"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1qj0",
+        "resolution":2.4,
+        "title":"HUMAN INSULIN HEXAMERS WITH CHAIN B HIS MUTATED TO TYR"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6gv0",
+        "resolution":1.26,
+        "title":"Insulin glulisine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6s4j",
+        "resolution":1.5,
+        "title":"Crystal structure of zinc free A14E, B25H, B29K(N(eps)-[2-(2-[2-(2-[2-(Octadecandioyl-gamma-Glu)amino]ethoxy)ethoxy]acetylamino)ethoxy]ethoxy)acetyl]), desB27, desB30 human insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6gnq",
+        "resolution":2.2,
+        "title":"Monoclinic crystalline form of human insulin, complexed with meta-cresol"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6p4z",
+        "resolution":1.8,
+        "title":"Structure of gadolinium-caged cobalt (III) insulin hexamer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3v1g",
+        "resolution":2.2,
+        "title":"Forestalling insulin fibrillation by insertion of a chiral clamp mechanism-based application of protein engineering to global health"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ems",
+        "resolution":2.3,
+        "title":"Crystal Structure of an iodinated insulin analog"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5co6",
+        "resolution":1.8,
+        "title":"Crystal structure of human zinc insulin at pH 6.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5co6",
+        "resolution":1.8,
+        "title":"Crystal structure of human zinc insulin at pH 6.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4fg3",
+        "resolution":2.001,
+        "title":"Crystal Structure Analysis of the Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3zqr",
+        "resolution":1.9,
+        "title":"NMePheB25 insulin analogue crystal structure"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4nib",
+        "resolution":1.4,
+        "title":"Crystal structure of human insulin mutant B20 D-ala, B23 D-ala"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3zu1",
+        "resolution":1.6,
+        "title":"Structure of LysB29(Nepsilon omega-carboxyheptadecanoyl) des(B30) Human Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3zs2",
+        "resolution":1.97,
+        "title":"TyrB25,NMePheB26,LysB28,ProB29-insulin analogue crystal structure"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3v19",
+        "resolution":2.0,
+        "title":"Forestalling insulin fibrillation by insertion of a chiral clamp mechanism-based application of protein engineering to global health"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5co9",
+        "resolution":1.92,
+        "title":"Crystal structure of human zinc insulin at pH 6.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7s4y",
+        "resolution":1.71,
+        "title":"Serial Macromolecular Crystallography at ALBA Synchrotron Light Source - Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7s4y",
+        "resolution":1.71,
+        "title":"Serial Macromolecular Crystallography at ALBA Synchrotron Light Source - Insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1jk8",
+        "resolution":2.4,
+        "title":"Crystal structure of a human insulin peptide-HLA-DQ8 complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6hn5",
+        "resolution":3.2,
+        "title":"Leucine-zippered human insulin receptor ectodomain with single bound insulin - \"upper\" membrane-distal part"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7mqo",
+        "resolution":3.4,
+        "title":"The insulin receptor ectodomain in complex with a venom hybrid insulin analog - \"head\" region"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7mqr",
+        "resolution":4.1,
+        "title":"The insulin receptor ectodomain in complex with four venom hybrid insulins - symmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7mqr",
+        "resolution":4.1,
+        "title":"The insulin receptor ectodomain in complex with four venom hybrid insulins - symmetric conformation"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"8guy",
+        "resolution":4.18,
+        "title":"human insulin receptor bound with two insulin molecules"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6ce7",
+        "resolution":7.4,
+        "title":"Insulin Receptor ectodomain in complex with one insulin molecule"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7yq3",
+        "resolution":3.6,
+        "title":"human insulin receptor bound with A43 DNA aptamer and insulin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl7",
+        "resolution":3.1,
+        "title":"Full-length insulin receptor bound with both site 1 binding deficient mutant insulin (A-V3E) and site 2 binding deficient mutant insulin (A-L13R)"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl7",
+        "resolution":3.1,
+        "title":"Full-length insulin receptor bound with both site 1 binding deficient mutant insulin (A-V3E) and site 2 binding deficient mutant insulin (A-L13R)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2wc0",
+        "resolution":2.8,
+        "title":"crystal structure of human insulin degrading enzyme in complex with iodinated insulin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6hn5",
+        "resolution":3.2,
+        "title":"Leucine-zippered human insulin receptor ectodomain with single bound insulin - \"upper\" membrane-distal part"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4wdi",
+        "resolution":2.313,
+        "title":"Weak TCR binding to an unstable insulin epitope drives type 1 diabetes"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7mqo",
+        "resolution":3.4,
+        "title":"The insulin receptor ectodomain in complex with a venom hybrid insulin analog - \"head\" region"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6z7y",
+        "resolution":2.2,
+        "title":"Human insulin in complex with the analytical antibody OXI-005 Fab"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6z7y",
+        "resolution":2.2,
+        "title":"Human insulin in complex with the analytical antibody OXI-005 Fab"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6sof",
+        "resolution":4.3,
+        "title":"human insulin receptor ectodomain bound by 4 insulin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7yq3",
+        "resolution":3.6,
+        "title":"human insulin receptor bound with A43 DNA aptamer and insulin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7qid",
+        "resolution":5.0,
+        "title":"tentative model of the human insulin receptor ectodomain bound by three insulin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7qid",
+        "resolution":5.0,
+        "title":"tentative model of the human insulin receptor ectodomain bound by three insulin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7sl7",
+        "resolution":3.1,
+        "title":"Full-length insulin receptor bound with both site 1 binding deficient mutant insulin (A-V3E) and site 2 binding deficient mutant insulin (A-L13R)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2w44",
+        "resolution":2.0,
+        "title":"Structure DeltaA1-A4 insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2omh",
+        "resolution":1.36,
+        "title":"Structure of human insulin cocrystallized with ARG-12 peptide in presence of urea"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3jsd",
+        "resolution":2.5,
+        "title":"Insulin's biosynthesis and activity have opposing structural requirements: a new factor in neonatal diabetes mellitus"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3kq6",
+        "resolution":1.9,
+        "title":"Enhancing the Therapeutic Properties of a Protein by a Designed Zinc-Binding Site, Structural principles of a novel long-acting insulin analog"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3kq6",
+        "resolution":1.9,
+        "title":"Enhancing the Therapeutic Properties of a Protein by a Designed Zinc-Binding Site, Structural principles of a novel long-acting insulin analog"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1lph",
+        "resolution":2.3,
+        "title":"LYS(B28)PRO(B29)-HUMAN INSULIN"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1lph",
+        "resolution":2.3,
+        "title":"LYS(B28)PRO(B29)-HUMAN INSULIN"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1rwe",
+        "resolution":1.8,
+        "title":"Enhancing the activity of insulin at receptor edge: crystal structure and photo-cross-linking of A8 analogues"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1rwe",
+        "resolution":1.8,
+        "title":"Enhancing the activity of insulin at receptor edge: crystal structure and photo-cross-linking of A8 analogues"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3p33",
+        "resolution":2.3,
+        "title":"Insulin fibrillation is the Janus face of induced fit. A chiral clamp stabilizes the native state at the expense of activity"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3p33",
+        "resolution":2.3,
+        "title":"Insulin fibrillation is the Janus face of induced fit. A chiral clamp stabilizes the native state at the expense of activity"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1evr",
+        "resolution":1.9,
+        "title":"The structure of the resorcinol/insulin R6 hexamer"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1ben",
+        "resolution":1.4,
+        "title":"INSULIN COMPLEXED WITH 4-HYDROXYBENZAMIDE"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1ben",
+        "resolution":1.4,
+        "title":"INSULIN COMPLEXED WITH 4-HYDROXYBENZAMIDE"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1w8p",
+        "resolution":2.08,
+        "title":"Structural properties of the B25Tyr-NMe-B26Phe insulin mutant."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2om0",
+        "resolution":2.05,
+        "title":"Structure of human insulin in presence of urea at pH 6.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2om1",
+        "resolution":1.97,
+        "title":"Structure of human insulin in presence of thiocyanate at pH 6.5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2olz",
+        "resolution":1.7,
+        "title":"Structure of human insulin in presence of thiocyanate at pH 7.0"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2omg",
+        "resolution":1.52,
+        "title":"Structure of human insulin cocrystallized with protamine and urea"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1qj0",
+        "resolution":2.4,
+        "title":"HUMAN INSULIN HEXAMERS WITH CHAIN B HIS MUTATED TO TYR"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2omg",
+        "resolution":1.52,
+        "title":"Structure of human insulin cocrystallized with protamine and urea"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6nwv",
+        "resolution":1.601,
+        "title":"Insulin Lispro Analog"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6gnq",
+        "resolution":2.2,
+        "title":"Monoclinic crystalline form of human insulin, complexed with meta-cresol"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6tyh",
+        "resolution":1.600019,
+        "title":"Four-Disulfide Insulin Analog A22/B22"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5uu3",
+        "resolution":2.25,
+        "title":"Insulin with proline analog DfP at position B28 in the R6 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5hpu",
+        "resolution":2.2,
+        "title":"Insulin with proline analog HyP at position B28 in the R6 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5hpr",
+        "resolution":1.33,
+        "title":"Insulin with proline analog HyP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5hpr",
+        "resolution":1.33,
+        "title":"Insulin with proline analog HyP at position B28 in the T2 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4ajz",
+        "resolution":1.8,
+        "title":"Ligand controlled assembly of hexamers, dihexamers, and linear multihexamer structures by an engineered acylated insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3v1g",
+        "resolution":2.2,
+        "title":"Forestalling insulin fibrillation by insertion of a chiral clamp mechanism-based application of protein engineering to global health"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5mt3",
+        "resolution":2.02,
+        "title":"Human insulin in complex with serotonin and arginine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4p65",
+        "resolution":1.5,
+        "title":"Crystal structure of an cyclohexylalanine substituted insulin analog."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6ck2",
+        "resolution":2.25,
+        "title":"Insulin analog containing a YB26W mutation"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5mt9",
+        "resolution":1.88,
+        "title":"Human insulin in complex with serotonin and arginine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5mam",
+        "resolution":2.2,
+        "title":"Human insulin in complex with serotonin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5uss",
+        "resolution":2.061,
+        "title":"Insulin with proline analog PiP at position B28 in the R6 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5uss",
+        "resolution":2.061,
+        "title":"Insulin with proline analog PiP at position B28 in the R6 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5uru",
+        "resolution":2.41,
+        "title":"Insulin with proline analog DhP at position B28 in the R6 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5udp",
+        "resolution":1.348,
+        "title":"High resolution x-ray crystal structure of synthetic insulin lispro"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5udp",
+        "resolution":1.348,
+        "title":"High resolution x-ray crystal structure of synthetic insulin lispro"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5ems",
+        "resolution":2.3,
+        "title":"Crystal Structure of an iodinated insulin analog"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5hrq",
+        "resolution":1.28,
+        "title":"Insulin with proline analog HzP at position B28 in the R6 state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4fg3",
+        "resolution":2.001,
+        "title":"Crystal Structure Analysis of the Human Insulin"}]
+  }}

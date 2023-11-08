@@ -1,0 +1,171 @@
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":16,
+    "params":{
+      "q":"(5e7w OR 1t1k OR 4xc4 OR 6jr3 OR 1trz OR 2qiu OR 1g7b OR 1g7a OR 4cxl OR 3p2x OR 4cxn OR 7md4 OR 1znj OR 7md5) AND molecule_sequence:['' TO *] AND status:REL",
+      "fl":"pdb_id,title,experimental_method,resolution",
+      "start":"0",
+      "sort":"",
+      "rows":"500",
+      "wt":"json"}},
+  "response":{"numFound":32,"start":0,"docs":[
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1t1k",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT HIS-B10-ASP, VAL-B12-ALA, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"1t1k",
+        "title":"NMR STRUCTURE OF HUMAN INSULIN MUTANT HIS-B10-ASP, VAL-B12-ALA, PRO-B28-LYS, LYS-B29-PRO, 15 STRUCTURES"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2qiu",
+        "resolution":2.0,
+        "title":"Structure of Human Arg-Insulin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6jr3",
+        "resolution":14.5,
+        "title":"Crystal structure of insulin hexamer fitted into cryo EM density map where each dimer was kept as rigid body"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"2qiu",
+        "resolution":2.0,
+        "title":"Structure of Human Arg-Insulin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6jr3",
+        "resolution":14.5,
+        "title":"Crystal structure of insulin hexamer fitted into cryo EM density map where each dimer was kept as rigid body"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4cxn",
+        "resolution":1.7,
+        "title":"Crystal structure of human insulin analogue (NMe-AlaB8)-insulin crystal form I"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4cxn",
+        "resolution":1.7,
+        "title":"Crystal structure of human insulin analogue (NMe-AlaB8)-insulin crystal form I"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4cxl",
+        "resolution":1.5,
+        "title":"Human insulin analogue (D-ProB8)-insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4cxl",
+        "resolution":1.5,
+        "title":"Human insulin analogue (D-ProB8)-insulin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1trz",
+        "resolution":1.6,
+        "title":"CRYSTALLOGRAPHIC EVIDENCE FOR DUAL COORDINATION AROUND ZINC IN THE T3R3 HUMAN INSULIN HEXAMER"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1trz",
+        "resolution":1.6,
+        "title":"CRYSTALLOGRAPHIC EVIDENCE FOR DUAL COORDINATION AROUND ZINC IN THE T3R3 HUMAN INSULIN HEXAMER"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1znj",
+        "resolution":2.0,
+        "title":"INSULIN, MONOCLINIC CRYSTAL FORM"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1znj",
+        "resolution":2.0,
+        "title":"INSULIN, MONOCLINIC CRYSTAL FORM"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1g7b",
+        "resolution":1.3,
+        "title":"1.3 A STRUCTURE OF T3R3 HUMAN INSULIN AT 100 K"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1g7b",
+        "resolution":1.3,
+        "title":"1.3 A STRUCTURE OF T3R3 HUMAN INSULIN AT 100 K"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1g7a",
+        "resolution":1.2,
+        "title":"1.2 A structure of T3R3 human insulin at 100 K"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"1g7a",
+        "resolution":1.2,
+        "title":"1.2 A structure of T3R3 human insulin at 100 K"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4xc4",
+        "resolution":1.499,
+        "title":"Insulin co-crystallizes in the presence of it beta-cell chaperone sulfatide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"4xc4",
+        "resolution":1.499,
+        "title":"Insulin co-crystallizes in the presence of it beta-cell chaperone sulfatide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3p2x",
+        "resolution":2.0,
+        "title":"Insulin fibrillation is the Janus face of induced fit. A chiaral clamp stabilizes the native state at the expense of activity"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"3p2x",
+        "resolution":2.0,
+        "title":"Insulin fibrillation is the Janus face of induced fit. A chiaral clamp stabilizes the native state at the expense of activity"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7md4",
+        "resolution":4.5,
+        "title":"Insulin receptor ectodomain dimer complexed with two IRPA-3 partial agonists"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7md4",
+        "resolution":4.5,
+        "title":"Insulin receptor ectodomain dimer complexed with two IRPA-3 partial agonists"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7md4",
+        "resolution":4.5,
+        "title":"Insulin receptor ectodomain dimer complexed with two IRPA-3 partial agonists"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7md4",
+        "resolution":4.5,
+        "title":"Insulin receptor ectodomain dimer complexed with two IRPA-3 partial agonists"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7md5",
+        "resolution":5.2,
+        "title":"Insulin receptor ectodomain dimer complexed with two IRPA-9 partial agonists"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7md5",
+        "resolution":5.2,
+        "title":"Insulin receptor ectodomain dimer complexed with two IRPA-9 partial agonists"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7md5",
+        "resolution":5.2,
+        "title":"Insulin receptor ectodomain dimer complexed with two IRPA-9 partial agonists"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5e7w",
+        "resolution":0.9519,
+        "title":"X-ray Structure of Human Recombinant 2Zn insulin at 0.92 Angstrom"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5e7w",
+        "resolution":0.9519,
+        "title":"X-ray Structure of Human Recombinant 2Zn insulin at 0.92 Angstrom"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7md5",
+        "resolution":5.2,
+        "title":"Insulin receptor ectodomain dimer complexed with two IRPA-9 partial agonists"}]
+  }}

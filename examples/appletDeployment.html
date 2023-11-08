@@ -1,0 +1,230 @@
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+
+
+<div id="view_decorated" name="view_decorated"  style="margin:8px; padding:10px; border: 2px solid red; text-align:center; display:none;"><b>Click <a href="index.html#appletDeployment"> here </a> to view decorated page</b></div>
+
+<!-- content start -->
+<h2 name="appletDeployment"> Notes on applet deployment</h2>
+<table width=80% border="1">
+  <tr><th colspan="2" align="center">Required Dependency Downloads</th></tr>
+  <tr>
+    <th>Dependency</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><a href="http://www.jalview.org/builds/develop/examples/jalviewApplet.jar">JalviewApplet.jar</a> </td>
+    <td>Main Jalview Applet Jar</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.jalview.org/builds/develop/examples/JmolApplet-14.6.4_2016.10.26.jar">JmolApplet-14.6.4_2016.10.26.jar</a> </td>
+    <td>Jmol Applet Jar</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.jalview.org/builds/develop/examples/java-json.jar">java-json.jar</a></td>
+    <td>Required for BioJSON Generation</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.jalview.org/builds/develop/examples/json_simple-1.1.jar">json_simple-1.1.jar</a></td>
+    <td>Required for BioJSON Generation</td>
+  </tr>
+</table>
+
+<p>To run Jalview applet in your web page download the Jars listed above. The snippet below shows a minimal code for embedding Jalview applet into a web page.    
+<pre><code>
+&lt;applet code="jalview.bin.JalviewLite" width="756" height="560" archive="jalviewApplet.jar,JmolApplet-14.6.4_2016.10.26.jar,java-json.jar,json_simple-1.1.jar"&gt;
+	&lt;param name="permissions" value="sandbox" /&gt;
+	&lt;param name="file" value="plantfdx.fa" /&gt;
+	&lt;param name="features" value="plantfdx.features" /&gt;
+	&lt;param name="userDefinedColour" value="C=yellow; R,K,H=FF5555; D,E=5555FF" /&gt;
+	&lt;param name="showFullId" value="false" /&gt;
+	&lt;param name="embedded" value="true" /&gt;
+	&lt;param name="linkLabel_1" value="Uniprot" /&gt;
+	&lt;param name="linkUrl_1"	value="http://www.uniprot.org/uniprot/$SEQUENCE_ID$" /&gt;
+	&lt;param name="linkLabel_2" value="EMBL-EBI Search" /&gt;
+	&lt;param name="linkUrl_2"	value="http://www.ebi.ac.uk/ebisearch/search.ebi?db=allebi&query=$SEQUENCE_ID$" /&gt;
+	&lt;param name="APPLICATION_URL" value="http://www.jalview.org/services/launchApp" /&gt;
+&lt;/applet&gt;
+</code></pre> 
+
+
+
+
+<ul>
+	<li>View full list of <a href="javascript:doSubmit('appletParameters')"> supported applet parameters here.</a></li>
+	<li>Package all your data files into a single (or multiple) zip /
+		jar files. This is very useful to reduce download time of large data
+		files. The applet archive tag can take multiple entries separated by
+		commas, eg<br> <pre>&lt;applet code=&quot;jalview.bin.JalviewLite&quot;<em><strong> archive=&quot;jalviewApplet.jar, mydata.zip&quot;</strong></em>&gt;
+            </pre>
+	</li>
+	<li>Use Jalview for input to a HTML form. For an example of how to
+		code this using Javascript, click <a
+		href="javascript:doSubmit('formComplete')">here</a>. <br>
+	</li>
+	<li>Embed Jalview into the web page, without the &quot;Start
+		Jalview&quot; button by setting the embed parameter to true;<br>
+		&lt;param name=&quot;embedded&quot; value=&quot;true&quot;&gt;
+	</li>
+	<li>For more examples, see the links to the left.</li>
+</ul>
+
+<table border="1" width=80%>
+	<tr><th colspan="2">Applet Release History</th>
+	<tr>
+		<th>Release</th>
+
+		<th>New Features / required changes</th>
+	</tr>
+	<tr>
+		<td><strong>2.9<br>(Latest)</strong></td>
+		<td>
+        <ul>
+        <li>Split Views for cDNA and Protein alignments<br/>Specify second alignment with 'file2' parameter, and set cDNA/Protein column scaling with scaleProteinAsCdna
+        </li>
+	<li>Jmol compatibility updated to Jmol 14.2.x series - <a href="JmolApplet-14.2.14_2015.06.11.jar">download the JmolApplet here </a></li>
+	<li>The Jmol jar must be updated from <b>&#39;JmolApplet-12.2.4.jar&#39;</b> to <b>&#39;JmolApplet-14.2.14_2015.06.11.jar&#39;</b> in the applet archive argument as highlighted in red below:<br>
+		<pre>archive=&quot;jalviewApplet.jar,<font color="red">JmolApplet-14.2.14_2015.06.11.jar,</font>java-json.jar,json_simple-1.1.jar&quot;</pre>
+	</li>
+	<li>BioJson - A Json file format for representing a single multiple sequence alignment. 
+	    Biojson uses the following external libraries: java-json and json_simple-1.1. <br>Hence the jar files highlighted in red must be included in the applet archive argument as follows:<br>
+            <pre>archive=&quot;jalviewApplet.jar,JmolApplet-14.2.14_2015.06.11.jar,<font color="red">java-json.jar,json_simple-1.1.jar</font>&quot;</pre>		
+	</li>
+        </ul>
+		</td>
+	</tr>
+	<tr>
+		<td><strong>2.8</strong></td>
+		<td><ul>
+        <li>Normalised sequence logo display
+        </li>
+        <li>RNA secondary structure annotation row
+        </li>
+<li>Jmol compatibility updated to Jmol 12.2.x series - <a href="JmolApplet-12.2.4.jar">download the JmolApplet here</a></li>
+<li>To use Jmol as the structure viewer for Jalview, you must include 
+            the jar file in the applet archive argument thus:<br>
+            <pre>archive=&quot;jalviewApplet.jar,Jmol-12.2.4.jar&quot;</pre>
+          </li>
+          <li>Jmol 12.2.x requires at least Java 1.6 to run in the clients web browser. If the client does not have 
+            Java 1.6, or if the Jmol-12.2.jar is not added to the archive, the 
+            original Jalview structure viewer will still be available. <br>
+          </li>
+          
+        </ul></td>
+	</tr>
+	<tr>
+		<td><strong>2.7</strong></td>
+		<td><ul>
+        <li>Javascript callbacks capabilities<ul><li>oninit parameter and methods for registering javascript handlers for selections, mouseovers and linking to Jmol applets on the page.</li>
+        <li>To use javascript callbacks, ensure the applet tag includes the '<a href="http://download.oracle.com/javase/6/docs/technotes/guides/plugin/developer_guide/java_js.html">mayscript</a>' attribute - either as a parameter (&lt;param name="mayscript" value="true"/;gt;) or as a bare attribute in the applet html tag).</li></ul>
+        </li>
+        <li>New <a href="javascript:doSubmit('jalviewLiteJs')">jalviewLite java api</a> methods for selecting, highlighting, scrolling and reordering sequences in an alignment view.
+        </li></ul>
+        <p><strong>**NEW FEATURES** in Jalview 2.6</strong></p>
+        <ul>
+        <li>Jmol compatibility updated to Jmol 12.1.x series</li>
+          <li>Jalview 2.6 works only with Jmol version 12.1.13 or later. You can use the JmolApplet.jar from 
+          the Jmol binary distribution available at the Jmol Sourceforge site, 
+          or <a href="JmolApplet-12.1.13.jar">download the Jmol applet from here</a></li>
+          <li>Minimum recommended version of Java runtime for the applet is now 1.5 (JalviewLite v2.6 without the Jmol viewer may work ok on earlier Java environments but compatibility can no-longer be guaranteed).</li>
+  </ul></td>
+	</tr>
+	<tr>
+		<td><strong>2.5</strong></td>
+		<td><ul>
+        <li>New parameters to control display of tree annotation, width of alignment columns, and to disable the jalview button and check for Jmol on startup.</li>  </ul>
+    </td>
+	</tr>
+	<tr>
+		<td><strong>2.4</strong></td>
+		<td><ul>
+        <li>New applet API methods for feature display control, views, and obtaining current selection via javascript.</li>
+          <li>Group show and hide parameters:
+        &quot;showfeaturegroups&quot; and
+        &quot;hidefeaturegroups&quot;. Both take a list
+        of feature group names (separarated by &quot;|&quot; by default) to hide or show on the displayed
+        alignment.
+        </li>
+        <li>Regular expressions can be used in URL links for sequence IDs.</li>
+        <li>&quot;debug&quot; parameter to control verbosity of the applet's console output.</li>
+        <li>&quot;showbutton&quot; parameter to disable launch button and open JalviewLite immediatly.</li>
+        <li>&quot;nojmol&quot; parameter to disable check for Jmol classes.</li>
+        </ul></td>
+	</tr>
+	<tr>
+		<td><strong>2.3</strong></td>
+		<td><ul>
+          <li>Note that Parameter &quot;PDBFile&quot; now takes 
+            the PDB file followed by a space separated list of alignment sequence 
+            ids to associate the structure to. It is also possible to associate 
+            multiple PDB files by adding an incremental value to PDBFile (up to 
+            10). It is also possible to map specific sequences to specific chains 
+            by using the following notation:<br>
+            <br>
+            <pre>
+            &lt;param name=&quot;PDBFile&quot; value=&quot;First.pdb SeqA SeqB 
+            SeqC&quot;&gt;<br>
+            &lt;param name=&quot;PDBFile2&quot; value=&quot;Second.pdb 
+            A=SeqA B=SeqB C=SeqC&quot;&gt;<br>
+            &lt;param name=&quot;PDBFile3&quot; value=&quot;Third.pdb 
+            D=SeqX B=SeqY C=SeqZ&quot;&gt;<br>
+            </pre>
+          </li>
+          <li>Note parameter &quot;PDBSeq&quot; is no longer required.<br>
+          </li>
+          <li>Jalview 2.3 was updated to work with Jmol 11. See the <a href="/development">versions archive if you want to download the old Jmol applet</a>.</li> 
+          
+        </ul></td>
+	</tr>
+	<tr>
+		<td><strong>2.1</strong></td>
+		<td><ul>
+          <li>Jalview Applet can read and display JPred secondary structure annotation 
+            directly via the <strong>jnetfile</strong> parameter. <br>
+          </li>
+          <li>Param &quot;UserDefinedColour&quot; - specify your own colours for each residue using a semi colon 
+            separated list. Multiple residues can be assigned the same colour 
+            using commas. eg:<br>
+            <pre>&lt;param name=&quot;userDefinedColour&quot; 
+            value=&quot;D,E=red; K,R,H=0022FF; C=yellow&quot;&gt;</pre>
+          </li>
+          <li>Param &quot;showFeatureSettings&quot;
+            - this will display the feature settings window when the applet starts.
+          </li>
+          <li>Param &quot;Application_URL&quot; value=&quot;http://www.jalview.org/services/launchApp&quot;<br/>
+            This calls a servlet which creates a JNLP file with the alignment 
+            file, annotations file and features file of the applet as arguments. 
+            If the user has Java installed, the returned JNLP file should start 
+            up the full Jalview Application. BUT this does not currently work 
+            for alignment files added to the applet in a zip file.
+            <br/>Look at the XML comments in the file downloaded from <a href="http://www.jalview.org/services/launchApp">The LaunchApp page</a> for full documentation.
+          </li>
+          <li>Alignment file can be a series of parameters using eg PFAM format 
+            <br>
+            <pre>&lt;param name=&quot;sequence1&quot; 
+            value=&quot;Q93XJ9_SOLTU/11-26 TSFLPRKPVVTSLKAI&quot;&gt;<br>
+            &lt;param name=&quot;sequence2&quot; value=&quot;FER1_PEA/14-29 TSFLRTQPMPMSVTTT&quot;&gt;<br>
+            </pre>(All the usual Jalview File formats are valid, however each 
+            new line in an alignment file must be entered as a parameter)</li>
+        </ul></td>
+	</tr>
+</table>
+
+        
+<!-- content end -->

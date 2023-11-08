@@ -1,0 +1,276 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>The Jmol PDB Viewer</title>
+</head>
+<body>
+  <p>
+    <strong>The Jmol PDB Viewer</strong>
+  </p>
+  <p>
+    Since Jalview 2.3, <a href="http://jmol.sourceforge.net/">Jmol</a>
+    has been integrated into Jalview for interactively viewing
+    structures opened by entries in the <strong>&quot;Structure&quot;</strong>
+    submenu in the <a href="../menus/popupMenu.html">sequence id
+      pop-up menu</a> (if you can't see this, then you need to <a
+      href="viewingpdbs.html">associate a PDB structure</a> with
+    the sequence). Jmol is available from the Jalview desktop and should
+    also run in the JalviewLite applet, providing the browser supports
+    Java 1.5. If Jmol is not available, then the original <a
+      href="pdbviewer.html">internal pdb viewer</a> will be used as a
+    fallback.
+  </p>
+  <!-- <p>The following menu entries are provided for viewing structure data<br>
+  <ul>
+    <li>The <strong>&quot;Structure&#8594;View
+        Structure&#8594;</strong> submenu allows a single PDB structure to be chosen
+      for display from the available structures for a sequence.
+    </li>
+    <li>The <strong>&quot;Structure&#8594;View all <em>N</em>
+        structures
+    </strong> option will open a new window containing all structures associated
+      with the current selection.
+    </li>
+    <li>The <strong>&quot;Structure&#8594;View all <em>N</em>
+        representative structures
+    </strong> option will open a new window containing exactly one structure per
+      currently selected sequence.<br />
+    <em>The View representative structures option was introduced in
+        Jalview 2.8.1</em></li>
+  </ul>
+  <br> 
+</p> -->
+  <p>
+    <a name="align"><strong>Superposing structures based on
+        their aligned sequences</strong></a><br> If several structures are shown
+    in a view, you can superimpose them using the corresponding
+    positions from the alignment via the <a href="#sAlign"><em>Jmol&#8594;Align</em></a>
+    menu option from the menu bar of the structure view window. <br> <em>Sequence
+      based structure superposition was added in Jalview 2.6</em>
+  </p>
+  <p>
+    <strong>Controls</strong><br> The structure is by default rendered
+    as a ribbon diagram. Moving the mouse over the structure brings up
+    tooltips giving the residue name, PDB residue number and chain code,
+    atom name and number ([RES]Num:Chain.AtomName#AtomNumber). If a
+    mapping exists to a residue in any associated sequences, then this
+    will be highlighted in each one's alignment window. The converse
+    also occurs - moving the mouse over an associated residue in an
+    alignment window highlights the associated atoms in the displayed
+    structures. Press B or use
+    <em>Select&#8594;Select Highlighted columns</em> from any linked
+    alignment window to mark the columns highlighted after mousing over
+    the structure.
+  </p>
+  <p>Selecting a residue highlights its associated sequence residue
+    and alpha carbon location. Double clicking an atom allows distances
+    to be measured from it to any other atom in the structure.</p>
+  <p>
+  <table border="1">
+    <tr>
+      <td><strong>Action</strong></td>
+      <td><strong>Windows</strong></td>
+      <td><strong>Unix</strong></td>
+      <td><strong>Mac/OSX</strong></td>
+    </tr>
+    <tr>
+      <td>Rotate View</td>
+      <td>Left Click and Drag</td>
+      <td>Left Click and Drag</td>
+      <td>Click and Drag</td>
+    </tr>
+    <tr>
+      <td>Zoom</td>
+      <td>Shift + Left Click<br> drag mouse up or down
+      </td>
+      <td>Shift + Left Click<br> or middle button<br>
+        drag mouse up or down
+      </td>
+      <td>Left-Alt + Click and drag mouse up or down</td>
+    </tr>
+    <tr>
+      <td>Select/<br> Deselect<br> Residue
+      </td>
+      <td>Left Click</td>
+      <td>Left Click</td>
+      <td>Click</td>
+    </tr>
+    <tr>
+      <td>Roll View</td>
+      <td>Shift + Left Click<br> drag mouse to left or right
+      </td>
+      <td>Shift + Left Click<br> or middle button<br>
+        drag mouse to left or right
+      </td>
+      <td>Left-Alt + Click and drag mouse to left or right</td>
+    </tr>
+    <tr>
+      <td>Move Origin</td>
+      <td>Shift+Control+Left Click<br> or Middle Button<br>
+        + Drag
+      </td>
+      <td>Middle-Button<br> and<br> drag
+      </td>
+      <td>Shift+Control+Left Click<br> or Middle Button<br>
+        and drag
+      </td>
+    </tr>
+    <tr>
+      <td>Jmol Menu</td>
+      <td>Right-Click</td>
+      <td>Right-Click</td>
+      <td>Apple-Click</td>
+    </tr>
+  </table>
+  </p>
+  <p>The window has up to five menus:
+  <ul>
+    <li><Strong>File<br>
+    </strong>
+      <ul>
+        <li><strong>Save As<br>
+        </strong><em>Save the displayed PDB File, or the current view as an
+            EPS or PNG file.</em></li>
+        <li><strong>View Mapping<br>
+        </strong><em> Opens a text window showing the alignment between the
+            residues corresponding to alpha-carbon atoms in the PDB
+            structure and the residues in the associated sequence.</em></li>
+      </ul></li>
+    <li><strong>View</strong>
+      <ul>
+        <li><strong>Show Chains<br>
+        </strong><em>Select which of the PDB file's chains are to be
+            displayed.</em></li>
+        <li><strong>Colour by ..<br></strong><em>Submenu
+            allowing specific alignment views to be selected for
+            colouring associated chains in the structure display. This
+            menu contains all the alignment views associated with the
+            structure view, with those used to colour the view indicated
+            by ticks. Addditionally, it contains the following menu
+            entries:</em>
+          <ul>
+            <li><strong>Select many views<br></strong><em>When
+                this option is enabled, selecting an alignment view adds
+                it to the set used to colour the structures. Use this
+                when colouring structures related to a number of
+                alignments involving different domains or chains which
+                are shown in the same structure view.</em></li>
+            <li><strong>Select all views<br></strong><em>This
+                is only enabled when </em><strong>Select many views</strong><em>
+                is also enabled, and will add all associated views to
+                the set used to colour the structure display.</em></li>
+            <li><strong>Invert selection<br></strong><em>This
+                is only enabled when </em><strong>Select many views</strong><em>
+                is also enabled, and will replace the current set of
+                views with any remaining views not currently used to
+                colour the structure display.</em></li>
+          </ul></li>
+      </ul>
+    <li><strong>Colours<br>
+    </strong>
+      <ul>
+        <li><strong>By Sequence<br>
+        </strong><em> Colours each residue in the structure with the colour
+            of its corresponding residue in the associated sequence as
+            rendered in the associated alignment views, including any
+            UniProt sequence features or region colourings.<br />Pick
+            which of the associated alignment views are used to colour
+            the structures using the <strong>View&#8594;Colour
+              by ..</strong> sub menu.
+        </em><br> Residues which only exist in the PDB structure are
+          coloured white if they are insertions (relative to the
+          associated sequence in the alignment) and grey if they are N
+          or C terminal flanks outside the region mapped to the
+          alignment window's sequence.</em></li>
+        <li><strong>By Chain<br>
+        </strong><em> Assigns a random colour to each PDB chain.</em>
+        <li><strong>Charge &amp; Cysteine<br>
+        </strong><em> Highlights cysteines in yellow, anionic (Aspartic Acid
+            or Glutamic Acid) residues in red, and cationic (Lysine or
+            Arginine) residues in blue.</em></li>
+        <li><strong>Colour with Jmol<br></strong><em>Defers
+            any colouring operations to Jmol. Select this if you want to
+            use the Jmol scripting interface or menu to modify the view
+            directly.</em></li>
+        <li><strong>Standard and User Defined Jalview
+            colourschemes.<br>
+        </strong><em>The remaining entries apply the colourschemes available
+            from the standard and user defined <a
+            href="../colourSchemes/index.html">amino acid
+              colours</a>.
+        </em></li>
+      </ul></li>
+    <li><strong>Jmol<br>
+    </strong><em>This pulldown menu is only displayed if there are multiple
+        structures shown in the Jmol window, and Jalview can also locate
+        at least two of the structures in the currently associated
+        alignment view.</em>
+      <ul>
+        <li><strong><a name="sAlign">Align</a> <br> </strong><em>
+            When selected, the associated alignment will be used to
+            superimpose all the structures in the view onto the first
+            structure in the alignment. The regions used to calculate
+            the superposition will be highlighted using the 'Cartoon'
+            rendering style, and the remaining data shown as a chain
+            trace.<br> (This option was introduced in Jalview 2.6)
+        </em></li>
+      </ul></li>
+    <li><strong>Help<br>
+    </strong>
+      <ul>
+        <li><strong>Jmol Help<br>
+        </strong><em>Access the Jmol Help documentation in a new browser
+            window.</em></li>
+      </ul></li>
+  </ul>
+  </p>
+  <p>
+    <strong>Functionality provided by Jmol</strong>
+  </p>
+  <p>Jmol's own functions are accessed by clicking the 'Jmol' logo
+    or right-clicking in the structure display area. Either way will
+    open the Jmol pop-up menu, which provides access to a number of
+    features for controlling the colour and display of molecules, adding
+    measurements and labels, plotting surfaces, and display animation.
+    The 'Set Picking' menu controls the behaviour of single and double
+    mouse clicking on the structure, and the 'Console' option opens the
+    Jmol scripting console.</p>
+  <p>
+    The state of each Jmol display is stored within <a
+      href="jalarchive.html">Jalview archives</a> as a Jmol state
+    recovery script file. This means that any Jmol visualization effects
+    that you add beyond those provided by Jalview will be able to be
+    stored and recovered along with the displayed alignments in Jalview.
+  </p>
+  <p>
+    <strong>More Information</strong>
+  </p>
+  <p>
+    Jmol is a sophisticated program in its own right, with its own
+    command console and scripting language. Only the essentials have
+    been described here - the interested reader is referred to <a
+      href="http://jmol.sourceforge.net/docs/">Jmol's own
+      comprehensive online documentation</a>.
+  </p>
+  </p>
+</body>
+</html>

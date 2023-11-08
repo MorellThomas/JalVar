@@ -1,0 +1,1 @@
+Jalview 2.11.1.4 is the fourth patch release in the 2.11.1 series. One critical bug was fixed in this release - when Jalview would occasionally hang when viewing structures in Jmol. This release also introduces a number of new configuration options for disabling web service connections used by the Jalview Debian package.

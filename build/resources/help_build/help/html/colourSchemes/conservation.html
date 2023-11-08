@@ -1,0 +1,55 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Colouring by Conservation</title>
+</head>
+<body>
+  <p>
+    <strong>Colouring by Conservation</strong>
+  </p>
+  <p>
+    This is an approach to alignment colouring which highlights regions
+    of an alignment where physicochemical properties are conserved. It
+    is based on the one used in the AMAS method of multiple sequence
+    alignment analysis (Livingstone C.D. and Barton G.J. (1993), Protein
+    Sequence Alignments: A Strategy for the Hierarchical Analysis of
+    Residue Conservation.CABIOS Vol. 9 No. 6 (745-756)). See the <a
+      href="../calculations/conservation.html">conservation
+      calculation</a> help page for a more thorough explanation of the
+    calculation.
+  </p>
+  <p>For an already coloured alignment, the conservation index at
+    each alignment position is used to modify the shading intensity of
+    the colour at that position. This means that the most conserved
+    columns in each group have the most intense colours, and the least
+    conserved are the palest. The slider controls the contrast between
+    these extremes.</p>
+  <p>
+    Conservation can be calculated over all sequences in an alignment,
+    or just within specific groups (such as those defined by <a
+      href="../calculations/tree.html">phylogenetic tree
+      partitioning</a>). The option 'apply to all groups' controls whether
+    the contrast slider value will be applied to the indices for the
+    currently selected group, or all groups defined over the alignment.
+  </p>
+</body>
+</html>

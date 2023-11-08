@@ -1,0 +1,1 @@
+--open=test/jalview/bin/argparser/testfiles/test2.fa

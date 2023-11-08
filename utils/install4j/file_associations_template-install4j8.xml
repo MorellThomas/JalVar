@@ -1,0 +1,45 @@
+<!-- $$NAME$$ ($$DISPLAYEXTENSION$$) BEGIN -->
+                  <action name="$$NAME$$ ($$DISPLAYEXTENSION$$) message" id="$$ID$$" customizedId="$$NAME$$-$$EXTENSION$$-$$ID$$-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">$$NAME$$ ($$DISPLAYEXTENSION$$)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="$$NAME$$ ($$DISPLAYEXTENSION$$) progress bar $$PROGRESSPERCENT$$" id="$$ID1$$" customizedId="$$NAME$$-$$EXTENSION$$-$$ID1$$-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="$$PROGRESSPERCENT$$" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="$$NAME$$ ($$DISPLAYEXTENSION$$) file association" id="$$ID2$$" customizedId="$$NAME$$-$$EXTENSION$$-$$ID2$$-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .$$EXTENSION$$ file association">
+                    <serializedBean>
+                      <property name="description" type="string">$$NAME$$ File</property>
+                      <property name="extension" type="string">$$EXTENSION$$</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>$$ICONFILE$$.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="$$MACASSOCIATIONROLE$$" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="$$PRIMARY$$" />
+                      <property name="unix" type="boolean" value="$$ADDUNIXEXTENSION$$" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>$$ICONFILE$$.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">$$MIMETYPE$$</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>$$ICONFILE$$.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+

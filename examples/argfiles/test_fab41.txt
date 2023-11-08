@@ -1,0 +1,13 @@
+--open=./examples/test_fab41.result/sample.a2m
+--colour=gecos:flower
+--structure=./examples/test_fab41.result/test_fab41_unrelaxed_rank_1_model_3.pdb
+--paematrix=[label=pAE R1-M3]./examples/test_fab41.result/test_fab41_unrelaxed_rank_1_model_3_scores.json
+--structure=./examples/test_fab41.result/test_fab41_unrelaxed_rank_2_model_4.pdb
+--paematrix=[label=pAE R2-M4]./examples/test_fab41.result/test_fab41_unrelaxed_rank_2_model_4_scores.json
+--structure=./examples/test_fab41.result/test_fab41_unrelaxed_rank_3_model_2.pdb
+--paematrix=[label=pAE R3-M2]./examples/test_fab41.result/test_fab41_unrelaxed_rank_3_model_2_scores.json
+--structure=./examples/test_fab41.result/test_fab41_unrelaxed_rank_4_model_5.pdb
+--paematrix=[label=pAE R4-M5]./examples/test_fab41.result/test_fab41_unrelaxed_rank_4_model_5_scores.json
+--structure=./examples/test_fab41.result/test_fab41_unrelaxed_rank_5_model_1.pdb
+--paematrix=[label=pAE R5-M1]./examples/test_fab41.result/test_fab41_unrelaxed_rank_5_model_1_scores.json
+--image=output1.html

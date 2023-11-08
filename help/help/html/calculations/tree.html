@@ -1,0 +1,130 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Tree Calculation</title>
+</head>
+<body>
+  <p>
+    <strong>Calculation of trees from alignments</strong>
+  </p>
+  <p>
+    Trees are calculated on either the complete alignment, or just the
+    currently selected group of sequences, via the <a href="calculations.html">calculations dialog</a> opened from the <strong>Calculate&#8594;Calculate
+      Tree or PCA...</strong> menu entry. Once calculated, trees are displayed in a new <a
+      href="../calculations/treeviewer.html">tree viewing
+      window</a>. There are four different calculations, using one of two
+    distance measures and constructing the tree from one of two
+    algorithms :
+  </p>
+  <p>
+    <strong>Distance Measures</strong>
+  </p>
+  <p>Trees are calculated on the basis of a measure of similarity
+    between each pair of sequences in the alignment :
+  <ul>
+    <li><strong>PID</strong><br>The percentage identity
+      between the two sequences at each aligned position.
+      <ul>
+        <li>PID = Number of equivalent aligned non-gap symbols *
+          100 / Smallest number of non-gap positions in either of both
+          sequences<br> <em>This is essentially the 'number of
+            identical bases (or residues) per 100 base pairs (or
+            residues)'.</em>
+        </li>
+      </ul>
+    <li><strong>BLOSUM62, PAM250, DNA</strong><br />These options
+      use one of the available substitution matrices to compute a sum of
+      scores for the residue pairs at each aligned position.
+      <ul>
+        <li>For details about each model, see the <a
+          href="scorematrices.html">list of built-in score
+            matrices</a>.
+        </li>
+      </ul></li>
+    <li><strong>Sequence Feature Similarity</strong><br>Trees
+      are constructed from a distance matrix formed from Jaccard
+      distances between sequence features observed at each column of the
+      alignment.
+      <ul>
+        <li>Similarity at column <em>i</em> = (Total number of
+          features displayed - Sum of number of features in common at <em>i</em>)
+          <br />Similarities are summed over all columns and divided by
+          the number of columns. <br />Since the total number of
+          feature types is constant over all columns of the alignment,
+          we do not scale the matrix, so tree distances can be
+          interpreted as the average number of features that differ over
+          all sites in the aligned region.
+        </li>
+
+      </ul> Distances are computed based on the currently displayed feature
+      types. Sequences with similar distributions of features of the
+      same type will be grouped together in trees computed with this
+      metric. <em>This measure was introduced in Jalview 2.9</em></li>
+  </ul>
+  <p>
+    <strong>Tree Construction Methods</strong>
+  </p>
+  <p>Jalview currently supports two kinds of agglomerative
+    clustering methods. These are not intended to substitute for
+    rigorous phylogenetic tree construction, and may fail on very large
+    alignments.
+  <ul>
+    <li><strong>UPGMA tree</strong><br> UPGMA stands for
+      Unweighted Pair-Group Method using Arithmetic averages. Clusters
+      are iteratively formed and extended by finding a non-member
+      sequence with the lowest average dissimilarity over the cluster
+      members.
+      <p></p></li>
+    <li><strong>Neighbour Joining tree</strong><br> First
+      described in 1987 by Saitou and Nei, this method applies a greedy
+      algorithm to find the tree with the shortest branch lengths.<br>
+      This method, as implemented in Jalview, is considerably more
+      expensive than UPGMA.</li>
+  </ul>
+  <p>
+    A newly calculated tree will be displayed in a new <a
+      href="../calculations/treeviewer.html">tree viewing
+      window</a>. In addition, a new entry with the same tree viewer window
+    name will be added in the Sort menu so that the alignment can be
+    reordered to reflect the ordering of the leafs of the tree. If the
+    tree was calculated on a selected region of the alignment, then the
+    title of the tree view will reflect this.
+  </p>
+
+  <p>
+    <strong>External Sources for Phylogenetic Trees</strong>
+  </p>
+  <p>
+    A number of programs exist for the reliable construction of
+    phylogenetic trees, which can cope with large numbers of sequences,
+    use better distance methods and can perform bootstrapping. Jalview
+    can read <a
+      href="http://evolution.genetics.washington.edu/phylip/newick_doc.html">Newick</a>
+    format tree files using the 'Load Associated Tree' entry of the
+    alignment's File menu. Sequences in the alignment will be
+    automatically associated to nodes in the tree, by matching Sequence
+    IDs to the tree's leaf names.
+  </p>
+
+
+</body>
+</html>

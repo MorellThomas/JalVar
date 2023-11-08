@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.renderer.seqfeatures.FeatureRendererTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:54" hostname="wer3eng" time="0.547">
+  <properties/>
+  <testcase name="testFilterFeaturesForDisplay" classname="jalview.renderer.seqfeatures.FeatureRendererTest" time="0.036"/>
+  <testcase name="testFindAllFeatures" classname="jalview.renderer.seqfeatures.FeatureRendererTest" time="0.05"/>
+  <testcase name="testFindComplementFeaturesAtResidue" classname="jalview.renderer.seqfeatures.FeatureRendererTest" time="0.278"/>
+  <testcase name="testFindFeaturesAtColumn" classname="jalview.renderer.seqfeatures.FeatureRendererTest" time="0.037"/>
+  <testcase name="testGetColour" classname="jalview.renderer.seqfeatures.FeatureRendererTest" time="0.03"/>
+  <testcase name="testIsVisible" classname="jalview.renderer.seqfeatures.FeatureRendererTest" time="0.114"/>
+  <system-out><![CDATA[File format identified as Fasta
+Attempting to connect with RNAalifoldWS...
+File format identified as Fasta
+Java version: 11.0.19
+Java Home: /usr/lib/jvm/java-11-openjdk
+amd64 Linux 6.3.9-arch1-1
+CMD [-props test/jalview/testProps.jvprops] executed successfully!
+Could not make Java version check
+File format identified as Fasta
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@50a80744
+File format identified as Fasta
+File format identified as Fasta
+File format identified as Fasta
+]]></system-out>
+  <system-err><![CDATA[DEBUG - AUTHENTICATOR setting default Authenticator to null
+DEBUG - AUTHENTICATOR setting property 'http.nonProxyHosts' to "null"
+DEBUG - Setting proxy properties to: http.proxyHost=null, http.proxyPort=null, https.proxyHost=null, https.proxyPort=null
+DEBUG - Ignoring SO:0001957 as obsolete and duplicated by SO:0001979
+DEBUG - Ignoring SO:0000437 as obsolete and duplicated by SO:0000800
+DEBUG - Ignoring SO:0000554 as obsolete and duplicated by SO:0000801
+DEBUG - Ignoring SO:0000767 as obsolete and duplicated by SO:0000179
+DEBUG - Ignoring SO:0000058 as obsolete and duplicated by SO:0000803
+DEBUG - Ignoring SO:0001052 as obsolete and duplicated by SO:0001649
+DEBUG - Ignoring SO:0000052 as obsolete and duplicated by SO:0000802
+DEBUG - Ignoring SO:0001053 as obsolete and duplicated by SO:0001648
+INFO - Loaded Sequence Ontology from so-xp-simple.obo.zip (34ms)
+INFO - Linux platform only! You may have the following warning next: "WARNING: An illegal reflective access operation has occurred"
+This is expected and cannot be avoided, sorry about that.
+DEBUG - Got last known dimensions for : x:702 y:518 width:675 height:438
+DEBUG - Got last known dimensions for JAVA_CONSOLE_: x:622 y:320 width:337 height:109
+DEBUG - Downloading data from identifiers.org
+DEBUG - Filechooser init thread started.
+Could not load jar:file:/home/thomas/Studium/Master_2/java-hiwi/jalview/classes/!/.build_properties
+DEBUG - Waiting around for old discovery thread to finish.
+DEBUG - (Re)-Initialising the discovery URL list.
+DEBUG - Starting news thread.
+DEBUG - Setting default services
+DEBUG - A MsaWS service called Muscle Multiple Protein Sequence Alignment exists at http://www.compbio.dundee.ac.uk/JalviewWS/services/MuscleWS
+
+DEBUG - A MsaWS service called MAFFT Multiple Sequence Alignment exists at http://www.compbio.dundee.ac.uk/JalviewWS/services/MafftWS
+
+DEBUG - A MsaWS service called ClustalW Multiple Sequence Alignment exists at http://www.compbio.dundee.ac.uk/JalviewWS/services/ClustalWS
+
+DEBUG - A SecStrPred service called JPred Secondary Structure Prediction exists at http://www.compbio.dundee.ac.uk/JalviewWS/services/jpred
+
+DEBUG - No service endpoints to use for service discovery.
+DEBUG - Constructing news reader.
+Jul 02, 2023 10:11:54 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Invalid or corrupt date in property 'JALVIEW_NEWS_RSS_LASTMODIFIED' : value was 'Apr 23, 2014 2:53:26 PM'
+DEBUG - Exception downloading identifiers.org datahttps://www.jalview.org/services/identifiers
+DEBUG - Filechooser init thread finished.
+DEBUG - Aborting 1 JABAWS discovery threads.
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@6f85b2b8, jalview.ws.jws2.jabaws2.Jws2Instance@1823272, jalview.ws.jws2.jabaws2.Jws2Instance@14de54ca, jalview.ws.jws2.jabaws2.Jws2Instance@15ac9368, jalview.ws.jws2.jabaws2.Jws2Instance@308ab5ee, jalview.ws.jws2.jabaws2.Jws2Instance@37b19b42, jalview.ws.jws2.jabaws2.Jws2Instance@4ae5466f, jalview.ws.jws2.jabaws2.Jws2Instance@13908975, jalview.ws.jws2.jabaws2.Jws2Instance@7dfd07f9, jalview.ws.jws2.jabaws2.Jws2Instance@50a80744]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@6f85b2b8, jalview.ws.jws2.jabaws2.Jws2Instance@1823272, jalview.ws.jws2.jabaws2.Jws2Instance@14de54ca, jalview.ws.jws2.jabaws2.Jws2Instance@15ac9368, jalview.ws.jws2.jabaws2.Jws2Instance@308ab5ee, jalview.ws.jws2.jabaws2.Jws2Instance@37b19b42, jalview.ws.jws2.jabaws2.Jws2Instance@4ae5466f, jalview.ws.jws2.jabaws2.Jws2Instance@13908975, jalview.ws.jws2.jabaws2.Jws2Instance@7dfd07f9, jalview.ws.jws2.jabaws2.Jws2Instance@50a80744]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@6f85b2b8, jalview.ws.jws2.jabaws2.Jws2Instance@1823272, jalview.ws.jws2.jabaws2.Jws2Instance@14de54ca, jalview.ws.jws2.jabaws2.Jws2Instance@15ac9368, jalview.ws.jws2.jabaws2.Jws2Instance@308ab5ee, jalview.ws.jws2.jabaws2.Jws2Instance@37b19b42, jalview.ws.jws2.jabaws2.Jws2Instance@4ae5466f, jalview.ws.jws2.jabaws2.Jws2Instance@13908975, jalview.ws.jws2.jabaws2.Jws2Instance@7dfd07f9, jalview.ws.jws2.jabaws2.Jws2Instance@50a80744]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@6f85b2b8, jalview.ws.jws2.jabaws2.Jws2Instance@1823272, jalview.ws.jws2.jabaws2.Jws2Instance@14de54ca, jalview.ws.jws2.jabaws2.Jws2Instance@15ac9368, jalview.ws.jws2.jabaws2.Jws2Instance@308ab5ee, jalview.ws.jws2.jabaws2.Jws2Instance@37b19b42, jalview.ws.jws2.jabaws2.Jws2Instance@4ae5466f, jalview.ws.jws2.jabaws2.Jws2Instance@13908975, jalview.ws.jws2.jabaws2.Jws2Instance@7dfd07f9, jalview.ws.jws2.jabaws2.Jws2Instance@50a80744]
+DEBUG - Old discovery thread has finished.
+DEBUG - Firing service changed event for []
+Rebuild WS Menu for service change
+DEBUG - Firing service changed event for []
+Rebuild WS Menu for service change
+DEBUG - Firing service changed event for []
+DEBUG - Firing service changed event for []
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+DEBUG - Scanning news items: newsnew=false and lastDate is null
+DEBUG - Will show jalview news automatically
+DEBUG - Completed construction of reader.
+DEBUG - Completed news thread.
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Displaying news.
+]]></system-err>
+</testsuite>

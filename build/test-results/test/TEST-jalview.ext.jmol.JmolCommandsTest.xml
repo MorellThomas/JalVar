@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.ext.jmol.JmolCommandsTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:41" hostname="wer3eng" time="0.039">
+  <properties/>
+  <testcase name="testColourByChain" classname="jalview.ext.jmol.JmolCommandsTest" time="0.001"/>
+  <testcase name="testColourByCharge" classname="jalview.ext.jmol.JmolCommandsTest" time="0.0"/>
+  <testcase name="testColourBySequence" classname="jalview.ext.jmol.JmolCommandsTest" time="0.001"/>
+  <testcase name="testFocusView" classname="jalview.ext.jmol.JmolCommandsTest" time="0.0"/>
+  <testcase name="testGetAtomSpec" classname="jalview.ext.jmol.JmolCommandsTest" time="0.001"/>
+  <testcase name="testGetColourBySequenceCommands_hiddenColumns" classname="jalview.ext.jmol.JmolCommandsTest" time="0.03"/>
+  <testcase name="testGetModelStartNo" classname="jalview.ext.jmol.JmolCommandsTest" time="0.0"/>
+  <testcase name="testLoadFile" classname="jalview.ext.jmol.JmolCommandsTest" time="0.0"/>
+  <testcase name="testOpenSession" classname="jalview.ext.jmol.JmolCommandsTest" time="0.0"/>
+  <testcase name="testSaveSession" classname="jalview.ext.jmol.JmolCommandsTest" time="0.0"/>
+  <testcase name="testSetBackgroundColour" classname="jalview.ext.jmol.JmolCommandsTest" time="0.001"/>
+  <testcase name="testShowBackbone" classname="jalview.ext.jmol.JmolCommandsTest" time="0.0"/>
+  <testcase name="testSuperposeStructures" classname="jalview.ext.jmol.JmolCommandsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

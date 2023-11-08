@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.analysis.FinderTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:01" hostname="wer3eng" time="0.015">
+  <properties/>
+  <testcase name="testFindAll" classname="jalview.analysis.FinderTest" time="0.002"/>
+  <testcase name="testFindAll_caseSensitive" classname="jalview.analysis.FinderTest" time="0.0"/>
+  <testcase name="testFindAll_inSelection" classname="jalview.analysis.FinderTest" time="0.001"/>
+  <testcase name="testFindAll_maximalResultOnly" classname="jalview.analysis.FinderTest" time="0.0"/>
+  <testcase name="testFindAll_sequenceIds" classname="jalview.analysis.FinderTest" time="0.0"/>
+  <testcase name="testFindNext" classname="jalview.analysis.FinderTest" time="0.0"/>
+  <testcase name="testFindNext_inSelection" classname="jalview.analysis.FinderTest" time="0.001"/>
+  <testcase name="testFind_findAll" classname="jalview.analysis.FinderTest" time="0.0"/>
+  <testcase name="testFind_findAllInSelectionWithShortSequence" classname="jalview.analysis.FinderTest" time="0.0"/>
+  <testcase name="testFind_findNext" classname="jalview.analysis.FinderTest" time="0.001"/>
+  <testcase name="testFind_ignoreHiddenColumns" classname="jalview.analysis.FinderTest" time="0.002"/>
+  <testcase name="testFind_inDescription" classname="jalview.analysis.FinderTest" time="0.001"/>
+  <testcase name="testFind_regex" classname="jalview.analysis.FinderTest" time="0.001"/>
+  <testcase name="testFind_residueNumber" classname="jalview.analysis.FinderTest" time="0.0"/>
+  <testcase name="testFind_withHiddenColumns" classname="jalview.analysis.FinderTest" time="0.001"/>
+  <testcase name="testFind_withHiddenColumnsAndSelection" classname="jalview.analysis.FinderTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+]]></system-err>
+</testsuite>

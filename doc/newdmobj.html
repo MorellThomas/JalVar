@@ -1,0 +1,37 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+-->
+<head>
+<title>Adding New Datamodel Objects To Jalview</title>
+</head>
+<body>
+<h1>Adding New Datamodel Objects To Jalview</h1>
+<p>There are some basic requirements for all Jalview datamodel objects. None of them are mandatory, but each one makes it easier to integrate a new datamodel object into Jalview.</p>
+<p>The primary requirement of classes within jalview.datamodel is that all class implementations must be byte-code compatible with a java 1.1 runtime environment. This is an imposition from the Jalview applet, which is dependent on the core jalview.datamodel package. It is possible to include dependencies to objects which are not available to the JRE1.1 environment, providing you ensure that a test is made at run-time to decide if these dependencies are followed within any particular method. But generally, it is best to stick to 1.1 coding style - that is no generics, no fancy Iterators or use of specific JRE object methods and interfaces introduced after 1.1 (such as the get method for java.util.Vector).</p>
+<p><h3>Steps for integrating a new class into the datamodel</h3>
+<ol><li>Implement in Java 1.1 compatible source.</li>
+<li>Implement copy constructors for the benefit of any datamodel classes that reference it:
+<ul>
+<li>If it is referenced by AlignmentI or SequenceI<br>
+The jalview cut and paste mechanism relies on copy constructors and a 'pseudo-copy constructor' method to make new versions of datamodel objects which correctly inherit references to a subset of attributes referenced by the original objects, and otherwise contain complete duplicates of data (sequence characters, annotation and sequence features) local to that object.
+</li>
+</ul></li>
+<li>
+</body>
+</html>

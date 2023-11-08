@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.analysis.AlignmentAnnotationUtilsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:41" hostname="wer3eng" time="0.005">
+  <properties/>
+  <testcase name="testAsList" classname="jalview.analysis.AlignmentAnnotationUtilsTest" time="0.001"/>
+  <testcase name="testGetShownHiddenTypes_forSelectionGroup" classname="jalview.analysis.AlignmentAnnotationUtilsTest" time="0.002"/>
+  <testcase name="testGetShownHiddenTypes_noSequenceSelected" classname="jalview.analysis.AlignmentAnnotationUtilsTest" time="0.001"/>
+  <testcase name="testGetShownHiddenTypes_withGraphGroups" classname="jalview.analysis.AlignmentAnnotationUtilsTest" time="0.001"/>
+  <testcase name="testGetVisibleGraphGroups" classname="jalview.analysis.AlignmentAnnotationUtilsTest" time="0.0"/>
+  <system-out><![CDATA[Visible annotation types for calcId=CalcId6
+   [Label6]
+Visible annotation types for calcId=CalcId9
+   [Label9]
+Hidden annotation types for calcId=CalcId3
+   [Label2]
+Hidden annotation types for calcId=CalcId2
+   [Label2]
+   [Label3]
+Hidden annotation types for calcId=CalcId9
+   [Label9]
+Visible annotation types for calcId=CalcId1
+   [Label1, Label5]
+Hidden annotation types for calcId=CalcId2
+   [Label2, Label3]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,6 @@
+Main-Class: com.threerings.getdown.launcher.Getdown
+Permissions: all-permissions
+Application-Name: Getdown
+Codebase: *
+Application-Library-Allowable-Codebase: *
+Caller-Allowable-Codebase: *

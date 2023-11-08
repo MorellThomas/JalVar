@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.viewmodel.OverviewDimensionsHideHiddenTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:13:44" hostname="wer3eng" time="0.035">
+  <properties/>
+  <testcase name="testConstructor" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.0"/>
+  <testcase name="testDragging" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.001"/>
+  <testcase name="testFromMouseWithHiddenColsAtEnd" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.001"/>
+  <testcase name="testFromMouseWithHiddenColsAtStart" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.001"/>
+  <testcase name="testFromMouseWithHiddenColsInMiddle" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.002"/>
+  <testcase name="testFromMouseWithHiddenRowsAtEnd" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.002"/>
+  <testcase name="testFromMouseWithHiddenRowsAtStart" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.0"/>
+  <testcase name="testFromMouseWithHiddenRowsInMiddle" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.0"/>
+  <testcase name="testPositionInBox" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.0"/>
+  <testcase name="testSetBoxFromMouseClick" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.002"/>
+  <testcase name="testSetBoxFromViewport" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.0"/>
+  <testcase name="testSetBoxFromViewportHiddenColsAtEnd" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.001"/>
+  <testcase name="testSetBoxFromViewportHiddenColsAtStart" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.0"/>
+  <testcase name="testSetBoxFromViewportHiddenColsInMiddle" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.0"/>
+  <testcase name="testSetBoxFromViewportHiddenRowsAtEnd" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.002"/>
+  <testcase name="testSetBoxFromViewportHiddenRowsAtStart" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.001"/>
+  <testcase name="testSetBoxFromViewportHiddenRowsInMiddle" classname="jalview.viewmodel.OverviewDimensionsHideHiddenTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

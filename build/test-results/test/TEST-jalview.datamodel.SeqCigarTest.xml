@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.datamodel.SeqCigarTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:02" hostname="wer3eng" time="0.015">
+  <properties/>
+  <testcase name="testFindPosition" classname="jalview.datamodel.SeqCigarTest" time="0.0"/>
+  <testcase name="testSomething" classname="jalview.datamodel.SeqCigarTest" time="0.014"/>
+  <system-out><![CDATA[
+Original sequence align:
+------ktryas---dtqwrtsasll----dddptyipqqwa----slchvh
+Reconstructed window from 8 to 48
+XXXXXXXXryas---dtqwrtsasll----dddptyipqqwa----slc...
+Cigar String:4M3I11M4I12M4I3M
+
+	 ryas---dtqwrtsasll----dddptyipqqwa----slc
+40,40	:ryas---dtqwrtsasll----dddptyipqqwa----sl
+37,38	:ryas---dtqwrtsasll----dddptyipqqwa---l
+34,36	:ryas---dtqwrtsasll----dddptyipqqwal
+31,34	:ryas---dtqwrtsasll----dddptyipq
+28,32	:ryas---dtqwrtsasll----dddpty
+25,30	:ryas---dtqwrtsasll----ddd
+22,28	:ryas---dtqwrtsasll----
+19,26	:ryas---dtqwrtsasll-
+16,24	:ryas---dtqwrtsas
+13,22	:ryas---dtqwrt
+39,39	:ryas---dtqwrtsasll----dddptyipqqwa----sc
+36,37	:ryas---dtqwrtsasll----dddptyipqqwa--sc
+33,35	:ryas---dtqwrtsasll----dddptyipqqwsc
+30,33	:ryas---dtqwrtsasll----dddptyipc
+27,31	:ryas---dtqwrtsasll----dddpt
+24,29	:ryas---dtqwrtsasll----dd
+21,27	:ryas---dtqwrtsasll---
+18,25	:ryas---dtqwrtsasll
+15,23	:ryas---dtqwrtsa
+12,21	:ryas---dtqwr
+38,38	:ryas---dtqwrtsasll----dddptyipqqwa----lc
+35,36	:ryas---dtqwrtsasll----dddptyipqqwa--lc
+32,34	:ryas---dtqwrtsasll----dddptyipqq-lc
+29,32	:ryas---dtqwrtsasll----dddptyilc
+26,30	:ryas---dtqwrtsasll----dddp
+23,28	:ryas---dtqwrtsasll----d
+20,26	:ryas---dtqwrtsasll--
+17,24	:ryas---dtqwrtsasl
+14,22	:ryas---dtqwrts
+11,20	:ryas---dtqw
+37,37	:ryas---dtqwrtsasll----dddptyipqqwa---slc
+34,35	:ryas---dtqwrtsasll----dddptyipqqwa-slc
+31,33	:ryas---dtqwrtsasll----dddptyipq-slc
+28,31	:ryas---dtqwrtsasll----dddptyslc
+25,29	:ryas---dtqwrtsasll----dddc
+22,27	:ryas---dtqwrtsasll----
+19,25	:ryas---dtqwrtsasll-
+16,23	:ryas---dtqwrtsas
+13,21	:ryas---dtqwrt
+10,19	:ryas---dtq
+36,36	:ryas---dtqwrtsasll----dddptyipqqwa---slc
+33,34	:ryas---dtqwrtsasll----dddptyipqqw--slc
+30,32	:ryas---dtqwrtsasll----dddptyip--slc
+27,30	:ryas---dtqwrtsasll----dddpt-slc
+24,28	:ryas---dtqwrtsasll----ddlc
+21,26	:ryas---dtqwrtsasll---
+18,24	:ryas---dtqwrtsasll
+15,22	:ryas---dtqwrtsa
+12,20	:ryas---dtqwr
+9,18	:ryas---dt
+35,35	:ryas---dtqwrtsasll----dddptyipqqwa---slc
+32,33	:ryas---dtqwrtsasll----dddptyipqq---slc
+29,31	:ryas---dtqwrtsasll----dddptyi---slc
+26,29	:ryas---dtqwrtsasll----dddp--slc
+23,27	:ryas---dtqwrtsasll----dslc
+20,25	:ryas---dtqwrtsasll--
+17,23	:ryas---dtqwrtsasl
+14,21	:ryas---dtqwrts
+11,19	:ryas---dtqw
+8,17	:ryas---d
+34,34	:ryas---dtqwrtsasll----dddptyipqqwa---slc
+31,32	:ryas---dtqwrtsasll----dddptyipqa---slc
+28,30	:ryas---dtqwrtsasll----dddptya---slc
+25,28	:ryas---dtqwrtsasll----ddd---slc
+22,26	:ryas---dtqwrtsasll-----slc
+19,24	:ryas---dtqwrtsasll-c
+16,22	:ryas---dtqwrtsas
+13,20	:ryas---dtqwrt
+10,18	:ryas---dtq
+7,16	:ryas---
+33,33	:ryas---dtqwrtsasll----dddptyipqqw----slc
+30,31	:ryas---dtqwrtsasll----dddptyipw----slc
+27,29	:ryas---dtqwrtsasll----dddptw----slc
+24,27	:ryas---dtqwrtsasll----dd----slc
+21,25	:ryas---dtqwrtsasll-----slc
+18,23	:ryas---dtqwrtsaslllc
+15,21	:ryas---dtqwrtsa
+12,19	:ryas---dtqwr
+9,17	:ryas---dt
+6,15	:ryas--
+32,32	:ryas---dtqwrtsasll----dddptyipqqa----slc
+29,30	:ryas---dtqwrtsasll----dddptyiqa----slc
+26,28	:ryas---dtqwrtsasll----dddpqa----slc
+23,26	:ryas---dtqwrtsasll----da----slc
+20,24	:ryas---dtqwrtsasll-----slc
+17,22	:ryas---dtqwrtsaslslc
+14,20	:ryas---dtqwrts
+11,18	:ryas---dtqw
+8,16	:ryas---d
+5,14	:ryas-
+31,31	:ryas---dtqwrtsasll----dddptyipqwa----slc
+28,29	:ryas---dtqwrtsasll----dddptyqwa----slc
+25,27	:ryas---dtqwrtsasll----dddqwa----slc
+22,25	:ryas---dtqwrtsasll----wa----slc
+19,23	:ryas---dtqwrtsasll-----slc
+16,21	:ryas---dtqwrtsas-slc
+13,19	:ryas---dtqwrt
+10,17	:ryas---dtq
+7,15	:ryas---
+4,13	:ryas
+registry.getSupportedServices: [MSAprobsWS, DisemblWS, TcoffeeWS, RNAalifoldWS, MafftWS, IUPredWS, GlobPlotWS, ProbconsWS, AAConWS, JronnWS, ClustalWS, MuscleWS, ClustalOWS, GLprobsWS]
+MySeq	39	80	asdfktryasdtqwrtsaslldddptyipqqwaslchvhttt
+MySeq	45	74	ryas---dtqwrtsasll----dddptyipqqwa----slc
+MySeq	39	80	----asdf------ktryas---dtqwrtsasll----dddptyipqqwa----slchvhttt
+Gapped.
+MySeq	39	80	asdfktryasdtqwrtsaslldddptyipqqwaslchvhttt
+MySeq	45	74	ryas---dtqwrtsasll----------dddptyipqqwa----slc
+MySeq	39	80	----asdf------ktryas---------dtqwrtsasll----dddptyipqqwa----slchvhttt
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

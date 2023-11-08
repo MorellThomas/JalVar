@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if command -v tput 2>&1 >/dev/null; then
+  COLUMNS=$(tput cols) 2>/dev/null
+elif command -v stty 2>&1 >/dev/null; then
+  COLUMNS=$(stty size | cut -d" " -f2) 2>/dev/null
+elif command -v resize 2>&1 >/dev/null; then
+  COLUMNS=$(resize -u | grep COLUMNS= | sed -e 's/.*=//;s/;//') 2>/dev/null
+fi
+
+java "-DCONSOLEWIDTH=${COLUMNS}" -cp "./bin/main:./j11lib/*:./resources:./help" jalview.bin.Launcher "${@}"

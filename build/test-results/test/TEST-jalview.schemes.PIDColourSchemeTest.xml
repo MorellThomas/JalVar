@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.schemes.PIDColourSchemeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:10" hostname="wer3eng" time="0.064">
+  <properties/>
+  <testcase name="testFindColour" classname="jalview.schemes.PIDColourSchemeTest" time="0.001"/>
+  <testcase name="testFindColour_ignoreGaps" classname="jalview.schemes.PIDColourSchemeTest" time="0.063"/>
+  <system-out><![CDATA[File format identified as Fasta
+Attempting to connect with IUPredWS...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

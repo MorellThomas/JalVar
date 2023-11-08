@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Jalview
+Comment=Multiple Sequence Alignment Editor
+Icon=jalview-icon
+Type=Application
+TryExec=jalview
+Exec=jalview %u
+Terminal=false
+Categories=Science;Biology;
+Keywords=alignment;sequence;
+MimeType=application/x-jalview+xml+zip;chemical/x-cif;chemical/x-mmcif;chemical/x-pdb;application/x-amsa+txt;application/x-jalview-annotations+text;application/x-jalview-biojson+json;application/x-blc+txt;application/x-clustal+txt;application/x-fasta+txt;application/x-jalview-features+text;application/x-gff2+txt;application/x-gff3+txt;application/x-jalview-jnet+text;application/x-msf+txt;application/x-pfam+txt;application/x-phylip+txt;application/x-pileup+txt;application/x-pir+txt;application/rnaml+xml;application/x-jalview-scorematrix+text;application/x-stockholm+txt

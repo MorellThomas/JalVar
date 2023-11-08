@@ -1,0 +1,125 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Groovy Shell</title>
+</head>
+<body>
+  <p>
+    <strong>The Groovy Shell</strong>
+  </p>
+  <p>
+    Groovy (<a href="http://www.groovy-lang.org/">www.groovy-lang.org</a>)
+    is an &quot;<em>agile and dynamic language for the Java
+      platform</em>&quot;. The groovy scripting language makes it extremely
+    easy to programmatically interact with Java programs, in much the
+    same way that Javascript is used to generate and interact with
+    applets and other objects on the page.
+  </p>
+  <p>
+    <em>Getting Groovy...</em><br> Jalview comes with an embedded
+    installation of Groovy. Just select <strong>Tools&#8594;Groovy
+      Console...</strong> from the Jalview Desktop's drop-down menu. After a
+    short pause, you should then see the <a
+      href="https://groovy-lang.org/groovyconsole.html">Groovy
+      Console</a> appear. This allows you to interactively execute Groovy
+    scripts whilst Jalview is running. We've also provided a <strong>Calculations&#8594;Execute
+      Groovy Script</strong> button so you can execute the currently loaded
+    groovy script whilst viewing an alignment.
+  </p>
+  <p>
+    <strong>Executing groovy scripts on Jalview startup</strong><br>
+    The --groovy &lt;script&gt; option on the <a href="commandline.html">
+      Jalview command line</a> will execute the contents of &lt;script&gt;.
+    &lt;script&gt; may be a file, a URL, or alternatively if it is
+    &quot;STDIN&quot; then the standard input will be used.<br> <em>Note:
+      The groovy script will be executed <strong>after</strong> any data
+      is loaded, and <strong>before</strong> images or any output files
+      are written. This allows you to perform customised Jalview
+      analysis workflows with groovy.
+    </em>
+  </p>
+  <p>
+    <strong>Access to Jalview's functions from Groovy Scripts</strong><br>
+    The scripting interface to Jalview is still a work in progress, so
+    we recommend you also take a look at Jalview's source, since all the
+    public methods of the jalview class hierarchy can be called from
+    Groovy scripts. In addition, the following objects are also defined:
+
+
+  
+  <ul>
+    <li><strong>Jalview</strong> - this is bound to <code>jalview.bin.Jalview</code>.<br />Useful
+      methods include:
+      <ul>
+        <li>Jalview.getAlignFrames() - returns a list of
+          jalview.gui.AlignFrame objects</li>
+        <li>Jalview.getCurrentAlignFrame() - returns the alignment
+          window which is currently being looked at by the user</li>
+      </ul></li>
+    <li><strong>currentAlFrame</strong> - this is only defined when
+      running a Groovy script via the --groovy command line argument. It
+      returns the first alignment window created after acting on the
+      other arguments passed on the command line.</li>
+  </ul>
+  <p>
+    <em>A simple script</em><br />
+  <ul>
+    <li>Getting the title, alignment and first sequence from the
+      current alignFrame<br> <pre>
+def alf = Jalview.getAlignFrames();
+print alf[0].getTitle();
+def alignment = alf[0].viewport.alignment;
+def seq = alignment.getSequenceAt(0);
+</pre>
+    </li>
+    <li>If you wanted to do the same thing from the command line,
+      you can refer to alignment that was just loaded with
+      currentAlFrame:<br> <pre>
+print currentAlFrame.getTitle();</pre>
+  </ul>
+  <p>
+    <em>Example scripts</em><br />If you have downloaded the
+    InstallAnywhere version of Jalview, you can find additional groovy
+    scripts in the examples/groovy subfolder of the installation
+    directory. The examples are also available at <a
+      href="https://www.jalview.org/examples/groovy">https://www.jalview.org/examples/groovy</a>.
+  </p>
+  <p>
+    <em>Using Groovy to add new Alignment Calculations</em><br />We've
+    simplified the alignment analysis programming interface in Jalview
+    2.10 to make it easy for you to add your own dynamic annotation
+    tracks with Groovy. Have a look at the <a
+      href="../groovy/featuresCounter.html">featuresCounter.groovy</a>
+    example for more information.
+  </p>
+  <p><a name="groovyColours"/>
+    <em>Creating custom colourschemes</em><br/>
+    You can create your own alignment colourschemes with a groovy script. We've provided two examples:<br/>
+    <ul>
+    <li><a href="https://www.jalview.org/examples/groovy/colourConserved.groovy">colourConserved.groovy</a> creates an 'Conserved' colourscheme - similar to the classic <a href="http://www.nrbsc.org/old/gfx/genedoc/">GeneDOC</a> shading model.</li>
+    <li><a href="https://www.jalview.org/examples/groovy/colourUnconserved.groovy">colourUnconserved.groovy</a> creates an 'Unconserved' colourscheme, where any unconserved residues are coloured pink.</li>
+    
+    </ul>
+  </p>
+
+</body>
+</html>

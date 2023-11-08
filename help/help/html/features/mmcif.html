@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>mmCIF File Format</title>
+</head>
+<body>
+  <strong>What is mmCIF ?</strong>
+  <br />mmCIF stands for 'macro-molecular Crystallographic Information
+  File'. This format was developed by the PDB consortium and the
+  International Union of Crystallography (IUCr), based on
+  Crystallographic Information File (CIF), a format used for describing
+  the structures of small molecules.
+  <br />mmCIF became the recommended format for the exchange of
+  biomacromolecular structures in 2014.
+  <p>
+    <strong>mmCIF and Jalview</strong> <br />Since Jalview 2.10, mmCIF
+    is used for structures downloaded from the PDB. This means:
+  </p>
+  <ol>
+    <li>Jalview can use the mmCIF to read structures that are too
+      large to be represented by a single PDB file. (ie, with more than
+      >62 chains and/or 99999 ATOM records).</li>
+    <li>Jalview users will have access to the richer annotation
+      provided by PDBx/mmCIF files.</li>
+    <li>There may be slight differences between sequences
+      containing modified residues for structures downloaded in mmCIF
+      format. This is because mmCIF differs from the PDB format in the
+      way it describes non-standard sequence data.</li>
+  </ol>
+
+  <em>Support for importing 3D structure data from flat file and
+    EMBL-PDBe as mmCIF was added in Jalview 2.10</em>
+</body>
+</html>

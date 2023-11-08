@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+ARG1=$1
+
+# copy the debian default settings if no user jalview settings file exist
+if [ -n "${HOME}" -a \! -e ${HOME}/.jalview_properties ]; then
+  /bin/cp /etc/jalview_properties ${HOME}/.jalview_properties
+fi
+
+java -jar /usr/share/java/jalview.jar "$@"

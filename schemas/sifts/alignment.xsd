@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.ebi.ac.uk/pdbe/docs/sifts/eFamily.xsd"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns:data="http://www.ebi.ac.uk/pdbe/docs/sifts/dataTypes.xsd"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.ebi.ac.uk/pdbe/docs/sifts/alignment.xsd" version="1.1">
+	<xsd:import namespace="http://www.ebi.ac.uk/pdbe/docs/sifts/dataTypes.xsd"
+		schemaLocation="dataTypes.xsd"/>
+	<xsd:element name="alignment">
+		<xsd:annotation>
+			<xsd:documentation>This section of the schema deals with alignments.  The alignment can be either a sequence alignment or a structural alignment.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="alignObject" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>description of object. id e.g. 1tim.A,8tim.B, P001228, ...; type: type of object e.g.: protein, dna. version: last time this object has been changed (sometimes not so easy to know ...)</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="alignObjectDetail" minOccurs="0"
+								maxOccurs="unbounded">
+								<xsd:complexType mixed="true">
+									<xsd:attributeGroup ref="data:detail"/>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sequence" minOccurs="0">
+								<xsd:complexType mixed="true">
+									<xsd:attributeGroup ref="data:region"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="objectVersion" type="xsd:string" use="required"/>
+						<xsd:attribute name="intObjectId" type="xsd:string" use="required"/>
+						<xsd:attribute name="type" type="xsd:string" use="optional"/>
+						<xsd:attributeGroup ref="data:dbRef"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="score" minOccurs="0" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>e.g.: number of identical residues, % id residues, aligmnent score, e-value, p-value, etc.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:attribute name="methodName" type="xsd:string" use="required"/>
+						<xsd:attribute name="scoreValue" type="xsd:string" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="block" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="segment" maxOccurs="unbounded">
+								<xsd:annotation>
+									<xsd:documentation>the alignment given for a single object</xsd:documentation>
+									<xsd:documentation>the alignment given for a single object</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence minOccurs="0">
+										<xsd:element name="cigar" type="data:cigarstring">
+											<xsd:annotation>
+												<xsd:documentation>e.g. 2D23M4I</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attributeGroup ref="data:region"/>
+									<xsd:attribute name="intObjectId" use="required"/>
+									<xsd:attribute name="strand" use="optional"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="blockScore" type="xsd:string" use="optional"/>
+						<xsd:attribute name="blockOrder" type="xsd:integer" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="geo3d" minOccurs="0" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>geometrical operation to perform on 3D object</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="vector">
+								<xsd:complexType>
+									<xsd:attribute name="x" type="xsd:float" use="required"/>
+									<xsd:attribute name="y" type="xsd:float" use="required"/>
+									<xsd:attribute name="z" type="xsd:float" use="required"/>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="matrix" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="max11">
+											<xsd:complexType>
+												<xsd:attribute name="coord" type="xsd:float"
+												use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="max12">
+											<xsd:complexType>
+												<xsd:attribute name="coord" type="xsd:float"
+												use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="max13">
+											<xsd:complexType>
+												<xsd:attribute name="coord" type="xsd:float"
+												use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="max21">
+											<xsd:complexType>
+												<xsd:attribute name="coord" type="xsd:float"
+												use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="max22">
+											<xsd:complexType>
+												<xsd:attribute name="coord" type="xsd:float"
+												use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="max23">
+											<xsd:complexType>
+												<xsd:attribute name="coord" type="xsd:float"
+												use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="max31">
+											<xsd:complexType>
+												<xsd:attribute name="coord" type="xsd:float"
+												use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="max32">
+											<xsd:complexType>
+												<xsd:attribute name="coord" type="xsd:float"
+												use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="max33">
+											<xsd:complexType>
+												<xsd:attribute name="coord" type="xsd:float"
+												use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="intObjectId" type="xsd:string" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="alignType" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.datamodel.SequenceFeatureTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:07" hostname="wer3eng" time="0.009">
+  <properties/>
+  <testcase name="testCopyConstructors" classname="jalview.datamodel.SequenceFeatureTest" time="0.0"/>
+  <testcase name="testEqualsAndHashCode" classname="jalview.datamodel.SequenceFeatureTest" time="0.006"/>
+  <testcase name="testGetDetailsReport" classname="jalview.datamodel.SequenceFeatureTest" time="0.001"/>
+  <testcase name="testGetDetailsReport_virtualFeature" classname="jalview.datamodel.SequenceFeatureTest" time="0.0"/>
+  <testcase name="testGetStrand" classname="jalview.datamodel.SequenceFeatureTest" time="0.0"/>
+  <testcase name="testGetValue" classname="jalview.datamodel.SequenceFeatureTest" time="0.0"/>
+  <testcase name="testIsContactFeature" classname="jalview.datamodel.SequenceFeatureTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

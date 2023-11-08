@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.gui.JvSwingUtilsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:41" hostname="wer3eng" time="0.004">
+  <properties/>
+  <testcase name="testGetScrollBarProportion" classname="jalview.gui.JvSwingUtilsTest" time="0.001"/>
+  <testcase name="testGetScrollValueForProportion" classname="jalview.gui.JvSwingUtilsTest" time="0.001"/>
+  <testcase name="testWrapTooltip_longText" classname="jalview.gui.JvSwingUtilsTest" time="0.001"/>
+  <testcase name="testWrapTooltip_multilineShortText" classname="jalview.gui.JvSwingUtilsTest" time="0.0"/>
+  <testcase name="testWrapTooltip_shortText" classname="jalview.gui.JvSwingUtilsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

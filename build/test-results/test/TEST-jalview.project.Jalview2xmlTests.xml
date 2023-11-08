@@ -1,0 +1,2335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.project.Jalview2xmlTests" tests="18" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:13:13" hostname="wer3eng" time="22.278">
+  <properties/>
+  <testcase name="gatherViewsHere" classname="jalview.project.Jalview2xmlTests" time="3.104"/>
+  <testcase name="noDuplicatePdbMappingsMade" classname="jalview.project.Jalview2xmlTests" time="1.894"/>
+  <testcase name="testColourByAnnotScores" classname="jalview.project.Jalview2xmlTests" time="0.288"/>
+  <testcase name="testCopyViewSettings" classname="jalview.project.Jalview2xmlTests" time="2.209"/>
+  <testcase name="testIsVersionStringLaterThan" classname="jalview.project.Jalview2xmlTests" time="0.001"/>
+  <testcase name="testMergeDatasetsforManyViews" classname="jalview.project.Jalview2xmlTests" time="0.691"/>
+  <testcase name="testMergeDatasetsforViews" classname="jalview.project.Jalview2xmlTests" time="0.138"/>
+  <testcase name="testPcaViewAssociation" classname="jalview.project.Jalview2xmlTests" time="0.347"/>
+  <testcase name="testRNAStructureRecovery" classname="jalview.project.Jalview2xmlTests" time="0.432"/>
+  <testcase name="testSaveLoadFeatureColoursAndFilters" classname="jalview.project.Jalview2xmlTests" time="0.083"/>
+  <testcase name="testStoreAndRecoverColourThresholds" classname="jalview.project.Jalview2xmlTests" time="0.134"/>
+  <testcase name="testStoreAndRecoverExpandedviews" classname="jalview.project.Jalview2xmlTests" time="5.41"/>
+  <testcase name="testStoreAndRecoverGeneLocus" classname="jalview.project.Jalview2xmlTests" time="0.171"/>
+  <testcase name="testStoreAndRecoverGroupRepSeqs" classname="jalview.project.Jalview2xmlTests" time="0.158"/>
+  <testcase name="testStoreAndRecoverPDBEntry" classname="jalview.project.Jalview2xmlTests" time="0.59"/>
+  <testcase name="testStoreAndRecoverReferenceSeqSettings" classname="jalview.project.Jalview2xmlTests" time="5.011"/>
+  <testcase name="testTCoffeeScores" classname="jalview.project.Jalview2xmlTests" time="0.156"/>
+  <testcase name="viewRefPdbAnnotation" classname="jalview.project.Jalview2xmlTests" time="1.456"/>
+  <system-out><![CDATA[File format identified as Jalview
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 571.7/847.2
+processors available: 8
+useCommandThread: false
+
+FileManager.getAtomSetCollectionFromFile(/tmp/viewerSession10586014307412424899.tmp)
+FileManager opening file /tmp/viewerSession10586014307412424899.tmp
+Time for openFile(/tmp/viewerSession10586014307412424899.tmp): 35 ms
+FileManager opening file /tmp/viewerSession10586014307412424899.tmp
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+
+FileManager.getAtomSetCollectionFromFile(/tmp/jalview_pdb9944754333758982161.txt)
+FileManager opening file /tmp/jalview_pdb9944754333758982161.txt
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+Time for openFile(/tmp/jalview_pdb9944754333758982161.txt): 155 ms
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 6 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 250.2/843.1
+processors available: 8
+useCommandThread: false
+unrecognized SET parameter in Jmol state script (set anyway): usearcball
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 3 ms
+measurement[0] = [[FES]1602.S1 #736, [THR]89.OG1 #665, 1.328 nm]
+registry.getSupportedServices: [MSAprobsWS, DisemblWS, TcoffeeWS, RNAalifoldWS, MafftWS, IUPredWS, GlobPlotWS, ProbconsWS, AAConWS, JronnWS, ClustalWS, MuscleWS, ClustalOWS, GLprobsWS]
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 249.5/832.6
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+Attempting to connect with MafftWS...
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 5 ms
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 273.3/832.6
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 5 ms
+Attempting to connect with MuscleWS...
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 197.7/591.4
+processors available: 8
+useCommandThread: false
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 7 ms
+Attempting to connect with ClustalWS...
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 182.7/591.4
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 11 ms
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4
+File format identified as Jalview
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 196.3/591.4
+processors available: 8
+useCommandThread: false
+Attempting to connect with ClustalOWS...
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 7 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 197.6/591.4
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 5 ms
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 204.9/591.4
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 5 ms
+Attempting to connect with TcoffeeWS...
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 210.0/784.3
+processors available: 8
+useCommandThread: false
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 3 ms
+Attempting to connect with ProbconsWS...
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 211.4/622.9
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 8 ms
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@1b439676
+File format identified as Fasta
+Writing jar entry uniref50.fa.xml
+Writing jar entry 1605169249  Dataset for examples/uniref50.fa.xml
+File format identified as Jalview
+Attempting to connect with MSAprobsWS...
+Per sequence colourscheme (Background) successfully applied and recovered.
+Per sequence (Group) colourscheme successfully applied and recovered.
+File format identified as Jalview
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 247.5/622.9
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 8 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 205.8/622.9
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+Attempting to connect with GLprobsWS...
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 6 ms
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 215.7/622.9
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 5 ms
+Attempting to connect with AAConWS...
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 218.3/622.9
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 5 ms
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@306605f3
+Attempting to connect with RNAalifoldWS...
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 218.8/622.9
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 10 ms
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3
+ALL CLOSED
+File format identified as Jalview
+Attempting to connect with JronnWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@7756c072
+Attempting to connect with DisemblWS...
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6
+Attempting to connect with GlobPlotWS...
+File format identified as Jalview
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0
+ALL CLOSED
+File format identified as Fasta
+Writing jar entry 0uniref50.fa.xml
+Attempting to connect with IUPredWS...
+Writing jar entry 1uniref50.fa.xml
+Writing jar entry 2uniref50.fa.xml
+Writing jar entry 1422170098  Dataset for examples/uniref50.fa.xml
+ALL CLOSED
+File format identified as Jalview
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e
+File format identified as Stockholm
+Writing jar entry RF00031_folded.stk.xml
+Writing jar entry 133573226  Dataset for examples/RF00031_folded.stk.xml
+File format identified as Jalview
+Read in same number of annotations as originally present (61)
+File format identified as Fasta
+Writing jar entry Copied From Clipboard.xml
+Writing jar entry 2144260895  Dataset for Copied From Clipboard.xml
+File format identified as Jalview
+ALL CLOSED
+File format identified as Fasta
+Writing jar entry uniref50.fa.xml
+Writing jar entry 1412950730  Dataset for examples/uniref50.fa.xml
+ALL CLOSED
+File format identified as Jalview
+ALL CLOSED
+File format identified as Jalview
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 469.0/622.9
+processors available: 8
+useCommandThread: false
+
+FileManager.getAtomSetCollectionFromFile(/tmp/viewerSession8698801992219104833.tmp)
+FileManager opening file /tmp/viewerSession8698801992219104833.tmp
+Time for openFile(/tmp/viewerSession8698801992219104833.tmp): 24 ms
+FileManager opening file /tmp/viewerSession8698801992219104833.tmp
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+
+FileManager.getAtomSetCollectionFromFile(/tmp/jalview_pdb8759265862018532884.txt)
+FileManager opening file /tmp/jalview_pdb8759265862018532884.txt
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+Time for openFile(/tmp/jalview_pdb8759265862018532884.txt): 117 ms
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 8 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+unrecognized SET parameter in Jmol state script (set anyway): usearcball
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 184.1/618.7
+processors available: 8
+useCommandThread: false
+measurement[0] = [[FES]1602.S1 #736, [THR]89.OG1 #665, 1.328 nm]
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 7 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 187.8/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 6 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 209.2/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 3 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 205.7/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 4 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 211.2/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 7 ms
+JMOL CREATE IMAGE
+JMOL CREATE IMAGE
+Writing jar entry viewer__jalview_pre2_4_512,285,363,36539670237879784822408527692980 (JMOL)
+Writing jar entry 1A70 (1A70)
+Writing jar entry MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+Writing jar entry MAFFT Multiple Sequence Alignment of Retrieved from Uniprot_1.xml
+Writing jar entry MAFFT Multiple Sequence Alignment of Retrieved from Uniprot_2.xml
+Writing jar entry MAFFT Multiple Sequence Alignment of Retrieved from Uniprot_3.xml
+Writing jar entry MAFFT Multiple Sequence Alignment of Retrieved from Uniprot_4.xml
+Writing jar entry 1493184635  Dataset for MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+Writing jar entry 1493184635  Dataset for MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+Writing jar entry 1493184635  Dataset for MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+Writing jar entry 1493184635  Dataset for MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+Writing jar entry 1493184635  Dataset for MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+ALL CLOSED
+File format identified as Jalview
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 260.4/618.7
+processors available: 8
+useCommandThread: false
+
+FileManager.getAtomSetCollectionFromFile(/tmp/viewerSession14510576418154856812.tmp)
+FileManager opening file /tmp/viewerSession14510576418154856812.tmp
+Time for openFile(/tmp/viewerSession14510576418154856812.tmp): 13 ms
+FileManager opening file /tmp/viewerSession14510576418154856812.tmp
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+
+FileManager.getAtomSetCollectionFromFile(/tmp/jalview_pdb13400392571764953370.txt)
+FileManager opening file /tmp/jalview_pdb13400392571764953370.txt
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+Time for openFile(/tmp/jalview_pdb13400392571764953370.txt): 103 ms
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 3 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 186.8/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+measurement[0] = [[FES]1602.S1 #736, [THR]89.OG1 #665, 1.328 nm]
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 5 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 204.6/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 4 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 208.2/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 6 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 214.4/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 5 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 213.4/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 4 ms
+ALL CLOSED
+File format identified as Fasta
+Writing jar entry Copied From Clipboard.xml
+Writing jar entry 1610397354  Dataset for Copied From Clipboard.xml
+ALL CLOSED
+File format identified as Jalview
+ALL CLOSED
+File format identified as Fasta
+Writing jar entry 0uniref50.fa.xml
+Writing jar entry 1uniref50.fa.xml
+Writing jar entry 1101625662  Dataset for examples/uniref50.fa.xml
+ALL CLOSED
+File format identified as Jalview
+ALL CLOSED
+File format identified as PDB
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 270.5/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+ELECTRON TRANSPORT                      06-FEB-13   3W5V
+CROSS-LINKED COMPLEX BETWEEN FERREDOXIN AND FERREDOXIN-NADP+ R
+found biomolecule 1: A, D
+biomolecule 1: number of transforms: 1
+found biomolecule 2: C, B
+biomolecule 2: number of transforms: 1
+FAD = FLAVIN-ADENINE DINUCLEOTIDE
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 1 21 1
+3W5V
+reading 6290 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+6290 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 15 ms
+
+blah
+Writing jar entry 3W5V (3W5V)
+Writing jar entry 3W5V.pdb.xml
+Writing jar entry 1495183399  Dataset for examples/3W5V.pdb.xml
+ALL CLOSED
+File format identified as Jalview
+blah
+ALL CLOSED
+File format identified as Jalview
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 227.3/618.7
+processors available: 8
+useCommandThread: false
+
+FileManager.getAtomSetCollectionFromFile(/tmp/viewerSession5676766598047557317.tmp)
+FileManager opening file /tmp/viewerSession5676766598047557317.tmp
+Time for openFile(/tmp/viewerSession5676766598047557317.tmp): 149 ms
+FileManager opening file /tmp/viewerSession5676766598047557317.tmp
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+
+FileManager.getAtomSetCollectionFromFile(/tmp/jalview_pdb18185198564634452783.txt)
+FileManager opening file /tmp/jalview_pdb18185198564634452783.txt
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+Time for openFile(/tmp/jalview_pdb18185198564634452783.txt): 114 ms
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 4 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+unrecognized SET parameter in Jmol state script (set anyway): usearcball
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 191.0/618.7
+processors available: 8
+useCommandThread: false
+measurement[0] = [[FES]1602.S1 #736, [THR]89.OG1 #665, 1.328 nm]
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 6 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 189.0/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 6 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 212.9/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 3 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 208.9/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 5 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 214.9/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 5 ms
+JMOL CREATE IMAGE
+JMOL CREATE IMAGE
+Writing jar entry viewer__jalview_pre2_4_512,285,363,36539670237879784822408527699312 (JMOL)
+Writing jar entry 1A70 (1A70)
+Writing jar entry 0MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+Writing jar entry 1MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+Writing jar entry 2MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+Writing jar entry 3MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+Writing jar entry 4MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+Writing jar entry 695623985  Dataset for MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+ALL CLOSED
+File format identified as Jalview
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 200.5/618.7
+processors available: 8
+useCommandThread: false
+
+FileManager.getAtomSetCollectionFromFile(/tmp/viewerSession339132126933373274.tmp)
+FileManager opening file /tmp/viewerSession339132126933373274.tmp
+Time for openFile(/tmp/viewerSession339132126933373274.tmp): 5 ms
+FileManager opening file /tmp/viewerSession339132126933373274.tmp
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+
+FileManager.getAtomSetCollectionFromFile(/tmp/jalview_pdb13557344470912884982.txt)
+FileManager opening file /tmp/jalview_pdb13557344470912884982.txt
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+Time for openFile(/tmp/jalview_pdb13557344470912884982.txt): 116 ms
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 2 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 194.7/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 3 ms
+measurement[0] = [[FES]1602.S1 #736, [THR]89.OG1 #665, 1.328 nm]
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 206.2/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 6 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 212.2/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 7 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 225.0/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 5 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 220.9/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 6 ms
+File format identified as Fasta
+Writing jar entry uniref50.fa.xml
+Writing jar entry 1122624359  Dataset for examples/uniref50.fa.xml
+File format identified as Jalview
+T-Coffee score shading successfully recovered from project.
+File format identified as Jalview
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 246.3/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 11 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 212.6/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 3 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 222.6/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 6 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 224.0/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 6 ms
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 226.8/618.7
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+IRON-SULFUR PROTEIN                     19-MAR-98   1A70
+SPINACH FERREDOXIN
+FES = FE2/S2 (INORGANIC) CLUSTER
+Setting space group name to P 21 21 21
+1A70
+reading 817 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+817 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 6 ms
+]]></system-out>
+  <system-err><![CDATA[Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+DEBUG - Constructing news reader.
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+DEBUG - Filechooser init thread finished.
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276993655
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.22303180396702378797848224085276993655
+Warning - overwriting a sequenceSetId for a viewport!
+Allocating Jmol Viewer: 
+DEBUG - Exception downloading identifiers.org datahttps://www.jalview.org/services/identifiers
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> load FILES "/tmp/viewerSession10586014307412424899.tmp"
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> set hoverDelay=0.1
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276993655
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.21107449396702378797848224085276993655
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:14 AM compbio.ws.client.Jws2Client connectToRegistry
+INFO: Connected to RegistryWS successfully!
+DEBUG - Scanning news items: newsnew=false and lastDate is Sun Jul 02 11:13:13 CEST 2023
+DEBUG - Completed construction of reader.
+DEBUG - Completed news thread.
+Jul 02, 2023 10:13:15 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Unhandled callback MEASURE [[FES]1602.S1 #736, [THR]89.OG1 #665, 1.328 nm]
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276993655
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.20906159396702378797848224085276993655
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276993655
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.30823587396702378797848224085276993655
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:15 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276993655
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.9472175396702378797848224085276993655
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:16 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Exception in thread "AWT-EventQueue-0" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.getTabBounds(BasicTabbedPaneUI.java:1733)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.getTabBounds(BasicTabbedPaneUI.java:1668)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.repaintTab(BasicTabbedPaneUI.java:2338)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.setFocusIndex(BasicTabbedPaneUI.java:2322)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI$Handler.focusGained(BasicTabbedPaneUI.java:4116)
+	at java.desktop/java.awt.AWTEventMulticaster.focusGained(AWTEventMulticaster.java:227)
+	at java.desktop/java.awt.Component.processFocusEvent(Component.java:6524)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6391)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5011)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4843)
+	at java.desktop/java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1950)
+	at java.desktop/java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:1050)
+	at java.desktop/java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:674)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4892)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4843)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276996764
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.22303180396702378797848224085276996764
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276996764
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.21107449396702378797848224085276996764
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:17 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276996764
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.20906159396702378797848224085276996764
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276996764
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.30823587396702378797848224085276996764
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:17 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276996764
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.9472175396702378797848224085276996764
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:18 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Exception in thread "AWT-EventQueue-0" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.getTabBounds(BasicTabbedPaneUI.java:1733)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.getTabBounds(BasicTabbedPaneUI.java:1668)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.repaintTab(BasicTabbedPaneUI.java:2338)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.setFocusIndex(BasicTabbedPaneUI.java:2322)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI$Handler.focusGained(BasicTabbedPaneUI.java:4116)
+	at java.desktop/java.awt.AWTEventMulticaster.focusGained(AWTEventMulticaster.java:227)
+	at java.desktop/java.awt.Component.processFocusEvent(Component.java:6524)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6391)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5011)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4843)
+	at java.desktop/java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1950)
+	at java.desktop/java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:1050)
+	at java.desktop/java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:674)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4892)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4843)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+DEBUG - Scanning news items: newsnew=false and lastDate is Sun Jul 02 11:13:13 CEST 2023
+DEBUG - Saved last read date as 2 Jul 2023, 11:13:13
+DEBUG - Scanning news items: newsnew=false and lastDate is Sun Jul 02 11:13:13 CEST 2023
+DEBUG - Saved last read date as 2 Jul 2023, 11:13:13
+DEBUG - Scanning news items: newsnew=false and lastDate is Sun Jul 02 11:13:13 CEST 2023
+DEBUG - Saved last read date as 2 Jul 2023, 11:13:13
+DEBUG - BACKUPFILES using temp file /tmp/JalviewTest15869114384156449677.jvp9982257472993027995.tmp_newfile
+DEBUG - BACKUPFILES moving /tmp/JalviewTest15869114384156449677.jvp to /tmp/JalviewTest15869114384156449677.jvp_BACKUPFILESTESTTMP000001 was successful
+DEBUG - Created new dataset ds01 for alignment 64670494
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 131513837098803
+DEBUG - Setting viewport's view id : 1315138370.127016117398803
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:18 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276998942
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.22303180396702378797848224085276998942
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Not enabling Google Tracking.
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276998942
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.21107449396702378797848224085276998942
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276998942
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.20906159396702378797848224085276998942
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:19 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276998942
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.30823587396702378797848224085276998942
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:20 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276998942
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.9472175396702378797848224085276998942
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:21 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Assuming project file with null is compatible with Jalview version null
+Assuming project file with null is compatible with Jalview version 2.8.3
+Assuming project file with 2.8.3 is compatible with Jalview version null
+Assuming project file with Development Build is compatible with Jalview version null
+Assuming project file with DEVELOPMENT BUILD is compatible with Jalview version null
+Assuming project file with Development Build is compatible with Jalview version 2.8.3
+Assuming project file with Test is compatible with Jalview version null
+Assuming project file with TEST is compatible with Jalview version null
+Assuming project file with Test is compatible with Jalview version 2.8.3
+Assuming project file with Automated Build is compatible with Jalview version null
+Assuming project file with Automated Build is compatible with Jalview version 2.8.3
+Assuming project file with AUTOMATED BUILD is compatible with Jalview version 2.8.3
+Invalid version format found: For input string: "3B1"
+Invalid version format found: For input string: "3B1"
+DEBUG - Created new dataset ds01 for alignment 993304233
+DEBUG - Setting viewport's sequence set id : 17735918861253
+DEBUG - Setting viewport's view id : 1773591886.3392269031253
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG Notice:  Merged dataset sequence (if you see this often, post at http://issues.jalview.org/browse/JAL-1474)
+DEBUG Notice:  Merged dataset sequence (if you see this often, post at http://issues.jalview.org/browse/JAL-1474)
+DEBUG Notice:  Merged dataset sequence (if you see this often, post at http://issues.jalview.org/browse/JAL-1474)
+DEBUG Notice:  Merged dataset sequence (if you see this often, post at http://issues.jalview.org/browse/JAL-1474)
+DEBUG Notice:  Merged dataset sequence (if you see this often, post at http://issues.jalview.org/browse/JAL-1474)
+DEBUG Notice:  Merged dataset sequence (if you see this often, post at http://issues.jalview.org/browse/JAL-1474)
+DEBUG Notice:  Merged dataset sequence (if you see this often, post at http://issues.jalview.org/browse/JAL-1474)
+DEBUG Notice:  Merged dataset sequence (if you see this often, post at http://issues.jalview.org/browse/JAL-1474)
+Jul 02, 2023 10:13:21 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Setting viewport's sequence set id : 15045532551253
+DEBUG - Setting viewport's view id : 1504553255.2288834531253
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 15045532551253
+DEBUG - Setting viewport's view id : 1504553255.3545527701253
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 15045532551253
+DEBUG - Setting viewport's view id : 1504553255.14330432921253
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 15045532551253
+DEBUG - Setting viewport's view id : 1504553255.11565581831253
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 20385051711253
+DEBUG - Setting viewport's view id : 2038505171.16404697981253
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:21 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Setting viewport's sequence set id : 20385051711253
+DEBUG - Setting viewport's view id : 2038505171.4340028561253
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 20385051711253
+DEBUG - Setting viewport's view id : 2038505171.12978027721253
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Created new dataset ds01 for alignment 616786272
+DEBUG - Setting viewport's sequence set id : 15045532551844
+DEBUG - Setting viewport's view id : 1504553255.11565581831844
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:21 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Setting viewport's sequence set id : 15045532551844
+DEBUG - Setting viewport's view id : 1504553255.2288834531844
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 1787852645
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 1787852645
+Warning - overwriting a sequenceSetId for a viewport!
+Jul 02, 2023 10:13:22 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Created new dataset ds01 for alignment 1854210091
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 17878526452182
+DEBUG - Setting viewport's view id : 1787852645.7771935512182
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 17878526452182
+DEBUG - Setting viewport's view id : 1787852645.13263698202182
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 17878526452182
+DEBUG - Setting viewport's view id : 1787852645.20865883622182
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - BACKUPFILES using temp file /tmp/JalviewTest2367249496997871162.jvp4816914864626019876.tmp_newfile
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+Rebuild WS Menu for service change
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+Rebuild WS Menu for service change
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+Rebuild WS Menu for service change
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+Rebuild WS Menu for service change
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+Rebuild WS Menu for service change
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+DEBUG - Firing service changed event for [jalview.ws.jws2.jabaws2.Jws2Instance@2e7b54f4, jalview.ws.jws2.jabaws2.Jws2Instance@1f76f962, jalview.ws.jws2.jabaws2.Jws2Instance@cbd8bee, jalview.ws.jws2.jabaws2.Jws2Instance@42ae6f4, jalview.ws.jws2.jabaws2.Jws2Instance@41bb999a, jalview.ws.jws2.jabaws2.Jws2Instance@42d0de36, jalview.ws.jws2.jabaws2.Jws2Instance@1b439676, jalview.ws.jws2.jabaws2.Jws2Instance@4d223d76, jalview.ws.jws2.jabaws2.Jws2Instance@306605f3, jalview.ws.jws2.jabaws2.Jws2Instance@d532ff6, jalview.ws.jws2.jabaws2.Jws2Instance@6db1d0e0, jalview.ws.jws2.jabaws2.Jws2Instance@28cf1d1e, jalview.ws.jws2.jabaws2.Jws2Instance@7756c072, jalview.ws.jws2.jabaws2.Jws2Instance@2245abc3]
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+DEBUG - BACKUPFILES moving /tmp/JalviewTest2367249496997871162.jvp to /tmp/JalviewTest2367249496997871162.jvp_BACKUPFILESTESTTMP000001 was successful
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+DEBUG - Created new dataset ds01 for alignment 135937179
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 5933747002476
+DEBUG - Setting viewport's view id : 593374700.12705257232476
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Exception during web service menu building process.
+java.lang.NullPointerException: null
+	at jalview.ws.jws2.Jws2Client.registerAAConWSInstance(Jws2Client.java:212) ~[classes/:?]
+	at jalview.ws.jws2.SequenceAnnotationWSClient.attachWSMenuEntry(SequenceAnnotationWSClient.java:164) ~[classes/:?]
+	at jalview.ws.jws2.jabaws2.Jws2Instance.attachWSMenuEntry(Jws2Instance.java:236) ~[classes/:?]
+	at jalview.ws.jws2.Jws2Discoverer.addEnumeratedServices(Jws2Discoverer.java:574) ~[classes/:?]
+	at jalview.ws.jws2.Jws2Discoverer.populateWSMenuEntry(Jws2Discoverer.java:408) ~[classes/:?]
+	at jalview.ws.jws2.Jws2Discoverer.attachWSMenuEntry(Jws2Discoverer.java:345) ~[classes/:?]
+	at jalview.gui.AlignFrame$20$1.run(AlignFrame.java:4305) [classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313) [?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770) [?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:721) [?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:715) [?:?]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85) [?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:740) [?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+DEBUG - BACKUPFILES using temp file /tmp/JalviewTest10973155325384099301.jvp307324009990299461.tmp_newfile
+DEBUG - BACKUPFILES moving /tmp/JalviewTest10973155325384099301.jvp to /tmp/JalviewTest10973155325384099301.jvp_BACKUPFILESTESTTMP000001 was successful
+DEBUG - Created new dataset ds01 for alignment 1141392503
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 11470142492809
+DEBUG - Setting viewport's view id : 1147014249.8880890292809
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Created new dataset ds01 for alignment 89001633
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 15396396912920
+DEBUG - Setting viewport's view id : 1539639691.2696390142920
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 32038447815156893765406141098684336046856092601561375251543984656269718347347550035996250606097223418125197189434639670237879784822408527692980
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.2230318039670237879784822408527692980
+Warning - overwriting a sequenceSetId for a viewport!
+Allocating Jmol Viewer: 
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> load FILES "/tmp/viewerSession8698801992219104833.tmp"
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> set hoverDelay=0.1
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - Setting viewport's sequence set id : 32038447815156893765406141098684336046856092601561375251543984656269718347347550035996250606097223418125197189434639670237879784822408527692980
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.2110744939670237879784822408527692980
+Warning - overwriting a sequenceSetId for a viewport!
+Unhandled callback MEASURE [[FES]1602.S1 #736, [THR]89.OG1 #665, 1.328 nm]
+DEBUG - Setting viewport's sequence set id : 32038447815156893765406141098684336046856092601561375251543984656269718347347550035996250606097223418125197189434639670237879784822408527692980
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.2090615939670237879784822408527692980
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 32038447815156893765406141098684336046856092601561375251543984656269718347347550035996250606097223418125197189434639670237879784822408527692980
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.3082358739670237879784822408527692980
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 32038447815156893765406141098684336046856092601561375251543984656269718347347550035996250606097223418125197189434639670237879784822408527692980
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.947217539670237879784822408527692980
+Warning - overwriting a sequenceSetId for a viewport!
+Exception in thread "AWT-EventQueue-0" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.getTabBounds(BasicTabbedPaneUI.java:1733)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.getTabBounds(BasicTabbedPaneUI.java:1668)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.repaintTab(BasicTabbedPaneUI.java:2338)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.setFocusIndex(BasicTabbedPaneUI.java:2322)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI$Handler.focusGained(BasicTabbedPaneUI.java:4116)
+	at java.desktop/java.awt.AWTEventMulticaster.focusGained(AWTEventMulticaster.java:227)
+	at java.desktop/java.awt.Component.processFocusEvent(Component.java:6524)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6391)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5011)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4843)
+	at java.desktop/java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1950)
+	at java.desktop/java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:1050)
+	at java.desktop/java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:674)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4892)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4843)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> write STATE "/tmp/JMOL2059350686330000215.spt"
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+Error writing Jalview project
+java.util.zip.ZipException: duplicate entry: 1493184635  Dataset for MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+	at java.base/java.util.zip.ZipOutputStream.putNextEntry(ZipOutputStream.java:233)
+	at java.base/java.util.jar.JarOutputStream.putNextEntry(JarOutputStream.java:109)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:1686)
+	at jalview.project.Jalview2XML.writeDatasetFor(Jalview2XML.java:815)
+	at jalview.project.Jalview2XML.saveAllFrames(Jalview2XML.java:691)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:623)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:575)
+	at jalview.project.Jalview2xmlTests.testStoreAndRecoverExpandedviews(Jalview2xmlTests.java:433)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:145)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:92)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Error writing Jalview project
+java.util.zip.ZipException: duplicate entry: 1493184635  Dataset for MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+	at java.base/java.util.zip.ZipOutputStream.putNextEntry(ZipOutputStream.java:233)
+	at java.base/java.util.jar.JarOutputStream.putNextEntry(JarOutputStream.java:109)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:1686)
+	at jalview.project.Jalview2XML.writeDatasetFor(Jalview2XML.java:815)
+	at jalview.project.Jalview2XML.saveAllFrames(Jalview2XML.java:691)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:623)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:575)
+	at jalview.project.Jalview2xmlTests.testStoreAndRecoverExpandedviews(Jalview2xmlTests.java:433)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:145)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:92)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Error writing Jalview project
+java.util.zip.ZipException: duplicate entry: 1493184635  Dataset for MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+	at java.base/java.util.zip.ZipOutputStream.putNextEntry(ZipOutputStream.java:233)
+	at java.base/java.util.jar.JarOutputStream.putNextEntry(JarOutputStream.java:109)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:1686)
+	at jalview.project.Jalview2XML.writeDatasetFor(Jalview2XML.java:815)
+	at jalview.project.Jalview2XML.saveAllFrames(Jalview2XML.java:691)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:623)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:575)
+	at jalview.project.Jalview2xmlTests.testStoreAndRecoverExpandedviews(Jalview2xmlTests.java:433)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:145)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:92)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Error writing Jalview project
+java.util.zip.ZipException: duplicate entry: 1493184635  Dataset for MAFFT Multiple Sequence Alignment of Retrieved from Uniprot.xml
+	at java.base/java.util.zip.ZipOutputStream.putNextEntry(ZipOutputStream.java:233)
+	at java.base/java.util.jar.JarOutputStream.putNextEntry(JarOutputStream.java:109)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:1686)
+	at jalview.project.Jalview2XML.writeDatasetFor(Jalview2XML.java:815)
+	at jalview.project.Jalview2XML.saveAllFrames(Jalview2XML.java:691)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:623)
+	at jalview.project.Jalview2XML.saveState(Jalview2XML.java:575)
+	at jalview.project.Jalview2xmlTests.testStoreAndRecoverExpandedviews(Jalview2xmlTests.java:433)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:145)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:92)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+DEBUG - Created new dataset ds01 for alignment 1274761773
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276929806078
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.21107449396702378797848224085276929806078
+Warning - overwriting a sequenceSetId for a viewport!
+Allocating Jmol Viewer: 
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> load FILES "/tmp/viewerSession14510576418154856812.tmp"
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> set hoverDelay=0.1
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+Unhandled callback MEASURE [[FES]1602.S1 #736, [THR]89.OG1 #665, 1.328 nm]
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276929806078
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.20906159396702378797848224085276929806078
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276929806078
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.30823587396702378797848224085276929806078
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276929806078
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.9472175396702378797848224085276929806078
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276929806078
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.22303180396702378797848224085276929806078
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - reusing DseqFor ID
+DEBUG - Created new dataset ds01 for alignment 928970794
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 3640323818526
+DEBUG - Setting viewport's view id : 364032381.5894824878526
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 303824502
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Created new dataset ds01 for alignment 646427520
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 3038245028635
+DEBUG - Setting viewport's view id : 303824502.11867771828635
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 3038245028635
+DEBUG - Setting viewport's view id : 303824502.6757853448635
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Created new dataset ds01 for alignment 1845890526
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 11830332519181
+DEBUG - Setting viewport's view id : 1183033251.1018187409181
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 32038447815156893765406141098684336046856092601561375251543984656269718347347550035996250606097223418125197189434639670237879784822408527699312
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.2230318039670237879784822408527699312
+Warning - overwriting a sequenceSetId for a viewport!
+Allocating Jmol Viewer: 
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> load FILES "/tmp/viewerSession5676766598047557317.tmp"
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> set hoverDelay=0.1
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - Setting viewport's sequence set id : 32038447815156893765406141098684336046856092601561375251543984656269718347347550035996250606097223418125197189434639670237879784822408527699312
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.2110744939670237879784822408527699312
+Warning - overwriting a sequenceSetId for a viewport!
+Unhandled callback MEASURE [[FES]1602.S1 #736, [THR]89.OG1 #665, 1.328 nm]
+DEBUG - Setting viewport's sequence set id : 32038447815156893765406141098684336046856092601561375251543984656269718347347550035996250606097223418125197189434639670237879784822408527699312
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.2090615939670237879784822408527699312
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 32038447815156893765406141098684336046856092601561375251543984656269718347347550035996250606097223418125197189434639670237879784822408527699312
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.3082358739670237879784822408527699312
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 32038447815156893765406141098684336046856092601561375251543984656269718347347550035996250606097223418125197189434639670237879784822408527699312
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.947217539670237879784822408527699312
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> write STATE "/tmp/JMOL10150460120754591725.spt"
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - Created new dataset ds01 for alignment 1307555224
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 3203844781515689376540614109868433604685609260156137525154398465626971834734755003599625060609722341812519718943463967023787978482240852769931212276
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.223031803967023787978482240852769931212276
+Warning - overwriting a sequenceSetId for a viewport!
+Allocating Jmol Viewer: 
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> load FILES "/tmp/viewerSession339132126933373274.tmp"
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> set hoverDelay=0.1
+
+DEBUG - <<Jmol<< pending
+DEBUG - >>Jmol>> History on
+DEBUG - <<Jmol<< pending
+Unhandled callback MEASURE [[FES]1602.S1 #736, [THR]89.OG1 #665, 1.328 nm]
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 3203844781515689376540614109868433604685609260156137525154398465626971834734755003599625060609722341812519718943463967023787978482240852769931212276
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.94721753967023787978482240852769931212276
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 3203844781515689376540614109868433604685609260156137525154398465626971834734755003599625060609722341812519718943463967023787978482240852769931212276
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.308235873967023787978482240852769931212276
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 3203844781515689376540614109868433604685609260156137525154398465626971834734755003599625060609722341812519718943463967023787978482240852769931212276
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.209061593967023787978482240852769931212276
+Warning - overwriting a sequenceSetId for a viewport!
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 3203844781515689376540614109868433604685609260156137525154398465626971834734755003599625060609722341812519718943463967023787978482240852769931212276
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.211074493967023787978482240852769931212276
+Warning - overwriting a sequenceSetId for a viewport!
+Exception in thread "AWT-EventQueue-0" java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.paintTabArea(BasicTabbedPaneUI.java:897)
+	at java.desktop/javax.swing.plaf.basic.BasicTabbedPaneUI.paint(BasicTabbedPaneUI.java:860)
+	at java.desktop/javax.swing.plaf.metal.MetalTabbedPaneUI.paint(MetalTabbedPaneUI.java:933)
+	at java.desktop/javax.swing.plaf.metal.MetalTabbedPaneUI.update(MetalTabbedPaneUI.java:814)
+	at java.desktop/javax.swing.JComponent.paintComponent(JComponent.java:797)
+	at java.desktop/javax.swing.JComponent.paint(JComponent.java:1074)
+	at java.desktop/javax.swing.JComponent.paintChildren(JComponent.java:907)
+	at java.desktop/javax.swing.JComponent.paint(JComponent.java:1083)
+	at java.desktop/javax.swing.JComponent.paintChildren(JComponent.java:907)
+	at java.desktop/javax.swing.JComponent.paint(JComponent.java:1083)
+	at java.desktop/javax.swing.JLayeredPane.paint(JLayeredPane.java:590)
+	at java.desktop/javax.swing.JComponent.paintChildren(JComponent.java:907)
+	at java.desktop/javax.swing.JComponent.paint(JComponent.java:1083)
+	at java.desktop/javax.swing.JComponent.paintChildren(JComponent.java:907)
+	at java.desktop/javax.swing.JComponent.paint(JComponent.java:1083)
+	at java.desktop/javax.swing.JComponent.paintChildren(JComponent.java:907)
+	at java.desktop/javax.swing.JComponent.paint(JComponent.java:1083)
+	at java.desktop/javax.swing.JLayeredPane.paint(JLayeredPane.java:590)
+	at java.desktop/javax.swing.JComponent.paintToOffscreen(JComponent.java:5255)
+	at java.desktop/javax.swing.RepaintManager$PaintManager.paintDoubleBufferedImpl(RepaintManager.java:1643)
+	at java.desktop/javax.swing.RepaintManager$PaintManager.paintDoubleBuffered(RepaintManager.java:1618)
+	at java.desktop/javax.swing.RepaintManager$PaintManager.paint(RepaintManager.java:1556)
+	at java.desktop/javax.swing.BufferStrategyPaintManager.paint(BufferStrategyPaintManager.java:262)
+	at java.desktop/javax.swing.RepaintManager.paint(RepaintManager.java:1323)
+	at java.desktop/javax.swing.JComponent._paintImmediately(JComponent.java:5203)
+	at java.desktop/javax.swing.JComponent.paintImmediately(JComponent.java:5013)
+	at java.desktop/javax.swing.RepaintManager$4.run(RepaintManager.java:865)
+	at java.desktop/javax.swing.RepaintManager$4.run(RepaintManager.java:848)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/javax.swing.RepaintManager.paintDirtyRegions(RepaintManager.java:848)
+	at java.desktop/javax.swing.RepaintManager.paintDirtyRegions(RepaintManager.java:823)
+	at java.desktop/javax.swing.RepaintManager.prePaintDirtyRegions(RepaintManager.java:772)
+	at java.desktop/javax.swing.RepaintManager$ProcessingRunnable.run(RepaintManager.java:1890)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+DEBUG - BACKUPFILES using temp file /tmp/JalviewTest5197505952790733927.jvp17157718248011286778.tmp_newfile
+DEBUG - BACKUPFILES moving /tmp/JalviewTest5197505952790733927.jvp to /tmp/JalviewTest5197505952790733927.jvp_BACKUPFILESTESTTMP000001 was successful
+DEBUG - Created new dataset ds01 for alignment 2134316666
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 182014652814394
+DEBUG - Setting viewport's view id : 1820146528.63050763614394
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276914476
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.22303180396702378797848224085276914476
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276914476
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.21107449396702378797848224085276914476
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276914476
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.20906159396702378797848224085276914476
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276914476
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.30823587396702378797848224085276914476
+Warning - overwriting a sequenceSetId for a viewport!
+DEBUG - Setting viewport's sequence set id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346396702378797848224085276914476
+DEBUG - Setting viewport's view id : 320384478151568937654061410986843360468560926015613752515439846562697183473475500359962506060972234181251971894346.9472175396702378797848224085276914476
+Warning - overwriting a sequenceSetId for a viewport!
+]]></system-err>
+</testsuite>

@@ -1,0 +1,103 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Multiple Alignment Views</title>
+</head>
+<body>
+  <p>
+    <strong>Multiple Alignment Views</strong>
+  </p>
+  <p>Multiple alignment views allow the same alignment to be viewed
+    independently in many different ways simultaneously. Each view is an
+    independent visualization of the same alignment, so each may have a
+    different ordering, colouring, row and column hiding and sequence
+    feature and annotation display setting, but alignment, feature and
+    annotation edits are common to all, since this affects the
+    underlying data.</p>
+  <p>
+    Create a new view using the <strong>&quot;View&#8594;New
+      View&quot;</strong> menu item, or by pressing <strong>Control+T</strong>. A
+    newly created view will be identical to the view it was created
+    from, but any changes to the way the alignment is coloured or
+    displayed will only affect the new view.
+  </p>
+  <!--  TODO sharing selections between views -->
+  <p>
+    A particular view may focus on some specific aspect of an alignment
+    - for example, hiding all but the region of an alignment containing
+    a particular domain. <strong>Right-clicking</strong> a view's tab
+    opens the View Name dialog box, allowing it to be renamed to
+    something more meaningful.
+  </p>
+  <p>
+    <strong>Viewing Multiple Views Simultaneously</strong>
+  </p>
+  <p>
+    Multiple views of an alignment are, by default, gathered together as
+    tabs within a single alignment window. They can be viewed
+    simultanously by pressing <strong>X</strong> (or via <strong>&quot;View&#8594;Expand&quot;</strong>)
+    to expand each view into its own linked alignment window. Expanded
+    views are gathered back into a single tabbed alignment window by
+    pressing <strong>G</strong>, or by selecting <strong>&quot;View&#8594;Gather&quot;</strong>.
+  </p>
+  <p>
+    <strong>Hidden Sequence Representatives and Multiple Views</strong>
+  </p>
+  <p>
+    There are some unexpected interactions between hidden sequence
+    representatives and their display in multiple views. See the
+    corresponding entry in the <a href="hiddenRegions.html">documentation
+      for hidden regions</a>.
+  </p>
+  <p>
+    <strong>Structure and Analysis Viewers and Multiple Views</strong>
+  </p>
+  <p>
+    A tree calculated on a particular view, or loaded onto it, is by
+    default associated with just that view. However, the <a
+      href="../calculations/treeviewer.html">Tree Viewer's</a> <strong>&quot;View&#8594;Associate
+      leaves&quot;</strong> submenu allows a tree's view association to be
+    changed to to any or all other views.
+  </p>
+  <p>
+    The results of a <a href="../calculations/pca.html">PCA
+      calculation</a> on a particular view may also be associated with other
+    views, using the PCA Viewer's <strong>&quot;View&#8594;Associate
+      Nodes&quot;</strong> submenu.
+  </p>
+  <p>
+    <a href="jmol.html">PDB Structure Viewers</a> opened on a structure
+    associated with a sequence in a particular view are now (as of
+    Jalview 2.3) associated with the same sequence in all views. This
+    means that when 'Colour by Sequence' is selected in the structure
+    view, the colour will be updated to the colours given in the view
+    with the current input focus.
+    <!--
+ also, by default, only be associated
+with the sequence as it is displayed in that view. The
+&quot;View&#8594;Associate View&quot; submenu allows the association of
+alternative views.</p> -->
+  <p>
+    <em>Multiple Views were introduced in Jalview 2.2</em>
+  </p>
+</body>
+</html>

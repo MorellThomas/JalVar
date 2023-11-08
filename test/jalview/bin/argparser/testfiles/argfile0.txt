@@ -1,0 +1,2 @@
+--open=test/jalview/bin/argparser/testfiles/test1.fa
+--append=test/jalview/bin/argparser/testfiles/test3.fa

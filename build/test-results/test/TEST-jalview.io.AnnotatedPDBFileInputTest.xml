@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.io.AnnotatedPDBFileInputTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:05" hostname="wer3eng" time="1.727">
+  <properties/>
+  <testcase name="checkAnnotationWiring" classname="jalview.io.AnnotatedPDBFileInputTest" time="0.001"/>
+  <testcase name="checkNoDuplicates" classname="jalview.io.AnnotatedPDBFileInputTest" time="0.001"/>
+  <testcase name="checkPDBSequenceFeatures" classname="jalview.io.AnnotatedPDBFileInputTest" time="0.001"/>
+  <testcase name="testJalviewProjectRelocationAnnotation" classname="jalview.io.AnnotatedPDBFileInputTest" time="0.7"/>
+  <system-out><![CDATA[File format identified as PDB
+CIR resolver set to https://cactus.nci.nih.gov/chemical/structure
+Operating headless display=null nographicsallowed=true
+(C) 2015 Jmol Development
+Jmol Version: 15.1.53  2021-02-10 09:12
+java.vendor: Java: Oracle Corporation
+java.version: Java 11.0.19
+os.name: Linux
+Access: ALL
+memory: 160.0/293.6
+processors available: 8
+useCommandThread: false
+The Resolver thinks Pdb
+OXIDOREDUCTASE/ELECTRON TRANSPORT       08-MAY-00   1GAQ
+1GAQ
+reading 690 atoms
+ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false
+1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.
+Default Van der Waals type for model set to Jmol
+690 atoms created
+ModelSet: autobonding; use  autobond=false  to not generate bonds automatically
+Time for creating model: 8 ms
+Writing jar entry 1GAQ (1GAQ)
+Writing jar entry 1gaq.txt.xml
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@2c0d7367
+Writing jar entry 1133495646  Dataset for examples/1gaq.txt.xml
+Attempting to connect with MuscleWS...
+File format identified as Jalview
+Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@f02c5f7
+]]></system-out>
+  <system-err><![CDATA[Rebuild WS Menu for service change
+Rebuild WS Menu for service change
+Jul 02, 2023 10:12:06 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - BACKUPFILES using temp file /tmp/JalviewTest4948767848052774951.jvp11544955105775073043.tmp_newfile
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - BACKUPFILES moving /tmp/JalviewTest4948767848052774951.jvp to /tmp/JalviewTest4948767848052774951.jvp_BACKUPFILESTESTTMP000001 was successful
+Jul 02, 2023 10:12:07 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+DEBUG - Created new dataset ds01 for alignment 1885780198
+Assuming project file with TEST is compatible with Jalview version 2.8.1
+DEBUG - Setting viewport's sequence set id : 90635071227176
+DEBUG - Setting viewport's view id : 906350712.121102632527176
+Warning - overwriting a sequenceSetId for a viewport!
+PDB Entry 1GAQ /tmp/jalview_pdb12025394066789216284.txt
+CalcId mc_view.PDBChain
+CalcId jalview.ext.jmol.JmolParser
+PDB Entry 1GAQ /tmp/jalview_pdb12025394066789216284.txt
+CalcId mc_view.PDBChain
+CalcId jalview.ext.jmol.JmolParser
+PDB Entry 1GAQ /tmp/jalview_pdb12025394066789216284.txt
+CalcId mc_view.PDBChain
+CalcId jalview.ext.jmol.JmolParser
+]]></system-err>
+</testsuite>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.ext.ensembl.EnsemblXrefTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:41" hostname="wer3eng" time="0.002">
+  <properties/>
+  <testcase name="testGetCrossReferences" classname="jalview.ext.ensembl.EnsemblXrefTest" time="0.002"/>
+  <system-out><![CDATA[[{"primary_id":"CCDS5863","dbname":"CCDS"},{"primary_id":"P15056","dbname":"Uniprot/SWISSPROT","synonyms":["C21"]},{"primary_id":"GO:0000165","dbname":"GO"}]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.gui.AnnotationChooserTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:00" hostname="wer3eng" time="0.525">
+  <properties/>
+  <testcase name="testBuildActionButtonsPanel" classname="jalview.gui.AnnotationChooserTest" time="0.044"/>
+  <testcase name="testBuildApplyToOptionsPanel_noSelectionGroup" classname="jalview.gui.AnnotationChooserTest" time="0.015"/>
+  <testcase name="testBuildApplyToOptionsPanel_withSelectionGroup" classname="jalview.gui.AnnotationChooserTest" time="0.012"/>
+  <testcase name="testBuildShowHideOptionsPanel" classname="jalview.gui.AnnotationChooserTest" time="0.019"/>
+  <testcase name="testBuildShowHidePanel" classname="jalview.gui.AnnotationChooserTest" time="0.01"/>
+  <testcase name="testDeselectType_hideForAll" classname="jalview.gui.AnnotationChooserTest" time="0.032"/>
+  <testcase name="testDeselectType_hideForSelected" classname="jalview.gui.AnnotationChooserTest" time="0.013"/>
+  <testcase name="testDeselectType_showForAll" classname="jalview.gui.AnnotationChooserTest" time="0.012"/>
+  <testcase name="testDeselectType_showForSelected" classname="jalview.gui.AnnotationChooserTest" time="0.01"/>
+  <testcase name="testGetAnnotationTypes" classname="jalview.gui.AnnotationChooserTest" time="0.008"/>
+  <testcase name="testIsInActionScope_selectedScope" classname="jalview.gui.AnnotationChooserTest" time="0.006"/>
+  <testcase name="testIsInActionScope_unselectedScope" classname="jalview.gui.AnnotationChooserTest" time="0.009"/>
+  <testcase name="testResetOriginalState" classname="jalview.gui.AnnotationChooserTest" time="0.011"/>
+  <testcase name="testSelectType_hideForAll" classname="jalview.gui.AnnotationChooserTest" time="0.009"/>
+  <testcase name="testSelectType_hideForSelected" classname="jalview.gui.AnnotationChooserTest" time="0.019"/>
+  <testcase name="testSelectType_showForAll" classname="jalview.gui.AnnotationChooserTest" time="0.012"/>
+  <testcase name="testSelectType_showForSelected" classname="jalview.gui.AnnotationChooserTest" time="0.012"/>
+  <system-out><![CDATA[Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@15763204
+Attempting to connect with ClustalWS...
+Attempting to connect with ClustalOWS...
+]]></system-out>
+  <system-err><![CDATA[Jul 02, 2023 10:12:00 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+Jul 02, 2023 10:12:00 AM compbio.ws.client.Jws2Client connect
+INFO: Connected successfully!
+]]></system-err>
+</testsuite>

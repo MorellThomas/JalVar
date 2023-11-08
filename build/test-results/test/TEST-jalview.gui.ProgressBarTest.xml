@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.gui.ProgressBarTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:54" hostname="wer3eng" time="0.071">
+  <properties/>
+  <testcase name="testConstructor_prematureInstantiation" classname="jalview.gui.ProgressBarTest" time="0.0"/>
+  <testcase name="testConstructor_wrongLayout" classname="jalview.gui.ProgressBarTest" time="0.0"/>
+  <testcase name="testSetProgressBar" classname="jalview.gui.ProgressBarTest" time="0.07"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Jul 02, 2023 10:11:54 AM compbio.ws.client.Jws2Client connectToRegistry
+INFO: Connected to RegistryWS successfully!
+]]></system-err>
+</testsuite>

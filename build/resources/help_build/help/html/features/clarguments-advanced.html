@@ -1,0 +1,182 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ *
+ * This file is part of Jalview.
+ *
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *
+ * Jalview is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.  See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<title>Command Line: advanced usage</title>
+<body>
+
+  <h1>Command Line: advanced usage</h1>
+
+  <p>
+  <a href="clarguments.html">Command Line: introduction</a>
+  <br/>
+  <a href="clarguments-basic.html">Command Line: basic usage</a>
+  <br/>
+  Command Line: advanced usage
+  <br/>
+  <a href="clarguments-argfiles.html">Command Line: argument files</a>
+  <br/>
+  <a href="clarguments-reference.html">Command Line: reference</a>
+  </p>
+
+  <hr/>
+
+  <ul>
+  <li><a href="#alignmentlinkedids">Alignment linked IDs</a></li>
+  <li><a href="#moresubstitutions">More substitutions</a></li>
+  <li><a href="#equalsseparatorandfileglobs">Equals separator and file globs</a></li>
+  <li><a href="#subvaluemodifiers">Sub-value modifiers</a></li>
+  </ul>
+
+
+  <h2><a name="alignmentlinkedids"></a>Alignment linked IDs</h2>
+
+  <p>
+  Jalview's alignment related arguments are linked together using a <em>linked ID</em>.  In all of the basic usage examples this linked ID is assigned using a default formula of <code>JALVIEW:<em>n</em></code> where <em>n</em> starts at 0 and increments every time there is an <code>--open</code>ed file (or a first use of <code>--append</code>) or the <code>--new</code> argument is used.
+  </p>
+
+  <p>
+  When another alignment related argument is used (without a specified linked ID), it is assigned this default linked ID.  When the <code>--all</code> argument is used, following alignment related arguments are applied to all of the linked IDs (made so far).
+  </p>
+
+  <p>
+  You can assign your own linked IDs to alignments that are opened from the command-line.  To do this put the linked ID in square brackets ('[', ']') <em>immediately following the argument</em> (i.e. before any space or equals sign) like this:
+  <pre>
+  jalview --open[myId1] file1.fa --open[myId2] file2.fa --open[myId3] file3.fa --colour[myId1] gecos-flower --colour[myId2] gecos-blossom --colour[myId3] zappo --image "*.png" --headless
+  </pre>
+
+  <p>
+  As you can see, if you specify your own linked IDs, the arguments for one alignment do not need to be adjacent as they are when using the default assigned linked ID.
+  </p>
+
+  <p>
+  A specified linked ID will also take precedence over a wildcard or <code>--all</code> set linked ID. e.g.
+  <pre>
+  jalview --open[myID] examples/uniref50.fa --all --colour taylor --colour[myID] gecos-blossom
+  </pre>
+  will open the alignment using the <code>gecos-blossom</code> colour scheme (thank goodness).
+  </p>
+
+
+  <h2><a name="moresubstitutions"></a>More substitutions (<code>{n}</code>, <code>{++n}</code>, <code>[*]</code>)</h2>
+
+  <p>
+  In the <a href="clarguments-basic.html#substitutions">basic usage document</a> we have a list of special strings that get replaced in output filename values with parts of input filename values.
+  </p>
+
+  <p>
+  There is also an incrementor integer value <code>{n}</code> that can be put into both linked IDs and filenames and works across different linked IDs.  Whenever you use <code>{n}</code> in a linked ID or filename value it is replaced with the current value of <em>n</em>.  The initial value is 0, and it can be incremented by using the argument <code>--npp</code> or <code>--n++</code>, or using a another special substitution <code>{++n}</code> in either a linked ID or filename value which increments the value and is replaced with the new incremented value of <em>n</em>.
+  </p>
+
+  <p>
+  In the same way that the <code>--all</code> argument enables (some) following arguments to apply to all opened alignments so far, the special linked ID <code>*</code> will also apply an individual argument to all opened linked IDs (in fact when you use the <code>--all</code> argument it simply changes the default linked ID to <code>*</code>).
+  <pre>
+  jalview --open[myId1] fileA.fa --open[myId2] fileB.fa --open[myId3] fileC.fa --colour[*] taylor --all --image tmp/image-{++n}.png --headless
+  </pre>
+  The above will produce an image <code>image-0.png</code> for the alignment in <code>fileA.fa</code>,  an image <code>image-1.png</code> for the alignment in <code>fileB.fa</code>, etc.
+  If you suddenly decide to colour the last alignment differently you could add to the command:
+  <pre>
+  jalview --open[myId1] fileA.fa --open[myId2] fileB.fa --open[myId3] fileC.fa --colour[*] taylor --all --image tmp/image-{++n}.png --headless --colour[myId3] gecos-blossom
+  </pre>
+  because all of the command line arguments are read and sorted into their linked IDs before starting to be processed, and the <code>[myId3]</code> specified linked ID takes precedence over the <code>[*]</code> wildcard linked ID.
+  </p>
+  </p>
+
+
+  <h2><a name="equalsseparatorandfileglobs"></a>Equals separator and Java file globs</h2>
+
+  <p>
+  When a Command-line argument requires one (or more) values, you can use the usual space separation, which allows the shell to expand any file "globs" (that is, filenames with wildcard characters allowing it to represent multiple files).  The shell "expands" this file glob and to Jalview it appears like a list of filenames supplied to the argument.
+  </p>
+
+  <p>
+  There is a limitation to shell expansion of file globs, as the length of a single command, or number of files the shell is willing to expand a file glob to, is limited (to different amounts depending on your shell and its configuration).
+  </p>
+
+  <p>
+  Jalview will also recognise values supplied to arguments (that expect one or more value) that are separated by an equals sign ("=").  There should be no spaces around the equals sign, e.g.
+  <pre>
+  jalview --open=examples/uniref50*.fa --colour=clustal --all --image=*.png --scale=2.5 --headless
+  </pre>
+  </p>
+
+  <p>
+  One benefit of this is seen above in the <code>--image</code> argument, the special "alloutput" wildcard filename <code>*.png</code> will not be expanded by the shell, so does not need to be escaped or surrounded with quotation marks.
+  </p>
+
+  <p>
+  A bigger benefit is that the <em>input</em> filename is not expanded by the shell but can instead be expanded by Jalview.  There is no limit to the number of files that this kind of file glob can match since it is expanded by Jalview, not the shell.
+  </p>
+
+  <p>
+  Jalview uses the Java PathMatcher "glob" scheme to match filenames, which is quite similar, though in some ways more powerful, to most shell glob rules.  The usual '<code>*</code>' and '<code>?</code>' characters act the same, but other combinations can be used too.  For the full rules see <a href="https://devdocs.io/openjdk~11/java.base/java/nio/file/filesystem#getPathMatcher(java.lang.String)">java.nio.file.PathMatcher.getPathMatcher</a> javadocs at https://devdocs.io/openjdk~11/java.base/java/nio/file/filesystem#getPathMatcher(java.lang.String).
+  </p>
+
+  <p>
+  One such PathMatcher addition to shell file globs is the use of <code>**</code> to match any number of directories and sub-directories (matching across file separator).  So to convert every Fasta file under the current working directory to BLC format you can do:
+  <pre>
+  jalview --open=./**/*.fa --output=*.blc --close --headless
+  </pre>
+  or to find every Stockholm and Pfam file under </code>/tmp</code> and convert to Fasta and save in your own folder, do
+  <pre>
+  jalview --open=/tmp/**/*.{stk,pfam} --all --output=~/rescued/{basenamedir}.fa --close --headless
+  </pre>
+  </p>
+
+  <h2><a name="subvaluemodifiers"></a>Sub-value modifiers</h2>
+
+  <p>
+  Sub-value modifiers are given in square brackets ('[', ']') <em>immediately before the value</em> (i.e. after any space or equals sign, and with no space between it and the value) like this:
+  <pre>
+  jalview --open=examples/uniref50.fa --image=[scale=1.414]picture.png
+  </pre>
+  </p>
+
+  <p>
+  Some arguments (such as <code>--scale=<em>n</em></code>) are used to modify the behaviour of other "primary" arguments (such as <code>--image=filename</code>).  These arguments can alternatively be specifed as <em>sub-value modifiers</em> of the values given to the primary argument.  If specified as a sub-value modifier, this modifier takes precedence over any following linked argument if given. e.g
+  <pre>
+  jalview --open=[colour=zappo]examples/*.fa
+  </pre>
+  Notice also that if a sub-value modifier is used for a value that is expanded by the application (i.e. using an equals sign ('=') to separate argument and value) then that modifier is applied to all of the values.
+  </p>
+
+  <p>
+  For shell expanded globs this is more problematic since the presence of a sub-value modifier will almost certainly prevent the shell from recognising the file glob, so
+  <pre>
+  jalview --open [colour=zappo]examples/*.fa
+  </pre>
+  will <em>NOT</em> work the same as above.  If you need to use sub-value modifiers on a file glob you should use an equals sign ('=') to separate it from the argument.
+  </p>
+
+  <p>
+  You can specify multiple sub-value modifiers separating them with a comma (',').  If you wish to specify a "boolean" argument, such as <code>--wrap</code> or <code>--nowrap</code> then simply use the argument name without a value, like this:
+  <pre>
+  jalview --open=[colour=gecos-flower,wrap,noannotations,features=examples/plantfdx.features]examples/plantfdx.fa
+  </pre>
+  </p>
+
+
+  <hr/>
+  Continue to <a href="clarguments-argfiles.html">Command Line: argument files</a>.
+  <br/>
+  <a href="clarguments-reference.html">Command Line: reference</a>
+
+</body>
+</html>

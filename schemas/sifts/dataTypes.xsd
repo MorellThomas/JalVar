@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.ebi.ac.uk/pdbe/docs/sifts/dataTypes.xsd"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.ebi.ac.uk/pdbe/docs/sifts/dataTypes.xsd">
+	<xsd:simpleType name="entityType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="protein"/>
+			<xsd:enumeration value="RNA"/>
+			<xsd:enumeration value="DNA"/>
+			<xsd:enumeration value="domain"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="dbChainId">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="chainId">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="cigarstring">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:whiteSpace value="collapse"/>
+			<xsd:pattern value="(\d{0,5}\w{1})*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:attributeGroup name="dbRef">
+		<xsd:attribute name="dbSource" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PDBe"/>
+					<xsd:enumeration value="UniProt"/>
+					<xsd:enumeration value="Pfam"/>
+					<xsd:enumeration value="CATH"/>
+					<xsd:enumeration value="SCOP"/>
+					<xsd:enumeration value="InterPro"/>
+					<xsd:enumeration value="PDB"/>
+					<xsd:enumeration value="NCBI"/>
+					<xsd:enumeration value="EC"/>
+					<xsd:enumeration value="GO"/>
+					<xsd:enumeration value="Astral"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="dbCoordSys" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PDBe"/>
+					<xsd:enumeration value="PDBseqres"/>
+					<xsd:enumeration value="PDBresnum"/>
+					<xsd:enumeration value="UniProt"/>
+					<xsd:enumeration value="Astral"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="dbAccessionId" type="xsd:string" use="required"/>
+		<xsd:attribute name="dbEvidence" type="xsd:string"/>
+		<xsd:attribute name="dbVersion" type="xsd:string" use="optional"/>
+	</xsd:attributeGroup>
+	<xsd:attributeGroup name="resRef">
+		<xsd:attribute name="dbResNum" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+					<xsd:pattern value="-?\d+(\S+)?"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="dbResName" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+					<xsd:maxLength value="3"/>
+					<xsd:pattern value="\w{1,3}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:attributeGroup>
+	<xsd:attributeGroup name="detail">
+		<xsd:attribute name="dbSource" use="optional">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PDBe"/>
+					<xsd:enumeration value="UniProt"/>
+					<xsd:enumeration value="Pfam"/>
+					<xsd:enumeration value="CATH"/>
+					<xsd:enumeration value="SCOP"/>
+					<xsd:enumeration value="InterPro"/>
+					<xsd:enumeration value="PDB"/>
+					<xsd:enumeration value="NCBI"/>
+					<xsd:enumeration value="EC"/>
+					<xsd:enumeration value="GO"/>
+					<xsd:enumeration value="Astral"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="property" type="xsd:string" use="required"/>
+	</xsd:attributeGroup>
+	<xsd:attributeGroup name="region">
+		<xsd:attribute name="start" use="optional">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+					<xsd:pattern value="-?\d+(.\S)?"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="end" use="optional">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+					<xsd:pattern value="-?\d+(.\S)?"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:attributeGroup>
+	<xsd:attributeGroup name="listdbRef">
+		<xsd:attribute name="dbVersion" type="xsd:string" use="optional"/>
+		<xsd:attribute name="dbSource" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PDBe"/>
+					<xsd:enumeration value="UniProt"/>
+					<xsd:enumeration value="Pfam"/>
+					<xsd:enumeration value="CATH"/>
+					<xsd:enumeration value="SCOP"/>
+					<xsd:enumeration value="InterPro"/>
+					<xsd:enumeration value="PDB"/>
+					<xsd:enumeration value="NCBI"/>
+					<xsd:enumeration value="EC"/>
+					<xsd:enumeration value="GO"/>
+					<xsd:enumeration value="Astral"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="dbCoordSys" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PDBe"/>
+					<xsd:enumeration value="PDBseqres"/>
+					<xsd:enumeration value="PDBresnum"/>
+					<xsd:enumeration value="UniProt"/>
+					<xsd:enumeration value="Astral"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:attributeGroup>
+</xsd:schema>

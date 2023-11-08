@@ -1,0 +1,1125 @@
+<!-- Jalview (.jvp) BEGIN -->
+                  <action name="Jalview (.jvp) message" id="10000" customizedId="Jalview-jvp-10000-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">Jalview (.jvp)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Jalview (.jvp) progress bar 0" id="10001" customizedId="Jalview-jvp-10001-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="0" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Jalview (.jvp) file association" id="10002" customizedId="Jalview-jvp-10002-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .jvp file association">
+                    <serializedBean>
+                      <property name="description" type="string">Jalview File</property>
+                      <property name="extension" type="string">jvp</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-jalview+xml+zip</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- Jalview Launch (.jvl) BEGIN -->
+                  <action name="Jalview Launch (.jvl) message" id="10003" customizedId="Jalview Launch-jvl-10003-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">Jalview Launch (.jvl)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Jalview Launch (.jvl) progress bar 4" id="10004" customizedId="Jalview Launch-jvl-10004-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="4" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Jalview Launch (.jvl) file association" id="10005" customizedId="Jalview Launch-jvl-10005-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .jvl file association">
+                    <serializedBean>
+                      <property name="description" type="string">Jalview Launch File</property>
+                      <property name="extension" type="string">jvl</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>jvl_file.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>jvl_file.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-jalview-jvl+text</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>jvl_file.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- CIF (.cif) BEGIN -->
+                  <action name="CIF (.cif) message" id="10006" customizedId="CIF-cif-10006-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">CIF (.cif)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="CIF (.cif) progress bar 8" id="10007" customizedId="CIF-cif-10007-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="8" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="CIF (.cif) file association" id="10008" customizedId="CIF-cif-10008-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .cif file association">
+                    <serializedBean>
+                      <property name="description" type="string">CIF File</property>
+                      <property name="extension" type="string">cif</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="VIEWER" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="false" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">chemical/x-cif</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- mmCIF (.mcif, .mmcif) BEGIN -->
+                  <action name="mmCIF (.mcif, .mmcif) message" id="10009" customizedId="mmCIF-mcif,mmcif-10009-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">mmCIF (.mcif, .mmcif)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="mmCIF (.mcif, .mmcif) progress bar 12" id="10010" customizedId="mmCIF-mcif,mmcif-10010-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="12" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="mmCIF (.mcif, .mmcif) file association" id="10011" customizedId="mmCIF-mcif,mmcif-10011-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .mcif,mmcif file association">
+                    <serializedBean>
+                      <property name="description" type="string">mmCIF File</property>
+                      <property name="extension" type="string">mcif,mmcif</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="VIEWER" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="false" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">chemical/x-mmcif</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- PDB (.ent, .pdb) BEGIN -->
+                  <action name="PDB (.ent, .pdb) message" id="10012" customizedId="PDB-ent,pdb-10012-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">PDB (.ent, .pdb)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="PDB (.ent, .pdb) progress bar 16" id="10013" customizedId="PDB-ent,pdb-10013-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="16" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="PDB (.ent, .pdb) file association" id="10014" customizedId="PDB-ent,pdb-10014-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .ent,pdb file association">
+                    <serializedBean>
+                      <property name="description" type="string">PDB File</property>
+                      <property name="extension" type="string">ent,pdb</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="VIEWER" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="false" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">chemical/x-pdb</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- AMSA (.amsa) BEGIN -->
+                  <action name="AMSA (.amsa) message" id="10015" customizedId="AMSA-amsa-10015-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">AMSA (.amsa)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="AMSA (.amsa) progress bar 20" id="10016" customizedId="AMSA-amsa-10016-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="20" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="AMSA (.amsa) file association" id="10017" customizedId="AMSA-amsa-10017-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .amsa file association">
+                    <serializedBean>
+                      <property name="description" type="string">AMSA File</property>
+                      <property name="extension" type="string">amsa</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-amsa+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- Jalview Annotations (.annotations, .jvannotations) BEGIN -->
+                  <action name="Jalview Annotations (.annotations, .jvannotations) message" id="10018" customizedId="Jalview Annotations-annotations,jvannotations-10018-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">Jalview Annotations (.annotations, .jvannotations)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Jalview Annotations (.annotations, .jvannotations) progress bar 24" id="10019" customizedId="Jalview Annotations-annotations,jvannotations-10019-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="24" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Jalview Annotations (.annotations, .jvannotations) file association" id="10020" customizedId="Jalview Annotations-annotations,jvannotations-10020-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .annotations,jvannotations file association">
+                    <serializedBean>
+                      <property name="description" type="string">Jalview Annotations File</property>
+                      <property name="extension" type="string">annotations,jvannotations</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-jalview-annotations+text</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- BioJSON (.biojson) BEGIN -->
+                  <action name="BioJSON (.biojson) message" id="10021" customizedId="BioJSON-biojson-10021-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">BioJSON (.biojson)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="BioJSON (.biojson) progress bar 28" id="10022" customizedId="BioJSON-biojson-10022-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="28" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="BioJSON (.biojson) file association" id="10023" customizedId="BioJSON-biojson-10023-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .biojson file association">
+                    <serializedBean>
+                      <property name="description" type="string">BioJSON File</property>
+                      <property name="extension" type="string">biojson</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-jalview-biojson+json</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- BLC (.blc) BEGIN -->
+                  <action name="BLC (.blc) message" id="10024" customizedId="BLC-blc-10024-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">BLC (.blc)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="BLC (.blc) progress bar 32" id="10025" customizedId="BLC-blc-10025-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="32" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="BLC (.blc) file association" id="10026" customizedId="BLC-blc-10026-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .blc file association">
+                    <serializedBean>
+                      <property name="description" type="string">BLC File</property>
+                      <property name="extension" type="string">blc</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-blc+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- Clustal (.aln) BEGIN -->
+                  <action name="Clustal (.aln) message" id="10027" customizedId="Clustal-aln-10027-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">Clustal (.aln)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Clustal (.aln) progress bar 36" id="10028" customizedId="Clustal-aln-10028-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="36" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Clustal (.aln) file association" id="10029" customizedId="Clustal-aln-10029-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .aln file association">
+                    <serializedBean>
+                      <property name="description" type="string">Clustal File</property>
+                      <property name="extension" type="string">aln</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-clustal+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- ENA Flatfile (.txt) BEGIN -->
+                  <action name="ENA Flatfile (.txt) message" id="10030" customizedId="ENA Flatfile-txt-10030-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">ENA Flatfile (.txt)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="ENA Flatfile (.txt) progress bar 40" id="10031" customizedId="ENA Flatfile-txt-10031-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="40" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="ENA Flatfile (.txt) file association" id="10032" customizedId="ENA Flatfile-txt-10032-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .txt file association">
+                    <serializedBean>
+                      <property name="description" type="string">ENA Flatfile File</property>
+                      <property name="extension" type="string">txt</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-embl+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- Fasta (.fa, .fasta) BEGIN -->
+                  <action name="Fasta (.fa, .fasta) message" id="10033" customizedId="Fasta-fa,fasta-10033-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">Fasta (.fa, .fasta)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Fasta (.fa, .fasta) progress bar 44" id="10034" customizedId="Fasta-fa,fasta-10034-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="44" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Fasta (.fa, .fasta) file association" id="10035" customizedId="Fasta-fa,fasta-10035-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .fa,fasta file association">
+                    <serializedBean>
+                      <property name="description" type="string">Fasta File</property>
+                      <property name="extension" type="string">fa,fasta</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-fasta+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- Jalview Features (.features, .jvfeatures) BEGIN -->
+                  <action name="Jalview Features (.features, .jvfeatures) message" id="10036" customizedId="Jalview Features-features,jvfeatures-10036-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">Jalview Features (.features, .jvfeatures)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Jalview Features (.features, .jvfeatures) progress bar 48" id="10037" customizedId="Jalview Features-features,jvfeatures-10037-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="48" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Jalview Features (.features, .jvfeatures) file association" id="10038" customizedId="Jalview Features-features,jvfeatures-10038-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .features,jvfeatures file association">
+                    <serializedBean>
+                      <property name="description" type="string">Jalview Features File</property>
+                      <property name="extension" type="string">features,jvfeatures</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-jalview-features+text</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- GenBank Flatfile (.gb, .gbk) BEGIN -->
+                  <action name="GenBank Flatfile (.gb, .gbk) message" id="10039" customizedId="GenBank Flatfile-gb,gbk-10039-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">GenBank Flatfile (.gb, .gbk)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="GenBank Flatfile (.gb, .gbk) progress bar 52" id="10040" customizedId="GenBank Flatfile-gb,gbk-10040-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="52" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="GenBank Flatfile (.gb, .gbk) file association" id="10041" customizedId="GenBank Flatfile-gb,gbk-10041-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .gb,gbk file association">
+                    <serializedBean>
+                      <property name="description" type="string">GenBank Flatfile File</property>
+                      <property name="extension" type="string">gb,gbk</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-genbank+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- Generic Features Format v2 (.gff2) BEGIN -->
+                  <action name="Generic Features Format v2 (.gff2) message" id="10042" customizedId="Generic Features Format v2-gff2-10042-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">Generic Features Format v2 (.gff2)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Generic Features Format v2 (.gff2) progress bar 56" id="10043" customizedId="Generic Features Format v2-gff2-10043-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="56" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Generic Features Format v2 (.gff2) file association" id="10044" customizedId="Generic Features Format v2-gff2-10044-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .gff2 file association">
+                    <serializedBean>
+                      <property name="description" type="string">Generic Features Format v2 File</property>
+                      <property name="extension" type="string">gff2</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-gff2+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- Generic Features Format v3 (.gff3) BEGIN -->
+                  <action name="Generic Features Format v3 (.gff3) message" id="10045" customizedId="Generic Features Format v3-gff3-10045-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">Generic Features Format v3 (.gff3)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Generic Features Format v3 (.gff3) progress bar 60" id="10046" customizedId="Generic Features Format v3-gff3-10046-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="60" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Generic Features Format v3 (.gff3) file association" id="10047" customizedId="Generic Features Format v3-gff3-10047-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .gff3 file association">
+                    <serializedBean>
+                      <property name="description" type="string">Generic Features Format v3 File</property>
+                      <property name="extension" type="string">gff3</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-gff3+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- JnetFile (.concise, .jnet) BEGIN -->
+                  <action name="JnetFile (.concise, .jnet) message" id="10048" customizedId="JnetFile-concise,jnet-10048-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">JnetFile (.concise, .jnet)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="JnetFile (.concise, .jnet) progress bar 64" id="10049" customizedId="JnetFile-concise,jnet-10049-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="64" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="JnetFile (.concise, .jnet) file association" id="10050" customizedId="JnetFile-concise,jnet-10050-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .concise,jnet file association">
+                    <serializedBean>
+                      <property name="description" type="string">JnetFile File</property>
+                      <property name="extension" type="string">concise,jnet</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-jalview-jnet+text</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- MSF (.msf) BEGIN -->
+                  <action name="MSF (.msf) message" id="10051" customizedId="MSF-msf-10051-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">MSF (.msf)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="MSF (.msf) progress bar 68" id="10052" customizedId="MSF-msf-10052-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="68" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="MSF (.msf) file association" id="10053" customizedId="MSF-msf-10053-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .msf file association">
+                    <serializedBean>
+                      <property name="description" type="string">MSF File</property>
+                      <property name="extension" type="string">msf</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-msf+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- PFAM (.pfam) BEGIN -->
+                  <action name="PFAM (.pfam) message" id="10054" customizedId="PFAM-pfam-10054-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">PFAM (.pfam)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="PFAM (.pfam) progress bar 72" id="10055" customizedId="PFAM-pfam-10055-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="72" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="PFAM (.pfam) file association" id="10056" customizedId="PFAM-pfam-10056-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .pfam file association">
+                    <serializedBean>
+                      <property name="description" type="string">PFAM File</property>
+                      <property name="extension" type="string">pfam</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-pfam+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- PHYLIP (.phy) BEGIN -->
+                  <action name="PHYLIP (.phy) message" id="10057" customizedId="PHYLIP-phy-10057-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">PHYLIP (.phy)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="PHYLIP (.phy) progress bar 76" id="10058" customizedId="PHYLIP-phy-10058-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="76" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="PHYLIP (.phy) file association" id="10059" customizedId="PHYLIP-phy-10059-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .phy file association">
+                    <serializedBean>
+                      <property name="description" type="string">PHYLIP File</property>
+                      <property name="extension" type="string">phy</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-phylip+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- PileUp (.pileup) BEGIN -->
+                  <action name="PileUp (.pileup) message" id="10060" customizedId="PileUp-pileup-10060-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">PileUp (.pileup)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="PileUp (.pileup) progress bar 80" id="10061" customizedId="PileUp-pileup-10061-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="80" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="PileUp (.pileup) file association" id="10062" customizedId="PileUp-pileup-10062-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .pileup file association">
+                    <serializedBean>
+                      <property name="description" type="string">PileUp File</property>
+                      <property name="extension" type="string">pileup</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-pileup+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- PIR (.pir) BEGIN -->
+                  <action name="PIR (.pir) message" id="10063" customizedId="PIR-pir-10063-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">PIR (.pir)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="PIR (.pir) progress bar 84" id="10064" customizedId="PIR-pir-10064-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="84" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="PIR (.pir) file association" id="10065" customizedId="PIR-pir-10065-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .pir file association">
+                    <serializedBean>
+                      <property name="description" type="string">PIR File</property>
+                      <property name="extension" type="string">pir</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-pir+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- RNAML (.rnaml) BEGIN -->
+                  <action name="RNAML (.rnaml) message" id="10066" customizedId="RNAML-rnaml-10066-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">RNAML (.rnaml)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="RNAML (.rnaml) progress bar 88" id="10067" customizedId="RNAML-rnaml-10067-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="88" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="RNAML (.rnaml) file association" id="10068" customizedId="RNAML-rnaml-10068-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .rnaml file association">
+                    <serializedBean>
+                      <property name="description" type="string">RNAML File</property>
+                      <property name="extension" type="string">rnaml</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/rnaml+xml</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- Substitution Matrix (.mat) BEGIN -->
+                  <action name="Substitution Matrix (.mat) message" id="10069" customizedId="Substitution Matrix-mat-10069-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">Substitution Matrix (.mat)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Substitution Matrix (.mat) progress bar 92" id="10070" customizedId="Substitution Matrix-mat-10070-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="92" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Substitution Matrix (.mat) file association" id="10071" customizedId="Substitution Matrix-mat-10071-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .mat file association">
+                    <serializedBean>
+                      <property name="description" type="string">Substitution Matrix File</property>
+                      <property name="extension" type="string">mat</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-jalview-scorematrix+text</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+
+<!-- Stockholm (.stk, .sto) BEGIN -->
+                  <action name="Stockholm (.stk, .sto) message" id="10072" customizedId="Stockholm-stk,sto-10072-message" beanClass="com.install4j.runtime.beans.actions.control.SetMessageAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="detailMessage" type="string">Stockholm (.stk, .sto)</property>
+                      <property name="statusMessage" type="string">Creating file associations...</property>
+                      <property name="useDetail" type="boolean" value="true" />
+                      <property name="useStatus" type="boolean" value="true" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Stockholm (.stk, .sto) progress bar 96" id="10073" customizedId="Stockholm-stk,sto-10073-progressbar" beanClass="com.install4j.runtime.beans.actions.control.SetProgressAction" actionElevationType="none" rollbackBarrierExitCode="0">
+                    <serializedBean>
+                      <property name="percentValue" type="int" value="96" />
+                    </serializedBean>
+                  </action>
+
+                  <action name="Stockholm (.stk, .sto) file association" id="10074" customizedId="Stockholm-stk,sto-10074-fileassociation" beanClass="com.install4j.runtime.beans.actions.desktop.CreateFileAssociationAction" actionElevationType="elevated" rollbackBarrierExitCode="0" errorMessage="Could not make .stk,sto file association">
+                    <serializedBean>
+                      <property name="description" type="string">Stockholm File</property>
+                      <property name="extension" type="string">stk,sto</property>
+                      <property name="launcherId" type="string">JALVIEW</property>
+                      <property name="macIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.icns</string>
+                        </object>
+                      </property>
+                      <property name="macRole" type="enum" class="com.install4j.runtime.beans.actions.desktop.MacAssociationRole" value="EDITOR" />
+                      <property name="restartFinder" type="boolean" value="true" />
+                      <property name="selected" type="boolean" value="true" />
+                      <property name="unix" type="boolean" value="true" />
+                      <property name="unixIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.png</string>
+                        </object>
+                      </property>
+                      <property name="unixMimeType" type="string">application/x-stockholm+txt</property>
+                      <property name="windowsIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>Jalview-File.ico</string>
+                        </object>
+                      </property>
+                    </serializedBean>
+                  </action>
+<!-- END -->
+

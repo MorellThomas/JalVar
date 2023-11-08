@@ -1,0 +1,442 @@
+firefox back to Java's StringBuilder - 100 sec
+J2SApplet exec testApplet start applet null
+swingjs.api.Interface creating instance of javajs.util.AjaxURLStreamHandlerFactory
+get parameter: language = null
+get parameter: name = testApplet
+get parameter: syncId = 30614127558744375
+JSApp initialized
+JSAppletViewer initializing2
+JSToolkit initialized
+JSGraphicsConfiguration initialized
+swingjs.api.Interface creating instance of swingjs.JSGraphicsEnvironment
+JSGraphicsEnvironment initialized
+swingjs.api.Interface creating instance of swingjs.JSScreenDevice
+JSScreenDevice initialized
+JSAppletViewer thread run1 mode=0 status=0
+JSAppletViewer thread run1 mode=1 status=1
+JSAppletViewer runloader
+get parameter: main = jalview.bin.Jalview
+swingjs.api.Interface creating instance of swingjs.JSApplet
+swingjs.api.Interface creating instance of swingjs.plaf.HTML5LookAndFeel
+testApplet loaded
+JSAppletViewer thread run1 mode=1 status=76
+testApplet running jalview.bin.Jalview
+Running main(args) in class jalview.bin.Jalview
+Java version: 1.6-1.8
+null Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0
+JSUtil getting Java resource sun/util/resources/CalendarData.properties
+Processing swingjs/j2s/sun/util/resources/CalendarData.properties [1780]
+swingjs.api.Interface creating instance of java.util.PropertyResourceBundle
+JSUtil getting Java resource sun/util/resources/CalendarData_en.properties
+Processing swingjs/j2s/sun/util/resources/CalendarData_en.properties [1937]
+swingjs.api.Interface creating instance of sun.util.calendar.Gregorian
+swingjs.api.Interface creating instance of sun.text.resources.FormatData
+swingjs.api.Interface creating instance of sun.text.resources.FormatData_en
+Loading jalview properties from : https://./.jalview_properties
+Disabling Jalview writing to user's local properties file.
+Jalview Version: Test
+Jalview Debugging Output Follows.
+Getting messages for lang: en_US
+JSUtil getting Java resource lang/Messages.properties
+Processing swingjs/j2s/lang/Messages.properties [82729]
+JSUtil getting Java resource lang/Messages_en.properties
+Processing swingjs/j2s/lang/Messages_en.properties [39]
+JSUtil getting Java resource lang/Messages_en_US.properties
+Processing swingjs/j2s/lang/Messages_en_US.properties [39]
+JSUtil getting Java resource swingjs/jquery/j2sMenu.js
+Processing swingjs/j2s/swingjs/jquery/j2sMenu.js [27197]
+JSWIndowUI ????
+JSFrameViewer creating new canvas testApplet_canvas2: 900 613
+JSWindowUI windowOpened true
+JSFrameUI windowActivated true
+swingjs.api.Interface creating instance of swingjs.JSGraphicsConfiguration
+JSGraphicsConfiguration initialized
+JSPopupMenuUI processing 0 _hide for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 1 _hide for testApplet_PopupMenuUI_46_46
+noclickout 0 1548730538973
+PostEventQueue posting tempEvent java.awt.SentEvent[] on [swingjs.JSToolkit object]
+PostEventQueue posting tempEvent java.awt.SentEvent[] on [swingjs.JSToolkit object]
+click added 0
+JSPopupMenuUI processing 2 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 3 onover1 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 4 blur for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 5 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 6 onover1 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 7 _hide for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 8 _closeSubmenus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 9 blur for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 10 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 11 onover1 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 12 _hide for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 13 _closeSubmenus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 14 blur for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 15 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 16 onover3 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 17 _hide for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 18 _closeSubmenus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 19 blur for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 20 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 21 onover1 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 22 _hide for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 23 _closeSubmenus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 24 blur for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 25 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 26 onover1 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 27 _hide for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 28 _closeSubmenus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 29 blur for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 30 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 31 onover1 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 32 _hide for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 33 _closeSubmenus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 34 blur for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 35 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 36 onover1 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 37 _hide for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 38 _closeSubmenus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 39 blur for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 40 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 41 onover1 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 42 _hide for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 43 _closeSubmenus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 44 blur for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 45 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 46 onover1 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 47 _hide for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 48 _closeSubmenus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 49 blur for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 50 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 51 onover1 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 52 _hide for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 53 _closeSubmenus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 54 blur for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 55 focus for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 56 onover1 for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 57 onpress for testApplet_PopupMenuUI_46_46
+JSUtil getting Java resource swingjs/jquery/jquery-ui-j2sslider.css
+Processing swingjs/j2s/swingjs/jquery/jquery-ui-j2sslider.css [24188]
+JSUtil getting Java resource swingjs/jquery/jquery-ui-j2sslider.js
+Processing swingjs/j2s/swingjs/jquery/jquery-ui-j2sslider.js [22356]
+JSDesktopIconUI SURRAGATE -- NOT IMPLEMENTED YET!
+JSWIndowUI ????
+collapseAll 0
+JSPopupMenuUI processing 58 collapseAll for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 59 select for testApplet_PopupMenuUI_46_46
+collapseAll 0
+JSPopupMenuUI processing 60 collapseAll for testApplet_PopupMenuUI_46_46
+JSPopupMenuUI processing 61 onclick for testApplet_PopupMenuUI_46_46
+click removed 0
+JSFrameViewer creating new canvas testApplet_canvas3: 400 230
+JSWindowUI windowOpened true
+click removed 0
+JSFrameUI windowActivated true
+PostEventQueue posting tempEvent java.awt.SentEvent[] on [swingjs.JSToolkit object]
+PostEventQueue posting tempEvent java.awt.SentEvent[] on [swingjs.JSToolkit object]
+PostEventQueue posting tempEvent java.awt.SentEvent[] on [swingjs.JSToolkit object]
+PostEventQueue posting tempEvent java.awt.SentEvent[] on [swingjs.JSToolkit object]
+PostEventQueue posting tempEvent java.awt.SentEvent[] on [swingjs.JSToolkit object]
+PostEventQueue posting tempEvent java.awt.SentEvent[] on [swingjs.JSToolkit object]
+Platform: timer mark    0.0    0.0    Desktop Fetching 1 sequence queries from ENSEMBL
+Platform: timer mark    0.491    0.432    EnsembleRestClient.getJSON https://rest.ensembl.org/lookup/id/ENSG00000157764?content-type=application/json
+Platform: timer mark    0.655    0.157    EnsembleRestClient.getJSON https://rest.ensembl.org/info/ping?content-type=application/json
+Platform: timer mark    0.816    0.159    EnsembleRestClient.getJSON https://rest.ensembl.org/info/rest?content-type=application/json
+EnsemblRestClient expected ENSEMBL REST version 7.0 but found 9.0, see https://github.com/Ensembl/ensembl-rest/wiki/Change-log
+Platform: timer mark    0.967    0.134    EnsembleRestClient.getJSON https://rest.ensembl.org/info/data?content-type=application/json
+Platform: timer mark    0.968    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    0.969    0.001    ENS seqproxy
+Platform: timer mark    1.946    0.975    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENSG00000157764?type=genomic&Accept=application/json&content-type=application/json&object_type=Gene
+Platform: timer mark    1.994    0.048    ENS seqproxy2
+Platform: timer mark    2.173    0.179    ESP.getsequencerec1
+Platform: timer mark    13.687    11.512    EnsembleRestClient.getJSON https://rest.ensembl.org/overlap/id/ENSG00000157764?content-type=application/json&object_type=Gene&feature=gene&feature=transcript&feature=exon&feature=cds&feature=variation
+Platform: timer mark    26.028    12.341    ESP.getsequencerec2
+Platform: timer mark    26.069    0.041    ESP. xfer 46594
+Platform: timer mark    43.878    17.809    ESP.transferFeatures
+Platform: timer mark    43.878    0.0    ESP.addfeat done
+Platform: timer mark    43.879    0.001    ESP. getdataseq
+Platform: timer mark    43.88    0.001    ESP. getxref
+Platform: timer mark    45.354    1.467    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSG00000157764?content-type=application/json&all_levels=1
+Platform: timer mark    45.388    0.034    ESP. seqprox done
+Platform: timer mark    45.556    0.166    EnsembleRestClient.getJSON https://rest.ensembl.org/lookup/id/ENSG00000157764?content-type=application/json&object_type=Gene
+Platform: timer mark    47.029    1.473    ESP. getdataseq
+Platform: timer mark    47.029    0.0    ESP. getxref
+Platform: timer mark    47.63    0.599    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000646891?content-type=application/json&all_levels=1
+Platform: timer mark    47.642    0.012    ESP. seqprox done
+Adding protein product for ENST00000646891
+Platform: timer mark    47.822    0.171    EnsembleRestClient.getJSON https://rest.ensembl.org/info/ping?content-type=application/json
+Platform: timer mark    47.823    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    47.823    0.0    ENS seqproxy
+Platform: timer mark    47.998    0.174    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000646891?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark    48.0    0.002    ENS seqproxy2
+Platform: timer mark    48.002    0.002    ESP. getdataseq
+Platform: timer mark    48.002    0.0    ESP. getxref
+Platform: timer mark    48.383    0.38    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSP00000493543?content-type=application/json&all_levels=1
+Platform: timer mark    48.39    0.007    ESP. seqprox done
+Platform: timer mark    50.109    1.719    ESP. getdataseq
+Platform: timer mark    50.11    0.001    ESP. getxref
+Platform: timer mark    50.324    0.213    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000496384?content-type=application/json&all_levels=1
+Platform: timer mark    50.326    0.002    ESP. seqprox done
+Adding protein product for ENST00000496384
+Platform: timer mark    50.328    0.002    EnsemblSeqProx.fetchSeq
+Platform: timer mark    50.328    0.0    ENS seqproxy
+Platform: timer mark    50.599    0.271    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000496384?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark    50.6    0.001    ENS seqproxy2
+Platform: timer mark    50.603    0.003    ESP. getdataseq
+Platform: timer mark    50.603    0.0    ESP. getxref
+Platform: timer mark    50.779    0.174    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSP00000419060?content-type=application/json&all_levels=1
+Platform: timer mark    50.78    0.001    ESP. seqprox done
+Platform: timer mark    51.955    1.175    ESP. getdataseq
+Platform: timer mark    51.956    0.001    ESP. getxref
+Platform: timer mark    52.112    0.156    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000469930?content-type=application/json&all_levels=1
+Platform: timer mark    52.114    0.002    ESP. seqprox done
+Adding protein product for ENST00000469930
+Platform: timer mark    52.114    0.0    EnsemblSeqProx.fetchSeq
+Platform: timer mark    52.115    0.001    ENS seqproxy
+Platform: timer mark    52.286    0.17    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000469930?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark    52.287    0.001    ENS seqproxy2
+Platform: timer mark    52.288    0.001    ESP. getdataseq
+Platform: timer mark    52.29    0.002    ESP. getxref
+Platform: timer mark    52.443    0.153    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSP00000495858?content-type=application/json&all_levels=1
+Platform: timer mark    52.444    0.001    ESP. seqprox done
+Platform: timer mark    53.65    1.206    ESP. getdataseq
+Platform: timer mark    53.651    0.001    ESP. getxref
+Platform: timer mark    53.827    0.175    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000288602?content-type=application/json&all_levels=1
+Platform: timer mark    53.828    0.001    ESP. seqprox done
+Adding protein product for ENST00000288602
+Platform: timer mark    53.829    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    53.829    0.0    ENS seqproxy
+Platform: timer mark    54.0    0.17    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000288602?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark    54.001    0.001    ENS seqproxy2
+Platform: timer mark    54.003    0.002    ESP. getdataseq
+Platform: timer mark    54.003    0.0    ESP. getxref
+Platform: timer mark    54.163    0.159    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSP00000288602?content-type=application/json&all_levels=1
+Platform: timer mark    54.165    0.002    ESP. seqprox done
+Platform: timer mark    55.476    1.311    ESP. getdataseq
+Platform: timer mark    55.476    0.0    ESP. getxref
+Platform: timer mark    55.624    0.146    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000642272?content-type=application/json&all_levels=1
+Platform: timer mark    55.625    0.001    ESP. seqprox done
+Adding protein product for ENST00000642272
+Platform: timer mark    55.626    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    55.627    0.001    ENS seqproxy
+Response code 400
+Platform: timer mark    55.783    0.156    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000642272?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000642272
+Platform: timer mark    56.888    1.105    ESP. getdataseq
+Platform: timer mark    56.888    0.0    ESP. getxref
+Platform: timer mark    57.272    0.383    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000643790?content-type=application/json&all_levels=1
+Platform: timer mark    57.273    0.001    ESP. seqprox done
+Adding protein product for ENST00000643790
+Platform: timer mark    57.274    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    57.275    0.001    ENS seqproxy
+Response code 400
+Platform: timer mark    57.492    0.217    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000643790?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000643790
+Platform: timer mark    58.611    1.119    ESP. getdataseq
+Platform: timer mark    58.611    0.0    ESP. getxref
+Platform: timer mark    59.016    0.404    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000646427?content-type=application/json&all_levels=1
+Platform: timer mark    59.017    0.001    ESP. seqprox done
+Adding protein product for ENST00000646427
+Platform: timer mark    59.163    0.145    EnsembleRestClient.getJSON https://rest.ensembl.org/info/ping?content-type=application/json
+Platform: timer mark    59.164    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    59.164    0.0    ENS seqproxy
+Response code 400
+Platform: timer mark    59.313    0.149    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000646427?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000646427
+Platform: timer mark    60.364    1.051    ESP. getdataseq
+Platform: timer mark    60.364    0.0    ESP. getxref
+Platform: timer mark    60.773    0.408    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000642808?content-type=application/json&all_levels=1
+Platform: timer mark    60.774    0.001    ESP. seqprox done
+Adding protein product for ENST00000642808
+Platform: timer mark    60.775    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    60.775    0.0    ENS seqproxy
+Response code 400
+Platform: timer mark    60.925    0.149    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000642808?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000642808
+Platform: timer mark    61.993    1.068    ESP. getdataseq
+Platform: timer mark    61.993    0.0    ESP. getxref
+Platform: timer mark    62.389    0.394    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000643356?content-type=application/json&all_levels=1
+Platform: timer mark    62.39    0.001    ESP. seqprox done
+Adding protein product for ENST00000643356
+Platform: timer mark    62.392    0.002    EnsemblSeqProx.fetchSeq
+Platform: timer mark    62.392    0.0    ENS seqproxy
+Response code 400
+Platform: timer mark    62.569    0.176    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000643356?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000643356
+Platform: timer mark    63.782    1.213    ESP. getdataseq
+Platform: timer mark    63.782    0.0    ESP. getxref
+Platform: timer mark    64.172    0.389    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000497784?content-type=application/json&all_levels=1
+Platform: timer mark    64.173    0.001    ESP. seqprox done
+Adding protein product for ENST00000497784
+Platform: timer mark    64.175    0.002    EnsemblSeqProx.fetchSeq
+Platform: timer mark    64.176    0.001    ENS seqproxy
+Platform: timer mark    64.375    0.199    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000497784?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark    64.376    0.001    ENS seqproxy2
+Platform: timer mark    64.378    0.002    ESP. getdataseq
+Platform: timer mark    64.379    0.001    ESP. getxref
+Platform: timer mark    64.606    0.227    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSP00000420119?content-type=application/json&all_levels=1
+Platform: timer mark    64.607    0.001    ESP. seqprox done
+Platform: timer mark    65.783    1.176    ESP. getdataseq
+Platform: timer mark    65.784    0.001    ESP. getxref
+Platform: timer mark    65.932    0.147    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000646334?content-type=application/json&all_levels=1
+Platform: timer mark    65.933    0.001    ESP. seqprox done
+Adding protein product for ENST00000646334
+Platform: timer mark    65.934    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    65.935    0.001    ENS seqproxy
+Response code 400
+Platform: timer mark    66.087    0.152    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000646334?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000646334
+Platform: timer mark    67.322    1.235    ESP. getdataseq
+Platform: timer mark    67.323    0.001    ESP. getxref
+Platform: timer mark    67.738    0.415    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000646730?content-type=application/json&all_levels=1
+Platform: timer mark    67.74    0.002    ESP. seqprox done
+Adding protein product for ENST00000646730
+Platform: timer mark    67.741    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    67.741    0.0    ENS seqproxy
+Platform: timer mark    67.915    0.173    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000646730?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark    67.915    0.0    ENS seqproxy2
+Platform: timer mark    67.917    0.002    ESP. getdataseq
+Platform: timer mark    67.917    0.0    ESP. getxref
+Platform: timer mark    68.073    0.155    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSP00000494784?content-type=application/json&all_levels=1
+Platform: timer mark    68.074    0.001    ESP. seqprox done
+Platform: timer mark    69.304    1.23    ESP. getdataseq
+Platform: timer mark    69.305    0.001    ESP. getxref
+Platform: timer mark    69.478    0.173    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000644650?content-type=application/json&all_levels=1
+Platform: timer mark    69.479    0.001    ESP. seqprox done
+Adding protein product for ENST00000644650
+Platform: timer mark    69.628    0.148    EnsembleRestClient.getJSON https://rest.ensembl.org/info/ping?content-type=application/json
+Platform: timer mark    69.628    0.0    EnsemblSeqProx.fetchSeq
+Platform: timer mark    69.629    0.001    ENS seqproxy
+Platform: timer mark    69.825    0.196    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000644650?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark    69.826    0.001    ENS seqproxy2
+Platform: timer mark    69.827    0.001    ESP. getdataseq
+Platform: timer mark    69.828    0.001    ESP. getxref
+Platform: timer mark    69.974    0.145    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSP00000493783?content-type=application/json&all_levels=1
+Platform: timer mark    69.976    0.002    ESP. seqprox done
+Error retrieving protein for ENST00000644650: Index: -1, Size: 1
+Platform: timer mark    71.231    1.255    ESP. getdataseq
+Platform: timer mark    71.233    0.002    ESP. getxref
+Platform: timer mark    71.398    0.165    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000647434?content-type=application/json&all_levels=1
+Platform: timer mark    71.4    0.002    ESP. seqprox done
+Adding protein product for ENST00000647434
+Platform: timer mark    71.4    0.0    EnsemblSeqProx.fetchSeq
+Platform: timer mark    71.402    0.002    ENS seqproxy
+Platform: timer mark    71.581    0.179    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000647434?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark    71.582    0.001    ENS seqproxy2
+Platform: timer mark    71.584    0.002    ESP. getdataseq
+Platform: timer mark    71.585    0.001    ESP. getxref
+Platform: timer mark    71.745    0.159    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSP00000495132?content-type=application/json&all_levels=1
+Platform: timer mark    71.747    0.002    ESP. seqprox done
+Platform: timer mark    73.744    1.997    ESP. getdataseq
+Platform: timer mark    73.744    0.0    ESP. getxref
+Platform: timer mark    73.91    0.164    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000479537?content-type=application/json&all_levels=1
+Platform: timer mark    73.911    0.001    ESP. seqprox done
+Adding protein product for ENST00000479537
+Platform: timer mark    73.912    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    73.912    0.0    ENS seqproxy
+Platform: timer mark    74.088    0.175    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000479537?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark    74.09    0.002    ENS seqproxy2
+Platform: timer mark    74.091    0.001    ESP. getdataseq
+Platform: timer mark    74.092    0.001    ESP. getxref
+Platform: timer mark    74.24    0.148    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSP00000418033?content-type=application/json&all_levels=1
+Platform: timer mark    74.241    0.001    ESP. seqprox done
+Error retrieving protein for ENST00000479537: Index: -1, Size: 1
+Platform: timer mark    75.433    1.192    ESP. getdataseq
+Platform: timer mark    75.433    0.0    ESP. getxref
+Platform: timer mark    75.603    0.169    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000645443?content-type=application/json&all_levels=1
+Platform: timer mark    75.604    0.001    ESP. seqprox done
+Adding protein product for ENST00000645443
+Platform: timer mark    75.606    0.002    EnsemblSeqProx.fetchSeq
+Platform: timer mark    75.606    0.0    ENS seqproxy
+Response code 400
+Platform: timer mark    75.753    0.147    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000645443?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000645443
+Platform: timer mark    77.126    1.373    ESP. getdataseq
+Platform: timer mark    77.126    0.0    ESP. getxref
+Platform: timer mark    77.538    0.412    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000644905?content-type=application/json&all_levels=1
+Platform: timer mark    77.54    0.002    ESP. seqprox done
+Adding protein product for ENST00000644905
+Platform: timer mark    77.54    0.0    EnsemblSeqProx.fetchSeq
+Platform: timer mark    77.541    0.001    ENS seqproxy
+Response code 400
+Platform: timer mark    77.708    0.166    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000644905?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000644905
+Platform: timer mark    78.958    1.25    ESP. getdataseq
+Platform: timer mark    78.958    0.0    ESP. getxref
+Platform: timer mark    79.409    0.45    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000642228?content-type=application/json&all_levels=1
+Platform: timer mark    79.411    0.002    ESP. seqprox done
+Adding protein product for ENST00000642228
+Platform: timer mark    79.412    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    79.412    0.0    ENS seqproxy
+Platform: timer mark    79.571    0.159    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000642228?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark    79.573    0.002    ENS seqproxy2
+Platform: timer mark    79.574    0.001    ESP. getdataseq
+Platform: timer mark    79.574    0.0    ESP. getxref
+Platform: timer mark    79.736    0.161    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSP00000493678?content-type=application/json&all_levels=1
+Platform: timer mark    79.737    0.001    ESP. seqprox done
+Platform: timer mark    81.189    1.452    ESP. getdataseq
+Platform: timer mark    81.19    0.001    ESP. getxref
+Platform: timer mark    81.389    0.198    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000644969?content-type=application/json&all_levels=1
+Platform: timer mark    81.391    0.002    ESP. seqprox done
+Adding protein product for ENST00000644969
+Platform: timer mark    81.563    0.171    EnsembleRestClient.getJSON https://rest.ensembl.org/info/ping?content-type=application/json
+Platform: timer mark    81.564    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    81.565    0.001    ENS seqproxy
+Platform: timer mark    81.739    0.174    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000644969?type=protein&Accept=application/json&content-type=application/json
+Platform: timer mark    81.739    0.0    ENS seqproxy2
+Platform: timer mark    81.741    0.002    ESP. getdataseq
+Platform: timer mark    81.741    0.0    ESP. getxref
+Platform: timer mark    81.905    0.162    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENSP00000496776?content-type=application/json&all_levels=1
+Platform: timer mark    81.907    0.002    ESP. seqprox done
+Platform: timer mark    83.297    1.39    ESP. getdataseq
+Platform: timer mark    83.297    0.0    ESP. getxref
+Platform: timer mark    83.441    0.143    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000644120?content-type=application/json&all_levels=1
+Platform: timer mark    83.442    0.001    ESP. seqprox done
+Adding protein product for ENST00000644120
+Platform: timer mark    83.444    0.002    EnsemblSeqProx.fetchSeq
+Platform: timer mark    83.444    0.0    ENS seqproxy
+Response code 400
+Platform: timer mark    83.601    0.156    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000644120?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000644120
+Platform: timer mark    84.848    1.247    ESP. getdataseq
+Platform: timer mark    84.849    0.001    ESP. getxref
+Platform: timer mark    85.248    0.398    EnsembleRestClient.getJSON https://rest.ensembl.org/xrefs/id/ENST00000642875?content-type=application/json&all_levels=1
+Platform: timer mark    85.249    0.001    ESP. seqprox done
+Adding protein product for ENST00000642875
+Platform: timer mark    85.25    0.001    EnsemblSeqProx.fetchSeq
+Platform: timer mark    85.25    0.0    ENS seqproxy
+Response code 400
+Platform: timer mark    85.401    0.15    EnsembleRestClient.getJSON https://rest.ensembl.org/sequence/id/ENST00000642875?type=protein&Accept=application/json&content-type=application/json
+No protein product found for ENST00000642875
+Platform: timer mark    86.467    1.066    Desktop Finished querying
+Platform: timer mark    86.479    0.012    Desktop Parsing results.
+JSDesktopIconUI SURRAGATE -- NOT IMPLEMENTED YET!
+JSWIndowUI ????
+Platform: timer mark    100.466    13.987    Desktop null
+JSFrameViewer creating new canvas testApplet_canvas4: 700 465
+JSWindowUI windowOpened true
+swingjs.api.Interface creating instance of java.awt.datatransfer.Clipboard
+This is System.out. clear it
+Add ?j2snocore to URL to see full class list; ?j2sdebug to use uncompressed j2s/core files
+get _j2sClassList.txt
+Jalview Test
+X
+Retrieved from ENSEMBL
+X
+Copied 22 sequences to clipboard.
+File
+Edit
+Select
+View
+Annotations
+Format
+Colour
+Calculate
+New Sequence Fetcher
+X
+ENSG00000157764
+Example query: ENSG00000157764
+Enter one or more accession IDs separated by a semi-colon ";"
+Replace commas with semi-colons
+File
+Tools
+Help
+Window

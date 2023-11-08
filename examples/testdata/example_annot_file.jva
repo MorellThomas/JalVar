@@ -1,0 +1,22 @@
+#Comment lines follow the hash symbol
+JALVIEW_ANNOTATION
+SEQUENCE_REF	FER1_MESCR	5
+BAR_GRAPH	Bar Graph 1	<html>an <em>html tooltip</em> for Bar graph 1.</html>	||-100,-|-200,-|-300,-|-400,-|200,+|300,+|150,+
+LINE_GRAPH	Green Values	1.1|2.2|1.3|3.4|0.7|1.4|3.3|2.2|2.1|-1.1|3.2
+LINE_GRAPH	Red Values	2.1|3.2|1.3|-1.4|5.5|1.4|1.3|4.2|-1.1|1.1|3.2
+BAR_GRAPH	Bar Graph	2 1,.|2,*|3,:|4,.|5,*|4,:|3,.|2|1|1|2|3|4|5|4
+NO_GRAPH	Icons 	||||E,Sheet1|E|E||||H,Sheet 2|H|H|H||||||
+NO_GRAPH	Purple Letters	m|y|p|r|o|t|e|i|n
+COLOUR	Bar Graph 2	blue
+COLOUR	Red Values	255,0,0
+COLOUR	Green Values	green
+COLOUR	Purple Letters	151,52,228
+COMBINE	Green Values	Red Values
+GRAPHLINE	Red Values	2.6	threshold	black
+
+SEQUENCE_GROUP	Group_A	30	50	*
+SEQUENCE_GROUP	Group_B	1	351	2-5
+SEQUENCE_GROUP	Group_C	12	14	-1	seq1	seq2	seq3
+PROPERTIES	Group_A	description=This is the description	colour=Helix Propensity	pidThreshold=0	outlineColour=red	displayBoxes=true	displayText=false	colourText=false	textCol1=black	textCol2=black	textColThreshold=0
+PROPERTIES	Group_B	outlineColour=green	colour=None
+PROPERTIES	Group_C	colour=Clustal

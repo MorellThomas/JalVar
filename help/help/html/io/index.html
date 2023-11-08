@@ -1,0 +1,101 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Input/Output</title>
+</head>
+<body>
+  <p>
+    <strong>Input</strong>
+  </p>
+  <p>Jalview can read alignment files in any of the following
+    standard formats:</p>
+  <p>
+    <em>Fasta (Pearson), GCG-MSF, ALN/ClustalW, AMPS Block file,
+      NBRF/PIR (including MODELLER variant), Pfam/Stockholm</em>
+  </p>
+  <p>
+    Additionally, whole sets of coloured and annotated alignments and
+    trees can be read from a <a href="../features/jalarchive.html">Jalview
+      (jar) format</a> file using <strong>Desktop&#8594;Load
+      Project</strong>.
+  </p>
+  <p>
+    Press &quot;Control O&quot; to open a file browser, or use the <strong>Desktop&#8594;Input
+      Alignment</strong> menu to read in alignments from:
+  </p>
+  <ul>
+    <li><strong>From File</strong>: the local file system</li>
+    <li><strong>From URL</strong>: the web (please use the full
+      url)</li>
+    <li><strong>from Textbox</strong>: a copy and paste into the
+      &quot;Cut &amp; Paste&quot; text window</li>
+  </ul>
+  <p>
+    Jalview will try to recognise the file type automatically (using
+    some special <a href="fileformats.html">features</a>). If a file is
+    of an unknown format or there is any other error reading the
+    alignment file then you will be given an error message. If you think
+    Jalview really should be able to read your file, then send an email
+    containing the problem file to help@jalview.org.
+  </p>
+  <p>
+    Jalview can also read Jalview specific files for <a
+      href="../features/featuresFormat.html">sequence features</a>
+    and <a href="../features/annotationsFormat.html">alignment
+      annotation</a>.
+  </p>
+  <p>
+    <strong>Output</strong>
+  </p>
+  <p>
+    Each alignment, whether it is the original or an edited version may
+    be saved in the standard formats using <strong>File&#8594;Save
+      As</strong>
+  </p>
+  <p>
+    <em>Fasta (Pearson), GCG-MSF, ALN/ClustalW, AMPS Block file,
+      NBRF/PIR, Pfam/Stockholm</em>
+  </p>
+  Jalview will by default append the sequence start and end to each
+  sequence name, in the format /start-end. If you do not want this
+  behaviour for a particular file output, open the &quot;Output&quot;
+  tab on the
+  <a href="../features/preferences.html">Preferences</a> window where
+  you can select which file formats you want to append the start and end
+  sequence positions for. In the case of PIR format, the output tab also
+  contains a switch for turning on the output of Modeller style
+  structured description lines.
+  <p>
+    Quantitative and symbolic <a href="../features/annotation.html">alignment
+      annotation</a> can be exported as a comma separated value file by
+    right clicking on an annotation row under the alignment.
+  </p>
+  <p>
+    You can also save the current set of alignments and their colours,
+    annotations and trees in a Jalview archive file using <strong>Desktop&#8594;Save
+      project</strong>.<br>The project data includes the state of any open
+    structure viewers (Jmol, and <em>since Jalview 2.9</em> also Chimera
+    and Varna).
+  </p>
+  <p>&nbsp;</p>
+</body>
+</html>

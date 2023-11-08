@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 (http://www.altova.com) by Charles (student) -->
+<xsd:schema xmlns="http://www.ebi.ac.uk/pdbe/docs/sifts/eFamily.xsd" xmlns:data="http://www.ebi.ac.uk/pdbe/docs/sifts/dataTypes.xsd" xmlns:align="http://www.ebi.ac.uk/pdbe/docs/sifts/alignment.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" targetNamespace="http://www.ebi.ac.uk/pdbe/docs/sifts/eFamily.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0">
+	<xsd:include schemaLocation="alignment.xsd"/>
+	<xsd:import namespace="http://www.ebi.ac.uk/pdbe/docs/sifts/dataTypes.xsd" schemaLocation="dataTypes.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation>The eFamily schema is designed to allow the members of the eFamily consortium to exchange domain definitions.  As members of the different databases use different underlying data (languages) so we need a way of getting between the co-ordinates systems. MSD are to provide the mapping between the co-ordinates (translator), hence the reason for the incorporation of the mappings into the core of the schema. 
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="entry">
+		<xsd:annotation>
+			<xsd:documentation>The entry represents a database entry.  This schema is currently designed for domain and mapping entires.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="listDB" minOccurs="1" maxOccurs="1">
+					<xsd:complexType mixed="false">
+						<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+							<xsd:element name="db">
+								<xsd:complexType>
+									<xsd:attributeGroup ref="data:listdbRef"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="entryDetail" minOccurs="0" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>This is a free text field that allows someone to attach some sort of documentation to the entry</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType mixed="true">
+						<xsd:attributeGroup ref="data:detail"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="entity" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation> An entity is a single domain definition.  In the case of SCOP, there is only one entity per entry, but in the case of Pfam, an entry is a collection of domains/entities.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="entityDetail" minOccurs="0" maxOccurs="unbounded">
+								<xsd:annotation>
+									<xsd:documentation>This is a free text field that allows someone to attach some sort of documentation to the entity</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType mixed="true">
+									<xsd:attributeGroup ref="data:detail"/>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="segment" maxOccurs="unbounded">
+								<xsd:annotation>
+									<xsd:documentation>An entity may not comprise of a single continuous region. This may be used to a chimeric structure or a discontinuous domain</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="listResidue" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Contains a set of residues objects</xsd:documentation>
+											</xsd:annotation>
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="residue" maxOccurs="unbounded">
+														<xsd:annotation>
+															<xsd:documentation>A single residue object.  This object can contain information on what the residue is,  general annotation, the numbering system and co-ordinate mapping </xsd:documentation>
+														</xsd:annotation>
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="crossRefDb" minOccurs="0" maxOccurs="unbounded">
+																	<xsd:annotation>
+																		<xsd:documentation>Allows the linking between different co-ordinate systems</xsd:documentation>
+																	</xsd:annotation>
+																	<xsd:complexType>
+																		<xsd:attributeGroup ref="data:dbRef"/>
+																		<xsd:attributeGroup ref="data:resRef"/>
+																		<xsd:attribute name="dbChainId" type="data:chainId" use="optional"/>
+																	</xsd:complexType>
+																</xsd:element>
+																<xsd:element name="residueDetail" minOccurs="0" maxOccurs="unbounded">
+																	<xsd:annotation>
+																		<xsd:documentation>This allows one to add information to the residues.  For example whether it is observed or whether it is an active site residue</xsd:documentation>
+																	</xsd:annotation>
+																	<xsd:complexType mixed="true">
+																		<xsd:attributeGroup ref="data:detail"/>
+																	</xsd:complexType>
+																</xsd:element>
+															</xsd:sequence>
+															<xsd:attributeGroup ref="data:resRef"/>
+															<xsd:attributeGroup ref="data:listdbRef"/>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="listMapRegion" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Allows cross referencing to another database.  For example, one may wish to include which the taxon that a mapping or sequence corresponds</xsd:documentation>
+											</xsd:annotation>
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="mapRegion" maxOccurs="unbounded">
+														<xsd:annotation>
+															<xsd:documentation>Defines the database that is being cross mapped to</xsd:documentation>
+														</xsd:annotation>
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="db">
+																	<xsd:annotation>
+																		<xsd:documentation>Contains the mapping coordinates.  The start end tags refer to the master databse co-ordinates.  The tags prefixed with sys refer to the database being mapped to.</xsd:documentation>
+																	</xsd:annotation>
+																	<xsd:complexType>
+																		<xsd:sequence>
+																			<xsd:element name="dbDetail" minOccurs="0" maxOccurs="unbounded">
+																				<xsd:complexType mixed="true">
+																					<xsd:attributeGroup ref="data:detail"/>
+																				</xsd:complexType>
+																			</xsd:element>
+																		</xsd:sequence>
+																		<xsd:attributeGroup ref="data:dbRef"/>
+																		<xsd:attribute name="dbChainId" type="data:dbChainId" use="optional"/>
+																		<xsd:attributeGroup ref="data:region"/>
+																	</xsd:complexType>
+																</xsd:element>
+															</xsd:sequence>
+															<xsd:attributeGroup ref="data:region"/>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="segmentDetail" minOccurs="0" maxOccurs="unbounded">
+											<xsd:annotation>
+												<xsd:documentation>This is a free text field that allows someone to attach some sort of documentation to the segment</xsd:documentation>
+											</xsd:annotation>
+											<xsd:complexType mixed="true">
+												<xsd:attributeGroup ref="data:detail"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="segId" type="xsd:string" use="required"/>
+									<xsd:attributeGroup ref="data:region"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="type" type="data:entityType" use="required"/>
+						<xsd:attribute name="entityId" type="xsd:string" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element ref="alignment" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attributeGroup ref="data:dbRef"/>
+			<xsd:attribute name="date" type="xsd:date" use="required"/>
+			<xsd:attribute name="dbEntryVersion" type="xsd:date" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

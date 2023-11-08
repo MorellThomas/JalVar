@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.util.MessageManagerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:13:35" hostname="wer3eng" time="0.001">
+  <properties/>
+  <testcase name="testFormatMessage_invalid" classname="jalview.util.MessageManagerTest" time="0.001"/>
+  <testcase name="testGetStringOrReturn" classname="jalview.util.MessageManagerTest" time="0.0"/>
+  <testcase name="testGetString_invalid" classname="jalview.util.MessageManagerTest" time="0.0"/>
+  <system-out><![CDATA[WARN: I18N missing: en_GB	label.rubbish
+INFO: I18N missing key with root label.rubbish: en_GB	label.rubbishrubbishdefault
+INFO: I18N missing: en_GB	label.rubbish
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

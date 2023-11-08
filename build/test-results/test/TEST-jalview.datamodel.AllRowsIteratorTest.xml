@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.datamodel.AllRowsIteratorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:13:44" hostname="wer3eng" time="0.001">
+  <properties/>
+  <testcase name="testHasNextAndNext" classname="jalview.datamodel.AllRowsIteratorTest" time="0.0"/>
+  <testcase name="testLastNext" classname="jalview.datamodel.AllRowsIteratorTest" time="0.001"/>
+  <testcase name="testOneElement" classname="jalview.datamodel.AllRowsIteratorTest" time="0.0"/>
+  <testcase name="testRemove" classname="jalview.datamodel.AllRowsIteratorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

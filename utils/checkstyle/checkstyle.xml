@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+<!--
+	Jalview Checkstyle configuration file
+-->
+<module name="Checker">
+	<!-- Default severity is warning -->
+	<property name="severity" value="warning"/>
+	<property name="fileExtensions" value="java,properties"/>
+
+	<!-- 
+		Add any metrics that you wish to suppress to the following file.
+	-->
+	<module name="SuppressionFilter">
+		<property name="file" value="${basedir}/utils/checkstyle/checkstyle-suppress.xml"/>
+	</module>
+
+	<!-- 
+		Check language bundles have the same keys and no duplicates
+		(ensure Checkstyle is configured to scan non-source files)
+	 -->
+	<module name="Translation">
+		<property name="fileExtensions" value="properties"/>
+		<property name="baseName" value="^Messages.*$"/>
+	</module>
+	<module name="UniqueProperties">
+	    <property name="fileExtensions" value="properties" />
+		<property name="severity" value="error"/>
+	</module>
+
+	<!--
+		Maximum line count for source files
+		(note this can't be inside TreeWalker)
+	-->
+	<module name="FileLength">
+		<property name="max" value="1200"/>
+		<property name="fileExtensions" value="java"/>
+	</module>
+	
+	<module name="TreeWalker">
+
+		<property name="tabWidth" value="4"/>
+
+		<!-- 
+			Allow suppression of rules by comments, e.g.:
+			// CHECKSTYLE.OFF: ParameterNumber
+			..method declaration
+			// CHECKSTYLE.ON: ParameterNumber
+		-->
+		<module name="SuppressionCommentFilter">
+			<property name="offCommentFormat" value="CHECKSTYLE.OFF\: ([\w\|]+)"/>
+			<property name="onCommentFormat" value="CHECKSTYLE.ON\: ([\w\|]+)"/>
+			<property name="checkFormat" value="$1"/>
+		</module>
+
+	<!-- ****************************** -->
+	<!--         NAMING STANDARDS       -->
+	<!-- ****************************** -->
+		
+		<!--
+			Naming convention for member fields. Start with (optional) underscore, then
+			lower case, then camel case; no internal underscores
+		-->
+		<module name="MemberName">
+			<property name="format" value="^_?[a-z][a-zA-Z0-9]*$"/>
+		</module>
+
+		<!-- 
+			Naming convention for methods. Start with (optional) underscore, then
+			lower case, then camel case; no internal underscores
+		-->
+		<module name="MethodName">
+			<property name="format" value="^_?[a-z]([a-zA-Z0-9]+)*$"/>
+		</module>
+
+		<!--
+			Name pattern for local final variables.
+		-->
+		<module name="LocalFinalVariableName">
+			<property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+		</module>
+
+		<!--
+			Name pattern for local variables
+		-->
+		<module name="LocalVariableName">
+			<property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+		</module>
+		
+		<!--
+			Name pattern for constants (static final fields)
+		-->
+		<module name="ConstantName">
+			<property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+		</module>
+
+		<!--
+			Name pattern for parameters (note no underscores allowed)
+		-->
+		<module name="ParameterName">
+			<property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+		</module>
+		
+		<!--
+			Name pattern for static (non-final) fields
+		-->
+		<module name="StaticVariableName">
+			<property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
+		</module>
+		
+		<!--
+			Name pattern for classes
+		-->
+		<module name="TypeName">
+			<property name="format" value="[A-Z][a-zA-Z0-9]*$"/>
+			<property name="tokens" value="CLASS_DEF"/>
+		</module>
+		
+		<!--
+			Name pattern for interfaces. All interfaces names must end with 'I'.
+			** currently suppressed in checkstyle-suppress.xml **
+		-->
+		<module name="TypeName">
+			<property name="id" value="InterfaceNaming"/>
+			<property name="format" value="^[A-Z][a-zA-Z0-9]*I$"/>
+			<property name="tokens" value="INTERFACE_DEF"/>
+			<message key="name.invalidPattern" value="Interface names should end in a I"/>
+		</module>
+
+		<!--
+			Java package name pattern 
+		-->
+		<module name="PackageName">
+			<property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$"/>
+		</module>
+
+	<!-- ****************************** -->
+	<!--         LAYOUT AND STYLE       -->
+	<!-- ****************************** -->
+
+		<!-- 
+			Only one top level type per source file
+		-->
+		<module name="OuterTypeNumber"/>
+		
+		<!-- 
+		 	Ensure a class has a package declaration
+		 -->
+		<module name="PackageDeclaration"/>
+		
+		<!--
+			see http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-141855.html#1852
+			1. Class (static) variables: public, protected, package, private
+	   		2. Instance variables: public, protected, package, private
+			3. Constructors
+			4. Methods
+		 -->
+		<module name="DeclarationOrder"/>
+		
+		<!-- 
+			Modifier order should conform to JLS
+			see http://checkstyle.sourceforge.net/config_modifier.html#ModifierOrder 
+			public protected private abstract static final transient volatile synchronized native strictfp		
+		-->
+		<module name="ModifierOrder"/>
+		
+		<!-- 
+			Declare variables in separate statements, for readability and bug avoidance
+		 -->
+		<module name="MultipleVariableDeclarations"/>
+		
+		<!-- 
+			Don't have more than one statement on a line
+			(code formatting on save may enforce this anyway)
+		 -->
+		<module name="OneStatementPerLine"/>
+
+		<!-- 
+			Declare variables close to their point of first use 
+			(doesn't handle variables used inside loops very well) 
+		-->
+		<module name="VariableDeclarationUsageDistance">
+			<property name="allowedDistance" value="5" />
+			<message key="variable.declaration.usage.distance.extend"
+				value="Distance between declaration of ''{0}'' and its first use is {1}, suggested maximum is {2}. Consider moving, or make final if it may not be modified." />
+		</module>
+	
+		<!-- 
+			Only use blocks within control statements 
+		-->
+		<module name="AvoidNestedBlocks" />
+
+		<!-- 
+			Require at least a comment within a block. 
+			Note this will accept auto-generated // TODO comments, 
+			(but they should be flagged up by the TodoComment rule) 
+		-->
+		<module name="EmptyBlock">
+			<property name="option" value="text"/>
+		</module>
+		
+		<!-- 
+			Require braces round all code blocks within if/else/for/do/while 
+		-->
+		<module name="NeedBraces"/>
+		
+		<!--
+			Disallow empty ';' statements
+		-->
+		<module name="EmptyStatement"/>
+
+		<!-- 
+			Maximum number of return statements for a method
+		-->
+		<module name="ReturnCount">
+			<property name="max" value="4"/>
+		</module>
+
+		<!-- 
+			Don't use modifiers in contexts where their value is not optional,
+			for example all interface methods are always public
+			see http://checkstyle.sourceforge.net/config_modifier.html#RedundantModifier
+		-->
+		<module name="RedundantModifier"/>
+		
+		<!-- 
+			Variables whose value is not modified should be declared final, both to show the
+		    program's intent, and to  allow compiler optimisation
+		    ** currently suppressed in checkstyle-suppress.xml **
+		 -->		
+		<module name="FinalLocalVariable">
+			<property name="tokens" value="VARIABLE_DEF" />
+		</module>
+
+		<!-- 
+			Disallows shorthand of assigning values within an expression 
+		-->
+		<module name="InnerAssignment"/>
+
+		<!-- 
+			Use Java style array declarations to assist in readability 
+		-->
+		<module name="ArrayTypeStyle"/>
+
+		<!-- 
+			Use L not l to define a long constant 
+		-->
+		<module name="UpperEll"/>
+
+	<!-- ****************************** -->
+	<!--           SIZE LIMITS          -->
+	<!-- ****************************** -->
+
+		<!--
+			Maximum line count for methods
+		-->
+		<module name="MethodLength">
+			<property name="tokens" value="METHOD_DEF"/>
+			<property name="max" value="50"/>
+			<property name="countEmpty" value="false"/>
+		</module>
+
+		<!--
+			Maximum statement count for methods, constructors,
+			instance initialisation and static initialisation blocks
+		-->
+		<module name="ExecutableStatementCount">
+			<property name="max" value="30"/>
+			<property name="tokens" value="METHOD_DEF"/>
+		</module>
+		<module name="ExecutableStatementCount">
+			<property name="max" value="30"/>
+			<property name="tokens" value="CTOR_DEF"/>
+		</module>
+		<module name="ExecutableStatementCount">
+			<property name="max" value="4"/>
+			<property name="tokens" value="INSTANCE_INIT"/>
+		</module>
+		<module name="ExecutableStatementCount">
+			<property name="id" value="NoStaticInitialization"/>
+			<property name="max" value="0"/>
+			<property name="tokens" value="STATIC_INIT"/>
+		</module>
+
+		<!--
+			Maximum parameter count for methods 
+		-->
+		<module name="ParameterNumber">
+			<property name="max" value="5"/>
+		</module>
+
+		<!--
+			Maximum line length for anonymous inner classes
+		-->
+		<module name="AnonInnerLength">
+			<property name="max" value="40"/>
+		</module>
+
+	<!-- ****************************** -->
+	<!--            IMPORTS             -->
+	<!-- ****************************** -->
+
+		<!-- 
+			Ensures that there are no redundant or unused imports.
+		     Should be handled by Save actions if using Eclipse 
+		-->
+		<module name="RedundantImport"/>
+		<module name="UnusedImports"/>
+
+		<!--
+			Disallow * imports; may also be enforced by IDE Save Actions
+		-->
+		<module name="AvoidStarImport"/>
+
+		<!-- 
+			Disallow import of sun.* packages as they are not portable 
+		-->
+		<module name="IllegalImport"/>
+
+		<!--
+			rules as to what packages each package may (not) import
+			see http://checkstyle.sourceforge.net/config_imports.html#ImportControl 
+		-->
+		<module name="ImportControl">
+		    <property name="file" value="${basedir}/utils/checkstyle/import-control.xml"/>
+			<property name="severity" value="error"/>
+		</module>
+		
+	<!-- ****************************** -->
+	<!--         CATCH and THROW        -->
+	<!-- ****************************** -->
+
+		<!-- 
+			Disallow catch of Exception, RunTimeException or Error 
+		-->
+		<module name="IllegalCatch"/>
+
+		<!-- 
+			Disallow throw of Exception, RunTimeException or Error 
+		-->
+		<module name="IllegalThrows"/>
+
+	<!-- ****************************** -->
+	<!--          CODING CHECKS         -->
+	<!-- ****************************** -->
+
+		<!-- 
+			Check for use of factory method rather than constructor for specified classes
+			e.g. Boolean.valueOf(true) rather than new Boolean(true)
+		-->
+		<module name="IllegalInstantiation">
+			<property name="classes" value="java.lang.Boolean"/>
+		</module>
+		
+		<!--
+			Check that "string".equals(value) is used rather than value.equals("string")
+		-->
+		<module name="EqualsAvoidNull"/>
+
+		<!--
+			Check that equals() and hashCode() are always overridden together
+		-->
+		<module name="EqualsHashCode"/>
+		
+		<!-- 
+			Require switch statements to include a default 
+		-->
+		<module name="MissingSwitchDefault"/>
+		
+		<!-- 
+			Check that switch default follows all case statements
+		 -->
+		<module name="DefaultComesLast">
+			<property name="severity" value="error"/>
+		</module>
+		
+		<!-- 
+			Disallows fall-through in switch statements 
+			i.e. a case without a break, return, throw or continue 
+			NB a comment with the words "fall[s] through" suppresses this message
+		 -->
+		<module name="FallThrough">
+			<property name="severity" value="error" />
+		</module>
+		
+		<!-- 
+			Warn if boolean expressions can be simplified 
+		-->
+		<module name="SimplifyBooleanExpression"/>
+
+		<!-- 
+			Warn if boolean return expressions can be simplified 
+		-->
+		<module name="SimplifyBooleanReturn"/>
+
+		<!--
+			Classes with only private constructors should be declared final
+		-->
+		<module name="FinalClass"/>
+		
+		<!-- 
+			Classes with only static methods should not be instantiable,
+			so should declare a private default constructor.
+		-->
+		<module name="HideUtilityClassConstructor"/>
+		
+		<!-- 
+			An Interface should declare methods (do not use to define constants only) 
+		-->
+		<module name="InterfaceIsType"/>
+		
+		<!-- 
+			Disallow public fields in classes (other than constants) 
+		-->
+		<module name="VisibilityModifier">
+			<property name="packageAllowed" value="true"/>
+			<property name="allowPublicImmutableFields" value="true"/>
+		</module>
+		
+		<!-- 
+			Checks that a local variable or a parameter does not shadow a field that is defined in the same class.
+			Note this should also be configured as a compiler warning in the IDE. 
+		-->
+		<module name="HiddenField"/> 
+
+		<!-- 
+			Check that proper logging is used.
+			This may be suppressed in the class that provides logging functions.
+		-->
+		<module name="RegexpSinglelineJava">
+			<property name="id" value="NoSysout" />
+			<property name="format" value="System\.out\.println"/>
+			<property name="ignoreComments" value="true"/>
+			<message key="regexp.exceeded" value="Should use jalview.bin.Cache.log for logging"/>
+		</module>
+		<module name="RegexpSinglelineJava">
+			<property name="id" value="NoSyserr" />
+			<property name="format" value="System\.err\.println"/>
+			<property name="ignoreComments" value="true"/>
+			<message key="regexp.exceeded" value="Should use jalview.bin.Cache.log for logging"/>
+		</module>
+
+		<!--
+			Checks that classes that define a covariant equals() method also override 
+			method equals(java.lang.Object).
+		 -->
+		<module name="CovariantEquals"/>
+		
+		<!-- 
+			Checks that there are no "magic numbers" (numeric literals) 
+	 	-->
+		<module name="MagicNumber">
+			<property name="ignoreNumbers" value="-1,0,1,2"/>
+		</module>
+		
+		<!-- 
+			Check that  loop control variables are not modified inside the for block
+		 -->
+		<module name="ModifiedControlVariable">
+		</module>
+		
+		<!-- 
+			Checks that string literals are not used with == or !=.
+		 -->
+		<module name="StringLiteralEquality">
+		</module>
+		
+		<!-- 
+			Don't override clone - it never works! 
+		 -->
+		<module name="NoClone"/>
+		
+		<!-- 
+			Checks that clone() invokes super.clone()
+			(for classes that break the NoClone rule)
+		 -->
+		<module name="SuperClone"/>
+		
+		<!-- 
+			Checks that finalize() invokes super.finalize()
+		 -->
+		<module name="SuperFinalize"/>
+		
+		<!-- 
+			Disallow assignment of parameters.
+		 -->
+		<module name="ParameterAssignment"/>
+
+		<!-- 
+			Checks for multiple occurrences of the same string literal within a single file.
+			NB - does not check for the same string in different files.
+		 -->
+		<module name="MultipleStringLiterals">
+			<property name="allowedDuplicates" value="1"/>
+		</module>
+		
+		<!-- 
+			Checks that exceptions are immutable (have only final fields)
+		 -->
+		<module name="MutableException"/>
+		
+		<!-- 
+		 	A general rule to check for source text tokens that shouldn't be there
+		 	see http://checkstyle.sourceforge.net/apidocs/com/puppycrawl/tools/checkstyle/api/TokenTypes.html
+		 -->
+		<module name="IllegalToken">
+		   <property name="tokens" value="LITERAL_ASSERT"/>
+		</module>
+
+	<!-- ****************************** -->
+	<!--           COMPLEXITY           -->
+	<!-- ****************************** -->
+		
+		<!-- 
+			Restrict the number of number of &&, ||, &, |  and ^ in an expression.
+			Note that the operators & and | are not only integer bitwise operators, they are also the 
+			non-shortcut versions of the boolean operators && and ||.
+		 -->
+		<module name="BooleanExpressionComplexity">
+			<property name="max" value="3"/>
+		</module>
+		
+		<!-- 
+			This metric measures the number of instantiations of other classes within the given class. 
+			The higher the DAC, the more complex the data structure of the system.
+		 -->
+		<module name="ClassDataAbstractionCoupling">
+			<property name="max" value="7"/>
+		</module>
+		
+		<!-- 
+			The number of other classes a class relies on. A high number indicates over-complex
+			class interdependencies that might benefit from refactoring.
+		 -->
+		<module name="ClassFanOutComplexity">
+    		<property name="max" value="10"/>
+    	</module>
+		
+		<!-- 
+			Checks cyclomatic complexity against a specified limit. The complexity is a measure 
+			of the minimum number of possible paths through the source and therefore the number of required 
+			tests. Consider re-factoring if at or above 10.
+		 -->
+		<module name="CyclomaticComplexity">
+			<property name="max" value="15"/>
+		</module>
+		
+		<!-- 
+			The NPATH metric computes the number of possible execution paths through a function. It takes 
+			into account the nesting of conditional statements and multi-part boolean expressions 
+			(e.g., A && B, C || D, etc.).
+		 -->
+		<module name="NPathComplexity">
+			<property name="max" value="200"/>
+		</module>
+
+		<!-- 
+			Maximum number of throws statements in a method
+		 -->
+		<module name="ThrowsCount">
+			<property name="max" value="2"/>
+		</module>
+		
+		<!-- 
+			Maximum if-else depth
+		 -->
+		<module name="NestedIfDepth">
+			<property name="max" value="4"/>
+		</module>
+
+		<!-- 
+			Restricts nested try blocks to a specified depth. 
+		 -->
+		<module name="NestedTryDepth">
+			<property name="max" value="2"/>
+		</module>
+
+	<!-- ****************************** -->
+	<!--              TODO              -->
+	<!-- ****************************** -->
+
+		<!-- 
+			Checks for uncommented main() methods (debugging leftovers)
+		 -->
+		<module name="UncommentedMain"/>
+
+		<!-- 
+			Check for TODO and similar comments 
+	 	-->
+		<module name="TodoComment">
+			<property name="format" value="(TODO)|(FIXME)"/>
+			<message key="todo.match" value="TODO or FIXME comment"/>
+		</module>
+
+		<module name="TodoComment">
+			<property name="format" value="DOCUMENT ME"/>
+			<message key="todo.match" value="Documentation incomplete"/>
+		</module>
+
+	</module>
+</module>

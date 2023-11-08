@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.urls.UrlLinkDisplayTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:00" hostname="wer3eng" time="0.001">
+  <properties/>
+  <testcase name="getValue" classname="jalview.urls.UrlLinkDisplayTest" time="0.0"/>
+  <testcase name="testDescription" classname="jalview.urls.UrlLinkDisplayTest" time="0.0"/>
+  <testcase name="testDisplayColumnNames" classname="jalview.urls.UrlLinkDisplayTest" time="0.0"/>
+  <testcase name="testGetSetValue" classname="jalview.urls.UrlLinkDisplayTest" time="0.0"/>
+  <testcase name="testIsEditable" classname="jalview.urls.UrlLinkDisplayTest" time="0.001"/>
+  <testcase name="testName" classname="jalview.urls.UrlLinkDisplayTest" time="0.0"/>
+  <testcase name="testUrl" classname="jalview.urls.UrlLinkDisplayTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

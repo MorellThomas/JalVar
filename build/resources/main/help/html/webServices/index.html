@@ -1,0 +1,89 @@
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<html>
+<head>
+<title>Web Services</title>
+</head>
+<body>
+  <p>
+    <strong>Web services</strong>
+  </p>
+
+  <p>Jalview includes clients for a variety of web services for both
+    bioinformatic data retrieval and analysis.
+  <ul>
+    <li>The <a href="../features/seqfetch.html">Sequence
+        Fetcher</a> utilises web services for sequence, alignment and
+      structure retrieval provided by the European Bioinformatics
+      Institute (EBI) and Distributed Annotation System servers that are
+      capable of serving sequences.
+    </li>
+		<li>The <a href="dbreffetcher.html">Database Reference
+				Fetcher</a> transfers database references and annotation from the public
+			sequence databases.
+		</li>
+		<li>The <strong>Web Services</strong> menu in each alignment
+      window also provides access to the following:
+      <ul>
+        <li>Programs for <a href="msaclient.html">multiple
+            sequence alignment</a>, made available <em>via</em> <a
+          href="JABAWS.html">Java Bioinformatic Analysis
+            Web Service (JABAWS)</a> servers.
+        </li>
+        <li>Jalview SOAP Web Services for <a href="jnet.html">secondary
+            structure prediction</a> based at the University of Dundee.
+        </li>
+        <li>Services for alignment analysis, such as <a
+          href="shmr.html">Multi-Harmony</a>.
+      </ul>
+      <p>
+        <strong>Web Service Dialog Box</strong>
+      </p> <img src="clwqueued.gif">
+      <p>This dialog box is displayed when a web service job is
+        submitted. It gives the name of the service and any method
+        citation information, and monitors the progress of the
+        calculation. The cancel button will permanently cancel the job,
+        but this is only possible for some services.</p> The <a
+      href="webServicesPrefs.html">Web Services Preference
+        panel</a> controls the display and appearance of the submission and
+      analysis services in the <strong>Web Services</strong> menu.
+    </li>
+    <li>If Jalview encounters problems accessing any services, it
+      may display a <a href="webServicesPrefs.html#wswarnings">warning
+        dialog box</a> (this can be turned off using the web services
+      preferences tab).
+    </li>
+  </ul>
+  </p>
+  <p>
+    <strong>More about Jalview's Web Services</strong> <br>
+    Jalview's distributed computations utilise <a
+      href="http://en.wikipedia.org/wiki/SOAP">SOAP</a> and <a
+      href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>
+    web services exposing sequence alignment, analysis, and secondary
+    structure prediction programs. Originally, Jalview 2's services were
+    maintained by the Barton group at the University of Dundee, and ran
+    programs on the Life Sciences High-performance Computing Cluster.
+    With the advent of <a href="http://www.compbio.dundee.ac.uk/jabaws">JABAWS</a>,
+    however, it is possible for anyone to host Jalview web services.
+  </p>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<title>Jalview Command Line Arguments (pre 2.11.3.0) - DEPRECATED</title>
+<body>
+  <p>
+    <strong>The Jalview Executable's Command Line Arguments (pre 2.11.3.0) - DEPRECATED</strong>
+  </p>
+
+  <table border="1">
+  <tr><td>
+  <em>
+  This page describes the command line arguments used pre 2.11.3.0 (released mid 2023).
+  <br/>
+  Whilst these arguments will be supported for some versions after 2.11.3.0, they are now deprecated
+  and will be removed at some time in the future.
+  </em>
+  </td></tr>
+  </table>
+
+
+  See
+  <a href="commandline.html">running Jalview from the command line</a>
+  for more information.
+  <br />
+  <br />Jalview processes arguments on the command line sequentially. If
+  you would like to pass a <a href="jvlfiles.html">'JVL' file</a> containing
+  <a href="../memory.html">memory settings</a> or any other launch
+  parameters, then include it at the beginning of the command line to
+  ensure they are processed before any remaining arguments.
+  <br>
+  Typical command line execution follows the following pattern:
+  <pre>
+  jalview -open &lt;Alignment File/URL&gt; [additional import arguments] [export arguments]
+  </pre>
+  
+  <table width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="27%"><div align="center">-nodisplay</div></td>
+      <td width="73%"><div align="left">Run Jalview without
+          User Interface. (automatically disables questionnaire, version
+          and usage stats checks)</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-nowebservicediscovery</div></td>
+      <td><div align="left">Do not query configured servers to
+          discover web services (<em>Since 2.11.2.0</em>)</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-open FILE/URL</div></td>
+      <td><div align="left">Specify the alignment file to
+          open or process by providing additional arguments.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-props FILE/URL</div></td>
+      <td><div align="left">Use the given Jalview properties
+          file instead of users default.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-setprop PROPERTY=value</div></td>
+      <td><div align="left">(JalviewJS ONLY) sets the given
+          property to the given value</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-features FILE/URL</div></td>
+      <td><div align="left">
+          <p>
+            Use the given file to add sequence features to an alignment.
+            See <a href="featuresFormat.html" target="NEW">Features
+              File</a> (Known as Groups file prior to 2.08) description.
+          </p>
+
+        </div></td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">-colour COLOURSCHEME</div>
+      </td>
+      <td>Set the colourscheme for the alignment. This can be any
+        of the built-in colourschemes, a name of a predefined
+        colourscheme (defined in the Jalview properties file), or an
+        'inline' colourscheme (see the applet's colour parameter for
+        more information).</td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">-annotations FILE/URL</div>
+      </td>
+      <td>Add precalculated annotations to the alignment. See <a
+        href="annotationsFormat.html" target="NEW">Annotation
+          File</a> description.
+      </td>
+    </tr>
+        <tr>
+      <td>
+        <div align="center">-no-annotation</div>
+      </td>
+      <td>Do not display annotation below the alignment. 
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <div align="center">-tree FILE/URL</div>
+      <td>
+        <div align="left">Load the given newick format tree file
+          onto the alignment</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">-questionnaire URL</div>
+      <td>
+        <div align="left">Queries the given URL for information
+          about any Jalview user questionnaires</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">-noquestionnaire</div>
+      <td>
+        <div align="left">Turn off questionnaire check</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">-nonews</div>
+      <td>
+        <div align="left">
+          Disable check for <a href="../webServices/newsreader.html">Jalview
+            news</a> on startup (not recommended other than for classroom /
+          demo usage)
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">-nousagestats</div>
+      <td>
+        <div align="left">Turn off google analytics usage tracking</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">-[no]sortbytree</div>
+      <td>
+        <div align="left">Enable or disable automatic sorting of
+          associated view when a new tree is displayed</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">-groovy FILE/URL</div>
+      <td>
+        <div align="left">Execute groovy script in FILE (where
+          FILE may be 'STDIN' to read from the standard input) after all
+          other arguments have been processed</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">-jabaws URL</div>
+      <td>
+        <div align="left">Specify the URL of the preferred JABAWS
+          server</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center">-fasta FILE</div>
+      </td>
+
+      <td>
+        <div align="left">Create alignment file FILE in Fasta
+          format.</div>
+      </td>
+    </tr>
+    <tr>
+      <td><div align="center">-clustal FILE</div></td>
+      <td><div align="left">Create alignment file FILE in
+          Clustal format.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-msf FILE</div></td>
+
+      <td><div align="left">Create alignment file FILE in MSF
+          format.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-pileup FILE</div></td>
+      <td><div align="left">Create alignment file FILE in
+          Pileup format.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-pir FILE</div></td>
+
+      <td><div align="left">Create alignment file FILE in PIR
+          format.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-pfam FILE</div></td>
+      <td><div align="left">Create alignment file FILE in
+          PFAM format.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-blc FILE</div></td>
+      <td><div align="left">Create alignment file FILE in BLC
+          format.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-json FILE</div></td>
+      <td><div align="left">Create alignment file FILE in
+          JSON format.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-jalview FILE</div></td>
+
+      <td><div align="left">Create alignment file FILE in
+          Jalview format.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-png FILE</div></td>
+      <td><div align="left">Create PNG image FILE from
+          alignment.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-imgMap FILE</div></td>
+
+      <td><div align="left">Create HTML file FILE with image
+          map of PNG image.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-eps FILE</div></td>
+      <td><div align="left">Create EPS file FILE from
+          alignment.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-svg FILE</div></td>
+      <td><div align="left">Create Scalable Vector Graphics
+          file FILE from alignment.</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">-biojsMSA FILE</div></td>
+      <td><div align="left">Write an HTML page to display
+          the alignment with the <a href="biojsmsa.html">
+          BioJS MSAviewer MSA</a>
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td><div align="center">-jvmmempc=PERCENT</div></td>
+      <td><div align="left"><em>Only available with standalone executable jar or jalview.bin.Launcher.</em>
+          Limit maximum heap size (memory) to PERCENT% of total physical memory detected.
+	  This defaults to 90 if total physical memory can be detected.
+	  See <a href="../memory.html">Memory usage settings for Jalview</a> for more details.
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td><div align="center">-jvmmemmax=MAXMEMORY</div></td>
+      <td><div align="left"><em>Only available with standalone executable jar or jalview.bin.Launcher.</em>
+          Limit maximum heap size (memory) to MAXMEMORY. MAXMEMORY can be specified in bytes, kilobytes(k), megabytes(m),
+	  gigabytes(g) or if you're lucky enough, terabytes(t).
+	  This defaults to 32g if total physical memory can be detected, or to 8g if total physical memory cannot be detected.
+	  See <a href="../memory.html">Memory usage settings for Jalview</a> for more details.
+          </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

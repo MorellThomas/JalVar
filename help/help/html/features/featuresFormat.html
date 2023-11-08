@@ -1,0 +1,311 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<meta name="generator" content="HTML Tidy, see www.w3.org">
+<title>Sequence Features File</title>
+</head>
+<body>
+  <p>
+    <strong>Sequence Features File</strong>
+  
+  <p>
+  
+  <p>The Sequence features File provides a simple way of getting
+    your own sequence features into Jalview. It also allows feature
+    display styles and filters to be saved and imported to another
+    alignment. Users familiar with the earliest versions of Jalview will
+    know that features files were originally termed 'groups' files, and
+    that the format was was designed as a space efficient format to
+    allow sequence features to be rendered in the Jalview applet.</p>
+
+  <p>
+    Features files are imported into Jalview in the following ways:<br>
+  
+  <ul>
+    <li>from the command line <pre>
+<strong> --features &lt;<em>Features filename</em>&gt;</strong>
+</pre>
+    </li>
+
+    <li>Dragging a features file onto an alignment window</li>
+
+    <li>Via the &quot;Load Features / Annotations&quot; entry in
+      the <strong>File</strong> menu of an alignment window.
+    </li>
+  </ul>
+
+  <p>
+    <strong>Sequence Features File Format</strong>
+  </p>
+  <p>
+    A features file is a simple ASCII text file, where each line
+    contains tab separated text fields. <strong>No comments are
+      allowed</strong>. Its structure consists of three blocks:
+  </p>
+  <ul>
+    <li><a href="#colourdefs">Feature Colour Specifications</a>
+      define how features of a particular type are rendered.</li>
+    <li><a href="#filterdefs">Feature Filters</a> provide a way of
+      excluding features of a particular type from display and analysis.
+      (new in Jalview 2.11)</li>
+    <li><a href="#featuredef">Sequence Feature definitions</a> -
+      tab separated fields that describe groups of positional and
+      non-positional features. Data can also be provided as <a href="#gff">GFF</a></li>
+  </ul>
+
+  <p>
+    <strong><a name="colourdefs">Feature Colours</a></strong>
+  </p>
+  <p>The first set of lines contain feature type definitions and their colours:
+  <pre>
+<strong><em>&lt;Feature Type&gt;</em>&#9;<em>&lt;Feature Style&gt;</em>
+<!-- &#9;<em>Feature links</em>  --></strong>
+</pre>
+
+  Each feature type definition assigns a style to features of the given type. &lt;Feature Style&gt; can be either a simple colour, or a more complex <a href="featureschemes.html">Graduated Colour Scheme</a> that shades features according to their description, score, or other attributes.
+<p>
+  <em>Assigning a colour for a &lt;Feature Type&gt;</em><br/>A single colour specified as either a red,green,blue 24 bit
+      triplet in hexadecimal (eg. 00ff00) or as comma separated numbers
+      (ranging from 0 to 255))<br>
+      (For help with colour values, see <a href="https://www.w3schools.com/colors/colors_converter.asp">https://www.w3schools.com/colors/colors_converter.asp</a>.)</p>
+      <p><em>Specifying a <a href="featureschemes.html">Graduated Colourscheme</a></em><br/>
+      Data dependent feature colourschemes are defined by a series of "|" separated fields: <pre>
+[label <em>or</em> score<em> or</em> attribute|&lt;attName&gt;|]&lt;mincolor&gt;|&lt;maxcolor&gt;|[absolute|]&lt;minvalue&gt;|&lt;maxvalue&gt;[|&lt;novalue&gt;][|&lt;thresholdtype&gt;|[&lt;threshold value&gt;]]
+</pre><br/>The fields are interpreted follows:
+
+  <ul>
+    <li><em>label</em><br> Indicates that the feature
+      description should be used to create a colour for features of this
+      type.<br> <em>Note: if no threshold value is needed then
+        only 'label' is required.<br> This keyword was added in
+        Jalview 2.6
+    </em></li>
+
+    <li><em>score</em><br> Indicates that the feature score
+      should be used to create a graduated colour for features of this
+      type, in conjunction with mincolor, maxcolor.<br>
+    <em>This keyword was added in Jalview 2.11. It may be omitted
+        (score is the default) if mincolor and maxcolor are specified. </em></li>
+
+    <li><em>attribute|&lt;attName&gt;</em><br> Indicates that
+      the value of feature attribute 'attName' should be used to create
+      a colour for features of this type. <br>For example, <em>attribute|clinical_significance</em>
+      to colour by "clinical_significance". <br>To colour by range
+      of a numeric attribute, include <em>mincolor</em> and <em>maxcolor</em>,
+      or omit to colour by text (category). <br>(Note: the value of
+      the attribute used for colouring will also be shown in the tooltip
+      as you mouse over features.) <br>A sub-attribute should be
+      written as, for example, CSQ:IMPACT. <br>
+    <em>This keyword was added in Jalview 2.11</em></li>
+
+    <li><em>mincolor</em> and <em>maxcolor</em><br> Colour
+      triplets specified as hexadecimal or comma separated values (may
+      be left blank for a <em>label</em> style colourscheme, but
+      remember to specify the remaining fields)</li>
+
+    <li><em>absolute</em><br> An optional switch indicating
+      that the <em>minvalue</em> and <em>maxvalue</em> parameters should
+      be left as is, rather than rescaled according to the range of
+      scores for this feature type.<br /> <em>This also enables
+        the 'Threshold is Min/Max' option for this type's feature
+        shading style dialog.</em></li>
+
+    <li><em>minvalue</em> and <em>maxvalue</em><br> Minimum
+      and maximum values defining the range of scores for which the
+      colour range will be defined over.<br>If minvalue is greater
+      than maxvalue then the linear mapping will have negative gradient.</li>
+
+    <li><em>novalue</em> <br> Specifies the colour to use if
+      colouring by attribute, when the attribute is absent. Valid
+      options are <em>novaluemin, novaluemax, novaluenone</em>, to use
+      mincolor, maxcolor, or no colour. <br>If not specified this
+      will default to novaluemin.</li>
+
+    <li><em>thresholdtype</em><br> Either &quot;none&quot;,
+      &quot;below&quot;, or &quot;above&quot;. <em>below</em> and <em>above</em>
+      require an additional <em>threshold value</em> which is used to
+      control the display of features with a score either below or above
+      the value.</li>
+  </ul>
+
+  <p>
+    <strong><a name="filterdefs">Feature Filters</a></strong>
+  </p>
+  <p>This section is optional, and allows one or more filters to be defined for each feature type.
+     <br>Only features that satisfy the filter conditions will be displayed.
+     <br>Begin with a line which is just STARTFILTERS, and end with a line which is just ENDFILTERS.
+     <br>Each line has the format:
+     <pre>featureType <em>&lt;tab&gt;</em> (filtercondition1) [and|or] (filtercondition2) [and|or]...<br></pre>
+     The parentheses are not needed if there is only one condition. 
+     Combine multiple conditions with either <em>and</em> or <em>or</em> (but not a mixture).
+     <br>Each condition is written as:
+     <pre>Label <em>or</em> Score <em>or</em> AttributeName condition [value]</pre>
+     where either the label (description), (numeric) score, or (text or numeric) attribute is tested against the condition.
+     <br><em>condition</em> is not case sensitive, and should be one of
+     <ul>
+     <li><em>Contains</em> - description (or attribute) should contain the given value (not case sensitive); example <em>clinical_significance contains Pathogenic</em></li> 
+     <li><em>NotContains</em> - description (or attribute) should not contain the given value</li> 
+     <li><em>Matches</em> - description (or attribute)  should match the given value (not case sensitive)</li> 
+     <li><em>NotMatches</em> - description (or attribute) should not match the given value (not case sensitive)</li> 
+     <li><em>Present</em> - attribute is present on the feature (no value required); example <em>CSQ:SIFT present</em></li> 
+     <li><em>NotPresent</em> - attribute is not present on the feature (no value required)</li> 
+     <li><em>EQ</em> - feature score, or specified attribute, is equal to the (numeric) value</li> 
+     <li><em>NE, LT, LE, GT, GE</em> - tests for not equal to / less than / less than or equal to / greater than / greater than or equal to the value</li> 
+     </ul>
+     A non-numeric value always fails a numeric test.<br>If either attribute name, or value to compare, contains spaces, then enclose in single quotes:
+     <em>'mutagenesis site' contains 'decreased affinity'</em>
+     <br>Tip: some examples of filter syntax are given below; or to see more, first configure colours and filters in Jalview, then <em>File | Export Features</em> to Textbox in Jalview Format.
+     <br><em>Feature filters were added in Jalview 2.11</em>
+  </p>
+
+  <p>
+    <strong><a name="featuredef">Feature Definitions</a></strong>
+  </p>
+
+  <p>The remaining lines in the file are sequence feature data.
+    Features are either non-positional - attached to a whole sequence
+    (as specified by its ID), or positional, so attached to a specific
+    range on a sequence. In addition to a type, features can also
+    include descriptive text and a score, and depending on the format
+    used, many additional attributes.</p>
+
+  <em><a name="gff">Importing Generalised Feature Format (GFF) feature data</a></em>
+  <p>
+    Jalview has its own tabular format (described below) for describing
+    sequence features, which allows HTML descriptions (including URLs)
+    to be defined for each feature. However, sequence feature
+    definitions can also be provided in <a
+      href="http://gmod.org/wiki/GFF2">GFF2</a>
+    (http://gmod.org/wiki/GFF2) or <a
+      href="https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md">GFF3</a>
+    (http://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md)
+    format. To do this, a line containing only 'GFF' should precede any
+    GFF data (<em>this mixed format capability was added in Jalview
+      2.6</em>).
+  </p>
+  <p>Feature attributes can be included as <code>name=value</code> pairs in GFF3 column 9, including <em>(since Jalview 2.11.1.0)</em> 'nested' sub-attributes, for example:
+  <br><code>alleles=G,A,C;AF=6;CSQ=SIFT=deleterious,tolerated,PolyPhen=possibly_damaging(0.907)</code>
+  <br>where <code>SIFT</code> and <code>PolyPhen</code> are sub-attributes of <code>CSQ</code>. This data is preserved if features are exported in GFF format (but not, currently,
+  in Jalview format).
+  </p>
+  <p>
+    <em>Jalview's sequence feature format</em>
+  </p>
+  <p>Each feature is specified as a tab-separated series of columns
+    as defined below:
+  <pre>
+<em>description</em>&#9;<em>sequenceId</em>&#9;<em>sequenceIndex</em>&#9;<em>start</em>&#9;<em>end</em>&#9;<em>featureType</em>&#9;<em>score (optional)</em>
+</pre>
+
+  This format allows two alternate ways of referring to a sequence,
+  either by its text ID, or its index (base 0) in an associated
+  alignment. Normally, sequence features are associated with sequences
+  rather than alignments, and the sequenceIndex field is given as
+  &quot;-1&quot;. In order to specify a sequence by its index in a
+  particular alignment, the sequenceId should be given as
+  &quot;ID_NOT_SPECIFIED&quot;, otherwise the sequenceId field will be
+  used in preference to the sequenceIndex field.
+  </p>
+
+
+  <p>
+    The description may contain simple HTML document body tags if
+    enclosed by &quot;&lt;html&gt;&lt;/html&gt;&quot; and these will be
+    rendered as formatted tooltips in the Jalview Application (the
+    Jalview applet is not capable of rendering HTML tooltips, so all
+    formatting tags will be removed).<br> <em>Attaching Links
+      to Sequence Features</em><br> Any anchor tags in an html formatted
+    description line will be translated into URL links. A link symbol
+    will be displayed adjacent to any feature which includes links, and
+    these are made available from the <a
+      href="../menus/popupMenu.html#sqid.popup">links submenu</a>
+    of the popup menu which is obtained by right-clicking when a link
+    symbol is displayed in the tooltip.<br> <em>Non-positional
+      features</em><br> Specify the <em>start</em> and <em>end</em> for
+    a feature to be <strong>0</strong> in order to attach it to the
+    whole sequence. Non-positional features are shown in a tooltip when
+    the mouse hovers over the sequence ID panel, and any embedded links
+    can be accessed from the popup menu.<br /> <em>Scores</em><br>
+    Scores can be associated with sequence features, and used to sort
+    sequences or shade the alignment (this was added in Jalview 2.5).
+    The score field is optional, and malformed scores will be ignored.
+  </p>
+
+  <p>Feature annotations can be collected into named groups by
+    prefixing definitions with lines of the form:
+  <pre>
+<strong>startgroup	groupname</strong>
+</pre>
+
+  .. and subsequently post-fixing the group with:
+
+  <pre>
+<strong>endgroup	groupname</strong>
+</pre>
+
+  Feature grouping was introduced in version 2.08, and used to control
+  whether a set of features are either hidden or shown together in the
+  <a href="seqfeatures.html">sequence Feature settings dialog box</a>.
+  </p>
+
+
+  <p>A complete example is shown below :
+  <pre>
+domain&#9;red
+metal ion-binding site&#9;00ff00
+transit peptide&#9;0,105,215
+chain&#9;225,105,0
+modified residue&#9;105,225,35
+signal peptide&#9;0,155,165
+helix&#9;ff0000
+strand&#9;00ff00
+coil&#9;cccccc
+kdHydrophobicity&#9;ccffcc|333300|-3.9|4.5|above|-2.0
+
+STARTFILTERS
+metal ion-binding site&#9;Label Contains sulfur
+kdHydrophobicity&#9;(Score LT 1.5) OR (Score GE 2.8)
+ENDFILTERS
+
+Your Own description here&#9;FER_CAPAA&#9;-1&#9;3&#9;93&#9;domain
+Your Own description here&#9;FER_CAPAN&#9;-1&#9;48&#9;144&#9;chain
+Your Own description here&#9;FER_CAPAN&#9;-1&#9;50&#9;140&#9;domain
+Your Own description here&#9;FER_CAPAN&#9;-1&#9;136&#9;136&#9;modified residue
+Your Own description here&#9;FER1_LYCES&#9;-1&#9;1&#9;47&#9;transit peptide
+Your Own description here&#9;Q93XJ9_SOLTU&#9;-1&#9;1&#9;48&#9;signal peptide
+Your Own description here&#9;Q93XJ9_SOLTU&#9;-1&#9;49&#9;144&#9;chain
+
+STARTGROUP&#9;secondarystucture
+PDB secondary structure annotation&#9;FER1_SPIOL&#9;-1&#9;52&#9;59&#9;strand
+PDB secondary structure annotation&#9;FER1_SPIOL&#9;-1&#9;74&#9;80&#9;helix
+ENDGROUP&#9;secondarystructure
+
+STARTGROUP&#9;kd
+Hydrophobicity score by kD	Q93XJ9_SOLTU	-1	48	48	kdHydrophobicity	1.8
+ENDGROUP&#9;kd
+
+GFF
+FER_CAPAA&#9;GffGroup&#9;domain&#9;3&#9;93&#9;.&#9;.
+</pre>
+</body>
+</html>
+

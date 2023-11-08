@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.io.RNAMLfileTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:54" hostname="wer3eng" time="0.127">
+  <properties/>
+  <testcase name="testRnamlToStockholmIO" classname="jalview.io.RNAMLfileTest" time="0.127"/>
+  <system-out><![CDATA[Reading file: examples/testdata/rna-alignment.xml
+File format identified as Rnaml
+registry.getSupportedServices: [MSAprobsWS, DisemblWS, TcoffeeWS, RNAalifoldWS, MafftWS, IUPredWS, GlobPlotWS, ProbconsWS, AAConWS, JronnWS, ClustalWS, MuscleWS, ClustalOWS, GLprobsWS]
+Attempting to connect with MafftWS...
+Output file in 'Stockholm':
+# STOCKHOLM 1.0
+#=GR /rna-alignmen.0/1-295 SS .....(((.(((((((((...[[[[.((((((((((.....)))))(((((....)))).)((...(((((...........(((((...((((....)))).)))..)).......((((((.......))))))(((((((((....))).))))).)..)))..)))))))))))))...((((......((((((...(((((.]]]]))))))))))).....))))......((((((((....))))))))...........................)))))))).
+/rna-alignmen.0/1-295         gaggaaaguccgggCUCCAUAGGGCAGAGUGCCAGGUAACGCCUGGGAGGCGCGAGCCUACGGAAAGUGCCACAGAAAACAACCGCCUAAGCGCGCAAGCGCCGGUAAGGGUGAAAAGGUGCGGUAAGAGCGCACCGCACGGCUGGCAACAGUUCGUGGCUAGGUAAACCCCACUCGGAGCAAGACCAAAUAGGGAUCCAUUGGCGUGGCCCGCGCUGGAUCCGGGUAGGUUGCUAAAGGCGGCCAGCGAUGGUCGUCGUAGAGGAAUGACUGUCCUCGacagaacccggcuua
+#=GR /rna-alignmen.1/1-250 SS ..............((((...[[[[.((((((((((.....)))))(((((....)))).)((...(((((............(((((((((((((....)))))))))))..))........((((((.......))))))(((((((((....)))))))).).)))..)))))))))))))...((((((((((.....(((.]]]])))...))))))))....)).............(....)
+/rna-alignmen.1/1-250         gaggaaaguccggacUUCGCAGAAAAAGGUGCCAGUGAAAAACUGGGGGCCGUAAGGCUACGGAAAGUGUAACAGAAAACAAACCGCUAAUUCUACCUAGGUAAGAUUAGACAGGAUGAAAAUGUCGAGCUUAUGGCUCGACCUCUUUGUGGAAACACAAGGACGCUGCAAACCCCACCUGAAGCAAGAAAGAGUUCGUUUCAGUUUUUCGCUCAGGAACUCUUAGAGUCGCUCGAGGAUUUUGGUGAC
+//
+
+<<EOF
+
+File format identified as Stockholm
+Check sequence: /rna-alignmen.0/1-295
+There are feature!!!
+Check sequence: /rna-alignmen.1/1-250
+There are feature!!!
+]]></system-out>
+  <system-err><![CDATA[DEBUG - Not enabling Google Tracking.
+]]></system-err>
+</testsuite>

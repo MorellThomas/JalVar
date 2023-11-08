@@ -1,0 +1,19 @@
+JALVIEW_ANNOTATION
+# Created: Tue Jun 04 16:56:03 BST 2013
+
+
+SEQUENCE_GROUP	group1	1	211	-1	gi|7160686|emb|CAB76819.1|	gi|61967924|gb|AAX56944.1|	gi|11464653|gb|AAG35265.1|	gi|6273783|gb|AAF06361.1|	gi|11907945|gb|AAG41407.1|	gi|29725652|gb|AAO88909.1|	gi|1654323|gb|AAC50790.1|	gi|3192871|gb|AAC19116.1|	gi|55926152|ref|NP_001007481.1|	
+PROPERTIES	group1	outlineColour=000000	displayBoxes=true	displayText=true	colourText=false	showUnconserved=false	textCol1=000000	textCol2=ffffff	
+
+SEQUENCE_GROUP	group2	1	211	-1	gi|61967926|gb|AAX56945.1|	gi|2360958|gb|AAB92396.1|	gi|5706366|dbj|BAA83093.1|	gi|3982649|gb|AAC83580.1|	gi|6288777|gb|AAF06738.1|	
+PROPERTIES	group2	outlineColour=000000	displayBoxes=true	displayText=true	colourText=false	showUnconserved=false	textCol1=000000	textCol2=ffffff	
+
+SEQUENCE_GROUP	group3	1	211	-1	gi|61967928|gb|AAX56946.1|	gi|2689629|gb|AAC53515.1|	gi|22532988|gb|AAF77079.2|	
+PROPERTIES	group3	outlineColour=000000	displayBoxes=true	displayText=true	colourText=false	showUnconserved=false	textCol1=000000	textCol2=ffffff	
+
+SEQUENCE_GROUP	group4	1	211	-1	gi|2967646|gb|AAC39657.1|	gi|45331050|gb|AAS57861.1|	gi|5360217|dbj|BAA81909.1|	gi|6288775|gb|AAF06737.1|	gi|58047721|gb|AAH89184.1|	gi|4009524|gb|AAD11458.1|	gi|40254710|ref|NP_571441.2|	gi|18655485|pdb|1KHX|A|	
+PROPERTIES	group4	outlineColour=000000	displayBoxes=true	displayText=true	colourText=false	showUnconserved=false	textCol1=000000	textCol2=ffffff	
+
+SEQUENCE_GROUP	group5	1	211	-1	gi|13992583|emb|CAC38118.1|	gi|11875329|dbj|BAB19634.1|	gi|45331052|gb|AAS57862.1|	gi|18418623|gb|AAL68976.1|	gi|2564493|gb|AAB81755.1|	gi|6981174|ref|NP_037227.1|	gi|45383213|ref|NP_989806.1|	gi|47523074|ref|NP_999302.1|	
+PROPERTIES	group5	outlineColour=000000	displayBoxes=true	displayText=true	colourText=false	showUnconserved=false	textCol1=000000	textCol2=ffffff	
+

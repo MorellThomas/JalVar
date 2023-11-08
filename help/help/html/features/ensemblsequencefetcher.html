@@ -1,0 +1,96 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Fetching ENSEMBL Data in Jalview</title>
+</head>
+<body>
+
+  <strong>Fetching ENSEMBL Data in Jalview</strong>
+  <br /> Jalview Version 2.10 (October 2016) introduced support to
+  retrieve annotated transcripts, peptides and genomic contigs from
+  <a href="http://www.ensembl.org">ENSEMBL</a>.
+  <br />
+  <img src="selectfetchdb.gif" align="right" width="480" height="204"
+    alt="Database selection dialog with Ensembl sequence source tooltip">
+
+  <p>Two types of ENSEMBL source are provided. ENSEMBL queries the
+    main ENSEMBL warehouse containing data for higher eukaryotes, and
+    EnsemblGenomes, which queries Ensembl Pathogens, and other
+    warehouses.</p>
+  <p>
+    <strong>General Use</strong><br /> If you have a set of Ensembl
+    gene or transcript IDs, then you can retrieve them <em>via</em> the
+    sequence fetcher dialog opened after selecting the most appropriate
+    source (either 'ENSEMBL', or Ensembl Genomes). However, Jalview's
+    Ensembl client has a couple of additional capabilities:
+  </p>
+  <p>
+    <strong>Retrieving aligned transcripts for a genomic ID</strong>
+  </p>
+  <p>If a single genomic identifier is entered in the Ensembl
+    fetcher, Jalview will return all transcripts and products for the
+    locus, and display them in a split view - complete with sequence
+    variant annotation.</p>
+  <p>
+    <strong>Retrieving orthologs for a gene ID</strong>
+  </p>
+  <p>
+    If a gene ID is entered (e.g. fox1), Jalview will resolve Ensembl
+    genomic identifiers for a predefined set of taxa (Mouse, Rat, Human,
+    Yeast in Jalview 2.10).<br />
+  </p>
+  <p>
+    <strong><a name="ensemblannotation">Ensembl Sequence
+        Features</a></strong><br /> Jalview 2.10 includes support for the
+    visualisation and transfer genomic and transcriptomic sequence
+    features onto protein product sequences. Retrieval of a genomic
+    locus results in a set of transcripts that are annotated with
+    nucleotide variant information and exonic regions. By default,
+    intronic regions will be hidden.
+  </p>
+  <p>
+    <strong><a name="variantvis">Variant information on
+        Protein Products</a></strong><br />Jalview can translate genomic variant
+    annotation into protein sequence variant codes for variants
+    intersecting coding regions of a gene. To see this in action, use
+    the <strong>Calculate&#8594;Show cross-references</strong> menu to
+    view protein product sequences for the currently displayed (or
+    selected) sequences. The same menu allows you to recover Ensembl
+    exon, transcript and variant information when viewing UniProt
+    sequences.
+  </p>
+  <p>
+    <strong>Viewing more information about variant annotation</strong><br />
+    Variants are highlighted as red sequence features on the protein
+    sequence, with each one reporting all protein sequence variants
+    observed at that position as a result of the genomic variants.
+    Right-clicking a variant allows you to open the Ensembl Variants web
+    page for each variant, via the <strong>Link</strong> submenu.
+  </p>
+  <p>
+    <strong>Work in Progress !</strong><br />In the next few releases,
+    we hope to improve and extend Jalview's support for working with
+    Ensembl. If you have any problems, questions or suggestions then
+    please get in contact with us via the Jalview discussion list.
+  </p>
+</body>
+</html>

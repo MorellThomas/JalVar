@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.io.BackupFilesTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:07" hostname="wer3eng" time="0.143">
+  <properties/>
+  <testcase name="backupsEnabledNoRollMaxTest" classname="jalview.io.BackupFilesTest" time="0.048"/>
+  <testcase name="backupsEnabledReverseRollMaxTest" classname="jalview.io.BackupFilesTest" time="0.037"/>
+  <testcase name="backupsEnabledRollMaxTest" classname="jalview.io.BackupFilesTest" time="0.032"/>
+  <testcase name="backupsEnabledSingleFileBackupTest" classname="jalview.io.BackupFilesTest" time="0.015"/>
+  <testcase name="noBackupsEnabledTest" classname="jalview.io.BackupFilesTest" time="0.011"/>
+  <system-out><![CDATA[Discovered service: http://www.compbio.dundee.ac.uk/jabaws jalview.ws.jws2.jabaws2.Jws2Instance@8539e08
+NEEDS FIXING
+NEEDS FIXING
+NEEDS FIXING
+NEEDS FIXING
+NEEDS FIXING
+]]></system-out>
+  <system-err><![CDATA[DEBUG - AUTHENTICATOR setting default Authenticator to null
+DEBUG - AUTHENTICATOR setting property 'http.nonProxyHosts' to "null"
+DEBUG - Setting proxy properties to: http.proxyHost=null, http.proxyPort=null, https.proxyHost=null, https.proxyPort=null
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa1808844285584692478.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES rollBackupFiles nothing to do., filename: backupfilestestTemp.fa, file exists: false, enabled: true, max: 2, suffix: '_BACKUPTEST-%n'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa1796522459571000438.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa14739421350581923788.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa12524142197124514486.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000003 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa3734170049228446743.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000004 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa13294287021057999889.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000005 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa13784111660046757354.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000006 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa12996291749325723969.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000007 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa6370548602335038922.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000008 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa4136904205244548240.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000009 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa3991407461676859826.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000010 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - AUTHENTICATOR setting default Authenticator to null
+DEBUG - AUTHENTICATOR setting property 'http.nonProxyHosts' to "null"
+DEBUG - Setting proxy properties to: http.proxyHost=null, http.proxyPort=null, https.proxyHost=null, https.proxyPort=null
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa16600728592720292893.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES rollBackupFiles nothing to do., filename: backupfilestestTemp.fa, file exists: false, enabled: true, max: 2, suffix: '_BACKUPTEST-%n'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa15798109138991210212.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa2288582911475863945.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa2480040120814997450.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES going to move /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002 to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1 to the delete list
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000002~1'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa6775739433092932234.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES going to move /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002 to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1 to the delete list
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000002~1'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa783277862375631773.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES going to move /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002 to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1 to the delete list
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000002~1'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa4161191246959126714.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES going to move /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002 to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1 to the delete list
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000002~1'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa7862417569211303540.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES going to move /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002 to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1 to the delete list
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000002~1'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa15269647442820050338.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES going to move /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002 to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1 to the delete list
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000002~1'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa11582338331375731195.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES going to move /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002 to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1 to the delete list
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000002~1'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa3299755896233794697.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES going to move /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002 to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002~1 to the delete list
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000002~1'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - AUTHENTICATOR setting default Authenticator to null
+DEBUG - AUTHENTICATOR setting property 'http.nonProxyHosts' to "null"
+DEBUG - Setting proxy properties to: http.proxyHost=null, http.proxyPort=null, https.proxyHost=null, https.proxyPort=null
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa14863799600900035338.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES rollBackupFiles nothing to do., filename: backupfilestestTemp.fa, file exists: false, enabled: true, max: 2, suffix: '_BACKUPTEST-%n'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa5639235477482251221.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa15657334464033088212.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002 was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa2832386275361138109.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001 to the delete list
+DEBUG - BACKUPFILES addDeleteFile(fileToBeDeleted): test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000001
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000003 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000001'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa4663053756854018576.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002 to the delete list
+DEBUG - BACKUPFILES addDeleteFile(fileToBeDeleted): test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000002
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000004 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000002'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa13186855701298394838.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000003 to the delete list
+DEBUG - BACKUPFILES addDeleteFile(fileToBeDeleted): test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000003
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000005 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000003'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa6999531280054293370.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000004 to the delete list
+DEBUG - BACKUPFILES addDeleteFile(fileToBeDeleted): test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000004
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000006 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000004'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa3412688527618580455.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000005 to the delete list
+DEBUG - BACKUPFILES addDeleteFile(fileToBeDeleted): test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000005
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000007 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000005'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa16846349610500745104.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000006 to the delete list
+DEBUG - BACKUPFILES addDeleteFile(fileToBeDeleted): test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000006
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000008 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000006'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa7771521251778593177.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000007 to the delete list
+DEBUG - BACKUPFILES addDeleteFile(fileToBeDeleted): test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000007
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000009 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000007'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa14178643996412308733.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES adding file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000008 to the delete list
+DEBUG - BACKUPFILES addDeleteFile(fileToBeDeleted): test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000008
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa_BACKUPTEST-000010 was successful
+WARN - deleted 'backupfilestestTemp.fa_BACKUPTEST-000008'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - AUTHENTICATOR setting default Authenticator to null
+DEBUG - AUTHENTICATOR setting property 'http.nonProxyHosts' to "null"
+DEBUG - Setting proxy properties to: http.proxyHost=null, http.proxyPort=null, https.proxyHost=null, https.proxyPort=null
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa6562708547985015624.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES rollBackupFiles nothing to do., filename: backupfilestestTemp.fa, file exists: false, enabled: true, max: 1, suffix: '~'
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa6544922313165837404.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa~ was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - BACKUPFILES using temp file /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa1352482189622831370.tmp_newfile
+DEBUG - ALIGNFRAME writing temp file was successful
+DEBUG - BACKUPFILES moving test/jalview/io/backupfilestestTemp.fa to /home/thomas/Studium/Master_2/java-hiwi/jalview/test/jalview/io/backupfilestestTemp.fa~ was successful
+DEBUG - ALIGNFRAME performed rollBackupsAndRenameTempFile successfully
+DEBUG - AUTHENTICATOR setting default Authenticator to null
+DEBUG - AUTHENTICATOR setting property 'http.nonProxyHosts' to "null"
+DEBUG - Setting proxy properties to: http.proxyHost=null, http.proxyPort=null, https.proxyHost=null, https.proxyPort=null
+]]></system-err>
+</testsuite>

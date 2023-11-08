@@ -1,0 +1,670 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>Alignment Window Menus</title>
+</head>
+
+<body>
+  <!-- NOTE: THIS PAGE COLLECTS TOGETHER THE INDIVIDUAL ALIGNMENT WINDOW MENU PAGES - DON"T EDIT INDIVIDUAL ENTRIES HERE!  -->
+  <p>
+    <strong>Alignment Window Menus</strong>
+  </p>
+  <ul>
+    <li><strong>File</strong>
+      <ul>
+        <li><strong>Fetch Sequence</strong><br> <em>Shows
+            a dialog window in which you can retrieve known ids from
+            UniProt, EMBL, EMBLCDS, PFAM, Rfam, or PDB database using
+            Web Services provided by the European Bioinformatics
+            Institute. See <a href="../features/seqfetch.html">Sequence
+              Fetcher</a>
+        </em>.</li>
+        <li><strong>Add Sequences</strong><em><br> Add
+            sequences to the visible alignment from file, URL, or cut
+            &amp; paste window </em></li>
+        <li><strong>Reload</strong><em><br> Reloads the
+            alignment from the original file, if available.<br> <strong>Warning:
+              This will delete any edits, analyses and colourings
+              applied since the alignment was last saved, and cannot be
+              undone.</strong> </em></li>
+        <li><strong>Save (Control S)</strong><em><br>
+            Saves the alignment to the file it was loaded from (if
+            available), in the same format, updating the original in
+            place. </em></li>
+        <li><strong>Save As (Control Shift S)<br>
+        </strong><em>Save the alignment to local file. A file selection
+            window will open, use the &quot;Files of type:&quot;
+            selection box to determine which <a href="../io/index.html">alignment
+              format</a> to save as.
+        </em></li>
+        <li><strong>Output to Textbox<br>
+        </strong><em>The alignment will be displayed in plain text in a new
+            window, which you can &quot;Copy and Paste&quot; using the
+            pull down menu, or your standard operating system copy and
+            paste keys. The output window also has a <strong>&quot;New
+              Window&quot;</strong> button to import the (possibly edited) text
+            as a new alignment.<br> Select the format of the text
+            by selecting one of the following menu items.
+        </em>
+          <ul>
+            <li><strong>FASTA</strong></li>
+            <li><strong>MSF</strong></li>
+            <li><strong>CLUSTAL</strong></li>
+            <li><strong>BLC</strong></li>
+            <li><strong>PIR</strong></li>
+            <li><strong>PFAM</strong></li>
+            <li><strong>PileUp</strong></li>
+            <li><strong>AMSA</strong></li>
+            <li><strong>STH</strong></li>
+            <li><strong>Phylip</strong></li>
+            <li><strong>JSON</strong></li>
+          </ul></li>
+        <li><strong>Page Setup ...</strong><br> <em>Open
+            the printing system's Page Setup dialog box, to control page
+            size, layout and orientation.</em></li>
+        <li><strong>Print (Control P)<br>
+        </strong><em>Jalview will print the alignment using the current
+            fonts and colours of your alignment. If the alignment has
+            annotations visible, these will be printed below the
+            alignment. If the alignment is wrapped the number of
+            residues per line of your alignment will depend on the paper
+            width or your alignment window width, whichever is the
+            smaller. </em></li>
+        <li><strong>Export Image</strong> <em><br>
+            Creates an alignment graphic with the current view's
+            annotation, alignment background colours and group colours.
+            If the alignment is <a href="../features/wrap.html">wrapped</a>,
+            the output will also be wrapped and will have the same
+            visible residue width as the open alignment. </em>
+          <ul>
+            <li><strong>HTML<br>
+            </strong><em>Create a <a href="../io/export.html">web page</a>
+                from your alignment.
+            </em></li>
+            <li><strong>EPS<br>
+            </strong><em>Create an <a href="../io/export.html">Encapsulated
+                  Postscript</a> file from your alignment.
+            </em></li>
+            <li><strong>PNG<br>
+            </strong><em>Create a <a href="../io/export.html">Portable
+                  Network Graphics</a> file from your alignment.
+            </em></li>
+            <li><strong>SVG<br>
+            </strong><em>Create a <a href="../io/export.html">Scalable
+                  Vector Graphics</a> file from your alignment for embedding
+                in web pages.
+            </em></li>
+            <li><strong>BioJS<br>
+            </strong><em>Create a <a href="../io/export.html">BioJS MSA
+                  Viewer HTML </a> file from your alignment.
+            </em></li>
+          </ul></li>
+        <li><strong>Export Features</strong><em><br> All
+            features visible on the alignment can be saved to file or
+            displayed in a textbox in either Jalview or GFF format</em></li>
+        <li><strong>Export Annotations</strong><em><br>
+            All annotations visible on the alignment can be saved to
+            file or displayed in a textbox in Jalview annotations
+            format. </em></li>
+        <li><strong>Load Associated Tree<br>
+        </strong><em>Jalview can <a href="../calculations/treeviewer.html">view
+              trees</a> stored in the Newick file format, and associate them
+            with the alignment. Note: the ids of the tree file and your
+            alignment MUST be the same.
+        </em></li>
+        <li><strong>Load Features / Annotations<br>
+        </strong><em>Load files describing precalculated <a
+            href="../features/featuresFormat.html">sequence
+              features</a> or <a href="../features/annotationsFormat.html">alignment
+              annotations</a>.
+        </em></li>
+        <li><strong>Close (Control W)</strong><br> <em>Close
+            the alignment window. Make sure you have saved your
+            alignment before you close - either from the Desktop's <strong>Save
+              Project</strong> File menu option, or by using the <strong>Save
+              As</strong> menu.
+        </em></li>
+      </ul></li>
+    <li><strong>Edit</strong>
+      <ul>
+        <li><strong>Undo (Control Z)</strong><em><br>
+            This will undo any edits you make to the alignment. This
+            applies to insertion or deletion of gaps, cutting residues
+            or sequences from the alignment or pasting sequences to the
+            current alignment or sorting the alignment. <strong>NOTE:</strong>
+            It DOES NOT undo colour changes, adjustments to group sizes,
+            or changes to the annotation panel. </em></li>
+        <li><strong>Redo (Control Y)<br>
+        </strong><em>Any actions which you undo can be redone using redo. </em></li>
+        <li><strong>Cut (Control X)<br>
+        </strong><em>This will make a copy of the currently selected
+            residues before removing them from your alignment. Click on
+            a sequence name if you wish to select a whole sequence. <br>
+            Use &lt;CTRL&gt; and X (&lt;APPLE&gt; and X on MacOSX) to
+            cut.
+        </em></li>
+        <li><strong>Copy (Control C)</strong><br> <em>Copies
+            the currently selected residues to the system clipboard -
+            you can also do this by pressing &lt;CTRL&gt; and C
+            (&lt;APPLE&gt; and C on MacOSX). <br> If you try to
+            paste the clipboard contents to a text editor, you will see
+            the format of the copied residues FASTA.
+        </em></li>
+        <li><strong>Copy Highlighted region (Control Shift
+            C)</strong><br> <em>Copies each stretch of highlighted
+            residues as a new sequence on the system clipboard - you can
+            also do this by pressing &lt;CTRL&gt; &lt;SHIFT&gt; and C
+            (&lt;APPLE&gt; &lt;SHIFT&gt; and C on MacOSX). <br>Use
+            this when you want to extract sequence regions highlighted
+            as a result of a Find operation, or due to mouseovers or
+            selections made in other views such as an assocated 3D
+            structure viewer.
+        </em></li>
+        <li><strong>Paste </strong>
+          <ul>
+            <li><strong>To New Alignment (Control Shift V)<br>
+            </strong><em>A new alignment window will be created from
+                sequences previously copied or cut to the system
+                clipboard. <br> Use &lt;CTRL&gt; and &lt;SHIFT&gt;
+                and V(&lt;APPLE&gt; and &lt;SHIFT;&gt; and and V on
+                MacOSX) to paste.
+            </em></li>
+            <li><strong>Add To This Alignment (Control V)<br>
+            </strong><em>Copied sequences from another alignment window can
+                be added to the current Jalview alignment. </em></li>
+          </ul></li>
+        <li><strong>Delete (Backspace)<br>
+        </strong><em>This will delete the currently selected residues
+            without copying them to the clipboard. Like the other edit
+            operations, this can be undone with <strong>Undo</strong>.
+        </em></li>
+        <li><strong>Remove Left (Control L)<br>
+        </strong><em>If the alignment has marked columns, the alignment will
+            be trimmed to the left of the leftmost marked column. To
+            mark a column, mouse click the scale bar above the
+            alignment. Click again to unmark a column, or select
+            &quot;Deselect All&quot; to deselect all columns.</em></li>
+        <li><strong>Remove Right (Control R)<br>
+        </strong><em>If the alignment has marked columns, the alignment will
+            be trimmed to the right of the rightmost marked column. To
+            mark a column, mouse click the scale bar above the
+            alignment. Click again to unmark a column, or select
+            &quot;Deselect All&quot; to deselect all columns.</em></li>
+        <li><strong>Remove Empty Columns (Control E)<br>
+        </strong><em>All columns which only contain gap characters
+            (&quot;-&quot;, &quot;.&quot;) will be deleted.<br> You
+            may set the default gap character in <a
+            href="../features/preferences.html">preferences</a>.
+        </em></li>
+        <li><strong>Remove All Gaps (Control Shift E)</strong><br>
+          <em>Gap characters (&quot;-&quot;, &quot;.&quot;) will be
+            deleted from the selected area of the alignment. If no
+            selection is made, ALL the gaps in the alignment will be
+            removed.<br> You may set the default gap character in <a
+            href="../features/preferences.html">preferences</a>.
+        </em></li>
+        <li><strong>Remove Redundancy (Control D)<br>
+        </strong><em>Selecting this option brings up a window asking you to
+            select a threshold. If the percentage identity between any
+            two sequences (under the current alignment) exceeds this
+            value then one of the sequences (the shorter) is discarded.
+            Press the &quot;Apply&quot; button to remove redundant
+            sequences. The &quot;Undo&quot; button will undo the last
+            redundancy deletion.</em></li>
+        <li><strong>Pad Gaps<br>
+        </strong><em>When selected, the alignment will be kept at minimal
+            width (so there are no empty columns before or after the
+            first or last aligned residue) and all sequences will be
+            padded with gap characters before and after their
+            terminating residues.<br> This switch is useful when
+            making a tree using unaligned sequences and when working
+            with alignment analysis programs which require 'properly
+            aligned sequences' to be all the same length.<br> You
+            may set the default for <strong>Pad Gaps</strong> in the <a
+            href="../features/preferences.html">preferences</a>.
+        </em></li>
+      </ul></li>
+    <li><strong>Select</strong>
+      <ul>
+        <li><a href="../features/search.html"><strong>Find...
+              (Control F)</strong></a><br> <em>Opens the Find dialog box to
+            search for residues, sequence name or residue position
+            within the alignment and create new sequence features from
+            the queries. </em>
+        <li><strong>Select All (Control A)</strong><strong><br>
+        </strong><em>Selects all the sequences and residues in the
+            alignment. <br> Use &lt;CTRL&gt; and A (&lt;APPLE&gt;
+            and A on a MacOSX) to select all.
+        </em></li>
+        <li><strong>Deselect All (Escape)<br>
+        </strong><em>Removes the current selection box (red dashed box) from
+            the alignment window. All selected sequences, residues and
+            marked columns will be deselected. </em><em> <br> Use
+            &lt;ESCAPE&gt; to deselect all.
+        </em></li>
+        <li><strong>Invert Sequence Selection (Control I)<br>
+        </strong><em>Any sequence ids currently not selected will replace
+            the current selection. </em></li>
+        <li><strong>Invert Column Selection (Control Alt
+            I)<br>
+        </strong><em>Any columns currently not selected will replace the
+            current column selection. </em></li>
+        <li><strong>Create Group (Control G)<br></strong> <em>Create
+            a group containing the currently selected sequences.</em></li>
+        <li><strong>Remove Group (Shift Control G)<br></strong>
+          <em>Ungroup the currently selected sequence group.</em></li>
+        <li><strong>Make Groups for selection<br /></strong> <em>The
+            currently selected groups of the alignment will be
+            subdivided according to the contents of the currently
+            selected region. <br />Use this to subdivide an alignment
+            based on the different combinations of residues at marked
+            columns.
+        </em></li>
+        <li><strong>Undefine Groups (Control U)<br>
+        </strong><em>The alignment will be reset with no defined groups.<br>
+            <strong>WARNING</strong>: This cannot be undone.
+        </em></li>
+        <li><strong><a
+            href="../features/columnFilterByAnnotation.html">Select/Hide
+              Columns by Annotation</a></strong> <br /> <em>Select or Hide
+            columns in the alignment according to secondary structure,
+            labels and values shown in alignment annotation rows. </em></li>
+        <li><strong>Select Highlighted Columns</strong> <br /> <em>Selects
+        the columns currently highlighted as a result of a find, mouse
+        over, or selection event from a linked structure viewer or other
+        application. Modifiers will work on some platforms: ALT will add
+        all but the highlighted set to the column selection, and CTRL
+        (or META) will toggle the selection. </em></li>
+      </ul></li>
+    <li><strong>View</strong>
+      <ul>
+        <li><strong>New View (Control T)</strong><em><br>
+            Creates a new view from the current alignment view. </em></li>
+        <li><strong>Expand Views (X)</strong><em><br>
+            Display each view associated with the alignment in its own
+            alignment window, allowing several views to be displayed
+            simultaneously. </em></li>
+        <li><strong>Gather Views (G)</strong><em><br>
+            Each view associated with the alignment will be displayed
+            within its own tab on the current alignment window. </em></li>
+        <li><strong>Show&#8594;(all Columns / Sequences /
+            Sequences and Columns)</strong><em><br> All hidden Columns
+            / Sequences / Sequences and Columns will be revealed. </em></li>
+        <li><strong>Hide&#8594;(all Columns / Sequences /
+            Selected Region / All but Selected Region )</strong><em><br>
+            Hides the all the currently selected Columns / Sequences /
+            Region or everything but the selected Region.</em></li>
+        <li><strong>Automatic Scrolling<br>
+        </strong><em>When selected, the view will automatically scroll to
+            display the highlighted sequence position corresponding to
+            the position under the mouse pointer in a linked alignment
+            or structure view.</em></li>
+        <li><strong>Show Sequence Features</strong><br> <em>Show
+            or hide sequence features on this alignment.</em></li>
+        <li><strong><a
+            href="../features/featuresettings.html">Sequence
+              Feature Settings...</a> </strong><br> <em>Opens the
+              Sequence Feature Settings dialog box to control the colour
+              and display of sequence features on the alignment.</em></li>
+        <li><strong>Sequence ID Tooltip</strong><em>
+            (application only) <br>This submenu's options allow the
+            inclusion or exclusion of non-positional sequence features
+            or database cross references from the tooltip shown when the
+            mouse hovers over the sequence ID panel.
+        </em></li>
+        <li><strong>Alignment Properties...<br />
+        </strong><em>Displays some simple statistics computed for the
+            current alignment view and any named properties defined on
+            the whole alignment.</em></li>
+        <li><strong><a href="../features/overview.html">Overview
+              Window</a><br> </strong><em>A scaled version of the alignment
+            will be displayed in a small window. A red box will indicate
+            the currently visible area of the alignment. Move the
+            visible region using the mouse. </em></li>
+      </ul></li>
+    <li><strong>Annotations</strong><em> (Since Jalview 2.8.2)</em>
+      <ul>
+        <li><strong>Show Annotations<br>
+        </strong><em>If this is selected the &quot;Annotation Panel&quot;
+            will be displayed below the alignment. The default setting
+            is to display the conservation calculation, quality
+            calculation and consensus values as bar charts. </em></li>
+        <li><strong>Show Alignment Related</strong><em><br>
+            Show all annotations that are for the alignment as a whole
+            (for example, Consensus, or secondary structure prediction
+            from alignment).</em></li>
+        <li><strong>Hide Alignment Related</strong><em><br>
+            Hide all annotations that are for the alignment as a whole.</em></li>
+        <li><strong>Show Sequence Related</strong><em><br>
+            Show all annotations that are for individual sequences.</em></li>
+        <li><strong>Hide Sequence Related</strong><em><br>
+            Hide all annotations that are for individual sequences.</em></li>
+        <li><em>You can also selectively show or hide
+            annotations from the <a href="./popupMenu.html">Popup</a> or
+            <a href="../features/annotation.html">Annotation</a> menus.
+        </em></li>
+        <li><strong>Sort by Sequence</strong><em><br>Sort
+            sequence-specific annotations by sequence order in the
+            alignment (and within that, by label).</em></li>
+        <li><strong>Sort by Label</strong><em><br>Sort
+            sequence-specific annotations by label (and within that, by
+            sequence order). If neither sort order is selected, no
+            sorting is applied, allowing you to make a manual ordering
+            of the annotations.</em></li>
+        <li><strong>Autocalculated Annotation<br>
+        </strong><em>Settings for the display of autocalculated annotation.</em>
+          <ul>
+            <li><strong>Show first<br></strong><em> Show
+                autocalculated annotations above sequence-specific
+                annotations. Note this also applies to other annotations
+                for the alignment, for example secondary structure
+                prediction from alignment.</em></li>
+            <li><strong>Show last<br></strong><em> Show
+                autocalculated / alignment annotations below
+                sequence-specific annotations.</em></li>
+            <li><strong>Apply to all groups<br>
+            </strong><em> When ticked, any modification to the current
+                settings will be applied to all autocalculated
+                annotation.</em></li>
+            <li><strong>Show Consensus Histogram<br>
+            </strong><em> Enable or disable the display of the histogram
+                above the consensus sequence.</em></li>
+            <li><strong>Show Consensus Logo<br>
+            </strong><em> Enable or disable the display of the Consensus
+                Logo above the consensus sequence.</em></li>
+            <li><strong>Normalise Consensus Logo<br>
+            </strong><em>When enabled, scales all logo stacks to the same
+                height, making it easier to compare symbol diversity in
+                highly variable regions.</em></li>
+            <li><strong>Group Conservation<br>
+            </strong><em> When ticked, display a conservation row for all
+                groups (only available for protein alignments).</em></li>
+            <li><strong>Group Consensus<br>
+            </strong><em> When ticked, display a consensus row for all
+                groups.</em></li>
+          </ul></li>
+      </ul></li>
+    <li><strong>Alignment Window Format Menu</strong>
+      <ul>
+        <li><strong>Font...<br>
+        </strong><em>Opens the &quot;Choose Font&quot; dialog box, in order
+            to change the font of the display and enable or disable
+            'smooth fonts' (anti-aliasing) for faster alignment
+            rendering. </em></li>
+        <li><strong>Wrap<br>
+        </strong><em>When ticked, the alignment display is &quot;<a
+            href="../features/wrap.html">wrapped</a>&quot; to
+            the width of the alignment window. This is useful if your
+            alignment has only a few sequences to view its full width at
+            once.
+        </em><br> Additional options for display of sequence numbering
+          and scales are also visible in wrapped layout mode:<br>
+          <ul>
+            <li><strong>Scale Above</strong><br> <em>
+                Show the alignment column position scale.</em></li>
+            <li><strong>Scale Left</strong><br> <em> Show
+                the sequence position for the first aligned residue in
+                each row in the left column of the alignment.</em></li>
+            <li><strong>Scale Right</strong><br> <em>
+                Show the sequence position for the last aligned residue
+                in each row in the right-most column of the alignment.</em></li>
+            <li><strong>Show Sequence Limits<br>
+            </strong><em>If this box is selected the sequence name will have
+                the start and end position of the sequence appended to
+                the name, in the format NAME/START-END</em></li>
+            <li><strong>Right Align Sequence ID<br>
+            </strong><em>If this box is selected then the sequence names
+                displayed in the sequence label area will be aligned
+                against the left-hand edge of the alignment display,
+                rather than the left-hand edge of the alignment window.</em>
+            </li>
+            <li><strong>Show Hidden Markers<br>
+            </strong><em>When this box is selected, positions in the
+                alignment where rows and columns are hidden will be
+                marked by blue arrows. </em></li>
+            <li><strong>Boxes</strong><em><br> If this is
+                selected the background of a residue will be coloured
+                using the selected background colour. Useful if used in
+                conjunction with &quot;Colour Text.&quot; </em></li>
+            <li><strong>Text<br>
+            </strong><em>If this is selected the residues will be displayed
+                using the standard 1 character amino acid alphabet.</em></li>
+            <li><strong>Colour Text<br>
+            </strong><em>If this is selected the residues will be coloured
+                according to the background colour associated with that
+                residue. The colour is slightly darker than background
+                so the amino acid symbol remains visible. </em></li>
+            <li><strong>Show Gaps<br>
+            </strong><em>When this is selected, gap characters will be
+                displayed as &quot;.&quot; or &quot;-&quot;. If
+                unselected, then gap characters will appear as blank
+                spaces. <br> You may set the default gap character
+                in <a href="../features/preferences.html">preferences</a>.
+            </em></li>
+            <li><strong>Centre Annotation Labels<br>
+            </strong><em>Select this to center labels along an annotation
+                row relative to their associated column (default is off,
+                i.e. left-justified).</em></li>
+            <li><strong>Show Unconserved<br>
+            </strong><em>When this is selected, all consensus sequence
+                symbols will be rendered as a '.', highlighting
+                mutations in highly conserved alignments. </em></li>
+
+      </ul></li>
+
+  </ul>
+  </li>
+
+  <li><strong>Colour</strong>
+    <ul>
+      <li><strong>Apply Colour To All Groups<br>
+      </strong><em>If this is selected, any changes made to the background
+          colour will be applied to all currently defined groups.<br>
+      </em></li>
+      <li><strong><a
+          href="../colourSchemes/textcolour.html">Colour
+            Text...</a> </strong><em><br> Opens the Colour Text dialog box
+          to set a different text colour for light and dark background,
+          and the intensity threshold for transition between them. </em></li>
+      <li>Colour Scheme options: <strong>None, ClustalX,
+          Blosum62 Score, Percentage Identity, Zappo, Taylor,
+	  gecos-flower, gecos-blossom, gecos-sunset, gecos-ocean,
+          Hydrophobicity, Helix Propensity, Strand Propensity, Turn
+          Propensity, Buried Index, Nucleotide, Nucleotide Ambiguity, Purine/Pyrimidine, User
+          Defined<br>
+      </strong> <em>See <a href="../colourSchemes/index.html">colours</a>
+          for a description of all colour schemes.
+      </em><br></li>
+        <li><strong>Sequence ID<br></strong><em>Shades
+            sequences using their Sequence ID colour. Useful when
+            performing <a
+            href="../calculations/treeviewer.html#partitioning">tree
+              based subfamily analysis</a>.
+        </em></li>
+        <li><strong>By Conservation<br>
+      </strong><em>See <a href="../colourSchemes/conservation.html">Colouring
+            by Conservation</a>.
+      </em><br></li>
+      <li><strong>Modify Conservation Threshold<br>
+      </strong><em>Use this to display the conservation threshold slider
+          window. Useful if the window has been closed, or if the 'by
+          conservation' option appears to be doing nothing!</em><br></li>
+      <li><strong>Above Identity Threshold<br>
+      </strong><em>See <a href="../colourSchemes/abovePID.html">Above
+            Percentage Identity</a>
+      </em><strong>.<br>
+      </strong></li>
+      <li><strong>Modify Identity Threshold<br>
+      </strong><em>Use this to set the threshold value for colouring above
+          Identity. Useful if the window has been closed.<br>
+      </em></li>
+      <li><strong>By Annotation</strong><br> <em>Colours
+          the alignment on a per-column value from a specified
+          annotation. See <a
+          href="../colourSchemes/annotationColouring.html">Annotation
+            Colouring</a>.
+      </em><br></li>
+      <li><strong>By RNA Helices</strong><br> <em>Colours
+          the helices of an RNA alignment loaded from a Stockholm file.
+          See <a href="../colourSchemes/rnahelicesColouring.html">RNA
+            Helices Colouring</a>.
+      </em><br></li>
+    </ul></li>
+  <li><strong>Calculate</strong>
+    <ul>
+      <li><strong>Sort </strong>
+        <ul>
+          <li><strong>by ID</strong><em><br> This will
+              sort the sequences according to sequence name. If the sort
+              is repeated, the order of the sorted sequences will be
+              inverted. </em></li>
+          <li><strong>by Length</strong><em><br> This
+              will sort the sequences according to their length
+              (excluding gap characters). If the sort is repeated, the
+              order of the sorted sequences will be inverted. </em></li>
+          <li><strong>by Group</strong><strong><br> </strong><em>This
+              will sort the sequences according to sequence name. If the
+              sort is repeated, the order of the sorted sequences will
+              be inverted. </em><strong></strong></li>
+          <li><strong>by Pairwise Identity<br>
+          </strong><em>This will sort the selected sequences by their
+              percentage identity to the consensus sequence. The most
+              similar sequence is put at the top. </em></li>
+          <li><em>The <a href="../calculations/sorting.html">Sort
+                menu</a> will have some additional options if you have just
+              done a multiple alignment calculation, or opened a tree
+              viewer window.
+          </em><br></li>
+        </ul></li>
+    <li><strong>Calculate Tree or PCA ...</strong><em> <br> Opens the 
+    <a href="../calculations/calculations.html">calculations dialog</a> for
+        for calculating <a href="../calculations/tree.html">trees</a> or
+         <a href="../calculations/pca.html">principal component analysis 
+         plots</a> on the alignment or the currently selected
+        region. 
+      </em><br></li>
+    <li><strong>Pairwise Alignments</strong><br> <em>Applies
+        Smith and Waterman algorithm to selected sequences. See <a
+        href="../calculations/pairwise.html">pairwise
+          alignments</a>.
+    </em><br></li>
+    <li><strong>Extract Scores ... (optional)</strong><br> <em>This
+        option is only visible if Jalview detects one or more
+        white-space separated values in the description line of the
+        alignment sequences.<br> When selected, these numbers are
+        parsed into sequence associated annotation which can then be
+        used to sort the alignment via the Sort by&#8594;Score menu.
+    </em> <br></li>
+    <li><strong>Autocalculate Consensus</strong><br> <em>For
+          large alignments it can be useful to deselect
+          &quot;Autocalculate Consensus&quot; when editing. This
+          prevents the sometimes lengthy calculations performed after
+          each sequence edit.</em> <br></li>
+      <li><strong>Sort With New Tree</strong><br> <em>When
+          enabled, Jalview will automatically sort the alignment when a
+          new tree is calculated or loaded onto it.</em> <br></li>
+      <li><strong>Show Flanking Regions</strong><br> <em>Opens
+          a new alignment window showing any additional sequence data
+          either side of the current alignment. Useful in conjunction
+          with 'Fetch Database References' when the 'Trim Retrieved
+          Sequences' option is disabled to retrieve full length
+          sequences for a set of aligned peptides. </em></li>
+    </ul></li>
+
+  <li><strong>Web Service Menu</strong><br /> <em>This menu
+      is dynamic, and may contain user-defined web service entries in
+      addition to any of the following ones:</em>
+    <ul>
+				<li><strong>Fetch DB References</strong><br> <em>This
+						submenu contains options for accessing any of the database
+						services that Jalview is aware of (e.g. those provided by
+						EMBL-EBI) to verify sequence start/end positions and retrieve all
+						database cross references and PDB ids associated with all or just
+						the selected sequences in the alignment.
+						<ul>
+							<li>'Trim Retrieved Sequences' - when checked, Jalview will
+								discard any additional sequence data for accessions associated
+								with sequences in the alignment. <br> <strong>Note:
+									Disabling this could cause out of memory errors when working
+									with genomic sequence records !</strong><br> <strong>Added
+									in Jalview 2.8.1</strong>
+							</li>
+							<li>'Standard Databases' will check sequences against the
+								EBI databases.</li>
+						</ul> Other sub-menus allow you to pick a specific source to query -
+						sources are listed alphabetically according to their nickname.
+				</em><br></li>
+			</ul>
+    <p>Selecting items from the following submenus will start a
+      remote service on compute facilities at the University of Dundee,
+      or elsewhere. You need a continuous network connection in order to
+      use these services through Jalview.</p>
+    <ul>
+      <li><strong>Alignment</strong><br /> <em> Align the
+          currently selected sequences or all sequences in the
+          alignment, or re-align unaligned sequences to the aligned
+          sequences. Entries in this menu provide access to the various
+          alignment programs supported by <a
+          href="../webServices/JABAWS.html">JABAWS</a>. See the
+          <a href="../webServices/msaclient.html">Multiple Sequence
+            Alignment webservice client</a> entry for more information.
+      </em></li>
+      <li><strong>Secondary Structure Prediction</strong>
+        <ul>
+          <li><strong>JPred Secondary Structure Prediction</strong><br>
+            <em>Secondary structure prediction by network
+              consensus. See the <a href="../webServices/jnet.html">Jpred</a>
+              client entry for more information. The behaviour of this
+              calculation depends on the current selection:
+              <ul>
+                <li>If nothing is selected, and the displayed
+                  sequences appear to be aligned, then a JPred prediction
+                  will be run for the first sequence in the alignment,
+                  using the current alignment. Otherwise the first
+                  sequence will be submitted for prediction.</li>
+                <li>If just one sequence (or a region on one
+                  sequence) has been selected, it will be submitted to
+                  the automatic JPred prediction server for homolog
+                  detection and prediction.</li>
+                <li>If a set of sequences are selected, and they
+                  appear to be aligned, then the alignment will be used
+                  for a JPred prediction on the <strong>first</strong>
+                  sequence in the set (that is, the one that appears
+                  first in the alignment window).
+                </li>
+              </ul>
+          </em>
+        </ul></li>
+      <li><strong>Analysis</strong><br />
+        <ul>
+          <li><strong>Multi-Harmony</strong><br> <em>Performs
+              functional residue analysis on a protein family alignment
+              with sub-families defined on it. See the <a
+              href="../webServices/shmr.html">Multi-Harmony
+                service</a> entry for more information.
+          </em></li>
+        </ul></li>
+    </ul></li>
+  </ul>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+##fileformat=VCFv4.2
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF_Female,Number=R,Type=Float,Description="Allele Frequency among Female genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=CSQ,Number=.,Type=String,Description="Consequence annotations from Ensembl VEP. Format: Allele|Consequence|IMPACT|SYMBOL|Gene|Feature_type|Feature|BIOTYPE|PolyPhen">
+##reference=/Homo_sapiens/GRCh38
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+5	45051610	.	C	A	81.96	RF;AC0	AC=1;AF=0.1;AN=0;AF_Female=2;AB_MEDIAN=6.00000e-01;CSQ=A|missense_variant|MODIFIER|WASH7P|gene3|Transcript|transcript3|rna|Benign,A|downstream_gene_variant|MODIFIER|WASH7P|gene3|Transcript|transcript4|mrna|Bad
+5	45051614	.	C	T	1666.64	RF	AC=1;AF=0.2;AN=0;AF_Female=2;AB_MEDIAN=6.00000e-01;CSQ=T|missense_variant|MODIFIER|WASH7P|gene3|Transcript|transcript3|rna|Benign,T|downstream_gene_variant|MODIFIER|WASH7P|gene3|Transcript|transcript4|mrna|Bad%3B%3B
+5	45051618	.	CGG	C	41.94	AC0	AC=1;AF=0.3;AN=0;AF_Female=2;AB_MEDIAN=6.00000e-01;CSQ=C|missense_variant|MODIFIER|WASH7P|gene3|Transcript|transcript3|rna|Benign,C|downstream_gene_variant|MODIFIER|WASH7P|gene3|Transcript|transcript4|mrna|Bad,CSQ=CGT|missense_variant|MODIFIER|WASH7P|gene3|Transcript|transcript3|rna|Benign,CGT|downstream_gene_variant|MODIFIER|WASH7P|gene3|Transcript|transcript4|mrna|Bad
+5	45051622	.	C	G,T	224.23	RF;AC0	AC=1,2;AF=0.4,0.5;AN=0;AF_Female=2;AB_MEDIAN=6.00000e-01;CSQ=G|missense_variant|MODIFIER|WASH7P|gene3|Transcript|transcript3|rna|Benign,G|downstream_gene_variant|MODIFIER|WASH7P|gene3|Transcript|transcript4|mrna|Bad,T|missense_variant|MODIFIER|WASH7P|gene3|Transcript|transcript3|rna|Benign,T|downstream_gene_variant|MODIFIER|WASH7P|gene3|Transcript|transcript4|mrna|Bad
+5	45051626	.	A	AC,G	433.35	RF;AC0	AC=3,4;AF=0.6,0.7;AN=0;AF_Female=2;AB_MEDIAN=6.00000e-01;CSQ=G|missense_variant|MODIFIER|WASH7P|gene3|Transcript|transcript3|rna|Benign,G|downstream_gene_variant|MODIFIER|WASH7P|gene3|Transcript|transcript4|mrna|Bad,AC|missense_variant|MODIFIER|WASH7P|gene3|Transcript|transcript3|rna|Benign,AC|downstream_gene_variant|MODIFIER|WASH7P|gene3|Transcript|transcript4|mrna|Bad

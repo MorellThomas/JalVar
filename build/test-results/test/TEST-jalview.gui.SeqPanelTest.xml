@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.gui.SeqPanelTest" tests="10" skipped="0" failures="1" errors="0" timestamp="2023-07-02T08:11:59" hostname="wer3eng" time="0.493">
+  <properties/>
+  <testcase name="testAmbiguousAminoAcidGetsStatusMessage" classname="jalview.gui.SeqPanelTest" time="0.054"/>
+  <testcase name="testFindColumn_unwrapped" classname="jalview.gui.SeqPanelTest" time="0.042"/>
+  <testcase name="testFindColumn_wrapped" classname="jalview.gui.SeqPanelTest" time="0.026"/>
+  <testcase name="testFindMousePosition_wrapped_annotations" classname="jalview.gui.SeqPanelTest" time="0.016"/>
+  <testcase name="testFindMousePosition_wrapped_noAnnotations" classname="jalview.gui.SeqPanelTest" time="0.027"/>
+  <testcase name="testFindMousePosition_wrapped_scaleAbove" classname="jalview.gui.SeqPanelTest" time="0.019"/>
+  <testcase name="testFindMousePosition_wrapped_scales_longSequence" classname="jalview.gui.SeqPanelTest" time="0.234">
+    <failure message="java.lang.AssertionError: expected [17] but found [20]" type="java.lang.AssertionError">java.lang.AssertionError: expected [17] but found [20]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:372)
+	at org.testng.Assert.assertEquals(Assert.java:382)
+	at jalview.gui.SeqPanelTest.testFindMousePosition_wrapped_scales_longSequence(SeqPanelTest.java:940)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:145)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:92)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <testcase name="testGetEditStatusMessage" classname="jalview.gui.SeqPanelTest" time="0.001"/>
+  <testcase name="testGetEditStatusMessage_lockedEditing" classname="jalview.gui.SeqPanelTest" time="0.0"/>
+  <testcase name="testSetStatusReturnsNearestResiduePosition" classname="jalview.gui.SeqPanelTest" time="0.014"/>
+  <system-out><![CDATA[File format identified as Fasta
+registry.getSupportedServices: [MSAprobsWS, DisemblWS, TcoffeeWS, RNAalifoldWS, MafftWS, IUPredWS, GlobPlotWS, ProbconsWS, AAConWS, JronnWS, ClustalWS, MuscleWS, ClustalOWS, GLprobsWS]
+File format identified as Fasta
+File format identified as Fasta
+File format identified as Fasta
+File format identified as Fasta
+File format identified as Pfam
+registry.getSupportedServices: [MSAprobsWS, DisemblWS, TcoffeeWS, RNAalifoldWS, MafftWS, IUPredWS, GlobPlotWS, ProbconsWS, AAConWS, JronnWS, ClustalWS, MuscleWS, ClustalOWS, GLprobsWS]
+Attempting to connect with MafftWS...
+]]></system-out>
+  <system-err><![CDATA[DEBUG - Scanning news items: newsnew=false and lastDate is null
+DEBUG - Will show jalview news automatically
+DEBUG - Completed construction of reader.
+DEBUG - Completed news thread.
+DEBUG - Constructing news reader.
+Invalid or corrupt date in property 'JALVIEW_NEWS_RSS_LASTMODIFIED' : value was 'Apr 23, 2014 2:53:26 PM'
+DEBUG - Displaying news.
+DEBUG - (Re)-Initialising the discovery URL list.
+DEBUG - Setting default services
+DEBUG - A MsaWS service called Muscle Multiple Protein Sequence Alignment exists at http://www.compbio.dundee.ac.uk/JalviewWS/services/MuscleWS
+
+DEBUG - A MsaWS service called MAFFT Multiple Sequence Alignment exists at http://www.compbio.dundee.ac.uk/JalviewWS/services/MafftWS
+
+DEBUG - A MsaWS service called ClustalW Multiple Sequence Alignment exists at http://www.compbio.dundee.ac.uk/JalviewWS/services/ClustalWS
+
+DEBUG - A SecStrPred service called JPred Secondary Structure Prediction exists at http://www.compbio.dundee.ac.uk/JalviewWS/services/jpred
+
+DEBUG - No service endpoints to use for service discovery.
+DEBUG - Filechooser init thread finished.
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Scanning news items: newsnew=false and lastDate is Fri Jun 30 20:04:22 CEST 2023
+DEBUG - Saved last read date as 30 Jun 2023, 20:04:22
+DEBUG - Old discovery thread has finished.
+DEBUG - Scanning news items: newsnew=false and lastDate is null
+DEBUG - Will show jalview news automatically
+DEBUG - Completed construction of reader.
+DEBUG - Completed news thread.
+java.io.IOException: No sequences found (PFAM input)
+	at jalview.io.PfamFile.parse(PfamFile.java:121)
+	at jalview.io.AlignFile.doParse(AlignFile.java:208)
+	at jalview.io.AlignFile.<init>(AlignFile.java:185)
+	at jalview.io.AlignFile.<init>(AlignFile.java:170)
+	at jalview.io.AlignFile.<init>(AlignFile.java:156)
+	at jalview.io.PfamFile.<init>(PfamFile.java:47)
+	at jalview.io.FileFormat$2.getReader(FileFormat.java:54)
+	at jalview.io.AppletFormatAdapter.readFile(AppletFormatAdapter.java:205)
+	at jalview.io.AppletFormatAdapter.readFile(AppletFormatAdapter.java:155)
+	at jalview.io.FormatAdapter.readFile(FormatAdapter.java:234)
+	at jalview.io.FileLoader.run(FileLoader.java:381)
+	at jalview.io.FileLoader._LoadFileWaitTillLoaded(FileLoader.java:211)
+	at jalview.io.FileLoader.LoadFileWaitTillLoaded(FileLoader.java:164)
+	at jalview.io.FileLoader.LoadFileWaitTillLoaded(FileLoader.java:147)
+	at jalview.gui.SeqPanelTest.testFindMousePosition_wrapped_scales_longSequence(SeqPanelTest.java:922)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:145)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:92)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Failed to read alignment using the 'Pfam' reader.
+java.io.IOException: No sequences found (PFAM input)
+Jul 02, 2023 10:11:59 AM compbio.ws.client.Jws2Client connectToRegistry
+INFO: Connected to RegistryWS successfully!
+]]></system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.datamodel.DBRefEntryTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:38" hostname="wer3eng" time="0.003">
+  <properties/>
+  <testcase name="testEqualRef" classname="jalview.datamodel.DBRefEntryTest" time="0.002"/>
+  <testcase name="testIsPrimaryCandidate" classname="jalview.datamodel.DBRefEntryTest" time="0.001"/>
+  <testcase name="testUpdateFrom" classname="jalview.datamodel.DBRefEntryTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

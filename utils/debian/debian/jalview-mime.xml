@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+
+  <mime-type type="application/x-jalview+xml+zip">
+    <comment>Jalview File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.jvp" weight="100"/>
+  </mime-type>
+
+  <mime-type type="chemical/x-cif">
+    <comment>CIF File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.cif" weight="40"/>
+  </mime-type>
+
+  <mime-type type="chemical/x-mmcif">
+    <comment>mmCIF File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.mcif" weight="40"/>
+    <glob pattern="*.mmcif" weight="40"/>
+  </mime-type>
+
+  <mime-type type="chemical/x-pdb">
+    <comment>PDB File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.pdb" weight="40"/>
+    <glob pattern="*.ent" weight="40"/>
+  </mime-type>
+
+  <mime-type type="application/x-amsa+txt">
+    <comment>AMSA File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.amsa" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/x-jalview-annotations+text">
+    <comment>Jalview Annotations File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.annotations" weight="100"/>
+    <glob pattern="*.jvannotations" weight="100"/>
+  </mime-type>
+
+  <mime-type type="application/x-jalview-biojson+json">
+    <comment>BioJSON File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.biojson" weight="100"/>
+  </mime-type>
+
+  <mime-type type="application/x-blc+txt">
+    <comment>BLC File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.blc" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/x-clustal+txt">
+    <comment>Clustal File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.aln" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/x-fasta+txt">
+    <comment>Fasta File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.fa" weight="90"/>
+    <glob pattern="*.fasta" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/x-jalview-features+text">
+    <comment>Jalview Features File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.features" weight="100"/>
+    <glob pattern="*.jvfeatures" weight="100"/>
+  </mime-type>
+
+  <mime-type type="application/x-gff2+txt">
+    <comment>Generic Features Format v2 File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.gff2" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/x-gff3+txt">
+    <comment>Generic Features Format v3 File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.gff3" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/x-jalview-jnet+text">
+    <comment>JnetFile File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.concise" weight="100"/>
+    <glob pattern="*.jnet" weight="100"/>
+  </mime-type>
+
+  <mime-type type="application/x-msf+txt">
+    <comment>MSF File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.msf" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/x-pfam+txt">
+    <comment>PFAM File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.pfam" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/x-phylip+txt">
+    <comment>PHYLIP File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.phy" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/x-pileup+txt">
+    <comment>PileUp File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.pileup" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/x-pir+txt">
+    <comment>PIR File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.pir" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/rnaml+xml">
+    <comment>RNAML File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.rnaml" weight="90"/>
+  </mime-type>
+
+  <mime-type type="application/x-jalview-scorematrix+text">
+    <comment>Substitution Matrix File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.mat" weight="100"/>
+  </mime-type>
+
+  <mime-type type="application/x-stockholm+txt">
+    <comment>Stockholm File</comment>
+    <generic-icon name="x-jalview-file"/>
+    <glob pattern="*.sto" weight="90"/>
+    <glob pattern="*.stk" weight="90"/>
+  </mime-type>
+
+</mime-info>

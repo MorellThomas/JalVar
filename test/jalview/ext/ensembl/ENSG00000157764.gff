@@ -1,0 +1,56 @@
+##gff-version 3
+# retrieved via http://rest.ensembl.org/overlap/id/ENSG00000157764?feature=gene&feature=transcript&feature=cds&content-type=text/x-gff3
+##sequence-region   7 140719327 140924764
+7	ensembl_havana	gene	140719327	140722790	.	+	.	ID=gene:ENSG00000090266;assembly_name=GRCh38;biotype=protein_coding;description=NADH dehydrogenase (ubiquinone) 1 beta subcomplex%2C 2%2C 8kDa [Source:HGNC Symbol%3BAcc:HGNC:7697];external_name=NDUFB2;logic_name=ensembl_havana_gene;version=11
+7	ensembl_havana	gene	140719327	140924764	.	-	.	ID=gene:ENSG00000157764;assembly_name=GRCh38;biotype=protein_coding;description=B-Raf proto-oncogene%2C serine/threonine kinase [Source:HGNC Symbol%3BAcc:HGNC:1097];external_name=BRAF;logic_name=ensembl_havana_gene;version=11
+7	ensembl	snRNA_gene	140884072	140884178	.	+	.	ID=gene:ENSG00000271932;assembly_name=GRCh38;biotype=snRNA;description=RNA%2C U6 small nuclear 85%2C pseudogene [Source:HGNC Symbol%3BAcc:HGNC:47048];external_name=RNU6-85P;logic_name=ncrna;version=1
+7	ensembl_havana	transcript	140719327	140722790	.	+	.	ID=transcript:ENST00000476279;Parent=gene:ENSG00000090266;assembly_name=GRCh38;biotype=protein_coding;external_name=NDUFB2-003;logic_name=havana;version=4
+7	ensembl_havana	transcript	140719327	140721955	.	+	.	ID=transcript:ENST00000461457;Parent=gene:ENSG00000090266;assembly_name=GRCh38;biotype=protein_coding;external_name=NDUFB2-004;logic_name=havana;version=1
+7	ensembl_havana	transcript	140719327	140783157	.	-	.	ID=transcript:ENST00000496384;Parent=gene:ENSG00000157764;assembly_name=GRCh38;biotype=protein_coding;external_name=BRAF-003;logic_name=havana;version=5
+7	ensembl_havana	transcript	140734479	140924764	.	-	.	ID=transcript:ENST00000288602;Parent=gene:ENSG00000157764;assembly_name=GRCh38;biotype=protein_coding;external_name=BRAF-001;logic_name=ensembl_havana_transcript;version=9
+7	ensembl_havana	NMD_transcript_variant	140734521	140754211	.	-	.	ID=transcript:ENST00000479537;Parent=gene:ENSG00000157764;assembly_name=GRCh38;biotype=nonsense_mediated_decay;external_name=BRAF-005;logic_name=havana;version=4
+7	ensembl_havana	NMD_transcript_variant	140734597	140924658	.	-	.	ID=transcript:ENST00000497784;Parent=gene:ENSG00000157764;assembly_name=GRCh38;biotype=nonsense_mediated_decay;external_name=BRAF-002;logic_name=havana;version=1
+7	ensembl_havana	aberrant_processed_transcript	140834061	140924709	.	-	.	ID=transcript:ENST00000469930;Parent=gene:ENSG00000157764;assembly_name=GRCh38;biotype=retained_intron;external_name=BRAF-004;logic_name=havana;version=1
+7	ensembl	snRNA	140884072	140884178	.	+	.	ID=transcript:ENST00000605989;Parent=gene:ENSG00000271932;assembly_name=GRCh38;biotype=snRNA;external_name=RNU6-85P-201;logic_name=ncrna;version=1
+7	havana	CDS	140696745	140696842	.	+	0	ID=CDS:ENSP00000419087;Parent=transcript:ENST00000476279;assembly_name=GRCh38
+7	havana	CDS	140702866	140703010	.	+	1	ID=CDS:ENSP00000419087;Parent=transcript:ENST00000476279;assembly_name=GRCh38
+7	havana	CDS	140704860	140704934	.	+	0	ID=CDS:ENSP00000419087;Parent=transcript:ENST00000476279;assembly_name=GRCh38
+7	havana	CDS	140696745	140696842	.	+	0	ID=CDS:ENSP00000420062;Parent=transcript:ENST00000461457;assembly_name=GRCh38
+7	havana	CDS	140721552	140721744	.	+	1	ID=CDS:ENSP00000420062;Parent=transcript:ENST00000461457;assembly_name=GRCh38
+7	havana	CDS	140783021	140783157	.	-	2	ID=CDS:ENSP00000419060;Parent=transcript:ENST00000496384;assembly_name=GRCh38
+7	havana	CDS	140781576	140781693	.	-	0	ID=CDS:ENSP00000419060;Parent=transcript:ENST00000496384;assembly_name=GRCh38
+7	havana	CDS	140777991	140778075	.	-	2	ID=CDS:ENSP00000419060;Parent=transcript:ENST00000496384;assembly_name=GRCh38
+7	havana	CDS	140776912	140777088	.	-	1	ID=CDS:ENSP00000419060;Parent=transcript:ENST00000496384;assembly_name=GRCh38
+7	havana	CDS	140754187	140754233	.	-	1	ID=CDS:ENSP00000419060;Parent=transcript:ENST00000496384;assembly_name=GRCh38
+7	havana	CDS	140753275	140753393	.	-	2	ID=CDS:ENSP00000419060;Parent=transcript:ENST00000496384;assembly_name=GRCh38
+7	havana	CDS	140749287	140749418	.	-	0	ID=CDS:ENSP00000419060;Parent=transcript:ENST00000496384;assembly_name=GRCh38
+7	havana	CDS	140739812	140739946	.	-	0	ID=CDS:ENSP00000419060;Parent=transcript:ENST00000496384;assembly_name=GRCh38
+7	havana	CDS	140734617	140734770	.	-	0	ID=CDS:ENSP00000419060;Parent=transcript:ENST00000496384;assembly_name=GRCh38
+7	havana	CDS	140726494	140726516	.	-	2	ID=CDS:ENSP00000419060;Parent=transcript:ENST00000496384;assembly_name=GRCh38
+7	ensembl_havana	CDS	140924566	140924703	.	-	0	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140850111	140850212	.	-	0	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140834609	140834872	.	-	0	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140808892	140808995	.	-	0	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140807960	140808062	.	-	1	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140801412	140801560	.	-	0	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140800362	140800481	.	-	1	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140794308	140794467	.	-	1	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140787548	140787584	.	-	0	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140783021	140783157	.	-	2	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140781576	140781693	.	-	0	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140777991	140778075	.	-	2	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140776912	140777088	.	-	1	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140754187	140754233	.	-	1	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140753275	140753393	.	-	2	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140749287	140749418	.	-	0	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140739812	140739946	.	-	0	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	ensembl_havana	CDS	140734597	140734770	.	-	0	ID=CDS:ENSP00000288602;Parent=transcript:ENST00000288602;assembly_name=GRCh38
+7	havana	CDS	140754187	140754211	.	-	0	ID=CDS:ENSP00000418033;Parent=transcript:ENST00000479537;assembly_name=GRCh38
+7	havana	CDS	140753275	140753393	.	-	2	ID=CDS:ENSP00000418033;Parent=transcript:ENST00000479537;assembly_name=GRCh38
+7	havana	CDS	140749287	140749418	.	-	0	ID=CDS:ENSP00000418033;Parent=transcript:ENST00000479537;assembly_name=GRCh38
+7	havana	CDS	140747415	140747447	.	-	0	ID=CDS:ENSP00000418033;Parent=transcript:ENST00000479537;assembly_name=GRCh38
+7	havana	CDS	140924566	140924658	.	-	0	ID=CDS:ENSP00000420119;Parent=transcript:ENST00000497784;assembly_name=GRCh38
+7	havana	CDS	140850111	140850212	.	-	0	ID=CDS:ENSP00000420119;Parent=transcript:ENST00000497784;assembly_name=GRCh38
+7	havana	CDS	140834609	140834872	.	-	0	ID=CDS:ENSP00000420119;Parent=transcript:ENST00000497784;assembly_name=GRCh38
+7	havana	CDS	140808892	140808995	.	-	0	ID=CDS:ENSP00000420119;Parent=transcript:ENST00000497784;assembly_name=GRCh38
+7	havana	CDS	140808295	140808316	.	-	1	ID=CDS:ENSP00000420119;Parent=transcript:ENST00000497784;assembly_name=GRCh38

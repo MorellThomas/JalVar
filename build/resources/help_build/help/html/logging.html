@@ -1,0 +1,221 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer (TEST)
+ * Copyright (C) 2023 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>The Java Console, Logging and Reporting Bugs</title>
+</head>
+<body>
+  <p>
+    <strong>The Java Console, Logging and Reporting Bugs<br /></strong>
+  </p>
+  <p>
+    Like most programs, Jalview contains bugs, despite our best efforts.
+    However, Jalview also produces a series of messages during its
+    operation, often referred to as 'logs'. These logs provide a record
+    of Jalview's operation. They can also be extremely useful when <a
+      href="#reportingbugs">reporting bugs</a>, since they help the
+    Jalview developers diagnose and find a workaround for specific
+    problems that you might encounter.
+  </p>
+  <p>
+    The primary place to look for logs is in the <a href="#java_console">Java
+      Console</a> which you can open from within Jalview by going to the <em>Tools</em>
+    menu and checking the box next to <em>Show Java Console</em>. This
+    option is stored in your Jalview preferences file and so is
+    remembered across Jalview sessions.
+  </p>
+  <p>The Java Console will show you information about what the
+    Jalview application is doing (often in the background) whilst it is
+    running.</p>
+  <p>However, when tracking down problems preventing Jalview from
+    starting up properly, you need to look at the startup logs - which
+    are not shown in the Jalview Console. The location of these depends
+    on how you launched Jalview:</p>
+  <p>
+    <strong>Jalview Desktop Installation Launch Logs</strong><br />If you are using
+    a standard desktop version of Jalview installed from one of our
+    install4j installers, then messages about Jalview's initial launch
+    can be found in
+  <pre>JALVIEW_APP_DIR/launcher.log</pre>
+  where
+  <em>JALVIEW_APP_DIR</em> is the directory that Jalview's application
+  was installed into.
+  <br /> For Jalview 2.11.0 onwards:
+  <ul>
+    <li>In Windows this is <em>%APPDATA%\Local\Jalview</em> by
+      default
+    </li>
+    <li>In macOS this is <em>/Applications/Jalview.app/Contents/Resources/app</em>
+      by default
+    </li>
+    <li>In Linux and other Unix OSes this is <em>~/opt/jalview</em>
+      by default
+    </li>
+  </ul>
+  <p><strong>Jalview Executable Jar Launch Logs</strong><br/>If you are using the Jalview executable jar file (also
+  used by bioconda and OSX homebrew installations) then the default run class (
+  <em>jalview.bin.Launcher</em> -- a minimised launcher that will set
+  memory and linux dpi settings before re-launching
+  <em>jalview.bin.Jalview</em>), will output logging information to
+  STDOUT and STDERR.
+  </p>
+
+  <p><strong>
+    <a name="java_console">Java Console and Log Level</a>
+  </strong></p>
+  <p>
+    The Java Console is opened by selecting <strong>Tools
+      &rarr; Show Java Console</strong>. The visibility of the console is stored
+    in your preferences, so if you quit Jalview with the console open,
+    it will be shown the next time you start Jalview. You can close the
+    console by selecting the same menu option again, or just closing the
+    console window.
+  </p>
+  <p>The Java Console's text display always shows information about
+    your system and Jalview installation details. The rest are the most
+    recent messages output during your Jalview session. Some messages
+    are only captured by the console when it is open, so to get a full
+    log for debugging a problem, enable the console and then restart
+    Jalview.</p>
+
+  <p>
+    Jalview logging will automatically scroll the text in the Java Console
+    but if you want to examine a particular part of the logs whilst logging
+    is still going on you can click on any part of the text area to
+    stop this behaviour.  A border should appear arround the
+    text area to signify that autoscroll has been turned off.  You can
+    toggle the autoscroll behaviour on and off by clicking again on the
+    text area.
+  </p>
+  <p>
+    You can temporarily control the detail of what appears as output by
+    selecting a <em>Log level</em> using the drop-down list at the
+    bottom left of the console. There are several levels to choose from:
+    The most verbose is TRACE, followed by DEBUG, INFO, WARN. When the
+    Console is opened, the default level will be chosen (INFO).
+  </p>
+  <p>
+    <strong>Note! If you change the log level in the Java
+      Console, this change will only persist for as long as the console
+      is open. Once you close the console the log level will revert back
+      to what it had been when you opened the console (usually INFO).</strong>
+  </p>
+  <p><strong>Permanently changing Jalview's default log level</strong><br/>
+    You can change the default log level by editing the Jalview
+    preferences file, <em>.jalview_properties</em>, found in your home
+    directory (on Windows: %HOMEPATH%, or the folder above 'My
+    Documents'; on macOS: ~ or /Users/<em>username</em>; on linux/unix:
+    ~ or /home/<em>username</em>), and setting the property <em>logs.Jalview.level</em>
+    to the log level you prefer, e.g.
+  <pre>
+  logs.Jalview.level=DEBUG
+  </pre>
+  You can also set the property
+  <pre>
+  logs.Axis.level=DEBUG
+  </pre>
+  <p>to get debug information for Jalview's JPred service. The Axis log
+  level cannot be set from within the Java Console.
+  </p>
+  <p>
+    You can also set the <em>logs.jalview.level</em> property to a log level
+    not usually presented in the Java Console (though restricted to log
+    levels used by Apache Log4j -- see <a
+      href="https://logging.apache.org/log4j/2.x/manual/customloglevels.html">Log4j
+      Custom Log Levels</a> for details of the standard log levels
+    available). Jalview does not currently define any custom log levels.
+    If you do set the property with a log level that is normally not
+    visible in the Java Console this should be respected and visibly
+    selected when you open the console.
+  </p>
+  <p>
+    The <em>Clear</em> button at the bottom of the console will clear
+    all logging messages except for the initial system information which
+    is rewritten to the console.
+  </p>
+  <p>
+    The <em>Copy to clipboard</em> button at the bottom right of the
+    console will copy all of the text in the console to your system
+    clipboard, ready to paste into another application (e.g. email
+    composer or issue tracker).
+  </p>
+
+  <p><strong><a name="reportingbugs">Reporting Bugs</a></strong></p>
+
+  <p>
+    If you come across a problem in Jalview where something is not
+    working as described, or how you think it should, you should first
+    check the <a href="https://www.jalview.org/faq">Jalview FAQ</a> to
+    see if this is a known problem and if there is a suggested
+    workaround.
+  </p>
+  <p>
+    If there is no FAQ answer covering your problem then you can submit
+    a bug report on the <a href="https://issues.jalview.org/">Jalview
+      Issue Tracker</a>. It is good practice to search the issue tracker
+    first to see if the issue has already been reported. If an issue
+    already exists please continue to add your own comments to the issue
+    which may well help narrow down the problem, if not then you can
+    create an account and submit a new bug report:
+  </p>
+  <p>
+    Make sure that you set Project to <em>Jalview (JAL)</em>, and Issue
+    Type to <em>Bug</em> or <em>New Feature</em> or <em>Improvement</em>
+    appropriately.<br /> Give a one line summary of the issue in the <em>Summary</em>.
+    <br /> In the <em>Environment</em> text box you can describe the
+    system you are using. This is usually most easily done by opening
+    the Java Console, clicking the <em>Clear</em> button, and then
+    immediately on the <em>Copy to clipboard</em> button, and then
+    pasting the clipboard into the text box.
+  </p>
+  <p>
+    You can then give more detailed information about how to recreate
+    the problem in the <em>Description</em> text box. If you want to
+    attach any screenshots or example alignment files that demonstrate
+    the problem then you can drag them to the Create Issue dialog in
+    your browser, or use the <em>Attachment</em> browse facility to
+    locate them on your computer.
+  </p>
+
+  <p>
+    To help the Jalview team with diagnosing a particular issue, it is
+    really helpful if you can also add more detailed logs output whilst
+    re-creating the problem. To do this, open the Java Console, click
+    the <em>Clear</em> button and select TRACE in the <em>Log level</em>
+    drop down list. <br /> Whilst leaving the console open, perform the
+    task in Jalview that re-creates the problem. <br /> Then you can
+    copy the debug information in the Java Console by clicking on the <em>Copy
+      to clipboard</em> button and then paste that into the Description, or a
+    Comment of your issue.
+  </p>
+
+  <p>
+    For other queries or comments about Jalview, remember you can
+    contact the Jalview team using email via the
+    <a href="https://discourse.jalview.org/">Jalview
+      Discussion Forum</a>, on Twitter <a
+      href="https://twitter.com/Jalview/">@Jalview</a>, or for technical
+    discussions, via the Jalview developer's chatroom at
+    <a href="https://gitter.im/jalview/developers">https://gitter.im/jalview/developers</a>.
+  </p>
+
+</body>
+</html>

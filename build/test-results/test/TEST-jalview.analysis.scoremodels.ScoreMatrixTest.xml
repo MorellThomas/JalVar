@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.analysis.scoremodels.ScoreMatrixTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:20" hostname="wer3eng" time="0.023">
+  <properties/>
+  <testcase name="testBlosum62_values" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.006"/>
+  <testcase name="testBuildSymbolIndex" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.001"/>
+  <testcase name="testBuildSymbolIndex_nonAscii" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testComputePairwiseScores" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testConstructor" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testConstructor_gapDash" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testConstructor_matrixNotSquare" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testConstructor_matrixTooBig" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testConstructor_matrixTooSmall" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testEqualsAndHashCode" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testGetMatrix" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testGetMatrixIndex" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testGetMaximumScore" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testGetMinimumScore" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testGetPairwiseScore" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testGetSize" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testIsSymmetric" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.001"/>
+  <testcase name="testOutputMatrix_html" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testOutputMatrix_roundTrip" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.001"/>
+  <testcase name="testSymmetric" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.011"/>
+  <testcase name="testcomputeSimilarity_matchLongestSequence" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <testcase name="testcomputeSimilarity_matchShortestSequence" classname="jalview.analysis.scoremodels.ScoreMatrixTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Unexpected character È in getPairwiseScore
+Unexpected character È in getPairwiseScore
+]]></system-err>
+</testsuite>

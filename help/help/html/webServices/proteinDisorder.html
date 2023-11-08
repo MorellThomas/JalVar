@@ -1,0 +1,250 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>JABAWS Protein Disorder Prediction Services</title>
+</head>
+<body>
+  <p>
+    <strong>JABAWS Protein Disorder Prediction Services</strong> <br />
+    The <strong>Web Services&rarr;Disorder</strong> menu in the
+    alignment window allows access to protein disorder prediction
+    services provided by the configured <a
+      href="http://www.compbio.dundee.ac.uk/jabaws">JABAWS
+      servers</a>. Each service operates on sequences in the alignment or
+    currently selected region (<em>since Jalview 2.8.0b1</em>) to
+    identify regions likely to be unstructured or flexible, or
+    alternately, fold to form globular domains.
+  </p>
+  <p>
+    Predictor results include both <a
+      href="../features/seqfeatures.html">sequence features</a> and
+    sequence associated <a href="../features/annotation.html">alignment
+      annotation</a> rows. Features display is controlled from the <a
+      href="../features/featuresettings.html">Feature Settings</a>
+    dialog box. Clicking on the ID for a disorder prediction annotation
+    row will highlight or select (if double clicked) the associated
+    sequence for that row. You can also use the <em>Sequence
+      Associated</em> option in the <a
+      href="../colourSchemes/annotationColouring.html">Colour
+      By Annotation</a> dialog box to colour sequences according to the
+    results of predictors shown as annotation rows.
+  </p>
+  <p>JABAWS 2.2 provides four disorder predictors which are
+    described below:</p>
+  <ul>
+    <li><a href="#disembl">DisEMBL</a></li>
+    <li><a href="#iupred">IUPred</a></li>
+    <li><a href="#ronn">RONN</a></li>
+    <li><a href="#globplot">GlobPlot</a></li>
+  </ul>
+  <p>
+    <strong><a name="disembl"></a><a href="http://dis.embl.de/">DisEMBL
+        (Linding et al., 2003)</a> </strong> <br /> DisEMBL is a set of
+    machine-learning based predictors trained to recognise
+    disorder-related annotation found on PDB structures.
+  </p>
+  <table border="1">
+    <tr>
+      <td><strong>Name</strong></td>
+      <td><strong>Annotation type</strong></td>
+      <td><strong>Description</strong></td>
+    </tr>
+    <tr>
+      <td><strong>COILS</strong></td>
+      <td>Sequence Feature &amp;<br />Annotation Row
+      </td>
+      <td>Predicts loops/coils according to DSSP definition<a
+        href="#dsspstates">[1]</a>.<br />Features mark range(s)
+        of residues predicted as loops/coils, and annotation row gives
+        raw value for each residue. Value over 0.516 indicates
+        loop/coil.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>HOTLOOPS</strong></td>
+      <td>Sequence Feature &amp;<br />Annotation Row
+      </td>
+      <td>&quot;Hot loops constitute a refined subset of <strong>COILS</strong>,
+        namely those loops with a high degree of mobility as determined
+        from C&alpha; temperature factors (B factors). It follows that
+        highly dynamic loops should be considered protein
+        disorder.&quot;<br /> Features mark range(s) of residues
+        predicted to be hot loops and annotation row gives raw value for
+        each residue. Values over 0.6 indicates hot loop.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>REMARK465</strong></td>
+      <td>Sequence Feature &amp;<br />Annotation Row
+      </td>
+      <td>&quot;Missing coordinates in X-ray structure as defined
+        by remark465 entries in PDB. Nonassigned electron densities most
+        often reflect intrinsic disorder, and have been used early on in
+        disorder prediction.&quot;<br /> Features gives range(s) of
+        residues predicted as disordered, and annotation row gives raw
+        value for each residue. Value over 0.1204 indicates disorder.
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <a name="dsspstates"></a>[1]. DSSP Classification: &alpha;-helix
+    (H), 310-helix (G), &beta;-strand (E) are ordered, and all other
+    states (&beta;-bridge (B), &beta;-turn (T), bend (S), &pi;-helix
+    (I), and coil (C)) considered loops or coils.
+  </p>
+
+
+  <p>
+    <strong><a name="ronn"></a><a
+      href="http://www.strubi.ox.ac.uk/RONN">RONN</a></strong> <em>a.k.a.</em>
+    Regional Order Neural Network<br />This predictor employs an
+    approach known as the 'bio-basis' method to predict regions of
+    disorder in sequences based on their local similarity with a
+    gold-standard set of disordered protein sequences. It yields a set
+    of disorder prediction scores, which are shown as sequence
+    annotation below the alignment.
+  </p>
+  <table border="1">
+    <tr>
+      <td><strong>Name</strong></td>
+      <td><strong>Annotation type</strong></td>
+      <td><strong>Description</strong></td>
+    </tr>
+    <tr>
+      <td><strong>JRonn</strong>[2]</td>
+      <td>Annotation Row</td>
+      <td>RONN score for each residue in the sequence. Scores above
+        0.5 identify regions of the protein likely to be disordered.</td>
+    </tr>
+  </table>
+  <p>
+    <em>[2]. JRonn denotes the score for this server because JABAWS
+      runs a Java port of RONN developed by Peter Troshin and
+      distributed as part of <a href="http://www.biojava.org/">Biojava
+        3</a>
+    </em>
+  </p>
+  <p>
+    <strong><a name="iupred"></a><a
+      href="http://iupred.enzim.hu/">IUPred</a></strong><br />
+    IUPred employs an empirical model to estimate likely regions of
+    disorder. There are three different prediction types offered, each
+    using different parameters optimized for slightly different
+    applications. It provides raw scores based on two models for
+    predicting regions of 'long disorder' and 'short disorder'. A third
+    predictor identifies regions likely to form structured domains.
+  </p>
+  <table border="1">
+    <tr>
+      <td><strong>Name</strong></td>
+      <td><strong>Annotation type</strong></td>
+      <td><strong>Description</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Long disorder</strong></td>
+      <td>Annotation Row</td>
+      <td>Prediction of context-independent global disorder that
+        encompasses at least 30 consecutive residues of predicted
+        disorder. Employs a 100 residue window for calculation.<br />Values
+        above 0.5 indicates the residue is intrinsically disordered.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Short disorder</strong></td>
+      <td>Annotation Row</td>
+      <td>Predictor for short, (and probably) context-dependent,
+        disordered regions, such as missing residues in the X-ray
+        structure of an otherwise globular protein. Employs a 25 residue
+        window for calculation, and includes adjustment parameter for
+        chain termini which favors disorder prediction at the ends.<br />Values
+        above 0.5 indicate short-range disorder.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Structured domains</strong></td>
+      <td>Sequence Feature</td>
+      <td>Features highlighting likely globular domains useful for
+        structure genomics investigation. <br />Post-analysis of
+        disordered region profile to find continuous regions confidently
+        predicted to be ordered. Neighbouring regions close to each
+        other are merged, while regions shorter than the minimal domain
+        size of at least 30 residues are ignored.
+      </td>
+    </tr>
+  </table>
+  <p>
+    <strong><a name="globplot"></a><a
+      href="http://globplot.embl.de/">GLOBPLOT</a></strong><br /> Defines
+    regions of globularity or natively unstructured regions based on a
+    running sum of the propensity of residues to be structured or
+    unstructured. The propensity is calculated based on the probability
+    of each amino acid being observed within well defined regions of
+    secondary structure or within regions of random coil. The initial
+    signal is smoothed with a Savitzky-Golay filter, and its first order
+    derivative computed. Residues for which the first order derivative
+    is positive are designated as natively unstructured, whereas those
+    with negative values are structured.<br />
+  <table border="1">
+    <tr>
+      <td><strong>Name</strong></td>
+      <td><strong>Annotation type</strong></td>
+      <td><strong>Description</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Disordered Region</strong></td>
+      <td>Sequence Feature</td>
+      <td><br />Sequence features marking range(s) of residues
+        with positive dydx values (correspond to the #Disorder column
+        from JABAWS results)</td>
+    </tr>
+    <tr>
+      <td><strong>Globular Domain</strong>
+      <td>Sequence Feature</td>
+      <td>Putative globular domains</td>
+    </tr>
+    <tr>
+      <td><strong>Dydx</strong></td>
+      <td>Annotation row</td>
+      <td>First order derivative of smoothed score. Values above 0
+        indicates residue is disordered.</td>
+    </tr>
+    <tr>
+      <td><strong>Smoothed Score<br />Raw Score
+      </strong></td>
+      <td>Annotation Row</td>
+      <td>The smoothed and raw scores used to create the
+        differential signal that indicates the presence of unstructured
+        regions.<br /> <em>These are hidden by default, but can be
+          shown by right-clicking on the alignment annotation panel and
+          selecting <strong>Show hidden annotation</strong>
+      </em>
+      </td>
+    </tr>
+  </table>
+  <p>
+    <em>Documentation and thresholds for the JABAWS Disorder
+      predictors adapted from a personal communication by Nancy Giang,
+      2012.</em>
+  </p>
+</body>
+</html>

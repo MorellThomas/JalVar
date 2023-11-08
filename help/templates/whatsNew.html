@@ -1,0 +1,95 @@
+<html>
+<!--
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ -->
+<head>
+<title>What's new ?</title>
+</head>
+<body>
+  <p>
+    <strong>Welcome to Jalview Version __VERSION__ (released __DISPLAY_DATE__)!!</strong><br/>
+  </p>
+__WHATS_NEW__
+  <p>
+    The 2.11.2 release series provides support for two popular 3D
+    structure visualisation tools, new features for discovery of 3D
+    structures, improved platform integration and a new command line
+    tool allowing Jalview to be more easily called from scripts.</p>
+
+  <p>
+    <strong>View predicted protein structures via 3D-Beacons</strong> <br>
+    Jalview 2.11.2's <a href="features/structurechooser.html">Structure
+      Chooser includes a client for the 3D-Beacons Network</a>. Launched in
+    2021, the 3D-Beacons network (<a
+      href="https://www.ebi.ac.uk/pdbe/pdbe-kb/3dbeacons/">www.ebi.ac.uk/pdbe/pdbe-kb/3dbeacons/</a>)
+    provides a central point for the retrieval of predicted and observed
+    3D structures for sequences in Uniprot, including homology models
+    from Swiss-model and deep learning based predictions from the EBI's
+    Alphafold database (Orengo et al. 2020, <a
+      href="https://doi.org/10.12688/f1000research.20559.1">doi:10.12688/f1000research.20559.1</a>).<br>
+  </p>
+
+  <p>
+    <strong>Support for viewing structures with ChimeraX and
+      Pymol</strong><br> Jalview's 3D structure viewer system has been
+    re-architected to allow easier integration of external structure
+    viewers, and takes advantage of the strucViz2 Chimera communications
+    library developed by Scooter Morris (<a
+      href="https://doi.org/10.1093/bioinformatics/btm329">doi:10.1093/bioinformatics/btm329</a>).<br /> <br />
+    The <a href="features/preferences.html#structure">Structures
+      Preferences tab</a> provides new options allowing ChimeraX and
+    Pymol to be used for visualising external 3D structures. Views
+    from all structure viewers are saved in Jalview Projects, allowing
+    them to be shared with others using Jalview 2.11.2 or later,
+    providing they have the same viewer installed and configured to be
+    used with Jalview.<br/><br/>Jalview
+    2.11.2 has been tested with <strong>Pymol 2.5.0 (community)</strong> and <strong>2.5.2
+    (incentive)</strong>. For <strong>ChimeraX, we recommend using v1.3 or later</strong>.
+  </p>
+  <p>Other highlights include:</p>
+  <ul>
+    <li>Import of annotated DNA and RNA loci via GenBank and EMBL
+      style flatfile</li>
+    <li><strong>Easier configuration of <a
+        href="features/preferences.html#startup">Jalview's memory
+          allocation</a></strong></li>
+    <li>Scripts for <a href="features/commandline.html">running
+        Jalview via the command line</a> on macOS, Linux/Unix and Windows.
+    </li>
+  </ul>
+
+
+  <p>
+      For the full details, see <a
+        href="releases.html#Jalview.2.11.2">the Jalview 2.11.2 series
+        release notes</a>.
+    </p>
+  <p>
+    <strong>Known Issues</strong> <br />The following known issues will
+    be addressed in a minor patch release.
+  
+  <ul>
+    <li>Display of RESNUM sequence features are not suppressed when
+      structures associated with a sequence are viewed with an external
+      viewer (Regression from 2.11.1 series)</li>
+  </ul>
+    <p></p>
+</body>
+</html>

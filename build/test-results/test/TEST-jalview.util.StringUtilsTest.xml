@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jalview.util.StringUtilsTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:13:43" hostname="wer3eng" time="0.003">
+  <properties/>
+  <testcase name="testArrayToSeparatorList" classname="jalview.util.StringUtilsTest" time="0.0"/>
+  <testcase name="testCompareVersions" classname="jalview.util.StringUtilsTest" time="0.0"/>
+  <testcase name="testDeleteChars" classname="jalview.util.StringUtilsTest" time="0.0"/>
+  <testcase name="testGetLastToken" classname="jalview.util.StringUtilsTest" time="0.0"/>
+  <testcase name="testInsertCharAt" classname="jalview.util.StringUtilsTest" time="0.001"/>
+  <testcase name="testListToDelimitedString" classname="jalview.util.StringUtilsTest" time="0.0"/>
+  <testcase name="testParseInt" classname="jalview.util.StringUtilsTest" time="0.0"/>
+  <testcase name="testSeparatorListToArray" classname="jalview.util.StringUtilsTest" time="0.001"/>
+  <testcase name="testStripHtmlTags" classname="jalview.util.StringUtilsTest" time="0.0"/>
+  <testcase name="testToSentenceCase" classname="jalview.util.StringUtilsTest" time="0.0"/>
+  <testcase name="testUrlDecode" classname="jalview.util.StringUtilsTest" time="0.0"/>
+  <testcase name="testUrlEncode" classname="jalview.util.StringUtilsTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Invalid version format found: For input string: "3B1"
+Invalid version format found: For input string: "3B1"
+]]></system-err>
+</testsuite>

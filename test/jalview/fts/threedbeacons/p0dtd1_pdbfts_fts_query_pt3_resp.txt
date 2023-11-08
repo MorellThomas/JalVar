@@ -1,0 +1,2513 @@
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":5,
+    "params":{
+      "q":"(7twn OR 7two OR 7cut OR 7lfz OR 7twh OR 7twi OR 7twf OR 7cuu OR 7twg OR 7aqi OR 6xaa OR 7aqj OR 5r8t OR 7cwc OR 7nn0 OR 7lhq OR 7r2v OR 7cwb OR 6xbh OR 6xbi OR 7cx9 OR 5r7z OR 6xbg OR 8bsd OR 7rw0 OR 7rw1 OR 7au4 OR 7a1u OR 8d4j OR 8d4k OR 8d4n OR 6xch OR 8d4l OR 8d4m OR 7rvu OR 7rvv OR 7rvs OR 7rvt OR 7jfq OR 7rvy OR 7rvz OR 7rvw OR 7rvx OR 7t8m OR 7rvm OR 7rvn OR 7nng OR 7rvq OR 7t8r OR 7rvr OR 7rvo OR 7rvp OR 7c6u OR 7c6s OR 7cxn OR 7cxm OR 6xdh OR 7cz4 OR 6m03 OR 7t9w OR 7avd OR 7lkt OR 7lku OR 7lkr OR 7lks OR 7t9y OR 7c8b OR 6xez OR 8dz9 OR 8dz6 OR 7lkd OR 6xg3 OR 7lke OR 8dz0 OR 8dz1 OR 8dz2 OR 7cyq OR 7c7p OR 7n06 OR 5sa4 OR 8dza OR 7jhe OR 5sa6 OR 5sa5 OR 5sa8 OR 7p2o OR 5sa7 OR 5sa9 OR 6xfn OR 7ax6 OR 7c8t OR 7c8u OR 7p2g OR 7lkx OR 7lkv OR 7lkw OR 7c8r OR 7jit OR 7axm OR 7jir OR 5sab OR 5saa OR 6m0k OR 7aww OR 7lmc OR 7ay7 OR 7awu OR 7lmf OR 6zm7 OR 7lmd OR 7r7h OR 7jib OR 7lme OR 7llz OR 7aws OR 7awr OR 6zme OR 7nt3 OR 7nt4 OR 7nt1 OR 7nt2 OR 7n0c OR 7n0d OR 6zn5 OR 7faz OR 7n0b OR 6xhu OR 6zlw OR 5sad OR 5sac OR 7jiv OR 5saf OR 7axo OR 5sae OR 7jiw OR 5sah OR 6xhm OR 5sag OR 7fay OR 7rzc OR 5sai OR 7los OR 7jkv OR 6m2n OR 6m2q OR 7n33 OR 6zmt OR 6xip OR 6zmi OR 5sbf OR 6zmo OR 7ntw OR 7pxz OR 7jlt OR 7ntv OR 6xkh OR 6zoj OR 6xkf OR 7nts OR 7ntt OR 7jn2 OR 7n44 OR 7ntq OR 6zp4 OR 7l14 OR 6zpe OR 7nw2 OR 7l12 OR 7l13 OR 7l10 OR 7l11 OR 7jme OR 7n3k OR 7nuk OR 6zon OR 6zok OR 8bzv OR 6xkm OR 7whc OR 7jp0 OR 6m71 OR 7jp1 OR 6m5i OR 7l0d OR 7dav OR 7dat OR 7dau OR 7nwx OR 7n5z OR 7joy OR 7jq0 OR 7jq1 OR 7jq4 OR 7jq5 OR 7jq2 OR 7jq3 OR 7l1f OR 7dcd OR 6xmk OR 7bb2 OR 7n89 OR 7jpy OR 7jpz OR 6zsl OR 7n83 OR 7jr3 OR 6xoa OR 7jr4 OR 7ltj OR 7jpe OR 7ltn OR 7n6n OR 7ddc OR 6zrt OR 6zru OR 7nxh OR 7n7y OR 7dg6 OR 7n7r OR 7lw4 OR 7sd9 OR 7lw3 OR 7bal OR 6z2e OR 7n7w OR 7baj OR 7bak OR 7n7u OR 7jqb OR 7jqc OR 7sdc OR 7sda OR 6xqb OR 7jt7 OR 7dfg OR 7jt0 OR 7jrn OR 7dfh OR 7n8c OR 6xr3 OR 7be7 OR 7jst OR 7ju7 OR 7jsu OR 5sl7 OR 7sdr OR 5sl6 OR 7dgb OR 5sl9 OR 7sf3 OR 5sl8 OR 7dgh OR 7dgi OR 7dgf OR 7dgg OR 5sl1 OR 5sl0 OR 5sl3 OR 6xqu OR 5sl2 OR 7sf1 OR 7l5d OR 6xqs OR 5sl5 OR 5sl4 OR 6xqt OR 5slg OR 7qbb OR 7bf5 OR 5slf OR 7bf6 OR 7sfb OR 7bf3 OR 5sli OR 7bf4 OR 5slh OR 7sfh OR 5slk OR 7sfi OR 6z72 OR 5slj OR 5slm OR 5sll OR 7l6t OR 6x1b OR 5sla OR 7l6r OR 5slc OR 5slb OR 5sle OR 5sld OR 5sm8 OR 7set OR 5sm7 OR 5skx OR 5sm9 OR 5skw OR 5skz OR 7dhj OR 5sky OR 5sm0 OR 7wo1 OR 5sm2 OR 5sm1 OR 5sm4 OR 5sm3 OR 7wo3 OR 5sm6 OR 5sm5 OR 5smh OR 5smg OR 7woh OR 5smi OR 7qcg) AND molecule_sequence:['' TO *] AND status:REL",
+      "fl":"pdb_id,title,experimental_method,resolution",
+      "start":"0",
+      "sort":"",
+      "rows":"500",
+      "wt":"json"}},
+  "response":{"numFound":1070,"start":0,"docs":[
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n06",
+        "resolution":2.2,
+        "title":"SARS-CoV-2 Nsp15 endoribonuclease post-cleavage state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n33",
+        "resolution":2.5,
+        "title":"SARS-CoV-2 Nsp15 endoribonuclease pre-cleavage state"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xch",
+        "resolution":2.2,
+        "title":"Room-temperature X-ray Crystal structure of SARS-CoV-2 main protease in complex with Leupeptin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6x1b",
+        "resolution":1.97,
+        "title":"Crystal Structure of NSP15 Endoribonuclease from SARS CoV-2 in the Complex with the Product Nucleotide GpU."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7c8b",
+        "resolution":2.2,
+        "title":"Crystal structure of the SARS-CoV-2 main protease in complex with Z-VAD(OMe)-FMK"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7t9y",
+        "resolution":2.18,
+        "title":"Co-crystal structure of SARS-CoV-2 Mpro C145A with substrate peptide 8/9"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xfn",
+        "resolution":1.7,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with UAW243"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xbh",
+        "resolution":1.6,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with inhibitor UAW247"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7t8r",
+        "resolution":1.74,
+        "title":"Co-crystal structure of SARS-CoV-2 Mpro C145A with substrate peptide 7/8"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xbg",
+        "resolution":1.45,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with inhibitor UAW246"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0b",
+        "resolution":3.9,
+        "title":"Cryo-EM structure of SARS-CoV-2 nsp10-nsp14 (WT)-RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0c",
+        "resolution":3.4,
+        "title":"Cryo-EM structure of the monomeric form of SARS-CoV-2 nsp10-nsp14 (E191A)-RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0c",
+        "resolution":3.4,
+        "title":"Cryo-EM structure of the monomeric form of SARS-CoV-2 nsp10-nsp14 (E191A)-RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7l1f",
+        "resolution":3.89,
+        "title":"SARS-CoV-2 RdRp in complex with 4 Remdesivir monophosphate"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7l1f",
+        "resolution":3.89,
+        "title":"SARS-CoV-2 RdRp in complex with 4 Remdesivir monophosphate"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7wo3",
+        "resolution":2.01,
+        "title":"SARS-CoV-2 3CLpro"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dg6",
+        "resolution":2.4,
+        "title":"Structure of SARS-Cov2-Mpro-1-302"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7woh",
+        "resolution":1.72,
+        "title":"SARS-CoV-2 3CLpro"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0b",
+        "resolution":3.9,
+        "title":"Cryo-EM structure of SARS-CoV-2 nsp10-nsp14 (WT)-RNA complex"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7cut",
+        "resolution":1.82,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with Z-VAD-FMK"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7t8m",
+        "resolution":1.6,
+        "title":"Co-crystal structure of SARS-CoV-2 Mpro C145A with substrate peptide 5/6"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6xqb",
+        "resolution":3.4,
+        "title":"SARS-CoV-2 RdRp/RNA complex"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7r7h",
+        "resolution":2.15,
+        "title":"Peptidomimetic nitrile warheads as SARS-CoV-2 3CL protease inhibitors"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7twi",
+        "resolution":1.1,
+        "title":"Crystal structure of SARS-CoV-2 NSP3 macrodomain at 293 K (P43 crystal form, 539 kGy)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7twg",
+        "resolution":1.1,
+        "title":"Crystal structure of SARS-CoV-2 NSP3 macrodomain at 293 K (P43 crystal form, 153 kGy)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7twh",
+        "resolution":1.1,
+        "title":"Crystal structure of SARS-CoV-2 NSP3 macrodomain at 293 K (P43 crystal form, 290 kGy)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7wo1",
+        "resolution":2.15,
+        "title":"Discovery of SARS-CoV-2 3CLpro peptidomimetic inhibitors through H41-specific protein-ligand interactions"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7baj",
+        "resolution":1.65,
+        "title":"Crystal structure of ligand-free SARS-CoV-2 main protease"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jp1",
+        "resolution":1.8,
+        "title":"Structure of wild-type substrate free SARS-CoV-2 Mpro."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ddc",
+        "resolution":2.175,
+        "title":"Crystal structure of SARS-CoV-2 main protease in complex with Tafenoquine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jr3",
+        "resolution":1.55,
+        "title":"SARS-CoV-2 3CL protease crystallized under reducing conditions"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lke",
+        "resolution":2.69,
+        "title":"X-ray crystal structure of the SARS-CoV-2 main protease in space group C2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lkd",
+        "resolution":2.01,
+        "title":"X-ray crystal structure of the SARS-CoV-2 main protease in space group P21."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7twf",
+        "resolution":1.1,
+        "title":"Crystal structure of SARS-CoV-2 NSP3 macrodomain at 293 K (P43 crystal form, 73 kGy)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sda",
+        "resolution":1.85,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI49"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nxh",
+        "resolution":2.1,
+        "title":"Structure of SARS-CoV2 NSP5 (3C-like proteinase) determined in-house"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sdc",
+        "resolution":1.85,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MI-09"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sd9",
+        "resolution":1.85,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI48"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"7p2o",
+        "title":"NMR solution structure of SUD-C domain of SARS-CoV-2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0d",
+        "resolution":2.5,
+        "title":"Cryo-EM structure of the tetrameric form of SARS-CoV-2 nsp10-nsp14 (E191A)-RNA complex"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xbi",
+        "resolution":1.7,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with inhibitor UAW248"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0d",
+        "resolution":2.5,
+        "title":"Cryo-EM structure of the tetrameric form of SARS-CoV-2 nsp10-nsp14 (E191A)-RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0d",
+        "resolution":2.5,
+        "title":"Cryo-EM structure of the tetrameric form of SARS-CoV-2 nsp10-nsp14 (E191A)-RNA complex"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7joy",
+        "resolution":2.0,
+        "title":"Product structure of SARS-CoV-2 Mpro C145A mutant in complex with its C-terminal autoprocessing sequence."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jt7",
+        "resolution":1.94,
+        "title":"Crystal structure of SARS-CoV-2 3CL protease in complex with compound 4"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xqs",
+        "resolution":1.9,
+        "title":"Room-temperature X-ray Crystal structure of SARS-CoV-2 main protease in complex with Telaprevir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xqu",
+        "resolution":2.2,
+        "title":"Room-temperature X-ray Crystal structure of SARS-CoV-2 main protease in complex with Boceprevir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7c6s",
+        "resolution":1.6,
+        "title":"Crystal structure of the SARS-CoV-2 main protease complexed with Boceprevir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7bak",
+        "resolution":2.05,
+        "title":"Crystal structure of SARS-CoV-2 main protease treated with ebselen"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l0d",
+        "resolution":2.39,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with ML188"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7faz",
+        "resolution":2.1,
+        "title":"Crystal structure of the SARS-CoV-2 main protease in complex with Y180"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7fay",
+        "resolution":2.1,
+        "title":"Crystal structure of SARS-CoV-2 main protease in complex with (R)-1a"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jst",
+        "resolution":1.85,
+        "title":"Crystal structure of SARS-CoV-2 3CL in apo form"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dgf",
+        "resolution":1.639,
+        "title":"The co-crystal structure of SARS-CoV-2 main protease with peptidomimetic inhibitor (S)-2-cinnamamido-N-((S)-1-oxo-3-((S)-2-oxopiperidin-3-yl)propan-2-yl)hexanamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dgh",
+        "resolution":1.968,
+        "title":"The co-crystal structure of SARS-CoV-2 main protease with peptidomimetic inhibitor N-((S)-3-methyl-1-(((S)-4-methyl-1-oxo-1-(((S)-1-oxo-3-((S)-2-oxopiperidin-3-yl)propan-2-yl)amino)pentan-2-yl)amino)-1-oxobutan-2-yl)-2-naphthamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dav",
+        "resolution":1.77,
+        "title":"The native crystal structure of COVID-19 main protease"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dgg",
+        "resolution":2.004,
+        "title":"The co-crystal structure of SARS-CoV-2 main protease with (S)-2-cinnamamido-N-((S)-1-oxo-3-((S)-2-oxopyrrolidin-3-yl)propan-2-yl)hexanamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dgi",
+        "resolution":1.898,
+        "title":"The co-crystal structure of SARS-CoV-2 main protease with peptidomimetic inhibitor N-((S)-3-methyl-1-(((S)-4-methyl-1-oxo-1-(((S)-1-oxo-3-((S)-2-oxopiperidin-3-yl)propan-2-yl)amino)pentan-2-yl)amino)-1-oxobutan-2-yl)-4-nitrobenzamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dgb",
+        "resolution":1.678,
+        "title":"The co-crystal structure of SARS-CoV-2 main protease with (S)-2-cinnamamido-4-methyl-N-((S)-1-oxo-3-((S)-2-oxopyrrolidin-3-yl)propan-2-yl)pentanamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xoa",
+        "resolution":2.1,
+        "title":"The crystal structure of 3CL MainPro of SARS-CoV-2 with C145S mutation"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xhu",
+        "resolution":1.8,
+        "title":"Room temperature X-ray crystallography reveals oxidation and reactivity of cysteine residues in SARS-CoV-2 3CL Mpro: Insights for enzyme mechanism and drug design"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xr3",
+        "resolution":1.45,
+        "title":"X-ray Structure of SARS-CoV-2 main protease bound to GRL-024-20 at 1.45 A"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xqt",
+        "resolution":2.3,
+        "title":"Room-temperature X-ray Crystal structure of SARS-CoV-2 main protease in complex with Narlaprevir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lmf",
+        "resolution":2.2,
+        "title":"SARS-CoV-2 3CLPro in complex with 2-(benzotriazol-1-yl)-N-[4-(1H-imidazol-4-yl)phenyl]-N-(3-thienylmethyl)acetamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lmd",
+        "resolution":1.96,
+        "title":"SARS-CoV-2 3CLPro in complex with 2-(benzotriazol-1-yl)-N-[4-(1H-pyrazol-4-yl)phenyl]-N-(3-thienylmethyl)acetamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7bal",
+        "resolution":1.85,
+        "title":"Crystal structure of SARS-CoV-2 main protease treated with ebselen derivative of MR6-31-2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n7u",
+        "resolution":2.06,
+        "title":"Crystal Structure of SARS-CoV-2 NendoU in complex with LIZA-7"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lme",
+        "resolution":2.1,
+        "title":"SARS-CoV-2 3CLPro in complex with N-[4-[[2-(benzotriazol-1-yl)acetyl]-(3-thienylmethyl)amino]phenyl]cyclopropanecarboxamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n7y",
+        "resolution":2.09,
+        "title":"Crystal Structure of SARS-CoV-2 NendoU in complex with Z18197050"},
+      {
+        "experimental_method":["Solution NMR"],
+        "pdb_id":"7lhq",
+        "title":"Solution structure of SARS-CoV-2 nonstructural protein 7 at pH 7.0"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8d4l",
+        "resolution":1.7,
+        "title":"Crystal Structure of SARS-CoV-2 Main Protease (Mpro) S144A Mutant"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7p2g",
+        "resolution":2.5,
+        "title":"Identification of low micromolar SARS-CoV-2 Mpro inhibitors from hits identified by in silico screens"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n5z",
+        "resolution":1.76,
+        "title":"SARS-CoV-2 Main protease C145S mutant"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n7r",
+        "resolution":2.01,
+        "title":"Crystal Structure of SARS-CoV-2 NendoU in complex with Z2472938267"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n7w",
+        "resolution":2.42,
+        "title":"Crystal Structure of SARS-CoV-2 NendoU in complex with CSC000178569"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8d4n",
+        "resolution":2.7,
+        "title":"Crystal Structure of SARS-CoV-2 Main Protease (Mpro) E166Q Mutant"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7whc",
+        "resolution":2.269,
+        "title":"Crystal structure of SARS-CoV-2 3CLpro catalytic domain"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n89",
+        "resolution":2.0,
+        "title":"Room-temperature X-ray structure of SARS-CoV-2 main protease C145A mutant in complex with substrate Ac-SAVLQSGF-CONH2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxm",
+        "resolution":2.9,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxm",
+        "resolution":2.9,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxm",
+        "resolution":2.9,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxn",
+        "resolution":3.84,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxn",
+        "resolution":3.84,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxn",
+        "resolution":3.84,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvz",
+        "resolution":1.9,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI26"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvm",
+        "resolution":1.95,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI11"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvw",
+        "resolution":1.85,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI23"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7twn",
+        "resolution":0.9,
+        "title":"Crystal structure of SARS-CoV-2 NSP3 macrodomain at pH 5 (P43 crystal form)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rw0",
+        "resolution":1.85,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI27"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvp",
+        "resolution":1.9,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI14"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvt",
+        "resolution":2.1,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI20"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvv",
+        "resolution":3.0,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI22"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rw1",
+        "resolution":2.5,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI28"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvx",
+        "resolution":1.85,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI24"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvu",
+        "resolution":2.5,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI21"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvq",
+        "resolution":2.48,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI16"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvs",
+        "resolution":1.85,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI19"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvr",
+        "resolution":2.46,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI18"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7two",
+        "resolution":0.9,
+        "title":"Crystal structure of SARS-CoV-2 NSP3 macrodomain at pH 6 (P43 crystal form)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvo",
+        "resolution":1.8,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI13"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jq0",
+        "resolution":1.65,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI3"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l12",
+        "resolution":1.8,
+        "title":"CRYSTAL STRUCTURE OF THE SARS-COV-2(2019-NCOV) MAIN PROTEASE IN COMPLEX WITH COMPOUND 14"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jt0",
+        "resolution":1.73,
+        "title":"Crystal structure of SARS-CoV-2 3CL protease in complex with MAC5576"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jpz",
+        "resolution":1.6,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI1"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jsu",
+        "resolution":1.83,
+        "title":"Crystal structure of SARS-CoV-2 3CL protease in complex with GC376"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6m03",
+        "resolution":2.0,
+        "title":"The crystal structure of COVID-19 main protease in apo form"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xmk",
+        "resolution":1.7,
+        "title":"1.70 A resolution structure of SARS-CoV-2 3CL protease in complex with inhibitor 7j"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6m2q",
+        "resolution":1.7,
+        "title":"SARS-CoV-2 3CL protease (3CL pro) apo structure (space group C21)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7c6u",
+        "resolution":2.0,
+        "title":"Crystal structure of SARS-CoV-2 complexed with GC376"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l11",
+        "resolution":1.8,
+        "title":"CRYSTAL STRUCTURE OF THE SARS-COV-2(2019-NCOV) MAIN PROTEASE IN COMPLEX WITH COMPOUND 5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l10",
+        "resolution":1.63,
+        "title":"CRYSTAL STRUCTURE OF THE SARS-COV-2 (2019-NCOV) MAIN PROTEASE IN COMPLEX WITH COMPOUND 4"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l13",
+        "resolution":2.17,
+        "title":"CRYSTAL STRUCTURE OF THE SARS-COV-2(2019-NCOV) MAIN PROTEASE IN COMPLEX WITH COMPOUND 21"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jpy",
+        "resolution":1.6,
+        "title":"Crystal structure of the SARS-CoV-2 main protease in its apo-form"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jfq",
+        "resolution":1.55,
+        "title":"The crystal structure of 3CL MainPro of SARS-CoV-2 with de-oxidized C145"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jq1",
+        "resolution":1.65,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI4"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jq5",
+        "resolution":1.9,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI8"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jq2",
+        "resolution":1.4,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI5"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dat",
+        "resolution":2.75,
+        "title":"The crystal structure of COVID-19 main protease treated by AF"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7cz4",
+        "resolution":2.64,
+        "title":"Structure of SARS-CoV-2 macro domain in complex with ADP-ribose"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dhj",
+        "resolution":1.962,
+        "title":"The co-crystal structure of SARS-CoV-2 main protease with the peptidomimetic inhibitor (S)-2-cinnamamido-N-((S)-1-oxo-3-((S)-2-oxopyrrolidin-3-yl)propan-2-yl)pent-4-ynamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dau",
+        "resolution":1.72,
+        "title":"The crystal structure of COVID-19 main protease treated by GA"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l14",
+        "resolution":1.8,
+        "title":"CRYSTAL STRUCTURE OF THE SARS-COV-2(2019-NCOV) MAIN PROTEASE IN COMPLEX WITH COMPOUND 26"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jq3",
+        "resolution":2.1,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI6"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jq4",
+        "resolution":1.65,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI7"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jp0",
+        "resolution":1.65,
+        "title":"Crystal structure of Mpro with inhibitor r1"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lkx",
+        "resolution":1.6,
+        "title":"1.60 A resolution structure of SARS-CoV-2 3CL protease in complex with inhibitor 3e"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7c8r",
+        "resolution":2.3,
+        "title":"Complex Structure of SARS-CoV-2 3CL Protease with TG-0203770"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sa4",
+        "resolution":2.046,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z239136710"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sa9",
+        "resolution":1.92,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z2697514548"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sai",
+        "resolution":2.022,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z1424343998"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sag",
+        "resolution":1.881,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with EN300-1605072"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sm4",
+        "resolution":2.16,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2856434944"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sa6",
+        "resolution":2.517,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z2856434783"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5smh",
+        "resolution":2.64,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2856434938"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sa8",
+        "resolution":2.298,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z68299550"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sad",
+        "resolution":1.961,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z425449682"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sm3",
+        "resolution":2.198,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z943693514"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sl0",
+        "resolution":2.001,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z57260516"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sm5",
+        "resolution":1.95,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2856434807"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sa7",
+        "resolution":2.222,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z1673618163"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sah",
+        "resolution":2.16,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with EN300-100112"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvy",
+        "resolution":1.85,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI25"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7bf4",
+        "resolution":1.55,
+        "title":"Crystal structure of SARS-CoV-2 macrodomain in complex with GMP"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ltn",
+        "resolution":1.79,
+        "title":"Crystal structure of Mpro in complex with inhibitor CDD-1713"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lks",
+        "resolution":1.7,
+        "title":"1.70 A resolution structure of SARS-CoV-2 3CL protease in complex with inhibitor 2f"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7bf6",
+        "resolution":2.15,
+        "title":"Crystal structure of SARS-CoV-2 macrodomain in complex with remdesivir metabolite GS-441524"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lkv",
+        "resolution":1.55,
+        "title":"1.55 A resolution structure of SARS-CoV-2 3CL protease in complex with inhibitor 3c"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7c8t",
+        "resolution":2.05,
+        "title":"Complex Structure of SARS-CoV-2 3CL Protease with TG-0205221"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7set",
+        "resolution":1.7,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with ML1000"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sfh",
+        "resolution":1.4,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with ML102"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nwx",
+        "resolution":1.8,
+        "title":"SARS-COV2 NSP5 in the presence of Zn2+"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n3k",
+        "resolution":3.0,
+        "title":"Oridonin-bound SARS-CoV-2 Nsp9"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n44",
+        "resolution":1.94,
+        "title":"Crystal structure of the SARS-CoV-2 (2019-NCoV) main protease in complex with 5-(3-{3-chloro-5-[(5-methyl-1,3-thiazol-4-yl)methoxy]phenyl}-2-oxo-2H-[1,3'-bipyridin]-5-yl)pyrimidine-2,4(1H,3H)-dione (compound 13)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ntt",
+        "resolution":1.743,
+        "title":"Crystal structure of the SARS-CoV-2 Main Protease"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sf3",
+        "resolution":1.75,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with ML1006m"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8d4k",
+        "resolution":1.89,
+        "title":"Crystal Structure of SARS-CoV-2 Main Protease (Mpro) H172Y Mutant in Complex with Inhibitor GC376"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8d4m",
+        "resolution":1.81,
+        "title":"Crystal Structure of SARS-CoV-2 Main Protease (Mpro) S144A Mutant in Complex with Inhibitor GC376"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sf1",
+        "resolution":1.85,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with ML1001"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dfg",
+        "resolution":2.7,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to favipiravir"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dfg",
+        "resolution":2.7,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to favipiravir"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dfh",
+        "resolution":2.97,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to ribavirin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dfh",
+        "resolution":2.97,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to ribavirin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lmc",
+        "resolution":2.977,
+        "title":"Structure of SARS CoV-2 main protease shows simultaneous processing of its N- and C-terminii"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6m5i",
+        "resolution":2.496,
+        "title":"Crystal structure of 2019-nCoV nsp7-nsp8c complex"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6m5i",
+        "resolution":2.496,
+        "title":"Crystal structure of 2019-nCoV nsp7-nsp8c complex"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jkv",
+        "resolution":1.25,
+        "title":"Crystal Structure of SARS-CoV-2 main protease in complex with an inhibitor GRL-2420"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6z2e",
+        "resolution":1.7,
+        "title":"Crystal structure of SARS-CoV-2 Mpro in complex with the activity-based probe, biotin-PEG(4)-Abu-Tle-Leu-Gln-vinylsulfone"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6z72",
+        "resolution":2.3,
+        "title":"SARS-CoV-2 Macrodomain in complex with ADP-HPM"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xhm",
+        "resolution":1.406,
+        "title":"Covalent complex of SARS-CoV-2 main protease with N-[(2S)-1-({(2S,3S)-3,4-dihydroxy-1-[(3S)-2-oxopyrrolidin-3-yl]butan-2-yl}amino)-4-methyl-1-oxopentan-2-yl]-4-methoxy-1H-indole-2-carboxamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7bf5",
+        "resolution":2.05,
+        "title":"Crystal structure of SARS-CoV-2 macrodomain in complex with ADP-ribose-phosphate (ADP-ribose-2'-phosphate, ADPRP)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6m2n",
+        "resolution":2.198,
+        "title":"SARS-CoV-2 3CL protease (3CL pro) in complex with a novel inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jr4",
+        "resolution":1.55,
+        "title":"SARS-CoV-2 3CL protease with alternative conformation of the active site promoted by methylene-bridged cysteine and lysine residues"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jme",
+        "resolution":1.55,
+        "title":"Structure of the SARS-CoV-2 NSP3 Macro X domain in complex with cyclic AMP"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7cwc",
+        "resolution":2.1,
+        "title":"Ambient-Temperature Serial Femtosecond X-ray Crystal structure of SARS-CoV-2 Main Protease at 2.1 A Resolution (P212121)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7cwb",
+        "resolution":1.9,
+        "title":"Ambient-Temperature Serial Femtosecond X-ray Crystal structure of SARS-CoV-2 Main Protease at 1.9 A Resolution (C121)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xkf",
+        "resolution":1.8,
+        "title":"The crystal structure of 3CL MainPro of SARS-CoV-2 with oxidized Cys145 (Sulfenic acid cysteine)."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lkr",
+        "resolution":1.65,
+        "title":"1.65 A resolution structure of SARS-CoV-2 3CL protease in complex with inhibitor 2a"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lku",
+        "resolution":1.65,
+        "title":"1.65 A resolution structure of SARS-CoV-2 3CL protease in complex with inhibitor 3b (deuterated analog of inhibitor 2a)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lkw",
+        "resolution":1.7,
+        "title":"1.65 A resolution structure of SARS-CoV-2 3CL protease in complex with inhibitor 3d (deuterated analog of inhibitor 3c)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sm7",
+        "resolution":1.95,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1247413608"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5smi",
+        "resolution":2.08,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z71580604"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5smg",
+        "resolution":1.87,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2092370954"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sl2",
+        "resolution":1.739,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z100643660"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slg",
+        "resolution":1.97,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z32400357"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sl4",
+        "resolution":1.936,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z383202616"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slb",
+        "resolution":1.8,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z744930860"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sl8",
+        "resolution":2.07,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2856434762"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slf",
+        "resolution":2.01,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z198195770"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sbf",
+        "resolution":1.64,
+        "title":"PanDDA analysis group deposition of ground-state model of SARS-CoV-2 NendoU"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slk",
+        "resolution":2.21,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1354370680"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slm",
+        "resolution":2.05,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z28290384"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slc",
+        "resolution":1.668,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1849009686"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sl3",
+        "resolution":1.99,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z223688272"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sky",
+        "resolution":2.25,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z466628048"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sl1",
+        "resolution":2.383,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1273312153"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sl9",
+        "resolution":1.749,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z54571979"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sla",
+        "resolution":1.7,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1003207278"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5skw",
+        "resolution":2.093,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1272494722"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slj",
+        "resolution":2.31,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1430613393"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sll",
+        "resolution":1.807,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z54615640"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sm6",
+        "resolution":2.29,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1899842917"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5slh",
+        "resolution":1.819,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z65532537"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sm0",
+        "resolution":2.086,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z32665176"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sl5",
+        "resolution":2.36,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z32014663"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sm1",
+        "resolution":1.941,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z68277692"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5skz",
+        "resolution":1.96,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z57258487"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sle",
+        "resolution":2.009,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z56880342"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sl7",
+        "resolution":1.841,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1186029914"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sl6",
+        "resolution":2.289,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z256709556"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sm2",
+        "resolution":1.781,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z3006151474"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sm8",
+        "resolution":1.95,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2027158783"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sli",
+        "resolution":2.3,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1003146540"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5skx",
+        "resolution":2.342,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z126932614"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sld",
+        "resolution":1.581,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z1246465616"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sm9",
+        "resolution":2.01,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NSP14 in complex with Z2234920345"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7bb2",
+        "resolution":1.6,
+        "title":"Crystal structure of the main protease (3CLpro/Mpro) of SARS-CoV-2 at 1.6A resolution (spacegroup P2(1)2(1)2(1))"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ltj",
+        "resolution":1.8,
+        "title":"Room-temperature X-ray structure of SARS-CoV-2 main protease (3CL Mpro) in complex with a non-covalent inhibitor Mcule-5948770040"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lkt",
+        "resolution":1.5,
+        "title":"1.50 A resolution structure of SARS-CoV-2 3CL protease in complex with inhibitor 2k"},
+      {
+        "experimental_method":["X-ray diffraction",
+          "Neutron Diffraction",
+          "Hybrid"],
+        "pdb_id":"7n8c",
+        "resolution":2.2,
+        "title":"Joint X-ray/neutron structure of SARS-CoV-2 main protease (Mpro) in complex with Mcule5948770040"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8dz9",
+        "resolution":1.664,
+        "title":"Crystal Structure of SARS-CoV-2 Main protease G143S mutant in complex with Nirmatrelvir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8dz1",
+        "resolution":2.08,
+        "title":"Crystal Structure of SARS-CoV-2 Main protease mutant M49I in complex with Ensitrelvir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n83",
+        "resolution":1.91,
+        "title":"Crystal Structure of SARS-CoV-2 NendoU in complex with Z2443429438"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7c8u",
+        "resolution":2.35,
+        "title":"The crystal structure of COVID-19 main protease in complex with GC376"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sfi",
+        "resolution":1.95,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with ML104"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sfb",
+        "resolution":1.9,
+        "title":"SARS-CoV-2 Main Protease (Mpro) in Complex with ML101"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8d4j",
+        "resolution":1.78,
+        "title":"Crystal Structure of SARS-CoV-2 Main Protease (Mpro) H172Y Mutant"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8dz0",
+        "resolution":2.29,
+        "title":"Crystal Structure of SARS-CoV-2 Main protease in complex with Ensitrelvir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8dz2",
+        "resolution":2.129,
+        "title":"Crystal Structure of SARS-CoV-2 Main protease in complex with Nirmatrelvir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lfz",
+        "resolution":1.9,
+        "title":"Human leukocyte antigen B*07:02 in complex with SARS-CoV2 epitope IPRRNVATL"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6xez",
+        "resolution":3.5,
+        "title":"Structure of SARS-CoV-2 replication-transcription complex bound to nsp13 helicase - nsp13(2)-RTC"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6xez",
+        "resolution":3.5,
+        "title":"Structure of SARS-CoV-2 replication-transcription complex bound to nsp13 helicase - nsp13(2)-RTC"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jlt",
+        "resolution":2.7,
+        "title":"Crystal Structure of SARS-CoV-2 NSP7-NSP8 complex."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jlt",
+        "resolution":2.7,
+        "title":"Crystal Structure of SARS-CoV-2 NSP7-NSP8 complex."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xch",
+        "resolution":2.2,
+        "title":"Room-temperature X-ray Crystal structure of SARS-CoV-2 main protease in complex with Leupeptin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dcd",
+        "resolution":2.57,
+        "title":"Nonstructural protein 7 and 8 complex of SARS-CoV-2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7dcd",
+        "resolution":2.57,
+        "title":"Nonstructural protein 7 and 8 complex of SARS-CoV-2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n89",
+        "resolution":2.0,
+        "title":"Room-temperature X-ray structure of SARS-CoV-2 main protease C145A mutant in complex with substrate Ac-SAVLQSGF-CONH2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lmc",
+        "resolution":2.977,
+        "title":"Structure of SARS CoV-2 main protease shows simultaneous processing of its N- and C-terminii"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n33",
+        "resolution":2.5,
+        "title":"SARS-CoV-2 Nsp15 endoribonuclease pre-cleavage state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n06",
+        "resolution":2.2,
+        "title":"SARS-CoV-2 Nsp15 endoribonuclease post-cleavage state"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cyq",
+        "resolution":2.83,
+        "title":"Cryo-EM structure of an extended SARS-CoV-2 replication and transcription complex reveals an intermediate state in cap synthesis"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cyq",
+        "resolution":2.83,
+        "title":"Cryo-EM structure of an extended SARS-CoV-2 replication and transcription complex reveals an intermediate state in cap synthesis"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rvn",
+        "resolution":1.63,
+        "title":"Structure of the SARS-CoV-2 main protease in complex with inhibitor MPI12"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7rzc",
+        "resolution":2.04,
+        "title":"Papain-Like Protease of SARS CoV-2 in complex with Jun9-84-3 inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6zsl",
+        "resolution":1.94,
+        "title":"Crystal structure of the SARS-CoV-2 helicase at 1.94 Angstrom resolution"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6m0k",
+        "resolution":1.504,
+        "title":"The crystal structure of COVID-19 main protease in complex with an inhibitor 11b"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6zpe",
+        "resolution":1.58,
+        "title":"Nonstructural protein 10 (nsp10) from SARS CoV-2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7cuu",
+        "resolution":1.68,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with MG132"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7cx9",
+        "resolution":1.73,
+        "title":"Crystal structure of the SARS-CoV-2 main protease in complex with INZ-1"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6zru",
+        "resolution":2.1,
+        "title":"Crystal structure of SARS CoV2 main protease in complex with inhibitor Boceprevir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jn2",
+        "resolution":1.93,
+        "title":"The crystal structure of Papain-Like Protease of SARS CoV-2 in complex with PLP_Snyder441 inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jrn",
+        "resolution":2.48,
+        "title":"Crystal structure of the wild type SARS-CoV-2 papain-like protease (PLPro) with inhibitor GRL0617"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7llz",
+        "resolution":2.9,
+        "title":"SARS-CoV-2 papain-like protease (PLpro) bound to inhibitor XR8-69"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7c7p",
+        "resolution":1.74,
+        "title":"Crystal structure of the SARS-CoV-2 main protease in complex with Telaprevir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sae",
+        "resolution":2.12,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z3219959731"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5saf",
+        "resolution":2.11,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with EN300-321461"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sa5",
+        "resolution":2.09,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z1530301542"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sac",
+        "resolution":2.029,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z59181945"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5r8t",
+        "resolution":1.27,
+        "title":"PanDDA analysis group deposition of ground-state model of SARS-CoV-2 main protease screened against DSI poised (Enamine), Fraglites and Peplites (Newcastle university), Mini Frags (Astex), York 3D (York university), electrophile cysteine covalent (Weizman institute) fragment libraries"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5saa",
+        "resolution":2.239,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z319891284"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5sab",
+        "resolution":2.486,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 NendoU in complex with Z31504642"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6zrt",
+        "resolution":2.1,
+        "title":"Crystal structure of SARS CoV2 main protease in complex with inhibitor Telaprevir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ntw",
+        "resolution":1.815,
+        "title":"Crystal structure of the SARS-CoV-2 Main Protease with a Zinc ion coordinated in the active site"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nt3",
+        "resolution":2.325,
+        "title":"Crystal structure of SARS CoV2 main protease in complex with FSCU015"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7be7",
+        "resolution":1.68,
+        "title":"Crystal structure of MG-132 covalently bound to the main protease (3CLpro/Mpro) of SARS-CoV-2."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nw2",
+        "resolution":2.1,
+        "title":"Crystal Structure of SARS-CoV-2 main protease in complex with LON-WEI-adc59df6-47"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ntv",
+        "resolution":2.065,
+        "title":"Crystal structure of SARS CoV2 main protease in complex with DN_EG_002 (modelled using PanDDA event map)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qbb",
+        "resolution":2.0,
+        "title":"Crystal Structure of SARS-CoV-2 main protease (Nsp5) in complex with compound 18"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8dza",
+        "resolution":1.961,
+        "title":"Crystal Structure of SARS-CoV-2 Main protease A193T mutant in complex with Nirmatrelvir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7t9w",
+        "resolution":2.2,
+        "title":"Crystal structure of the Nsp3 bSM (Betacoronavirus-Specific Marker) domain from SARS-CoV-2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nn0",
+        "resolution":3.04,
+        "title":"Crystal structure of the SARS-CoV-2 helicase in complex with AMP-PNP"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7los",
+        "resolution":2.9,
+        "title":"SARS-CoV-2 papain-like protease (PLpro) bound to inhibitor XR8-65"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ntq",
+        "resolution":1.495,
+        "title":"Crystal structure of the SARS-CoV-2 Main Protease complexed with N-(pyridin-3-ylmethyl)thioformamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nng",
+        "resolution":2.38,
+        "title":"Crystal structure of the SARS-CoV-2 helicase in complex with Z2327226104"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nt1",
+        "resolution":2.85,
+        "title":"Crystal structure of SARS CoV2 main protease in complex with FSP007"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nuk",
+        "resolution":2.19,
+        "title":"Crystal structure of SARS CoV2 main protease in complex with EG009 (modelled using PanDDA event map)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8dz6",
+        "resolution":2.366,
+        "title":"Crystal Structure of SARS-CoV-2 Main protease mutant Q189K in complex with Nirmatrelvir"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7r2v",
+        "resolution":2.53,
+        "title":"Structure of nsp14 from SARS-CoV-2 in complex with SAH"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l6r",
+        "resolution":1.98,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA2m)pUpUpApApA (Cap-1), S-Adenosyl-L-homocysteine (SAH) and Manganese (Mn)."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7c8b",
+        "resolution":2.2,
+        "title":"Crystal structure of the SARS-CoV-2 main protease in complex with Z-VAD(OMe)-FMK"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l6t",
+        "resolution":1.78,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA2m)pUpUpApApA (Cap-1), S-Adenosyl-L-homocysteine (SAH) and two Magnesium (Mg) ions."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n6n",
+        "resolution":2.8,
+        "title":"SARS-CoV-2 Main protease C145S mutant in complex with N and C-terminal residues"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xip",
+        "resolution":1.5,
+        "title":"The 1.5 A Crystal Structure of the Co-factor Complex of NSP7 and the C-terminal Domain of NSP8 from SARS CoV-2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xip",
+        "resolution":1.5,
+        "title":"The 1.5 A Crystal Structure of the Co-factor Complex of NSP7 and the C-terminal Domain of NSP8 from SARS CoV-2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7t8r",
+        "resolution":1.74,
+        "title":"Co-crystal structure of SARS-CoV-2 Mpro C145A with substrate peptide 7/8"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7t9y",
+        "resolution":2.18,
+        "title":"Co-crystal structure of SARS-CoV-2 Mpro C145A with substrate peptide 8/9"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7pxz",
+        "resolution":1.75,
+        "title":"Reduced form of SARS-CoV-2 Main Protease determined by XFEL radiation"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jiw",
+        "resolution":2.3,
+        "title":"The crystal structure of Papain-Like Protease of SARS CoV-2 in complex with PLP_Snyder530 inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jir",
+        "resolution":2.09,
+        "title":"The crystal structure of Papain-Like Protease of SARS CoV-2 , C111S mutant, in complex with PLP_Snyder457 inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xg3",
+        "resolution":2.48,
+        "title":"The crystal structure of Papain-Like Protease of SARS CoV-2 , C111S mutant, at room temperature"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7bf3",
+        "resolution":2.0,
+        "title":"Crystal structure of SARS-CoV-2 macrodomain in complex with adenosine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7au4",
+        "resolution":1.82,
+        "title":"Crystal Structure of SARS-CoV-2 main protease (Nsp5) in complex with compound 3"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jiv",
+        "resolution":2.05,
+        "title":"The crystal structure of Papain-Like Protease of SARS CoV-2 , C111S mutant, in complex with PLP_Snyder530 inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jit",
+        "resolution":1.95,
+        "title":"The crystal structure of Papain-Like Protease of SARS CoV-2 , C111S mutant, in complex with PLP_Snyder495 inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"5r7z",
+        "resolution":1.59,
+        "title":"PanDDA analysis group deposition -- Crystal Structure of SARS-CoV-2 main protease in complex with Z1220452176"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nts",
+        "resolution":1.477,
+        "title":"Crystal structure of the SARS-CoV-2 Main Protease with oxidized C145"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nt4",
+        "resolution":2.68,
+        "title":"X-ray structure of SCoV2-PLpro in complex with small molecule inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7qcg",
+        "resolution":1.75,
+        "title":"Structure of SARS-CoV-2 Papain-like Protease bound to N-(2-pyrrolidyl)-3,4,5-trihydroxybenzoylhydrazone"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7nt2",
+        "resolution":2.145,
+        "title":"Crystal structure of SARS CoV2 main protease in complex with FSP006"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7sdr",
+        "resolution":2.72,
+        "title":"Papain-Like Protease of SARS CoV-2 in Complex with Jun9-72-2 Inhibitor"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7n6n",
+        "resolution":2.8,
+        "title":"SARS-CoV-2 Main protease C145S mutant in complex with N and C-terminal residues"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xaa",
+        "resolution":2.7,
+        "title":"SARS CoV-2 PLpro in complex with ubiquitin propargylamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xaa",
+        "resolution":2.7,
+        "title":"SARS CoV-2 PLpro in complex with ubiquitin propargylamide"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6x1b",
+        "resolution":1.97,
+        "title":"Crystal Structure of NSP15 Endoribonuclease from SARS CoV-2 in the Complex with the Product Nucleotide GpU."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xbg",
+        "resolution":1.45,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with inhibitor UAW246"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xbh",
+        "resolution":1.6,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with inhibitor UAW247"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xkm",
+        "resolution":2.25,
+        "title":"Room Temperature Structure of SARS-CoV-2 NSP10/NSP16 Methyltransferase in a Complex with SAM Determined by Fixed-Target Serial Crystallography"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xkh",
+        "resolution":1.28,
+        "title":"THE 1.28A CRYSTAL STRUCTURE OF 3CL MAINPRO OF SARS-COV-2 WITH OXIDIZED C145 (sulfinic acid cysteine)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xfn",
+        "resolution":1.7,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with UAW243"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7t8m",
+        "resolution":1.6,
+        "title":"Co-crystal structure of SARS-CoV-2 Mpro C145A with substrate peptide 5/6"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8bsd",
+        "resolution":1.95,
+        "title":"SARS-CoV-2 nsp10-16 methyltransferase in complex with tubercidin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8bsd",
+        "resolution":1.95,
+        "title":"SARS-CoV-2 nsp10-16 methyltransferase in complex with tubercidin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6m71",
+        "resolution":2.9,
+        "title":"SARS-Cov-2 RNA-dependent RNA polymerase in complex with cofactors"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6m71",
+        "resolution":2.9,
+        "title":"SARS-Cov-2 RNA-dependent RNA polymerase in complex with cofactors"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6m71",
+        "resolution":2.9,
+        "title":"SARS-Cov-2 RNA-dependent RNA polymerase in complex with cofactors"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0b",
+        "resolution":3.9,
+        "title":"Cryo-EM structure of SARS-CoV-2 nsp10-nsp14 (WT)-RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0c",
+        "resolution":3.4,
+        "title":"Cryo-EM structure of the monomeric form of SARS-CoV-2 nsp10-nsp14 (E191A)-RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7l1f",
+        "resolution":3.89,
+        "title":"SARS-CoV-2 RdRp in complex with 4 Remdesivir monophosphate"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ju7",
+        "resolution":1.6,
+        "title":"The crystal structure of SARS-CoV-2 Main Protease in complex with masitinib"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xdh",
+        "resolution":2.35,
+        "title":"Crystal Structure of NendoU (Uridylate-specific endoribonuclease, nsp15) from Betacoronavirus SARS-CoV-2"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l5d",
+        "resolution":1.58,
+        "title":"The crystal structure of SARS-CoV-2 Main Protease in complex with demethylated analog of masitinib"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jpe",
+        "resolution":2.18,
+        "title":"Room Temperature Structure of SARS-CoV-2 Nsp10/Nsp16 Methyltransferase in a Complex with m7GpppA Cap-0 and SAM Determined by Fixed-Target Serial Crystallography"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jpe",
+        "resolution":2.18,
+        "title":"Room Temperature Structure of SARS-CoV-2 Nsp10/Nsp16 Methyltransferase in a Complex with m7GpppA Cap-0 and SAM Determined by Fixed-Target Serial Crystallography"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7cut",
+        "resolution":1.82,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with Z-VAD-FMK"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xbi",
+        "resolution":1.7,
+        "title":"Crystal structure of the SARS-CoV-2 (COVID-19) main protease in complex with inhibitor UAW248"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"6xkm",
+        "resolution":2.25,
+        "title":"Room Temperature Structure of SARS-CoV-2 NSP10/NSP16 Methyltransferase in a Complex with SAM Determined by Fixed-Target Serial Crystallography"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lw4",
+        "resolution":2.5,
+        "title":"Structure of SARS-CoV-2 nsp16/nsp10 complex in presence of S-adenosyl-L-homocysteine (SAH)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lw4",
+        "resolution":2.5,
+        "title":"Structure of SARS-CoV-2 nsp16/nsp10 complex in presence of S-adenosyl-L-homocysteine (SAH)"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lw3",
+        "resolution":2.3,
+        "title":"Structure of SARS-CoV-2 nsp16/nsp10 complex in presence of Cap-1 analog (m7GpppAmU) and SAH"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lw3",
+        "resolution":2.3,
+        "title":"Structure of SARS-CoV-2 nsp16/nsp10 complex in presence of Cap-1 analog (m7GpppAmU) and SAH"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8bzv",
+        "resolution":1.8,
+        "title":"SARS-CoV-2 nsp10-16 methyltransferase in complex with adenosine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"8bzv",
+        "resolution":1.8,
+        "title":"SARS-CoV-2 nsp10-16 methyltransferase in complex with adenosine"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0b",
+        "resolution":3.9,
+        "title":"Cryo-EM structure of SARS-CoV-2 nsp10-nsp14 (WT)-RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0c",
+        "resolution":3.4,
+        "title":"Cryo-EM structure of the monomeric form of SARS-CoV-2 nsp10-nsp14 (E191A)-RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6xqb",
+        "resolution":3.4,
+        "title":"SARS-CoV-2 RdRp/RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6xqb",
+        "resolution":3.4,
+        "title":"SARS-CoV-2 RdRp/RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7l1f",
+        "resolution":3.89,
+        "title":"SARS-CoV-2 RdRp in complex with 4 Remdesivir monophosphate"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7l1f",
+        "resolution":3.89,
+        "title":"SARS-CoV-2 RdRp in complex with 4 Remdesivir monophosphate"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ax6",
+        "resolution":1.95,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to Glutathione isopropyl ester"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7awr",
+        "resolution":1.34,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to Tegafur"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6xqb",
+        "resolution":3.4,
+        "title":"SARS-CoV-2 RdRp/RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0d",
+        "resolution":2.5,
+        "title":"Cryo-EM structure of the tetrameric form of SARS-CoV-2 nsp10-nsp14 (E191A)-RNA complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7n0d",
+        "resolution":2.5,
+        "title":"Cryo-EM structure of the tetrameric form of SARS-CoV-2 nsp10-nsp14 (E191A)-RNA complex"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jhe",
+        "resolution":2.25,
+        "title":"Room Temperature Structure of SARS-CoV-2 Nsp10/Nsp16 Methyltransferase in a Complex with 2'-O-methylated m7GpppA Cap-1 and SAH Determined by Fixed-Target Serial Crystallography"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jhe",
+        "resolution":2.25,
+        "title":"Room Temperature Structure of SARS-CoV-2 Nsp10/Nsp16 Methyltransferase in a Complex with 2'-O-methylated m7GpppA Cap-1 and SAH Determined by Fixed-Target Serial Crystallography"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jib",
+        "resolution":2.65,
+        "title":"Room Temperature Crystal Structure of Nsp10/Nsp16 from SARS-CoV-2 with Substrates and Products of 2'-O-methylation of the Cap-1"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7jib",
+        "resolution":2.65,
+        "title":"Room Temperature Crystal Structure of Nsp10/Nsp16 from SARS-CoV-2 with Substrates and Products of 2'-O-methylation of the Cap-1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxm",
+        "resolution":2.9,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxm",
+        "resolution":2.9,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxn",
+        "resolution":3.84,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxn",
+        "resolution":3.84,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dfh",
+        "resolution":2.97,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to ribavirin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dfg",
+        "resolution":2.7,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to favipiravir"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dfg",
+        "resolution":2.7,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to favipiravir"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dfg",
+        "resolution":2.7,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to favipiravir"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dfh",
+        "resolution":2.97,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to ribavirin"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7dfh",
+        "resolution":2.97,
+        "title":"Structure of COVID-19 RNA-dependent RNA polymerase bound to ribavirin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7avd",
+        "resolution":1.8,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to SEN1269 ligand"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7awu",
+        "resolution":2.07,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to LSN2463359."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7aww",
+        "resolution":1.65,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to Clonidine"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7axm",
+        "resolution":1.4,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to Pelitinib"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7ay7",
+        "resolution":1.55,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to Isofloxythepin"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7aqj",
+        "resolution":2.59,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to Triglycidyl isocyanurate."},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxm",
+        "resolution":2.9,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxm",
+        "resolution":2.9,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxn",
+        "resolution":3.84,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cxn",
+        "resolution":3.84,
+        "title":"Architecture of a SARS-CoV-2 mini replication and transcription complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6xez",
+        "resolution":3.5,
+        "title":"Structure of SARS-CoV-2 replication-transcription complex bound to nsp13 helicase - nsp13(2)-RTC"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6xez",
+        "resolution":3.5,
+        "title":"Structure of SARS-CoV-2 replication-transcription complex bound to nsp13 helicase - nsp13(2)-RTC"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6xez",
+        "resolution":3.5,
+        "title":"Structure of SARS-CoV-2 replication-transcription complex bound to nsp13 helicase - nsp13(2)-RTC"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6xez",
+        "resolution":3.5,
+        "title":"Structure of SARS-CoV-2 replication-transcription complex bound to nsp13 helicase - nsp13(2)-RTC"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7lfz",
+        "resolution":1.9,
+        "title":"Human leukocyte antigen B*07:02 in complex with SARS-CoV2 epitope IPRRNVATL"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cyq",
+        "resolution":2.83,
+        "title":"Cryo-EM structure of an extended SARS-CoV-2 replication and transcription complex reveals an intermediate state in cap synthesis"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cyq",
+        "resolution":2.83,
+        "title":"Cryo-EM structure of an extended SARS-CoV-2 replication and transcription complex reveals an intermediate state in cap synthesis"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cyq",
+        "resolution":2.83,
+        "title":"Cryo-EM structure of an extended SARS-CoV-2 replication and transcription complex reveals an intermediate state in cap synthesis"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cyq",
+        "resolution":2.83,
+        "title":"Cryo-EM structure of an extended SARS-CoV-2 replication and transcription complex reveals an intermediate state in cap synthesis"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7cyq",
+        "resolution":2.83,
+        "title":"Cryo-EM structure of an extended SARS-CoV-2 replication and transcription complex reveals an intermediate state in cap synthesis"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7axo",
+        "resolution":1.65,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to AR-42."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7aqi",
+        "resolution":1.7,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to Ifenprodil"},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7aws",
+        "resolution":1.81,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to TH-302."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l6t",
+        "resolution":1.78,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA2m)pUpUpApApA (Cap-1), S-Adenosyl-L-homocysteine (SAH) and two Magnesium (Mg) ions."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l6t",
+        "resolution":1.78,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA2m)pUpUpApApA (Cap-1), S-Adenosyl-L-homocysteine (SAH) and two Magnesium (Mg) ions."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l6r",
+        "resolution":1.98,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA2m)pUpUpApApA (Cap-1), S-Adenosyl-L-homocysteine (SAH) and Manganese (Mn)."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7l6r",
+        "resolution":1.98,
+        "title":"Crystal Structure of SARS-CoV-2 Nsp16/10 Heterodimer in Complex with (m7GpppA2m)pUpUpApApA (Cap-1), S-Adenosyl-L-homocysteine (SAH) and Manganese (Mn)."},
+      {
+        "experimental_method":["X-ray diffraction"],
+        "pdb_id":"7a1u",
+        "resolution":1.67,
+        "title":"Structure of SARS-CoV-2 Main Protease bound to Fusidic Acid."},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zmt",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zoj",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, composite map"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zn5",
+        "resolution":3.2,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zn5",
+        "resolution":3.2,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zn5",
+        "resolution":3.2,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zn5",
+        "resolution":3.2,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zlw",
+        "resolution":2.6,
+        "title":"SARS-CoV-2 Nsp1 bound to the human 40S ribosomal subunit"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zoj",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, composite map"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zn5",
+        "resolution":3.2,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zmt",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zmt",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zoj",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, composite map"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zoj",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, composite map"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zn5",
+        "resolution":3.2,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zn5",
+        "resolution":3.2,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zlw",
+        "resolution":2.6,
+        "title":"SARS-CoV-2 Nsp1 bound to the human 40S ribosomal subunit"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zlw",
+        "resolution":2.6,
+        "title":"SARS-CoV-2 Nsp1 bound to the human 40S ribosomal subunit"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zmt",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zn5",
+        "resolution":3.2,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zmt",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zp4",
+        "resolution":2.9,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zp4",
+        "resolution":2.9,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zp4",
+        "resolution":2.9,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zmt",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zoj",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, composite map"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zn5",
+        "resolution":3.2,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zlw",
+        "resolution":2.6,
+        "title":"SARS-CoV-2 Nsp1 bound to the human 40S ribosomal subunit"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zlw",
+        "resolution":2.6,
+        "title":"SARS-CoV-2 Nsp1 bound to the human 40S ribosomal subunit"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zp4",
+        "resolution":2.9,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zoj",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, composite map"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zn5",
+        "resolution":3.2,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zp4",
+        "resolution":2.9,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zp4",
+        "resolution":2.9,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zp4",
+        "resolution":2.9,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zp4",
+        "resolution":2.9,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zmt",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zmt",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqc",
+        "resolution":3.3,
+        "title":"SARS-CoV-2 Nsp1, CrPV IRES and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zoj",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, composite map"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zn5",
+        "resolution":3.2,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex - state 2"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zlw",
+        "resolution":2.6,
+        "title":"SARS-CoV-2 Nsp1 bound to the human 40S ribosomal subunit"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zlw",
+        "resolution":2.6,
+        "title":"SARS-CoV-2 Nsp1 bound to the human 40S ribosomal subunit"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zlw",
+        "resolution":2.6,
+        "title":"SARS-CoV-2 Nsp1 bound to the human 40S ribosomal subunit"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zon",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a human 43S preinitiation ribosome complex - state 1"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zok",
+        "resolution":2.8,
+        "title":"SARS-CoV-2-Nsp1-40S complex, focused on body"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"7jqb",
+        "resolution":2.7,
+        "title":"SARS-CoV-2 Nsp1 and rabbit 40S ribosome complex"},
+      {
+        "experimental_method":["Electron Microscopy"],
+        "pdb_id":"6zmt",
+        "resolution":3.0,
+        "title":"SARS-CoV-2 Nsp1 bound to a pre-40S-like ribosome complex"}]
+  }}

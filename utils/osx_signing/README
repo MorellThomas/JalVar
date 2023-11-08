@@ -1,0 +1,41 @@
+Signing and Notarizing install4j DMGs for OSX
+
+0. You will need an up to date Apple Developer ID subscription and have a valid developer key for signing/notarizing apps, installers and DMGs available on your system.
+
+1. Build the install4j installers - signing these for windows requires a Certum cryptokey or other suitable java codesigning cert. Details to be provided.
+
+2. Unpack the OSX installer to a local directory
+hdiutil attach build/install4j/11/Jalview_Develop-2_11_2_0dev-d20210128-macos-java_11.dmg 
+mkdir newdmg; ditto /Volumes/Jalview\ Develop\ Installer newdmg/
+
+3. Remove the uninstaller if necessary/and/or others, and then deep sign the dmg
+
+
+mkdir t
+cd t
+jar -xf ../newdmg/Jalview\ Develop.app/Contents/Resources/app/alt/Jmol-NO_LOG4J-14.31.53.jar 
+codesign  --remove-signature --force --deep -vvvv -s "Developer ID" --options runtime --entitlements ../utils/osx_signing/entitlements.txt META-INF/jniinchi/1.03_1/MAC-X86_64/JniInchi-1.03_1-MAC-X86_64 
+jar -cf ../newdmg/Jalview\ Develop.app/Contents/Resources/app/alt/Jmol-NO_LOG4J-14.31.53.jar ./*
+cd ..
+rm -Rf t
+
+xattr -cr ./newdmg/Jalview\ Develop.app/Contents/Resources/app/jre/Contents/MacOS/libjli.dylib 
+codesign --verify --deep -v ./newdmg/Jalview\ Develop.app/Contents/Resources/app/jre/Contents/MacOS/libjli.dylib 
+
+codesign  --remove-signature --force --deep -vvvv -s "Developer ID" --options runtime --entitlements ./utils/osx_signing/entitlements.txt ./newdmg/Jalview\ Develop.app/Contents/Resources/app/jre/Contents/MacOS/libjli.dylib 
+
+codesign  --verify --deep -v ./newdmg/Jalview\ Develop.app/Contents/Resources/app/jre/Contents/MacOS/libjli.dylib 
+
+codesign --remove-signature --force --deep -vvvv -s "Developer ID" --options runtime --entitlements ./utils/osx_signing/entitlements.txt  newdmg/Jalview\ Develop.app/Contents/MacOS/JavaApplicationStub
+
+hdiutil create -megabytes 240 -srcfolder ./newdmg -volname 'Jalview Develop Installer (2.11.2)' Jalview_Develop-2_11_2-macos-java_11.dmg
+
+codesign --force --deep -vvvv -s "Developer ID" --options runtime --entitlements ./utils/osx_signing/entitlements.txt Jalview_Develop-2_11_2-macos-java_11.dmg
+
+codesign --deep -vvvv Jalview_Develop-2_11_2-macos-java_11.dmg
+
+4. Notarize
+xcrun altool --notarize-app --primary-bundle-id "org.jalview.jalview-desktop" -u jalview-dev-owner@jalview.org -p $ALTOOL_PASSWORD --file Jalview_Develop-2_11_2-macos-java_11.dmg 
+.. run with --notarization-info $notarization-session-id until complete
+
+5. Staple to dmg so it can be verified without a net connection.
