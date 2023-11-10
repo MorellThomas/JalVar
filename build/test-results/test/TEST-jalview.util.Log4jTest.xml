@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="jalview.util.Log4jTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:19" hostname="wer3eng" time="1.628">
-  <properties/>
-  <testcase name="testLog4j" classname="jalview.util.Log4jTest" time="1.628"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

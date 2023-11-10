@@ -1418,7 +1418,8 @@ public class JalviewLite extends Applet
         System.err.println("Applet context is '"
                 + getAppletContext().getClass().toString() + "'");
       }
-      JSObject scriptObject = JSObject.getWindow(this);
+      //JSObject scriptObject = JSObject.getWindow(this);
+      JSObject scriptObject = null;
       if (debug && scriptObject != null)
       {
         System.err.println("Applet has Javascript callback support.");
@@ -1588,7 +1589,8 @@ public class JalviewLite extends Applet
       }
       try
       {
-        JSObject scriptObject = JSObject.getWindow(this);
+        //JSObject scriptObject = JSObject.getWindow(this);
+        JSObject scriptObject = null;
         if (scriptObject.eval("navigator") != null)
         {
           notFailed = true;
@@ -1612,13 +1614,13 @@ public class JalviewLite extends Applet
     if (initjscallback.length() > 0)
     {
       JSObject scriptObject = null;
-      try
-      {
-        scriptObject = JSObject.getWindow(this);
-      } catch (Exception ex)
-      {
-      }
-      ;
+      //try
+      //{
+        //scriptObject = JSObject.getWindow(this);
+      //} catch (Exception ex)
+      //{
+      //}
+      //;
       // try really hard to let the browser plugin know we want liveconnect
       initLiveConnect();
 

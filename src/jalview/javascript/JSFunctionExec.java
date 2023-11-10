@@ -160,13 +160,13 @@ public class JSFunctionExec implements Runnable
         try
         {
           JSObject scriptObject = null;
-          try
-          {
-            scriptObject = JSObject.getWindow(jvlite);
-          } catch (Exception ex)
-          {
-          }
-          ;
+          //try
+          //{
+            //scriptObject = JSObject.getWindow(jvlite);
+          //} catch (Exception ex)
+          //{
+          //}
+          //;
           if (scriptObject != null)
           {
             if (jvlite.debug && dbgMsg != null)

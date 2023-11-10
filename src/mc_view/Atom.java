@@ -83,14 +83,14 @@ public class Atom
     resNumber = Integer.parseInt(str.substring(22, 26).trim());
     resNumIns = str.substring(22, 27).trim();
     insCode = str.substring(26, 27).charAt(0);
-    this.x = (new Float(str.substring(30, 38).trim()).floatValue());
-    this.y = (new Float(str.substring(38, 46).trim()).floatValue());
-    this.z = (new Float(str.substring(47, 55).trim()).floatValue());
+    this.x = (Float.parseFloat(str.substring(30, 38).trim()));
+    this.y = (Float.parseFloat(str.substring(38, 46).trim()));
+    this.z = (Float.parseFloat(str.substring(47, 55).trim()));
     // optional entries - see JAL-730
     String tm = str.substring(54, 60).trim();
     if (tm.length() > 0)
     {
-      occupancy = (new Float(tm)).floatValue();
+      occupancy = (Float.parseFloat(tm));
     }
     else
     {
@@ -100,7 +100,7 @@ public class Atom
     tm = str.substring(60, 66).trim();
     if (tm.length() > 0)
     {
-      tfactor = (new Float(tm).floatValue());
+      tfactor = (Float.parseFloat(tm));
     }
     else
     {

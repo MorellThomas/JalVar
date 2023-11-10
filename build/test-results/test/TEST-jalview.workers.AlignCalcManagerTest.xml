@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="jalview.workers.AlignCalcManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:13:44" hostname="wer3eng" time="0.101">
-  <properties/>
-  <testcase name="testRemoveWorkerForAnnotation" classname="jalview.workers.AlignCalcManagerTest" time="0.101"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -119,10 +119,10 @@ public class RotatableCanvas extends JPanel
   private Point[] axisEndPoints;
 
   // fields for 'select rectangle' (JAL-1124)
-  // int rectx1;
-  // int recty1;
-  // int rectx2;
-  // int recty2;
+   int rectx1;
+   int recty1;
+   int rectx2;
+   int recty2;
 
   AlignmentViewport av;
 
@@ -405,11 +405,11 @@ public class RotatableCanvas extends JPanel
       }
     }
     // //Now the rectangle
-    // if (rectx2 != -1 && recty2 != -1) {
-    // g.setColor(Color.white);
-    //
-    // g.drawRect(rectx1,recty1,rectx2-rectx1,recty2-recty1);
-    // }
+     if (rectx2 != -1 && recty2 != -1) {
+     g.setColor(Color.white);
+    
+     g.drawRect(rectx1,recty1,rectx2-rectx1,recty2-recty1);
+     }
   }
 
   /**
@@ -511,10 +511,10 @@ public class RotatableCanvas extends JPanel
       // Cache.warn("DEBUG: Rectangle selection");
       // todo not yet enabled as rectx2, recty2 are always -1
       // need to set them in mouseDragged; JAL-1124
-      // if ((rectx2 != -1) && (recty2 != -1))
-      // {
-      // rectSelect(rectx1, recty1, rectx2, recty2);
-      // }
+       if ((rectx2 != -1) && (recty2 != -1))
+       {
+       rectSelect(rectx1, recty1, rectx2, recty2);
+       }
     }
 
     repaint();
@@ -564,10 +564,10 @@ public class RotatableCanvas extends JPanel
     mouseX = x;
     mouseY = y;
 
-    // rectx1 = x;
-    // recty1 = y;
-    // rectx2 = -1;
-    // recty2 = -1;
+     rectx1 = x;
+     recty1 = y;
+     rectx2 = -1;
+     recty2 = -1;
 
     SequenceI found = findSequenceAtPoint(x, y);
 
@@ -632,8 +632,8 @@ public class RotatableCanvas extends JPanel
     // Check if this is a rectangle drawing drag
     if ((evt.getModifiersEx() & InputEvent.BUTTON2_DOWN_MASK) != 0)
     {
-      // rectx2 = evt.getX();
-      // recty2 = evt.getY();
+       rectx2 = evt.getX();
+       recty2 = evt.getY();
     }
     else
     {
@@ -749,15 +749,25 @@ public class RotatableCanvas extends JPanel
     {
       SequencePoint sp = sequencePoints.get(i);
       int tmp1 = (int) (((sp.coord.x - centre[0]) * getScaleFactor())
+              * (getWidth() / 2.0)
               + (getWidth() / 2.0));
+      float pre1 = ((sp.coord.x - centre[0]) * getScaleFactor());
       int tmp2 = (int) (((sp.coord.y - centre[1]) * getScaleFactor())
+              * (getHeight() / 2.0)
               + (getHeight() / 2.0));
+      float pre2 = ((sp.coord.y - centre[1]) * getScaleFactor());
 
       if ((tmp1 > x1) && (tmp1 < x2) && (tmp2 > y1) && (tmp2 < y2))
       {
         if (av != null)
         {
           SequenceI sequence = sp.getSequence();
+          if (av.getSelectionGroup() == null)
+          {
+            SequenceGroup sg = new SequenceGroup();
+            sg.setEndRes(av.getAlignment().getWidth() - 1);
+            av.setSelectionGroup(sg);
+          }
           if (!av.getSelectionGroup().getSequences(null).contains(sequence))
           {
             av.getSelectionGroup().addSequence(sequence, true);

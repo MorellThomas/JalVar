@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="jalview.analysis.AlignSeqTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:11:41" hostname="wer3eng" time="0.006">
-  <properties/>
-  <testcase name="testExtractGaps" classname="jalview.analysis.AlignSeqTest" time="0.003"/>
-  <testcase name="testIndexEncode_nucleotide" classname="jalview.analysis.AlignSeqTest" time="0.002"/>
-  <testcase name="testIndexEncode_peptide" classname="jalview.analysis.AlignSeqTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

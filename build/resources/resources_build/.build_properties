@@ -1,6 +1,6 @@
 #--Jalview Build Details--
-#2023-11-08 09:13:43
-BUILD_DATE=09\:13\:43 08 November 2023
-INSTALLATION=Source git-commit\:69bcb7b2e3 [main]
+#2023-11-10 09:27:04
+BUILD_DATE=09\:27\:04 10 November 2023
+INSTALLATION=Source git-commit\:84b9472529 [jal1124]
 JAVA_COMPILE_VERSION=11
 VERSION=TEST

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="jalview.gui.AppVarnaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:07" hostname="wer3eng" time="0.005">
-  <properties/>
-  <testcase name="testReplaceOddGaps" classname="jalview.gui.AppVarnaTest" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

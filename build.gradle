@@ -2113,6 +2113,9 @@ task copyJars(type: Copy) {
 // doing a Sync instead of Copy as Copy doesn't deal with "outputs" very well
 task syncJars(type: Sync) {
   dependsOn jar
+  //dependsOn distZip
+  //dependsOn distTar
+  //dependsOn startScrips
   from fileTree(dir: "${jalviewDir}/${libDistDir}", include: "**/*.jar").files
   into "${jalviewDir}/${package_dir}"
   preserve {

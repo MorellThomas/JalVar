@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="jalview.schemes.StrandColourSchemeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-02T08:12:18" hostname="wer3eng" time="0.0">
-  <properties/>
-  <testcase name="testFindColour" classname="jalview.schemes.StrandColourSchemeTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

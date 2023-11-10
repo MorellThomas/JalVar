@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: jalview.bin.Launcher
-Permissions: all-permissions
-Application-Name: Jalview Local
-Codebase: *.jalview.org
-Implementation-Version: TEST
-
