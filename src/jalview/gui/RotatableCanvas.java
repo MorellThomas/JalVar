@@ -745,18 +745,22 @@ public class RotatableCanvas extends JPanel
   {
     float[] centre = getCentre();
 
+    //&!
+    //System.out.println(String.format("rectangle: %d, %d, %d, %d, width: %d, height: %d", x1, y1, x2, y2, getWidth(), getHeight()));
     for (int i = 0; i < npoint; i++)
     {
       SequencePoint sp = sequencePoints.get(i);
       int tmp1 = (int) (((sp.coord.x - centre[0]) * getScaleFactor())
-              * (getWidth() / 2.0)
+              * (getWidth() / 3.15)
               + (getWidth() / 2.0));
       float pre1 = ((sp.coord.x - centre[0]) * getScaleFactor());
       int tmp2 = (int) (((sp.coord.y - centre[1]) * getScaleFactor())
-              * (getHeight() / 2.0)
+              * (getHeight() / 1.70)
               + (getHeight() / 2.0));
       float pre2 = ((sp.coord.y - centre[1]) * getScaleFactor());
 
+      //&!
+      //System.out.println(String.format("%s -- pre1: %3.2f, tmp1: %d, pre2: %3.2f, tmp2: %d", sp.toString(), pre1, tmp1, pre2, tmp2));
       if ((tmp1 > x1) && (tmp1 < x2) && (tmp2 > y1) && (tmp2 < y2))
       {
         if (av != null)

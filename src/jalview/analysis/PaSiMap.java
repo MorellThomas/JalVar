@@ -20,16 +20,27 @@
  */
 package jalview.analysis;
 
+import jalview.analysis.AAFrequency; // not for pasimap
 import jalview.api.analysis.ScoreModelI;
 import jalview.api.analysis.SimilarityParamsI;
 import jalview.bin.Console;
-import jalview.datamodel.AlignmentView;
+import jalview.datamodel.AlignmentAnnotation; // not for pasimap
+import jalview.datamodel.AlignmentI; // not for pasimap
+//import jalview.datamodel.AlignmentView;
+import jalview.datamodel.Annotation;  // not for pasimap
 import jalview.datamodel.Point;
+import jalview.datamodel.ProfilesI;
 import jalview.datamodel.SequenceI;
+import jalview.datamodel.ResidueCount; // not for pasimap
+import jalview.gui.CutAndPasteTransfer;
+import jalview.gui.Desktop;
+import jalview.gui.OOMWarning;
 import jalview.gui.PairwiseAlignPanel;
-import jalview.gui.PaSiMapPanel;
+//import jalview.gui.PaSiMapPanel;
 import jalview.math.Matrix;
 import jalview.math.MatrixI;
+import jalview.math.MiscMath;  // not for pasimap
+import jalview.util.MessageManager;
 import jalview.viewmodel.AlignmentViewport;
 
 
@@ -214,6 +225,86 @@ public class PaSiMap implements Runnable
 
       ccAnalysis cc = new ccAnalysis(pairwiseScores, dim);
       eigenMatrix = cc.run();
+      
+      
+      /**********
+       * everything below here until the catch block does not belong to PaSiMap 
+       * I just use it to run code on the alignment or whatever
+       */
+      
+      AlignmentAnnotation consensus = seqs.getAlignmentConsensusAnnotation();
+      System.out.println(consensus.toString());
+      //for (Annotation an : consensus.annotations)
+      //{
+        //System.out.println(an.toString());
+      //}
+      
+      AlignmentI al = seqs.getAlignment();
+      int width = al.getWidth();
+      SequenceI[] aseqs = al.getSequencesArray();
+      ProfilesI hconsensus = AAFrequency.calculate(aseqs, width, 0, width, true);
+      
+      ResidueCount[] residueCountses = new ResidueCount[hconsensus.getEndColumn() + 1];
+      for (int i = 0; i < hconsensus.getEndColumn() + 1; i++)
+      {
+        residueCountses[i] = hconsensus.get(i).getCounts();
+      }
+      
+      char[] AaList = new char[]{'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', '-'};
+      StringBuffer csv = new StringBuffer();
+      csv.append("\"Position\"");
+      for (char Aa : AaList)
+      {
+        csv.append("," + Aa);
+      }
+      csv.append("\n");
+      int nSeqs = aseqs.length;
+      int position = 1;
+      for (ResidueCount rc : residueCountses)
+      {
+        csv.append(Integer.toString(position));
+        
+        float[] percentages = new float[AaList.length];
+
+        ResidueCount.SymbolCounts symbolCounts = rc.getSymbolCounts();
+        float gapPC = 1f;
+        for (int i = 0; i < symbolCounts.symbols.length; i++)
+        {
+          char AA = symbolCounts.symbols[i];  
+          int n = symbolCounts.values[i];     // number of times the AA appears at this position
+          float pc = (float) n / (float) nSeqs;               // % of AA appearance at this position
+          pc = MiscMath.round(pc, 2);
+          gapPC -= pc;
+          
+          int indexOfAa = new String(AaList).indexOf(AA);
+          percentages[indexOfAa] = pc;
+        }
+        if (gapPC > 0)
+        {
+          gapPC = MiscMath.round(gapPC, 2);
+          percentages[percentages.length - 1] = gapPC;
+        }
+        for (float pc : percentages)
+        {
+          csv.append(",").append(pc);
+        }
+        csv.append("\n");
+        position++;
+      }
+      
+      String CsvString = csv.toString();
+      
+      CutAndPasteTransfer cap = new CutAndPasteTransfer();
+      try
+      {
+        cap.setText(CsvString);
+        Desktop.addInternalFrame(cap, MessageManager
+                .formatMessage("label.points_for_params", "Outputting Natural Frequencies"), 500, 500);
+      } catch (OutOfMemoryError oom)
+      {
+        new OOMWarning("exporting Natural Frequencies", oom);
+        cap.dispose();
+      }
 
     } catch (Exception q)
     {

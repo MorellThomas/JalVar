@@ -44,6 +44,23 @@ public class MiscMath
     }
     System.out.println("]");
   }
+  
+  /**
+   * rounds the number to a specified precision
+   * 
+   * @param n ~ number
+   * @param p ~ precision
+   * 
+   * @return
+   */
+  public static float round(float n, int p)
+  {
+    return (float) Math.round(n * 10f * p) / ( 10f * p);
+  }
+  public static double round(double n, int p)
+  {
+    return (double) Math.round(n * 10d * p) / ( 10d * p);
+  }
 
   /**
   * calculates the mean of an array 
