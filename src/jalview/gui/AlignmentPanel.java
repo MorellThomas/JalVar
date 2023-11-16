@@ -116,6 +116,10 @@ public class AlignmentPanel extends GAlignmentPanel implements
   private PropertyChangeListener propertyChangeListener;
 
   private CalculationChooser calculationDialog;
+  
+  private CustomChooser customDialog;
+  
+  private EpInput epDialog;
 
   /**
    * Creates a new AlignmentPanel object.
@@ -214,6 +218,11 @@ public class AlignmentPanel extends GAlignmentPanel implements
     if (getCalculationDialog() != null)
     {
       getCalculationDialog().validateCalcTypes();
+    }
+
+    if (getCustomDialog() != null)
+    {
+      getCustomDialog().validateCalcTypes();
     }
 
     alignFrame.updateEditMenuBar();
@@ -1751,12 +1760,50 @@ public class AlignmentPanel extends GAlignmentPanel implements
   }
 
   /**
+   * Set the refererence for the Custom Dialog for this panel.
+   * 
+   * @param calculationChooser
+   */
+  public void setCustomDialog(CustomChooser customChooser)
+  {
+    customDialog = customChooser;
+  }
+
+  /**
+   * Set the refererence for the Custom Dialog for this panel.
+   * 
+   * @param calculationChooser
+   */
+  public void setEpInput(EpInput epInput)
+  {
+    epDialog = epInput;
+  }
+  
+  /**
    * Returns the reference to the PCA/Tree chooser dialog for this panel (null
    * if none is open)
    */
   public CalculationChooser getCalculationDialog()
   {
     return calculationDialog;
+  }
+
+  /**
+   * Returns the reference to the custom chooser dialog for this panel (null
+   * if none is open)
+   */
+  public CustomChooser getCustomDialog()
+  {
+    return customDialog;
+  }
+
+  /**
+   * Returns the reference to the custom chooser dialog for this panel (null
+   * if none is open)
+   */
+  public EpInput getEpInput()
+  {
+    return epDialog;
   }
 
   /**

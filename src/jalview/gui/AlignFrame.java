@@ -399,6 +399,15 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
         openTreePcaDialog();
       }
     });
+    
+    calculateCustom.addActionListener(new ActionListener()
+    {
+           @Override
+           public void actionPerformed(ActionEvent e)
+           {
+             openCustomDialog();
+           }
+    });
     buildColourMenu();
 
     if (Desktop.desktop != null)
@@ -6004,6 +6013,17 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
     if (alignPanel.getCalculationDialog() == null)
     {
       new CalculationChooser(AlignFrame.this);
+    }
+  }
+  
+  /**
+   * Open the dialog (if not already open) of the custom calculation
+   */
+  protected void openCustomDialog()
+  {
+    if (alignPanel.getCustomDialog() == null)
+    {
+      new CustomChooser(AlignFrame.this);
     }
   }
 

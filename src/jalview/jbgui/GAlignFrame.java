@@ -140,6 +140,8 @@ public class GAlignFrame extends JInternalFrame
   protected JMenu sort = new JMenu();
 
   protected JMenuItem calculateTree = new JMenuItem();
+  
+  protected JMenuItem calculateCustom = new JMenuItem();
 
   protected JCheckBoxMenuItem padGapsMenuitem = new JCheckBoxMenuItem();
 
@@ -1247,6 +1249,8 @@ public class GAlignFrame extends JInternalFrame
 
     calculateTree
             .setText(MessageManager.getString("action.calculate_tree_pca"));
+    
+    calculateCustom.setText(MessageManager.getString("action.calculate_custom"));
 
     padGapsMenuitem.setText(MessageManager.getString("label.pad_gaps"));
     padGapsMenuitem.setState(Cache.getDefault("PAD_GAPS", false));
@@ -1904,6 +1908,7 @@ public class GAlignFrame extends JInternalFrame
     sort.add(sortByTreeMenu);
     calculateMenu.add(sort);
     calculateMenu.add(calculateTree);
+    calculateMenu.add(calculateCustom);
     calculateMenu.addSeparator();
     calculateMenu.add(pairwiseAlignmentMenuItem);
     calculateMenu.addSeparator();
