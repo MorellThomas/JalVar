@@ -41,6 +41,8 @@ public class EPPanel
   private int startingPosition;
   
   private char FoR;
+  
+  private int width;
 
   /**
    * Constructor given sequence data, a similarity (or distance) score model
@@ -50,11 +52,12 @@ public class EPPanel
    * @param modelName
    * @param params
    */
-  public EPPanel(AlignViewport alignViewport, int startingPosition, char FoR)
+  public EPPanel(AlignViewport alignViewport, int startingPosition, char FoR, int width)
   {
     this.av = alignViewport;
     this.startingPosition = startingPosition;
     this.FoR = FoR;
+    this.width = width;
   
     //addInternalFrameListener(new InternalFrameAdapter()
     //{
@@ -102,7 +105,7 @@ public class EPPanel
     try
     {
       //getNfModel().calculate();
-      ep = new EquivalentPositions(av, startingPosition, FoR);
+      ep = new EquivalentPositions(av, startingPosition, FoR, width);
       ep.run(); // executes in same thread, wait for completion
 
     } catch (OutOfMemoryError er)

@@ -120,6 +120,8 @@ public class AlignmentPanel extends GAlignmentPanel implements
   private CustomChooser customDialog;
   
   private EpInput epDialog;
+  
+  private AnalysisInput analDialog;
 
   /**
    * Creates a new AlignmentPanel object.
@@ -1777,6 +1779,11 @@ public class AlignmentPanel extends GAlignmentPanel implements
   public void setEpInput(EpInput epInput)
   {
     epDialog = epInput;
+  }
+  
+  public void setAnalysisInput(AnalysisInput analInput)
+  {
+    analDialog = analInput;
   }
   
   /**

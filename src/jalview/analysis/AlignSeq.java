@@ -411,6 +411,8 @@ public class AlignSeq
     int trace;
     maxscore = score[i][j] / 10f;
 
+    seq1end = i + 1;
+    seq2end = j + 1;
 
     aseq1 = new int[seq1.length + seq2.length];
     aseq2 = new int[seq1.length + seq2.length];

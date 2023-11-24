@@ -283,6 +283,20 @@ public class MiscMath
     }
     return new int[]{maxIndex, max};
   }
+  public static float[] findMax(float[] a)
+  {
+    float max = 0;
+    float maxIndex = 0f;
+    for (int i = 0; i < a.length; i++)
+    {
+      if (a[i] > max)
+      {
+	max = a[i];
+	maxIndex = i;
+      }
+    }
+    return new float[]{maxIndex, max};
+  }
 
   /**
   * returns the dot product of two arrays

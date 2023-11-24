@@ -65,6 +65,8 @@ public class EpInput extends JPanel
   AlignFrame af;
   
   AlignViewport av;
+  
+  int width;
 
   JRadioButton forward;	
   
@@ -97,6 +99,7 @@ public class EpInput extends JPanel
   {
     this.af = alignFrame;
     this.av = alignFrame.getViewport();
+    this.width = this.av.getAlignment().getWidth();
     init();
     af.alignPanel.setEpInput(this);
   }
@@ -131,7 +134,8 @@ public class EpInput extends JPanel
     reverse = new JRadioButton(MessageManager.getString("label.reverse"));
     reverse.setOpaque(false);
     
-    startPoint = new JTextField(MessageManager.getString("label.start_position"));
+    //startPoint = new JTextField(MessageManager.getString("label.start_position"));
+    startPoint = new JTextField("178807423");
     startPoint.setOpaque(false);
 
     JPanel calcChoicePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -284,7 +288,7 @@ public class EpInput extends JPanel
     
     startPosition = Integer.parseInt(startPoint.getText());
     
-    epPanel = new EPPanel(av, startPosition, FoR);
+    epPanel = new EPPanel(av, startPosition, FoR, width);
     new Thread(epPanel).start();
     closeFrame();
   }

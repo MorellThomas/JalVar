@@ -29,10 +29,15 @@ import jalview.datamodel.ResidueCount; // not for pasimap
 import jalview.gui.CutAndPasteTransfer;
 import jalview.gui.Desktop;
 import jalview.gui.OOMWarning;
+import jalview.io.EpReferenceFile;
 import jalview.math.MiscMath;  // not for pasimap
 import jalview.util.MessageManager;
 import jalview.viewmodel.AlignmentViewport;
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Arrays;
 
 /**
  * Performs Principal Component Analysis on given sequences
@@ -49,6 +54,8 @@ public class NaturalFrequencies implements Runnable
    * outputs
    */
   private String CsvString;
+  
+  private HashMap<String[], LinkedList<HashMap<Character, Float>>> naturalFrequency;
 
   /**
    * Constructor given the sequences to compute for, the similarity model to
@@ -72,6 +79,8 @@ public class NaturalFrequencies implements Runnable
   {
     try
     {
+      AlignmentI al = seqs.getAlignment();
+      int width = al.getWidth();
 
       AlignmentAnnotation consensus = seqs.getAlignmentConsensusAnnotation();
       System.out.println(consensus.toString());
@@ -80,10 +89,39 @@ public class NaturalFrequencies implements Runnable
         //System.out.println(an.toString());
       //}
       
-      AlignmentI al = seqs.getAlignment();
-      int width = al.getWidth();
       SequenceI[] aseqs = al.getSequencesArray();
-      ProfilesI hconsensus = AAFrequency.calculate(aseqs, width, 0, width, true);
+      ProfilesI hconsensus = AAFrequency.calculate(aseqs, width, 0, width, true);   // holding the consensus data
+      
+      File[] files = new File("temp/").listFiles();
+      String referenceFile = "";
+      for (File file : files) // look for correct sequence file
+      {
+        if (file.getName().contains(".ref"))
+        {
+          EpReferenceFile erf = EpReferenceFile.loadReference(String.format("temp/%s", file.getName()));
+          HashMap<String, LinkedList<HashMap<Character, int[]>>> domain = erf.getDomain();
+          boolean skip = false;
+          for (SequenceI seq : aseqs)
+          {
+            if (!domain.containsKey(seq.getName()))
+              skip = true;
+          }
+          if (!skip)
+            referenceFile = file.getName();
+        }
+      }
+      
+      // throws an error if nothing was found
+      EpReferenceFile erf = EpReferenceFile.loadReference(String.format("temp/%s", referenceFile)); 
+      naturalFrequency = erf.getNaturalFrequency(); // load reference
+      
+      String[] sequenceNames = Arrays.copyOf(al.getSequenceNames().toArray(), al.getHeight(), String[].class);  // for saving as reference
+      
+      if (naturalFrequency ==  null)
+        naturalFrequency = new HashMap<String[], LinkedList<HashMap<Character, Float>>>();  // create a new map if empty
+      
+      LinkedList<HashMap<Character, Float>> listofPairs = new LinkedList<HashMap<Character, Float>>(); //for saving referefence
+      HashMap<Character, Float> aapcPairs;  // for saving as reference
       
       ResidueCount[] residueCountses = new ResidueCount[hconsensus.getEndColumn() + 1];
       for (int i = 0; i < hconsensus.getEndColumn() + 1; i++)
@@ -101,9 +139,16 @@ public class NaturalFrequencies implements Runnable
       csv.append("\n");
       int nSeqs = aseqs.length;
       int position = 1;
+      //int position = 0;
+      
+      //SequenceI label = seqs.getAlignment().findName("I65");
+
+      //calculating the %
       for (ResidueCount rc : residueCountses)
       {
+        aapcPairs = new HashMap<Character, Float>();
         csv.append(Integer.toString(position));
+        //csv.append(label.getCharAt(position));
         
         float[] percentages = new float[AaList.length];
 
@@ -119,6 +164,8 @@ public class NaturalFrequencies implements Runnable
           
           int indexOfAa = new String(AaList).indexOf(AA);
           percentages[indexOfAa] = pc;
+          
+          aapcPairs.put(AA, pc);
         }
         if (gapPC > 0)
         {
@@ -129,6 +176,7 @@ public class NaturalFrequencies implements Runnable
         {
           csv.append(",").append(pc);
         }
+        listofPairs.add(aapcPairs);
         csv.append("\n");
         position++;
       }
@@ -145,6 +193,21 @@ public class NaturalFrequencies implements Runnable
       {
         new OOMWarning("exporting Natural Frequencies", oom);
         cap.dispose();
+      }
+
+      // save data to the corresponding ref file if its existing
+      naturalFrequency.putIfAbsent(sequenceNames, listofPairs); 
+    
+      erf.setNaturalFrequency(naturalFrequency);
+      erf.saveReference();
+      
+      //test
+      HashMap<String[], LinkedList<HashMap<Character, Float>>> nf = erf.getNaturalFrequency();
+      String[] key = (String[]) nf.keySet().toArray()[0];
+      if (Arrays.asList(key).contains("I65"))
+      {
+        LinkedList<HashMap<Character, Float>> nfs = nf.get(key);
+        System.out.println(nfs.get(7).get('P'));
       }
 
     } catch (Exception q)

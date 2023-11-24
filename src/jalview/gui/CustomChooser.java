@@ -61,13 +61,17 @@ public class CustomChooser extends JPanel
 
   private static final int MIN_NATURAL_FREQUENCIES_SELECTION = 3; 
 
-  private static final int MIN_EQUIVALENT_POSITIONS_SELECTION = 3; 
+  private static final int MIN_EQUIVALENT_POSITIONS_SELECTION = 1; 
+  
+  private static final int MIN_ANALYSIS_SELECTION = 1;
 
   AlignFrame af;
 
   JRadioButton naturalFrequencies;	
   
   JRadioButton equivalentPositions;
+  
+  JRadioButton analysis;
 
   JButton calculate;
 
@@ -121,6 +125,9 @@ public class CustomChooser extends JPanel
     
     equivalentPositions = new JRadioButton(MessageManager.getString("label.equivalentpositions"));
     equivalentPositions.setOpaque(false);
+    
+    analysis = new JRadioButton(MessageManager.getString("label.analysis"));
+    analysis.setOpaque(false);
 
 
     JPanel calcChoicePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -136,6 +143,7 @@ public class CustomChooser extends JPanel
     // then copy the inset dimensions for the border-less PCA panel
     JPanel epPanelBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
     JPanel nfPanelBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    JPanel analysisPanelBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
     Insets b = customPanel.getBorder().getBorderInsets(customPanel);
 
@@ -147,15 +155,21 @@ public class CustomChooser extends JPanel
             BorderFactory.createEmptyBorder(2, b.left, 2, b.right));
     epPanelBorderless.setOpaque(false);
     epPanelBorderless.add(equivalentPositions, FlowLayout.LEFT);
+    
+    analysisPanelBorderless.setBorder(BorderFactory.createEmptyBorder(2,b.left,2,b.right));
+    analysisPanelBorderless.setOpaque(false);
+    analysisPanelBorderless.add(analysis, FlowLayout.LEFT);
 
     calcChoicePanel.add(nfPanelBorderless, FlowLayout.LEFT);
     calcChoicePanel.add(epPanelBorderless, FlowLayout.LEFT);
+    calcChoicePanel.add(analysisPanelBorderless, FlowLayout.LEFT);
 
     //calcChoicePanel.add(customPanel);
 
     ButtonGroup calcTypes = new ButtonGroup();
     calcTypes.add(naturalFrequencies);
     calcTypes.add(equivalentPositions);
+    calcTypes.add(analysis);
 
     ActionListener calcChanged = new ActionListener()
     {
@@ -167,6 +181,7 @@ public class CustomChooser extends JPanel
     };
     naturalFrequencies.addActionListener(calcChanged);
     equivalentPositions.addActionListener(calcChanged);	
+    analysis.addActionListener(calcChanged);
 
     /*
      * OK / Cancel buttons
@@ -246,8 +261,9 @@ public class CustomChooser extends JPanel
      */
     boolean checkNf = checkEnabled(naturalFrequencies, size, MIN_NATURAL_FREQUENCIES_SELECTION);
     boolean checkEp = checkEnabled(equivalentPositions, size, MIN_EQUIVALENT_POSITIONS_SELECTION); 
+    boolean checkAnalysis = checkEnabled(analysis, size, MIN_ANALYSIS_SELECTION);
 
-    if (checkNf || checkEp)
+    if (checkNf || checkEp || checkAnalysis)
     {
       calculate.setToolTipText(null);
       calculate.setEnabled(true);
@@ -305,14 +321,18 @@ public class CustomChooser extends JPanel
   {
     boolean doNf = naturalFrequencies.isSelected();
     boolean doEp = equivalentPositions.isSelected();
+    boolean doAnal = analysis.isSelected();
 
-    if (doNf && !doEp)
+    if (doNf && !doEp && !doAnal)
     {
       openNfPanel();
     }
-    else if (doEp && !doNf)
+    else if (doEp && !doNf && !doAnal)
     {
       openEpPanel();
+    } else if (doAnal && !doEp && !doNf)
+    {
+      openAnalysisPanel();
     }
 
     closeFrame();
@@ -393,6 +413,42 @@ public class CustomChooser extends JPanel
     //char FoR = inputDialog.getFoR();
     //epPanel = new EPPanel(af.alignPanel, parentSequenceFile, startPosition, FoR);
     //new Thread(epPanel).start();
+
+  }
+
+  /**
+   * Open a new PCA panel on the desktop
+   * 
+   * @param modelName
+   * @param params
+   */
+  protected void openAnalysisPanel()
+  {
+    AlignViewport viewport = af.getViewport();
+
+    /*
+     * gui validation shouldn't allow insufficient sequences here, but leave
+     * this check in in case this method gets exposed programmatically in future
+     */
+    if (((viewport.getSelectionGroup() != null)
+            && (viewport.getSelectionGroup().getSize() < MIN_ANALYSIS_SELECTION)
+            && (viewport.getSelectionGroup().getSize() > 0))
+            || (viewport.getAlignment().getHeight() < MIN_ANALYSIS_SELECTION))
+    {
+      JvOptionPane.showInternalMessageDialog(this,
+              MessageManager.formatMessage(
+                      "label.you_need_at_least_n_sequences",
+                      MIN_ANALYSIS_SELECTION),
+              MessageManager
+                      .getString("label.sequence_selection_insufficient"),
+              JvOptionPane.WARNING_MESSAGE);
+      return;
+    }
+
+    /*
+     * construct the panel and kick off its custom thread
+     */
+    new AnalysisInput(af);
 
   }
 

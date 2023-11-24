@@ -112,13 +112,13 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
         }
 
         as.calcScoreMatrix();
-	if (endGaps)
-	{
-          as.traceAlignmentWithEndGaps();
-	} else {
-	  as.traceAlignment();
-	}
-	as.scoreAlignment();
+        if (endGaps)
+	       {
+           as.traceAlignmentWithEndGaps();
+	       } else {
+	         as.traceAlignment();
+	       }
+	       as.scoreAlignment();
 
         if (!first)
         {
