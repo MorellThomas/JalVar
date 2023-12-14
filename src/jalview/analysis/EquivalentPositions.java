@@ -43,8 +43,10 @@ import java.util.LinkedList;
 
 
 /**
- * Performs Principal Component Analysis on given sequences
- * @AUTHOR MorellThomas 
+ * Performs equivalent position to genomic position conversion
+ * !has to be run before analysis and natural frequencies
+ * 
+ * called by EpPanel
  */
 public class EquivalentPositions implements Runnable
 {
@@ -56,24 +58,20 @@ public class EquivalentPositions implements Runnable
   
   final private AlignmentViewport seqs;
   
-  final private int startingPosition;
+  final private int startingPosition; //of the gene
   
   final char FoR;
   
   final int width;
 
-  /*
-   * outputs
-   */
-  private int correspondingBase;
-  
   /**
-   * Constructor given the sequences to compute for, the similarity model to
+   * Constructor given the sequences to compute for, the starting gene position, the strand and the sequence length
    * use, and a set of parameters for sequence comparison
    * 
    * @param sequences
-   * @param sm
-   * @param options
+   * @param startingPosition
+   * @param FoR
+   * @param width
    */
   public EquivalentPositions(AlignmentViewport sequences, int startingPosition, char FoR, int width)
   {
@@ -83,11 +81,11 @@ public class EquivalentPositions implements Runnable
     this.width = width;
     
     SequenceI[] _tmp = seqs.getAlignment().getSequencesArray();
-    this.refDir = String.format("temp/%s.ref", _tmp[_tmp.length - 1].getName());
+    this.refDir = String.format("%s.ref", _tmp[_tmp.length - 1].getName());
   }
 
   /**
-   * Performs the Natural Frequencies calculation
+   * Performs the Equivalent Positions calculation
    *
    */
   @Override
@@ -95,17 +93,17 @@ public class EquivalentPositions implements Runnable
   {
     try
     {
-      //checking if reference file already exits
       EpReferenceFile erf;
 
       // create the domain hash set for storage
       HashMap<String, LinkedList<HashMap<Character, int[]>>> domain;
 
+      //checking if reference file already exits
       if (new File(refDir).exists())
       {
         erf = EpReferenceFile.loadReference(refDir);
         domain = erf.getDomain();
-      } else {
+      } else {    //else create a new one
         erf = new EpReferenceFile(refDir);
         domain = new HashMap<String,LinkedList<HashMap<Character, int[]>>>();
       }
@@ -124,7 +122,7 @@ public class EquivalentPositions implements Runnable
       geneSequenceNames[0] = base.getName();
 
       AlignViewport geneSequence = new AlignViewport(_geneAsAlignment);
-      Dna dna = new Dna(geneSequence, geneSequence.getViewAsVisibleContigs(true)); 
+      Dna dna = new Dna(geneSequence, geneSequence.getViewAsVisibleContigs(true));  //create a DNA object of the sequences
 
       GeneticCodes _gc = GeneticCodes.getInstance();
       GeneticCodeI _standardTranslationTable = _gc.getStandardCodeTable();
@@ -137,6 +135,7 @@ public class EquivalentPositions implements Runnable
         seqs.getAlignment().addSequence(protSeq);
       }
       
+      //cleanup
       _standardTranslationTable = null;
       _gc = null;
       _one = null;
@@ -147,6 +146,7 @@ public class EquivalentPositions implements Runnable
       
       List<SequenceI> sequencesList = seqs.getAlignment().getSequences();   // needed for checking if there is a gap 
 
+      //prepare the output and add the header
       StringBuffer csv = new StringBuffer();
       csv.append("name");
       for (int i = 1; i <= width; i++)
@@ -157,6 +157,7 @@ public class EquivalentPositions implements Runnable
       }
       csv.append("\n");
 
+      //for each sequence in the alignment
       for ( int i = 0; i < seqs.getAlignment().getSequencesArray().length - 1; i++)
       {
       
@@ -165,6 +166,7 @@ public class EquivalentPositions implements Runnable
         if (Arrays.asList(geneSequenceNames).contains(sequences[i].getName()) )   //not aling the parent sequences with eachother
           continue;
 
+        //get the scores of the alignments and their CBs (3 because all frames)
         float[] alignmentScores = new float[3];
         int[] correspondingBases = new int[3];
 
@@ -205,12 +207,13 @@ public class EquivalentPositions implements Runnable
         LinkedList<HashMap<Character, int[]>> sequencePlusInfoList = new LinkedList<HashMap<Character, int[]>>(); //middle component for keeping the correct order of the AAs
         HashMap<Character, int[]> aaepgpPairs = new HashMap<Character, int[]>();  //inner component of domain map -- pairs AA to its EP and GPs (int[4] = [EP, GP1, GP2, GP3])
 
+        //a gap position will have an increasingly negative number as its genomic position (no duplicates)
         int gapmarker = -1;
 
-        int ep = 1;
-        for (int k = 0; k < width; k++) // k is actually real ep; ep for calculation does not increase at gap to not skip a GP by accident
+        int epCalc = 1;
+        for (int ep = 0; ep < width; ep++) // ep is actually real ep; ep for calculation (epCalc) does not increase at gap to not skip a GP by accident
         {
-          if (sequencesList.get(i).getCharAt(k) == '-')
+          if (sequencesList.get(i).getCharAt(ep) == '-')
           {
             genomicCorrespondingPositions.add(gapmarker--);
             genomicCorrespondingPositions.add(gapmarker--);
@@ -222,27 +225,29 @@ public class EquivalentPositions implements Runnable
           int[] currentEPandGPs;
           if (FoR == 'F')
           {
-            _basePosition = startingPosition + (ep + correspondingBase - 2) * 3 + frameOffset;     
+            _basePosition = startingPosition + (epCalc + correspondingBase - 2) * 3 + frameOffset;     
             genomicCorrespondingPositions.add(_basePosition);
             genomicCorrespondingPositions.add(_basePosition + 1);
             genomicCorrespondingPositions.add(_basePosition + 2);
             
-            currentEPandGPs = new int[]{k+1, _basePosition, _basePosition + 1, _basePosition + 2};
+            currentEPandGPs = new int[]{ep+1, _basePosition, _basePosition + 1, _basePosition + 2};
           } else {
-            _basePosition = startingPosition - (ep + correspondingBase - 2) * 3 - frameOffset;
+            _basePosition = startingPosition - (epCalc + correspondingBase - 2) * 3 - frameOffset;
             genomicCorrespondingPositions.add(_basePosition);
             genomicCorrespondingPositions.add(_basePosition - 1);
             genomicCorrespondingPositions.add(_basePosition - 2);
 
-            currentEPandGPs = new int[]{k+1, _basePosition, _basePosition - 1, _basePosition - 2};
+            currentEPandGPs = new int[]{ep+1, _basePosition, _basePosition - 1, _basePosition - 2};
           }
+          //output information to reference
           aaepgpPairs = new HashMap<Character, int[]>();
-          aaepgpPairs.put(sequencesList.get(i).getCharAt(k), currentEPandGPs);  // gaps will be skipped!!!!!
+          aaepgpPairs.put(sequencesList.get(i).getCharAt(ep), currentEPandGPs);  // gaps will be skipped!!!!!
           sequencePlusInfoList.add(aaepgpPairs);
           
-          ep++;
+          epCalc++;
         }
         
+        //output information
         csv.append(sequences[i].getName());
         for (int k : genomicCorrespondingPositions) // k = GP
         {

@@ -56,7 +56,8 @@ import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
 
 /**
- * A dialog where a user can choose and action Tree or PCA custom options
+ * A dialog where a user has to input information necessary for the equivalent position calculation
+ * called by CustomChooser
  */
 public class EpInput extends JPanel
 {
@@ -128,61 +129,39 @@ public class EpInput extends JPanel
       }
     });
     
+    //creates the buttons and fields
     forward = new JRadioButton(MessageManager.getString("label.forward"));
     forward.setOpaque(false);
     
     reverse = new JRadioButton(MessageManager.getString("label.reverse"));
     reverse.setOpaque(false);
     
-    //startPoint = new JTextField(MessageManager.getString("label.start_position"));
-    startPoint = new JTextField("178807423");
+    startPoint = new JTextField("178807423", 10);
     startPoint.setOpaque(false);
 
     JPanel calcChoicePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     calcChoicePanel.setOpaque(false);
 
     //-- --
-    JPanel mainPanel = new JPanel();
-    JvSwingUtils.createTitledBorder(mainPanel,
-            MessageManager.getString("label.tree"), true); 
-    Insets a = mainPanel.getBorder().getBorderInsets(mainPanel);
-    //--
 
     JPanel textPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     textPanel.setOpaque(false);
+    JvSwingUtils.createTitledBorder(textPanel,
+          MessageManager.getString("label.start_position"), true);    //set text border
+    textPanel.add(startPoint);
 
-    JPanel textPanelBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    textPanelBorderless.setOpaque(false);
-    textPanelBorderless.setBorder(BorderFactory.createEmptyBorder(40,a.left, 40, a.right));
-    textPanelBorderless.add(startPoint, FlowLayout.LEFT);
-    
-    //textPanel.add(textPanelBorderless, FlowLayout.LEFT);
-    calcChoicePanel.add(textPanelBorderless);
     
     //--
-    // first create the Tree custom's border panel
     JPanel strandPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     strandPanel.setOpaque(false);
 
     JvSwingUtils.createTitledBorder(strandPanel,
             MessageManager.getString("label.strand"), true);
 
-    // then copy the inset dimensions for the border-less PCA panel
-    JPanel forwardPanelBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    JPanel reversePanelBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
-    forwardPanelBorderless.setBorder(BorderFactory.createEmptyBorder(2,a.left,2,a.right));
-    forwardPanelBorderless.setOpaque(false);
-    forwardPanelBorderless.add(forward, FlowLayout.LEFT);
-
-    reversePanelBorderless.setBorder(
-            BorderFactory.createEmptyBorder(2, a.left, 2, a.right));
-    reversePanelBorderless.setOpaque(false);
-    reversePanelBorderless.add(reverse, FlowLayout.LEFT);
-
-    calcChoicePanel.add(forwardPanelBorderless, FlowLayout.LEFT);
-    calcChoicePanel.add(reversePanelBorderless, FlowLayout.LEFT);
-    //calcChoicePanel.add(strandPanel);
+    strandPanel.add(forward);
+    strandPanel.add(reverse);
+    calcChoicePanel.add(textPanel);
+    calcChoicePanel.add(strandPanel);
     
     //--
     
@@ -200,6 +179,8 @@ public class EpInput extends JPanel
     JPanel loadPanel = new JPanel();
     loadPanel.setOpaque(false);
     loadPanel.add(loadfile);
+    JvSwingUtils.createTitledBorder(loadPanel,
+            MessageManager.getString("label.gene_file"), true);
     
    //-- --
 

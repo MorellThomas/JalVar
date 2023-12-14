@@ -27,7 +27,8 @@ import jalview.util.MessageManager;
 import jalview.viewmodel.AlignmentViewport;
 
 /**
- * The panel holding the Pairwise Similarity Map 3-D visualisation
+ * The panel starts the residue analysis calculation
+ * called by AnalysisInput
  */
 public class AnalysisPanel implements Runnable
 {
@@ -35,19 +36,17 @@ public class AnalysisPanel implements Runnable
 
   AlignmentViewport av;
   
-  int residue;
+  int residue;  //specified residue (base 1)
 
   private boolean working;
   
   private Analysis anal;
 
   /**
-   * Constructor given sequence data, a similarity (or distance) score model
-   * name, and score calculation parameters
+   * Constructor given sequence data and the specified residue (inputed at base 1)
    * 
    * @param alignPanel
-   * @param modelName
-   * @param params
+   * @param residue
    */
   public AnalysisPanel(AlignmentPanel alignPanel, int residue)
   {
@@ -55,53 +54,17 @@ public class AnalysisPanel implements Runnable
     this.ap = alignPanel;
     
     this.residue = residue;
-
-    //addInternalFrameListener(new InternalFrameAdapter()
-    //{
-      //@Override
-      //public void internalFrameClosed(InternalFrameEvent e)
-      //{
-        //close_actionPerformed();
-      //}
-    //});
-
-    boolean selected = av.getSelectionGroup() != null
-            && av.getSelectionGroup().getSize() > 0;
-    SequenceI[] seqs;
-    if (!selected)
-    {
-      seqs = av.getAlignment().getSequencesArray();
-    }
-    else
-    {
-      seqs = av.getSelectionGroup().getSequencesInOrder(av.getAlignment());
-    }
-
-    //setNfModel(
-            //new NfModel(av, seqs, nucleotide, scoreModel));
-    //PaintRefresher.Register(this, av.getSequenceSetId());
   }
 
   /**
-   * Ensure references to potentially very large objects (the PaSiMap matrices) are
-   * nulled when the frame is closed
-   */
-  //protected void close_actionPerformed()
-  //{
-    //setNfModel(null);
-  //}
-
-  /**
-   * Calculates the PaSiMap and displays the results
+   * Calculates the residue analysis and displays the results
    */
   @Override
   public void run()
   {
     working = true;
-    String message = MessageManager.getString("label.analysis_recalculating");
     try
     {
-      //getNfModel().calculate();
       anal = new Analysis(av, residue);
       anal.run(); // executes in same thread, wait for completion
 
@@ -125,19 +88,6 @@ public class AnalysisPanel implements Runnable
   {
     return working;
   }
-
-  /**
-   * Sets the input data used to calculate the PaSiMap. This is provided for
-   * 'restore from project', which does not currently support this (AL-2647), so
-   * sets the value to null, and hides the menu option for "Input Data...". J
-   * 
-   * @param data
-   */
-  //public void setInputData(AlignmentViewport data)
-  //{
-    //getPasimapModel().setInputData(data);
-    //originalSeqData.setVisible(data != null);
-  //}
 
   public AlignViewportI getAlignViewport()
   {

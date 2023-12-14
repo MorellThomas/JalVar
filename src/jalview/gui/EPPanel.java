@@ -22,11 +22,10 @@ package jalview.gui;
 
 import jalview.analysis.EquivalentPositions;
 import jalview.api.AlignViewportI;
-import jalview.datamodel.SequenceI;
-import jalview.util.MessageManager;
 
 /**
- * The panel holding the Pairwise Similarity Map 3-D visualisation
+ * The panel calculates the equivalent position to genomic position conversion
+ * called by EpInput
  */
 public class EPPanel 
         implements Runnable
@@ -45,12 +44,13 @@ public class EPPanel
   private int width;
 
   /**
-   * Constructor given sequence data, a similarity (or distance) score model
+   * Constructor given sequence data, the starting gene position, the strand and the sequence length
    * name, and score calculation parameters
    * 
-   * @param alignPanel
-   * @param modelName
-   * @param params
+   * @param alignViewport
+   * @param startingPosition 
+   * @param FoR
+   * @param width
    */
   public EPPanel(AlignViewport alignViewport, int startingPosition, char FoR, int width)
   {
@@ -58,53 +58,17 @@ public class EPPanel
     this.startingPosition = startingPosition;
     this.FoR = FoR;
     this.width = width;
-  
-    //addInternalFrameListener(new InternalFrameAdapter()
-    //{
-      //@Override
-      //public void internalFrameClosed(InternalFrameEvent e)
-      //{
-        //close_actionPerformed();
-      //}
-    //});
-
-    boolean selected = av.getSelectionGroup() != null
-            && av.getSelectionGroup().getSize() > 0;
-    SequenceI[] seqs;
-    if (!selected)
-    {
-      seqs = av.getAlignment().getSequencesArray();
-    }
-    else
-    {
-      seqs = av.getSelectionGroup().getSequencesInOrder(av.getAlignment());
-    }
-
-    //setNfModel(
-            //new NfModel(av, seqs, nucleotide, scoreModel));
-    //PaintRefresher.Register(this, av.getSequenceSetId());
   }
 
   /**
-   * Ensure references to potentially very large objects (the PaSiMap matrices) are
-   * nulled when the frame is closed
-   */
-  //protected void close_actionPerformed()
-  //{
-    //setNfModel(null);
-  //}
-
-  /**
-   * Calculates the PaSiMap and displays the results
+   * Calculates the equivalent positions and displays the results
    */
   @Override
   public void run()
   {
     working = true;
-    String message = MessageManager.getString("label.ep_recalculating");
     try
     {
-      //getNfModel().calculate();
       ep = new EquivalentPositions(av, startingPosition, FoR, width);
       ep.run(); // executes in same thread, wait for completion
 
@@ -120,7 +84,7 @@ public class EPPanel
 
 
   /**
-   * Answers true if PaSiMap calculation is in progress, else false
+   * Answers true if EP calculation is in progress, else false
    * 
    * @return
    */
@@ -128,19 +92,6 @@ public class EPPanel
   {
     return working;
   }
-
-  /**
-   * Sets the input data used to calculate the PaSiMap. This is provided for
-   * 'restore from project', which does not currently support this (AL-2647), so
-   * sets the value to null, and hides the menu option for "Input Data...". J
-   * 
-   * @param data
-   */
-  //public void setInputData(AlignmentViewport data)
-  //{
-    //getPasimapModel().setInputData(data);
-    //originalSeqData.setVisible(data != null);
-  //}
 
   public AlignViewportI getAlignViewport()
   {

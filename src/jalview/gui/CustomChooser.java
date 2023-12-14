@@ -47,23 +47,17 @@ import javax.swing.event.InternalFrameEvent;
 
 
 /**
- * A dialog where a user can choose and action Tree or PCA custom options
+ * A dialog where a user can choose and action Equivalent Positions, Natural Frequencies or Residue Analysis
  */
 public class CustomChooser extends JPanel
 {
-  /*
-   * flag for whether gap matches residue in the PID custom for a Tree
-   * - true gives Jalview 2.10.1 behaviour
-   * - set to false (using Groovy) for a more correct tree
-   * (JAL-374)
-   */
   private static final Font VERDANA_11PT = new Font("Verdana", 0, 11);
 
   private static final int MIN_NATURAL_FREQUENCIES_SELECTION = 3; 
 
   private static final int MIN_EQUIVALENT_POSITIONS_SELECTION = 1; 
   
-  private static final int MIN_ANALYSIS_SELECTION = 1;
+  private static final int MAX_ANALYSIS_SELECTION = 1;
 
   AlignFrame af;
 
@@ -92,7 +86,7 @@ public class CustomChooser extends JPanel
   {
     this.af = alignFrame;
     init();
-    af.alignPanel.setCustomDialog(this);
+    af.alignPanel.setCustomDialog(this);    // method needs to be set in gui/AlignFrame
   }
 
   /**
@@ -120,6 +114,7 @@ public class CustomChooser extends JPanel
       }
     });
     
+    //create graphical buttons for NF, EP and Analysis
     naturalFrequencies = new JRadioButton(MessageManager.getString("label.naturalfrequencies"));
     naturalFrequencies.setOpaque(false);
     
@@ -133,36 +128,9 @@ public class CustomChooser extends JPanel
     JPanel calcChoicePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     calcChoicePanel.setOpaque(false);
 
-    // first create the Tree custom's border panel
-    JPanel customPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    customPanel.setOpaque(false);
-
-    JvSwingUtils.createTitledBorder(customPanel,
-            MessageManager.getString("label.tree"), true);
-
-    // then copy the inset dimensions for the border-less PCA panel
-    JPanel epPanelBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    JPanel nfPanelBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    JPanel analysisPanelBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
-    Insets b = customPanel.getBorder().getBorderInsets(customPanel);
-
-    nfPanelBorderless.setBorder(BorderFactory.createEmptyBorder(2,b.left,2,b.right));
-    nfPanelBorderless.setOpaque(false);
-    nfPanelBorderless.add(naturalFrequencies, FlowLayout.LEFT);
-
-    epPanelBorderless.setBorder(
-            BorderFactory.createEmptyBorder(2, b.left, 2, b.right));
-    epPanelBorderless.setOpaque(false);
-    epPanelBorderless.add(equivalentPositions, FlowLayout.LEFT);
-    
-    analysisPanelBorderless.setBorder(BorderFactory.createEmptyBorder(2,b.left,2,b.right));
-    analysisPanelBorderless.setOpaque(false);
-    analysisPanelBorderless.add(analysis, FlowLayout.LEFT);
-
-    calcChoicePanel.add(nfPanelBorderless, FlowLayout.LEFT);
-    calcChoicePanel.add(epPanelBorderless, FlowLayout.LEFT);
-    calcChoicePanel.add(analysisPanelBorderless, FlowLayout.LEFT);
+    calcChoicePanel.add(naturalFrequencies, FlowLayout.LEFT);
+    calcChoicePanel.add(equivalentPositions, FlowLayout.LEFT);
+    calcChoicePanel.add(analysis, FlowLayout.LEFT);
 
     //calcChoicePanel.add(customPanel);
 
@@ -261,7 +229,7 @@ public class CustomChooser extends JPanel
      */
     boolean checkNf = checkEnabled(naturalFrequencies, size, MIN_NATURAL_FREQUENCIES_SELECTION);
     boolean checkEp = checkEnabled(equivalentPositions, size, MIN_EQUIVALENT_POSITIONS_SELECTION); 
-    boolean checkAnalysis = checkEnabled(analysis, size, MIN_ANALYSIS_SELECTION);
+    boolean checkAnalysis = checkEnabled(analysis, size, MAX_ANALYSIS_SELECTION);
 
     if (checkNf || checkEp || checkAnalysis)
     {
@@ -339,7 +307,7 @@ public class CustomChooser extends JPanel
   }
 
   /**
-   * Open a new PCA panel on the desktop
+   * Open a new NF panel on the desktop
    * 
    * @param modelName
    * @param params
@@ -376,7 +344,7 @@ public class CustomChooser extends JPanel
   }
 
   /**
-   * Open a new PaSiMap panel on the desktop
+   * Open a new EP panel on the desktop
    * 
    * @param modelName
    * @param params
@@ -408,16 +376,10 @@ public class CustomChooser extends JPanel
      * construct the panel and kick off its custom thread
      */
     new EpInput(af);
-    //String parentSequenceFile = inputDialog.getParentSequenceFile();
-    //int startPosition = inputDialog.getStart();
-    //char FoR = inputDialog.getFoR();
-    //epPanel = new EPPanel(af.alignPanel, parentSequenceFile, startPosition, FoR);
-    //new Thread(epPanel).start();
-
   }
 
   /**
-   * Open a new PCA panel on the desktop
+   * Open a new Analysis panel on the desktop
    * 
    * @param modelName
    * @param params
@@ -431,14 +393,14 @@ public class CustomChooser extends JPanel
      * this check in in case this method gets exposed programmatically in future
      */
     if (((viewport.getSelectionGroup() != null)
-            && (viewport.getSelectionGroup().getSize() < MIN_ANALYSIS_SELECTION)
+            && (viewport.getSelectionGroup().getSize() > MAX_ANALYSIS_SELECTION)
             && (viewport.getSelectionGroup().getSize() > 0))
-            || (viewport.getAlignment().getHeight() < MIN_ANALYSIS_SELECTION))
+            || (viewport.getAlignment().getHeight() > MAX_ANALYSIS_SELECTION))
     {
       JvOptionPane.showInternalMessageDialog(this,
               MessageManager.formatMessage(
-                      "label.you_need_at_least_n_sequences",
-                      MIN_ANALYSIS_SELECTION),
+                      "label.you_need_at_most_n_sequences",    
+                      MAX_ANALYSIS_SELECTION),
               MessageManager
                       .getString("label.sequence_selection_insufficient"),
               JvOptionPane.WARNING_MESSAGE);

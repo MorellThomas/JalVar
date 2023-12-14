@@ -20,43 +20,30 @@
  */
 package jalview.gui;
 
-import jalview.bin.Cache;
-import jalview.io.DataSourceType;
-import jalview.io.FileFormatException;
-import jalview.io.FileFormatI;
-import jalview.io.FileFormats;
-import jalview.io.FileLoader;
-import jalview.io.IdentifyFile;
-import jalview.io.JalviewFileChooser;
-import jalview.io.JalviewFileView;
 import jalview.util.MessageManager;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.beans.PropertyVetoException;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
 
 /**
- * A dialog where a user can choose and action Tree or PCA custom options
+ * A dialog where a user has to input the specified residue for the residue analysis
+ * called by CustomChooser
  */
 public class AnalysisInput extends JPanel
 {
@@ -120,30 +107,23 @@ public class AnalysisInput extends JPanel
       }
     });
     
-    //startPoint = new JTextField(MessageManager.getString("label.start_position"));
-    residueField = new JTextField("1");
+    //create the TextField
+    residueField = new JTextField("1", 12);
     residueField.setOpaque(false);
 
     JPanel calcChoicePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     calcChoicePanel.setOpaque(false);
 
     //-- --
-    JPanel mainPanel = new JPanel();
-    JvSwingUtils.createTitledBorder(mainPanel,
-            MessageManager.getString("label.tree"), true); 
-    Insets a = mainPanel.getBorder().getBorderInsets(mainPanel);
-    //--
 
     JPanel textPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     textPanel.setOpaque(false);
-
-    JPanel textPanelBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    textPanelBorderless.setOpaque(false);
-    textPanelBorderless.setBorder(BorderFactory.createEmptyBorder(40,a.left, 40, a.right));
-    textPanelBorderless.add(residueField, FlowLayout.LEFT);
     
-    //textPanel.add(textPanelBorderless, FlowLayout.LEFT);
-    calcChoicePanel.add(textPanelBorderless);
+    JvSwingUtils.createTitledBorder(textPanel,
+            MessageManager.getString("label.residue"), true); 
+    textPanel.add(residueField);
+
+    calcChoicePanel.add(textPanel);
     
    //-- --
 
@@ -245,46 +225,6 @@ public class AnalysisInput extends JPanel
       frame.setClosed(true);
     } catch (Exception ex)
     {
-    }
-  }
-  
-  /**
-   * opens file browser dialog
-   */
-  protected void openFileBrowser()
-  {
-    JalviewFileChooser chooser = new JalviewFileChooser(
-            Cache.getProperty("LAST_DIRECTORY"));
-    chooser.setFileView(new JalviewFileView());
-    chooser.setDialogTitle(
-            MessageManager.formatMessage("action.load"));
-
-    int value = chooser.showOpenDialog(null);
-    if (value == JalviewFileChooser.APPROVE_OPTION)
-    {
-      File selectedFile = chooser.getSelectedFile();
-      Cache.setProperty("LAST_DIRECTORY", selectedFile.getParent());
-
-      FileFormatI format = chooser.getSelectedFormat();
-
-      /*
-       * Call IdentifyFile to verify the file contains what its extension implies.
-       * Skip this step for dynamically added file formats, because IdentifyFile does
-       * not know how to recognise them.
-       */
-      if (FileFormats.getInstance().isIdentifiable(format))
-      {
-        try
-        {
-          format = new IdentifyFile().identify(selectedFile,
-                  DataSourceType.FILE);
-        } catch (FileFormatException e)
-        {
-          // format = null; //??
-        }
-      }
-
-      new FileLoader().LoadFile(av, selectedFile, DataSourceType.FILE, format);
     }
   }
 

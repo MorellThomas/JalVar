@@ -31,12 +31,16 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
+ * helper class dealing with the reference file and holding all necessary information
+ * implements serializable to be able to safe it as file
+ * the gene sequence for EquivalentPositions and the protein sequence for Analysis have to be called the same, refrence is called the same
  * 
+ * required by Analysis, EquivalentPositions and NaturalFrequencies
  */
 public class EpReferenceFile 
   implements Serializable
 {
-  private static final long serialVersionUID = 6529685098267757690L;
+  private static final long serialVersionUID = 6529685098267757690L;  // need this to be able to load the file again
   
   private final String path;
   
@@ -44,7 +48,7 @@ public class EpReferenceFile
   
   private char[] geneSequence;
   
-  private HashMap<String, LinkedList<HashMap<Character, int[]>>> domain;
+  private HashMap<String, LinkedList<HashMap<Character, int[]>>> domain;  //epgp conversion
   
   private HashMap<String[], LinkedList<HashMap<Character, Float>>> naturalFrequency;
   

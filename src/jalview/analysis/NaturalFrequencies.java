@@ -40,8 +40,10 @@ import java.util.LinkedList;
 import java.util.Arrays;
 
 /**
- * Performs Principal Component Analysis on given sequences
- * @AUTHOR MorellThomas 
+ * Performs Natural Frequencies calculation
+ * !has to be run after the Equivalent Positions
+ * 
+ * called by NfPanel
  */
 public class NaturalFrequencies implements Runnable
 {
@@ -58,12 +60,9 @@ public class NaturalFrequencies implements Runnable
   private HashMap<String[], LinkedList<HashMap<Character, Float>>> naturalFrequency;
 
   /**
-   * Constructor given the sequences to compute for, the similarity model to
-   * use, and a set of parameters for sequence comparison
+   * Constructor given the sequences
    * 
    * @param sequences
-   * @param sm
-   * @param options
    */
   public NaturalFrequencies(AlignmentViewport sequences)
   {
@@ -82,29 +81,26 @@ public class NaturalFrequencies implements Runnable
       AlignmentI al = seqs.getAlignment();
       int width = al.getWidth();
 
+      //getting the consensus information from the alignment aka the counts of each AA
       AlignmentAnnotation consensus = seqs.getAlignmentConsensusAnnotation();
       System.out.println(consensus.toString());
-      //for (Annotation an : consensus.annotations)
-      //{
-        //System.out.println(an.toString());
-      //}
       
       SequenceI[] aseqs = al.getSequencesArray();
-      ProfilesI hconsensus = AAFrequency.calculate(aseqs, width, 0, width, true);   // holding the consensus data
+      ProfilesI hconsensus = AAFrequency.calculate(aseqs, width, 0, width, true);   // calculating the consensus data
       
-      File[] files = new File("temp/").listFiles();
+      File[] files = new File("./").listFiles();
       String referenceFile = "";
       for (File file : files) // look for correct sequence file
       {
-        if (file.getName().contains(".ref"))
+        if (file.getName().contains(".ref"))  // load each file that ends with ref
         {
-          EpReferenceFile erf = EpReferenceFile.loadReference(String.format("temp/%s", file.getName()));
+          EpReferenceFile erf = EpReferenceFile.loadReference(String.format("./%s", file.getName()));
           HashMap<String, LinkedList<HashMap<Character, int[]>>> domain = erf.getDomain();
           boolean skip = false;
           for (SequenceI seq : aseqs)
           {
-            if (!domain.containsKey(seq.getName()))
-              skip = true;
+            if (!domain.containsKey(seq.getName()))   // if a sequence present in this alignment is not present in the reference
+              skip = true;                            // file, skip the reference
           }
           if (!skip)
             referenceFile = file.getName();
@@ -112,7 +108,7 @@ public class NaturalFrequencies implements Runnable
       }
       
       // throws an error if nothing was found
-      EpReferenceFile erf = EpReferenceFile.loadReference(String.format("temp/%s", referenceFile)); 
+      EpReferenceFile erf = EpReferenceFile.loadReference(String.format("%s", referenceFile)); 
       naturalFrequency = erf.getNaturalFrequency(); // load reference
       
       String[] sequenceNames = Arrays.copyOf(al.getSequenceNames().toArray(), al.getHeight(), String[].class);  // for saving as reference
@@ -123,6 +119,7 @@ public class NaturalFrequencies implements Runnable
       LinkedList<HashMap<Character, Float>> listofPairs = new LinkedList<HashMap<Character, Float>>(); //for saving referefence
       HashMap<Character, Float> aapcPairs;  // for saving as reference
       
+      //get all the counts of all AAs of each position from the consensus information
       ResidueCount[] residueCountses = new ResidueCount[hconsensus.getEndColumn() + 1];
       for (int i = 0; i < hconsensus.getEndColumn() + 1; i++)
       {
@@ -130,6 +127,7 @@ public class NaturalFrequencies implements Runnable
       }
       
       char[] AaList = new char[]{'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', '-'};
+      //prepare the output and add the header
       StringBuffer csv = new StringBuffer();
       csv.append("\"Position\"");
       for (char Aa : AaList)
@@ -138,17 +136,14 @@ public class NaturalFrequencies implements Runnable
       }
       csv.append("\n");
       int nSeqs = aseqs.length;
-      int position = 1;
+      int position = 1; // start from position 1
       //int position = 0;
       
-      //SequenceI label = seqs.getAlignment().findName("I65");
-
       //calculating the %
       for (ResidueCount rc : residueCountses)
       {
         aapcPairs = new HashMap<Character, Float>();
         csv.append(Integer.toString(position));
-        //csv.append(label.getCharAt(position));
         
         float[] percentages = new float[AaList.length];
 
@@ -167,14 +162,15 @@ public class NaturalFrequencies implements Runnable
           
           aapcPairs.put(AA, pc);
         }
-        if (gapPC > 0)
+        if (gapPC > 0)  // % of gaps
         {
           gapPC = MiscMath.round(gapPC, 4);
           percentages[percentages.length - 1] = gapPC;
+          aapcPairs.put('-', gapPC);
         }
         for (float pc : percentages)
         {
-          csv.append(",").append(pc);
+          csv.append(",").append(pc);   // output the data
         }
         listofPairs.add(aapcPairs);
         csv.append("\n");
