@@ -79,7 +79,9 @@ import jalview.util.StringUtils;
 public class VCFLoader
 {
   private static final String VCF_ENCODABLE = ":;=%,";
-
+  /*  vcf fields
+  Chromosome,Position,rsIDs,Reference,Alternate,Source,Filters - exomes,Filters - genomes,Transcript,HGVS Consequence,Protein Consequence,Transcript Consequence,VEP Annotation,ClinVar Clinical Significance,ClinVar Variation ID,Flags,Allele Count,Allele Number,Allele Frequency,Homozygote Count,Hemizygote Count,Allele Count African/African American,Allele Number African/African American,Homozygote Count African/African American,Hemizygote Count African/African American,Allele Count Admixed American,Allele Number Admixed American,Homozygote Count Admixed American,Hemizygote Count Admixed American,Allele Count Ashkenazi Jewish,Allele Number Ashkenazi Jewish,Homozygote Count Ashkenazi Jewish,Hemizygote Count Ashkenazi Jewish,Allele Count East Asian,Allele Number East Asian,Homozygote Count East Asian,Hemizygote Count East Asian,Allele Count European (Finnish),Allele Number European (Finnish),Homozygote Count European (Finnish),Hemizygote Count European (Finnish),Allele Count Middle Eastern,Allele Number Middle Eastern,Homozygote Count Middle Eastern,Hemizygote Count Middle Eastern,Allele Count European (non-Finnish),Allele Number European (non-Finnish),Homozygote Count European (non-Finnish),Hemizygote Count European (non-Finnish),Allele Count Amish,Allele Number Amish,Homozygote Count Amish,Hemizygote Count Amish,Allele Count South Asian,Allele Number South Asian,Homozygote Count South Asian,Hemizygote Count South Asian,Allele Count Remaining,Allele Number Remaining,Homozygote Count Remaining,Hemizygote Count Remaining
+  */
   /*
    * Jalview feature attributes for VCF fixed column data
    */
@@ -294,8 +296,13 @@ public class VCFLoader
    * 
    * @param seqs
    * @param gui
+   * @param map
    */
   public void loadVCF(SequenceI[] seqs, final AlignViewControllerGuiI gui)
+  {
+    loadVCF(seqs, gui, null, null);
+  }
+  public void loadVCF(SequenceI[] seqs, final AlignViewControllerGuiI gui, MapList map, String[] info)
   {
     if (gui != null)
     {
@@ -307,7 +314,7 @@ public class VCFLoader
       @Override
       public void run()
       {
-        VCFLoader.this.doLoad(seqs, gui);
+        VCFLoader.this.doLoad(seqs, gui, map, info);
       }
     }.start();
   }
@@ -342,7 +349,7 @@ public class VCFLoader
     {
       HtsContigDb db = new HtsContigDb("", dbFile);
       seq = db.getSequenceProxy(contig);
-      loadSequenceVCF(seq);
+      loadSequenceVCF(seq, null, null);
       db.close();
     }
     else
@@ -360,7 +367,7 @@ public class VCFLoader
    * @param gui
    *          optional callback handler for messages
    */
-  protected void doLoad(SequenceI[] seqs, AlignViewControllerGuiI gui)
+  protected void doLoad(SequenceI[] seqs, AlignViewControllerGuiI gui, MapList map, String[] info)
   {
     try
     {
@@ -378,7 +385,7 @@ public class VCFLoader
        */
       for (SequenceI seq : seqs)
       {
-        int added = loadSequenceVCF(seq);
+        int added = loadSequenceVCF(seq, map, info);
         if (added > 0)
         {
           seqCount++;
@@ -739,9 +746,9 @@ public class VCFLoader
    * @param seq
    * @return
    */
-  protected int loadSequenceVCF(SequenceI seq)
+  protected int loadSequenceVCF(SequenceI seq, MapList map, String[] info)
   {
-    VCFMap vcfMap = getVcfMap(seq);
+    VCFMap vcfMap = getVcfMap(seq, map, info);
     if (vcfMap == null)
     {
       return 0;
@@ -764,8 +771,15 @@ public class VCFLoader
    * @param seq
    * @return
    */
-  private VCFMap getVcfMap(SequenceI seq)
+  private VCFMap getVcfMap(SequenceI seq, MapList map, String[] info)
   {
+    //&! hard code map to titin in
+    if ((map != null) && (info != null))
+    {
+      seq.setGeneLoci(info[0], info[1], info[2], map);
+    }
+    
+    
     /*
      * simplest case: sequence has id and length matching a VCF contig
      */
@@ -795,7 +809,7 @@ public class VCFLoader
     String species = seqCoords.getSpeciesId();
     String chromosome = seqCoords.getChromosomeId();
     String seqRef = seqCoords.getAssemblyId();
-    MapList map = seqCoords.getMapping();
+    map = seqCoords.getMapping();
 
     // note this requires the configured species to match that
     // returned with the Ensembl sequence; todo: support aliases?
@@ -808,7 +822,7 @@ public class VCFLoader
 
     if (seqRef.equalsIgnoreCase(vcfAssembly))
     {
-      return new VCFMap(chromosome, map);
+      return new VCFMap(chromosome, map);   
     }
 
     /*

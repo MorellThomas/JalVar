@@ -160,6 +160,8 @@ public class GAlignFrame extends JInternalFrame
   protected JMenuItem runGroovy = new JMenuItem();
 
   protected JMenuItem loadVcf;
+  
+  protected JMenuItem loadVcfWithInfo;
 
   protected JCheckBoxMenuItem autoCalculate = new JCheckBoxMenuItem();
 
@@ -1384,7 +1386,7 @@ public class GAlignFrame extends JInternalFrame
       }
     });
     loadVcf = new JMenuItem(
-            MessageManager.getString("label.load_vcf_file"));
+            MessageManager.getString("label.load_vcf_file_directly"));
     loadVcf.setToolTipText(MessageManager.getString("label.load_vcf"));
     loadVcf.addActionListener(new ActionListener()
     {
@@ -1392,6 +1394,18 @@ public class GAlignFrame extends JInternalFrame
       public void actionPerformed(ActionEvent e)
       {
         loadVcf_actionPerformed();
+      }
+    });
+    //&!
+    loadVcfWithInfo = new JMenuItem(
+            MessageManager.getString("label.load_vcf_file_with_info"));
+    loadVcfWithInfo.setToolTipText(MessageManager.getString("label.load_vcf_with_info"));
+    loadVcfWithInfo.addActionListener(new ActionListener()
+    {
+      @Override
+      public void actionPerformed(ActionEvent e)
+      {
+        loadVcfWithInfo_actionPerformed();
       }
     });
     autoCalculate.setText(
@@ -1791,6 +1805,10 @@ public class GAlignFrame extends JInternalFrame
 
     JMenu exportImageMenu = new JMenu(
             MessageManager.getString("label.export_image"));
+    
+    //&!
+    JMenu loadVcfMenu = new JMenu(
+            MessageManager.getString("label.load_vcf_file"));
     JMenu fileMenu = new JMenu(MessageManager.getString("action.file"));
     alignFrameMenuBar.add(fileMenu);
     alignFrameMenuBar.add(editMenu);
@@ -1823,7 +1841,9 @@ public class GAlignFrame extends JInternalFrame
     fileMenu.add(associatedData);
     if (!Platform.isJS())
     {
-      fileMenu.add(loadVcf);
+      //&!
+      //fileMenu.add(loadVcf);
+      fileMenu.add(loadVcfMenu);
     }
     fileMenu.addSeparator();
     fileMenu.add(closeMenuItem);
@@ -1941,6 +1961,9 @@ public class GAlignFrame extends JInternalFrame
       exportImageMenu.add(createBioJS);
       exportImageMenu.add(createSVG);
     }
+    //&!
+    loadVcfMenu.add(loadVcf);
+    loadVcfMenu.add(loadVcfWithInfo);
     addSequenceMenu.add(addFromFile);
     addSequenceMenu.add(addFromText);
     addSequenceMenu.add(addFromURL);
@@ -2006,6 +2029,11 @@ public class GAlignFrame extends JInternalFrame
   }
 
   protected void loadVcf_actionPerformed()
+  {
+  }
+  
+  //&!
+  protected void loadVcfWithInfo_actionPerformed()
   {
   }
 

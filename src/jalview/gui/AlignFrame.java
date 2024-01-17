@@ -6045,7 +6045,14 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
     chooser.showOpenDialog(null);
 
   }
-
+  
+  //&!
+  @Override
+  protected void loadVcfWithInfo_actionPerformed()
+  {
+    new VcfInfoInput(this);
+  }
+  
   private Rectangle lastFeatureSettingsBounds = null;
 
   @Override
