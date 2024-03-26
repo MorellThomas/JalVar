@@ -348,6 +348,7 @@ public class DBRefFetcher implements Runnable
           while (queries.size() > 0 && numq < nqSize)
           {
             String query = queries.elementAt(0);
+      System.out.println(query);
             if (dbsource.isValidReference(query))
             {
               queryString.append(
@@ -450,6 +451,7 @@ public class DBRefFetcher implements Runnable
                   // System.out.println("Not querying source with
                   // token="+token+"\n");
                   addSeqId(sequence, token);
+              System.out.println(String.format("new token %s", token.toUpperCase(Locale.ROOT)));
                   queries.addElement(token.toUpperCase(Locale.ROOT));
                 }
               }

@@ -161,6 +161,8 @@ public class EBIAlfaFold extends EbiFileRetrievedProxy
   public AlignmentI getSequenceRecords(String queries, String retrievalUrl)
           throws Exception
   {
+  System.out.println(queries);
+  System.out.println(retrievalUrl);
     AlignmentI pdbAlignment = null;
     String chain = null;
     String id = null;
@@ -196,6 +198,7 @@ public class EBIAlfaFold extends EbiFileRetrievedProxy
 
       // may not need this check ?
       file = tmpFile.getAbsolutePath();
+  System.out.println(file);
       if (file == null)
       {
         return null;

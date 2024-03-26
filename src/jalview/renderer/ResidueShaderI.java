@@ -34,6 +34,8 @@ public interface ResidueShaderI
 {
 
   public abstract void setConsensus(ProfilesI cons);
+  
+  public abstract void setVariance(ProfilesI cons);
 
   public abstract boolean conservationApplied();
 

@@ -30,10 +30,12 @@ import java.util.List;
 import java.util.Map;
 
 import jalview.analysis.AAFrequency;
+import jalview.analysis.RepeatingVariance;
 import jalview.analysis.Conservation;
 import jalview.renderer.ResidueShader;
 import jalview.renderer.ResidueShaderI;
 import jalview.schemes.ColourSchemeI;
+import jalview.viewmodel.AlignmentViewport;
 
 /**
  * Collects a set contiguous ranges on a set of sequences
@@ -153,6 +155,12 @@ public class SequenceGroup implements AnnotatedCollectionI
   AlignmentAnnotation conservation = null;
 
   private boolean showConsensusHistogram;
+  
+  AlignmentAnnotation variance = null;
+  
+  private boolean showVarianceHistogram;
+  
+  private AlignmentI alignment = null;
 
   private AnnotatedCollectionI context;
 
@@ -184,6 +192,12 @@ public class SequenceGroup implements AnnotatedCollectionI
           ColourSchemeI scheme, boolean displayBoxes, boolean displayText,
           boolean colourText, int start, int end)
   {
+    this(sequences, groupName, scheme, displayBoxes, displayText, colourText, start, end, null);
+  }
+  public SequenceGroup(List<SequenceI> sequences, String groupName,
+          ColourSchemeI scheme, boolean displayBoxes, boolean displayText,
+          boolean colourText, int start, int end, AlignmentI al)
+  {
     this();
     this.sequences = sequences;
     this.groupName = groupName;
@@ -194,6 +208,11 @@ public class SequenceGroup implements AnnotatedCollectionI
     startRes = start;
     endRes = end;
     recalcConservation();
+    if (al != null)
+    {
+      this.alignment = al;
+      recalcVariance(alignment);
+    }
   }
 
   /**
@@ -229,6 +248,7 @@ public class SequenceGroup implements AnnotatedCollectionI
       showSequenceLogo = seqsel.showSequenceLogo;
       normaliseSequenceLogo = seqsel.normaliseSequenceLogo;
       showConsensusHistogram = seqsel.showConsensusHistogram;
+      showVarianceHistogram = seqsel.showVarianceHistogram;
       idColour = seqsel.idColour;
       outlineColour = seqsel.outlineColour;
       seqrep = seqsel.seqrep;
@@ -241,6 +261,10 @@ public class SequenceGroup implements AnnotatedCollectionI
       {
         recalcConservation(); // safer than
         // aaFrequency = (Vector) seqsel.aaFrequency.clone(); // ??
+      }
+      if (seqsel.variance != null && seqsel.alignment != null)
+      {
+        recalcVariance(seqsel.alignment);
       }
     }
   }
@@ -541,6 +565,10 @@ public class SequenceGroup implements AnnotatedCollectionI
       if (recalc)
       {
         recalcConservation();
+        if (alignment != null)
+        {
+          recalcVariance(alignment);
+        }
       }
     }
   }
@@ -649,6 +677,70 @@ public class SequenceGroup implements AnnotatedCollectionI
     return upd;
   }
 
+  /**
+   * calculate residue variance and colourschemes for group - but only if
+   * necessary. returns true if the calculation resulted in a visible change to
+   * group
+   */
+  public boolean recalcVariance()
+  {
+    return recalcVariance(alignment);
+  }
+  public boolean recalcVariance(final AlignmentI al)
+  {
+    return recalcVariance(al, false);
+  }
+
+  /**
+   * calculate residue variance for group - but only if necessary. returns
+   * true if the calculation resulted in a visible change to group
+   * 
+   * @param defer
+   *          when set, colourschemes for this group are not refreshed after
+   *          recalculation
+   */
+  public boolean recalcVariance(final AlignmentI al, boolean defer)
+  {
+    //System.out.println(String.format("SequenceGroup @recalcVariance (%b) startRes %d, endRes+1 %d", defer, startRes, endRes+1));
+    if (cs == null && variance == null)
+    {
+      return false;
+    }
+    // TODO: try harder to detect changes in state in order to minimise
+    // recalculation effort
+    boolean upd = false;
+    try
+    {
+      ProfilesI vrns = RepeatingVariance.calculate(al);
+      if (variance != null)
+      {
+        _updateVarianceRow(vrns, al);
+        upd = true;
+      }
+      if (cs != null)
+      {
+        cs.setVariance(vrns);
+        upd = true;
+      }
+
+      if (cs != null && !defer)
+      {
+        // TODO: JAL-2034 should cs.alignmentChanged modify return state
+        cs.alignmentChanged(context != null ? context : this, null);
+        return true;
+      }
+      else
+      {
+        return upd;
+      }
+    } catch (java.lang.OutOfMemoryError err)
+    {
+      // TODO: catch OOM
+      System.out.println("Out of memory loading groups: " + err);
+    }
+    return upd;
+  }
+
   private void _updateConservationRow(Conservation c)
   {
     if (conservation == null)
@@ -672,6 +764,7 @@ public class SequenceGroup implements AnnotatedCollectionI
   }
 
   public ProfilesI consensusData = null;
+  
 
   private void _updateConsensusRow(ProfilesI cnsns, long nseq)
   {
@@ -694,6 +787,34 @@ public class SequenceGroup implements AnnotatedCollectionI
     AAFrequency.completeConsensus(consensus, cnsns, startRes, endRes + 1,
             ignoreGapsInConsensus, showSequenceLogo, nseq); // TODO: setting
                                                             // container
+    // for
+    // ignoreGapsInConsensusCalculation);
+  }
+
+  public ProfilesI varianceData = null;
+
+  private void _updateVarianceRow(ProfilesI vrns, AlignmentI al)
+  {
+    if (variance == null)
+    {
+      getVariance();
+    }
+    long nseq = (long) al.getHeight();
+    variance.label = "Variance for " + getName();
+    variance.description = "Percent Identity";
+    varianceData = vrns;
+    // preserve width if already set
+    int aWidth = (variance.annotations != null)
+            ? (endRes < variance.annotations.length
+                    ? variance.annotations.length
+                    : endRes + 1)
+            : endRes + 1;
+    variance.annotations = null;
+    variance.annotations = new Annotation[aWidth]; // should be alignment width
+
+    RepeatingVariance.completeVariance(al);
+            // TODO: setting
+            // container
     // for
     // ignoreGapsInConsensusCalculation);
   }
@@ -739,6 +860,10 @@ public class SequenceGroup implements AnnotatedCollectionI
       if (recalc)
       {
         recalcConservation();
+        if (alignment != null)
+        {
+          recalcVariance(alignment);
+        }
       }
     }
   }
@@ -1123,7 +1248,20 @@ public class SequenceGroup implements AnnotatedCollectionI
       consensus = aan;
     }
   }
-
+  
+  /**
+   * set this alignmentAnnotation object as the one used to render variance
+   * annotation
+   * 
+   * @param aan
+   */
+  public void setVariance(AlignmentAnnotation aan)
+  {
+    if (variance == null)
+    {
+      variance = aan;
+    }
+  }
   /**
    * 
    * @return automatically calculated consensus row note: the row is a stub if a
@@ -1151,6 +1289,36 @@ public class SequenceGroup implements AnnotatedCollectionI
       consensus.description = "Percent Identity";
     }
     return consensus;
+  }
+
+  /**
+   * 
+   * @return automatically calculated variance row note: the row is a stub if a
+   *         variance calculation has not yet been performed on the group
+   */
+  public AlignmentAnnotation getVariance()
+  {
+    System.out.println("SequenceGroup @getVariance null? " + String.valueOf(variance == null));
+    // TODO get or calculate and get consensus annotation row for this group
+    int aWidth = this.getWidth();
+    // pointer
+    // possibility
+    // here.
+    if (aWidth < 0)
+    {
+      return null;
+    }
+    if (variance == null)
+    {
+      variance = new AlignmentAnnotation("", "", new Annotation[1], 0f,
+              100f, AlignmentAnnotation.BAR_GRAPH);
+      variance.hasText = true;
+      variance.autoCalculated = true;
+      variance.groupRef = this;
+      variance.label = "Consensus for " + getName();
+      variance.description = "Percent Identity";
+    }
+    return variance;
   }
 
   /**
@@ -1195,7 +1363,7 @@ public class SequenceGroup implements AnnotatedCollectionI
    */
   public boolean hasAnnotationRows()
   {
-    return consensus != null || conservation != null;
+    return consensus != null || conservation != null || variance != null;
   }
 
   public SequenceI getConsensusSeq()
@@ -1279,6 +1447,29 @@ public class SequenceGroup implements AnnotatedCollectionI
   {
     return showConsensusHistogram;
   }
+  
+  /**
+   * @param showVarHist
+   *          flag indicating if the variance histogram for this group should
+   *           be rendered
+   */
+  public void setShowVarianceHistogram(boolean showVarHist)
+  {
+    if (showVarianceHistogram != showVarHist && variance != null)
+    {
+      this.showVarianceHistogram = showVarHist;
+      recalcVariance();
+    }
+    this.showVarianceHistogram = showVarHist;
+  }
+  
+  /**
+   * @return the showVarianceHistogram
+   */
+  public boolean isShowVarianceHistogram()
+  {
+    return showVarianceHistogram;
+  }
 
   /**
    * set flag indicating if logo should be normalised when rendered
@@ -1327,6 +1518,10 @@ public class SequenceGroup implements AnnotatedCollectionI
       if (conservation != null)
       {
         annot.add(conservation);
+      }
+      if (variance != null)
+      {
+        annot.add(variance);
       }
     }
     return annot.toArray(new AlignmentAnnotation[0]);

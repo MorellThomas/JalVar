@@ -24,6 +24,7 @@ import jalview.api.analysis.ScoreModelI;
 import jalview.api.analysis.SimilarityParamsI;
 import jalview.bin.Console;
 import jalview.datamodel.Point;
+import jalview.datamodel.SequenceGroup;
 import jalview.datamodel.SequenceI;
 import jalview.gui.PairwiseAlignPanel;
 import jalview.math.Matrix;
@@ -47,8 +48,6 @@ public class PaSiMap implements Runnable
 
   final private ScoreModelI scoreModel;
 
-  final private SimilarityParamsI similarityParams;
-
   final private byte dim = 3;
 
   /*
@@ -66,12 +65,10 @@ public class PaSiMap implements Runnable
    * @param sm
    * @param options
    */
-  public PaSiMap(AlignmentViewport sequences, ScoreModelI sm,
-          SimilarityParamsI options)
+  public PaSiMap(AlignmentViewport sequences, ScoreModelI sm)
   {
     this.seqs = sequences;
     this.scoreModel = sm;
-    this.similarityParams = options;
   }
 
   /**

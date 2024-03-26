@@ -533,6 +533,11 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
     setFileFormat(format);
     reload.setEnabled(true);
   }
+  
+  public String getFileName()
+  {
+    return this.fileName;
+  }
 
   /**
    * JavaScript will have this, maybe others. More dependable than a file name
@@ -810,6 +815,7 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
       }
       ap.av.updateConservation(ap);
       ap.av.updateConsensus(ap);
+      ap.av.updateVariance(ap);
       ap.av.updateStrucConsensus(ap);
     }
   }
@@ -2909,6 +2915,7 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
   @Override
   public void newView_actionPerformed(ActionEvent e)
   {
+System.out.println("AlingFrame @newView_actionPerformed button pressed");
     newView(null, true);
   }
 
@@ -2923,6 +2930,7 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
    */
   public AlignmentPanel newView(String viewTitle, boolean copyAnnotation)
   {
+System.out.println("@AlignFrame newView");
     /*
      * Create a new AlignmentPanel (with its own, new Viewport)
      */
@@ -5678,6 +5686,7 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
   @Override
   protected void applyAutoAnnotationSettings_actionPerformed(ActionEvent e)
   {
+    System.out.println(String.format("AlignFrame @applyAutoAnnotationSettings_actionPerformed ap.updateAnnotation(%b)", applyAutoAnnotationSettings.getState()));
     alignPanel.updateAnnotation(applyAutoAnnotationSettings.getState());
   }
 

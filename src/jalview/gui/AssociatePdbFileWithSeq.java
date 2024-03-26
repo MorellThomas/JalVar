@@ -96,7 +96,11 @@ public class AssociatePdbFileWithSeq
     if (pdbfile != null)
     {
       entry.setFile(choice);
+//!&&!
+if (sequence.getDatasetSequence() != null)
       sequence.getDatasetSequence().addPDBId(entry);
+else
+sequence.addPDBId(entry);
       StructureSelectionManager.getStructureSelectionManager(ssmp)
               .registerPDBEntry(entry);
       entry.setStructureFile(pdbfile);

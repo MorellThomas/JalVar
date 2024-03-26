@@ -32,9 +32,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import jalview.analysis.Analysis;
 import jalview.analysis.AnnotationSorter.SequenceAnnotationOrder;
 import jalview.analysis.Connectivity;
 import jalview.analysis.Conservation;
+import jalview.analysis.RepeatingVariance;
 import jalview.analysis.TreeModel;
 import jalview.api.AlignCalcManagerI;
 import jalview.api.AlignExportSettingsI;
@@ -78,6 +80,7 @@ import jalview.workers.AlignCalcManager;
 import jalview.workers.ComplementConsensusThread;
 import jalview.workers.ConsensusThread;
 import jalview.workers.StrucConsensusThread;
+import jalview.workers.VarianceThread;
 
 /**
  * base class holding visualization and analysis attributes and common logic for
@@ -105,6 +108,8 @@ public abstract class AlignmentViewport
 
   protected Deque<CommandI> redoList = new ArrayDeque<>();
 
+  //protected GPCAPanel progressPanel;
+  protected Analysis analysis;
   /**
    * used to determine if quit should be confirmed
    */
@@ -618,9 +623,13 @@ public abstract class AlignmentViewport
 
   public boolean autoCalculateConsensus = true;
 
+  public boolean autoCalculateVariance = false;
+
   protected boolean autoCalculateStrucConsensus = true;
 
   protected boolean ignoreGapsInConsensusCalculation = false;
+  
+  protected boolean ignoreGapsInVarianceCalculation = false;
 
   protected ResidueShaderI residueShading = new ResidueShader();
 
@@ -698,6 +707,8 @@ public abstract class AlignmentViewport
   }
 
   protected AlignmentAnnotation consensus;
+  
+  protected AlignmentAnnotation variance;
 
   protected AlignmentAnnotation complementConsensus;
 
@@ -710,6 +721,8 @@ public abstract class AlignmentViewport
   protected AlignmentAnnotation quality;
 
   protected AlignmentAnnotation[] groupConsensus;
+  
+  protected AlignmentAnnotation[] groupVariance;
 
   protected AlignmentAnnotation[] groupConservation;
 
@@ -717,6 +730,11 @@ public abstract class AlignmentViewport
    * results of alignment consensus analysis for visible portion of view
    */
   protected ProfilesI hconsensus = null;
+
+  /**
+   * results of alignment variance analysis for visible portion of view
+   */
+  protected ProfilesI hvariance = null;
 
   /**
    * results of cDNA complement consensus visible portion of view
@@ -756,6 +774,12 @@ public abstract class AlignmentViewport
   }
 
   @Override
+  public void setSequenceVarianceHash(ProfilesI hvariance)
+  {
+    this.hvariance = hvariance;
+  }
+
+  @Override
   public void setComplementConsensusHash(
           Hashtable<String, Object>[] hconsensus)
   {
@@ -766,6 +790,12 @@ public abstract class AlignmentViewport
   public ProfilesI getSequenceConsensusHash()
   {
     return hconsensus;
+  }
+
+  @Override
+  public ProfilesI getSequenceVarianceHash()
+  {
+    return hvariance;
   }
 
   @Override
@@ -798,6 +828,12 @@ public abstract class AlignmentViewport
   public AlignmentAnnotation getAlignmentConservationAnnotation()
   {
     return conservation;
+  }
+
+  @Override
+  public AlignmentAnnotation getAlignmentVarianceAnnotation()
+  {
+    return variance;
   }
 
   @Override
@@ -898,6 +934,24 @@ public abstract class AlignmentViewport
     }
   }
 
+  /**
+   * trigger update of variance annotation
+   */
+  public void updateVariance(final AlignmentViewPanel ap)
+  {
+    // see note in mantis : issue number 8585
+    if (variance == null || !autoCalculateVariance)
+    {
+      return;
+    }
+    if (calculator
+            .getRegisteredWorkersOfClass(VarianceThread.class) == null)
+    {
+      calculator.registerWorker(new VarianceThread(this, ap));
+    }
+
+  }
+
   // --------START Structure Conservation
   public void updateStrucConsensus(final AlignmentViewPanel ap)
   {
@@ -963,7 +1017,9 @@ public abstract class AlignmentViewport
     quality = null;
     groupConsensus = null;
     groupConservation = null;
+    groupVariance = null;
     hconsensus = null;
+    hvariance = null;
     hconservation = null;
     hcomplementConsensus = null;
     gapcounts = null;
@@ -975,6 +1031,8 @@ public abstract class AlignmentViewport
     selectionGroup = null;
     colSel = null;
     setAlignment(null);
+    variance = null;
+    hvariance = null;
   }
 
   @Override
@@ -1000,6 +1058,11 @@ public abstract class AlignmentViewport
    * should consensus rows be shown for groups
    */
   protected boolean showGroupConsensus = false;
+  
+  /**
+   * should variance rows be shown for groups
+   */
+  protected boolean showGroupVariance = false;
 
   /**
    * should consensus profile be rendered by default
@@ -1015,6 +1078,8 @@ public abstract class AlignmentViewport
    * should consensus histograms be rendered by default
    */
   protected boolean showConsensusHistogram = true;
+
+  protected boolean showVarianceHistogram = false;
 
   /**
    * @return the showConsensusProfile
@@ -1039,6 +1104,7 @@ public abstract class AlignmentViewport
       calculator.updateAnnotationFor(ConsensusThread.class);
       calculator.updateAnnotationFor(ComplementConsensusThread.class);
       calculator.updateAnnotationFor(StrucConsensusThread.class);
+      calculator.updateAnnotationFor(VarianceThread.class);
     }
     this.showSequenceLogo = showSequenceLogo;
   }
@@ -1050,6 +1116,23 @@ public abstract class AlignmentViewport
   public void setShowConsensusHistogram(boolean showConsensusHistogram)
   {
     this.showConsensusHistogram = showConsensusHistogram;
+  }
+  
+  public void setShowVarianceHistogram(boolean svh)
+  {
+    this.showVarianceHistogram = svh;
+  }
+  public void setShowVariance(boolean sv)
+  {
+    this.showVariance = sv;
+  }
+  public boolean isShowVarianceHistogram()
+  {
+    return this.showVarianceHistogram;
+  }
+  public boolean isShowVariance()
+  {
+    return this.showVariance;
   }
 
   /**
@@ -1084,6 +1167,22 @@ public abstract class AlignmentViewport
   public void setShowGroupConsensus(boolean showGroupConsensus)
   {
     this.showGroupConsensus = showGroupConsensus;
+  }
+  
+  /**
+   * @return the showGroupVariance
+   */
+  public boolean isShowGroupVariance()
+  {
+    return showGroupVariance;
+  }
+  
+  /**
+   * @param showGroupVariance
+   */
+  public void setShowGroupVariance(boolean showGroupVariance)
+  {
+    this.showGroupVariance = showGroupVariance;
   }
 
   /**
@@ -1129,6 +1228,9 @@ public abstract class AlignmentViewport
   @Override
   public void setSelectionGroup(SequenceGroup sg)
   {
+    if (analysis != null)
+      analysis.recalc(sg, this);
+
     selectionGroup = sg;
     if (sg != null && sg.getContext() == null)
     {
@@ -1310,6 +1412,12 @@ public abstract class AlignmentViewport
     return ignoreGapsInConsensusCalculation;
   }
 
+  @Override
+  public boolean isIgnoreGapsVariance()
+  {
+    return ignoreGapsInVarianceCalculation;
+  }
+
   // property change stuff
   // JBPNote Prolly only need this in the applet version.
   private PropertyChangeSupport changeSupport = new PropertyChangeSupport(
@@ -1320,6 +1428,8 @@ public abstract class AlignmentViewport
   protected boolean showQuality = true;
 
   protected boolean showConsensus = true;
+  
+  protected boolean showVariance = false;
 
   protected boolean showOccupancy = true;
 
@@ -1881,6 +1991,10 @@ public abstract class AlignmentViewport
     {
       updateStrucConsensus(ap);
     }
+    if (hvariance != null && autoCalculateVariance)
+    {
+      updateVariance(ap);
+    }
 
     // Reset endRes of groups if beyond alignment width
     int alWidth = alignment.getWidth();
@@ -1917,6 +2031,8 @@ public abstract class AlignmentViewport
       rs.alignmentChanged(alignment, hiddenRepSequences);
 
       rs.setConsensus(hconsensus);
+      //&!
+      rs.setVariance(hvariance);
       if (rs.conservationApplied())
       {
         rs.setConservation(Conservation.calculateConservation("All",
@@ -1959,6 +2075,14 @@ public abstract class AlignmentViewport
       initGapCounts();
 
       initComplementConsensus();
+    }
+    if (hvariance == null && !isDataset)
+    {
+      variance = new AlignmentAnnotation("Variance",
+              //MessageManager.getString("label.consensus_descr"),
+              "Most occurring variance per column",
+              new Annotation[1], 0f, 100f, AlignmentAnnotation.BAR_GRAPH);
+      initVariance(variance);
     }
   }
 
@@ -2008,6 +2132,17 @@ public abstract class AlignmentViewport
     aa.autoCalculated = true;
 
     if (showConsensus)
+    {
+      alignment.addAnnotation(aa);
+    }
+  }
+
+  private void initVariance(AlignmentAnnotation aa)
+  {
+    aa.hasText = true;
+    aa.autoCalculated = true;
+
+    if (showVariance)
     {
       alignment.addAnnotation(aa);
     }
@@ -2162,6 +2297,8 @@ public abstract class AlignmentViewport
     boolean showprf = isShowSequenceLogo();
     boolean showConsHist = isShowConsensusHistogram();
     boolean normLogo = isNormaliseSequenceLogo();
+    boolean vari = isShowVariance();
+    boolean showVarHist = isShowVarianceHistogram();
 
     /**
      * TODO reorder the annotation rows according to group/sequence ordering on
@@ -2199,6 +2336,7 @@ public abstract class AlignmentViewport
           sg.setshowSequenceLogo(showprf);
           sg.setShowConsensusHistogram(showConsHist);
           sg.setNormaliseSequenceLogo(normLogo);
+          sg.setShowVarianceHistogram(showVarHist);
         }
         if (conv)
         {
@@ -2210,12 +2348,33 @@ public abstract class AlignmentViewport
           updateCalcs = true;
           alignment.addAnnotation(sg.getConsensus(), 0);
         }
+        //if (vari && sg.getSequences().size() == alignment.getHeight())
+        //{
+          //alignment.addAnnotation(sg.getVariance(), 0);
+          //sg.recalcVariance(this);
+        //}
         // refresh the annotation rows
         if (updateCalcs)
         {
           sg.recalcConservation();
         }
       }
+    }
+    if (vari)
+    {
+      /*
+      List<SequenceI> bigGroupL = new ArrayList<SequenceI>();
+      for (SequenceI seq : alignment.getSequencesArray())
+      {
+        bigGroupL.add(seq);
+      }
+      SequenceGroup bigGroup = new SequenceGroup(bigGroupL, "", null, false, true, false, alignment.getStartRes(), alignment.getEndRes(), alignment);
+      //alignment.addGroup(bigGroup);
+      alignment.addAnnotation(bigGroup.getVariance(), 0);
+      bigGroup.recalcVariance(alignment);
+      */
+      RepeatingVariance.completeVariance(alignment);
+      //alignment.addAnnotation(RepeatingVariance.getAnnotation(alignment));
     }
     oldrfs.clear();
   }
@@ -3146,5 +3305,15 @@ public abstract class AlignmentViewport
   public Hashtable<SequenceI, Integer> calculateConnectivity(float[][] scores, byte dim)
   {
     return Connectivity.getConnectivity(this, scores, dim);
+  }
+  
+  public Analysis getAnalysis()
+  {
+    return this.analysis;
+  }
+  
+  public void setAnalysis(Analysis ana)
+  {
+    this.analysis = ana;
   }
 }

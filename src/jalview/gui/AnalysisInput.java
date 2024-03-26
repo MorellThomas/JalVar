@@ -180,7 +180,7 @@ public class AnalysisInput extends JPanel
       @Override
       public void internalFrameClosed(InternalFrameEvent evt)
       {
-        af.alignPanel.setCustomDialog(null);
+        af.alignPanel.setAnalysisInput(null);
       };
     });
 

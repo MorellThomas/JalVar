@@ -61,6 +61,8 @@ public class ResidueShader implements ResidueShaderI
    * the consensus data for each column
    */
   private ProfilesI consensus;
+  
+  private ProfilesI variance;
 
   /*
    * if true, apply shading of colour by conservation
@@ -123,6 +125,7 @@ public class ResidueShader implements ResidueShaderI
   {
     this.colourScheme = rs.colourScheme;
     this.consensus = rs.consensus;
+    this.variance = rs.variance;
     this.conservation = rs.conservation;
     this.conservationColouring = rs.conservationColouring;
     this.conservationIncrement = rs.conservationIncrement;
@@ -137,6 +140,12 @@ public class ResidueShader implements ResidueShaderI
   public void setConsensus(ProfilesI cons)
   {
     consensus = cons;
+  }
+  
+  @Override
+  public void setVariance(ProfilesI var)
+  {
+    variance = var;
   }
 
   /**
@@ -239,7 +248,6 @@ public class ResidueShader implements ResidueShaderI
     {
       return Color.white; // Colour is 'None'
     }
-
     /*
      * get 'base' colour
      */

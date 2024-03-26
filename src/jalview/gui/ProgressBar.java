@@ -266,5 +266,18 @@ public class ProgressBar implements IProgressIndicator
       }
     });
   }
+  
+  /*
+   * return the JProgressBar mapped to id
+   */
+  public JProgressBar getProgressBar(long id)
+  {
+    for (Component component : progressBars.get(id).getComponents())
+    {
+      if (component.getClass().equals(JProgressBar.class))
+        return (JProgressBar) component;
+    }
+    return null;
+  }
 
 }

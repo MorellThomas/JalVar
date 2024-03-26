@@ -20,6 +20,8 @@
  */
 package jalview.gui;
 
+import javax.swing.JProgressBar;
+
 /**
  * Visual progress indicator interface.
  * 
@@ -55,5 +57,11 @@ public interface IProgressIndicator
    * @return true if any progress bars are still active
    */
   boolean operationInProgress();
-
+  
+  /**
+   * 
+   * @param id
+   * @return progressbar mapped to id
+   */
+  //public JProgressBar getProgressBar(long id);
 }

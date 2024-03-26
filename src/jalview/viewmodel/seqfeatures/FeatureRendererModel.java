@@ -1016,9 +1016,20 @@ public abstract class FeatureRendererModel
   public List<SequenceFeature> findFeaturesAtResidue(SequenceI sequence,
           int fromResNo, int toResNo)
   {
+    System.out.println("FeatureRenderer @findFeaturesAtResidue " + fromResNo + " " + toResNo);
+
     List<SequenceFeature> result = new ArrayList<>();
+    //List<SequenceFeature> result = sequence.findFeatures(fromResNo, toResNo, "sequence_variant");
+    List<SequenceFeature> tmp = sequence.getSequenceFeatures();
+    for (SequenceFeature sf : tmp)
+    {
+      if ((sf.getBegin() >= fromResNo) && (sf.getEnd() <= toResNo))
+      result.add(sf);
+    }
+    
     if (!av.areFeaturesDisplayed() || getFeaturesDisplayed() == null)
     {
+      System.out.println(result.size() + " results");
       return result;
     }
 
@@ -1210,6 +1221,7 @@ public abstract class FeatureRendererModel
   public MappedFeatures findComplementFeaturesAtResidue(
           final SequenceI sequence, final int pos)
   {
+    System.out.println("FeatureRenderer @findComplementFeaturesAtResidue");
     SequenceI ds = sequence.getDatasetSequence();
     if (ds == null)
     {
@@ -1238,20 +1250,24 @@ public abstract class FeatureRendererModel
     SequenceToSequenceMapping mapping = null;
     SequenceI mapFrom = null;
 
+    System.out.println(mappings.size() + " mappings");
     for (AlignedCodonFrame acf : mappings)
     {
       mapping = acf.getCoveringCodonMapping(ds);
       if (mapping == null)
       {
+        System.out.println("mapping null");
         continue;
       }
       SearchResultsI sr = new SearchResults();
       mapping.markMappedRegion(ds, pos, sr);
+      System.out.println(sr.getCount() + " results in complement");
       for (SearchResultMatchI match : sr.getResults())
       {
         int fromRes = match.getStart();
         int toRes = match.getEnd();
         mapFrom = match.getSequence();
+    System.out.println("FeatureREnderer @findComplementFeaturesAtResidue finding features...");
         List<SequenceFeature> fs = findFeaturesAtResidue(mapFrom, fromRes,
                 toRes);
         for (SequenceFeature sf : fs)
@@ -1283,12 +1299,15 @@ public abstract class FeatureRendererModel
     List<SequenceFeature> result = new ArrayList<>();
     final int toAdd = found.size();
     int added = 0;
+    renderOrder = new String[]{"sequence_variant"};
+ System.out.println(String.format("%d toAdd, %d renderOrders, %d SequenceFeatures", toAdd, renderOrder.length, found.size()));
     for (String type : renderOrder)
     {
       for (SequenceFeature sf : found)
       {
         if (type.equals(sf.getType()))
         {
+          System.out.println("adding variant at " + sf.getBegin());
           result.add(sf);
           added++;
         }

@@ -532,7 +532,7 @@ public class ResidueProperties
       Color.white, // *
       Color.white // .
   };
-
+  
   // Dunno where I got these numbers from
   public static final double[] hyd2 = { 0.62, // A
       0.29, // R

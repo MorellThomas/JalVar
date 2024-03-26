@@ -58,7 +58,9 @@ public class Connectivity
 	int iOld = connectivity.get(sequences[i]);
 	int jOld = connectivity.get(sequences[j]); 
         // count the connection if its score is not NaN
+	//System.out.println(scores[i][j]);
 	if (!Float.isNaN(scores[i][j]))
+	//if (scores[i][j] < 0.1)
 	{
 	  connectivity.put(sequences[i], ++iOld);
 	  connectivity.put(sequences[j], ++jOld);

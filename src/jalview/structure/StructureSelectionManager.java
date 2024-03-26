@@ -991,7 +991,9 @@ public class StructureSelectionManager
     {
       if (li instanceof SequenceListener)
       {
+    System.out.println("des war hier oder? " + results.getCount() + " results");
         String s = ((SequenceListener) li).highlightSequence(results);
+    System.out.println(s);
         if (s != null)
         {
           result = s;

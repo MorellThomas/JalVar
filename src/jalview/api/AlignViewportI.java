@@ -106,6 +106,8 @@ public interface AlignViewportI extends ViewStyleI
 
   ProfilesI getSequenceConsensusHash();
 
+  ProfilesI getSequenceVarianceHash();
+
   /**
    * Get consensus data table for the cDNA complement of this alignment (if any)
    * 
@@ -116,6 +118,8 @@ public interface AlignViewportI extends ViewStyleI
   Hashtable<String, Object>[] getRnaStructureConsensusHash();
 
   boolean isIgnoreGapsConsensus();
+
+  boolean isIgnoreGapsVariance();
 
   boolean isCalculationInProgress(AlignmentAnnotation alignmentAnnotation);
 
@@ -129,6 +133,8 @@ public interface AlignViewportI extends ViewStyleI
    * @return
    */
   AlignmentAnnotation getAlignmentConsensusAnnotation();
+
+  AlignmentAnnotation getAlignmentVarianceAnnotation();
 
   /**
    * get the container for alignment gap annotation
@@ -175,6 +181,13 @@ public interface AlignViewportI extends ViewStyleI
    * @param hconsensus
    */
   void setSequenceConsensusHash(ProfilesI hconsensus);
+  
+  /**
+   * set the variance result object for the viewport
+   * 
+   * @param hvariance
+   */
+  void setSequenceVarianceHash(ProfilesI hvariance);
 
   /**
    * Set the cDNA complement consensus for the viewport

@@ -53,6 +53,7 @@ import java.awt.print.PrinterJob;
 import javax.swing.ButtonGroup;
 import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JProgressBar;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
 
@@ -79,6 +80,8 @@ public class PaSiMapPanel extends GPCAPanel
   private IProgressIndicator progressBar;
 
   private boolean working;
+  
+  private long progId;
 
   /**
    * Constructor given sequence data, a similarity (or distance) score model
@@ -122,7 +125,7 @@ public class PaSiMapPanel extends GPCAPanel
     ScoreModelI scoreModel = ScoreModels.getInstance()
             .getScoreModel(modelName, ap);
     setPasimapModel(
-            new PaSiMapModel(av, seqs, nucleotide, scoreModel, params));
+            new PaSiMapModel(av, seqs, nucleotide, scoreModel));
     PaintRefresher.Register(this, av.getSequenceSetId());
 
     setRotatableCanvas(new RotatableCanvas(alignPanel));
@@ -171,7 +174,7 @@ public class PaSiMapPanel extends GPCAPanel
   public void run()
   {
     working = true;
-    long progId = System.currentTimeMillis();
+    progId = System.currentTimeMillis();
     IProgressIndicator progress = this;
     String message = MessageManager.getString("label.pasimap_recalculating");
     if (getParent() == null)
@@ -614,6 +617,28 @@ public class PaSiMapPanel extends GPCAPanel
     // // setMenusForViewport();
     // validate();
   }
+  
+  /*
+   * make the progressBar determinate and update its progress
+   */
+  /*
+  public void updateProgressBar(int lengthOfTask, int progress)
+  {
+    JProgressBar pBar = progressBar.getProgressBar(progId);
+    if (pBar.isIndeterminate())
+    {
+      pBar.setMaximum(lengthOfTask);
+      pBar.setValue(0);
+      pBar.setIndeterminate(false);
+    }
+    updateProgressBar(progress);
+  }
+  public void updateProgressBar(int progress)
+  {
+    JProgressBar pBar = progressBar.getProgressBar(progId);
+    pBar.setValue(progress);
+  }
+  */
 
   @Override
   public void registerHandler(final long id,
@@ -768,4 +793,12 @@ public class PaSiMapPanel extends GPCAPanel
     getRotatableCanvas().ap = panel;
     PaintRefresher.Register(PaSiMapPanel.this, panel.av.getSequenceSetId());
   }
+  
+  //@Override
+  /*
+  public JProgressBar getProgressBar(long id)
+  {
+    return progressBar.getProgressBar(id);
+  }
+  */
 }

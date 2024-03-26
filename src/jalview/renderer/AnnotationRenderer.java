@@ -34,6 +34,7 @@ import java.util.Hashtable;
 
 import jalview.analysis.AAFrequency;
 import jalview.analysis.CodingUtils;
+import jalview.analysis.RepeatingVariance;
 import jalview.analysis.Rna;
 import jalview.analysis.StructureFrequency;
 import jalview.api.AlignViewportI;
@@ -81,6 +82,8 @@ public class AnnotationRenderer
   private HiddenColumns hiddenColumns;
 
   private ProfilesI hconsensus;
+  
+  private ProfilesI hvariance;
 
   private Hashtable<String, Object>[] complementConsensus;
 
@@ -153,6 +156,7 @@ public class AnnotationRenderer
   {
     hiddenColumns = null;
     hconsensus = null;
+    hvariance = null;
     complementConsensus = null;
     hStrucConsensus = null;
     fadedImage = null;
@@ -346,6 +350,7 @@ public class AnnotationRenderer
     columnSelection = av.getColumnSelection();
     hiddenColumns = av.getAlignment().getHiddenColumns();
     hconsensus = av.getSequenceConsensusHash();
+    hvariance = av.getSequenceVarianceHash();
     complementConsensus = av.getComplementConsensusHash();
     hStrucConsensus = av.getRnaStructureConsensusHash();
     av_ignoreGapsConsensus = av.isIgnoreGapsConsensus();
@@ -415,6 +420,11 @@ public class AnnotationRenderer
         {
           return StructureFrequency.extractProfile(hStrucConsensus[column],
                   av_ignoreGapsConsensus);
+        }
+        
+        if (aa.autoCalculated && aa.label.startsWith("Variance"))
+        {
+          return RepeatingVariance.extractProfile(hvariance.get(column), true);
         }
       }
     }

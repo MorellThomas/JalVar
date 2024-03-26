@@ -103,7 +103,7 @@ public abstract class AAStructureBindingModel
     public int[] pdbResNo; // or use SparseIntArray?
 
     public String modelId;
-
+    
     /**
      * Constructor
      * 
@@ -163,6 +163,11 @@ public abstract class AAStructureBindingModel
    * array of target chains for sequences - tied to pdbentry and sequence[]
    */
   private String[][] chains;
+  
+  /*
+   * array of the colours for each residue
+   */
+  private Color[] colourArray;
 
   /*
    * datasource protocol for access to PDBEntrylatest
@@ -1193,12 +1198,16 @@ public abstract class AAStructureBindingModel
    */
   public void colourBySequence(AlignmentViewPanel alignmentv)
   {
+    colourBySequence(alignmentv, null);
+  }
+  public void colourBySequence(AlignmentViewPanel alignmentv, Color[] colourArray)
+  {
     if (!colourBySequence || !isLoadingFinished() || getSsm() == null)
     {
       return;
     }
     Map<Object, AtomSpecModel> colourMap = buildColoursMap(ssm, sequence,
-            alignmentv);
+            alignmentv, colourArray);
 
     List<StructureCommandI> colourBySequenceCommands = commandGenerator
             .colourBySequence(colourMap);
@@ -1320,7 +1329,7 @@ public abstract class AAStructureBindingModel
     }
     if (!isLoadingFromArchive())
     {
-      colourBySequence(ap);
+      colourBySequence(ap, colourArray);
     }
   }
 
@@ -1354,6 +1363,12 @@ public abstract class AAStructureBindingModel
   protected Map<Object, AtomSpecModel> buildColoursMap(
           StructureSelectionManager ssm, SequenceI[][] sequence,
           AlignmentViewPanel viewPanel)
+  {
+    return buildColoursMap(ssm, sequence, viewPanel, null);
+  }
+  protected Map<Object, AtomSpecModel> buildColoursMap(
+          StructureSelectionManager ssm, SequenceI[][] sequence,
+          AlignmentViewPanel viewPanel, Color[] colourArray)
   {
     String[] files = getStructureFiles();
     SequenceRenderer sr = getSequenceRenderer(viewPanel);
@@ -1400,7 +1415,15 @@ public abstract class AAStructureBindingModel
                 continue;
               }
 
-              Color colour = sr.getResidueColour(seq, r, finder);
+              Color colour;
+              if (colourArray != null)
+              {
+                colour = colourArray[r];  // custom colour array
+              }
+              else
+              {
+                colour = sr.getResidueColour(seq, r, finder);
+              }
 
               /*
                * darker colour for hidden regions
@@ -1987,5 +2010,20 @@ public abstract class AAStructureBindingModel
           List<String> residueAttributes)
   {
     return 0;
+  }
+  
+  public void setColourArray(Color[] colAr)
+  {
+    this.colourArray = colAr;
+  }
+  
+  public void resetColourArray()
+  {
+    this.colourArray = null;
+  }
+  
+  public Color[] getColourArray()
+  {
+    return this.colourArray;
   }
 }

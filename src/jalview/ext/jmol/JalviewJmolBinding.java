@@ -366,6 +366,7 @@ public abstract class JalviewJmolBinding extends AAStructureBindingModel
 
   protected void mouseOverStructure(int atomIndex, final String strInfo)
   {
+    System.out.println(strInfo);
     int pdbResNum;
     int alocsep = strInfo.indexOf("^");
     int mdlSep = strInfo.indexOf("/");
@@ -452,6 +453,7 @@ public abstract class JalviewJmolBinding extends AAStructureBindingModel
      */
     String label = getSsm().mouseOverStructure(pdbResNum, chainId,
             pdbfilename);
+    System.out.println(label);
     if (label != null)
     {
       // change comma to pipe separator (newline token for Jmol)
@@ -948,7 +950,7 @@ public abstract class JalviewJmolBinding extends AAStructureBindingModel
             (jmolfileio ? new SmarterJmolAdapter() : null),
             htmlName + ((Object) this).toString(), documentBase, codeBase,
             commandOptions, this);
-
+    
     jmolViewer.setJmolStatusListener(this); // extends JmolCallbackListener
 
     try

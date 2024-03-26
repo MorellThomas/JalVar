@@ -122,6 +122,8 @@ public class AlignmentPanel extends GAlignmentPanel implements
   private EpInput epDialog;
   
   private AnalysisInput analDialog;
+  
+  private VcfInfoInput vcfDialog;
 
   /**
    * Creates a new AlignmentPanel object.
@@ -1786,6 +1788,11 @@ public class AlignmentPanel extends GAlignmentPanel implements
     analDialog = analInput;
   }
   
+  public void setVcfInput(VcfInfoInput vcfInput)
+  {
+    vcfDialog = vcfInput;
+  }
+  
   /**
    * Returns the reference to the PCA/Tree chooser dialog for this panel (null
    * if none is open)
@@ -1811,6 +1818,16 @@ public class AlignmentPanel extends GAlignmentPanel implements
   public EpInput getEpInput()
   {
     return epDialog;
+  }
+  
+  public AnalysisInput getAnalysisInput()
+  {
+    return analDialog;
+  }
+  
+  public VcfInfoInput getVcfInput()
+  {
+    return vcfDialog;
   }
 
   /**

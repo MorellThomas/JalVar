@@ -148,13 +148,13 @@ public class NaturalFrequencies implements Runnable
         float[] percentages = new float[AaList.length];
 
         ResidueCount.SymbolCounts symbolCounts = rc.getSymbolCounts();
-        float gapPC = 1f;
+        float gapPC = 100f;
         for (int i = 0; i < symbolCounts.symbols.length; i++)
         {
           char AA = symbolCounts.symbols[i];  
           int n = symbolCounts.values[i];     // number of times the AA appears at this position
           float pc = (float) n / (float) nSeqs;               // % of AA appearance at this position
-          pc = MiscMath.round(pc, 4);
+          pc = MiscMath.round(pc * 100, 4);
           gapPC -= pc;
           
           int indexOfAa = new String(AaList).indexOf(AA);

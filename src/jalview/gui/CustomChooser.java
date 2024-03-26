@@ -57,7 +57,7 @@ public class CustomChooser extends JPanel
 
   private static final int MIN_EQUIVALENT_POSITIONS_SELECTION = 1; 
   
-  private static final int MAX_ANALYSIS_SELECTION = 1;
+  private static final int MIN_ANALYSIS_SELECTION = 1;
 
   AlignFrame af;
 
@@ -229,7 +229,7 @@ public class CustomChooser extends JPanel
      */
     boolean checkNf = checkEnabled(naturalFrequencies, size, MIN_NATURAL_FREQUENCIES_SELECTION);
     boolean checkEp = checkEnabled(equivalentPositions, size, MIN_EQUIVALENT_POSITIONS_SELECTION); 
-    boolean checkAnalysis = checkEnabled(analysis, size, MAX_ANALYSIS_SELECTION);
+    boolean checkAnalysis = checkEnabled(analysis, size, MIN_ANALYSIS_SELECTION);
 
     if (checkNf || checkEp || checkAnalysis)
     {
@@ -393,14 +393,14 @@ public class CustomChooser extends JPanel
      * this check in in case this method gets exposed programmatically in future
      */
     if (((viewport.getSelectionGroup() != null)
-            && (viewport.getSelectionGroup().getSize() > MAX_ANALYSIS_SELECTION)
-            && (viewport.getSelectionGroup().getSize() > 0))
-            || (viewport.getAlignment().getHeight() > MAX_ANALYSIS_SELECTION))
+            && (viewport.getSelectionGroup().getSize() < MIN_ANALYSIS_SELECTION)
+            && (viewport.getSelectionGroup().getSize() < 0))
+            || (viewport.getAlignment().getHeight() < MIN_ANALYSIS_SELECTION))
     {
       JvOptionPane.showInternalMessageDialog(this,
               MessageManager.formatMessage(
-                      "label.you_need_at_most_n_sequences",    
-                      MAX_ANALYSIS_SELECTION),
+                      "label.you_need_at_least_n_sequences",    
+                      MIN_ANALYSIS_SELECTION),
               MessageManager
                       .getString("label.sequence_selection_insufficient"),
               JvOptionPane.WARNING_MESSAGE);

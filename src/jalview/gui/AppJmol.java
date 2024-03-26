@@ -639,4 +639,18 @@ public class AppJmol extends StructureViewerBase
   {
     return "Jmol";
   }
+  
+  @Override
+  public void setColourArray(Color[] colAr)
+  {
+    colourArray = colAr;
+    jmb.setColourArray(colAr);
+  }
+  
+  @Override
+  public void resetColourArray()
+  {
+    colourArray = null;
+    jmb.resetColourArray();
+  }
 }

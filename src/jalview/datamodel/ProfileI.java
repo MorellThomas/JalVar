@@ -39,6 +39,15 @@ public interface ProfileI
    * @return
    */
   public abstract float getPercentageIdentity(boolean ignoreGaps);
+  public abstract float getPercentageIdentity(int count, boolean ignoreGaps);
+  
+  /**
+   * returns a string showing the fraction of count to the number of (nongapped) sequences
+   * @param count
+   * @param ignoreGaps
+   * @return
+   */
+  public abstract String getOccuranceFraction(int count, boolean ignoreGaps);
 
   /**
    * Returns the full symbol counts for this profile
@@ -83,5 +92,15 @@ public interface ProfileI
    * @return
    */
   public abstract int getNonGapped();
+  
+  /**
+   * Sets the number of all individual counts for all modal residues
+   */
+  public abstract void setIndividCounts(int[] ic);
+  
+  /**
+   * Returns the number of all individual counts for all modal residues
+   */
+  public abstract int[] getIndividCounts();
 
 }

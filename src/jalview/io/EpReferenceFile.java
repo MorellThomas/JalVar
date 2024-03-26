@@ -28,6 +28,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
 /**
@@ -44,11 +46,21 @@ public class EpReferenceFile
   
   private final String path;
   
+  private String structurePath = "/Users/thomasm/Desktop/master_main/java/data/af-structures";
+  
+  private boolean isReverse;
+  
   private int[] genomicPositions;
   
   private char[] geneSequence;
   
-  private HashMap<String, LinkedList<HashMap<Character, int[]>>> domain;  //epgp conversion
+  private HashMap<String, LinkedList<HashMap<Character, int[]>>> domain;  //epgp conversion // int[] = [EP, GP1,GP2,GP3]
+  
+  private HashMap<String, char[]> domainWithGaps;  // all domains aligned, used to display the domain group
+
+  private HashMap<String, Integer> domainOffset;  // domains with their frame offset
+  
+  private HashMap<String, LinkedHashSet<String>> domainGroups;
   
   private HashMap<String[], LinkedList<HashMap<Character, Float>>> naturalFrequency;
   
@@ -117,6 +129,56 @@ public class EpReferenceFile
   public String getPath()
   {
     return this.path;
+  }
+  
+  public void setStructurePath(String sPath)
+  {
+    this.structurePath = sPath;
+  }
+  
+  public String getStructurePath()
+  {
+    return this.structurePath;
+  }
+  
+  public void setDomainGroups(HashMap<String, LinkedHashSet<String>> dGroup)
+  {
+    this.domainGroups = dGroup;
+  }
+  
+  public HashMap<String, LinkedHashSet<String>> getDomainGroups()
+  {
+    return this.domainGroups;
+  }
+  
+  public void setAlignedDomains(HashMap<String, char[]> alDom)
+  {
+    this.domainWithGaps = alDom;
+  }
+  
+  public HashMap<String, char[]> getAlignedDomains()
+  {
+    return this.domainWithGaps;
+  }
+  
+  public void setReverse(boolean rev)
+  {
+    this.isReverse = rev;
+  }
+  
+  public boolean getReverse()
+  {
+    return this.isReverse;
+  }
+  
+  public void setDomainOffset(HashMap<String, Integer> dof)
+  {
+    this.domainOffset = dof;
+  }
+  
+  public HashMap<String, Integer> getDomainOffset()
+  {
+    return this.domainOffset;
   }
   
   public void delete()

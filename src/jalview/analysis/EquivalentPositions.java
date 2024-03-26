@@ -25,6 +25,7 @@ import jalview.datamodel.AlignmentI;
 import jalview.datamodel.Alignment;
 import jalview.datamodel.SequenceI;
 import jalview.datamodel.SequenceGroup;
+import jalview.gui.AlignFrame;
 import jalview.gui.AlignViewport;
 import jalview.gui.CutAndPasteTransfer;
 import jalview.gui.Desktop;
@@ -39,6 +40,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 
@@ -97,15 +100,34 @@ public class EquivalentPositions implements Runnable
 
       // create the domain hash set for storage
       HashMap<String, LinkedList<HashMap<Character, int[]>>> domain;
+      HashMap<String, LinkedHashSet<String>> domainGroups;
+      HashMap<String, char[]> alignedDomain;
+      HashMap<String, Integer> domainOffset;
 
       //checking if reference file already exits
       if (new File(refDir).exists())
       {
         erf = EpReferenceFile.loadReference(refDir);
         domain = erf.getDomain();
+        domainGroups = erf.getDomainGroups();
+        alignedDomain = erf.getAlignedDomains();
+        domainOffset = erf.getDomainOffset();
       } else {    //else create a new one
         erf = new EpReferenceFile(refDir);
         domain = new HashMap<String,LinkedList<HashMap<Character, int[]>>>();
+        domainGroups = new HashMap<String, LinkedHashSet<String>>();
+        alignedDomain = new HashMap<String, char[]>();
+        domainOffset = new HashMap<String, Integer>();
+      }
+      
+      // create set of sequences in this MSA group for storage
+      // or take the already existing one
+      LinkedHashSet<String> dGroup = new LinkedHashSet<String>();
+      for (String dG : domainGroups.keySet())
+      {
+        AlignFrame afr = Desktop.getAlignFrameFor(seqs);
+        if (dG == afr.getName())
+          dGroup = domainGroups.get(dG);
       }
       
       //creating dna sequence copies of the inputed one with frameshifts by deleting the first n bases
@@ -259,7 +281,10 @@ public class EquivalentPositions implements Runnable
           }
         }
         csv.append("\n");
+        dGroup.add(sequences[i].getName());
+        domainOffset.putIfAbsent(sequences[i].getName(), frameOffset);
         domain.putIfAbsent(sequences[i].getName(), sequencePlusInfoList);
+        alignedDomain.putIfAbsent(sequences[i].getName(), sequences[i].getSequence());
       }
       
       String CsvString = csv.toString();
@@ -288,17 +313,21 @@ public class EquivalentPositions implements Runnable
         
       erf.setDomain(domain);    // saves the domain as a HashMap
       
+      String sep = System.getProperty("os.name").split(" ")[0] == "Windows" ? "\\" : "/";
+      String[] file = Desktop.getAlignFrameFor(seqs).getFileName().split(sep);
+      domainGroups.put(file[file.length-1].split("\\.")[0], dGroup);
+      erf.setDomainGroups(domainGroups);  // saves domain Groups
+      
+      erf.setAlignedDomains(alignedDomain); // saves domains with gaps as char[]
+      
+      erf.setDomainOffset(domainOffset);  // saves domains and their frame offset
+      
+      boolean isReverse = FoR == 'F' ? false : true;
+      erf.setReverse(isReverse);
+      
       
       //save the reference
       erf.saveReference();
-      
-      
-      //just for checking
-      erf = null;
-      erf = EpReferenceFile.loadReference(refDir);
-      HashMap<Character, int[]> first = erf.getDomain().get("I65").get(3);
-      char key = (char) first.keySet().toArray()[0];
-      System.out.println(String.format("%s: %d -- %d, %d, %d", key, first.get(key)[0], first.get(key)[1], first.get(key)[2], first.get(key)[3]));
       
     } catch (Exception q)
     {

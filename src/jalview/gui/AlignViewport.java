@@ -226,6 +226,7 @@ public class AlignViewport extends AlignmentViewport
     setRightAlignIds(Cache.getDefault("RIGHT_ALIGN_IDS", false));
     setCentreColumnLabels(Cache.getDefault("CENTRE_COLUMN_LABELS", false));
     autoCalculateConsensus = Cache.getDefault("AUTO_CALC_CONSENSUS", true);
+    autoCalculateVariance = false;
 
     setPadGaps(Cache.getDefault("PAD_GAPS", true));
     setShowNPFeats(Cache.getDefault("SHOW_NPFEATS_TOOLTIP", true));
@@ -315,6 +316,8 @@ public class AlignViewport extends AlignmentViewport
     if (residueShading != null)
     {
       residueShading.setConsensus(hconsensus);
+      //&!
+      residueShading.setVariance(hvariance);
     }
     setColourAppliesToAllGroups(true);
   }

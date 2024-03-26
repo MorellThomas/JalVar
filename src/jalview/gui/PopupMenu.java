@@ -1891,6 +1891,7 @@ public class PopupMenu extends JPopupMenu implements ColourChangeListener
    */
   public void abovePIDColour_actionPerformed(boolean selected)
   {
+System.out.println(String.format("PopupMenu @abovePIDColour_actionPerformed (%b)", selected));
     SequenceGroup sg = getGroup();
     if (sg.cs == null)
     {
@@ -2291,6 +2292,7 @@ public class PopupMenu extends JPopupMenu implements ColourChangeListener
   @Override
   public void changeColour_actionPerformed(String colourSchemeName)
   {
+System.out.println(String.format("PopupMenu @changeColour_actionPerformed (%s)", colourSchemeName));
     SequenceGroup sg = getGroup();
     /*
      * switch to the chosen colour scheme (or null for None)

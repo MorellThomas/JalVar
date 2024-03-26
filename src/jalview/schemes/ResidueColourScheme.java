@@ -97,6 +97,11 @@ public abstract class ResidueColourScheme implements ColourSchemeI
   {
     symbolIndex = null;
   }
+  
+  public void setColours(Color[] colours)
+  {
+    this.colors = colours;
+  }
 
   /**
    * Find a colour without an index in a sequence

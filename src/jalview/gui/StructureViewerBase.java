@@ -118,6 +118,8 @@ public abstract class StructureViewerBase extends GStructureViewer
   protected boolean allChainsSelected = false;
 
   protected JMenu viewSelectionMenu;
+  
+  protected Color[] colourArray;
 
   /**
    * set after sequence colouring has been applied for this structure viewer.
@@ -890,7 +892,7 @@ public abstract class StructureViewerBase extends GStructureViewer
       // Set the colour using the current view for the associated alignframe
       for (AlignmentViewPanel alignPanel : _colourwith)
       {
-        binding.colourBySequence(alignPanel);
+        binding.colourBySequence(alignPanel, colourArray);
       }
       seqColoursApplied = true;
     }
@@ -1379,5 +1381,20 @@ public abstract class StructureViewerBase extends GStructureViewer
             && viewerActionMenu.getItemCount() > 0
             && viewerActionMenu.isVisible();
   }
+  
+  public void setColourArray(Color[] colAr)
+  {
+    this.colourArray = colAr;
+  }
+  
+  public void resetColourArray()
+  {
+    this.colourArray = null;
+  }
+  
+  public Color[] getColourArray()
+  {
+    return this.colourArray;
+  } 
 
 }

@@ -42,8 +42,6 @@ public class PaSiMapModel
 
   private final SequenceI[] seqs;
 
-  private final SimilarityParamsI similarityParams;
-
   /*
    * options - score model, nucleotide / protein
    */
@@ -71,13 +69,12 @@ public class PaSiMapModel
    * @param params
    */
   public PaSiMapModel(AlignmentViewport seqData, SequenceI[] sqs, boolean nuc,
-          ScoreModelI modelName, SimilarityParamsI params)
+          ScoreModelI modelName)
   {
     inputData = seqData;
     seqs = sqs;
     nucleotide = nuc;
     scoreModel = modelName;
-    similarityParams = params;
   }
 
   /**
@@ -86,7 +83,7 @@ public class PaSiMapModel
    */
   public void calculate()
   {
-    pasimap = new PaSiMap(inputData, scoreModel, similarityParams);
+    pasimap = new PaSiMap(inputData, scoreModel);
     pasimap.run(); // executes in same thread, wait for completion
 
     // Now find the component coordinates
@@ -219,16 +216,6 @@ public class PaSiMapModel
   public void setScoreModel(ScoreModelI sm)
   {
     this.scoreModel = sm;
-  }
-
-  /**
-   * Answers the parameters configured for pairwise similarity calculations
-   * 
-   * @return
-   */
-  public SimilarityParamsI getSimilarityParameters()
-  {
-    return similarityParams;
   }
 
   public List<SequencePoint> getSequencePoints()
