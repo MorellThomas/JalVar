@@ -20,6 +20,7 @@
  */
 package jalview.gui;
 
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
@@ -88,6 +89,15 @@ public class CutAndPasteTransfer extends GCutAndPasteTransfer
       }
     });
 
+  }
+
+  /**
+   * set font size of the textarea
+   * @param size
+   */
+  public void setFont(Font font)
+  {
+    textarea.setFont(font);
   }
 
   /**
@@ -205,6 +215,16 @@ public class CutAndPasteTransfer extends GCutAndPasteTransfer
     } catch (Exception ex)
     {
     }
+  }
+  
+  /**
+   * show menu for chaning the font
+   * @param e
+   */
+  @Override
+  public void fontSizeMenu_actionPerformed(ActionEvent e)
+  {
+    new FontChooser(this);
   }
 
   /**

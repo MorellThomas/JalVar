@@ -269,7 +269,7 @@ public class EpInput extends JPanel
     
     startPosition = Integer.parseInt(startPoint.getText());
     
-    epPanel = new EPPanel(av, startPosition, FoR, width);
+    epPanel = new EPPanel(af, startPosition, FoR, width);
     new Thread(epPanel).start();
     closeFrame();
   }
@@ -338,7 +338,7 @@ public class EpInput extends JPanel
         }
       }
 
-      new FileLoader().LoadFile(av, selectedFile, DataSourceType.FILE, format);
+      new FileLoader().LoadFile(af.getViewport(), selectedFile, DataSourceType.FILE, format);
     }
   }
   

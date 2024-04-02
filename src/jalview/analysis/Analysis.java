@@ -67,6 +67,8 @@ public class Analysis implements Runnable
   /*
    * inputs
    */
+  final private AlignmentPanel proteinAlignmentPanel;
+  
   final private AlignmentViewport proteinViewport;
   
   final private AlignmentViewport geneViewport;
@@ -131,6 +133,8 @@ public class Analysis implements Runnable
   
   private String selectedSequence;  // currently selected sequence (at column selectedEP)
   
+  private HashMap<String, VariantJmol> activeJmols;  // domain name - Jmol
+  
   /**
    * Constructor given the sequences to compute for and the residue position (base 1)
    * use, and a set of parameters for sequence comparison
@@ -138,12 +142,13 @@ public class Analysis implements Runnable
    * @param sequences
    * @param res
    */
-  public Analysis(AlignmentViewport proteinPort, int res) // alignment viewport has to only consist of the gene and protein sequence
+  public Analysis(AlignmentPanel proteinPanel, int res) // alignment viewport has to only consist of the gene and protein sequence
   {
-    this.proteinViewport = proteinPort;
+    this.proteinAlignmentPanel = proteinPanel;
+    this.proteinViewport = proteinAlignmentPanel.av;
     this.residue = res - 1;   // convert base 1 input to internal base 0
     
-    AlignmentViewport _tmp = proteinPort;
+    AlignmentViewport _tmp = proteinViewport;
     for (AlignmentViewport port : Desktop.getViewports(null))
     {
       if (port != proteinViewport)      //should always happen, otherwise error
@@ -156,6 +161,8 @@ public class Analysis implements Runnable
     this.protSeq = proteinViewport.getAlignment().getSequencesArray()[0];
     this.protSeqName = protSeq.getName();
     this.geneSeq = geneViewport.getAlignment().getSequencesArray()[0];
+    
+    this.activeJmols = new HashMap<String, VariantJmol>();
     
     this.foundDomains = new HashMap<SequenceI, TreeMap<Integer, String[]>>();
     this.frameOffset = new HashMap<String, Integer>();
@@ -213,6 +220,15 @@ public class Analysis implements Runnable
         proteinViewport.getAlignment().addSequence(variantDomain);  // add the found sequence back to the Viewport
         this.proteinViewport.setCodingComplement(this.geneViewport);
 
+        int domainAFindex = 0;
+        AlignFrame[] afs = Desktop.getAlignFrames();
+        for (AlignFrame af : afs)
+        {
+          if (af.getTitle().equals(this.foundDomainGroup))
+            break;
+          domainAFindex++;
+        }
+
         for (String iteratingDomain : wholeGroupVariants.keySet())
         {
           TreeMap<Integer, String[]> variantResiduesOfDomain = wholeGroupVariants.get(iteratingDomain);
@@ -228,21 +244,15 @@ public class Analysis implements Runnable
             }
             varUnsorted.put(key, savs);
           }
-          AlignFrame[] afs = Desktop.getAlignFrames();
-          int domainAFindex = 0;
           
-          for (AlignFrame af : afs)
-          {
-            if (af.getTitle() == this.foundDomainGroup)
-              break;
-            domainAFindex++;
-          }
           varUnsorted = convertResToEp(iteratingDomain, varUnsorted);
           colourVariants(afs[domainAFindex], iteratingDomain, varUnsorted);
         }
         
-        //VariantJmol structureWindow = new VariantJmol(variantDomain, refFile, ap, variantResidues, convertEpToRes(variantDomain.getName(), selectedEP));
-        //structureWindow.run();
+        VariantJmol structureWindow = new VariantJmol(variantDomain, refFile, proteinAlignmentPanel, foundDomains.get(variantDomain), convertEpToRes(variantDomain.getName(), selectedEP));
+        activeJmols.putIfAbsent(variantDomain.getName(), structureWindow);
+        new Thread(structureWindow).start();
+
         proteinViewport.getAlignment().deleteSequence(variantDomain);
         
         List<SequenceI> bigGroupL = new ArrayList<SequenceI>();
@@ -502,8 +512,6 @@ public class Analysis implements Runnable
       {
         savAsString[i] = String.format("%c,%c", allSAVChanges[i][0], allSAVChanges[i][1]);
       }
-if (domain.equals("TTN-IgZ1") && (nuc1 == 5160))
-System.out.println(String.format("5160 : %d -> %d %s --> %d", nuc1, oldRange[0], Arrays.toString(savAsString), (int) Math.floor((p - featureRange[0]) / 3)));
       result.put((int) Math.floor((p - featureRange[0]) / 3), savAsString);
       alreadyChecked.add(nuc1);
     }
@@ -608,7 +616,6 @@ System.out.println(String.format("5160 : %d -> %d %s --> %d", nuc1, oldRange[0],
       //####### rest of loop only for creating the output
       if (output)
       {
-System.out.println(String.format("%d - %d (%d - %d) : %s (%c, %c)", start, end, featureRange[0], featureRange[1], feature.getDescription(), oldAA, newAA));
 
         csv.append(String.format("GP %d %s: %s -> %s (%c -> %c) - frequency %s\n\n", pos, feature.getType(), snvStrings[0], snvStrings[1], protSeq.getCharAt(residue), newAA, feature.otherDetails.get("AF").toString()));
 
@@ -727,7 +734,6 @@ System.out.println(String.format("%d - %d (%d - %d) : %s (%c, %c)", start, end, 
       }
 
       int sameGroupFactor = aaGroups.get(protSeq.getCharAt(residue)) == aaGroups.get(newAA) ? 1 : 0;
- System.out.println(String.format("verdict %d, Math.abs(%d - %d - %d + %d)", verdict.length, toIndex, fromIndex, sameGroupFactor, prolinPenalty));
       String overallLikely = verdict[ Math.abs(toIndex - fromIndex - sameGroupFactor + prolinPenalty) ];
       csv.append(String.format("This change is considered %s\n\n", overallLikely));
       }
@@ -790,8 +796,11 @@ System.out.println(String.format("%d - %d (%d - %d) : %s (%c, %c)", start, end, 
     {
       for (String dom : domainGroups.get(dG))
       {
-        if (dom == domain)
+        if (dom.equals(domain))
+        {
           thisDomainGroup = dG;         // has to happen once
+          break;
+        }
       }
     }
     wholeGroupVariants = searchVariantsRecursive(thisDomainGroup);
@@ -817,7 +826,6 @@ System.out.println(String.format("%d - %d (%d - %d) : %s (%c, %c)", start, end, 
     AlignmentPanel ap = af.newView(domain, true);
     af.closeView(av);
     
-System.out.println("Selected has " + var.size() + " variants");
     colourVariants(af, domain, var, true, 1);
 
     //af.getCurrentView().setAnalysis(this);
@@ -1184,6 +1192,8 @@ System.out.println("Selected has " + var.size() + " variants");
     al.deleteAllGroups();
     al.deleteAllAnnotations(false);
     
+    int epAsRes = convertEpToRes(selectedSequence, selectedEP) -1;
+
     for (String iteratingDomain : wholeGroupVariants.keySet())
     {
       AlignFrame[] afs = Desktop.getAlignFrames();
@@ -1191,7 +1201,7 @@ System.out.println("Selected has " + var.size() + " variants");
       
       for (AlignFrame af : afs)
       {
-        if (af.getTitle() == this.foundDomainGroup)
+        if (af.getTitle().equals(this.foundDomainGroup))
           break;
         domainAFindex++;
       }
@@ -1199,7 +1209,6 @@ System.out.println("Selected has " + var.size() + " variants");
       TreeMap<Integer, String[]> variantResiduesOfDomain = wholeGroupVariants.get(iteratingDomain);
       HashMap<Integer, char[][]> varUnsorted = new HashMap<Integer, char[][]>();
 
-      int epAsRes = convertEpToRes(selectedSequence, selectedEP) -1;
       //colour selected column
       if (iteratingDomain.equals(selectedSequence))
       {
@@ -1242,6 +1251,9 @@ System.out.println("Selected has " + var.size() + " variants");
     {
       al.addAnnotation(RepeatingVariance.getAnnotation(al), 0);
     }
+    
+    if (activeJmols.containsKey(selectedSequence))
+      activeJmols.get(selectedSequence).setSelectedResidue(epAsRes, true);
   }
   
   /**
@@ -1289,12 +1301,12 @@ System.out.println("Selected has " + var.size() + " variants");
   {
     for (SequenceI seq : proteinViewport.getAlignment().getSequencesArray())
     {
-      if (seq.getName() != protSeqName)
+      if (!seq.getName().equals(protSeqName))
         proteinViewport.getAlignment().deleteSequence(seq);
     }
     for (SequenceI seq : geneViewport.getAlignment().getSequencesArray())
     {
-      if (seq.getName() != geneSeq.getName()) //== protSeqName
+      if (!seq.getName().equals(geneSeq.getName())) // == protSeqName
         geneViewport.getAlignment().deleteSequence(seq);
     }
   }

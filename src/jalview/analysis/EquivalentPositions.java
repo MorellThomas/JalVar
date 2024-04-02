@@ -29,6 +29,7 @@ import jalview.gui.AlignFrame;
 import jalview.gui.AlignViewport;
 import jalview.gui.CutAndPasteTransfer;
 import jalview.gui.Desktop;
+import jalview.gui.NFPanel;
 import jalview.gui.OOMWarning;
 import jalview.io.EpReferenceFile;
 import jalview.math.MiscMath;
@@ -59,6 +60,8 @@ public class EquivalentPositions implements Runnable
   
   final private String refDir;
   
+  final private AlignFrame af;
+  
   final private AlignmentViewport seqs;
   
   final private int startingPosition; //of the gene
@@ -66,6 +69,8 @@ public class EquivalentPositions implements Runnable
   final char FoR;
   
   final int width;
+  
+  final private String refSequenceName;
 
   /**
    * Constructor given the sequences to compute for, the starting gene position, the strand and the sequence length
@@ -76,15 +81,17 @@ public class EquivalentPositions implements Runnable
    * @param FoR
    * @param width
    */
-  public EquivalentPositions(AlignmentViewport sequences, int startingPosition, char FoR, int width)
+  public EquivalentPositions(AlignFrame sequences, int startingPosition, char FoR, int width)
   {
-    this.seqs = sequences;
+    this.af = sequences;
+    this.seqs = af.getViewport();
     this.startingPosition = startingPosition;
     this.FoR = FoR;
     this.width = width;
     
     SequenceI[] _tmp = seqs.getAlignment().getSequencesArray();
-    this.refDir = String.format("%s.ref", _tmp[_tmp.length - 1].getName());
+    this.refSequenceName = _tmp[_tmp.length - 1].getName();
+    this.refDir = String.format("%s.ref", refSequenceName);
   }
 
   /**
@@ -283,7 +290,7 @@ public class EquivalentPositions implements Runnable
         csv.append("\n");
         dGroup.add(sequences[i].getName());
         domainOffset.putIfAbsent(sequences[i].getName(), frameOffset);
-        domain.putIfAbsent(sequences[i].getName(), sequencePlusInfoList);
+        List<HashMap<Character, int[]>> tmp = domain.putIfAbsent(sequences[i].getName(), sequencePlusInfoList);
         alignedDomain.putIfAbsent(sequences[i].getName(), sequences[i].getSequence());
       }
       
@@ -329,11 +336,32 @@ public class EquivalentPositions implements Runnable
       //save the reference
       erf.saveReference();
       
+      // run natural Frequencies
+      runNf();
+      
     } catch (Exception q)
     {
       Console.error("Error computing Equivalent Positions:  " + q.getMessage());
       q.printStackTrace();
     }
+  }
+  
+  /**
+   * performs the Natural Frequencies Analysis
+   */
+  private void runNf()
+  {
+    for (SequenceI seq : seqs.getAlignment().getSequencesArray())
+    {
+      if (seq.getName().equals(refSequenceName))
+        seqs.getAlignment().deleteSequence(seq);
+    }
+    
+    /*
+     * construct the panel and kick off its custom thread
+     */
+    NFPanel nfPanel = new NFPanel(af.alignPanel);
+    new Thread(nfPanel).start();
   }
 
 }

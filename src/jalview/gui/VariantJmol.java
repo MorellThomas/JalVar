@@ -20,7 +20,7 @@ public class VariantJmol implements Runnable
    */
   private final SequenceI sequence;
   
-  private final int selectedRes;
+  private int selectedRes;
   
   private final String path;
   
@@ -33,6 +33,8 @@ public class VariantJmol implements Runnable
   private final AlignmentPanel ap;
   
   private final TreeMap<Integer, String[]> variantResidues;
+  
+  private AppJmol jmolViewer;
   
   /*
    * others
@@ -71,49 +73,65 @@ public class VariantJmol implements Runnable
   
   public void run()
   {
-    Runnable viewModel = new Runnable()
-    {
-      @Override
-      public void run()
-      {
-        AppJmol jmolViewer = new AppJmol(pdb, new SequenceI[]{ap.getAlignment().getSequenceAt(2)}, null, ap);
-        // extends AAStructureBinding holding the colouring functions
-        //AppJmolBinding jmolBinding = new AppJmolBinding(jmolViewer, ssm, new PDBEntry[]{pdb}, new SequenceI[][]{{ap.getAlignment().getSequenceAt(2)}}, DataSourceType.FILE);
-
-        residueColours = new Color[sequence.getLength()];
-        Object[] keySet = variantResidues.keySet().toArray();
-        for (int i = 0, j = 0; i < sequence.getLength(); i++) // i loop through residues, j loop through variantResidues
-        {
-          if ((j < keySet.length) && (i == (int) keySet[j]))
-          {
-            for (String var : variantResidues.get(i))
-            {
-              if (i == selectedRes)
-              {
-                residueColours[i] = Color.red;   //selected res red
-                continue;
-              }
-              
-              if (sequence.getCharAt(i) == var.charAt(2))
-                residueColours[i] = new Color(250, 133, 120);   // toRes pink
-              else if (sequence.getCharAt(i) == var.charAt(0))
-                residueColours[i] = new Color(98, 131, 222);  // fromRes blue
-              else
-                residueColours[i] = new Color(100, 100, 100); // notRes grey
-            }
-            j++;
-          } else {
-            residueColours[i] = new Color(200, 200, 200);   //other (nonvar) grey
-          }
-        }
+    jmolViewer = new AppJmol(pdb, new SequenceI[]{ap.getAlignment().getSequenceAt(2)}, null, ap);
+    // extends AAStructureBinding holding the colouring functions
+    //AppJmolBinding jmolBinding = new AppJmolBinding(jmolViewer, ssm, new PDBEntry[]{pdb}, new SequenceI[][]{{ap.getAlignment().getSequenceAt(2)}}, DataSourceType.FILE);
         
-        //jmolBinding.colourBySequence(ap, residueColours);
-        jmolViewer.setColourArray(residueColours);
-        jmolViewer.getBinding().colourBySequence(ap, residueColours);
+    colourResidues();
+  }
+  
+  /**
+   * re-colour the residues
+   * @param res selected
+   */
+  private void colourResidues()
+  {
+    residueColours = new Color[sequence.getLength()];
+    Object[] keySet = variantResidues.keySet().toArray();
+    for (int i = 0, j = 0; i < sequence.getLength(); i++) // i loop through residues, j loop through variantResidues
+    {
+      if ((j < keySet.length) && (i == (int) keySet[j]))
+      {
+        for (String var : variantResidues.get(i))
+        {
+          if (i == selectedRes)
+          {
+            residueColours[i] = Color.red;   //selected res red
+            continue;
+          }
+          
+          if (sequence.getCharAt(i) == var.charAt(2))
+            residueColours[i] = new Color(250, 133, 120);   // toRes pink
+          else if (sequence.getCharAt(i) == var.charAt(0))
+            residueColours[i] = new Color(98, 131, 222);  // fromRes blue
+          else
+            residueColours[i] = new Color(100, 100, 100); // notRes grey
+        }
+        j++;
+      } else {
+        residueColours[i] = new Color(200, 200, 200);   //other (nonvar) grey
       }
-    };
-    Thread runner = new Thread(viewModel);
-    runner.start();
+    }
+
+    //jmolBinding.colourBySequence(ap, residueColours);
+    jmolViewer.setColourArray(residueColours);
+    jmolViewer.getBinding().colourBySequence(ap, residueColours);
+  }
+  
+  /**
+   * set the selected residue, and re-colour the model
+   * @param res
+   * @param reColour
+   */
+  public void setSelectedResidue(int res)
+  {
+    setSelectedResidue(res, false);
+  }
+  public void setSelectedResidue(int res, boolean reColour)
+  {
+    this.selectedRes = res;
+    if (reColour)
+      colourResidues();
   }
 
 }

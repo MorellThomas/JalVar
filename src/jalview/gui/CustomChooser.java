@@ -53,17 +53,13 @@ public class CustomChooser extends JPanel
 {
   private static final Font VERDANA_11PT = new Font("Verdana", 0, 11);
 
-  private static final int MIN_NATURAL_FREQUENCIES_SELECTION = 3; 
+  private static final int MIN_REFERENCE_SELECTION = 3; 
 
-  private static final int MIN_EQUIVALENT_POSITIONS_SELECTION = 1; 
-  
   private static final int MIN_ANALYSIS_SELECTION = 1;
 
   AlignFrame af;
 
-  JRadioButton naturalFrequencies;	
-  
-  JRadioButton equivalentPositions;
+  JRadioButton reference;
   
   JRadioButton analysis;
 
@@ -114,12 +110,9 @@ public class CustomChooser extends JPanel
       }
     });
     
-    //create graphical buttons for NF, EP and Analysis
-    naturalFrequencies = new JRadioButton(MessageManager.getString("label.naturalfrequencies"));
-    naturalFrequencies.setOpaque(false);
-    
-    equivalentPositions = new JRadioButton(MessageManager.getString("label.equivalentpositions"));
-    equivalentPositions.setOpaque(false);
+    //create graphical buttons for Reference and Analysis
+    reference = new JRadioButton(MessageManager.getString("label.reference"));
+    reference.setOpaque(false);
     
     analysis = new JRadioButton(MessageManager.getString("label.analysis"));
     analysis.setOpaque(false);
@@ -128,15 +121,13 @@ public class CustomChooser extends JPanel
     JPanel calcChoicePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     calcChoicePanel.setOpaque(false);
 
-    calcChoicePanel.add(naturalFrequencies, FlowLayout.LEFT);
-    calcChoicePanel.add(equivalentPositions, FlowLayout.LEFT);
+    calcChoicePanel.add(reference, FlowLayout.LEFT);
     calcChoicePanel.add(analysis, FlowLayout.LEFT);
 
     //calcChoicePanel.add(customPanel);
 
     ButtonGroup calcTypes = new ButtonGroup();
-    calcTypes.add(naturalFrequencies);
-    calcTypes.add(equivalentPositions);
+    calcTypes.add(reference);
     calcTypes.add(analysis);
 
     ActionListener calcChanged = new ActionListener()
@@ -147,8 +138,7 @@ public class CustomChooser extends JPanel
         validateCalcTypes();
       }
     };
-    naturalFrequencies.addActionListener(calcChanged);
-    equivalentPositions.addActionListener(calcChanged);	
+    reference.addActionListener(calcChanged);
     analysis.addActionListener(calcChanged);
 
     /*
@@ -227,11 +217,10 @@ public class CustomChooser extends JPanel
      * disable calc options for which there is insufficient input data
      * return value of true means enabled and selected
      */
-    boolean checkNf = checkEnabled(naturalFrequencies, size, MIN_NATURAL_FREQUENCIES_SELECTION);
-    boolean checkEp = checkEnabled(equivalentPositions, size, MIN_EQUIVALENT_POSITIONS_SELECTION); 
+    boolean checkReference = checkEnabled(reference, size, MIN_REFERENCE_SELECTION);
     boolean checkAnalysis = checkEnabled(analysis, size, MIN_ANALYSIS_SELECTION);
 
-    if (checkNf || checkEp || checkAnalysis)
+    if (checkReference || checkAnalysis)
     {
       calculate.setToolTipText(null);
       calculate.setEnabled(true);
@@ -287,60 +276,18 @@ public class CustomChooser extends JPanel
    */
   protected void calculate_actionPerformed()
   {
-    boolean doNf = naturalFrequencies.isSelected();
-    boolean doEp = equivalentPositions.isSelected();
+    boolean doRef = reference.isSelected();
     boolean doAnal = analysis.isSelected();
 
-    if (doNf && !doEp && !doAnal)
-    {
-      openNfPanel();
-    }
-    else if (doEp && !doNf && !doAnal)
+    if (doRef && !doAnal)
     {
       openEpPanel();
-    } else if (doAnal && !doEp && !doNf)
+    } else if (doAnal && !doRef)
     {
       openAnalysisPanel();
     }
 
     closeFrame();
-  }
-
-  /**
-   * Open a new NF panel on the desktop
-   * 
-   * @param modelName
-   * @param params
-   */
-  protected void openNfPanel()
-  {
-    AlignViewport viewport = af.getViewport();
-
-    /*
-     * gui validation shouldn't allow insufficient sequences here, but leave
-     * this check in in case this method gets exposed programmatically in future
-     */
-    if (((viewport.getSelectionGroup() != null)
-            && (viewport.getSelectionGroup().getSize() < MIN_NATURAL_FREQUENCIES_SELECTION)
-            && (viewport.getSelectionGroup().getSize() > 0))
-            || (viewport.getAlignment().getHeight() < MIN_NATURAL_FREQUENCIES_SELECTION))
-    {
-      JvOptionPane.showInternalMessageDialog(this,
-              MessageManager.formatMessage(
-                      "label.you_need_at_least_n_sequences",
-                      MIN_NATURAL_FREQUENCIES_SELECTION),
-              MessageManager
-                      .getString("label.sequence_selection_insufficient"),
-              JvOptionPane.WARNING_MESSAGE);
-      return;
-    }
-
-    /*
-     * construct the panel and kick off its custom thread
-     */
-    nfPanel = new NFPanel(af.alignPanel);
-    new Thread(nfPanel).start();
-
   }
 
   /**
@@ -358,14 +305,14 @@ public class CustomChooser extends JPanel
      * this check in in case this method gets exposed programmatically in future
      */
     if (((viewport.getSelectionGroup() != null)
-            && (viewport.getSelectionGroup().getSize() < MIN_EQUIVALENT_POSITIONS_SELECTION)
+            && (viewport.getSelectionGroup().getSize() < MIN_REFERENCE_SELECTION)
             && (viewport.getSelectionGroup().getSize() > 0))
-            || (viewport.getAlignment().getHeight() < MIN_EQUIVALENT_POSITIONS_SELECTION))
+            || (viewport.getAlignment().getHeight() < MIN_REFERENCE_SELECTION))
     {
       JvOptionPane.showInternalMessageDialog(this,
               MessageManager.formatMessage(
                       "label.you_need_at_least_n_sequences",
-                      MIN_EQUIVALENT_POSITIONS_SELECTION),
+                      MIN_REFERENCE_SELECTION),
               MessageManager
                       .getString("label.sequence_selection_insufficient"),
               JvOptionPane.WARNING_MESSAGE);

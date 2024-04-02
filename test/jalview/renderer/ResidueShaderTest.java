@@ -302,6 +302,12 @@ public class ResidueShaderTest
           {
             return pid;
           }
+          
+          @Override
+          public float getPercentageIdentity(int count, boolean ignoreGaps)
+          {
+            return pid;
+          }
 
           @Override
           public ResidueCount getCounts()
@@ -338,6 +344,24 @@ public class ResidueShaderTest
           {
             return 0;
           }
+          
+          @Override
+          public String getOccuranceFraction(int count, boolean ignoreGaps)
+          {
+            return null;
+          }
+          
+          @Override
+          public void setIndividCounts(int[] ic)
+          {
+          }
+          
+          @Override
+          public int[] getIndividCounts()
+          {
+            return null;
+          }
+          
         };
       }
 

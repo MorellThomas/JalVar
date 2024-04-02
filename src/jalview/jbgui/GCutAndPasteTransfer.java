@@ -59,6 +59,8 @@ public class GCutAndPasteTransfer extends JInternalFrame
   JMenuItem copyItem = new JMenuItem();
 
   JMenuItem pasteMenu = new JMenuItem();
+  
+  JMenuItem fontSizeMenu = new JMenuItem();
 
   BorderLayout borderLayout2 = new BorderLayout();
 
@@ -190,6 +192,15 @@ public class GCutAndPasteTransfer extends JInternalFrame
         pasteMenu_actionPerformed(e);
       }
     });
+    fontSizeMenu.setText(MessageManager.getString("action.change_font"));
+    fontSizeMenu.addActionListener(new ActionListener()
+    {
+      @Override
+      public void actionPerformed(ActionEvent e)
+      {
+        fontSizeMenu_actionPerformed(e);
+      }
+    });
     copyItem.setText(MessageManager.getString("action.copy"));
     copyItem.addActionListener(new ActionListener()
     {
@@ -205,6 +216,7 @@ public class GCutAndPasteTransfer extends JInternalFrame
     editMenu.add(selectAll);
     editMenu.add(copyItem);
     editMenu.add(pasteMenu);
+    editMenu.add(fontSizeMenu);
     this.getContentPane().add(scrollPane, java.awt.BorderLayout.CENTER);
     inputButtonPanel.add(ok);
     inputButtonPanel.add(cancel);
@@ -239,6 +251,14 @@ public class GCutAndPasteTransfer extends JInternalFrame
    *          DOCUMENT ME!
    */
   public void pasteMenu_actionPerformed(ActionEvent e)
+  {
+  }
+  
+  /**
+   * shows a menu for changing the font
+   * @param e
+   */
+  public void fontSizeMenu_actionPerformed(ActionEvent e)
   {
   }
 

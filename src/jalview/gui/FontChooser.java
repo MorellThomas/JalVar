@@ -42,6 +42,8 @@ public class FontChooser extends GFontChooser
   AlignmentPanel ap;
 
   TreePanel tp;
+  
+  CutAndPasteTransfer cap;
 
   /*
    * The font on opening the dialog (to be restored on Cancel)
@@ -108,6 +110,17 @@ public class FontChooser extends GFontChooser
     this.ap = alignPanel;
     init();
   }
+  
+  /**
+   * Creates a new FontChooser for a CutAndPasteTransfer
+   * @param cap
+   */
+  public FontChooser(CutAndPasteTransfer cap)
+  {
+    oldFont = new Font("Monospaced", Font.PLAIN, 12);
+    this.cap = cap;
+    init();
+  }
 
   void init()
   {
@@ -115,24 +128,27 @@ public class FontChooser extends GFontChooser
     frame.setFrameIcon(null);
     frame.setContentPane(this);
 
-    smoothFont.setSelected(ap.av.antiAlias);
-
-    /*
-     * Enable 'scale protein as cDNA' in a SplitFrame view. The selection is
-     * stored in the ViewStyle of both dna and protein Viewport. Also enable
-     * checkbox for copy font changes to other half of split frame.
-     */
-    boolean inSplitFrame = ap.av.getCodingComplement() != null;
-    if (inSplitFrame)
+    if (!isCapFont())
     {
-      oldComplementFont = ((AlignViewport) ap.av.getCodingComplement())
-              .getFont();
-      oldComplementSmooth = ((AlignViewport) ap.av
-              .getCodingComplement()).antiAlias;
-      scaleAsCdna.setVisible(true);
-      scaleAsCdna.setSelected(ap.av.isScaleProteinAsCdna());
-      fontAsCdna.setVisible(true);
-      fontAsCdna.setSelected(ap.av.isProteinFontAsCdna());
+      smoothFont.setSelected(ap.av.antiAlias);
+
+      /*
+       * Enable 'scale protein as cDNA' in a SplitFrame view. The selection is
+       * stored in the ViewStyle of both dna and protein Viewport. Also enable
+       * checkbox for copy font changes to other half of split frame.
+       */
+      boolean inSplitFrame = ap.av.getCodingComplement() != null;
+      if (inSplitFrame)
+      {
+        oldComplementFont = ((AlignViewport) ap.av.getCodingComplement())
+                .getFont();
+        oldComplementSmooth = ((AlignViewport) ap.av
+                .getCodingComplement()).antiAlias;
+        scaleAsCdna.setVisible(true);
+        scaleAsCdna.setSelected(ap.av.isScaleProteinAsCdna());
+        fontAsCdna.setVisible(true);
+        fontAsCdna.setSelected(ap.av.isProteinFontAsCdna());
+      }
     }
 
     if (isTreeFont())
@@ -268,6 +284,11 @@ public class FontChooser extends GFontChooser
   {
     return tp != null;
   }
+  
+  private boolean isCapFont()
+  {
+    return cap != null;
+  }
 
   /**
    * DOCUMENT ME!
@@ -349,6 +370,10 @@ public class FontChooser extends GFontChooser
         splitFrame.adjustLayout();
         splitFrame.repaint();
       }
+    }
+    else if (isCapFont())
+    {
+      cap.setFont(newFont);
     }
 
     monospaced.setSelected(mw == iw);

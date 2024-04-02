@@ -127,7 +127,7 @@ public class VCFLoaderTest
     File f = makeVcfFile();
     VCFLoader loader = new VCFLoader(f.getPath());
 
-    loader.doLoad(al.getSequencesArray(), null);
+    loader.doLoad(al.getSequencesArray(), null, null, null);
 
     /*
      * verify variant feature(s) added to gene
@@ -387,7 +387,7 @@ public class VCFLoaderTest
 
     VCFLoader loader = new VCFLoader(f.getPath());
 
-    loader.doLoad(al.getSequencesArray(), null);
+    loader.doLoad(al.getSequencesArray(), null, null, null);
 
     /*
      * verify variant feature(s) added to gene2
@@ -531,7 +531,7 @@ public class VCFLoaderTest
      * 13 C/G, C/T
      * 17 A/AC (insertion), A/G
      */
-    loader.doLoad(al.getSequencesArray(), null);
+    loader.doLoad(al.getSequencesArray(), null, null, null);
 
     /*
      * verify variant feature(s) added to gene3

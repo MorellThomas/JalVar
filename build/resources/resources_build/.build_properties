@@ -1,6 +1,6 @@
 #--Jalview Build Details--
-#2024-03-26 14:30:29
-BUILD_DATE=14\:30\:29 26 March 2024
-INSTALLATION=Source git-commit\:ba8680f7d3 [main]
+#2024-03-27 14:49:04
+BUILD_DATE=14\:49\:04 27 March 2024
+INSTALLATION=Source git-commit\:7bf6bcdb45 [main]
 JAVA_COMPILE_VERSION=11
 VERSION=TEST

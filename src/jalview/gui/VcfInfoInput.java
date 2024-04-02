@@ -165,10 +165,12 @@ public class VcfInfoInput extends JPanel
     toOrig = new JTextField("281435", 4);
     toOrig.setOpaque(false);
 
-    fromVcf = new JTextField("178807423", 7);
+    fromVcf = new JTextField("178807423", 7);   //ncbi number
+    //fromVcf = new JTextField("178830802", 7);     //gnomad number
     fromVcf.setOpaque(false);
 
-    toVcf = new JTextField("178525989", 7);
+    toVcf = new JTextField("178525989", 7);     //ncbi number
+    //toVcf = new JTextField("178525989", 7);     //gnomad number
     toVcf.setOpaque(false);
 
     ratioOrig = new JTextField("1", 2);

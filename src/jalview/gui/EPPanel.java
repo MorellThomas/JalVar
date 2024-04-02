@@ -31,6 +31,8 @@ public class EPPanel
         implements Runnable
 {
 
+  AlignFrame af;
+  
   AlignViewport av;
 
   private boolean working;
@@ -52,9 +54,10 @@ public class EPPanel
    * @param FoR
    * @param width
    */
-  public EPPanel(AlignViewport alignViewport, int startingPosition, char FoR, int width)
+  public EPPanel(AlignFrame alignFrame, int startingPosition, char FoR, int width)
   {
-    this.av = alignViewport;
+    this.af = alignFrame;
+    this.av = af.getViewport();
     this.startingPosition = startingPosition;
     this.FoR = FoR;
     this.width = width;
@@ -69,7 +72,7 @@ public class EPPanel
     working = true;
     try
     {
-      ep = new EquivalentPositions(av, startingPosition, FoR, width);
+      ep = new EquivalentPositions(af, startingPosition, FoR, width);
       ep.run(); // executes in same thread, wait for completion
 
     } catch (OutOfMemoryError er)

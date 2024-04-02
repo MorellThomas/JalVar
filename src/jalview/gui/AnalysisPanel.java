@@ -65,7 +65,7 @@ public class AnalysisPanel implements Runnable
     working = true;
     try
     {
-      anal = new Analysis(av, residue);
+      anal = new Analysis(ap, residue);
       anal.run(); // executes in same thread, wait for completion
 
     } catch (OutOfMemoryError er)
