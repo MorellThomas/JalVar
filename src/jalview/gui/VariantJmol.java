@@ -94,7 +94,7 @@ public class VariantJmol implements Runnable
       {
         for (String var : variantResidues.get(i))
         {
-          if (i == selectedRes)
+          if ((i + 1) == selectedRes)
           {
             residueColours[i] = Color.red;   //selected res red
             continue;
@@ -114,6 +114,7 @@ public class VariantJmol implements Runnable
     }
 
     //jmolBinding.colourBySequence(ap, residueColours);
+    jmolViewer.resetColourArray();
     jmolViewer.setColourArray(residueColours);
     jmolViewer.getBinding().colourBySequence(ap, residueColours);
   }

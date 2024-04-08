@@ -1,6 +1,6 @@
 DEST_PATH := ./
 ifeq ($(shell uname),Darwin)
-DEST_PATH := /Applications/jalview/
+DEST_PATH := /Applications/
 endif
 ifeq ($(shell uname),Linux)
 DEST_PATH := /usr/bin/
@@ -19,14 +19,16 @@ $(BUILD_JAR) :
 	gradle shadowJar
 
 install : $(BUILD_JAR) $(REF_FILE)
-	mkdir -p $(DEST_PATH)
 	mv $(BUILD_JAR) $(INSTALL_JAR)
 
+# cp ref in install, have creation of ref here
 $(REF_FILE) : 
+	mkdir -p $(DEST_PATH)
 	cp sample/TTN.ref $(REF_FILE)
 
 clean : 
 	rm $(BUILD_JAR) $(REF_FILE) #$(JAR_NAME)
 
 uninstall :
-	rm -rf $(DEST_PATH)
+	rm $(INSTALL_JAR) $(REF_FILE)
+

@@ -42,7 +42,9 @@ import jalview.util.MessageManager;
 import jalview.util.MapList;
 import jalview.viewmodel.AlignmentViewport;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -54,6 +56,19 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
+import org.knowm.xchart.style.PieStyler.LabelType;
+import org.knowm.xchart.style.Styler.ChartTheme;
+import org.knowm.xchart.style.theme.GGPlot2Theme;
+import org.knowm.xchart.PieChart;
+import org.knowm.xchart.PieChartBuilder;
+import org.knowm.xchart.SwingWrapper;
+import org.knowm.xchart.XChartPanel;
 
 /**
  * Performs residue analysis
@@ -135,6 +150,19 @@ public class Analysis implements Runnable
   
   private HashMap<String, VariantJmol> activeJmols;  // domain name - Jmol
   
+  /*
+   * for pie chart
+   */
+  private PieChart pie;
+  
+  private JFrame frame;
+  
+  private JPanel piePanel;
+  
+  private final HashMap<Character, Integer> mapAAtoColourIndex = new HashMap<Character, Integer>();
+  
+  private final Color[] referenceColourScheme = jalview.schemes.ResidueProperties.ocean;
+  
   /**
    * Constructor given the sequences to compute for and the residue position (base 1)
    * use, and a set of parameters for sequence comparison
@@ -181,6 +209,12 @@ public class Analysis implements Runnable
     this.aaGroups.putAll(hydrophilic);
     this.aaGroups.putAll(intermediate);
     this.aaGroups.putAll(hydrophobic);
+    
+    int i = 0;
+    for (char aa : new char[]{'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', 'B', 'Z', 'X', '-', '*', '.'})
+    {
+      mapAAtoColourIndex.put(aa, i++);
+    }
   }
 
 
@@ -462,13 +496,13 @@ public class Analysis implements Runnable
     try
     {
       cap.setText(CsvString);
-      Desktop.addInternalFrame(cap, MessageManager
-              .formatMessage("label.points_for_params", "Outputting Analysis results"), 500, 500);
+      Desktop.addInternalFrame(cap, "Outputting Analysis results", 500, 500);
     } catch (OutOfMemoryError oom)
     {
       new OOMWarning("exporting Analysis results", oom);
       cap.dispose();
     }
+    pieChart();
   }
   
   /**
@@ -734,7 +768,9 @@ public class Analysis implements Runnable
       }
 
       int sameGroupFactor = aaGroups.get(protSeq.getCharAt(residue)) == aaGroups.get(newAA) ? 1 : 0;
-      String overallLikely = verdict[ Math.abs(toIndex - fromIndex - sameGroupFactor + prolinPenalty) ];
+      int tmpVerdictIndex = toIndex - (sameGroupFactor - prolinPenalty);
+      tmpVerdictIndex = tmpVerdictIndex >= verdict.length ? verdict.length - 1 : tmpVerdictIndex;
+      String overallLikely = verdict[ (int) (0.5 * (tmpVerdictIndex + Math.sqrt(Math.pow(tmpVerdictIndex, 2)))) ];
       csv.append(String.format("This change is considered %s\n\n", overallLikely));
       }
     }
@@ -1253,7 +1289,9 @@ public class Analysis implements Runnable
     }
     
     if (activeJmols.containsKey(selectedSequence))
+    {
       activeJmols.get(selectedSequence).setSelectedResidue(epAsRes, true);
+    }
   }
   
   /**
@@ -1309,6 +1347,58 @@ public class Analysis implements Runnable
       if (!seq.getName().equals(geneSeq.getName())) // == protSeqName
         geneViewport.getAlignment().deleteSequence(seq);
     }
+  }
+  
+  /**
+   * TODO
+   * maybe outsource this to a separate class to allow for usage outside of this analyssi
+   * display a pie chart with the NFs at the position
+   */
+  private void pieChart()
+  {
+    String title = String.format("Frequency Distribution of %s at EP %d", foundDomainGroup, selectedEP);
+    pie = new PieChartBuilder().width(400).height(300).title(title).theme(ChartTheme.GGPlot2).build();
+    
+    Color[] seriesColours = new Color[nfAtThisPosition.keySet().size()];
+    
+    pie.getStyler().setLegendVisible(false);
+    pie.getStyler().setPlotContentSize(0.8);
+    pie.getStyler().setLabelType(LabelType.NameAndPercentage);
+    pie.getStyler().setLabelsDistance(1.12);
+    pie.getStyler().setLabelsFont(new Font(Font.SANS_SERIF, Font.PLAIN, 14));
+    pie.getStyler().setPlotBackgroundColor(Color.white);
+    //pie.getStyler().setStartAngleInDegrees(90);
+    
+    int i = 0;
+    for (char aa : nfAtThisPosition.keySet())
+    {
+      pie.addSeries(Character.toString(aa), nfAtThisPosition.get(aa));
+ System.out.println(String.format("ocean at %d (%c)", mapAAtoColourIndex.get(aa), aa));
+      seriesColours[i++] = referenceColourScheme[mapAAtoColourIndex.get(aa)];
+    }
+
+    pie.getStyler().setSeriesColors(seriesColours);
+    
+    javax.swing.SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run()
+      {
+        frame = new JFrame(selectedSequence);
+        frame.setLayout(new BorderLayout());
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
+        piePanel = new XChartPanel<PieChart>(pie);
+        frame.add(piePanel, BorderLayout.CENTER);
+        
+        //JLabel label = new JLabel("alsjdlf", SwingConstants.CENTER);
+        //frame.add(label, BorderLayout.SOUTH);
+        
+        frame.pack();
+        frame.setVisible(true);
+      }
+    });
+    
+    //new SwingWrapper(pie).displayChart();
   }
   
 }

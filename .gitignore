@@ -1,0 +1,7 @@
+/.gradle/
+/build/**
+!build/libs/jalview-all-TEST-j11.jar
+**/*.class
+*.ref
+!TTN.ref
+/.DS_Store
