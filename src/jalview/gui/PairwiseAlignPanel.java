@@ -51,6 +51,10 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
 
   Vector<SequenceI> sequences;
 
+ private boolean suppressTextbox;
+
+ private boolean discardAlignments;
+
   /**
    * Creates a new PairwiseAlignPanel object.
    * 
@@ -95,13 +99,15 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
     float[][] alignmentScores = new float[seqs.length][seqs.length];
     double totscore = 0D;
     int count = seqs.length;
+    suppressTextbox = count<10;
+    discardAlignments = count<15;
     boolean first = true;
     //AlignSeq as = new AlignSeq(seqs[1], seqStrings[1], seqs[0], seqStrings[0], type);
 
     for (int i = 1; i < count; i++)
     {
       // fill diagonal alignmentScores with Float.NaN
-      alignmentScores[i-1][i-1] = Float.NaN;
+      alignmentScores[i - 1][i - 1] = Float.NaN;
       for (int j = 0; j < i; j++)
       {
         System.out.println(String.format("i: %d ; j: %d", i, j));
@@ -116,31 +122,39 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
 
         as.calcScoreMatrix();
         if (endGaps)
-	       {
-           as.traceAlignmentWithEndGaps();
-	       } else {
-	         as.traceAlignment();
-	       }
-	       as.scoreAlignment();
+	{
+          as.traceAlignmentWithEndGaps();
+        } else {
+	  as.traceAlignment();
+	}
+        as.scoreAlignment();
 
         if (!first)
         {
-          //System.out.println(DASHES);
+          System.out.println(DASHES);
           textarea.append(DASHES);
         }
         first = false;
-        //as.printAlignment(System.out);
+	if (discardAlignments) {
+          as.printAlignment(System.out);
+	}
         scores[i][j] = as.getMaxScore() / as.getASeq1().length;
         alignmentScores[i][j] = as.getAlignmentScore();
         totscore = totscore + scores[i][j];
 
-        textarea.append(as.getOutput());
-        sequences.add(as.getAlignedSeq1());
-        sequences.add(as.getAlignedSeq2());
+	if (suppressTextbox)
+	{
+          textarea.append(as.getOutput());
+	}
+	if (discardAlignments)
+	{
+          sequences.add(as.getAlignedSeq1());
+          sequences.add(as.getAlignedSeq2());
+	}
 
       }
     }
-    alignmentScores[count-1][count-1] = Float.NaN;
+    alignmentScores[count - 1][count - 1] = Float.NaN;
 
     this.scores = scores;
     this.alignmentScores = alignmentScores;
