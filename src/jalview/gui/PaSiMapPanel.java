@@ -49,6 +49,8 @@ import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JMenuItem;
@@ -77,7 +79,8 @@ public class PaSiMapPanel extends GPCAPanel
 
   private int top = 0;
 
-  private IProgressIndicator progressBar;
+  //private IProgressIndicator progressBar;
+  private ProgressBar progressBar;
 
   private boolean working;
   
@@ -185,7 +188,19 @@ public class PaSiMapPanel extends GPCAPanel
     progress.setProgressBar(message, progId);
     try
     {
-      getPasimapModel().calculate();
+      //&! remove big seqs
+      for (SequenceI seq : av.getAlignment().getSequencesArray())
+      {
+        if (seq.getLength() > 20000)
+        {
+          //TODO add warning dialog
+          av.getAlignment().deleteSequence(seq);
+        }
+      }
+
+      PairwiseAlignPanel pap = new PairwiseAlignPanel(av, true, false);
+      setPairwiseAlignPanel(pap);
+      getPasimapModel().calculate(pap);
 
       xCombobox.setSelectedIndex(0);
       yCombobox.setSelectedIndex(1);
@@ -621,7 +636,6 @@ public class PaSiMapPanel extends GPCAPanel
   /*
    * make the progressBar determinate and update its progress
    */
-  /*
   public void updateProgressBar(int lengthOfTask, int progress)
   {
     JProgressBar pBar = progressBar.getProgressBar(progId);
@@ -638,7 +652,24 @@ public class PaSiMapPanel extends GPCAPanel
     JProgressBar pBar = progressBar.getProgressBar(progId);
     pBar.setValue(progress);
   }
-  */
+  
+  //&!
+  public void setPairwiseAlignPanel(PairwiseAlignPanel pap)
+  {
+    pap.addPropertyChangeListener(new PropertyChangeListener() 
+    {
+      @Override
+      public void propertyChange(PropertyChangeEvent pcEvent)
+      {
+        if (PairwiseAlignPanel.PROGRESS.equals(pcEvent.getPropertyName()))
+        {
+          updateProgressBar((int) pcEvent.getNewValue());
+        } else if (PairwiseAlignPanel.TOTAL.equals(pcEvent.getPropertyName())) {
+          updateProgressBar((int) pcEvent.getNewValue(), 0);
+        }
+      }
+    });
+  }
 
   @Override
   public void registerHandler(final long id,

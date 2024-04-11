@@ -44,9 +44,9 @@ public class EpReferenceFile
 {
   private static final long serialVersionUID = 6529685098267757690L;  // need this to be able to load the file again
   
-  private final String path;
+  public static final String REFERENCE_PATH = System.getProperty("user.home") + ".config/JalviewSNV/";
   
-  private String structurePath = "/Users/thomasm/Desktop/master_main/java/data/af-structures";
+  private final String path;
   
   private boolean isReverse;
   
@@ -129,16 +129,6 @@ public class EpReferenceFile
   public String getPath()
   {
     return this.path;
-  }
-  
-  public void setStructurePath(String sPath)
-  {
-    this.structurePath = sPath;
-  }
-  
-  public String getStructurePath()
-  {
-    return this.structurePath;
   }
   
   public void setDomainGroups(HashMap<String, LinkedHashSet<String>> dGroup)

@@ -49,6 +49,8 @@ public class PaSiMap implements Runnable
   final private ScoreModelI scoreModel;
 
   final private byte dim = 3;
+  
+  final private PairwiseAlignPanel alignment;
 
   /*
    * outputs
@@ -65,10 +67,11 @@ public class PaSiMap implements Runnable
    * @param sm
    * @param options
    */
-  public PaSiMap(AlignmentViewport sequences, ScoreModelI sm)
+  public PaSiMap(AlignmentViewport sequences, ScoreModelI sm, PairwiseAlignPanel pap)
   {
     this.seqs = sequences;
     this.scoreModel = sm;
+    this.alignment = pap;
   }
 
   /**
@@ -196,10 +199,12 @@ public class PaSiMap implements Runnable
   {
     try
     {
-      PairwiseAlignPanel alignment = new PairwiseAlignPanel(seqs, true);
+      //PairwiseAlignPanel alignment = new PairwiseAlignPanel(seqs, true);
+      alignment.calculate();
       float[][] scores = alignment.getAlignmentScores();	//bigger index first -- eg scores[14][13]
 
-      Hashtable<SequenceI, Integer> connectivity = seqs.calculateConnectivity(scores, dim);
+      //Hashtable<SequenceI, Integer> connectivity = seqs.calculateConnectivity(scores, dim);
+      seqs.calculateConnectivity(scores, dim);
 
       pairwiseScores = new Matrix(scores);
       pairwiseScores.fillDiagonal();

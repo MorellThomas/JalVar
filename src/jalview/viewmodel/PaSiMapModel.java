@@ -28,6 +28,7 @@ import jalview.datamodel.AlignmentView;
 import jalview.datamodel.Point;
 import jalview.datamodel.SequenceI;
 import jalview.datamodel.SequencePoint;
+import jalview.gui.PairwiseAlignPanel;
 import jalview.viewmodel.AlignmentViewport;
 
 import java.util.List;
@@ -81,9 +82,9 @@ public class PaSiMapModel
    * Performs the PaSiMap calculation (in the same thread) and extracts result data
    * needed for visualisation by PaSiMapPanel
    */
-  public void calculate()
+  public void calculate(PairwiseAlignPanel pap)
   {
-    pasimap = new PaSiMap(inputData, scoreModel);
+    pasimap = new PaSiMap(inputData, scoreModel, pap);
     pasimap.run(); // executes in same thread, wait for completion
 
     // Now find the component coordinates

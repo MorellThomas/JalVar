@@ -30,7 +30,10 @@ import jalview.util.MessageManager;
 import jalview.viewmodel.AlignmentViewport;
 
 import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
 import java.util.Vector;
+
+import javax.swing.event.SwingPropertyChangeSupport;
 
 /**
  * DOCUMENT ME!
@@ -42,7 +45,7 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
 {
 
   private static final String DASHES = "---------------------\n";
-
+  
   private float[][] scores;
 
   private float[][] alignmentScores;	// scores used by PaSiMap
@@ -51,9 +54,22 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
 
   Vector<SequenceI> sequences;
 
- private boolean suppressTextbox;
+  private boolean suppressTextbox;
 
- private boolean discardAlignments;
+  private boolean discardAlignments;
+ 
+  private boolean endGaps;
+ 
+  // for listening
+  public static final String TOTAL = "total";
+  
+  public static final String PROGRESS = "progress";
+
+  private SwingPropertyChangeSupport pcSupport = new SwingPropertyChangeSupport(this);
+
+  private final long total;
+  
+  private long progress;
 
   /**
    * Creates a new PairwiseAlignPanel object.
@@ -68,31 +84,50 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
   }
   public PairwiseAlignPanel(AlignmentViewport viewport, boolean endGaps)
   {
+    this(viewport, endGaps, true);
+  }
+  public PairwiseAlignPanel(AlignmentViewport viewport, boolean endGaps, boolean run)
+  {
     super();
     this.av = viewport;
 
     sequences = new Vector<SequenceI>();
+    
+    this.endGaps = endGaps;
 
-    SequenceGroup selectionGroup = viewport.getSelectionGroup();
+    //&!
+    total = 1l;
+    
+    if (run)
+      calculate();
+  }
+  
+  public void calculate()
+  {
+    SequenceGroup selectionGroup = av.getSelectionGroup();
     boolean isSelection = selectionGroup != null
             && selectionGroup.getSize() > 0;
-    AlignmentView view = viewport.getAlignmentView(isSelection);
+    AlignmentView view = av.getAlignmentView(isSelection);
     // String[] seqStrings = viewport.getViewAsString(true);
     String[] seqStrings = view
-            .getSequenceStrings(viewport.getGapCharacter());
+            .getSequenceStrings(av.getGapCharacter());
 
     SequenceI[] seqs;
     if (isSelection)
     {
       seqs = (SequenceI[]) view
-              .getAlignmentAndHiddenColumns(viewport.getGapCharacter())[0];
+              .getAlignmentAndHiddenColumns(av.getGapCharacter())[0];
     }
     else
     {
       seqs = av.getAlignment().getSequencesArray();
     }
+    
+    //&!
+    progress = 0l;
+    pcSupport.firePropertyChange(TOTAL, 0, total);
 
-    String type = (viewport.getAlignment().isNucleotide()) ? AlignSeq.DNA
+    String type = (av.getAlignment().isNucleotide()) ? AlignSeq.DNA
             : AlignSeq.PEP;
 
     float[][] scores = new float[seqs.length][seqs.length];
@@ -122,11 +157,11 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
 
         as.calcScoreMatrix();
         if (endGaps)
-	{
+        {
           as.traceAlignmentWithEndGaps();
         } else {
-	  as.traceAlignment();
-	}
+          as.traceAlignment();
+        }
         as.scoreAlignment();
 
         if (!first)
@@ -135,22 +170,24 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
           textarea.append(DASHES);
         }
         first = false;
-	if (discardAlignments) {
+        if (discardAlignments) {
           as.printAlignment(System.out);
-	}
+        }
         scores[i][j] = as.getMaxScore() / as.getASeq1().length;
         alignmentScores[i][j] = as.getAlignmentScore();
         totscore = totscore + scores[i][j];
 
-	if (suppressTextbox)
-	{
+        if (suppressTextbox)
+        {
           textarea.append(as.getOutput());
-	}
-	if (discardAlignments)
-	{
+        }
+        if (discardAlignments)
+        {
           sequences.add(as.getAlignedSeq1());
           sequences.add(as.getAlignedSeq2());
-	}
+        }
+        
+        pcSupport.firePropertyChange(PROGRESS, progress, ++progress);
 
       }
     }
@@ -242,5 +279,26 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
     Desktop.addInternalFrame(af,
             MessageManager.getString("label.pairwise_aligned_sequences"),
             AlignFrame.DEFAULT_WIDTH, AlignFrame.DEFAULT_HEIGHT);
+  }
+  
+  //&!
+  public void addPropertyChangeListener(PropertyChangeListener listener)
+  {
+    pcSupport.addPropertyChangeListener(listener);
+  }
+  
+  public void removePropertyChangeListener(PropertyChangeListener listener)
+  {
+    pcSupport.removePropertyChangeListener(listener);
+  }
+  
+  public long getTotal()
+  {
+    return total;
+  }
+  
+  public long getProgress()
+  {
+    return progress;
   }
 }

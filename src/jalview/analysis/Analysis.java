@@ -38,7 +38,6 @@ import jalview.gui.OOMWarning;
 import jalview.gui.VariantJmol;
 import jalview.io.EpReferenceFile;
 import jalview.schemes.PlainColourScheme;
-import jalview.util.MessageManager;
 import jalview.util.MapList;
 import jalview.viewmodel.AlignmentViewport;
 
@@ -52,22 +51,19 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 
 import org.knowm.xchart.style.PieStyler.LabelType;
 import org.knowm.xchart.style.Styler.ChartTheme;
-import org.knowm.xchart.style.theme.GGPlot2Theme;
 import org.knowm.xchart.PieChart;
 import org.knowm.xchart.PieChartBuilder;
-import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XChartPanel;
 
 /**
@@ -195,7 +191,7 @@ public class Analysis implements Runnable
     this.foundDomains = new HashMap<SequenceI, TreeMap<Integer, String[]>>();
     this.frameOffset = new HashMap<String, Integer>();
     
-    this.refFile = String.format("%s.ref", protSeqName);
+    this.refFile = String.format("%s%s.ref", EpReferenceFile.REFERENCE_PATH, protSeqName);
     GeneticCodes _gc = GeneticCodes.getInstance();
     this.standardTranslationTable = _gc.getStandardCodeTable();
 
@@ -702,9 +698,10 @@ public class Analysis implements Runnable
         thisDistribution = distribution[3];
       
       String fromLikely = "";
-      int fromIndex = 0;
+      //int fromIndex = 0;
       String toLikely = "";
       int toIndex = 0;
+      /*
       if (freqFrom <= 0f)
       {
         fromLikely = String.format("%s (%s)", likelyness[4], likelyness[5]);
@@ -730,6 +727,7 @@ public class Analysis implements Runnable
         fromLikely = likelyness[0];
         fromIndex = 0;
       }
+      */
 
       if (freqTo <= 0f)
       {
@@ -1369,12 +1367,42 @@ public class Analysis implements Runnable
     pie.getStyler().setPlotBackgroundColor(Color.white);
     //pie.getStyler().setStartAngleInDegrees(90);
     
+    //sorting arrays...
+    Object[] aasUnsorted = nfAtThisPosition.keySet().toArray();
+    char[] aasSorted = new char[nfAtThisPosition.size()];
+    Float[] percentUnsorted = new Float[nfAtThisPosition.size()];
+    Float[] percentSorted = new Float[nfAtThisPosition.size()];
     int i = 0;
     for (char aa : nfAtThisPosition.keySet())
     {
-      pie.addSeries(Character.toString(aa), nfAtThisPosition.get(aa));
+      percentUnsorted[i] = nfAtThisPosition.get(aa);
+      percentSorted[i++] = nfAtThisPosition.get(aa);
+    }
+    Arrays.sort(percentSorted, Collections.reverseOrder());
+    
+    HashSet<Integer> ignore = new HashSet<Integer>();
+    if (percentSorted.length > 0)
+    {
+      for (int l = 0; l < aasSorted.length; l++)
+      {
+        for (int k = 0; k < aasSorted.length; k++)
+        {
+          if (percentUnsorted[l] == percentSorted[k] && !ignore.contains(k))
+          {
+            aasSorted[k] = (char) aasUnsorted[l];
+            ignore.add(k);
+            break;
+          }
+        }
+      }
+    }
+
+    for (int j = 0; j < aasSorted.length; j++)
+    {
+      char aa = aasSorted[j];
+      pie.addSeries(Character.toString(aa), percentSorted[j]);
  System.out.println(String.format("ocean at %d (%c)", mapAAtoColourIndex.get(aa), aa));
-      seriesColours[i++] = referenceColourScheme[mapAAtoColourIndex.get(aa)];
+      seriesColours[j++] = referenceColourScheme[mapAAtoColourIndex.get(aa)];
     }
 
     pie.getStyler().setSeriesColors(seriesColours);

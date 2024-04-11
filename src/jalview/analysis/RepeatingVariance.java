@@ -353,7 +353,29 @@ public class RepeatingVariance
       }
       else if (modalResidue.length() > 1)
       {
-        modalResidue = modalResidue.split(",")[0];
+        // combine variants of same FromRes to get highest changing AA
+        HashMap<String, Integer> mapAAtoNVar = new HashMap<String, Integer>();
+        int j = 0;
+        for (String sav : modalResidue.split(";"))
+        {
+          String aa = sav.split(",")[0];
+          if (mapAAtoNVar.containsKey(aa))
+          {
+            mapAAtoNVar.replace(aa, mapAAtoNVar.get(aa) + individCounts[j]);
+          } else {
+            mapAAtoNVar.put(aa, individCounts[j]);
+          }
+          j++;
+        }
+        int highest = -1;
+        for (String aa : mapAAtoNVar.keySet())
+        {
+          if (mapAAtoNVar.get(aa) > highest)
+          {
+            // set modalResidue to highest
+            modalResidue = aa;
+          }
+        }
       }
       //bar height
       variance.annotations[i] = new Annotation(modalResidue, description,
