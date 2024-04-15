@@ -26,6 +26,7 @@ import jalview.datamodel.AlignmentView;
 import jalview.datamodel.SequenceGroup;
 import jalview.datamodel.SequenceI;
 import jalview.jbgui.GPairwiseAlignPanel;
+import jalview.math.MiscMath;
 import jalview.util.MessageManager;
 import jalview.viewmodel.AlignmentViewport;
 
@@ -67,9 +68,9 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
 
   private SwingPropertyChangeSupport pcSupport = new SwingPropertyChangeSupport(this);
 
-  private final long total;
+  private final int total;
   
-  private long progress;
+  private int progress;
 
   /**
    * Creates a new PairwiseAlignPanel object.
@@ -96,7 +97,7 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
     this.endGaps = endGaps;
 
     //&!
-    total = 1l;
+    total = MiscMath.combinations(av.getAlignment().getHeight(), 2);
     
     if (run)
       calculate();
@@ -124,8 +125,8 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
     }
     
     //&!
-    progress = 0l;
-    pcSupport.firePropertyChange(TOTAL, 0, total);
+    progress = 0;
+    firePropertyChange(TOTAL, 0, total);
 
     String type = (av.getAlignment().isNucleotide()) ? AlignSeq.DNA
             : AlignSeq.PEP;
@@ -187,7 +188,7 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
           sequences.add(as.getAlignedSeq2());
         }
         
-        pcSupport.firePropertyChange(PROGRESS, progress, ++progress);
+        firePropertyChange(PROGRESS, progress, ++progress);
 
       }
     }
@@ -282,8 +283,10 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
   }
   
   //&!
+  /*
   public void addPropertyChangeListener(PropertyChangeListener listener)
   {
+    System.out.println(pcSupport != null);
     pcSupport.addPropertyChangeListener(listener);
   }
   
@@ -291,6 +294,7 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
   {
     pcSupport.removePropertyChangeListener(listener);
   }
+  */
   
   public long getTotal()
   {

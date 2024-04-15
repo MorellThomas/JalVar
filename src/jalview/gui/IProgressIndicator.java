@@ -63,5 +63,5 @@ public interface IProgressIndicator
    * @param id
    * @return progressbar mapped to id
    */
-  //public JProgressBar getProgressBar(long id);
+  public JProgressBar getProgressBar(long id);
 }

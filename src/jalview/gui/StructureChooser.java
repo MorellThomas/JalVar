@@ -40,6 +40,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
+import javax.swing.JProgressBar;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.table.AbstractTableModel;
@@ -1826,5 +1827,11 @@ public class StructureChooser extends GStructureChooser
       ap.adjustAnnotationHeight();
     }
 
+  }
+  
+  @Override
+  public JProgressBar getProgressBar(long id)
+  {
+    return progressBar.getProgressBar(id);
   }
 }

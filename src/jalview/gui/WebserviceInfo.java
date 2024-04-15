@@ -38,6 +38,7 @@ import javax.swing.JComponent;
 import javax.swing.JEditorPane;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
@@ -944,5 +945,11 @@ public class WebserviceInfo extends GWebserviceInfo
   public boolean operationInProgress()
   {
     return progressBar.operationInProgress();
+  }
+  
+  @Override
+  public JProgressBar getProgressBar(long id)
+  {
+    return progressBar.getProgressBar(id);
   }
 }

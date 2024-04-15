@@ -70,6 +70,7 @@ import javax.swing.JLayeredPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 
@@ -1000,6 +1001,14 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
   {
     if (!Platform.isHeadless() && progressBar != null)
       progressBar.setProgressBar(message, id);
+  }
+  
+  @Override
+  public JProgressBar getProgressBar(long id)
+  {
+    if (progressBar != null)
+      return progressBar.getProgressBar(id);
+    return null;
   }
 
   @Override

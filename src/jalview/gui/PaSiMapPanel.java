@@ -80,7 +80,8 @@ public class PaSiMapPanel extends GPCAPanel
   private int top = 0;
 
   //private IProgressIndicator progressBar;
-  private ProgressBar progressBar;
+  private IProgressIndicator progressBar;
+  //private ProgressBar progressBar;
 
   private boolean working;
   
@@ -102,7 +103,7 @@ public class PaSiMapPanel extends GPCAPanel
     this.ap = alignPanel;
     boolean nucleotide = av.getAlignment().isNucleotide();
 
-    progressBar = new ProgressBar(statusPanel, statusBar);
+    //progressBar = new ProgressBar(statusPanel, statusBar);
 
     addInternalFrameListener(new InternalFrameAdapter()
     {
@@ -178,14 +179,17 @@ public class PaSiMapPanel extends GPCAPanel
   {
     working = true;
     progId = System.currentTimeMillis();
-    IProgressIndicator progress = this;
+    //IProgressIndicator progress = this;
+    progressBar = this;
     String message = MessageManager.getString("label.pasimap_recalculating");
     if (getParent() == null)
     {
-      progress = ap.alignFrame;
+      //progress = ap.alignFrame;
+      progressBar = ap.alignFrame;
       message = MessageManager.getString("label.pasimap_calculating");
     }
-    progress.setProgressBar(message, progId);
+    //progress.setProgressBar(message, progId);
+    progressBar.setProgressBar(message, progId);
     try
     {
       //&! remove big seqs
@@ -217,7 +221,8 @@ public class PaSiMapPanel extends GPCAPanel
       return;
     } finally
     {
-      progress.setProgressBar("", progId);
+      //progress.setProgressBar("", progId);
+      progressBar.setProgressBar("", progId);
     }
 
     repaint();
@@ -651,6 +656,7 @@ public class PaSiMapPanel extends GPCAPanel
   {
     JProgressBar pBar = progressBar.getProgressBar(progId);
     pBar.setValue(progress);
+    pBar.repaint();
   }
   
   //&!
@@ -825,11 +831,9 @@ public class PaSiMapPanel extends GPCAPanel
     PaintRefresher.Register(PaSiMapPanel.this, panel.av.getSequenceSetId());
   }
   
-  //@Override
-  /*
+  @Override
   public JProgressBar getProgressBar(long id)
   {
     return progressBar.getProgressBar(id);
   }
-  */
 }
