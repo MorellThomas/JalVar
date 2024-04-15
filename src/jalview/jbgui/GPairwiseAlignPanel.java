@@ -43,7 +43,7 @@ public class GPairwiseAlignPanel extends JPanel
   protected JTextArea textarea = new JTextArea();
 
   protected JButton viewInEditorButton = new JButton();
-
+  
   JPanel jPanel1 = new JPanel();
 
   BorderLayout borderLayout1 = new BorderLayout();

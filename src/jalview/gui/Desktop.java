@@ -22,6 +22,7 @@ package jalview.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -2726,6 +2727,23 @@ public class Desktop extends jalview.jbgui.GDesktop
     {
       progressBars.put(Long.valueOf(id), addProgressPanel(message));
     }
+  }
+  
+  @Override
+  public JProgressBar getProgressBar(long id)
+  {
+    if (progressBars == null)
+      return null;
+    
+    if (progressBars.get(Long.valueOf(id)) == null)
+      return null;
+    
+    for (Component c : progressBars.get(Long.valueOf(id)).getComponents())
+    {
+      if (c.getClass() == JProgressBar.class)
+        return (JProgressBar) c;
+    }
+    return null;
   }
 
   /*

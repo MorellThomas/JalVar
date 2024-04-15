@@ -33,6 +33,7 @@ import java.awt.print.PrinterJob;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JMenuItem;
+import javax.swing.JProgressBar;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
@@ -774,5 +775,11 @@ public class PCAPanel extends GPCAPanel
     getRotatableCanvas().av = panel.av;
     getRotatableCanvas().ap = panel;
     PaintRefresher.Register(PCAPanel.this, panel.av.getSequenceSetId());
+  }
+  
+  @Override
+  public JProgressBar getProgressBar(long id)
+  {
+    return progressBar.getProgressBar(id);
   }
 }

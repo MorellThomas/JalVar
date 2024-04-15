@@ -26,11 +26,15 @@ import jalview.datamodel.AlignmentView;
 import jalview.datamodel.SequenceGroup;
 import jalview.datamodel.SequenceI;
 import jalview.jbgui.GPairwiseAlignPanel;
+import jalview.math.MiscMath;
 import jalview.util.MessageManager;
 import jalview.viewmodel.AlignmentViewport;
 
 import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
 import java.util.Vector;
+
+import javax.swing.event.SwingPropertyChangeSupport;
 
 /**
  * DOCUMENT ME!
@@ -42,7 +46,7 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
 {
 
   private static final String DASHES = "---------------------\n";
-
+  
   private float[][] scores;
 
   private float[][] alignmentScores;	// scores used by PaSiMap
@@ -51,9 +55,22 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
 
   Vector<SequenceI> sequences;
 
- private boolean suppressTextbox;
+  private boolean suppressTextbox;
 
- private boolean discardAlignments;
+  private boolean discardAlignments;
+ 
+  private boolean endGaps;
+ 
+  // for listening
+  public static final String TOTAL = "total";
+  
+  public static final String PROGRESS = "progress";
+
+  private SwingPropertyChangeSupport pcSupport = new SwingPropertyChangeSupport(this);
+
+  private final int total;
+  
+  private int progress;
 
   /**
    * Creates a new PairwiseAlignPanel object.
@@ -68,31 +85,49 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
   }
   public PairwiseAlignPanel(AlignmentViewport viewport, boolean endGaps)
   {
+    this(viewport, endGaps, true);
+  }
+  public PairwiseAlignPanel(AlignmentViewport viewport, boolean endGaps, boolean run)
+  {
     super();
     this.av = viewport;
 
     sequences = new Vector<SequenceI>();
+    
+    this.endGaps = endGaps;
 
-    SequenceGroup selectionGroup = viewport.getSelectionGroup();
+    //&!
+    total = MiscMath.combinations(av.getAlignment().getHeight(), 2);
+    
+    if (run)
+      calculate();
+  }
+  
+  public void calculate()
+  {
+    SequenceGroup selectionGroup = av.getSelectionGroup();
     boolean isSelection = selectionGroup != null
             && selectionGroup.getSize() > 0;
-    AlignmentView view = viewport.getAlignmentView(isSelection);
+    AlignmentView view = av.getAlignmentView(isSelection);
     // String[] seqStrings = viewport.getViewAsString(true);
     String[] seqStrings = view
-            .getSequenceStrings(viewport.getGapCharacter());
+            .getSequenceStrings(av.getGapCharacter());
 
     SequenceI[] seqs;
     if (isSelection)
     {
       seqs = (SequenceI[]) view
-              .getAlignmentAndHiddenColumns(viewport.getGapCharacter())[0];
+              .getAlignmentAndHiddenColumns(av.getGapCharacter())[0];
     }
     else
     {
       seqs = av.getAlignment().getSequencesArray();
     }
+    
+    progress = 0;
+    firePropertyChange(TOTAL, 0, total);
 
-    String type = (viewport.getAlignment().isNucleotide()) ? AlignSeq.DNA
+    String type = (av.getAlignment().isNucleotide()) ? AlignSeq.DNA
             : AlignSeq.PEP;
 
     float[][] scores = new float[seqs.length][seqs.length];
@@ -151,6 +186,7 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
           sequences.add(as.getAlignedSeq1());
           sequences.add(as.getAlignedSeq2());
         }
+        firePropertyChange(PROGRESS, progress, ++progress);
 
       }
     }
@@ -242,5 +278,29 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
     Desktop.addInternalFrame(af,
             MessageManager.getString("label.pairwise_aligned_sequences"),
             AlignFrame.DEFAULT_WIDTH, AlignFrame.DEFAULT_HEIGHT);
+  }
+  
+  //&!
+  /*
+  public void addPropertyChangeListener(PropertyChangeListener listener)
+  {
+    System.out.println(pcSupport != null);
+    pcSupport.addPropertyChangeListener(listener);
+  }
+  
+  public void removePropertyChangeListener(PropertyChangeListener listener)
+  {
+    pcSupport.removePropertyChangeListener(listener);
+  }
+  */
+  
+  public long getTotal()
+  {
+    return total;
+  }
+  
+  public long getProgress()
+  {
+    return progress;
   }
 }

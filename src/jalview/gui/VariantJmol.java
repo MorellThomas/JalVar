@@ -54,7 +54,7 @@ public class VariantJmol implements Runnable
   {
     this.sequence = seq;
     this.selectedRes = selRes;
-    this.path = EpReferenceFile.loadReference(refFile).getStructurePath();
+    this.path = EpReferenceFile.REFERENCE_PATH + "STRUCS";
     this.structureFile = path + "/" + seq.getName() + ".pdb";
     this.paeMatrixFile = paeMatrix == null ? null : path + paeMatrix;
     this.variantResidues = varRes;

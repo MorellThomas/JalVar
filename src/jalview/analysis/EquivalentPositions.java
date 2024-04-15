@@ -91,7 +91,7 @@ public class EquivalentPositions implements Runnable
     
     SequenceI[] _tmp = seqs.getAlignment().getSequencesArray();
     this.refSequenceName = _tmp[_tmp.length - 1].getName();
-    this.refDir = String.format("%s.ref", refSequenceName);
+    this.refDir = String.format("%s%s.ref", EpReferenceFile.REFERENCE_PATH, refSequenceName);
   }
 
   /**

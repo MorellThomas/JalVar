@@ -355,4 +355,37 @@ public class MiscMath
     return cnt;
   }
   
+  /**
+   * calculate all unique combinations of n elements into r sized groups
+   * @param n
+   * @param r
+   * 
+   * @return
+   */
+  public static int combinations(int n, int r)
+  {
+    int result = 1;
+    for (int i = 0; i < r; i++)
+    {
+      result *= (n - i);
+    }
+    return (int) (result / MiscMath.factorial(r));
+  }
+  
+  /**
+   * calculate the factorial of n (>=0)
+   * @param n
+   * 
+   * @return
+   */
+  public static int factorial(int n)
+  {
+    int result = 1;
+    for (int i = 0; i < n; i++)
+    {
+      result *= (n - i);
+    }
+    return result;
+  }
+  
 }

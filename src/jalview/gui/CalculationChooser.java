@@ -730,4 +730,9 @@ public class CalculationChooser extends JPanel
   {
     return pcaPanel;
   }
+  
+  public PaSiMapPanel getPasimapPanel()
+  {
+    return pasimapPanel;
+  }
 }

@@ -88,7 +88,7 @@ public class NaturalFrequencies implements Runnable
       SequenceI[] aseqs = al.getSequencesArray();
       ProfilesI hconsensus = AAFrequency.calculate(aseqs, width, 0, width, true);   // calculating the consensus data
       
-      File[] files = new File("./").listFiles();
+      File[] files = new File(EpReferenceFile.REFERENCE_PATH).listFiles();
       String referenceFile = "";
       for (File file : files) // look for correct sequence file
       {
