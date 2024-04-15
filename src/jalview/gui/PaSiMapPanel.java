@@ -51,6 +51,7 @@ import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.HashSet;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JMenuItem;
@@ -187,16 +188,33 @@ public class PaSiMapPanel extends GPCAPanel
     progressBar.setProgressBar(message, progId);
     try
     {
-      //&! remove big seqs
+      HashSet<SequenceI> removedSeqs = new HashSet<SequenceI>();
+      HashSet<String> removedSeqsNames = new HashSet<String>();
       for (SequenceI seq : av.getAlignment().getSequencesArray())
       {
         if (seq.getLength() > 20000)
         {
-          //TODO add warning dialog
-          av.getAlignment().deleteSequence(seq);
+          removedSeqs.add(seq);
+          removedSeqsNames.add(seq.getName());
         }
       }
+      int cancel = 0;
+      if (removedSeqs.size() > 0)
+        cancel = JvOptionPane.showInternalConfirmDialog(Desktop.desktop, String.format("Exclude large sequences from the analysis? (cannot run otherwise):\n\n%s", removedSeqsNames.toString()), "Sequences Excluded Warning", JvOptionPane.YES_NO_OPTION, JvOptionPane.WARNING_MESSAGE);
 
+      if (cancel == JvOptionPane.NO_OPTION)
+      {
+        throw new RuntimeException("abort");
+      }
+      else {
+        for (SequenceI s : removedSeqs)
+        {
+          av.getAlignment().deleteSequence(s);
+        }
+      }
+      removedSeqs = null;
+      removedSeqsNames = null;
+      
       PairwiseAlignPanel pap = new PairwiseAlignPanel(av, true, false);
       setPairwiseAlignPanel(pap);
       getPasimapModel().calculate(pap);
@@ -209,11 +227,17 @@ public class PaSiMapPanel extends GPCAPanel
       // rc.invalidate();
       setTop(getPasimapModel().getTop());
 
-    } catch (OutOfMemoryError er)
+    } catch (Throwable er)
     {
-      new OOMWarning("calculating PaSiMap", er);
-      working = false;
-      return;
+      if (er instanceof OutOfMemoryError)
+      {
+        new OOMWarning("calculating PaSiMap", (OutOfMemoryError) er);
+        working = false;
+        return;
+      } else {
+        working = false;
+        return;
+      }
     } finally
     {
       progressBar.setProgressBar("", progId);
