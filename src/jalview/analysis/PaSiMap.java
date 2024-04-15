@@ -199,7 +199,8 @@ public class PaSiMap implements Runnable
       PairwiseAlignPanel alignment = new PairwiseAlignPanel(seqs, true);
       float[][] scores = alignment.getAlignmentScores();	//bigger index first -- eg scores[14][13]
 
-      Hashtable<SequenceI, Integer> connectivity = seqs.calculateConnectivity(scores, dim);
+      //Hashtable<SequenceI, Integer> connectivity = seqs.calculateConnectivity(scores, dim);
+      seqs.calculateConnectivity(scores, dim);
 
       pairwiseScores = new Matrix(scores);
       pairwiseScores.fillDiagonal();
