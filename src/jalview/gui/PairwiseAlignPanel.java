@@ -122,11 +122,11 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
 
         as.calcScoreMatrix();
         if (endGaps)
-	{
+        {
           as.traceAlignmentWithEndGaps();
         } else {
-	  as.traceAlignment();
-	}
+          as.traceAlignment();
+        }
         as.scoreAlignment();
 
         if (!first)
@@ -135,22 +135,22 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
           textarea.append(DASHES);
         }
         first = false;
-	if (discardAlignments) {
+        if (discardAlignments) {
           as.printAlignment(System.out);
-	}
+        }
         scores[i][j] = as.getMaxScore() / as.getASeq1().length;
         alignmentScores[i][j] = as.getAlignmentScore();
         totscore = totscore + scores[i][j];
 
-	if (suppressTextbox)
-	{
+        if (suppressTextbox)
+        {
           textarea.append(as.getOutput());
-	}
-	if (discardAlignments)
-	{
+        }
+        if (discardAlignments)
+        {
           sequences.add(as.getAlignedSeq1());
           sequences.add(as.getAlignedSeq2());
-	}
+        }
 
       }
     }
