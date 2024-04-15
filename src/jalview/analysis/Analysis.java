@@ -172,7 +172,7 @@ public class Analysis implements Runnable
     this.proteinViewport = proteinAlignmentPanel.av;
     this.residue = res - 1;   // convert base 1 input to internal base 0
     
-    AlignmentViewport _tmp = proteinViewport;
+    AlignmentViewport _tmp = null;
     for (AlignmentViewport port : Desktop.getViewports(null))
     {
       if (port != proteinViewport)      //should always happen, otherwise error
@@ -184,7 +184,7 @@ public class Analysis implements Runnable
 
     this.protSeq = proteinViewport.getAlignment().getSequencesArray()[0];
     this.protSeqName = protSeq.getName();
-    this.geneSeq = geneViewport.getAlignment().getSequencesArray()[0];
+    this.geneSeq = geneViewport == null ? null : geneViewport.getAlignment().getSequencesArray()[0];
     
     this.activeJmols = new HashMap<String, VariantJmol>();
     
@@ -229,7 +229,7 @@ public class Analysis implements Runnable
       if (!(new File(refFile).exists()))
       {
         //throws a warning dialog saying that no file with the name {refFile} was found
-        JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No reference file \"%s\" found. Aborting.", refFile), "No Reference Error", JvOptionPane.WARNING_MESSAGE);
+        JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No reference file \"%s\" found. Aborting.", refFile), "No Reference Error", JvOptionPane.ERROR_MESSAGE);
         throw new RuntimeException();
       }
       
@@ -242,6 +242,11 @@ public class Analysis implements Runnable
       //set frame offset
       this.frameOffset = erf.getDomainOffset();
       
+      if (geneSeq == null)
+        JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No gene sequence \"%s\" found.", protSeqName), "No Gene Sequence Warning", JvOptionPane.INFORMATION_MESSAGE);
+      else if (geneSeq.getGeneLoci() == null)
+        JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No variance file added.", "No VCF Warning", JvOptionPane.WARNING_MESSAGE);
+        
       produceSummary();   // performs the analysis for the summary csv output and calls the addDomainMSApopup
 
       //starting VariantJmol
@@ -460,7 +465,7 @@ public class Analysis implements Runnable
       
       char[][] aaChanges = new char[1][1]; // for displaying the variants in the MSA view
       //variants found at this position (epgp[1] - 3)
-      if (geneSeq != null)
+      if (doVariant())
       {
        MapList mapping = geneSeq.getGeneLoci().getMapping();
        aaChanges = searchAndAnalyse(mapping, epgp[1], epgp[3], true);   
@@ -478,7 +483,7 @@ public class Analysis implements Runnable
       HashMap<Integer, char[][]> epWithVar = new HashMap<Integer, char[][]>();
       
       epWithVar.put(epgp[0], aaChanges);
-      if (!hasMSApopup)
+      if (!hasMSApopup && doVariant())
         this.foundDomainGroup = addDomainMSAPopup(domainName, epWithVar);
       
       k++;
@@ -1340,10 +1345,13 @@ public class Analysis implements Runnable
       if (!seq.getName().equals(protSeqName))
         proteinViewport.getAlignment().deleteSequence(seq);
     }
-    for (SequenceI seq : geneViewport.getAlignment().getSequencesArray())
+    if (geneViewport != null)
     {
-      if (!seq.getName().equals(geneSeq.getName())) // == protSeqName
-        geneViewport.getAlignment().deleteSequence(seq);
+      for (SequenceI seq : geneViewport.getAlignment().getSequencesArray())
+      {
+        if (!seq.getName().equals(geneSeq.getName())) // == protSeqName
+          geneViewport.getAlignment().deleteSequence(seq);
+      }
     }
   }
   
@@ -1397,12 +1405,14 @@ public class Analysis implements Runnable
       }
     }
 
+System.out.println(Arrays.toString(aasSorted));
+System.out.println(Arrays.toString(percentSorted));
     for (int j = 0; j < aasSorted.length; j++)
     {
       char aa = aasSorted[j];
       pie.addSeries(Character.toString(aa), percentSorted[j]);
  System.out.println(String.format("ocean at %d (%c)", mapAAtoColourIndex.get(aa), aa));
-      seriesColours[j++] = referenceColourScheme[mapAAtoColourIndex.get(aa)];
+      seriesColours[j] = referenceColourScheme[mapAAtoColourIndex.get(aa)];
     }
 
     pie.getStyler().setSeriesColors(seriesColours);
@@ -1427,6 +1437,11 @@ public class Analysis implements Runnable
     });
     
     //new SwingWrapper(pie).displayChart();
+  }
+  
+  private boolean doVariant()
+  {
+    return (geneSeq != null) && (geneSeq.getGeneLoci() != null);
   }
   
 }
