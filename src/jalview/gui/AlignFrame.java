@@ -896,7 +896,7 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
     AlignmentI al = getViewport().getAlignment();
     boolean nucleotide = al.isNucleotide();
 
-    loadVcf.setVisible(nucleotide);
+    loadVcfMenu.setVisible(nucleotide);
     showTranslation.setVisible(nucleotide);
     showReverse.setVisible(nucleotide);
     showReverseComplement.setVisible(nucleotide);

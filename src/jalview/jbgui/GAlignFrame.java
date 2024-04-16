@@ -188,6 +188,8 @@ public class GAlignFrame extends JInternalFrame
   protected JMenuItem reload = new JMenuItem();
 
   protected JMenu formatMenu = new JMenu();
+  
+  protected JMenu loadVcfMenu = new JMenu();
 
   protected JCheckBoxMenuItem idRightAlign = new JCheckBoxMenuItem();
 
@@ -1806,8 +1808,7 @@ public class GAlignFrame extends JInternalFrame
     JMenu exportImageMenu = new JMenu(
             MessageManager.getString("label.export_image"));
     
-    //&!
-    JMenu loadVcfMenu = new JMenu(
+    loadVcfMenu = new JMenu(
             MessageManager.getString("label.load_vcf_file"));
     JMenu fileMenu = new JMenu(MessageManager.getString("action.file"));
     alignFrameMenuBar.add(fileMenu);
@@ -1841,8 +1842,6 @@ public class GAlignFrame extends JInternalFrame
     fileMenu.add(associatedData);
     if (!Platform.isJS())
     {
-      //&!
-      //fileMenu.add(loadVcf);
       fileMenu.add(loadVcfMenu);
     }
     fileMenu.addSeparator();
@@ -1961,7 +1960,6 @@ public class GAlignFrame extends JInternalFrame
       exportImageMenu.add(createBioJS);
       exportImageMenu.add(createSVG);
     }
-    //&!
     loadVcfMenu.add(loadVcf);
     loadVcfMenu.add(loadVcfWithInfo);
     addSequenceMenu.add(addFromFile);

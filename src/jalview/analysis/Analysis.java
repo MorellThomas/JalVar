@@ -24,6 +24,7 @@ import jalview.bin.Console;
 import jalview.datamodel.AlignmentI;
 import jalview.datamodel.AlignedCodonFrame;
 import jalview.datamodel.Alignment;
+import jalview.datamodel.AlignmentAnnotation;
 import jalview.datamodel.SequenceI;
 import jalview.datamodel.Sequence;
 import jalview.datamodel.SequenceGroup;
@@ -34,6 +35,7 @@ import jalview.gui.AlignmentPanel;
 import jalview.gui.CutAndPasteTransfer;
 import jalview.gui.Desktop;
 import jalview.gui.JvOptionPane;
+import jalview.gui.JvPieChart;
 import jalview.gui.OOMWarning;
 import jalview.gui.VariantJmol;
 import jalview.io.EpReferenceFile;
@@ -142,22 +144,11 @@ public class Analysis implements Runnable
   
   private int selectedEP;   //currently selected column
   
+  private int selectedRes;  // selected EP but for selectedSequence without gaps
+  
   private String selectedSequence;  // currently selected sequence (at column selectedEP)
   
   private HashMap<String, VariantJmol> activeJmols;  // domain name - Jmol
-  
-  /*
-   * for pie chart
-   */
-  private PieChart pie;
-  
-  private JFrame frame;
-  
-  private JPanel piePanel;
-  
-  private final HashMap<Character, Integer> mapAAtoColourIndex = new HashMap<Character, Integer>();
-  
-  private final Color[] referenceColourScheme = jalview.schemes.ResidueProperties.ocean;
   
   /**
    * Constructor given the sequences to compute for and the residue position (base 1)
@@ -206,11 +197,6 @@ public class Analysis implements Runnable
     this.aaGroups.putAll(intermediate);
     this.aaGroups.putAll(hydrophobic);
     
-    int i = 0;
-    for (char aa : new char[]{'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', 'B', 'Z', 'X', '-', '*', '.'})
-    {
-      mapAAtoColourIndex.put(aa, i++);
-    }
   }
 
 
@@ -284,7 +270,9 @@ public class Analysis implements Runnable
           colourVariants(afs[domainAFindex], iteratingDomain, varUnsorted);
         }
         
-        VariantJmol structureWindow = new VariantJmol(variantDomain, refFile, proteinAlignmentPanel, foundDomains.get(variantDomain), convertEpToRes(variantDomain.getName(), selectedEP));
+        selectedRes = convertEpToRes(variantDomain.getName(), selectedEP);
+
+        VariantJmol structureWindow = new VariantJmol(variantDomain, refFile, proteinAlignmentPanel, foundDomains.get(variantDomain), selectedRes);
         activeJmols.putIfAbsent(variantDomain.getName(), structureWindow);
         new Thread(structureWindow).start();
 
@@ -300,8 +288,9 @@ public class Analysis implements Runnable
         RepeatingVariance.completeVariance(avMSA.getAlignment());
         avMSA.getAlignment().addAnnotation(RepeatingVariance.getAnnotation(avMSA.getAlignment()), 0);
         avMSA.setAnalysis(this);
-    
+
       }
+      
       
     } catch (Exception q)
     {
@@ -503,7 +492,30 @@ public class Analysis implements Runnable
       new OOMWarning("exporting Analysis results", oom);
       cap.dispose();
     }
-    pieChart();
+    //Frequence Pie Chart
+    new JvPieChart(String.format("Frequency Distribution of %s at EP %d", foundDomainGroup, selectedEP), nfAtThisPosition, selectedSequence);
+
+    // pie for variance
+    if ((avMSA != null) && (RepeatingVariance.getAnnotation(avMSA.getAlignment()) != null))
+    {
+      AlignmentAnnotation annotation = RepeatingVariance.getAnnotation(avMSA.getAlignment());
+      HashMap<String, Integer> histogramMapForPie = new HashMap<String, Integer>();
+
+      String desc = annotation.annotations[selectedEP-1].description;
+      for (int i = 0; i <= desc.length(); i++)
+      {
+        if (desc.substring(i, i+5).equals("Total"))
+          break;
+        
+        if ((i == 0) || (i % 9 == 0))
+        {
+          histogramMapForPie.put(desc.substring(i, i+3), Integer.parseInt(Character.toString(desc.charAt(i+4))));
+        }
+      }
+      
+      new JvPieChart(String.format("Variant Distribution of EP %d", selectedEP), histogramMapForPie, selectedSequence);
+    }
+    
   }
   
   /**
@@ -1223,6 +1235,7 @@ public class Analysis implements Runnable
     {
       selectedSequence = sg.getSequences().get(0).getName();
       selectedEP = sg.getStartRes() + 1;
+      selectedRes = convertEpToRes(selectedSequence, selectedEP);
     } else {
       return;
     } 
@@ -1231,7 +1244,7 @@ public class Analysis implements Runnable
     al.deleteAllGroups();
     al.deleteAllAnnotations(false);
     
-    int epAsRes = convertEpToRes(selectedSequence, selectedEP) -1;
+    int epAsRes = selectedRes -1;
 
     for (String iteratingDomain : wholeGroupVariants.keySet())
     {
@@ -1308,6 +1321,7 @@ public class Analysis implements Runnable
     {
       selectedSequence = sg.getSequences().get(0).getName();
       selectedEP = sg.getStartRes() + 1;
+      selectedRes = convertEpToRes(selectedSequence, selectedEP);
     } else {
       return;
     } 
@@ -1327,7 +1341,7 @@ public class Analysis implements Runnable
     as.traceAlignment();
     as.scoreAlignment();
     
-    residue = as.getSeq1Start() + convertEpToRes(selectedSequence, selectedEP) -2;  // both base 1, need to be base 0
+    residue = as.getSeq1Start() + selectedRes -2;  // both base 1, need to be base 0
     as = null;
 
     produceSummary(selectedSequence);
@@ -1353,90 +1367,6 @@ public class Analysis implements Runnable
           geneViewport.getAlignment().deleteSequence(seq);
       }
     }
-  }
-  
-  /**
-   * TODO
-   * maybe outsource this to a separate class to allow for usage outside of this analyssi
-   * display a pie chart with the NFs at the position
-   */
-  private void pieChart()
-  {
-    String title = String.format("Frequency Distribution of %s at EP %d", foundDomainGroup, selectedEP);
-    pie = new PieChartBuilder().width(400).height(300).title(title).theme(ChartTheme.GGPlot2).build();
-    
-    Color[] seriesColours = new Color[nfAtThisPosition.keySet().size()];
-    
-    pie.getStyler().setLegendVisible(false);
-    pie.getStyler().setPlotContentSize(0.8);
-    pie.getStyler().setLabelType(LabelType.NameAndPercentage);
-    pie.getStyler().setLabelsDistance(1.12);
-    pie.getStyler().setLabelsFont(new Font(Font.SANS_SERIF, Font.PLAIN, 14));
-    pie.getStyler().setPlotBackgroundColor(Color.white);
-    //pie.getStyler().setStartAngleInDegrees(90);
-    
-    //sorting arrays...
-    Object[] aasUnsorted = nfAtThisPosition.keySet().toArray();
-    char[] aasSorted = new char[nfAtThisPosition.size()];
-    Float[] percentUnsorted = new Float[nfAtThisPosition.size()];
-    Float[] percentSorted = new Float[nfAtThisPosition.size()];
-    int i = 0;
-    for (char aa : nfAtThisPosition.keySet())
-    {
-      percentUnsorted[i] = nfAtThisPosition.get(aa);
-      percentSorted[i++] = nfAtThisPosition.get(aa);
-    }
-    Arrays.sort(percentSorted, Collections.reverseOrder());
-    
-    HashSet<Integer> ignore = new HashSet<Integer>();
-    if (percentSorted.length > 0)
-    {
-      for (int l = 0; l < aasSorted.length; l++)
-      {
-        for (int k = 0; k < aasSorted.length; k++)
-        {
-          if (percentUnsorted[l] == percentSorted[k] && !ignore.contains(k))
-          {
-            aasSorted[k] = (char) aasUnsorted[l];
-            ignore.add(k);
-            break;
-          }
-        }
-      }
-    }
-
-System.out.println(Arrays.toString(aasSorted));
-System.out.println(Arrays.toString(percentSorted));
-    for (int j = 0; j < aasSorted.length; j++)
-    {
-      char aa = aasSorted[j];
-      pie.addSeries(Character.toString(aa), percentSorted[j]);
- System.out.println(String.format("ocean at %d (%c)", mapAAtoColourIndex.get(aa), aa));
-      seriesColours[j] = referenceColourScheme[mapAAtoColourIndex.get(aa)];
-    }
-
-    pie.getStyler().setSeriesColors(seriesColours);
-    
-    javax.swing.SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run()
-      {
-        frame = new JFrame(selectedSequence);
-        frame.setLayout(new BorderLayout());
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
-        piePanel = new XChartPanel<PieChart>(pie);
-        frame.add(piePanel, BorderLayout.CENTER);
-        
-        //JLabel label = new JLabel("alsjdlf", SwingConstants.CENTER);
-        //frame.add(label, BorderLayout.SOUTH);
-        
-        frame.pack();
-        frame.setVisible(true);
-      }
-    });
-    
-    //new SwingWrapper(pie).displayChart();
   }
   
   private boolean doVariant()
