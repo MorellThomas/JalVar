@@ -54,6 +54,10 @@ public class EPPanel
    * @param FoR
    * @param width
    */
+  public EPPanel(AlignFrame alignFrame)
+  {
+    this(alignFrame, -1, ' ', alignFrame.getViewport().getAlignment().getWidth());
+  }
   public EPPanel(AlignFrame alignFrame, int startingPosition, char FoR, int width)
   {
     this.af = alignFrame;

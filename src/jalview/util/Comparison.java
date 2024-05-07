@@ -134,10 +134,10 @@ public class Comparison
     }
     else
     {
-      for (int j = 0; j < jlen; j++)
+      for (int i = 0; i < ilen; i++)
       {
-        if (si.substring(start + j, start + j + 1)
-                .equals(sj.substring(start + j, start + j + 1)))
+        if (si.substring(start + i, start + i + 1)
+                .equals(sj.substring(start + i, start + i + 1)))
         {
           match++;
         }

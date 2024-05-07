@@ -359,6 +359,8 @@ public class RepeatingVariance
         for (String sav : modalResidue.split(";"))
         {
           String aa = sav.split(",")[0];
+          if (aa.equals("Total"))
+            continue;
           if (mapAAtoNVar.containsKey(aa))
           {
             mapAAtoNVar.replace(aa, mapAAtoNVar.get(aa) + individCounts[j]);
@@ -373,7 +375,9 @@ public class RepeatingVariance
           if (mapAAtoNVar.get(aa) > highest)
           {
             // set modalResidue to highest
+            highest = mapAAtoNVar.get(aa);
             modalResidue = aa;
+  System.out.println(String.format("%s: %d", aa, mapAAtoNVar.get(aa)));
           }
         }
       }

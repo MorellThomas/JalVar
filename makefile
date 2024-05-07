@@ -25,6 +25,7 @@ $(BUILD_JAR) :
 
 install : $(BUILD_JAR) $(REF_FILE) $(REF_STRUCS) $(REF_VCF)
 	mkdir -p $(DEST_PATH)
+	chown $(USER) $(CONFIG_PATH)
 	mv $(BUILD_JAR) $(INSTALL_JAR)
 
 # cp ref in install, have creation of ref here

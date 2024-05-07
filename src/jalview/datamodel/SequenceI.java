@@ -599,4 +599,9 @@ public interface SequenceI extends ASequenceI, ContactMapHolderI
   public void addContactListFor(AlignmentAnnotation annotation,
           ContactMatrixI cm);
 
+  /**
+   * return the sequence as a char[] without gaps
+   * @return
+   */
+  public char[] getUngappedSequence();
 }

@@ -66,7 +66,7 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
   
   public static final String PROGRESS = "progress";
 
-  private SwingPropertyChangeSupport pcSupport = new SwingPropertyChangeSupport(this);
+  //private SwingPropertyChangeSupport pcSupport = new SwingPropertyChangeSupport(this);
 
   private final int total;
   

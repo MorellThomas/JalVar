@@ -5,3 +5,4 @@
 *.ref
 !TTN.ref
 /.DS_Store
+/build/

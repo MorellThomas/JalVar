@@ -20,17 +20,24 @@
  */
 package jalview.gui;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.io.IOException;
+
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+
 import jalview.analysis.Analysis;
 import jalview.api.AlignViewportI;
-import jalview.datamodel.SequenceI;
-import jalview.util.MessageManager;
+import jalview.bin.Console;
 import jalview.viewmodel.AlignmentViewport;
 
 /**
  * The panel starts the residue analysis calculation
  * called by AnalysisInput
  */
-public class AnalysisPanel implements Runnable
+public class AnalysisPanel extends JPanel 
+    implements Runnable, IProgressIndicator
 {
   AlignmentPanel ap;
 
@@ -39,6 +46,10 @@ public class AnalysisPanel implements Runnable
   int residue;  //specified residue (base 1)
 
   private boolean working;
+  
+  private IProgressIndicator progressBar;
+  
+  private long progId;
   
   private Analysis anal;
 
@@ -63,16 +74,35 @@ public class AnalysisPanel implements Runnable
   public void run()
   {
     working = true;
+    progId = System.currentTimeMillis();
+    progressBar = this;
+    String message = "Analysis recalculating";
+    if (getParent() == null)
+    {
+      progressBar = ap.alignFrame;
+      message = "Analysis calculating";
+    }
+    progressBar.setProgressBar(message, progId);
     try
     {
       anal = new Analysis(ap, residue);
+      setAnalysis(anal);
       anal.run(); // executes in same thread, wait for completion
 
-    } catch (OutOfMemoryError er)
+    } catch (OutOfMemoryError | ClassNotFoundException | IOException er)
     {
-      new OOMWarning("calculating Analysis", er);
+      if (er instanceof OutOfMemoryError)
+      {
+        new OOMWarning("calculating Analysis", (OutOfMemoryError) er);
+      } else {
+        Console.error("Error computing Equivalent Positions:  " + er.getMessage());
+        er.printStackTrace();
+      }
       working = false;
       return;
+    } finally
+    {
+      progressBar.setProgressBar("", progId);
     }
 
     working = false;
@@ -80,7 +110,7 @@ public class AnalysisPanel implements Runnable
 
 
   /**
-   * Answers true if PaSiMap calculation is in progress, else false
+   * Answers true if Analysis calculation is in progress, else false
    * 
    * @return
    */
@@ -93,5 +123,70 @@ public class AnalysisPanel implements Runnable
   {
     return av;
   }
+  
+  @Override
+  public void setProgressBar(String message, long id)
+  {
+    progressBar.setProgressBar(message, id);
+  }
 
+  /*
+   * make the progressBar determinate and update its progress
+   */
+  public void updateProgressBar(int lengthOfTask, int progress)
+  {
+    JProgressBar pBar = progressBar.getProgressBar(progId);
+    if (pBar.isIndeterminate())
+    {
+      pBar.setMaximum(lengthOfTask);
+      pBar.setValue(0);
+      pBar.setIndeterminate(false);
+    }
+    updateProgressBar(progress);
+  }
+  public void updateProgressBar(int progress)
+  {
+    JProgressBar pBar = progressBar.getProgressBar(progId);
+    pBar.setValue(progress);
+    pBar.repaint();
+  }
+  
+  public void setAnalysis(Analysis ana)
+  {
+    anal.addPropertyChangeListener(new PropertyChangeListener()
+    {
+      @Override
+      public void propertyChange(PropertyChangeEvent pcEvent)
+      {
+ System.out.println(String.format("%s or %s == %s -> %d", Analysis.PROGRESS, Analysis.TOTAL, pcEvent.getPropertyName(), pcEvent.getNewValue()));
+        if (Analysis.PROGRESS.equals(pcEvent.getPropertyName()))
+        {
+          updateProgressBar((int) pcEvent.getNewValue());
+        } else if (Analysis.TOTAL.equals(pcEvent.getPropertyName()))
+        {
+          updateProgressBar((int) pcEvent.getNewValue(), 0);
+        }
+      }
+    });
+    //this.anal = ana;
+  }
+  
+  @Override
+  public void registerHandler(final long id, final IProgressIndicatorHandler handler)
+  {
+    progressBar.registerHandler(id, handler);
+  }
+  
+  @Override
+  public boolean operationInProgress()
+  {
+    return progressBar.operationInProgress();
+  }
+  
+  @Override
+  public JProgressBar getProgressBar(long id)
+  {
+    return progressBar.getProgressBar(id);
+  }
+  
 }

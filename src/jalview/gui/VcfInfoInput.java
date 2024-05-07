@@ -310,8 +310,7 @@ public class VcfInfoInput extends JPanel
     MapList mapping = new MapList(new int[] {origStart, origEnd}, new int[] {vcfStart, vcfEnd}, origRatio, vcfRatio);
     
     closeFrame();
-    chooser = new JalviewFileChooser(
-            Cache.getProperty("LAST_DIRECTORY"));
+    chooser = new JalviewFileChooser("vcf", "VCF");
     chooser.setFileView(new JalviewFileView());
     chooser.setDialogTitle(MessageManager.getString("label.load_vcf_file"));
     chooser.setToolTipText(MessageManager.getString("label.load_vcf_file"));

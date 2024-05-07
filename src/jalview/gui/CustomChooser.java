@@ -62,6 +62,8 @@ public class CustomChooser extends JPanel
   JRadioButton reference;
   
   JRadioButton analysis;
+  
+  JRadioButton frequenciesonly;
 
   JButton calculate;
 
@@ -114,6 +116,9 @@ public class CustomChooser extends JPanel
     reference = new JRadioButton(MessageManager.getString("label.reference"));
     reference.setOpaque(false);
     
+    frequenciesonly = new JRadioButton(MessageManager.getString("label.frequenciesonly"));
+    frequenciesonly.setOpaque(false);
+    
     analysis = new JRadioButton(MessageManager.getString("label.analysis"));
     analysis.setOpaque(false);
 
@@ -122,12 +127,14 @@ public class CustomChooser extends JPanel
     calcChoicePanel.setOpaque(false);
 
     calcChoicePanel.add(reference, FlowLayout.LEFT);
+    calcChoicePanel.add(frequenciesonly, FlowLayout.LEFT);
     calcChoicePanel.add(analysis, FlowLayout.LEFT);
 
     //calcChoicePanel.add(customPanel);
 
     ButtonGroup calcTypes = new ButtonGroup();
     calcTypes.add(reference);
+    calcTypes.add(frequenciesonly);
     calcTypes.add(analysis);
 
     ActionListener calcChanged = new ActionListener()
@@ -139,6 +146,7 @@ public class CustomChooser extends JPanel
       }
     };
     reference.addActionListener(calcChanged);
+    frequenciesonly.addActionListener(calcChanged);
     analysis.addActionListener(calcChanged);
 
     /*
@@ -218,9 +226,10 @@ public class CustomChooser extends JPanel
      * return value of true means enabled and selected
      */
     boolean checkReference = checkEnabled(reference, size, MIN_REFERENCE_SELECTION);
+    boolean checkFrequenciesOnly = checkEnabled(frequenciesonly, size, MIN_REFERENCE_SELECTION);
     boolean checkAnalysis = checkEnabled(analysis, size, MIN_ANALYSIS_SELECTION);
 
-    if (checkReference || checkAnalysis)
+    if (checkReference || checkAnalysis || checkFrequenciesOnly)
     {
       calculate.setToolTipText(null);
       calculate.setEnabled(true);
@@ -278,13 +287,17 @@ public class CustomChooser extends JPanel
   {
     boolean doRef = reference.isSelected();
     boolean doAnal = analysis.isSelected();
+    boolean doFreq = frequenciesonly.isSelected();
 
-    if (doRef && !doAnal)
+    if (doRef && !doAnal && !doFreq)
     {
       openEpPanel();
-    } else if (doAnal && !doRef)
+    } else if (doAnal && !doRef && !doFreq)
     {
       openAnalysisPanel();
+    } else if (doFreq && !doRef && !doAnal)
+    {
+      runFrequenciesOnlyReference();
     }
 
     closeFrame();
@@ -359,6 +372,12 @@ public class CustomChooser extends JPanel
      */
     new AnalysisInput(af);
 
+  }
+  
+  protected void runFrequenciesOnlyReference()
+  {
+    EPPanel epPanel = new EPPanel(af);
+    new Thread(epPanel).start();
   }
 
   /**

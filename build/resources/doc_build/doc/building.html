@@ -709,7 +709,7 @@ body :checked+.radio-label {
 <pre><code># download
 git clone http://source.jalview.org/git/jalview.git
 # compile
-cd ./jalview
+cd jalview
 gradle shadowJar
 # run
 java -jar build/libs/jalview-all-*-j11.jar
@@ -717,7 +717,7 @@ java -jar build/libs/jalview-all-*-j11.jar
 # and/or create launcher
 gradle getdown
 # use launcher
-cd ./build/getdown/files/11
+cd getdown/files
 java -jar getdown-launcher.jar . jalview
 </code></pre>
 <h2 id="setting-up"><a href="#setting-up" name="setting-up" class="anchor"><span class="octicon octicon-link"></span>Setting up</a></h2>
@@ -994,24 +994,17 @@ looks to see if there's an updated file) to point to a particular Jalview channe
 place to look for required files.  If the selected channel type requires the getdown <code>appbase</code> to be a local
 directory on the filesystem (instead of a website URL) then a modified version of the <code>getdown-launcher.jar</code> will
 be used to allow this.  The two versions of the <code>getdown-launcher.jar</code> can be found in <code>getdown/lib</code>.
-Note that the DEVELOP and RELEASE channels will normally use a getdown-launcher.jar that <em>does not</em> allow the
-<code>file://</code> scheme to be used in the appbase.</p>
-<p>Some other variables used in the build process might also be set differently depending on the value of <code>CHANNEL</code>
+Some other variables used in the build process might also be set differently depending on the value of <code>CHANNEL</code>
 to allow smooth operation of getdown in the given context.</p>
-<p>There are several values of <code>CHANNEL</code> that can be chosen, with no choice leading to a default of <code>LOCAL</code>.
-Here's what they're for and what they do:</p>
+<p>There are several values of <code>CHANNEL</code> that can be chosen, with a default of <code>LOCAL</code>.  Here's what they're for and what they do:</p>
 <ul>
-<li><code>LOCAL</code>: This is for running the compiled application from the development directory and used by default.
+<li><code>LOCAL</code>: This is for running the compiled application from the development directory.
 It will set
 <ul>
-<li><code>appbase</code> as <code>file://PATH/TO/YOUR/DEVELOPMENT/getdown/website/JAVA_VERSION</code>
-(e.g. <code>file://home/user/git/jalview/getdown/website/11</code>)</li>
+<li><code>appbase</code> as <code>file://PATH/TO/YOUR/DEVELOPMENT/getdown/files/JAVA_VERSION</code>
+(e.g. <code>file://home/user/git/jalview/getdown/files/11</code>)</li>
 <li>application subdir as <code>alt</code></li>
 <li>Getdown launcher can use a <code>file://</code> scheme appbase.</li>
-<li>Compile jalview with <code>gradle getdown</code> or <code>gradle shadowJar</code></li>
-<li>Run Jalview on the command line without using the installers with,
-Using getdown, e.g. <code>java -jar ./getdown/files/11/getdown-launcher.jar ./getdown/files/11 jalview</code>
-or using the shadowJar with, e.g. <code>java -jar ./build/libs/jalview-all-TEST-j11.jar</code></li>
 </ul>
 </li>
 <li><code>BUILD</code>: This is for creating an appbase channel on the build server by an automatic or manually started build.
@@ -1085,27 +1078,11 @@ It will set
 <p>e.g.</p>
 <pre><code class="language-bash">gradle getdown -PCHANNEL=SCRATCH-my_test_version
 </code></pre>
-<p><strong>New <code>CHANNEL</code> appearance features 2020-12-10</strong>
-There are now differing cosmetics for different channels, including application icons, Getdown splashscreen,
-About splashscreen, Installer backgrounds, application name.  This is controlled by the files in</p>
-<pre><code>utils/channels
-</code></pre>
-<p>In <code>utils/channels</code> there are different directories for the different channels.  Currently there are directories for
-<code>default</code>, <code>develop</code>, <code>release</code>, <code>test-release</code>, <code>jalviewjs</code> and <code>jalviewjs-release</code>.  If a specified <code>CHANNEL</code> is not one of <code>DEVELOP</code>, <code>RELEASE</code>, <code>TEST-RELEASE</code>, <code>JALVIEWJS</code>, <code>JALVIEWJS-RELEASE</code>
-then it will use the <code>default</code> directory.</p>
-<p>Inside the <code>utils/channels/&lt;channelname&gt;</code> directory are:</p>
-<ul>
-<li>a file <code>channel_gradle.properties</code>.  This will be used by the <code>build.gradle</code> script (i.e. any gradle build) to <em>override</em> the values found in <code>gradle.properties</code>.</li>
-<li>an <code>images</code> directory used to store different images referred to in this channels's <code>channel_gradle.properties</code>.</li>
-<li>a <code>resources</code> directory which is merged into the javliew.jar's own resources directory.  Importantly it contains a <code>channel.props</code> file and another <code>images</code> dir which contains properties and images used by the application (in <code>jalview.util.ChannelProperties</code>), such as icon files or banner images, and the <code>app_name</code> property used as the display name for the application (e.g. &quot;Jalview Develop&quot;) inside the application code.  Please see the <code>getProperty</code> and <code>getImage</code> methods in <code>jalview.bin.ChannelProperties</code> to access these channel based resources.</li>
-</ul>
 <h4 id="jalview-version-and-the-release-file"><a href="#jalview-version-and-the-release-file" name="jalview-version-and-the-release-file" class="anchor"><span class="octicon octicon-link"></span>JALVIEW_VERSION and the RELEASE file</a></h4>
 <p>Any Jalview build will include the value of JALVIEW_VERSION in various places, including the 'About' and Jalview Desktop window title, and in filenames for the stand-alone executable jar. You can specify a custom version for a build via the JALVIEW_VERSION property, but for most situations, JALVIEW_VERSION will be automatically configured according to the value of the CHANNEL property, using the <code>jalview.version</code> property specified in the RELEASE file:</p>
 <ul>
-<li><code>CHANNEL=RELEASE</code> will set version to jalview.version.</li>
-<li><code>CHANNEL=TEST or DEVELOP</code> will append '-test' or '-develop' to jalview.version.</li>
-<li><code>CHANNEL=JALVIEWJS</code> will use the <code>channel.props</code> found in <code>utils/channels/jalviewjs</code> but otherwise uses <code>LOCAL</code> settings.</li>
-<li><code>CHANNEL=JALVIEWJS-RELEASE</code> uses a symbolic link to <code>utils/channels/jalviewjs</code> but otherwise uses <code>RELEASE</code> settings.</li>
+<li><code>CHANNEL=RELEASE</code> will set version to jalview.version</li>
+<li><code>CHANNEL=TEST or DEVELOP</code> will append '-test' or '-develop' to jalview.version</li>
 </ul>
 <p>It is also possible to specify a custom location for the RELEASE file via an optional JALVIEW_RELEASE_FILE property.</p>
 <h4 id="install4jmediatypes"><a href="#install4jmediatypes" name="install4jmediatypes" class="anchor"><span class="octicon octicon-link"></span><code>install4jMediaTypes</code></a></h4>

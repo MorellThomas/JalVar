@@ -28,6 +28,7 @@ import jalview.datamodel.SequenceI;
 import jalview.datamodel.ResidueCount; // not for pasimap
 import jalview.gui.CutAndPasteTransfer;
 import jalview.gui.Desktop;
+import jalview.gui.JvOptionPane;
 import jalview.gui.OOMWarning;
 import jalview.io.EpReferenceFile;
 import jalview.math.MiscMath;  // not for pasimap
@@ -88,27 +89,16 @@ public class NaturalFrequencies implements Runnable
       SequenceI[] aseqs = al.getSequencesArray();
       ProfilesI hconsensus = AAFrequency.calculate(aseqs, width, 0, width, true);   // calculating the consensus data
       
-      File[] files = new File(EpReferenceFile.REFERENCE_PATH).listFiles();
-      String referenceFile = "";
-      for (File file : files) // look for correct sequence file
+      String referenceFile = EpReferenceFile.findFittingReference(aseqs);
+      if (referenceFile == null)
       {
-        if (file.getName().contains(".ref"))  // load each file that ends with ref
-        {
-          EpReferenceFile erf = EpReferenceFile.loadReference(String.format("./%s", file.getName()));
-          HashMap<String, LinkedList<HashMap<Character, int[]>>> domain = erf.getDomain();
-          boolean skip = false;
-          for (SequenceI seq : aseqs)
-          {
-            if (!domain.containsKey(seq.getName()))   // if a sequence present in this alignment is not present in the reference
-              skip = true;                            // file, skip the reference
-          }
-          if (!skip)
-            referenceFile = file.getName();
-        }
+        //throws a warning dialog saying that no file with the name {refFile} was found
+        JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No reference file \"%s\" found. Aborting.", referenceFile), "No Reference Error", JvOptionPane.ERROR_MESSAGE);
+        throw new RuntimeException();
       }
       
       // throws an error if nothing was found
-      EpReferenceFile erf = EpReferenceFile.loadReference(String.format("%s", referenceFile)); 
+      EpReferenceFile erf = EpReferenceFile.loadReference(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, referenceFile)); 
       naturalFrequency = erf.getNaturalFrequency(); // load reference
       
       String[] sequenceNames = Arrays.copyOf(al.getSequenceNames().toArray(), al.getHeight(), String[].class);  // for saving as reference

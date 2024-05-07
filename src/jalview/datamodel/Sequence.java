@@ -50,6 +50,8 @@ import jalview.ws.datamodel.alphafold.MappableContactMatrix;
 public class Sequence extends ASequence implements SequenceI
 {
 
+  public static char GAP_CHARACTER = '-';
+
   /**
    * A subclass that gives us access to modCount, which tracks whether there
    * have been any changes. We use this to update
@@ -2212,5 +2214,25 @@ public class Sequence extends ASequence implements SequenceI
           ContactMatrixI cm)
   {
     getContactMapHolder().addContactListFor(annotation, cm);
+  }
+  
+  @Override
+  public char[] getUngappedSequence()
+  {
+    ArrayList<Character> _seq = new ArrayList<Character>();
+    for (char c : sequence)
+    {
+      if (c != GAP_CHARACTER)
+      {
+        _seq.add(c);
+      }
+    }
+    char[] seq = new char[_seq.size()];
+    for (int i = 0; i < _seq.size(); i++)
+    {
+      seq[i] = _seq.get(i);
+    }
+
+    return seq;
   }
 }

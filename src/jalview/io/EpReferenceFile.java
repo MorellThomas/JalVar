@@ -27,10 +27,16 @@ import java.io.FileOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
+
+import jalview.datamodel.Sequence;
+import jalview.datamodel.SequenceI;
+import jalview.util.Comparison;
 
 /**
  * helper class dealing with the reference file and holding all necessary information
@@ -45,6 +51,8 @@ public class EpReferenceFile
   private static final long serialVersionUID = 6529685098267757690L;  // need this to be able to load the file again
   
   public static final String REFERENCE_PATH = System.getProperty("user.home") + "/.config/JalviewSNV/";
+  
+  public static final char GAP_CHARACTER = '-';
   
   private final String path;
   
@@ -71,7 +79,9 @@ public class EpReferenceFile
   
   public void saveReference() throws IOException, ClassNotFoundException
   {
-    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(this.path));
+    File file = new File(this.path);
+    file.createNewFile();
+    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file));
     oos.writeObject(this);
     oos.flush();
     oos.close();
@@ -175,6 +185,62 @@ public class EpReferenceFile
   {
     File file = new File(path);
     file.delete();
+  }
+  
+  public static String findFittingReference(SequenceI seq) throws ClassNotFoundException, IOException
+  {
+    return findFittingReference(new SequenceI[]{seq});
+  }
+  public static String findFittingReference(SequenceI[] seqs) throws ClassNotFoundException, IOException
+  {
+    String referenceFileName = null;
+    File[] files = new File(EpReferenceFile.REFERENCE_PATH).listFiles();
+    for (File file : files) // look for correct sequence file
+    {
+      if (file.getName().contains(".ref"))  // load each file that ends with ref
+      {
+        EpReferenceFile erf = EpReferenceFile.loadReference(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, file.getName()));
+        HashMap<String, LinkedList<HashMap<Character, int[]>>> domain = erf.getDomain();
+        boolean skip = false;
+        for (SequenceI seq : seqs)
+        {
+ char[] highest2 = new char[1];
+          //remove gaps from sequence
+          char[] seq1 = seq.getUngappedSequence();
+          
+          float highest = -1;
+          for (String seq2Name : domain.keySet())
+          {
+            LinkedList<HashMap<Character, int[]>> list = domain.get(seq2Name);
+            char[] seq2 = new char[list.size()];
+            for (int i = 0; i < list.size(); i++)
+            {
+              seq2[i] = (char) list.get(i).keySet().toArray()[0];
+            }
+            seq2 = new Sequence("s2", seq2, 0, seq2.length-1).getUngappedSequence();
+            float pid = new String(seq1).contains(new String(seq2)) ? 100 : Comparison.compare(new Sequence("s1", seq1, 0, seq1.length-1), new Sequence("s2", seq2, 0, seq2.length-1));
+ highest2 = highest < pid ? seq2 : highest2;
+            highest = highest < pid ? pid : highest;
+            if (highest > 90)
+            {
+              break;
+            }
+          }
+System.out.println(String.format("%s: %f", file.getName(), highest));
+          if (highest < 90)
+          {
+System.out.println(String.format("------------\n%f", highest));
+ System.out.println(Arrays.toString(seq1));
+ System.out.println(Arrays.toString(highest2));
+              skip = true;
+              break;
+          }
+        }
+        if (!skip)
+          referenceFileName = file.getName();
+      }
+    }
+    return referenceFileName;
   }
 
 }
