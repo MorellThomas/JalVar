@@ -156,5 +156,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="j11lib/xchart-3.8.7.jar"/>
 	<classpathentry kind="lib" path="j11lib/VectorGraphics2D-0.13.jar"/>
+	<classpathentry kind="lib" path="j11lib/xchart-3.8.9-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>

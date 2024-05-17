@@ -73,6 +73,7 @@ public class JvPieChart
     pie.getStyler().setLabelsDistance(1.12);
     pie.getStyler().setLabelsFont(new Font(Font.SANS_SERIF, Font.PLAIN, 14));
     pie.getStyler().setPlotBackgroundColor(Color.white);
+    pie.getStyler().setForceAllLabelsVisible(true);
     //pie.getStyler().setStartAngleInDegrees(90);
     
     //sort mapping and replace old one

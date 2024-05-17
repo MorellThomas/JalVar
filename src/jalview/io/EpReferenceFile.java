@@ -204,7 +204,6 @@ public class EpReferenceFile
         boolean skip = false;
         for (SequenceI seq : seqs)
         {
- char[] highest2 = new char[1];
           //remove gaps from sequence
           char[] seq1 = seq.getUngappedSequence();
           
@@ -219,19 +218,14 @@ public class EpReferenceFile
             }
             seq2 = new Sequence("s2", seq2, 0, seq2.length-1).getUngappedSequence();
             float pid = new String(seq1).contains(new String(seq2)) ? 100 : Comparison.compare(new Sequence("s1", seq1, 0, seq1.length-1), new Sequence("s2", seq2, 0, seq2.length-1));
- highest2 = highest < pid ? seq2 : highest2;
             highest = highest < pid ? pid : highest;
             if (highest > 90)
             {
               break;
             }
           }
-System.out.println(String.format("%s: %f", file.getName(), highest));
           if (highest < 90)
           {
-System.out.println(String.format("------------\n%f", highest));
- System.out.println(Arrays.toString(seq1));
- System.out.println(Arrays.toString(highest2));
               skip = true;
               break;
           }

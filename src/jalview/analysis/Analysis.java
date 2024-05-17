@@ -136,9 +136,9 @@ public class Analysis implements Runnable
   
   private AlignmentViewport avMSA;
   
-  private int selectedEP;   //currently selected column
+  private int selectedEP = -1;   //currently selected column     base 1
   
-  private int selectedRes;  // selected EP but for selectedSequence without gaps
+  private int selectedRes;  // selected EP but for selectedSequence without gaps    base 0
   
   private String selectedSequence;  // currently selected sequence (at column selectedEP)
   
@@ -262,8 +262,10 @@ public class Analysis implements Runnable
       if (!frequenciesonly)
       {
         if (geneSeq == null)
+        {
           JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No gene sequence \"%s\" found.", protSeqName), "No Gene Sequence Warning", JvOptionPane.INFORMATION_MESSAGE);
-        else if (geneSeq.getGeneLoci() == null)
+          this.frequenciesonly = true;
+        } else if (geneSeq.getGeneLoci() == null)
           JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No variance file added.", "No VCF Warning", JvOptionPane.WARNING_MESSAGE);
       }
         
@@ -457,10 +459,20 @@ public class Analysis implements Runnable
     csv.append(String.format("aligns to %s from %d - %d\n", protSeqName, alignments[alignmentNr].getSeq1Start(), alignments[alignmentNr].getSeq1End()));
     
     int posInDomain = alignments[alignmentNr].getSeq2Start() + (residue - alignments[alignmentNr].getSeq1Start());  // residue number in the domain without gaps !! not the EP (base 0)
+
+    // abort if input residue is too big
+    if (posInDomain >= aaList.size())
+    {
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("Selected residue (%d) outside of range (max. %d). Aborting.", residue+1, aaList.size()-1), "No Reference Error", JvOptionPane.ERROR_MESSAGE);
+      clean();
+      throw new RuntimeException();
+    }
+
     HashMap<Character, int[]> position = aaList.get(posInDomain);
     char aaAtPos = (char) position.keySet().toArray()[0];
     int[] epgp = position.get(aaAtPos);   //is the real ep + gps at the specified position
-    selectedEP = epgp[0];
+    if (selectedEP == -1) // if unset
+      selectedEP = epgp[0];
 
     if (frequenciesonly)
     {
@@ -1263,8 +1275,6 @@ public class Analysis implements Runnable
     {
       domainWithoutGaps[i] = (char) list.get(i).keySet().toArray()[0];
     }
- System.out.println(Arrays.toString(domainWithoutGaps));
- System.out.println(Arrays.toString(domainWithGaps));
     
     int j = 0;  //index of nongapped sequence
     for (int i = 0; i < domainWithGaps.length; i++)
@@ -1273,9 +1283,9 @@ public class Analysis implements Runnable
       {
         if (domainWithGaps[i] == domainWithoutGaps[j])
         {
-          j++;
           if (i+1 == res)     // EP (i) base 1, needs to be base 0
             return j;
+          j++;
         }
       }
     }
@@ -1397,12 +1407,11 @@ public class Analysis implements Runnable
     if (sg.getSequences().size() == 1)
     {
       selectedSequence = sg.getSequences().get(0).getName();
-      selectedEP = sg.getStartRes();
-      selectedRes = convertEpToRes(selectedSequence, selectedEP);
+      selectedEP = sg.getStartRes() + 1;  // base 1
+      selectedRes = convertEpToRes(selectedSequence, selectedEP); // base 0
     } else {
       return;
     } 
-
 
     // copying code from gui/PairwiseAlignPanel
     SequenceI[] forAlignment = new SequenceI[2];
