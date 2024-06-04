@@ -158,7 +158,6 @@ import jalview.viewmodel.AlignmentViewport;
 import jalview.viewmodel.ViewportRanges;
 import jalview.ws.DBRefFetcher;
 import jalview.ws.DBRefFetcher.FetchFinishedListenerI;
-import jalview.ws.datamodel.alphafold.PAEContactMatrix;
 import jalview.ws.jws1.Discoverer;
 import jalview.ws.jws2.Jws2Discoverer;
 import jalview.ws.jws2.jabaws2.Jws2Instance;
@@ -1146,7 +1145,7 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
       }
     }
   }
-
+  
   @Override
   public void addFromText_actionPerformed(ActionEvent e)
   {

@@ -60,7 +60,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Locale;
@@ -86,6 +88,7 @@ import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JProgressBar;
@@ -113,6 +116,7 @@ import jalview.gui.ImageExporter.ImageWriterI;
 import jalview.gui.QuitHandler.QResponse;
 import jalview.io.BackupFiles;
 import jalview.io.DataSourceType;
+import jalview.io.EpReferenceFile;
 import jalview.io.FileFormat;
 import jalview.io.FileFormatException;
 import jalview.io.FileFormatI;
@@ -1843,6 +1847,48 @@ public class Desktop extends jalview.jbgui.GDesktop
   protected void preferences_actionPerformed(ActionEvent e)
   {
     Preferences.openPreferences();
+  }
+
+  @Override
+  public void deleteRefs_actionPerformed(ActionEvent e) throws ClassNotFoundException, IOException
+  {
+    File[] files = new File(EpReferenceFile.REFERENCE_PATH).listFiles();
+    HashMap<File, String> allDisplayOptionsSet = new HashMap<File, String>();
+    
+    
+    for (File file : files) // look for correct sequence file
+    {
+      if (file.getName().contains(".ref"))  // load each file that ends with ref
+      {
+        EpReferenceFile erf = EpReferenceFile.loadReference(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, file.getName()));
+        HashMap<String, LinkedHashSet<String>> groups = erf.getDomainGroups();
+        int nGroups = groups.size();
+        Object[] groupNames = groups.keySet().toArray();
+        String firstGroup = (String) groupNames[0];
+        String lastGroup = (String) groupNames[groupNames.length - 1];
+        allDisplayOptionsSet.put(file, String.format("%s: %d group(s) (%s, ...)", file.getName(), nGroups, firstGroup, lastGroup));
+      }
+    }
+    String[] allDisplayOptions = new String[allDisplayOptionsSet.size()+1];
+    File[] filteredFiles = new File[allDisplayOptionsSet.size()];
+    int i = 0;
+    for (File f : allDisplayOptionsSet.keySet())
+    {
+      allDisplayOptions[i] = allDisplayOptionsSet.get(f);
+      filteredFiles[i] = f;
+      i++;
+    }
+    allDisplayOptions[i] = "None";
+
+    JComboBox optionDialog = new JComboBox(allDisplayOptions);
+    optionDialog.setSelectedIndex(i);
+    int closed = JvOptionPane.showInternalConfirmDialog(desktop, optionDialog, MessageManager.getString("label.choose_reference_to_delete"), JOptionPane.OK_CANCEL_OPTION);
+    int refIndex = optionDialog.getSelectedIndex();
+    if ((closed != JOptionPane.CANCEL_OPTION || closed != JOptionPane.CLOSED_OPTION) && refIndex != i)  //refIndex in right to left order
+    {
+      File toDelete = filteredFiles[refIndex];
+      toDelete.delete();
+    }
   }
 
   /**

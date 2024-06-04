@@ -377,7 +377,6 @@ public class RepeatingVariance
             // set modalResidue to highest
             highest = mapAAtoNVar.get(aa);
             modalResidue = aa;
-  System.out.println(String.format("%s: %d", aa, mapAAtoNVar.get(aa)));
           }
         }
       }

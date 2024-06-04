@@ -380,7 +380,7 @@ ext {
     install4jExtraScheme = "jalviewl"
     install4jCheckSums = false
     break
-
+    
     default: // something wrong specified
     throw new GradleException("CHANNEL must be one of BUILD, RELEASE, ARCHIVE, DEVELOP, TEST-RELEASE, SCRATCH-..., LOCAL [default]")
     break

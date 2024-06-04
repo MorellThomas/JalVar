@@ -57,7 +57,6 @@ import jalview.bin.Cache;
 import jalview.gui.JvSwingUtils;
 import jalview.gui.Preferences;
 import jalview.io.FileFormats;
-import jalview.io.exceptions.ImageOutputException;
 import jalview.schemes.ResidueColourScheme;
 import jalview.util.MessageManager;
 import jalview.util.Platform;
@@ -186,7 +185,7 @@ public class GAlignFrame extends JInternalFrame
   protected JTabbedPane tabbedPane = new JTabbedPane();
 
   protected JMenuItem reload = new JMenuItem();
-
+  
   protected JMenu formatMenu = new JMenu();
   
   protected JMenu loadVcfMenu = new JMenu();
@@ -2705,7 +2704,7 @@ public class GAlignFrame extends JInternalFrame
   {
 
   }
-
+  
   public void newView_actionPerformed(ActionEvent e)
   {
 

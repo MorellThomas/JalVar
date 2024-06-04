@@ -1,4 +1,4 @@
-app_name=Jalview non-release
+app_name=Jalview
 banner=/images/jalview_banner.png
 logo.16=/images/jalview_logo-16.png
 logo.32=/images/jalview_logo-32.png
@@ -16,5 +16,5 @@ uod_banner.28=/images/UoD_banner-28.png
 uod_banner.30=/images/UoD_banner-30.png
 uod_banner.32=/images/UoD_banner-32.png
 default_appbase=https://www.jalview.org/getdown/release/1.8
-preferences.filename=.jalview_nonrelease_properties
-channel=default
+preferences.filename=.jalview_properties
+channel=release

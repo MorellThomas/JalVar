@@ -53,6 +53,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.TreeMap;
@@ -118,7 +119,7 @@ public class Analysis implements Runnable
   
   private HashMap<Character, Float> nfAtThisPosition;
   
-  private float[] nFs;
+  private Float[] nFs;
   
   private char[] allAAatPos;
   
@@ -329,6 +330,25 @@ public class Analysis implements Runnable
       if (frequenciesonly && (avMSA != null))
         avMSA.setAnalysis(this);
       
+      if ((avMSA != null) && (RepeatingVariance.getAnnotation(avMSA.getAlignment()) != null))
+      {
+        AlignmentAnnotation annotation = RepeatingVariance.getAnnotation(avMSA.getAlignment());
+        HashMap<String, Integer> histogramMapForPie = new HashMap<String, Integer>();
+
+        String desc = annotation.annotations[selectedEP-1].description;
+        for (int i = 0; i <= desc.length(); i++)
+        {
+          if (desc.substring(i, i+5).equals("Total"))
+            break;
+          
+          if ((i == 0) || (i % 9 == 0))
+          {
+            histogramMapForPie.put(desc.substring(i, i+3), Integer.parseInt(Character.toString(desc.charAt(i+4))));
+          }
+        }
+        
+        new JvPieChart(String.format("Variant Distribution of EP %d", selectedEP), histogramMapForPie, selectedSequence, true);
+      }
       
     } catch (Exception q)
     {
@@ -492,14 +512,44 @@ public class Analysis implements Runnable
     //output the nf header and information
     csv.append("\nNatural frequencies at this position:\n");
     nfAtThisPosition = nfList.get(selectedEP-1);
-    nFs = new float[nfAtThisPosition.size()];
-    allAAatPos = new char[nfAtThisPosition.size()];
+    float[] nFsUnsorted = new float[nfAtThisPosition.size()];
+    char[] allAAatPosUnsorted = new char[nfAtThisPosition.size()];
     int l = 0;
     for (char aa : nfAtThisPosition.keySet())
     {
-      csv.append(String.format("%c: %1.2f%%, ", aa, nfAtThisPosition.get(aa)));
-      allAAatPos[l] = aa;
-      nFs[l++] = nfAtThisPosition.get(aa);
+      allAAatPosUnsorted[l] = aa;
+      nFsUnsorted[l++] = nfAtThisPosition.get(aa);
+    }
+    nFs = new Float[nFsUnsorted.length];
+    allAAatPos = new char[allAAatPosUnsorted.length];
+    for (int i = 0; i < nFs.length; i++)
+    {
+      nFs[i] = nFsUnsorted[i];
+    }
+    Arrays.sort(nFs, Collections.reverseOrder());
+    
+    HashSet<Integer> ignore = new HashSet<Integer>();
+    if (nFsUnsorted.length > 0)
+    {
+      for (int i = 0; i < nFs.length; i++)
+      {
+        for (int j = 0; j < nFs.length; j++)
+        {
+          if (nFsUnsorted[i] == nFs[j] && !ignore.contains(j))
+          {
+            allAAatPos[j] = allAAatPosUnsorted[i];
+            ignore.add(j);
+            break;
+          }
+        }
+      }
+    }
+    int brek = 1;
+    for (int i = 0; i < nFs.length; i++)
+    {
+      csv.append(String.format("%c: %1.2f%%, ", allAAatPos[i], nFs[i]));
+      if (i == brek * 7)
+        csv.append("\n");
     }
     
     char[][] aaChanges = new char[1][1]; // for displaying the variants in the MSA view
@@ -560,7 +610,7 @@ public class Analysis implements Runnable
         }
       }
       
-      new JvPieChart(String.format("Variant Distribution of EP %d", selectedEP), histogramMapForPie, selectedSequence);
+      new JvPieChart(String.format("Variant Distribution of EP %d", selectedEP), histogramMapForPie, selectedSequence, true);
     }
     
   }
@@ -671,11 +721,16 @@ public class Analysis implements Runnable
     int[] featureRange = map.locateInFrom(start, end);   // nucleotide numbers of gene seq where mutated codon (!! start @1)
     List<SequenceFeature> variants = geneSeq.findFeatures(featureRange[0], featureRange[1]);   // start@1
     
+    StringBuffer gpListingsBuffer = new StringBuffer();
+    StringBuffer briefSummaryBuffer = new StringBuffer();
+    StringBuffer exchangeBuffer = new StringBuffer();
+
     if (output)
-      csv.append(String.format("\n\nVariants found from position %d to %d:\n", start, end));
+      gpListingsBuffer.append(String.format("\n\nVariants found from position %d to %d:\n", start, end));
 
     HashSet<char[]> result = new HashSet<char[]>();
 
+    boolean isFirstLoop = true;
     for (SequenceFeature feature : variants)
     {
       // translate the three nucleotides to know the AA change
@@ -712,138 +767,148 @@ public class Analysis implements Runnable
       {
 
         if (feature.otherDetails.containsKey("AF"))
-          csv.append(String.format("GP %d %s: %s -> %s (%c -> %c) - frequency %s\n\n", pos, feature.getType(), snvStrings[0], snvStrings[1], protSeq.getCharAt(residue), newAA, feature.otherDetails.get("AF").toString()));
+          gpListingsBuffer.append(String.format("GP %d %s: %s -> %s (%c -> %c) - frequency %s\n", pos, feature.getType(), snvStrings[0], snvStrings[1], oldAA, newAA, feature.otherDetails.get("AF").toString()));
         else
-          csv.append(String.format("GP %d %s: %s -> %s (%c -> %c)\n\n", pos, feature.getType(), snvStrings[0], snvStrings[1], protSeq.getCharAt(residue), newAA));
+          gpListingsBuffer.append(String.format("GP %d %s: %s -> %s (%c -> %c)\n", pos, feature.getType(), snvStrings[0], snvStrings[1], oldAA, newAA));
 
         // summarizing statement
-        csv.append("Brief summary:\n");
+        if (isFirstLoop)
+          briefSummaryBuffer.append("\nBrief summary:\n");
    
-      float freqFrom = nfAtThisPosition.keySet().contains(protSeq.getCharAt(residue)) ? nfAtThisPosition.get(protSeq.getCharAt(residue)) : 0f;
-      float freqTo = nfAtThisPosition.keySet().contains(newAA) ? nfAtThisPosition.get(newAA) : 0f;
+        float freqFrom = nfAtThisPosition.keySet().contains(protSeq.getCharAt(residue)) ? nfAtThisPosition.get(protSeq.getCharAt(residue)) : 0f;
+        float freqTo = nfAtThisPosition.keySet().contains(newAA) ? nfAtThisPosition.get(newAA) : 0f;
      
-      //gather nfs for all groups
-      for (char aa : aaGroups.keySet())
-      {
-        for (int i = 0; i < nFs.length; i++)
+        //gather nfs for all groups
+        for (char aa : aaGroups.keySet())
         {
-          if (aa == allAAatPos[i])
+          for (int i = 0; i < nFs.length; i++)
           {
-            HashMap<Character, Float> aaMap = this.aaGroupInfo.get(aaGroups.get(aa));
-            aaMap.put(aa,  nFs[i]);
-            break;
+            if (aa == allAAatPos[i])
+            {
+              HashMap<Character, Float> aaMap = this.aaGroupInfo.get(aaGroups.get(aa));
+              aaMap.put(aa,  nFs[i]);
+              break;
+            }
           }
         }
-      }
-      
-      TreeMap<String, Float> presentGroups = new TreeMap<String, Float>();   //summ the frequencies for all groups to get the most prominent one
-      HashMap<String, Integer> groupDistribution = new HashMap<String, Integer>();   // how many different residues per group present
-      for (String group : aaGroupInfo.keySet())
-      {
-        float sum = 0f;
-        int differentAAs = 0;
-        for (char aa : aaGroupInfo.get(group).keySet())
+        
+        TreeMap<String, Float> presentGroups = new TreeMap<String, Float>();   //summ the frequencies for all groups to get the most prominent one
+        HashMap<String, Integer> groupDistribution = new HashMap<String, Integer>();   // how many different residues per group present
+        for (String group : aaGroupInfo.keySet())
         {
-          sum += aaGroupInfo.get(group).get(aa);
-          if (aaGroupInfo.get(group).get(aa) != 0f)
-            differentAAs++;
+          float sum = 0f;
+          int differentAAs = 0;
+          for (char aa : aaGroupInfo.get(group).keySet())
+          {
+            sum += aaGroupInfo.get(group).get(aa);
+            if (aaGroupInfo.get(group).get(aa) != 0f)
+              differentAAs++;
+          }
+          if (sum != 0f)
+            presentGroups.put(group, sum);
+          if (differentAAs != 0)
+            groupDistribution.put(group,  differentAAs);
         }
-        if (sum != 0f)
-          presentGroups.put(group, sum);
-        if (differentAAs != 0)
-          groupDistribution.put(group,  differentAAs);
-      }
-      
-      String thisDistribution = "";    // saying how much broadly distributed this position is
-      if (presentGroups.size() == 1 && (groupDistribution.get(groupDistribution.keySet().toArray()[0]) <= 2))
-        thisDistribution = distribution[0];
-      else if (presentGroups.size() == 1)
-        thisDistribution = distribution[1];
-      else if (presentGroups.size() == 2)
-        thisDistribution = distribution[2];
-      else if (presentGroups.size() > 2)
-        thisDistribution = distribution[3];
-      
-      String fromLikely = "";
-      //int fromIndex = 0;
-      String toLikely = "";
-      int toIndex = 0;
-      /*
-      if (freqFrom <= 0f)
-      {
-        fromLikely = String.format("%s (%s)", likelyness[4], likelyness[5]);
-        fromIndex = 4;
-      }
-      else if (freqFrom <= 4f)
-      {
-        fromLikely = likelyness[3];
-        fromIndex = 3;
-      }
-      else if (freqFrom <= 15f)
-      {
-        fromLikely = likelyness[2];
-        fromIndex = 2;
-      }
-      else if (freqFrom < 50f)
-      {
-        fromLikely = likelyness[1];
-        fromIndex = 1;
-      }
-      else
-      {
-        fromLikely = likelyness[0];
-        fromIndex = 0;
-      }
-      */
+        
+        String thisDistribution = "";    // saying how much broadly distributed this position is
+        if (presentGroups.size() == 1 && (groupDistribution.get(groupDistribution.keySet().toArray()[0]) <= 2))
+          thisDistribution = distribution[0];
+        else if (presentGroups.size() == 1)
+          thisDistribution = distribution[1];
+        else if (presentGroups.size() == 2)
+          thisDistribution = distribution[2];
+        else if (presentGroups.size() > 2)
+          thisDistribution = distribution[3];
+        
+        String fromLikely = "";
+        //int fromIndex = 0;
+        String toLikely = "";
+        int toIndex = 0;
+        /*
+        if (freqFrom <= 0f)
+        {
+          fromLikely = String.format("%s (%s)", likelyness[4], likelyness[5]);
+          fromIndex = 4;
+        }
+        else if (freqFrom <= 4f)
+        {
+          fromLikely = likelyness[3];
+          fromIndex = 3;
+        }
+        else if (freqFrom <= 15f)
+        {
+          fromLikely = likelyness[2];
+          fromIndex = 2;
+        }
+        else if (freqFrom < 50f)
+        {
+          fromLikely = likelyness[1];
+          fromIndex = 1;
+        }
+        else
+        {
+          fromLikely = likelyness[0];
+          fromIndex = 0;
+        }
+        */
 
-      if (freqTo <= 0f)
-      {
-        toLikely = String.format("%s (%s)", likelyness[4], likelyness[5]);
-        toIndex = 4;
-      }
-      else if (freqTo <= 4f)
-      {
-        toLikely = likelyness[3];
-        toIndex = 3;
-      }
-      else if (freqTo <= 15f)
-      {
-        toLikely = likelyness[2];
-        toIndex = 2;
-      }
-      else if (freqTo < 50f)
-      {
-        toLikely = likelyness[1];
-        toIndex = 1;
-      }
-      else
-      {
-        toLikely = likelyness[0];
-        toIndex = 0;
-      }
+        if (freqTo <= 0f)
+        {
+          toLikely = String.format("%s (%s)", likelyness[4], likelyness[5]);
+          toIndex = 4;
+        }
+        else if (freqTo <= 4f)
+        {
+          toLikely = likelyness[3];
+          toIndex = 3;
+        }
+        else if (freqTo <= 15f)
+        {
+          toLikely = likelyness[2];
+          toIndex = 2;
+        }
+        else if (freqTo < 50f)
+        {
+          toLikely = likelyness[1];
+          toIndex = 1;
+        }
+        else
+        {
+          toLikely = likelyness[0];
+          toIndex = 0;
+        }
 
-      csv.append(String.format("Residue %d is %s.\n", residue + 1, thisDistribution));
-      csv.append(String.format("It changes from a %s %s residue (%c : %2.3f%%)", fromLikely, aaGroups.get(protSeq.getCharAt(residue)), protSeq.getCharAt(residue), freqFrom));
-      csv.append(String.format(", to a %s %s residue (%c : %2.3f%%).\n", toLikely, aaGroups.get(newAA), newAA, freqTo));
-      int prolinPenalty = 0;
-      if ((newAA == 'P') && (freqTo < 4f))
-      {
-        csv.append("The residue changed to a Prolin which is barely/not represented in this position!\n");
-        prolinPenalty = 1;
-      }
+        if (isFirstLoop)
+          briefSummaryBuffer.append(String.format("Residue %d is %s.\n", residue + 1, thisDistribution));
 
-      int sameGroupFactor = aaGroups.get(protSeq.getCharAt(residue)) == aaGroups.get(newAA) ? 1 : 0;
-      int tmpVerdictIndex = toIndex - (sameGroupFactor - prolinPenalty);
-      tmpVerdictIndex = tmpVerdictIndex >= verdict.length ? verdict.length - 1 : tmpVerdictIndex;
-      String overallLikely = verdict[ (int) (0.5 * (tmpVerdictIndex + Math.sqrt(Math.pow(tmpVerdictIndex, 2)))) ];
-      csv.append(String.format("This change is considered %s\n\n", overallLikely));
+        exchangeBuffer.append(String.format("It changes from a %s %s residue (%c : %2.3f%%)", fromLikely, aaGroups.get(oldAA), oldAA, freqFrom));
+        exchangeBuffer.append(String.format(", to a\n%s %s residue (%c : %2.3f%%).\n", toLikely, aaGroups.get(newAA), newAA, freqTo));
+        int prolinPenalty = 0;
+        if ((newAA == 'P') && (freqTo < 4f))
+        {
+          exchangeBuffer.append("The residue changed to a\n Prolin which is barely/not represented in this position!\n");
+          prolinPenalty = 1;
+        }
+
+        int sameGroupFactor = aaGroups.get(oldAA) == aaGroups.get(newAA) ? 1 : 0;
+        int tmpVerdictIndex = toIndex - (sameGroupFactor - prolinPenalty);
+        tmpVerdictIndex = tmpVerdictIndex >= verdict.length ? verdict.length - 1 : tmpVerdictIndex;
+        String overallLikely = verdict[ (int) (0.5 * (tmpVerdictIndex + Math.sqrt(Math.pow(tmpVerdictIndex, 2)))) ];
+        exchangeBuffer.append(String.format("This change is considered %s\n\n", overallLikely));
       }
+      isFirstLoop = false;
     }
     char[][] r = new char[result.size()][2];
     int i = 0;
     for (char[] s : result)
     {
       r[i++] = s;
+    }
+    if (output)
+    {
+      csv.append(gpListingsBuffer.toString());
+      csv.append(briefSummaryBuffer.toString());
+      csv.append(exchangeBuffer.toString());
     }
     return r;
   }
@@ -1062,8 +1127,10 @@ public class Analysis implements Runnable
           
           //skip if variant present
           // -> covered in other loop
-          if (wholeGroupVariants.get(thisSequence).containsKey(convertEpToRes(thisSequence, ep+base)-1))
+          if (wholeGroupVariants.get(thisSequence).containsKey(convertEpToRes(thisSequence, ep+base)))
+          {
             continue;
+          }
           
           for (int j = 0; j < fromRes.length; j++)
           {
@@ -1136,11 +1203,10 @@ public class Analysis implements Runnable
             selSequence = seqq;
         }
         */
-        int epOfNongap = convertEpToRes(selectedSequence, ep);
         Color outline;
-        if ((wholeGroupVariants.containsKey(selectedSequence)) && (wholeGroupVariants.get(selectedSequence).containsKey(epOfNongap)))
+        if ((wholeGroupVariants.containsKey(selectedSequence)) && (wholeGroupVariants.get(selectedSequence).containsKey(selectedRes)))
         {
-          String[] selVar = wholeGroupVariants.get(selectedSequence).get(epOfNongap);
+          String[] selVar = wholeGroupVariants.get(selectedSequence).get(selectedRes);
           
           if (selVar != null)
           {
@@ -1314,7 +1380,8 @@ public class Analysis implements Runnable
     al.deleteAllGroups();
     al.deleteAllAnnotations(false);
     
-    int epAsRes = selectedRes -1;
+    //int epAsRes = selectedRes -1;
+    int epAsRes = selectedRes;
 
     if (!frequenciesonly)
     {

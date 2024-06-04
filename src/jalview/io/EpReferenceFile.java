@@ -34,8 +34,12 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
+import javax.swing.JOptionPane;
+
 import jalview.datamodel.Sequence;
 import jalview.datamodel.SequenceI;
+import jalview.gui.Desktop;
+import jalview.gui.JvOptionPane;
 import jalview.util.Comparison;
 
 /**
@@ -193,6 +197,7 @@ public class EpReferenceFile
   }
   public static String findFittingReference(SequenceI[] seqs) throws ClassNotFoundException, IOException
   {
+    HashSet<String> allReferences = new HashSet<String>();
     String referenceFileName = null;
     File[] files = new File(EpReferenceFile.REFERENCE_PATH).listFiles();
     for (File file : files) // look for correct sequence file
@@ -231,9 +236,31 @@ public class EpReferenceFile
           }
         }
         if (!skip)
-          referenceFileName = file.getName();
+          allReferences.add(file.getName());
       }
     }
+    
+    if (allReferences.size() < 2)
+    {
+      referenceFileName = allReferences.size() == 1 ? (String) allReferences.toArray()[0] : null;
+    } else {  // create an option dialog showing all found fitting references, the chosen one will be used
+      Object[] allRefsArray = allReferences.toArray();
+      String[] allDisplayOptions = new String[allRefsArray.length];
+      for (int i = 0; i < allRefsArray.length; i++)
+      {
+        String ref = (String) allRefsArray[i];
+        EpReferenceFile erp = EpReferenceFile.loadReference(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, ref));
+        HashMap<String, LinkedHashSet<String>> groups = erp.getDomainGroups();
+        int nGroups = groups.size();
+        Object[] groupNames = groups.keySet().toArray();
+        String firstGroup = (String) groupNames[0];
+        String lastGroup = (String) groupNames[groupNames.length - 1];
+        allDisplayOptions[i] = String.format("%s: %d group(s) (%s, ...)", ref, nGroups, firstGroup, lastGroup);
+      }
+      int refIndex = JvOptionPane.showOptionDialog(Desktop.desktop, "Multiple references found. Choose one of the following:", "Multiple References", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, allDisplayOptions, null);
+      referenceFileName = (String) allRefsArray[refIndex];
+    }
+
     return referenceFileName;
   }
 

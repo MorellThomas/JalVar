@@ -1,6 +1,8 @@
 #--Jalview Build Details--
-#2024-05-17 10:37:03
-BUILD_DATE=10\:37\:03 17 May 2024
-INSTALLATION=Source git-commit\:34a60a663a [progressbar]
+#2024-06-04 14:06:32
+BUILD_DATE=14\:06\:32 04 June 2024
+GETDOWNAPPBASE=https\://www.jalview.org/getdown/release/11
+GETDOWNAPPDISTDIR=release
+INSTALLATION=Source git-commit\:fdcf8691b9 [progressbar]
 JAVA_COMPILE_VERSION=11
-VERSION=TEST
+VERSION=2.11.3.0

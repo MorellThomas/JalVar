@@ -146,8 +146,7 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
       for (int j = 0; j < i; j++)
       {
         System.out.println(String.format("i: %d ; j: %d", i, j));
-        AlignSeq as = new AlignSeq(seqs[i], seqStrings[i], seqs[j],
-                seqStrings[j], type);
+        AlignSeq as = new AlignSeq(seqs[i], seqStrings[i], seqs[j], seqStrings[j], type);
         //as.seqInit(seqs[i], seqStrings[i], seqs[j], seqStrings[j], type);
 
         if (as.s1str.length() == 0 || as.s2str.length() == 0)

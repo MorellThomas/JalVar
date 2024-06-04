@@ -35,11 +35,17 @@ public class JvPieChart
   
   private String selectedSequence;
   
+  private boolean value;  // show value instead of %
+  
   private JFrame frame;
   
   private JPanel piePanel;
   
   public JvPieChart(String title, HashMap<? extends Object, ? extends Number> map, String selSeq)
+  {
+    this(title, map, selSeq, false);
+  }
+  public JvPieChart(String title, HashMap<? extends Object, ? extends Number> map, String selSeq, boolean val)
   {
     this.dataMapping = new LinkedHashMap<String, Float>();
     for (Object o : map.keySet())
@@ -53,6 +59,8 @@ public class JvPieChart
     }
     this.selectedSequence = selSeq;
     pie = new PieChartBuilder().width(400).height(300).title(title).theme(ChartTheme.GGPlot2).build();
+    
+    this.value = val;
     
     init();
   }
@@ -69,7 +77,12 @@ public class JvPieChart
     
     pie.getStyler().setLegendVisible(false);
     pie.getStyler().setPlotContentSize(0.8);
-    pie.getStyler().setLabelType(LabelType.NameAndPercentage);
+    if (value)
+    {
+      pie.getStyler().setLabelType(LabelType.NameAndValue);
+    } else {
+      pie.getStyler().setLabelType(LabelType.NameAndPercentage);
+    }
     pie.getStyler().setLabelsDistance(1.12);
     pie.getStyler().setLabelsFont(new Font(Font.SANS_SERIF, Font.PLAIN, 14));
     pie.getStyler().setPlotBackgroundColor(Color.white);

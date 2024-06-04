@@ -23,6 +23,7 @@ package jalview.jbgui;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;
@@ -34,6 +35,7 @@ import jalview.api.AlignmentViewPanel;
 import jalview.bin.Cache;
 import jalview.gui.APQHandlers;
 import jalview.gui.Desktop;
+import jalview.gui.JvOptionPane;
 import jalview.io.FileFormatException;
 import jalview.util.MessageManager;
 import jalview.util.Platform;
@@ -79,6 +81,8 @@ public class GDesktop extends JFrame
   JMenuItem saveAsState = new JMenuItem();
 
   JMenuItem loadState = new JMenuItem();
+  
+  JMenuItem deleteRefs = new JMenuItem();
 
   JMenu inputMenu = new JMenu();
 
@@ -279,6 +283,28 @@ public class GDesktop extends JFrame
         loadState_actionPerformed();
       }
     });
+    
+    deleteRefs.setText(MessageManager.getString("action.delete_refs"));
+    deleteRefs.addActionListener(new ActionListener()
+    {
+      @Override
+      public void actionPerformed(ActionEvent e)
+      {
+        try
+        {
+          deleteRefs_actionPerformed(e);
+        } catch (ClassNotFoundException e1)
+        {
+          e1.printStackTrace();
+          JvOptionPane.showInternalMessageDialog(Desktop.desktop, e1.getMessage(), "ClassNotFoundException", JvOptionPane.ERROR_MESSAGE);
+        } catch (IOException e1)
+        {
+          e1.printStackTrace();
+          JvOptionPane.showInternalMessageDialog(Desktop.desktop, e1.getMessage(), "IOException", JvOptionPane.ERROR_MESSAGE);
+        }
+      }
+    });
+    
     inputMenu.setText(MessageManager.getString("label.input_alignment"));
     inputSequence
             .setText(MessageManager.getString("action.fetch_sequences"));
@@ -402,6 +428,7 @@ public class GDesktop extends JFrame
     // FileMenu.add(saveState);
     FileMenu.add(saveAsState);
     FileMenu.add(loadState);
+    FileMenu.add(deleteRefs);
     FileMenu.addSeparator();
     if (!APQHandlers.setQuit)
     {
@@ -569,6 +596,10 @@ public class GDesktop extends JFrame
    *          DOCUMENT ME!
    */
   public void loadState_actionPerformed()
+  {
+  }
+  
+  public void deleteRefs_actionPerformed(ActionEvent e) throws ClassNotFoundException, IOException
   {
   }
 

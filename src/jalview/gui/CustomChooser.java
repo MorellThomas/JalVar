@@ -63,7 +63,9 @@ public class CustomChooser extends JPanel
   
   JRadioButton analysis;
   
-  JRadioButton frequenciesonly;
+  JRadioButton yes;
+  
+  JRadioButton no;
 
   JButton calculate;
 
@@ -113,29 +115,56 @@ public class CustomChooser extends JPanel
     });
     
     //create graphical buttons for Reference and Analysis
-    reference = new JRadioButton(MessageManager.getString("label.reference"));
+    reference = new JRadioButton(MessageManager.getString("label.create_reference"));
     reference.setOpaque(false);
-    
-    frequenciesonly = new JRadioButton(MessageManager.getString("label.frequenciesonly"));
-    frequenciesonly.setOpaque(false);
     
     analysis = new JRadioButton(MessageManager.getString("label.analysis"));
     analysis.setOpaque(false);
 
+    yes = new JRadioButton(MessageManager.getString("action.yes"));
+    yes.setOpaque(false);
+
+    no = new JRadioButton(MessageManager.getString("action.no"));
+    no.setOpaque(false);
+    no.setSelected(true);
 
     JPanel calcChoicePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     calcChoicePanel.setOpaque(false);
 
-    calcChoicePanel.add(reference, FlowLayout.LEFT);
-    calcChoicePanel.add(frequenciesonly, FlowLayout.LEFT);
-    calcChoicePanel.add(analysis, FlowLayout.LEFT);
+    //calcChoicePanel.add(analysis, FlowLayout.LEFT);
+    //calcChoicePanel.add(reference, FlowLayout.LEFT);
+    
+    JPanel referencePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    referencePanel.setOpaque(false);
+    
+    JvSwingUtils.createTitledBorder(referencePanel, MessageManager.getString("label.include_variants"), true);
 
-    //calcChoicePanel.add(customPanel);
+    referencePanel.add(no, FlowLayout.LEFT);
+    referencePanel.add(yes, FlowLayout.LEFT);
+
+    Insets b = referencePanel.getBorder().getBorderInsets(referencePanel);
+
+    JPanel analysisBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    analysisBorderless.setBorder(BorderFactory.createEmptyBorder(2, b.left, 2, b.right));
+    analysisBorderless.add(analysis, FlowLayout.LEFT);
+    analysisBorderless.setOpaque(false);
+    
+    JPanel referenceBorderless = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    analysisBorderless.setBorder(BorderFactory.createEmptyBorder(2, b.left, 2, b.right));
+    referenceBorderless.add(reference, FlowLayout.LEFT);
+    referenceBorderless.setOpaque(false);
+
+    calcChoicePanel.add(analysisBorderless);
+    calcChoicePanel.add(referenceBorderless);
+    calcChoicePanel.add(referencePanel);
 
     ButtonGroup calcTypes = new ButtonGroup();
-    calcTypes.add(reference);
-    calcTypes.add(frequenciesonly);
     calcTypes.add(analysis);
+    calcTypes.add(reference);
+    
+    ButtonGroup yesno = new ButtonGroup();
+    yesno.add(yes);
+    yesno.add(no);
 
     ActionListener calcChanged = new ActionListener()
     {
@@ -146,8 +175,9 @@ public class CustomChooser extends JPanel
       }
     };
     reference.addActionListener(calcChanged);
-    frequenciesonly.addActionListener(calcChanged);
     analysis.addActionListener(calcChanged);
+    yes.addActionListener(calcChanged);
+    no.addActionListener(calcChanged);
 
     /*
      * OK / Cancel buttons
@@ -226,10 +256,9 @@ public class CustomChooser extends JPanel
      * return value of true means enabled and selected
      */
     boolean checkReference = checkEnabled(reference, size, MIN_REFERENCE_SELECTION);
-    boolean checkFrequenciesOnly = checkEnabled(frequenciesonly, size, MIN_REFERENCE_SELECTION);
     boolean checkAnalysis = checkEnabled(analysis, size, MIN_ANALYSIS_SELECTION);
 
-    if (checkReference || checkAnalysis || checkFrequenciesOnly)
+    if (checkReference || checkAnalysis)
     {
       calculate.setToolTipText(null);
       calculate.setEnabled(true);
@@ -287,15 +316,15 @@ public class CustomChooser extends JPanel
   {
     boolean doRef = reference.isSelected();
     boolean doAnal = analysis.isSelected();
-    boolean doFreq = frequenciesonly.isSelected();
+    boolean doVars = yes.isSelected();
 
-    if (doRef && !doAnal && !doFreq)
+    if (doRef && !doAnal && doVars)
     {
-      openEpPanel();
-    } else if (doAnal && !doRef && !doFreq)
+      openEpPanel();  //reference with freqs
+    } else if (doAnal && !doRef)
     {
       openAnalysisPanel();
-    } else if (doFreq && !doRef && !doAnal)
+    } else if (doRef && !doVars && !doAnal)
     {
       runFrequenciesOnlyReference();
     }
