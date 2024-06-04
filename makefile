@@ -10,10 +10,10 @@ CONFIG_PATH := ~/.config/JalviewSNV/
 endif
 
 BUILD_PATH := build/libs/
-JAR_NAME := jalview-all-TEST-j11.jar
+JAR_NAME := jalview-all-2.11.3.0-j11.jar
 BUILD_JAR := $(BUILD_PATH)$(JAR_NAME)
 INSTALL_JAR := $(DEST_PATH)jalviewSNV.jar
-REF_FILE := $(CONFIG_PATH)TTn.ref
+REF_FILE := $(CONFIG_PATH)TTN.ref
 REF_STRUCS := $(CONFIG_PATH)STRUCS
 REF_VCF := $(CONFIG_PATH)TTN.vcf
 
@@ -25,8 +25,8 @@ $(BUILD_JAR) :
 
 install : $(BUILD_JAR) $(REF_FILE) $(REF_STRUCS) $(REF_VCF)
 	mkdir -p $(DEST_PATH)
-	chown $(USER) $(CONFIG_PATH)
 	mv $(BUILD_JAR) $(INSTALL_JAR)
+	chown $(SUDO_USER) $(CONFIG_PATH)
 
 # cp ref in install, have creation of ref here
 $(REF_FILE) : 
@@ -42,7 +42,7 @@ $(REF_VCF) :
 	cp sample/TTN.vcf $(REF_VCF)
 
 clean : 
-	rm $(BUILD_JAR) #$(JAR_NAME)
+	rm $(BUILD_JAR)
 
 uninstall :
 	rm $(INSTALL_JAR) $(REF_FILE) $(REF_VCF)
