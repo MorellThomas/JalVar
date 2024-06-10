@@ -323,7 +323,7 @@ public class CustomChooser extends JPanel
       openEpPanel();  //reference with freqs
     } else if (doAnal && !doRef)
     {
-      openAnalysisPanel();
+      openAnalysisPanel(doVars);
     } else if (doRef && !doVars && !doAnal)
     {
       runFrequenciesOnlyReference();
@@ -335,8 +335,6 @@ public class CustomChooser extends JPanel
   /**
    * Open a new EP panel on the desktop
    * 
-   * @param modelName
-   * @param params
    */
   protected void openEpPanel()
   {
@@ -370,10 +368,9 @@ public class CustomChooser extends JPanel
   /**
    * Open a new Analysis panel on the desktop
    * 
-   * @param modelName
-   * @param params
+   * @param doVars ~ ignore residue input if false
    */
-  protected void openAnalysisPanel()
+  protected void openAnalysisPanel(boolean doVars)
   {
     AlignViewport viewport = af.getViewport();
 
@@ -396,6 +393,11 @@ public class CustomChooser extends JPanel
       return;
     }
 
+    if (!doVars)
+    {
+      new AnalysisInput(af, doVars);
+      return;
+    }
     /*
      * construct the panel and kick off its custom thread
      */

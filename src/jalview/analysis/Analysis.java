@@ -169,24 +169,31 @@ public class Analysis implements Runnable
    * @throws IOException 
    * @throws ClassNotFoundException 
    */
-  public Analysis(AlignmentPanel proteinPanel, int res) throws ClassNotFoundException, IOException // alignment viewport has to only consist of the gene and protein sequence
+  public Analysis(AlignmentPanel proteinPanel, int res, boolean doVars) throws ClassNotFoundException, IOException // alignment viewport has to only consist of the gene and protein sequence
   {
+    if (!proteinPanel.getAlignment().getSequenceAt(0).isProtein())
+    {
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, "Alignment does not contain a protein sequence. Aborting.", "No Protein Sequence Error", JvOptionPane.ERROR_MESSAGE);
+      throw new RuntimeException();
+    }
     this.proteinAlignmentPanel = proteinPanel;
     this.proteinViewport = proteinAlignmentPanel.av;
+    this.protSeq = proteinViewport.getAlignment().getSequencesArray()[0];
+    this.protSeqName = protSeq.getName();
+
     this.residue = res - 1;   // convert base 1 input to internal base 0
+    this.frequenciesonly = !doVars;
     
     AlignmentViewport _tmp = null;
     for (AlignmentViewport port : Desktop.getViewports(null))
     {
-      if (port != proteinViewport)      //should always happen, otherwise error
+      if (port != proteinViewport && port.getAlignment().getSequenceAt(0).getName().equals(protSeqName))
       {
         _tmp = port;
       }
     }
     this.geneViewport = _tmp;
 
-    this.protSeq = proteinViewport.getAlignment().getSequencesArray()[0];
-    this.protSeqName = protSeq.getName();
     this.geneSeq = geneViewport == null ? null : geneViewport.getAlignment().getSequencesArray()[0];
     
     this.activeJmols = new HashMap<String, VariantJmol>();
@@ -204,7 +211,7 @@ public class Analysis implements Runnable
         ref = String.format("%s%s", EpReferenceFile.REFERENCE_PATH, tmp);
       } else {
         //throws a warning dialog saying that no file with the name {refFile} was found
-        JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No reference file \"%s\" found. Aborting.", ref), "No Reference Error", JvOptionPane.ERROR_MESSAGE);
+        JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No reference file in \"%s\" found that contains \"%s\". Aborting.", EpReferenceFile.REFERENCE_PATH, protSeqName), "No Reference Error", JvOptionPane.ERROR_MESSAGE);
         throw new RuntimeException();
       }
     }
@@ -248,11 +255,13 @@ public class Analysis implements Runnable
       //load the reference
       erf = EpReferenceFile.loadReference(refFile);
 
+      /*
       String _1stkey = (String) erf.getDomain().keySet().toArray()[0];
       HashMap<Character, int[]> _1stpair = erf.getDomain().get(_1stkey).peekFirst();
       this.frequenciesonly = _1stpair.get((Character) _1stpair.keySet().toArray()[0]).length > 1 ? false : true;  // if GPs are covered
       _1stkey = null;
       _1stpair = null;
+      */
       
       // set reverse strand
       this.isReverse = erf.getReverse();

@@ -132,6 +132,7 @@ public class EpInput extends JPanel
     //creates the buttons and fields
     forward = new JRadioButton(MessageManager.getString("label.forward"));
     forward.setOpaque(false);
+    forward.setSelected(true);
     
     reverse = new JRadioButton(MessageManager.getString("label.reverse"));
     reverse.setOpaque(false);
@@ -269,6 +270,13 @@ public class EpInput extends JPanel
     
     startPosition = Integer.parseInt(startPoint.getText());
     
+    //check if added (last) sequence in the alignment is protein (needs to be xNA)
+    if (af.getViewport().getAlignment().getSequenceAt(af.getViewport().getAlignment().getHeight()-1).isProtein())
+    {
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No nucleotide sequence added. Aborting.", "No Nucleotide Error", JvOptionPane.ERROR_MESSAGE);
+      throw new RuntimeException();
+    }
+
     epPanel = new EPPanel(af, startPosition, FoR, width);
     new Thread(epPanel).start();
     closeFrame();

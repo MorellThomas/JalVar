@@ -47,6 +47,8 @@ public class AnalysisPanel extends JPanel
 
   private boolean working;
   
+  private final boolean doVars;
+  
   private IProgressIndicator progressBar;
   
   private long progId;
@@ -59,10 +61,11 @@ public class AnalysisPanel extends JPanel
    * @param alignPanel
    * @param residue
    */
-  public AnalysisPanel(AlignmentPanel alignPanel, int residue)
+  public AnalysisPanel(AlignmentPanel alignPanel, int residue, boolean doVars)
   {
     this.av = alignPanel.av;
     this.ap = alignPanel;
+    this.doVars = doVars;
     
     this.residue = residue;
   }
@@ -85,7 +88,7 @@ public class AnalysisPanel extends JPanel
     progressBar.setProgressBar(message, progId);
     try
     {
-      anal = new Analysis(ap, residue);
+      anal = new Analysis(ap, residue, doVars);
       setAnalysis(anal);
       anal.run(); // executes in same thread, wait for completion
 

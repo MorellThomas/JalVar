@@ -303,6 +303,7 @@ public class VcfInfoInput extends JPanel
     origEnd = Integer.parseInt(toOrig.getText());
     vcfStart = Integer.parseInt(fromVcf.getText());
     vcfEnd = Integer.parseInt(toVcf.getText());
+    
     origRatio = Integer.parseInt(ratioOrig.getText());
     vcfRatio = Integer.parseInt(ratioVcf.getText());
     

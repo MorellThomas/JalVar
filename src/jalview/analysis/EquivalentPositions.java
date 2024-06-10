@@ -27,13 +27,11 @@ import jalview.datamodel.SequenceI;
 import jalview.datamodel.SequenceGroup;
 import jalview.gui.AlignFrame;
 import jalview.gui.AlignViewport;
-import jalview.gui.CutAndPasteTransfer;
 import jalview.gui.Desktop;
+import jalview.gui.JvOptionPane;
 import jalview.gui.NFPanel;
-import jalview.gui.OOMWarning;
 import jalview.io.EpReferenceFile;
 import jalview.math.MiscMath;
-import jalview.util.MessageManager;
 import jalview.viewmodel.AlignmentViewport;
 
 import java.io.File;
@@ -41,8 +39,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 
@@ -182,17 +178,6 @@ public class EquivalentPositions implements Runnable
       
       List<SequenceI> sequencesList = seqs.getAlignment().getSequences();   // needed for checking if there is a gap 
 
-      //prepare the output and add the header
-      StringBuffer csv = new StringBuffer();
-      csv.append("name");
-      for (int i = 1; i <= width; i++)
-      {
-        csv.append(String.format(", %d", i));
-        csv.append(String.format(", %d", i));
-        csv.append(String.format(", %d", i));
-      }
-      csv.append("\n");
-
       //for each sequence in the alignment
       int skip = frequenciesonly ? 0 : 1;
       for ( int i = 0; i < seqs.getAlignment().getSequencesArray().length - skip; i++)
@@ -287,17 +272,6 @@ public class EquivalentPositions implements Runnable
             epCalc++;
           }
           
-          //output information
-          csv.append(sequences[i].getName());
-          for (int k : genomicCorrespondingPositions) // k = GP
-          {
-            if (k < 0)
-            {
-              csv.append(", -");
-            } else {
-              csv.append(String.format(", %d", k));
-            }
-          }
         } else {    // if frequenciesonly
           for (int ep = 0; ep < width; ep++)
           {
@@ -309,25 +283,10 @@ public class EquivalentPositions implements Runnable
             sequencePlusInfoList.add(aaepgpPairs);
           }
         }
-        csv.append("\n");
         dGroup.add(sequences[i].getName());
         domainOffset.putIfAbsent(sequences[i].getName(), frameOffset);
         domain.putIfAbsent(sequences[i].getName(), sequencePlusInfoList);
         alignedDomain.putIfAbsent(sequences[i].getName(), sequences[i].getSequence());
-      }
-      
-      String CsvString = csv.toString();
-        
-      CutAndPasteTransfer cap = new CutAndPasteTransfer();
-      try
-      {
-        cap.setText(CsvString);
-        Desktop.addInternalFrame(cap, MessageManager
-                .formatMessage("label.points_for_params", "Outputting Equivalent Positions"), 500, 500);
-      } catch (OutOfMemoryError oom)
-      {
-        new OOMWarning("exporting Natural Frequencies", oom);
-        cap.dispose();
       }
       
       // start preparing the reference
@@ -363,6 +322,8 @@ public class EquivalentPositions implements Runnable
       
       // run natural Frequencies
       runNf();
+      
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, "Finished creating the Reference", "Reference Finished", JvOptionPane.INFORMATION_MESSAGE);
       
     } catch (Exception q)
     {

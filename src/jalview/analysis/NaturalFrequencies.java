@@ -26,16 +26,12 @@ import jalview.datamodel.AlignmentI; // not for pasimap
 import jalview.datamodel.ProfilesI;
 import jalview.datamodel.SequenceI;
 import jalview.datamodel.ResidueCount; // not for pasimap
-import jalview.gui.CutAndPasteTransfer;
 import jalview.gui.Desktop;
 import jalview.gui.JvOptionPane;
-import jalview.gui.OOMWarning;
 import jalview.io.EpReferenceFile;
 import jalview.math.MiscMath;  // not for pasimap
-import jalview.util.MessageManager;
 import jalview.viewmodel.AlignmentViewport;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Arrays;
@@ -56,8 +52,6 @@ public class NaturalFrequencies implements Runnable
   /*
    * outputs
    */
-  private String CsvString;
-  
   private HashMap<String[], LinkedList<HashMap<Character, Float>>> naturalFrequency;
 
   /**
@@ -117,23 +111,12 @@ public class NaturalFrequencies implements Runnable
       }
       
       char[] AaList = new char[]{'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', '-'};
-      //prepare the output and add the header
-      StringBuffer csv = new StringBuffer();
-      csv.append("\"Position\"");
-      for (char Aa : AaList)
-      {
-        csv.append("," + Aa);
-      }
-      csv.append("\n");
       int nSeqs = aseqs.length;
-      int position = 1; // start from position 1
-      //int position = 0;
       
       //calculating the %
       for (ResidueCount rc : residueCountses)
       {
         aapcPairs = new HashMap<Character, Float>();
-        csv.append(Integer.toString(position));
         
         float[] percentages = new float[AaList.length];
 
@@ -158,29 +141,9 @@ public class NaturalFrequencies implements Runnable
           percentages[percentages.length - 1] = gapPC;
           aapcPairs.put('-', gapPC);
         }
-        for (float pc : percentages)
-        {
-          csv.append(",").append(pc);   // output the data
-        }
         listofPairs.add(aapcPairs);
-        csv.append("\n");
-        position++;
       }
       
-      CsvString = csv.toString();
-      
-      CutAndPasteTransfer cap = new CutAndPasteTransfer();
-      try
-      {
-        cap.setText(CsvString);
-        Desktop.addInternalFrame(cap, MessageManager
-                .formatMessage("label.points_for_params", "Outputting Natural Frequencies"), 500, 500);
-      } catch (OutOfMemoryError oom)
-      {
-        new OOMWarning("exporting Natural Frequencies", oom);
-        cap.dispose();
-      }
-
       // save data to the corresponding ref file if its existing
       naturalFrequency.putIfAbsent(sequenceNames, listofPairs); 
     

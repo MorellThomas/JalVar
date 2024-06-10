@@ -53,6 +53,8 @@ public class AnalysisInput extends JPanel
   
   AlignViewport av;
   
+  private final boolean doVars;
+  
   int width;
 
   JTextField residueField;
@@ -76,9 +78,14 @@ public class AnalysisInput extends JPanel
    */
   public AnalysisInput(AlignFrame alignFrame)
   {
+    this(alignFrame, true);
+  }
+  public AnalysisInput(AlignFrame alignFrame, boolean doVars)
+  {
     this.af = alignFrame;
     this.av = alignFrame.getViewport();
     this.width = this.av.getAlignment().getWidth();
+    this.doVars = doVars;
     init();
     af.alignPanel.setAnalysisInput(this);
   }
@@ -195,7 +202,7 @@ public class AnalysisInput extends JPanel
   {
     residue = Integer.parseInt(residueField.getText());
     
-    analysisPanel = new AnalysisPanel(av.getAlignPanel(), residue);
+    analysisPanel = new AnalysisPanel(av.getAlignPanel(), residue, doVars);
     new Thread(analysisPanel).start();
     closeFrame();
   }

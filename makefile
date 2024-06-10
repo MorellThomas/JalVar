@@ -35,7 +35,7 @@ $(REF_FILE) :
 
 $(REF_STRUCS) :
 	mkdir -p $(CONFIG_PATH)
-	cp -r sample/TTN-strucs $(REF_STRUCS)
+	cp -r sample/STRUCS $(REF_STRUCS)
 
 $(REF_VCF) :
 	mkdir -p $(CONFIG_PATH)
