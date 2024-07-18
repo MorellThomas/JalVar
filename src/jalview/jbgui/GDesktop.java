@@ -72,6 +72,8 @@ public class GDesktop extends JFrame
 
   FlowLayout flowLayout1 = new FlowLayout();
 
+  JMenuItem deleteRefs = new JMenuItem();
+
   protected JMenu toolsMenu = new JMenu();
 
   JMenuItem preferences = new JMenuItem();
@@ -82,8 +84,8 @@ public class GDesktop extends JFrame
 
   JMenuItem loadState = new JMenuItem();
   
-  JMenuItem deleteRefs = new JMenuItem();
-
+  JMenuItem analyseFreqs = new JMenuItem();
+  
   JMenu inputMenu = new JMenu();
 
   JMenuItem inputSequence = new JMenuItem();
@@ -284,6 +286,27 @@ public class GDesktop extends JFrame
       }
     });
     
+    analyseFreqs.setText(MessageManager.getString("action.analyse_freqs"));
+    analyseFreqs.addActionListener(new ActionListener()
+    {
+      @Override
+      public void actionPerformed(ActionEvent e)
+      {
+        try
+        {
+          analyseFreqs_actionPerformed(e);
+        } catch (ClassNotFoundException e1)
+        {
+          e1.printStackTrace();
+          JvOptionPane.showInternalMessageDialog(Desktop.desktop, e1.getMessage(), "ClassNotFoundException", JvOptionPane.ERROR_MESSAGE);
+        } catch (IOException e1)
+        {
+          e1.printStackTrace();
+          JvOptionPane.showInternalMessageDialog(Desktop.desktop, e1.getMessage(), "IOException", JvOptionPane.ERROR_MESSAGE);
+        }
+      }
+    });
+    
     deleteRefs.setText(MessageManager.getString("action.delete_refs"));
     deleteRefs.addActionListener(new ActionListener()
     {
@@ -428,8 +451,8 @@ public class GDesktop extends JFrame
     // FileMenu.add(saveState);
     FileMenu.add(saveAsState);
     FileMenu.add(loadState);
-    FileMenu.add(deleteRefs);
     FileMenu.addSeparator();
+    FileMenu.add(deleteRefs);
     if (!APQHandlers.setQuit)
     {
       FileMenu.add(quit);
@@ -453,6 +476,8 @@ public class GDesktop extends JFrame
     }
     toolsMenu.add(experimentalFeatures);
     // toolsMenu.add(snapShotWindow);
+    toolsMenu.addSeparator();
+    toolsMenu.add(analyseFreqs);
     inputMenu.add(inputLocalFileMenuItem);
     inputMenu.add(inputURLMenuItem);
     inputMenu.add(inputTextboxMenuItem);
@@ -596,6 +621,10 @@ public class GDesktop extends JFrame
    *          DOCUMENT ME!
    */
   public void loadState_actionPerformed()
+  {
+  }
+  
+  public void analyseFreqs_actionPerformed(ActionEvent e) throws ClassNotFoundException, IOException
   {
   }
   

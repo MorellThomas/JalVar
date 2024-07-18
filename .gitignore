@@ -2,7 +2,6 @@
 /build/**
 **/*.class
 *.ref
-!TTN.ref
 /.DS_Store
 /build/
 !build/libs/jalview-all-2.11.3.0-j11.jar

@@ -46,7 +46,9 @@ import jalview.viewmodel.AlignmentViewport;
 import java.awt.Color;
 import java.beans.PropertyChangeListener;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
@@ -75,11 +77,13 @@ public class Analysis implements Runnable
    */
   final private AlignmentPanel proteinAlignmentPanel;
   
-  final private AlignmentViewport proteinViewport;
+  private AlignmentViewport proteinViewport;
   
   final private AlignmentViewport geneViewport;
   
   private int residue;  //base 0
+  
+  private int oldEP = -1;  // is set when recalcing, needed for frequency pie chart
   
   final private String refFile;
   
@@ -171,6 +175,46 @@ public class Analysis implements Runnable
    */
   public Analysis(AlignmentPanel proteinPanel, int res, boolean doVars) throws ClassNotFoundException, IOException // alignment viewport has to only consist of the gene and protein sequence
   {
+    GeneticCodes _gc = GeneticCodes.getInstance();
+    this.standardTranslationTable = _gc.getStandardCodeTable();
+
+    HashMap<Character, String> acidic = new HashMap<Character, String>(Map.of('D', "Acidic", 'E', "Acidic"));
+    HashMap<Character, String> basic = new HashMap<Character, String>(Map.of('H', "Basic", 'K', "Basic", 'R', "Basic"));
+    HashMap<Character, String> hydrophilic = new HashMap<Character, String>(Map.of('N', "Hydrophilic", 'Q', "Hydrophilic"));
+    HashMap<Character, String> intermediate = new HashMap<Character, String>(Map.of('Y', "Intermediate", 'W', "Intermediate", 'P', "Intermediate", 'G', "Intermediate", 'A', "Intermediate", 'S', "Intermediate", 'T', "Intermediate", 'C', "Intermediate"));
+    HashMap<Character, String> hydrophobic = new HashMap<Character, String>(Map.of('F', "Hydrophobic", 'M', "Hydrophobic", 'I', "Hydrophobic", 'L', "Hydrophobic", 'V', "Hydrophobic"));
+    this.aaGroups.putAll(acidic);
+    this.aaGroups.putAll(basic);
+    this.aaGroups.putAll(hydrophilic);
+    this.aaGroups.putAll(intermediate);
+    this.aaGroups.putAll(hydrophobic);
+    
+    //frequencies only, called from desktop 
+    if (proteinPanel == null)
+    {
+      this.proteinAlignmentPanel = null;
+      this.proteinViewport = null;
+      this.protSeq = null;
+      this.protSeqName = null;
+      this.residue = -1;
+      this.frequenciesonly = !doVars;
+      this.geneViewport = null;
+      this.activeJmols = new HashMap<String, VariantJmol>();
+      this.foundDomains = new HashMap<SequenceI, TreeMap<Integer, String[]>>();
+      this.frameOffset = new HashMap<String, Integer>();
+      
+      String tmp = EpReferenceFile.selectReference("label.choose_reference");
+      this.refFile = String.format("%s%s", EpReferenceFile.REFERENCE_PATH, tmp);
+      if (refFile == null)
+      {
+        JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No reference selected.", "No Reference Error", JvOptionPane.ERROR_MESSAGE);
+        throw new RuntimeException();
+      }
+      this.total = 0;
+      
+      return;
+    }
+
     if (!proteinPanel.getAlignment().getSequenceAt(0).isProtein())
     {
       JvOptionPane.showInternalMessageDialog(Desktop.desktop, "Alignment does not contain a protein sequence. Aborting.", "No Protein Sequence Error", JvOptionPane.ERROR_MESSAGE);
@@ -217,20 +261,6 @@ public class Analysis implements Runnable
     }
     this.refFile = ref;
       
-    GeneticCodes _gc = GeneticCodes.getInstance();
-    this.standardTranslationTable = _gc.getStandardCodeTable();
-
-    HashMap<Character, String> acidic = new HashMap<Character, String>(Map.of('D', "Acidic", 'E', "Acidic"));
-    HashMap<Character, String> basic = new HashMap<Character, String>(Map.of('H', "Basic", 'K', "Basic", 'R', "Basic"));
-    HashMap<Character, String> hydrophilic = new HashMap<Character, String>(Map.of('N', "Hydrophilic", 'Q', "Hydrophilic"));
-    HashMap<Character, String> intermediate = new HashMap<Character, String>(Map.of('Y', "Intermediate", 'W', "Intermediate", 'P', "Intermediate", 'G', "Intermediate", 'A', "Intermediate", 'S', "Intermediate", 'T', "Intermediate", 'C', "Intermediate"));
-    HashMap<Character, String> hydrophobic = new HashMap<Character, String>(Map.of('F', "Hydrophobic", 'M', "Hydrophobic", 'I', "Hydrophobic", 'L', "Hydrophobic", 'V', "Hydrophobic"));
-    this.aaGroups.putAll(acidic);
-    this.aaGroups.putAll(basic);
-    this.aaGroups.putAll(hydrophilic);
-    this.aaGroups.putAll(intermediate);
-    this.aaGroups.putAll(hydrophobic);
-    
     total = proteinViewport.getAlignment().getHeight() - 1;
     
   }
@@ -279,7 +309,14 @@ public class Analysis implements Runnable
           JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No variance file added.", "No VCF Warning", JvOptionPane.WARNING_MESSAGE);
       }
         
-      produceSummary();   // performs the analysis for the summary csv output and calls the addDomainMSApopup
+      /*
+       *  performs the analysis for the summary csv output and calls the addDomainMSApopup
+       *  if its the initial run and only for frequencies, 
+       *  skip the complete analysis and only show the msa to enable click-analysis
+       */
+      produceSummary();   
+      
+      createFirstSequenceFrequencyTable();
 
       //starting VariantJmol
       for (SequenceI variantDomain : foundDomains.keySet())
@@ -356,9 +393,54 @@ public class Analysis implements Runnable
           }
         }
         
-        new JvPieChart(String.format("Variant Distribution of EP %d", selectedEP), histogramMapForPie, selectedSequence, true);
+        if (!recalcing)
+        {
+          new JvPieChart(String.format("Variant Distribution of column %d", selectedEP), histogramMapForPie, selectedSequence, true);
+        }
       }
       
+    clean();
+    } catch (Exception q)
+    {
+      Console.error("Error analysing:  " + q.getMessage());
+      q.printStackTrace();
+    }
+  }
+  
+  public void prepare()
+  {
+    try
+    {
+      erf = EpReferenceFile.loadReference(refFile);
+
+      // set reverse strand
+      this.isReverse = erf.getReverse();
+      
+      //set frame offset
+      this.frameOffset = erf.getDomainOffset();
+      
+      String sampleSequenceName;
+      if (erf.getDomainGroups().size() > 1)
+      {
+        String key = erf.chooseDomainGroup();
+        sampleSequenceName = (String) erf.getDomainGroups().get(key).toArray()[0];
+      } else {
+        String key = (String) erf.getDomainGroups().keySet().toArray()[0];
+        sampleSequenceName = (String) erf.getDomainGroups().get(key).toArray()[0];
+      }
+
+      this.protSeq = erf.getGaplessSequence(sampleSequenceName);
+      this.protSeqName = sampleSequenceName;
+
+      proteinViewport = new AlignViewport(new Alignment(new SequenceI[]{protSeq}));
+        
+      this.foundDomainGroup = addDomainMSAPopup(protSeqName, null);
+
+      if (frequenciesonly && (avMSA != null))
+        avMSA.setAnalysis(this);
+      
+      createFirstSequenceFrequencyTable();
+
     } catch (Exception q)
     {
       Console.error("Error analysing:  " + q.getMessage());
@@ -376,95 +458,81 @@ public class Analysis implements Runnable
   }
   private void produceSummary(String target)
   {
-      //create the output StringBuffer and add the heading line
-      csv = new StringBuffer();
-      csv.append(String.format("Information on the domains found at position %d\n\n", residue + 1));
+    //create the output StringBuffer and add the heading line
+    csv = new StringBuffer();
+    csv.append(String.format("Information on the domains found at position %d\n\n", residue + 1));
+    
+    // clean up the AlignmentViewport by removing all added sequences again
+    clean();
+    
+    //load the EP-GP HashMap
+    HashMap<String, LinkedList<HashMap<Character, int[]>>> domain = erf.getDomain();
+
+    for (String domainName : domain.keySet())   // adding all domains from reference to AlignmentViewport
+    {
+      if ((target != null) && (domainName.equals(target)))
+      {
+        proteinViewport.getAlignment().addSequence(erf.getGaplessSequence(domainName));  // adding domain to AlignmentViewport seqs
+        break;
+      } else if (target == null)
+      {
+        proteinViewport.getAlignment().addSequence(erf.getGaplessSequence(domainName));  // adding domain to AlignmentViewport seqs
+      }
+    }
+    
+    SequenceI[] sequences = proteinViewport.getAlignment().getSequencesArray();  // SequenceI array having the input prot seq at 0
+    byte skip = 1;
+    float highestMatch = -1f;
+    AlignSeq correctAlignment = null;  // alignment to be used later, contains ref seq and found domain
+
+    // do the alignment
+    for ( int i = skip; i < proteinViewport.getAlignment().getHeight(); i++)
+    {
+      SequenceGroup sg = new SequenceGroup();
+      sg.addSequence(protSeq, false);
+      sg.addSequence(sequences[i], false);
       
-      // clean up the AlignmentViewport by removing all added sequences again
+      // copying code from gui/PairwiseAlignPanel
+      SequenceI[] forAlignment = new SequenceI[2];
+      forAlignment[0] = protSeq;
+      forAlignment[1] = sequences[i];
+      
+      String[] seqStrings = new String[2];
+      seqStrings[0] = forAlignment[0].getSequenceAsString();
+      seqStrings[1] = forAlignment[1].getSequenceAsString();
+
+      AlignSeq as = new AlignSeq(forAlignment[0], seqStrings[0], forAlignment[1], seqStrings[1], AlignSeq.PEP); // align the 2 sequences
+      as.calcScoreMatrix();
+      as.traceAlignment();
+      as.scoreAlignment();
+      //as.printAlignment(System.out);
+      
+      if ((as.getSeq1Start()-1 <= residue) && (as.getSeq1End() > residue)) // if residue is inside the alignment
+      {
+        System.out.println(sequences[i].getName());
+        if (as.getAlignmentScore() > highestMatch)
+        {
+          highestMatch = as.getAlignmentScore();
+          correctAlignment = as;
+        }
+      }
+      
+      if (!recalcing)
+        pcSupport.firePropertyChange(PROGRESS, progress, ++progress);
+    }
+
+    if (correctAlignment == null) // check if a domain was found at the position
+    {
       clean();
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No domain found at residue %d", residue+1), "No Domain Found Error", JvOptionPane.ERROR_MESSAGE);
+      throw new RuntimeException();
+    }
       
-      //load the EP-GP HashMap
-      HashMap<String, LinkedList<HashMap<Character, int[]>>> domain = erf.getDomain();
-
-      for (String domainName : domain.keySet())   // adding all domains from reference to AlignmentViewport
-      {
-        LinkedList<HashMap<Character, int[]>> aaList = domain.get(domainName);
-        char[] aas = new char[aaList.size()];   // domain sequence
-        for (int i = 0; i < aaList.size(); i++)
-        {
-          HashMap<Character, int[]> aaepPair = aaList.get(i); 
-          char c = (char) aaepPair.keySet().toArray()[0]; 
-          aas[i] = c;
-        }
-        if ((target != null) && (domainName.equals(target)))
-        {
-          proteinViewport.getAlignment().addSequence(new Sequence(domainName, aas, 1, aas.length));  // adding domain to AlignmentViewport seqs
-          break;
-        } else if (target == null)
-        {
-          proteinViewport.getAlignment().addSequence(new Sequence(domainName, aas, 1, aas.length));  // adding domain to AlignmentViewport seqs
-        }
-      }
-      
-      AlignSeq[] alignments = new AlignSeq[proteinViewport.getAlignment().getHeight() - 1];  // list of all pairwise alignments of domain to input prot seq
-      byte skip = 1;
-      // do the alignment
-      for ( int i = skip; i < proteinViewport.getAlignment().getHeight(); i++)
-      {
-      
-        SequenceI[] sequences = proteinViewport.getAlignment().getSequencesArray();  // SequenceI array having the input prot seq at 0
-        
-        SequenceGroup sg = new SequenceGroup();
-        sg.addSequence(protSeq, false);
-        sg.addSequence(sequences[i], false);
-        
-        // copying code from gui/PairwiseAlignPanel
-        SequenceI[] forAlignment = new SequenceI[2];
-        forAlignment[0] = protSeq;
-        forAlignment[1] = sequences[i];
-        
-        sequences = null;
-        
-        String[] seqStrings = new String[2];
-        seqStrings[0] = forAlignment[0].getSequenceAsString();
-        seqStrings[1] = forAlignment[1].getSequenceAsString();
-
-        AlignSeq as = new AlignSeq(forAlignment[0], seqStrings[0], forAlignment[1], seqStrings[1], AlignSeq.PEP); // align the 2 sequences
-        as.calcScoreMatrix();
-        as.traceAlignment();
-        as.scoreAlignment();
-        as.printAlignment(System.out);
-        
-        alignments[i-skip] = as; // save the alignment for later
-        
-        if (!recalcing)
-          pcSupport.firePropertyChange(PROGRESS, progress, ++progress);
-      }
-
-      // clean up the AlignmentViewport by removing all added sequences again
-      clean();
-      
-      int alignmentNr = 0;    // index of 'alignments' that holds the best alignment e.g. the found domain
-      int k = 0;
-      float highestMatch = -1f;
-      for (AlignSeq al : alignments)  // finding the domains which align at the specified position
-      {
-        if ((al.getSeq1Start()-1 <= residue) && (al.getSeq1End() > residue)) //if the residue is inside the alignment region
-        {
-          int posInDomain = al.getSeq2Start() + (residue + 1 - al.getSeq1Start()); 
-          //if(al.astr2.charAt(posInDomain) != '-')     //skip gaps
-          //{
-            if (al.getAlignmentScore() > highestMatch)
-            {
-              highestMatch = al.getAlignmentScore();
-              alignmentNr = k;
-            }
-          //}
-        }
-        k++;
-      }
-      selectedSequence = alignments[alignmentNr].s2.getName();
-            
+    // clean up the AlignmentViewport by removing all added sequences again
+    clean();
+    
+    selectedSequence = correctAlignment.s2.getName();
+          
     // get the natural frequency map from the reference file
     HashMap<String[], LinkedList<HashMap<Character, Float>>> nF = erf.getNaturalFrequency();
       
@@ -480,14 +548,15 @@ public class Analysis implements Runnable
     //create and format the outputs
     if (frequenciesonly)
     {
-      csv.append(String.format("Domain: %s\t(EPs %d - %d)\n", selectedSequence, aaList.peekFirst().get(aas[0])[0], aaList.peekLast().get(aas[aas.length-1])[0]));
+      csv.append(String.format("Domain: %s\t(Columns %d - %d)\n", selectedSequence, aaList.peekFirst().get(aas[0])[0], aaList.peekLast().get(aas[aas.length-1])[0]));
     } else {
-      csv.append(String.format("Domain: %s\t(EPs %d - %d; GPs %d - %d)\n", selectedSequence, aaList.peekFirst().get(aas[0])[0], aaList.peekLast().get(aas[aas.length-1])[0], aaList.peekFirst().get(aas[0])[1], aaList.peekLast().get(aas[aas.length-1])[3]));
+      csv.append(String.format("Domain: %s\t(Columns %d - %d; Nucleotides %d - %d)\n", selectedSequence, aaList.peekFirst().get(aas[0])[0], aaList.peekLast().get(aas[aas.length-1])[0], aaList.peekFirst().get(aas[0])[1], aaList.peekLast().get(aas[aas.length-1])[3]));
+      csv.append(String.format("aligns to %s from %d - %d\n", protSeqName, correctAlignment.getSeq1Start(), correctAlignment.getSeq1End()));
     }
     
-    csv.append(String.format("aligns to %s from %d - %d\n", protSeqName, alignments[alignmentNr].getSeq1Start(), alignments[alignmentNr].getSeq1End()));
     
-    int posInDomain = alignments[alignmentNr].getSeq2Start() + (residue - alignments[alignmentNr].getSeq1Start());  // residue number in the domain without gaps !! not the EP (base 0)
+    int posInDomain = correctAlignment.getSeq2Start() + (residue - correctAlignment.getSeq1Start());  // residue number in the domain without gaps !! not the EP (base 0)
+    System.out.println(String.format("%d = %d + (%d - %d)", posInDomain, correctAlignment.getSeq2Start(), residue, correctAlignment.getSeq1Start()));
 
     // abort if input residue is too big
     if (posInDomain >= aaList.size())
@@ -505,9 +574,9 @@ public class Analysis implements Runnable
 
     if (frequenciesonly)
     {
-      csv.append(String.format("%s residue %d (%c): %s (%s) EP %d\n", protSeqName, residue + 1, protSeq.getCharAt(residue), selectedSequence, aaAtPos, epgp[0]));
+      csv.append(String.format("%s (%s) Column %d\n", selectedSequence, aaAtPos, epgp[0]));
     } else {
-      csv.append(String.format("%s residue %d (%c): %s (%s) EP %d, GPs [%d, %d, %d]\n", protSeqName, residue + 1, protSeq.getCharAt(residue), selectedSequence, aaAtPos, epgp[0], epgp[1], epgp[2], epgp[3]));
+      csv.append(String.format("%s residue %d (%c): %s (%s) Column %d, Nucleotides [%d, %d, %d]\n", protSeqName, residue + 1, protSeq.getCharAt(residue), selectedSequence, aaAtPos, epgp[0], epgp[1], epgp[2], epgp[3]));
     }
     
     //natural frequencies
@@ -599,7 +668,10 @@ public class Analysis implements Runnable
       cap.dispose();
     }
     //Frequence Pie Chart
-    new JvPieChart(String.format("Frequency Distribution of %s at EP %d", foundDomainGroup, selectedEP), nfAtThisPosition, selectedSequence);
+    if (!recalcing || selectedEP != oldEP)
+    {
+      new JvPieChart(String.format("Frequency Distribution of %s at column %d", foundDomainGroup, selectedEP), nfAtThisPosition, selectedSequence);
+    }
 
     // pie for variance
     if ((avMSA != null) && (RepeatingVariance.getAnnotation(avMSA.getAlignment()) != null))
@@ -619,7 +691,10 @@ public class Analysis implements Runnable
         }
       }
       
-      new JvPieChart(String.format("Variant Distribution of EP %d", selectedEP), histogramMapForPie, selectedSequence, true);
+      if (!recalcing || selectedEP != oldEP)
+      {
+        new JvPieChart(String.format("Variant Distribution of column %d", selectedEP), histogramMapForPie, selectedSequence, true);
+      }
     }
     
   }
@@ -776,9 +851,9 @@ public class Analysis implements Runnable
       {
 
         if (feature.otherDetails.containsKey("AF"))
-          gpListingsBuffer.append(String.format("GP %d %s: %s -> %s (%c -> %c) - frequency %s\n", pos, feature.getType(), snvStrings[0], snvStrings[1], oldAA, newAA, feature.otherDetails.get("AF").toString()));
+          gpListingsBuffer.append(String.format("Nucleotide %d %s: %s -> %s (%c -> %c) - frequency %s\n", pos, feature.getType(), snvStrings[0], snvStrings[1], oldAA, newAA, feature.otherDetails.get("AF").toString()));
         else
-          gpListingsBuffer.append(String.format("GP %d %s: %s -> %s (%c -> %c)\n", pos, feature.getType(), snvStrings[0], snvStrings[1], oldAA, newAA));
+          gpListingsBuffer.append(String.format("Nucleotide %d %s: %s -> %s (%c -> %c)\n", pos, feature.getType(), snvStrings[0], snvStrings[1], oldAA, newAA));
 
         // summarizing statement
         if (isFirstLoop)
@@ -1004,10 +1079,10 @@ public class Analysis implements Runnable
     
     av = af.getCurrentView();
 
-    colourVariants(af, domain, var, true, 1);
 
     if (!frequenciesonly)
     {
+      colourVariants(af, domain, var, true, 1);
       //af.getCurrentView().setAnalysis(this);
       
       af.getCurrentView().autoCalculateVariance = true;
@@ -1085,7 +1160,7 @@ public class Analysis implements Runnable
       boolean isSelectedColumn = ep == (selectedEP - 1) ? true : false;     // ep base 0, selectedEP base 1
 
       StringBuilder newLabel = new StringBuilder();
-      newLabel.append("Variant at EP " + (ep+1) + " (");    //display ep as base 1, uniform with column numbering and summary output
+      newLabel.append("Variant at column " + (ep+1) + " (");    //display ep as base 1, uniform with column numbering and summary output
       for (int i = 0; i < fromRes.length; i++)
       {
         newLabel.append(String.format("%c,%c", fromRes[i], toRes[i]));
@@ -1344,12 +1419,7 @@ public class Analysis implements Runnable
   private int convertEpToRes(String name, int res)
   {
     char[] domainWithGaps = erf.getAlignedDomains().get(name);
-    LinkedList<HashMap<Character, int[]>> list = erf.getDomain().get(name);
-    char[] domainWithoutGaps = new char[list.size()];
-    for (int i = 0; i < domainWithoutGaps.length; i++)
-    {
-      domainWithoutGaps[i] = (char) list.get(i).keySet().toArray()[0];
-    }
+    char[] domainWithoutGaps = erf.getGaplessSequence(name).getSequence();
     
     int j = 0;  //index of nongapped sequence
     for (int i = 0; i < domainWithGaps.length; i++)
@@ -1365,6 +1435,102 @@ public class Analysis implements Runnable
       }
     }
     return -1;
+  }
+  
+  /**
+   * create the csv output of the seq1 frequency table
+   */
+  public void createFirstSequenceFrequencyTable()
+  {
+    String seq1Name = frequenciesonly ? protSeqName : avMSA.getAlignment().getSequenceAt(0).getName();
+    SequenceI firstSeq = erf.getGaplessSequence(seq1Name); // gapless
+    LinkedList<HashMap<Character, Float>> nFs = null;
+    boolean found = false;
+    for (String[] sequences : erf.getNaturalFrequency().keySet())
+    {
+      for (String sequence : sequences)
+      {
+        if (sequence.equals(firstSeq.getName()))
+        {
+          nFs = erf.getNaturalFrequency().get(sequences);
+          found = true;
+          break;
+        }
+      }
+      if (found)
+        break;
+    }
+    
+    int[] epsToCover = new int[firstSeq.getLength()];
+    int i = 0;
+    for (HashMap<Character, int[]> map : erf.getDomain().get(firstSeq.getName()))
+    {
+      char c = (char) map.keySet().toArray()[0];
+      epsToCover[i++] = map.get(c)[0];
+    }
+    
+    StringBuffer frequencyTable = new StringBuffer();
+    
+    
+    frequencyTable.append(String.format("%s,,", firstSeq.getName()));
+    for (char aa : EpReferenceFile.ALLAMINOACIDS)
+    {
+      frequencyTable.append(String.format("%c,", aa));
+    }
+    frequencyTable.append("\n");
+
+    i = 0;      // index of gappless
+    int ep = 0; // index of msa
+    for (HashMap<Character, Float> freq : nFs)
+    {
+      if (ep >= epsToCover.length)
+        break;
+
+      if (ep != epsToCover[i])
+      {
+        ep++;
+        continue;
+      }
+
+      frequencyTable.append(String.format("%d,%c,", epsToCover[i], firstSeq.getCharAt(i)));
+      for (char aa : EpReferenceFile.ALLAMINOACIDS)
+      {
+        if (freq.containsKey(aa))
+        {
+          frequencyTable.append(String.format("%3.3f%%,", freq.get(aa)));
+        } else {
+          frequencyTable.append("0.0%,");
+        }
+      }
+      frequencyTable.append("\n");
+      i++;
+      ep++;
+    }
+    
+    String table = frequencyTable.toString();
+    
+    CutAndPasteTransfer cap = new CutAndPasteTransfer();
+    try
+    {
+      cap.setText(table);
+      Desktop.addInternalFrame(cap, String.format("Conservation of %s", firstSeq.getName()), 500, 500);
+    } catch (OutOfMemoryError oom)
+    {
+      new OOMWarning("exporting Analysis results", oom);
+      cap.dispose();
+    }
+    
+    // save the file
+    String fileToSave = String.format("%s%s-%s-conservation.csv", EpReferenceFile.REFERENCE_PATH, foundDomainGroup, firstSeq.getName());
+    try
+    {
+      PrintWriter out = new PrintWriter(new FileWriter(fileToSave));
+      out.print(cap.getText());
+      out.close();
+    } catch (Exception ex)
+    {
+      ex.printStackTrace();
+    }
   }
   
   /**
@@ -1480,6 +1646,7 @@ public class Analysis implements Runnable
   public void recalc(SequenceGroup sg, AlignmentViewport av)
   {
     recalcing = true;
+    oldEP = selectedEP;
     if (sg.getSequences().size() == 1)
     {
       selectedSequence = sg.getSequences().get(0).getName();
@@ -1488,6 +1655,12 @@ public class Analysis implements Runnable
     } else {
       return;
     } 
+    
+    if (frequenciesonly || geneViewport == null)
+    {
+      this.protSeq = sg.getSequences().get(0);
+      this.proteinViewport.setAlignment(new Alignment(new SequenceI[]{protSeq}));
+    }
 
     // copying code from gui/PairwiseAlignPanel
     SequenceI[] forAlignment = new SequenceI[2];
@@ -1503,7 +1676,7 @@ public class Analysis implements Runnable
     as.traceAlignment();
     as.scoreAlignment();
     
-    residue = as.getSeq1Start() + selectedRes - 1;  // both base 1, need to be base 0
+    residue = as.getSeq1Start() + selectedRes - 1;  // base 1, need to be base 0
     as = null;
 
     produceSummary(selectedSequence);
@@ -1516,6 +1689,9 @@ public class Analysis implements Runnable
    */
   private void clean()
   {
+    if (frequenciesonly)
+      return;
+    
     for (SequenceI seq : proteinViewport.getAlignment().getSequencesArray())
     {
       if (!seq.getName().equals(protSeqName))

@@ -3307,11 +3307,13 @@ public abstract class AlignmentViewport
     return Connectivity.getConnectivity(this, scores, dim);
   }
   
+  @Override
   public Analysis getAnalysis()
   {
     return this.analysis;
   }
   
+  @Override
   public void setAnalysis(Analysis ana)
   {
     this.analysis = ana;

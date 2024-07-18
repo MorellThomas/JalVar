@@ -27,13 +27,12 @@ import java.io.FileOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 import jalview.datamodel.Sequence;
@@ -41,6 +40,7 @@ import jalview.datamodel.SequenceI;
 import jalview.gui.Desktop;
 import jalview.gui.JvOptionPane;
 import jalview.util.Comparison;
+import jalview.util.MessageManager;
 
 /**
  * helper class dealing with the reference file and holding all necessary information
@@ -54,9 +54,11 @@ public class EpReferenceFile
 {
   private static final long serialVersionUID = 6529685098267757690L;  // need this to be able to load the file again
   
-  public static final String REFERENCE_PATH = System.getProperty("user.home") + "/.config/JalviewSNV/";
+  public static final String REFERENCE_PATH = System.getProperty("user.home") + "/JalviewVar/";
   
   public static final char GAP_CHARACTER = '-';
+  
+  public static final char[] ALLAMINOACIDS = new char[]{'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', '-'};
   
   private final String path;
   
@@ -74,7 +76,7 @@ public class EpReferenceFile
   
   private HashMap<String, LinkedHashSet<String>> domainGroups;
   
-  private HashMap<String[], LinkedList<HashMap<Character, Float>>> naturalFrequency;
+  private HashMap<String[], LinkedList<HashMap<Character, Float>>> naturalFrequency;  // [seqNames], <AA, %>
   
   public EpReferenceFile(String filePath)
   {
@@ -244,24 +246,88 @@ public class EpReferenceFile
     {
       referenceFileName = allReferences.size() == 1 ? (String) allReferences.toArray()[0] : null;
     } else {  // create an option dialog showing all found fitting references, the chosen one will be used
-      Object[] allRefsArray = allReferences.toArray();
-      String[] allDisplayOptions = new String[allRefsArray.length];
-      for (int i = 0; i < allRefsArray.length; i++)
-      {
-        String ref = (String) allRefsArray[i];
-        EpReferenceFile erp = EpReferenceFile.loadReference(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, ref));
-        HashMap<String, LinkedHashSet<String>> groups = erp.getDomainGroups();
-        int nGroups = groups.size();
-        Object[] groupNames = groups.keySet().toArray();
-        String firstGroup = (String) groupNames[0];
-        String lastGroup = (String) groupNames[groupNames.length - 1];
-        allDisplayOptions[i] = String.format("%s: %d group(s) (%s, ...)", ref, nGroups, firstGroup, lastGroup);
-      }
-      int refIndex = JvOptionPane.showOptionDialog(Desktop.desktop, "Multiple references found. Choose one of the following:", "Multiple References", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, allDisplayOptions, null);
-      referenceFileName = (String) allRefsArray[refIndex];
+      referenceFileName = createReferenceDialog(allReferences, "label.choose_reference");
     }
 
     return referenceFileName;
   }
+  
+  public static String selectReference(String titleLabel) throws ClassNotFoundException, IOException
+  {
+    
+    HashSet<String> allReferences = new HashSet<String>();
+    File[] files = new File(EpReferenceFile.REFERENCE_PATH).listFiles();
+    for (File file : files) // look for correct sequence file
+    {
+      if (file.getName().contains(".ref"))  // load each file that ends with ref
+      {
+        allReferences.add(file.getName());
+      }
+    }
+    return createReferenceDialog(allReferences, titleLabel);
+  }
+  
+  private static String createReferenceDialog(HashSet<String> allRefs, String titleLabel) throws ClassNotFoundException, IOException
+  {
+    Object[] allRefsArray = allRefs.toArray();
+    String[] allDisplayOptions = new String[allRefsArray.length];
+    for (int i = 0; i < allRefsArray.length; i++)
+    {
+      String ref = (String) allRefsArray[i];
+      EpReferenceFile erp = EpReferenceFile.loadReference(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, ref));
+      HashMap<String, LinkedHashSet<String>> groups = erp.getDomainGroups();
+      int nGroups = groups.size();
+      Object[] groupNames = groups.keySet().toArray();
+      String firstGroup = (String) groupNames[0];
+      String lastGroup = (String) groupNames[groupNames.length - 1];
+      allDisplayOptions[i] = String.format("%s: %d group(s) (%s, ...)", ref, nGroups, firstGroup, lastGroup);
+    }
 
+    JComboBox optionDialog = new JComboBox(allDisplayOptions);
+    optionDialog.setSelectedIndex(0);
+    int closed = JvOptionPane.showInternalConfirmDialog(Desktop.desktop, optionDialog, MessageManager.getString(titleLabel), JOptionPane.OK_CANCEL_OPTION);
+    int refIndex = optionDialog.getSelectedIndex();
+    if (closed != JOptionPane.CANCEL_OPTION && closed != JOptionPane.CLOSED_OPTION)  //refIndex in right to left order
+    {
+      return (String) allRefsArray[refIndex];
+    } else {
+      return null;
+    }
+  }
+
+  public String chooseDomainGroup()
+  {
+    Object[] allDomainGroups = domainGroups.keySet().toArray();
+    String[] allDisplayOptions = new String[domainGroups.size()];
+    for (int i = 0; i < allDomainGroups.length; i++)
+    {
+      String domainGroup = (String) allDomainGroups[i];
+      allDisplayOptions[i] = domainGroup;
+    }
+
+    JComboBox optionDialog = new JComboBox(allDisplayOptions);
+    optionDialog.setSelectedIndex(0);
+    int closed = JvOptionPane.showInternalConfirmDialog(Desktop.desktop, optionDialog, MessageManager.getString("label.choose_msa"), JOptionPane.OK_CANCEL_OPTION);
+    int refIndex = optionDialog.getSelectedIndex();
+    if (closed != JOptionPane.CANCEL_OPTION && closed != JOptionPane.CLOSED_OPTION)  //refIndex in right to left order
+    {
+      return (String) allDomainGroups[refIndex];
+    } else {
+      return null;
+    }
+  }
+  
+  public SequenceI getGaplessSequence(String name)
+  {
+  //private HashMap<String, LinkedList<HashMap<Character, int[]>>> domain;  //epgp conversion // int[] = [EP, GP1,GP2,GP3]
+    System.out.println(name);
+    char[] seq = new char[domain.get(name).size()];
+    int i = 0;
+    for (HashMap<Character, int[]> map : domain.get(name))
+    {
+      seq[i++] = (char) map.keySet().toArray()[0];
+    }
+    
+    return new Sequence(name, seq, 1, seq.length);
+  }
 }

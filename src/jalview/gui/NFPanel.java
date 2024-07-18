@@ -33,6 +33,8 @@ public class NFPanel implements Runnable
   AlignmentPanel ap;
 
   AlignmentViewport av;
+  
+  private final String refFile;
 
   private boolean working;
   
@@ -43,10 +45,11 @@ public class NFPanel implements Runnable
    * 
    * @param alignPanel
    */
-  public NFPanel(AlignmentPanel alignPanel)
+  public NFPanel(AlignmentPanel alignPanel, String referenceFile)
   {
     this.av = alignPanel.av;
     this.ap = alignPanel;
+    this.refFile = referenceFile;
 
   }
 
@@ -59,7 +62,7 @@ public class NFPanel implements Runnable
     working = true;
     try
     {
-      nf = new NaturalFrequencies(av);
+      nf = new NaturalFrequencies(av, refFile);
       nf.run(); // executes in same thread, wait for completion
 
     } catch (OutOfMemoryError er)

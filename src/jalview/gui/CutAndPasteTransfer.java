@@ -98,6 +98,7 @@ public class CutAndPasteTransfer extends GCutAndPasteTransfer
   public void setFont(Font font)
   {
     textarea.setFont(font);
+    
   }
 
   /**

@@ -48,6 +48,8 @@ public class NaturalFrequencies implements Runnable
    * inputs
    */
   final private AlignmentViewport seqs;
+  
+  final private String refFile;
 
   /*
    * outputs
@@ -59,9 +61,10 @@ public class NaturalFrequencies implements Runnable
    * 
    * @param sequences
    */
-  public NaturalFrequencies(AlignmentViewport sequences)
+  public NaturalFrequencies(AlignmentViewport sequences, String referenceFile)
   {
     this.seqs = sequences;
+    this.refFile = referenceFile;
   }
 
   /**
@@ -83,16 +86,9 @@ public class NaturalFrequencies implements Runnable
       SequenceI[] aseqs = al.getSequencesArray();
       ProfilesI hconsensus = AAFrequency.calculate(aseqs, width, 0, width, true);   // calculating the consensus data
       
-      String referenceFile = EpReferenceFile.findFittingReference(aseqs);
-      if (referenceFile == null)
-      {
-        //throws a warning dialog saying that no file with the name {refFile} was found
-        JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No reference file \"%s\" found. Aborting.", referenceFile), "No Reference Error", JvOptionPane.ERROR_MESSAGE);
-        throw new RuntimeException();
-      }
-      
       // throws an error if nothing was found
-      EpReferenceFile erf = EpReferenceFile.loadReference(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, referenceFile)); 
+      //EpReferenceFile erf = EpReferenceFile.loadReference(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, refFile)); 
+      EpReferenceFile erf = EpReferenceFile.loadReference(refFile); 
       naturalFrequency = erf.getNaturalFrequency(); // load reference
       
       String[] sequenceNames = Arrays.copyOf(al.getSequenceNames().toArray(), al.getHeight(), String[].class);  // for saving as reference
@@ -121,23 +117,23 @@ public class NaturalFrequencies implements Runnable
         float[] percentages = new float[AaList.length];
 
         ResidueCount.SymbolCounts symbolCounts = rc.getSymbolCounts();
-        float gapPC = 100f;
+        int gapCnt = nSeqs;
         for (int i = 0; i < symbolCounts.symbols.length; i++)
         {
           char AA = symbolCounts.symbols[i];  
           int n = symbolCounts.values[i];     // number of times the AA appears at this position
           float pc = (float) n / (float) nSeqs;               // % of AA appearance at this position
           pc = MiscMath.round(pc * 100, 4);
-          gapPC -= pc;
+          gapCnt -= n;
           
           int indexOfAa = new String(AaList).indexOf(AA);
           percentages[indexOfAa] = pc;
           
           aapcPairs.put(AA, pc);
         }
-        if (gapPC > 0)  // % of gaps
+        if (gapCnt > 0)  // % of gaps
         {
-          gapPC = MiscMath.round(gapPC, 4);
+          float gapPC = MiscMath.round(((float) gapCnt / (float) nSeqs) * 100, 4);
           percentages[percentages.length - 1] = gapPC;
           aapcPairs.put('-', gapPC);
         }

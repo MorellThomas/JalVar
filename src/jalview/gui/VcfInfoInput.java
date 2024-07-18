@@ -311,6 +311,16 @@ public class VcfInfoInput extends JPanel
     MapList mapping = new MapList(new int[] {origStart, origEnd}, new int[] {vcfStart, vcfEnd}, origRatio, vcfRatio);
     
     closeFrame();
+    
+    //check if orig and vcf is 1:1
+    int origLength = origEnd - origStart;
+    int vcfLength = vcfEnd > vcfStart ? vcfEnd - vcfStart : vcfStart - vcfEnd;
+    if (origLength != vcfLength)
+    {
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("Gene sequence and VCF length do not fit! (Gene: %d, VCF: %d)", origLength, vcfLength), "Gene and VCF Length Error", JvOptionPane.ERROR_MESSAGE);
+      throw new RuntimeException();
+    }
+    
     chooser = new JalviewFileChooser("vcf", "VCF");
     chooser.setFileView(new JalviewFileView());
     chooser.setDialogTitle(MessageManager.getString("label.load_vcf_file"));

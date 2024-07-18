@@ -103,6 +103,7 @@ import javax.swing.event.InternalFrameEvent;
 
 import org.stackoverflowusers.file.WindowsShortcut;
 
+import jalview.analysis.Analysis;
 import jalview.api.AlignViewportI;
 import jalview.api.AlignmentViewPanel;
 import jalview.api.structures.JalviewStructureDisplayI;
@@ -1850,45 +1851,16 @@ public class Desktop extends jalview.jbgui.GDesktop
   }
 
   @Override
+  public void analyseFreqs_actionPerformed(ActionEvent e) throws ClassNotFoundException, IOException
+  {
+    new Analysis(null, 1, false).prepare();
+  }
+  
+  @Override
   public void deleteRefs_actionPerformed(ActionEvent e) throws ClassNotFoundException, IOException
   {
-    File[] files = new File(EpReferenceFile.REFERENCE_PATH).listFiles();
-    HashMap<File, String> allDisplayOptionsSet = new HashMap<File, String>();
-    
-    
-    for (File file : files) // look for correct sequence file
-    {
-      if (file.getName().contains(".ref"))  // load each file that ends with ref
-      {
-        EpReferenceFile erf = EpReferenceFile.loadReference(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, file.getName()));
-        HashMap<String, LinkedHashSet<String>> groups = erf.getDomainGroups();
-        int nGroups = groups.size();
-        Object[] groupNames = groups.keySet().toArray();
-        String firstGroup = (String) groupNames[0];
-        String lastGroup = (String) groupNames[groupNames.length - 1];
-        allDisplayOptionsSet.put(file, String.format("%s: %d group(s) (%s, ...)", file.getName(), nGroups, firstGroup, lastGroup));
-      }
-    }
-    String[] allDisplayOptions = new String[allDisplayOptionsSet.size()+1];
-    File[] filteredFiles = new File[allDisplayOptionsSet.size()];
-    int i = 0;
-    for (File f : allDisplayOptionsSet.keySet())
-    {
-      allDisplayOptions[i] = allDisplayOptionsSet.get(f);
-      filteredFiles[i] = f;
-      i++;
-    }
-    allDisplayOptions[i] = "None";
-
-    JComboBox optionDialog = new JComboBox(allDisplayOptions);
-    optionDialog.setSelectedIndex(i);
-    int closed = JvOptionPane.showInternalConfirmDialog(desktop, optionDialog, MessageManager.getString("label.choose_reference_to_delete"), JOptionPane.OK_CANCEL_OPTION);
-    int refIndex = optionDialog.getSelectedIndex();
-    if ((closed != JOptionPane.CANCEL_OPTION || closed != JOptionPane.CLOSED_OPTION) && refIndex != i)  //refIndex in right to left order
-    {
-      File toDelete = filteredFiles[refIndex];
-      toDelete.delete();
-    }
+    File f = new File(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, EpReferenceFile.selectReference("label.choose_reference_to_delete")));
+    f.delete();
   }
 
   /**

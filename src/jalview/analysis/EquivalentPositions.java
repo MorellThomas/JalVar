@@ -55,7 +55,7 @@ public class EquivalentPositions implements Runnable
    */
   final private boolean frequenciesonly;  // if true, ignore all gene seq and variance analysis. Used for protein family conservation analysis
   
-  final private String refDir;
+  final private String refFile;  
   
   final private AlignFrame af;
   
@@ -89,7 +89,7 @@ public class EquivalentPositions implements Runnable
     
     SequenceI[] _tmp = seqs.getAlignment().getSequencesArray();
     this.refSequenceName = frequenciesonly ?  Long.toString(System.currentTimeMillis()) : _tmp[_tmp.length - 1].getName();  //random name if fonly
-    this.refDir = String.format("%s%s.ref", EpReferenceFile.REFERENCE_PATH, refSequenceName);
+    this.refFile = String.format("%s%s.ref", EpReferenceFile.REFERENCE_PATH, refSequenceName);
   }
 
   /**
@@ -110,16 +110,16 @@ public class EquivalentPositions implements Runnable
       HashMap<String, Integer> domainOffset;
 
       //checking if reference file already exits
-      //!TODO #################
-      if (new File(refDir).exists())
+      System.out.println(refFile);
+      if (new File(refFile).exists())
       {
-        erf = EpReferenceFile.loadReference(refDir);
+        erf = EpReferenceFile.loadReference(refFile);
         domain = erf.getDomain();
         domainGroups = erf.getDomainGroups();
         alignedDomain = erf.getAlignedDomains();
         domainOffset = erf.getDomainOffset();
       } else {    //else create a new one
-        erf = new EpReferenceFile(refDir);
+        erf = new EpReferenceFile(refFile);
         domain = new HashMap<String,LinkedList<HashMap<Character, int[]>>>();
         domainGroups = new HashMap<String, LinkedHashSet<String>>();
         alignedDomain = new HashMap<String, char[]>();
@@ -286,6 +286,7 @@ public class EquivalentPositions implements Runnable
         dGroup.add(sequences[i].getName());
         domainOffset.putIfAbsent(sequences[i].getName(), frameOffset);
         domain.putIfAbsent(sequences[i].getName(), sequencePlusInfoList);
+                 
         alignedDomain.putIfAbsent(sequences[i].getName(), sequences[i].getSequence());
       }
       
@@ -346,7 +347,7 @@ public class EquivalentPositions implements Runnable
     /*
      * construct the panel and kick off its custom thread
      */
-    NFPanel nfPanel = new NFPanel(af.alignPanel);
+    NFPanel nfPanel = new NFPanel(af.alignPanel, refFile);
     new Thread(nfPanel).start();
   }
 

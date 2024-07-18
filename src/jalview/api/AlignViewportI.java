@@ -20,6 +20,7 @@
  */
 package jalview.api;
 
+import jalview.analysis.Analysis;
 import jalview.analysis.Conservation;
 import jalview.analysis.TreeModel;
 import jalview.datamodel.AlignmentAnnotation;
@@ -580,4 +581,8 @@ public interface AlignViewportI extends ViewStyleI
   Iterator<int[]> getViewAsVisibleContigs(boolean selectedRegionOnly);
 
   ContactMatrixI getContactMatrix(AlignmentAnnotation alignmentAnnotation);
+  
+  Analysis getAnalysis();
+  
+  void setAnalysis(Analysis ana);
 }

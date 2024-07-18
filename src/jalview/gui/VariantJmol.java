@@ -59,8 +59,6 @@ public class VariantJmol implements Runnable
     this.paeMatrixFile = paeMatrix == null ? null : path + paeMatrix;
     this.variantResidues = varRes;
     
-    System.out.println(structureFile);
-    
     this.pdb = new AssociatePdbFileWithSeq().associatePdbWithSeq(structureFile, DataSourceType.FILE, this.sequence, true, Desktop.instance, TFType.PLDDT, paeMatrixFile, true);
     
     this.ap = ap;
@@ -116,7 +114,7 @@ public class VariantJmol implements Runnable
     //jmolBinding.colourBySequence(ap, residueColours);
     jmolViewer.resetColourArray();
     jmolViewer.setColourArray(residueColours);
-    jmolViewer.getBinding().colourBySequence(ap, residueColours);
+    //jmolViewer.getBinding().colourBySequence(ap, residueColours);
   }
   
   /**
