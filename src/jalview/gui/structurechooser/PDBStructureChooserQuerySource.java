@@ -150,7 +150,6 @@ public class PDBStructureChooserQuerySource
       String[] names = seqName.toLowerCase(Locale.ROOT).split("\\|");
       for (String name : names)
       {
-        // System.out.println("Found name : " + name);
         name.trim();
         if (isValidSeqName(name))
         {
@@ -196,7 +195,6 @@ public class PDBStructureChooserQuerySource
    */
   static boolean isValidSeqName(String seqName)
   {
-    // System.out.println("seqName : " + seqName);
     String ignoreList = "pdb,uniprot,swiss-prot";
     if (seqName.length() < 3)
     {

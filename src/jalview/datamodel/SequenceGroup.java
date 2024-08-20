@@ -701,7 +701,6 @@ public class SequenceGroup implements AnnotatedCollectionI
    */
   public boolean recalcVariance(final AlignmentI al, boolean defer)
   {
-    //System.out.println(String.format("SequenceGroup @recalcVariance (%b) startRes %d, endRes+1 %d", defer, startRes, endRes+1));
     if (cs == null && variance == null)
     {
       return false;
@@ -1298,7 +1297,6 @@ public class SequenceGroup implements AnnotatedCollectionI
    */
   public AlignmentAnnotation getVariance()
   {
-    System.out.println("SequenceGroup @getVariance null? " + String.valueOf(variance == null));
     // TODO get or calculate and get consensus annotation row for this group
     int aWidth = this.getWidth();
     // pointer

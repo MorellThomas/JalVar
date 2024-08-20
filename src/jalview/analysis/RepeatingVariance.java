@@ -99,7 +99,6 @@ public class RepeatingVariance
     {
       return ALIGNMENTS_PROFILE.get(al);
     } else {
- System.out.println("Calculating variance for " + al.getProperty("name"));
       // long now = System.currentTimeMillis();
       int start = al.getStartRes();
       int end = al.getEndRes();
@@ -297,7 +296,7 @@ public class RepeatingVariance
     
     int startCol = al.getStartRes();
     int endCol = al.getEndRes();
-    boolean notIgnoreGaps = true;
+    boolean notIgnoreGaps = false;
     boolean showSequenceLogo = false;
     long nseq = (long) al.getHeight();
 

@@ -20,6 +20,15 @@
  */
 package jalview.gui;
 
+import jalview.bin.Cache;
+import jalview.io.DataSourceType;
+import jalview.io.FileFormatException;
+import jalview.io.FileFormatI;
+import jalview.io.FileFormats;
+import jalview.io.FileLoader;
+import jalview.io.IdentifyFile;
+import jalview.io.JalviewFileChooser;
+import jalview.io.JalviewFileView;
 import jalview.util.MessageManager;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -32,6 +41,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.beans.PropertyVetoException;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -339,6 +349,7 @@ public class CustomChooser extends JPanel
   protected void openEpPanel()
   {
     AlignViewport viewport = af.getViewport();
+    final int width = viewport.getAlignment().getWidth();
 
     /*
      * gui validation shouldn't allow insufficient sequences here, but leave
@@ -359,10 +370,13 @@ public class CustomChooser extends JPanel
       return;
     }
 
+    // load the gene sequences
+    openFileBrowser();
+
     /*
      * construct the panel and kick off its custom thread
      */
-    new EpInput(af);
+    new EpInput(af, width);
   }
 
   /**
@@ -424,6 +438,46 @@ public class CustomChooser extends JPanel
     }
   }
 
+  /**
+   * opens file browser dialog
+   */
+  protected void openFileBrowser()
+  {
+    JalviewFileChooser chooser = new JalviewFileChooser(
+            Cache.getProperty("LAST_DIRECTORY"));
+    chooser.setFileView(new JalviewFileView());
+    chooser.setDialogTitle(
+            MessageManager.formatMessage("action.load"));
+
+    int value = chooser.showOpenDialog(null);
+    if (value == JalviewFileChooser.APPROVE_OPTION)
+    {
+      File selectedFile = chooser.getSelectedFile();
+      Cache.setProperty("LAST_DIRECTORY", selectedFile.getParent());
+
+      FileFormatI format = chooser.getSelectedFormat();
+
+      /*
+       * Call IdentifyFile to verify the file contains what its extension implies.
+       * Skip this step for dynamically added file formats, because IdentifyFile does
+       * not know how to recognise them.
+       */
+      if (FileFormats.getInstance().isIdentifiable(format))
+      {
+        try
+        {
+          format = new IdentifyFile().identify(selectedFile,
+                  DataSourceType.FILE);
+        } catch (FileFormatException e)
+        {
+          // format = null; //??
+        }
+      }
+
+      new FileLoader().LoadFile(af.getViewport(), selectedFile, DataSourceType.FILE, format, false);
+    }
+  }
+  
 
   /**
    * Closes dialog on Close button press

@@ -120,7 +120,6 @@ public abstract class StructureChooserQuerySource
    */
   static boolean isValidSeqName(String seqName)
   {
-    // System.out.println("seqName : " + seqName);
     String ignoreList = "pdb,uniprot,swiss-prot";
     if (seqName.length() < 3)
     {

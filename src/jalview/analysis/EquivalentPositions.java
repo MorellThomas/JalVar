@@ -24,7 +24,6 @@ import jalview.bin.Console;
 import jalview.datamodel.AlignmentI;
 import jalview.datamodel.Alignment;
 import jalview.datamodel.SequenceI;
-import jalview.datamodel.SequenceGroup;
 import jalview.gui.AlignFrame;
 import jalview.gui.AlignViewport;
 import jalview.gui.Desktop;
@@ -36,7 +35,6 @@ import jalview.viewmodel.AlignmentViewport;
 
 import java.io.File;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -61,13 +59,29 @@ public class EquivalentPositions implements Runnable
   
   final private AlignmentViewport seqs;
   
-  final private int startingPosition; //of the gene
+  final private int[] startingPosition; //of each gene
   
-  final char FoR;
+  final char[] FoR; // Forward or reverse strand for each gene
   
-  final int width;
+  final int width;  //MSA width ~ max EP
   
-  final private String refSequenceName;
+  final int sampleSeqs; //number of protein sequences to be analysed
+  
+  final int refSeqs;  //number of sequences in the loaded gene file
+  
+  /*
+   * index of first protein sequence corresponding to a new gene sequence
+   * determined either by 
+   *    - only one gene existing -> all proteins belong to that -> geneSequenceMapping = [0]
+   *    - names of protein sequences contain the name of the gene they belong to -> custom index mapping
+   *    - names don't match, as many genes as proteins -> = [0, 1, 2, ... length-1]
+   *    - names don't match, unequal amount -> error
+   */
+  final int[] geneSequenceMapping; // index of first protein sequence corresponding to a new gene sequence
+  
+  final private String[] geneSequenceNames;
+  
+  final private String refSequenceName; //filename of ref file
 
   /**
    * Constructor given the sequences to compute for, the starting gene position, the strand and the sequence length
@@ -78,18 +92,41 @@ public class EquivalentPositions implements Runnable
    * @param FoR
    * @param width
    */
-  public EquivalentPositions(AlignFrame sequences, int startingPosition, char FoR, int width)
+  public EquivalentPositions(AlignFrame sequences, int[] startingPosition, char[] FoR, int width)
   {
     this.af = sequences;
     this.seqs = af.getViewport();
     this.startingPosition = startingPosition;
     this.FoR = FoR;
     this.width = width;
-    this.frequenciesonly = startingPosition == -1 ? true : false;
+    this.frequenciesonly = startingPosition[0] == -1 ? true : false;
     
-    SequenceI[] _tmp = seqs.getAlignment().getSequencesArray();
-    this.refSequenceName = frequenciesonly ?  Long.toString(System.currentTimeMillis()) : _tmp[_tmp.length - 1].getName();  //random name if fonly
+    int i = 0;
+    boolean geneFound = false;
+    for (SequenceI s : seqs.getAlignment().getSequences())
+    {
+      if (!s.isProtein())
+      {
+        geneFound = true;
+        break;
+      }
+      i++;
+    }
+    sampleSeqs = geneFound ? i : seqs.getAlignment().getHeight();
+    refSeqs = geneFound ? seqs.getAlignment().getHeight() - i : 0;
+    
+    geneSequenceNames = new String[refSeqs];
+    for (int s = sampleSeqs; s < sampleSeqs+refSeqs; s++)
+    {
+      geneSequenceNames[s-sampleSeqs] = seqs.getAlignment().getSequenceAt(s).getName();
+    }
+    
+    geneSequenceMapping = createGeneSequenceMapping();
+
+    
+    this.refSequenceName = frequenciesonly ?  Long.toString(System.currentTimeMillis()) : EpReferenceFile.constructRefFileName(seqs.getAlignment().getSequencesArray(), sampleSeqs, refSeqs);  //random name if fonly
     this.refFile = String.format("%s%s.ref", EpReferenceFile.REFERENCE_PATH, refSequenceName);
+    
   }
 
   /**
@@ -110,7 +147,6 @@ public class EquivalentPositions implements Runnable
       HashMap<String, Integer> domainOffset;
 
       //checking if reference file already exits
-      System.out.println(refFile);
       if (new File(refFile).exists())
       {
         erf = EpReferenceFile.loadReference(refFile);
@@ -136,59 +172,64 @@ public class EquivalentPositions implements Runnable
           dGroup = domainGroups.get(dG);
       }
       
-      String[] geneSequenceNames = new String[4];
+      String[] geneSequenceNames = new String[4*refSeqs];
+      int geneNamesIndex = 0;
       SequenceI base = seqs.getAlignment().getSequenceAt(0);  // changed for !frequenciesonly
       if (!frequenciesonly)
       {
-        //creating dna sequence copies of the inputed one with frameshifts by deleting the first n bases
-        SequenceI[] _tmp = seqs.getAlignment().getSequencesArray();
-        base = _tmp[_tmp.length - 1];
-        SequenceI _one = base.deriveSequence();
-        _one.deleteChars(0, 1);
-        SequenceI _two = base.deriveSequence();
-        _two.deleteChars(0, 2);
-        SequenceI[] _geneSequence = new SequenceI[]{base, _one, _two};
-        AlignmentI _geneAsAlignment = new Alignment(_geneSequence);
-        
-        geneSequenceNames[0] = base.getName();
-
-        AlignViewport geneSequence = new AlignViewport(_geneAsAlignment);
-        Dna dna = new Dna(geneSequence, geneSequence.getViewAsVisibleContigs(true));  //create a DNA object of the sequences
-
-        GeneticCodes _gc = GeneticCodes.getInstance();
-        GeneticCodeI _standardTranslationTable = _gc.getStandardCodeTable();
-        SequenceI[] translatedSequence = dna.translateCdna(_standardTranslationTable).getSequencesArray();  //translate all 3 dnas
-        
-        int _i = 1;
-        for (SequenceI protSeq : translatedSequence)    // add all 3 translations to the AlignmentViewport
+        for (int i = 0; i < refSeqs; i++)
         {
-          geneSequenceNames[_i] = protSeq.getName();
-          seqs.getAlignment().addSequence(protSeq);
+          //creating dna sequence copies of the inputed one with frameshifts by deleting the first n bases
+          SequenceI[] _tmp = seqs.getAlignment().getSequencesArray();
+          base = _tmp[sampleSeqs + i];
+          SequenceI _one = base.deriveSequence();
+          _one.deleteChars(0, 1);
+          SequenceI _two = base.deriveSequence();
+          _two.deleteChars(0, 2);
+          SequenceI[] _geneSequence = new SequenceI[]{base, _one, _two};
+          AlignmentI _geneAsAlignment = new Alignment(_geneSequence);
+          
+          geneSequenceNames[geneNamesIndex++] = base.getName();
+
+          AlignViewport geneSequence = new AlignViewport(_geneAsAlignment);
+          Dna dna = new Dna(geneSequence, geneSequence.getViewAsVisibleContigs(true));  //create a DNA object of the sequences
+
+          GeneticCodes _gc = GeneticCodes.getInstance();
+          GeneticCodeI _standardTranslationTable = _gc.getStandardCodeTable();
+          SequenceI[] translatedSequence = dna.translateCdna(_standardTranslationTable).getSequencesArray();  //translate all 3 dnas
+          
+          for (SequenceI protSeq : translatedSequence)    // add all 3 translations to the AlignmentViewport
+          {
+            geneSequenceNames[geneNamesIndex++] = protSeq.getName();
+            seqs.getAlignment().addSequence(protSeq);
+          }
+          
+          //cleanup
+          _standardTranslationTable = null;
+          _gc = null;
+          _one = null;
+          _two = null;
+          _tmp = null;
+          _geneSequence = null;
+          _geneAsAlignment = null;
         }
-        
-        //cleanup
-        _standardTranslationTable = null;
-        _gc = null;
-        _one = null;
-        _two = null;
-        _tmp = null;
-        _geneSequence = null;
-        _geneAsAlignment = null;
       }
       
-      List<SequenceI> sequencesList = seqs.getAlignment().getSequences();   // needed for checking if there is a gap 
+      int currentGeneGroup = 0; // index of geneSequenceMapping
+      SequenceI[] sequences = seqs.getAlignment().getSequencesArray();
+      int frameOffset = 0;
 
       //for each sequence in the alignment
-      int skip = frequenciesonly ? 0 : 1;
-      for ( int i = 0; i < seqs.getAlignment().getSequencesArray().length - skip; i++)
+      for ( int i = 0; i < sampleSeqs; i++)
       {
-        SequenceI[] sequences = seqs.getAlignment().getSequencesArray();
-        int frameOffset = 0;
-
         //for saving reference
         LinkedList<HashMap<Character, int[]>> sequencePlusInfoList = new LinkedList<HashMap<Character, int[]>>(); //middle component for keeping the correct order of the AAs
         HashMap<Character, int[]> aaepgpPairs = new HashMap<Character, int[]>();  //inner component of domain map -- pairs AA to its EP and GPs (int[4] = [EP, GP1, GP2, GP3])
           
+        // go to next gene group
+        if (currentGeneGroup < geneSequenceMapping.length -1 && i == geneSequenceMapping[currentGeneGroup+1])
+          currentGeneGroup++;
+
         if (!frequenciesonly)
         {
 
@@ -199,18 +240,14 @@ public class EquivalentPositions implements Runnable
           float[] alignmentScores = new float[3];
           int[] correspondingBases = new int[3];
 
-          for (int j = 1; j < 4; j++)   //!!! looping in reverse order
+          for (int j = 1; j < 4; j++)   
           {
-            SequenceGroup sg = new SequenceGroup();
-            sg.addSequence(sequences[i], false);
-            sg.addSequence(sequences[sequences.length - j], false);
-            
-            seqs.setSelectionGroup(sg);   // select one sample and one reference 
+            int currentFrameIndex = sampleSeqs + refSeqs - 1 + (currentGeneGroup * 3) + j;   // index of the current translation frame of the sequence at i
             
             // copying code from gui/PairwiseAlignPanel
             SequenceI[] forAlignment = new SequenceI[2];
             forAlignment[0] = sequences[i];
-            forAlignment[1] = sequences[sequences.length-j];
+            forAlignment[1] = sequences[currentFrameIndex];
             
             String[] seqStrings = new String[2];
             seqStrings[0] = forAlignment[0].getSequenceAsString();
@@ -226,47 +263,29 @@ public class EquivalentPositions implements Runnable
             alignmentScores[j-1] = as.getAlignmentScore();
           }
             
-          int bestFrame = (int) MiscMath.findMax(alignmentScores)[0]; //find the best alignement
-          int correspondingBase = correspondingBases[bestFrame];
-          frameOffset = 2 - bestFrame;  // reverse order
+          frameOffset = (int) MiscMath.findMax(alignmentScores)[0]; //find the best alignement
+          int correspondingBase = correspondingBases[frameOffset];
           
-          LinkedHashSet<Integer> genomicCorrespondingPositions = new LinkedHashSet<Integer>(sequences[i].getLength()*3);  // no duplicates
-          
-          //a gap position will have an increasingly negative number as its genomic position (no duplicates)
-          int gapmarker = -1;
-
           int epCalc = 1;
           for (int ep = 0; ep < width; ep++) // ep is actually real ep; ep for calculation (epCalc) does not increase at gap to not skip a GP by accident
           {
-            if (sequencesList.get(i).getCharAt(ep) == '-')
-            {
-              genomicCorrespondingPositions.add(gapmarker--);
-              genomicCorrespondingPositions.add(gapmarker--);
-              genomicCorrespondingPositions.add(gapmarker--);
+            if (sequences[i].getCharAt(ep) == '-')
               continue;
-            }
 
             int _basePosition;
             int[] currentEPandGPs;
-            if (FoR == 'F')
+            if (FoR[currentGeneGroup] == 'F')
             {
-              _basePosition = startingPosition + (epCalc + correspondingBase - 2) * 3 + frameOffset;     
-              genomicCorrespondingPositions.add(_basePosition);
-              genomicCorrespondingPositions.add(_basePosition + 1);
-              genomicCorrespondingPositions.add(_basePosition + 2);
+              _basePosition = startingPosition[currentGeneGroup] + (epCalc + correspondingBase - 2) * 3 + frameOffset;     
               
               currentEPandGPs = new int[]{ep+1, _basePosition, _basePosition + 1, _basePosition + 2};
             } else {
-              _basePosition = startingPosition - (epCalc + correspondingBase - 2) * 3 - frameOffset;
-              genomicCorrespondingPositions.add(_basePosition);
-              genomicCorrespondingPositions.add(_basePosition - 1);
-              genomicCorrespondingPositions.add(_basePosition - 2);
-
+              _basePosition = startingPosition[currentGeneGroup] - (epCalc + correspondingBase - 2) * 3 - frameOffset;
               currentEPandGPs = new int[]{ep+1, _basePosition, _basePosition - 1, _basePosition - 2};
             }
             //output information to reference
             aaepgpPairs = new HashMap<Character, int[]>();
-            aaepgpPairs.put(sequencesList.get(i).getCharAt(ep), currentEPandGPs);  // gaps will be skipped!!!!!
+            aaepgpPairs.put(sequences[i].getCharAt(ep), currentEPandGPs);  // gaps will be skipped!!!!!
             sequencePlusInfoList.add(aaepgpPairs);
             
             epCalc++;
@@ -275,11 +294,11 @@ public class EquivalentPositions implements Runnable
         } else {    // if frequenciesonly
           for (int ep = 0; ep < width; ep++)
           {
-            if (sequencesList.get(i).getCharAt(ep) == '-')
+            if (sequences[i].getCharAt(ep) == '-')
               continue;
 
             aaepgpPairs = new HashMap<Character, int[]>();
-            aaepgpPairs.put(sequencesList.get(i).getCharAt(ep), new int[]{ep+1});
+            aaepgpPairs.put(sequences[i].getCharAt(ep), new int[]{ep+1});
             sequencePlusInfoList.add(aaepgpPairs);
           }
         }
@@ -293,18 +312,31 @@ public class EquivalentPositions implements Runnable
       // start preparing the reference
       if (!frequenciesonly)
       {
-        erf.setGeneSequence(base.getSequence());          // saves the DNA sequences as char[]
+        HashMap<String, char[]> geneSeqs = new HashMap<String, char[]>();
+        HashMap<String, int[]> gps = new HashMap<String, int[]>();
+        HashMap<String, Boolean> isReverse = new HashMap<String, Boolean>();
         
-        int[] allGenomicPositions = new int[base.getLength()];
-        for (int i = 0; i < allGenomicPositions.length; i++)
+        for (int i = sampleSeqs; i < sampleSeqs + refSeqs; i++)
         {
-          allGenomicPositions[i] = i + startingPosition;
+          String name = sequences[i].getName();
+          geneSeqs.put(name, sequences[i].getSequence());
+          
+          
+          int[] allGenomicPositions = new int[sequences[i].getLength()];
+          for (int j = 0; j < allGenomicPositions.length; j++)
+          {
+            allGenomicPositions[j] = j + startingPosition[i-sampleSeqs];
+          }
+          gps.put(name, allGenomicPositions);
+          isReverse.put(name, FoR[i-sampleSeqs] == 'R');
+
         }
-        erf.setGenomicPositions(allGenomicPositions);   // save the array of all genomic positions
+
+        erf.setGeneSequence(geneSeqs);          // saves the DNA sequences as char[]
+        erf.setGenomicPositions(gps);   // save the array of all genomic positions
         
         erf.setDomainOffset(domainOffset);  // saves domains and their frame offset
         
-        boolean isReverse = FoR == 'F' ? false : true;
         erf.setReverse(isReverse);
       }
 
@@ -316,6 +348,8 @@ public class EquivalentPositions implements Runnable
       erf.setDomainGroups(domainGroups);  // saves domain Groups
       
       erf.setAlignedDomains(alignedDomain); // saves domains with gaps as char[]
+      
+      erf.setGeneSequenceMapping(geneSequenceMapping);
       
       
       //save the reference
@@ -340,8 +374,11 @@ public class EquivalentPositions implements Runnable
   {
     for (SequenceI seq : seqs.getAlignment().getSequencesArray())
     {
-      if (seq.getName().equals(refSequenceName))
-        seqs.getAlignment().deleteSequence(seq);
+      for (String name : geneSequenceNames)
+      {
+        if (seq.getName().equals(name))
+          seqs.getAlignment().deleteSequence(seq);
+      }
     }
     
     /*
@@ -349,6 +386,91 @@ public class EquivalentPositions implements Runnable
      */
     NFPanel nfPanel = new NFPanel(af.alignPanel, refFile);
     new Thread(nfPanel).start();
+  }
+  
+  /*
+   * index of first protein sequence corresponding to a new gene sequence
+   * determined either by 
+   *    - only one gene existing -> all proteins belong to that -> geneSequenceMapping = [0]
+   *    - names of protein sequences contain the name of the gene they belong to -> custom index mapping
+   *    - names don't match, as many genes as proteins -> = [0, 1, 2, ... length-1]
+   *    - names don't match, unequal amount -> error
+   */
+  private int[] createGeneSequenceMapping()
+  {
+    if (refSeqs == 0)
+    {
+      return new int[]{0};
+    }
+    
+    LinkedHashSet<Integer> mappingSet = new LinkedHashSet<Integer>();
+    LinkedHashSet<String> geneNamesSet = new LinkedHashSet<String>();
+    SequenceI[] sequences = seqs.getAlignment().getSequencesArray();
+    
+    for (int i = sampleSeqs; i < sampleSeqs + refSeqs; i++)
+    {
+      geneNamesSet.add(sequences[i].getName());  // ignores duplicates
+    }
+    
+    String[] geneNames = new String[geneNamesSet.size()];
+    int l = 0;
+    for (String name : geneNamesSet)
+    {
+      geneNames[l++] = name;
+    }
+    
+    int groupNumber = 0;    // number of geneSequence
+    geneNamesSet.clear();
+    for (int i = 0; i < sampleSeqs; i++)
+    {
+      if ((groupNumber < geneNames.length) && (sequences[i].getName().contains(geneNames[groupNumber])))
+      {
+        if ((groupNumber == 0) || (groupNumber != 0 && !geneNamesSet.contains(geneNames[groupNumber])))
+        {
+          mappingSet.add(i);
+          geneNamesSet.add(geneNames[groupNumber]);
+          groupNumber++;
+        }
+      }
+    }
+    
+    if (groupNumber == 0 && sampleSeqs == refSeqs)   // if names dont match, but equal amount
+    {
+      for ( int i = 0; i < sampleSeqs; i++)
+      {
+        mappingSet.add(i);
+      }
+    } else if (groupNumber == 0 && refSeqs == 1) {
+      mappingSet.add(0);
+    } else if (groupNumber == 0 && sampleSeqs != refSeqs) { // if names dont match and unequal amount
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, "Protein sequences do not fit to gene Sequences!", "Reference Creation Error", JvOptionPane.ERROR_MESSAGE);
+      throw new RuntimeException();
+    }
+    
+    int[] mapping = new int[mappingSet.size()];
+    l = 0;
+    for (Integer n : mappingSet)
+    {
+      mapping[l++] = n;
+    }
+    
+    //check correctness of name assignment
+    for (int i = 0; i < geneNames.length; i++)
+    {
+      int start = mapping[i];
+      int end = i == geneNames.length - 1 ? sampleSeqs : mapping[i+1];
+      String name = geneNames[i];
+      for (int s = start; s < end; s++)
+      {
+        if (!sequences[s].getName().contains(name))
+        {
+          JvOptionPane.showInternalMessageDialog(Desktop.desktop, "Protein sequences do not fit to gene Sequences!", "Reference Creation Error", JvOptionPane.ERROR_MESSAGE);
+          throw new RuntimeException();
+        }
+      }
+    }
+    
+    return mapping;
   }
 
 }

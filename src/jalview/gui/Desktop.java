@@ -1860,7 +1860,8 @@ public class Desktop extends jalview.jbgui.GDesktop
   public void deleteRefs_actionPerformed(ActionEvent e) throws ClassNotFoundException, IOException
   {
     File f = new File(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, EpReferenceFile.selectReference("label.choose_reference_to_delete")));
-    f.delete();
+    if (f.exists())
+      f.delete();
   }
 
   /**

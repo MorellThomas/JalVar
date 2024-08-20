@@ -39,9 +39,9 @@ public class EPPanel
   
   private EquivalentPositions ep;
   
-  private int startingPosition;
+  private int[] startingPosition;
   
-  private char FoR;
+  private char[] FoR;
   
   private int width;
 
@@ -56,9 +56,9 @@ public class EPPanel
    */
   public EPPanel(AlignFrame alignFrame)
   {
-    this(alignFrame, -1, ' ', alignFrame.getViewport().getAlignment().getWidth());
+    this(alignFrame, new int[]{-1}, new char[]{' '}, alignFrame.getViewport().getAlignment().getWidth());
   }
-  public EPPanel(AlignFrame alignFrame, int startingPosition, char FoR, int width)
+  public EPPanel(AlignFrame alignFrame, int[] startingPosition, char[] FoR, int width)
   {
     this.af = alignFrame;
     this.av = af.getViewport();

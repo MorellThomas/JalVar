@@ -62,11 +62,21 @@ public class EpReferenceFile
   
   private final String path;
   
-  private boolean isReverse;
+  /*
+   * index of first protein sequence corresponding to a new gene sequence
+   * determined either by 
+   *    - only one gene existing -> all proteins belong to that -> geneSequenceMapping = [0]
+   *    - names of protein sequences contain the name of the gene they belong to -> custom index mapping
+   *    - names don't match, as many genes as proteins -> = [0, 1, 2, ... length-1]
+   *    - names don't match, unequal amount -> error
+   */
+  private int[] geneSequenceMapping;
   
-  private int[] genomicPositions;
+  private HashMap<String, Boolean> isReverse;
   
-  private char[] geneSequence;
+  private HashMap<String, char[]> geneSequence;
+  
+  private HashMap<String, int[]> genomicPositions;
   
   private HashMap<String, LinkedList<HashMap<Character, int[]>>> domain;  //epgp conversion // int[] = [EP, GP1,GP2,GP3]
   
@@ -76,7 +86,7 @@ public class EpReferenceFile
   
   private HashMap<String, LinkedHashSet<String>> domainGroups;
   
-  private HashMap<String[], LinkedList<HashMap<Character, Float>>> naturalFrequency;  // [seqNames], <AA, %>
+  private HashMap<String[], LinkedList<HashMap<Character, float[]>>> naturalFrequency;  // [seqNames], <AA, [%, total]>
   
   public EpReferenceFile(String filePath)
   {
@@ -102,12 +112,17 @@ public class EpReferenceFile
     return erf;
   }
   
-  public void setGenomicPositions(int[] gP)
+  public boolean doVariant()
+  {
+    return (genomicPositions != null) || (geneSequence != null || geneSequence.size() == 0);
+  }
+
+  public void setGenomicPositions(HashMap<String, int[]> gP)
   {
     this.genomicPositions = gP;
   }
   
-  public void setGeneSequence(char[] gS)
+  public void setGeneSequence(HashMap<String, char[]> gS)
   {
     this.geneSequence = gS;
   }
@@ -117,12 +132,12 @@ public class EpReferenceFile
     this.domain = domain;
   }
   
-  public void setNaturalFrequency(HashMap<String[], LinkedList<HashMap<Character, Float>>> nF)
+  public void setNaturalFrequency(HashMap<String[], LinkedList<HashMap<Character, float[]>>> nF)
   {
     this.naturalFrequency = nF;
   }
   
-  public HashMap<String[], LinkedList<HashMap<Character, Float>>> getNaturalFrequency()
+  public HashMap<String[], LinkedList<HashMap<Character, float[]>>> getNaturalFrequency()
   {
     return this.naturalFrequency;
   }
@@ -132,12 +147,12 @@ public class EpReferenceFile
     return this.domain;
   }
   
-  public char[] getGeneSequence()
+  public HashMap<String, char[]> getGeneSequence()
   {
     return this.geneSequence;
   }
   
-  public int[] getGenomicPositions()
+  public HashMap<String, int[]> getGenomicPositions()
   {
     return this.genomicPositions;
   }
@@ -167,12 +182,12 @@ public class EpReferenceFile
     return this.domainWithGaps;
   }
   
-  public void setReverse(boolean rev)
+  public void setReverse(HashMap<String, Boolean> rev)
   {
     this.isReverse = rev;
   }
   
-  public boolean getReverse()
+  public HashMap<String, Boolean> getReverse()
   {
     return this.isReverse;
   }
@@ -193,11 +208,22 @@ public class EpReferenceFile
     file.delete();
   }
   
+  /*
+   * returns the reference file (without prepended reference path) that contains ALL sequences in seqs
+   */
   public static String findFittingReference(SequenceI seq) throws ClassNotFoundException, IOException
   {
-    return findFittingReference(new SequenceI[]{seq});
+    return findFittingReference(new SequenceI[]{seq}, false);
+  }
+  public static String findFittingReference(SequenceI seq, boolean doVar) throws ClassNotFoundException, IOException
+  {
+    return findFittingReference(new SequenceI[]{seq}, doVar);
   }
   public static String findFittingReference(SequenceI[] seqs) throws ClassNotFoundException, IOException
+  {
+    return findFittingReference(seqs, false);
+  }
+  public static String findFittingReference(SequenceI[] seqs, boolean doVar) throws ClassNotFoundException, IOException
   {
     HashSet<String> allReferences = new HashSet<String>();
     String referenceFileName = null;
@@ -207,6 +233,11 @@ public class EpReferenceFile
       if (file.getName().contains(".ref"))  // load each file that ends with ref
       {
         EpReferenceFile erf = EpReferenceFile.loadReference(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, file.getName()));
+
+        //skip ref file if does not contain variants but it should
+        if (doVar && !erf.doVariant())
+          continue;
+        
         HashMap<String, LinkedList<HashMap<Character, int[]>>> domain = erf.getDomain();
         boolean skip = false;
         for (SequenceI seq : seqs)
@@ -248,6 +279,9 @@ public class EpReferenceFile
     } else {  // create an option dialog showing all found fitting references, the chosen one will be used
       referenceFileName = createReferenceDialog(allReferences, "label.choose_reference");
     }
+    
+    if (referenceFileName == null)
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No reference file found.", "No Reference Error", JvOptionPane.ERROR_MESSAGE);
 
     return referenceFileName;
   }
@@ -256,6 +290,7 @@ public class EpReferenceFile
   {
     
     HashSet<String> allReferences = new HashSet<String>();
+    
     File[] files = new File(EpReferenceFile.REFERENCE_PATH).listFiles();
     for (File file : files) // look for correct sequence file
     {
@@ -264,6 +299,10 @@ public class EpReferenceFile
         allReferences.add(file.getName());
       }
     }
+    
+    if (allReferences.size() == 0)
+      allReferences.add("None");
+    
     return createReferenceDialog(allReferences, titleLabel);
   }
   
@@ -274,6 +313,13 @@ public class EpReferenceFile
     for (int i = 0; i < allRefsArray.length; i++)
     {
       String ref = (String) allRefsArray[i];
+      
+      if (ref.equals("None"))
+      {
+        allDisplayOptions[i] = ref;
+        continue;
+      }
+      
       EpReferenceFile erp = EpReferenceFile.loadReference(String.format("%s%s", EpReferenceFile.REFERENCE_PATH, ref));
       HashMap<String, LinkedHashSet<String>> groups = erp.getDomainGroups();
       int nGroups = groups.size();
@@ -320,7 +366,6 @@ public class EpReferenceFile
   public SequenceI getGaplessSequence(String name)
   {
   //private HashMap<String, LinkedList<HashMap<Character, int[]>>> domain;  //epgp conversion // int[] = [EP, GP1,GP2,GP3]
-    System.out.println(name);
     char[] seq = new char[domain.get(name).size()];
     int i = 0;
     for (HashMap<Character, int[]> map : domain.get(name))
@@ -329,5 +374,33 @@ public class EpReferenceFile
     }
     
     return new Sequence(name, seq, 1, seq.length);
+  }
+  
+  /*
+   * construct a reference file name from all gene sequence names
+   * assumes a sequence array of protein sequences followed by gene sequence names
+   * uses the gene sequence names for the reference file name
+   */
+  public static String constructRefFileName(SequenceI[] seqs, int proteins, int genes)
+  {
+    StringBuilder refString = new StringBuilder();
+    for (int g = proteins; g < proteins + genes; g++)
+    {
+      refString.append(seqs[g].getName());
+      if (g < proteins + genes - 1)
+        refString.append("-");
+    }
+    
+    return refString.toString();
+  }
+  
+  public int[] getGeneSequenceMapping()
+  {
+    return geneSequenceMapping;
+  }
+  
+  public void setGeneSequenceMapping(int[] map)
+  {
+    this.geneSequenceMapping = map;
   }
 }

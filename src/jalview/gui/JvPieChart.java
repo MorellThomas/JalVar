@@ -58,7 +58,7 @@ public class JvPieChart
       }
     }
     this.selectedSequence = selSeq;
-    pie = new PieChartBuilder().width(400).height(300).title(title).theme(ChartTheme.GGPlot2).build();
+    pie = new PieChartBuilder().width(800).height(700).title(title).theme(ChartTheme.GGPlot2).build();
     
     this.value = val;
     

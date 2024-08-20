@@ -64,7 +64,7 @@ public class VariantJmol implements Runnable
     this.ap = ap;
     this.ap.getAlignment().addSequence(this.sequence);
 
-    this.ssm = ap.getStructureSelectionManager();
+    this.ssm = this.ap.getStructureSelectionManager();
     this.ssm.computeMapping(true, new SequenceI[]{this.ap.getAlignment().getSequenceAt(2)}, new String[]{this.pdb.getChainCode()}, this.structureFile, DataSourceType.FILE, null, TFType.PLDDT, null, true);
 
   }
@@ -74,6 +74,7 @@ public class VariantJmol implements Runnable
     jmolViewer = new AppJmol(pdb, new SequenceI[]{ap.getAlignment().getSequenceAt(2)}, null, ap);
     // extends AAStructureBinding holding the colouring functions
     //AppJmolBinding jmolBinding = new AppJmolBinding(jmolViewer, ssm, new PDBEntry[]{pdb}, new SequenceI[][]{{ap.getAlignment().getSequenceAt(2)}}, DataSourceType.FILE);
+    jmolViewer.getBinding().setColourBySequence(true);
         
     colourResidues();
   }
@@ -111,10 +112,9 @@ public class VariantJmol implements Runnable
       }
     }
 
-    //jmolBinding.colourBySequence(ap, residueColours);
     jmolViewer.resetColourArray();
     jmolViewer.setColourArray(residueColours);
-    //jmolViewer.getBinding().colourBySequence(ap, residueColours);
+    jmolViewer.getBinding().colourBySequence(ap, residueColours);
   }
   
   /**

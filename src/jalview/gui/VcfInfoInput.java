@@ -59,7 +59,11 @@ public class VcfInfoInput extends JPanel
   
   AlignViewport av;
   
+  private int sequenceIndex = -1;
+  
   int width;
+  
+  private int sequenceLength;
 
   JTextField speciesName;
   
@@ -124,6 +128,15 @@ public class VcfInfoInput extends JPanel
     init();
     //af.alignPanel.setVcfInfoInput(this);
   }
+  public VcfInfoInput(AlignFrame alignFrame, int index)
+  {
+    this.af = alignFrame;
+    this.av = alignFrame.getViewport();
+    this.width = this.av.getAlignment().getWidth();
+    this.sequenceIndex = index;
+    sequenceLength = av.getAlignment().getSequenceAt(sequenceIndex).getUngappedSequence().length;
+    init();
+  }
   
   /**
    * Lays out the panel and adds it to the desktop
@@ -156,20 +169,20 @@ public class VcfInfoInput extends JPanel
     assemblyName = new JTextField("GRCh38", 5);
     assemblyName.setOpaque(false);
 
-    chromosomeName = new JTextField("2", 3);
+    chromosomeName = new JTextField("1", 3);
     chromosomeName.setOpaque(false);
 
     fromOrig = new JTextField("1", 4);
     fromOrig.setOpaque(false);
 
-    toOrig = new JTextField("281435", 4);
+    toOrig = new JTextField(Integer.toString(sequenceLength), 4);
     toOrig.setOpaque(false);
 
-    fromVcf = new JTextField("178807423", 7);   //ncbi number
+    fromVcf = new JTextField("1", 7);   //ncbi number
     //fromVcf = new JTextField("178830802", 7);     //gnomad number
     fromVcf.setOpaque(false);
 
-    toVcf = new JTextField("178525989", 7);     //ncbi number
+    toVcf = new JTextField("1", 7);     //ncbi number
     //toVcf = new JTextField("178525989", 7);     //gnomad number
     toVcf.setOpaque(false);
 
@@ -263,10 +276,10 @@ public class VcfInfoInput extends JPanel
     int width = 400;
 
     setMinimumSize(new Dimension(325, height - 10));
-    String title = MessageManager.getString("label.choose_calculation");
-    if (af.getViewport().getViewName() != null)
+    String title = MessageManager.getString("label.load_vcf_file");
+    if (sequenceIndex > -1)
     {
-      title = title + " (" + af.getViewport().getViewName() + ")";
+      title = title + " for " + av.getAlignment().getSequenceAt(sequenceIndex).getName();
     }
 
     Desktop.addInternalFrame(frame, title, width, height, false);
@@ -329,7 +342,7 @@ public class VcfInfoInput extends JPanel
     chooser.setResponseHandler(0, () -> {
       String choice = chooser.getSelectedFile().getPath();
       Cache.setProperty("LAST_DIRECTORY", choice);
-      SequenceI[] seqs = av.getAlignment().getSequencesArray();
+      SequenceI[] seqs = sequenceIndex > -1 ? new SequenceI[]{av.getAlignment().getSequenceAt(sequenceIndex)} : av.getAlignment().getSequencesArray();
       new VCFLoader(choice).loadVCF(seqs, us, mapping, info);
     });
     chooser.showOpenDialog(null);

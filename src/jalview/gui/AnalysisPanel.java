@@ -49,6 +49,8 @@ public class AnalysisPanel extends JPanel
   
   private final boolean doVars;
   
+  private final String selectedSequenceName;
+  
   private IProgressIndicator progressBar;
   
   private long progId;
@@ -63,9 +65,14 @@ public class AnalysisPanel extends JPanel
    */
   public AnalysisPanel(AlignmentPanel alignPanel, int residue, boolean doVars)
   {
+    this(alignPanel, residue, doVars, null);
+  }
+  public AnalysisPanel(AlignmentPanel alignPanel, int residue, boolean doVars, String selSeq)
+  {
     this.av = alignPanel.av;
     this.ap = alignPanel;
     this.doVars = doVars;
+    this.selectedSequenceName = selSeq;
     
     this.residue = residue;
   }
@@ -88,7 +95,12 @@ public class AnalysisPanel extends JPanel
     progressBar.setProgressBar(message, progId);
     try
     {
-      anal = new Analysis(ap, residue, doVars);
+      if (selectedSequenceName != null)
+      {
+        anal = new Analysis(ap, residue, doVars, selectedSequenceName);
+      } else {
+        anal = new Analysis(ap, residue, doVars);
+      }
       setAnalysis(anal);
       anal.run(); // executes in same thread, wait for completion
 
@@ -161,7 +173,6 @@ public class AnalysisPanel extends JPanel
       @Override
       public void propertyChange(PropertyChangeEvent pcEvent)
       {
- System.out.println(String.format("%s or %s == %s -> %d", Analysis.PROGRESS, Analysis.TOTAL, pcEvent.getPropertyName(), pcEvent.getNewValue()));
         if (Analysis.PROGRESS.equals(pcEvent.getPropertyName()))
         {
           updateProgressBar((int) pcEvent.getNewValue());
@@ -171,7 +182,6 @@ public class AnalysisPanel extends JPanel
         }
       }
     });
-    //this.anal = ana;
   }
   
   @Override

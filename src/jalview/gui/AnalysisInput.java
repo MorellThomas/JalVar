@@ -20,6 +20,7 @@
  */
 package jalview.gui;
 
+import jalview.datamodel.SequenceI;
 import jalview.util.MessageManager;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -31,12 +32,15 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.beans.PropertyVetoException;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
@@ -55,9 +59,15 @@ public class AnalysisInput extends JPanel
   
   private final boolean doVars;
   
+  private final int numberOfProtein;
+  
+  private final String[] namesOfProtein;
+
   int width;
 
   JTextField residueField;
+  
+  LinkedHashSet<JRadioButton> names = new LinkedHashSet<JRadioButton>();
   
   int residue;
   
@@ -86,6 +96,34 @@ public class AnalysisInput extends JPanel
     this.av = alignFrame.getViewport();
     this.width = this.av.getAlignment().getWidth();
     this.doVars = doVars;
+    
+    int prts = 0;
+    for (SequenceI s : av.getAlignment().getSequences())
+    {
+      if (s.isProtein())
+      {
+        prts++;
+      }
+    }
+    numberOfProtein = prts;
+    
+    namesOfProtein = new String[numberOfProtein];
+    prts = 0;
+    for (SequenceI s : av.getAlignment().getSequences())
+    {
+      if (s.isProtein())
+      {
+        namesOfProtein[prts++] = s.getName();
+      }
+    }
+    
+    //check if added (last) sequence in the alignment is protein (needs to be xNA)
+    if (numberOfProtein == 0)
+    {
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No protein sequence added. Aborting.", "No Protein Error", JvOptionPane.ERROR_MESSAGE);
+      throw new RuntimeException();
+    }
+
     init();
     af.alignPanel.setAnalysisInput(this);
   }
@@ -118,6 +156,29 @@ public class AnalysisInput extends JPanel
     residueField = new JTextField("1", 12);
     residueField.setOpaque(false);
 
+    //creates a button for each gene/protein
+    for (int i = 0; i < numberOfProtein; i++)
+    {
+      JRadioButton prot = new JRadioButton(namesOfProtein[i]);
+      prot.setOpaque(false);
+
+      if (i == 0)
+        prot.setSelected(true);
+
+      names.add(prot);
+    }
+    
+    JPanel namesPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+    namesPanel.setOpaque(false);
+    
+    ButtonGroup oneNameOnly = new ButtonGroup();
+    
+    for (JRadioButton but : names)
+    {
+      namesPanel.add(but);
+      oneNameOnly.add(but);
+    }
+    
     JPanel calcChoicePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     calcChoicePanel.setOpaque(false);
 
@@ -131,6 +192,7 @@ public class AnalysisInput extends JPanel
     textPanel.add(residueField);
 
     calcChoicePanel.add(textPanel);
+    calcChoicePanel.add(namesPanel);
     
    //-- --
 
@@ -202,7 +264,16 @@ public class AnalysisInput extends JPanel
   {
     residue = Integer.parseInt(residueField.getText());
     
-    analysisPanel = new AnalysisPanel(av.getAlignPanel(), residue, doVars);
+    int index = 0;
+    for (JRadioButton name : names)
+    {
+      if (name.isSelected())
+        break;
+    }
+    
+    String sequenceName = namesOfProtein[index];
+    
+    analysisPanel = new AnalysisPanel(av.getAlignPanel(), residue, doVars, sequenceName);
     new Thread(analysisPanel).start();
     closeFrame();
   }

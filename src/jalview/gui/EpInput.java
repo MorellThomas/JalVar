@@ -20,31 +20,22 @@
  */
 package jalview.gui;
 
-import jalview.bin.Cache;
-import jalview.io.DataSourceType;
-import jalview.io.FileFormatException;
-import jalview.io.FileFormatI;
-import jalview.io.FileFormats;
-import jalview.io.FileLoader;
-import jalview.io.IdentifyFile;
-import jalview.io.JalviewFileChooser;
-import jalview.io.JalviewFileView;
+import jalview.datamodel.SequenceI;
 import jalview.util.MessageManager;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.beans.PropertyVetoException;
-import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.List;
 
-import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
@@ -62,6 +53,10 @@ import javax.swing.event.InternalFrameEvent;
 public class EpInput extends JPanel
 {
   private static final Font VERDANA_11PT = new Font("Verdana", 0, 11);
+  
+  private final int numberOfGenes;
+  
+  private final String[] namesOfGenes;
 
   AlignFrame af;
   
@@ -69,18 +64,16 @@ public class EpInput extends JPanel
   
   int width;
 
-  JRadioButton forward;	
+  LinkedHashSet<JRadioButton> forward = new LinkedHashSet<JRadioButton>();	
   
-  JRadioButton reverse;
+  LinkedHashSet<JRadioButton> reverse = new LinkedHashSet<JRadioButton>();
   
-  char FoR;
+  char[] FoR;
   
-  JTextField startPoint;
+  LinkedHashSet<JTextField> startPoint = new LinkedHashSet<JTextField>();
   
-  int startPosition;
+  int[] startPosition;
   
-  JButton loadfile;
-
   JButton calculate;
 
   private JInternalFrame frame;
@@ -96,11 +89,39 @@ public class EpInput extends JPanel
    * 
    * @param af
    */
-  public EpInput(AlignFrame alignFrame)
+  public EpInput(AlignFrame alignFrame, int width)
   {
     this.af = alignFrame;
     this.av = alignFrame.getViewport();
-    this.width = this.av.getAlignment().getWidth();
+    this.width = width;
+    
+    int gns = 0;
+    for (SequenceI s : av.getAlignment().getSequences())
+    {
+      if (!s.isProtein())
+      {
+        gns++;
+      }
+    }
+    numberOfGenes = gns;
+    
+    namesOfGenes = new String[numberOfGenes];
+    gns = 0;
+    for (SequenceI s : av.getAlignment().getSequences())
+    {
+      if (!s.isProtein())
+      {
+        namesOfGenes[gns++] = s.getName();
+      }
+    }
+    
+    //check if added (last) sequence in the alignment is protein (needs to be xNA)
+    if (numberOfGenes == 0)
+    {
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No nucleotide sequence added. Aborting.", "No Nucleotide Error", JvOptionPane.ERROR_MESSAGE);
+      throw new RuntimeException();
+    }
+
     init();
     af.alignPanel.setEpInput(this);
   }
@@ -130,64 +151,110 @@ public class EpInput extends JPanel
     });
     
     //creates the buttons and fields
-    forward = new JRadioButton(MessageManager.getString("label.forward"));
-    forward.setOpaque(false);
-    forward.setSelected(true);
-    
-    reverse = new JRadioButton(MessageManager.getString("label.reverse"));
-    reverse.setOpaque(false);
-    
-    startPoint = new JTextField("178807423", 10);
-    startPoint.setOpaque(false);
+    for (int i = 0; i < numberOfGenes; i++)
+    {
+      JRadioButton frwrd = new JRadioButton(MessageManager.getString("label.forward"));
+      frwrd.setOpaque(false);
+      frwrd.setSelected(true);
+      forward.add(frwrd);
+      
+      JRadioButton rvrs = new JRadioButton(MessageManager.getString("label.reverse"));
+      rvrs.setOpaque(false);
+      reverse.add(rvrs);
+      
+      JTextField strt = new JTextField("1", 10);
+      strt.setOpaque(false);
+      startPoint.add(strt);
+    }
 
-    JPanel calcChoicePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    calcChoicePanel.setOpaque(false);
+    JPanel[] calcChoicePanel = new JPanel[numberOfGenes];
+    for (int i = 0; i < numberOfGenes; i++)
+    {
+      JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      p.setOpaque(false);
+      JvSwingUtils.createTitledBorder(p, namesOfGenes[i], true);
+      calcChoicePanel[i] = p;
+    }
 
-    //-- --
-
-    JPanel textPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    textPanel.setOpaque(false);
-    JvSwingUtils.createTitledBorder(textPanel,
+    for (int i = 0; i < numberOfGenes; i++)
+    {
+      JTextField start = new JTextField("1", 10);
+      JRadioButton forw = new JRadioButton(MessageManager.getString("label.forward"));
+      JRadioButton revr = new JRadioButton(MessageManager.getString("label.reverse"));
+      int k = 0;
+      for (JTextField strt :startPoint)
+      {
+        if (k == i)
+        {
+          start = strt;
+          break;
+        }
+        k++;
+      }
+      
+      k = 0;
+      for (JRadioButton frwrd : forward)
+      {
+        if (k == i)
+        {
+          forw = frwrd;
+          break;
+        }
+        k++;
+      }
+      
+      k = 0;
+      for (JRadioButton rvrs : reverse)
+      {
+        if (k == i)
+        {
+          revr = rvrs;
+          break;
+        }
+        k++;
+      }
+      
+      JPanel textPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      textPanel.setOpaque(false);
+      JvSwingUtils.createTitledBorder(textPanel,
           MessageManager.getString("label.start_position"), true);    //set text border
-    textPanel.add(startPoint);
 
-    
-    //--
-    JPanel strandPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-    strandPanel.setOpaque(false);
+      JPanel strandPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      strandPanel.setOpaque(false);
 
-    JvSwingUtils.createTitledBorder(strandPanel,
+      JvSwingUtils.createTitledBorder(strandPanel,
             MessageManager.getString("label.strand"), true);
 
-    strandPanel.add(forward);
-    strandPanel.add(reverse);
-    calcChoicePanel.add(textPanel);
-    calcChoicePanel.add(strandPanel);
-    
-    //--
-    
-    loadfile = new JButton(MessageManager.getString("action.load"));
-    loadfile.setFont(VERDANA_11PT);
-    loadfile.addActionListener(new java.awt.event.ActionListener()
-    {
-      @Override
-      public void actionPerformed(ActionEvent e)
-      {
-       openFileBrowser(); 
-      }
-    });
-   
-    JPanel loadPanel = new JPanel();
-    loadPanel.setOpaque(false);
-    loadPanel.add(loadfile);
-    JvSwingUtils.createTitledBorder(loadPanel,
-            MessageManager.getString("label.gene_file"), true);
+      textPanel.add(start);
+      strandPanel.add(forw);
+      strandPanel.add(revr);
+      
+      
+      calcChoicePanel[i].add(textPanel);
+      calcChoicePanel[i].add(strandPanel);
+    }
     
    //-- --
 
-    ButtonGroup forOrRev = new ButtonGroup();
-    forOrRev.add(forward);
-    forOrRev.add(reverse);
+    LinkedHashSet<ButtonGroup> forOrRev = new LinkedHashSet<ButtonGroup>();
+            
+    int i = 0;
+    for (JRadioButton frwrd : forward)
+    {
+      ButtonGroup forBG = new ButtonGroup();
+      int j = 0;
+      for (JRadioButton rvrs : reverse)
+      {
+        if (i == j)
+        {
+          forBG.add(frwrd);
+          forBG.add(rvrs);
+          forOrRev.add(forBG);
+        }
+        j++;
+      }
+      i++;
+    }
 
     /*
      * OK / Cancel buttons
@@ -217,13 +284,23 @@ public class EpInput extends JPanel
     actionPanel.add(calculate);
     actionPanel.add(close);
 
-    boolean includeParams = false;
-    this.add(calcChoicePanel, BorderLayout.NORTH);
-    this.add(loadPanel, BorderLayout.CENTER);
-    this.add(actionPanel, BorderLayout.SOUTH);
+    int cntCols = Math.floorDiv(numberOfGenes, 10) + 1;
+    int width = 350 * cntCols;
+    int height = (100 * (Math.floorDiv(numberOfGenes, cntCols))) + 70;
+    
 
-    int width = 350;
-    int height = includeParams ? 420 : 240;
+    JPanel genesPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    genesPanel.setPreferredSize(new Dimension(width , height-70));
+    genesPanel.setOpaque(false);
+
+    for (int j = 0; j < numberOfGenes; j++)
+    {
+      genesPanel.add(calcChoicePanel[j], BorderLayout.CENTER);
+    }
+    
+    genesPanel.doLayout();
+    this.add(genesPanel, BorderLayout.NORTH);
+    this.add(actionPanel, BorderLayout.SOUTH);
 
     setMinimumSize(new Dimension(325, height - 10));
     String title = MessageManager.getString("label.choose_calculation");
@@ -233,7 +310,6 @@ public class EpInput extends JPanel
     }
 
     Desktop.addInternalFrame(frame, title, width, height, false);
-    calcChoicePanel.doLayout();
     revalidate();
     /*
      * null the AlignmentPanel's reference to the dialog when it is closed
@@ -256,27 +332,45 @@ public class EpInput extends JPanel
    */
   protected void calculate_actionPerformed()
   {
-    boolean F = forward.isSelected();
-    boolean R = reverse.isSelected();
-
-    if (F && !R)
+    FoR = new char[forward.size()];
+    startPosition = new int[startPoint.size()];
+    
+    JRadioButton[] fs = new JRadioButton[forward.size()];
+    JRadioButton[] rs = new JRadioButton[reverse.size()];
+    JTextField[] ss = new JTextField[startPoint.size()];
+    
+    int k = 0;
+    for (JRadioButton f : forward)
     {
-      FoR = 'F';
+      fs[k++] = f;
     }
-    else
+    k = 0;
+    for (JRadioButton r : reverse)
     {
-      FoR = 'R';
+      rs[k++] = r;
+    }
+    k = 0;
+    for (JTextField s : startPoint)
+    {
+      ss[k++] = s;
+    }
+
+    for ( int i = 0; i < forward.size(); i++)
+    {
+      boolean F = fs[i].isSelected();
+      boolean R = rs[i].isSelected();
+
+      if (F && !R)
+      {
+        FoR[i] = 'F';
+      }
+      else
+      {
+        FoR[i] = 'R';
+      }
+      startPosition[i] = Integer.parseInt(ss[i].getText());
     }
     
-    startPosition = Integer.parseInt(startPoint.getText());
-    
-    //check if added (last) sequence in the alignment is protein (needs to be xNA)
-    if (af.getViewport().getAlignment().getSequenceAt(af.getViewport().getAlignment().getHeight()-1).isProtein())
-    {
-      JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No nucleotide sequence added. Aborting.", "No Nucleotide Error", JvOptionPane.ERROR_MESSAGE);
-      throw new RuntimeException();
-    }
-
     epPanel = new EPPanel(af, startPosition, FoR, width);
     new Thread(epPanel).start();
     closeFrame();
@@ -310,52 +404,12 @@ public class EpInput extends JPanel
     }
   }
   
-  /**
-   * opens file browser dialog
-   */
-  protected void openFileBrowser()
-  {
-    JalviewFileChooser chooser = new JalviewFileChooser(
-            Cache.getProperty("LAST_DIRECTORY"));
-    chooser.setFileView(new JalviewFileView());
-    chooser.setDialogTitle(
-            MessageManager.formatMessage("action.load"));
-
-    int value = chooser.showOpenDialog(null);
-    if (value == JalviewFileChooser.APPROVE_OPTION)
-    {
-      File selectedFile = chooser.getSelectedFile();
-      Cache.setProperty("LAST_DIRECTORY", selectedFile.getParent());
-
-      FileFormatI format = chooser.getSelectedFormat();
-
-      /*
-       * Call IdentifyFile to verify the file contains what its extension implies.
-       * Skip this step for dynamically added file formats, because IdentifyFile does
-       * not know how to recognise them.
-       */
-      if (FileFormats.getInstance().isIdentifiable(format))
-      {
-        try
-        {
-          format = new IdentifyFile().identify(selectedFile,
-                  DataSourceType.FILE);
-        } catch (FileFormatException e)
-        {
-          // format = null; //??
-        }
-      }
-
-      new FileLoader().LoadFile(af.getViewport(), selectedFile, DataSourceType.FILE, format);
-    }
-  }
-  
-  protected char getFoR()
+  protected char[] getFoR()
   {
     return FoR;
   }
   
-  protected int getStart()
+  protected int[] getStart()
   {
     return startPosition;
   }

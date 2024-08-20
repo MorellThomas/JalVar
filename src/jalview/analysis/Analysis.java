@@ -87,13 +87,15 @@ public class Analysis implements Runnable
   
   final private String refFile;
   
-  private String protSeqName;
+  private String[] protSeqName;
   
-  private SequenceI protSeq;
+  private SequenceI[] protSeq;
   
-  private SequenceI geneSeq;
+  private SequenceI[] geneSeq;
   
-  private boolean isReverse;  // true = reverse strand
+  private int[] geneProteinMapping;
+  
+  private boolean[] isReverse;  // true = reverse strand
   
   private HashMap<String, Integer> frameOffset;  //OF of the domain aligned here
   
@@ -101,29 +103,38 @@ public class Analysis implements Runnable
   
   private boolean frequenciesonly = false;
   
+  private final String startReferenceSequence;
+  
   /*
    * others
    */
   final private GeneticCodeI standardTranslationTable;
   
-  final private String[] likelyness = new String[]{"Tolerated", "Moderately Tolerated", "Represented", "Rarely Represented", "Not Represented", "CAUTION!"};
+  final private String[] likelyness = new String[]{"high frequency", "medium frequency", "low frequency", "rare", "not represented"};
 
-  final private String[] verdict = new String[]{"Tolerated", "Rather Tolerated", "Unclassified (Needs manual checking)", "Rather Not Tolerated", "Potentially Harmful"};
+  //final private String[] verdict = new String[]{"Tolerated", "Rather Tolerated", "Unclassified (Needs manual checking)", "Rather Not Tolerated", "Potentially Harmful"};
   
-  final private String[] distribution = new String[]{"Very Conserved", "Rather Conserved", "Moderately Conserved", "Less Conserved"};
+  //final private String[] distribution = new String[]{"Very Conserved", "Rather Conserved", "Moderately Conserved", "Less Conserved"};
   
   final private HashMap<Character, String> aaGroups = new HashMap<Character, String>();
   
   private boolean hasMSApopup = false;
+  
+  private final String frequencyPieTemplate = "Amino Acid Frequency Distribution of column %d";
 
+  private final String variantPieTemplate = "Variant Distribution of column %d";
   /*
    * outputs
    */
   //private char newAA;
   
-  private HashMap<Character, Float> nfAtThisPosition;
+  private int correctRefSeqIndex = -1;  // index of the gene/protein sequence in geneViewport/proteinViewport that aligns to the selectedSequence
+  
+  private HashMap<Character, float[]> nfAtThisPosition;
   
   private Float[] nFs;
+  
+  private Integer[] nFsAbsolute;
   
   private char[] allAAatPos;
   
@@ -173,7 +184,11 @@ public class Analysis implements Runnable
    * @throws IOException 
    * @throws ClassNotFoundException 
    */
-  public Analysis(AlignmentPanel proteinPanel, int res, boolean doVars) throws ClassNotFoundException, IOException // alignment viewport has to only consist of the gene and protein sequence
+  public Analysis(AlignmentPanel proteinPanel, int res, boolean doVars) throws ClassNotFoundException, IOException 
+  {
+    this(proteinPanel, res, doVars, null);
+  }
+  public Analysis(AlignmentPanel proteinPanel, int res, boolean doVars, String selSeq) throws ClassNotFoundException, IOException // alignment viewport has to only consist of the gene and protein sequence
   {
     GeneticCodes _gc = GeneticCodes.getInstance();
     this.standardTranslationTable = _gc.getStandardCodeTable();
@@ -202,14 +217,16 @@ public class Analysis implements Runnable
       this.activeJmols = new HashMap<String, VariantJmol>();
       this.foundDomains = new HashMap<SequenceI, TreeMap<Integer, String[]>>();
       this.frameOffset = new HashMap<String, Integer>();
+      this.startReferenceSequence = null;
       
       String tmp = EpReferenceFile.selectReference("label.choose_reference");
-      this.refFile = String.format("%s%s", EpReferenceFile.REFERENCE_PATH, tmp);
-      if (refFile == null)
+      if (tmp == null)
       {
-        JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No reference selected.", "No Reference Error", JvOptionPane.ERROR_MESSAGE);
+        JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No reference file found.", "No Reference Error", JvOptionPane.ERROR_MESSAGE);
         throw new RuntimeException();
       }
+
+      this.refFile = String.format("%s%s", EpReferenceFile.REFERENCE_PATH, tmp);
       this.total = 0;
       
       return;
@@ -222,23 +239,37 @@ public class Analysis implements Runnable
     }
     this.proteinAlignmentPanel = proteinPanel;
     this.proteinViewport = proteinAlignmentPanel.av;
-    this.protSeq = proteinViewport.getAlignment().getSequencesArray()[0];
-    this.protSeqName = protSeq.getName();
+    this.protSeq = proteinViewport.getAlignment().getSequencesArray();
+    this.protSeqName = new String[protSeq.length];
+
+    int i = 0;
+    for (SequenceI seq : protSeq)
+    {
+      protSeqName[i++] = seq.getName();
+    }
 
     this.residue = res - 1;   // convert base 1 input to internal base 0
     this.frequenciesonly = !doVars;
+    this.startReferenceSequence = selSeq;
     
     AlignmentViewport _tmp = null;
     for (AlignmentViewport port : Desktop.getViewports(null))
     {
-      if (port != proteinViewport && port.getAlignment().getSequenceAt(0).getName().equals(protSeqName))
+      if (port != proteinViewport && port.getAlignment().getSequenceAt(0).getName().equals(protSeqName[0]))
       {
         _tmp = port;
       }
     }
     this.geneViewport = _tmp;
 
-    this.geneSeq = geneViewport == null ? null : geneViewport.getAlignment().getSequencesArray()[0];
+    this.geneSeq = geneViewport == null ? null : geneViewport.getAlignment().getSequencesArray();
+    
+    //check for equal number of gene and protein seqs
+    if (geneSeq.length != protSeq.length)
+    {
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("Unequal number of gene (%d) and protein (%d) sequences. Aborting.", geneSeq.length, protSeq.length), "No Reference Error", JvOptionPane.ERROR_MESSAGE);
+      throw new RuntimeException();
+    }
     
     this.activeJmols = new HashMap<String, VariantJmol>();
     
@@ -246,16 +277,16 @@ public class Analysis implements Runnable
     this.frameOffset = new HashMap<String, Integer>();
     
     //check if the reference file exists
-    String ref = String.format("%s%s.ref", EpReferenceFile.REFERENCE_PATH, protSeqName);
+    String ref = String.format("%s%s.ref", EpReferenceFile.REFERENCE_PATH, EpReferenceFile.constructRefFileName(geneSeq, 0, geneSeq.length));
     if (!(new File(ref).exists()))
     {
-      String tmp = EpReferenceFile.findFittingReference(protSeq);
+      String tmp = EpReferenceFile.findFittingReference(protSeq, !frequenciesonly);
       if (tmp != null)
       {
         ref = String.format("%s%s", EpReferenceFile.REFERENCE_PATH, tmp);
       } else {
         //throws a warning dialog saying that no file with the name {refFile} was found
-        JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No reference file in \"%s\" found that contains \"%s\". Aborting.", EpReferenceFile.REFERENCE_PATH, protSeqName), "No Reference Error", JvOptionPane.ERROR_MESSAGE);
+        JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No reference file in \"%s\" found that contains \"%s\"... . Aborting.", EpReferenceFile.REFERENCE_PATH, protSeqName[0]), "No Reference Error", JvOptionPane.ERROR_MESSAGE);
         throw new RuntimeException();
       }
     }
@@ -278,12 +309,13 @@ public class Analysis implements Runnable
       clean();
       
       progress = 0;
- System.out.println("TOTAL fired");
-      pcSupport.firePropertyChange(TOTAL, 0, total);
-        //pcSupport.firePropertyChange(PROGRESS, progress, 1983749);
+      //&!
+      //pcSupport.firePropertyChange(TOTAL, 0, total);
     
       //load the reference
       erf = EpReferenceFile.loadReference(refFile);
+      
+      this.geneProteinMapping = erf.getGeneSequenceMapping();
 
       /*
       String _1stkey = (String) erf.getDomain().keySet().toArray()[0];
@@ -294,19 +326,41 @@ public class Analysis implements Runnable
       */
       
       // set reverse strand
-      this.isReverse = erf.getReverse();
+      HashMap<String, Boolean> isReverseMap = erf.getReverse();
+      this.isReverse = new boolean[isReverseMap.size()];
+      int[] indices = new int[isReverseMap.size()];
+      
+      int k = 0;
+      for (String key : isReverseMap.keySet())
+      {
+        for (int i = 0; i < geneSeq.length; i++)
+        {
+          if (key.equals(geneSeq[i].getName()))
+            indices[k++] = i;
+        }
+      }
+      
+      k = 0;
+      for (String key : isReverseMap.keySet())
+      {
+        isReverse[indices[k++]] = isReverseMap.get(key);
+      }
       
       //set frame offset
       this.frameOffset = erf.getDomainOffset();
       
       if (!frequenciesonly)
       {
-        if (geneSeq == null)
+        for (int i = 0; i < protSeq.length; i++)
         {
-          JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No gene sequence \"%s\" found.", protSeqName), "No Gene Sequence Warning", JvOptionPane.INFORMATION_MESSAGE);
-          this.frequenciesonly = true;
-        } else if (geneSeq.getGeneLoci() == null)
-          JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No variance file added.", "No VCF Warning", JvOptionPane.WARNING_MESSAGE);
+          SequenceI gSeq = geneSeq == null ? null : geneSeq[i];
+          if (geneSeq == null || gSeq == null)
+          {
+            JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("No gene sequence \"%s\" found.", protSeqName[i]), "No Gene Sequence Warning", JvOptionPane.INFORMATION_MESSAGE);
+            this.frequenciesonly = true;
+          } else if (gSeq.getGeneLoci() == null)
+            JvOptionPane.showInternalMessageDialog(Desktop.desktop, "No variance file added.", "No VCF Warning", JvOptionPane.WARNING_MESSAGE);
+        }
       }
         
       /*
@@ -359,8 +413,6 @@ public class Analysis implements Runnable
         activeJmols.putIfAbsent(variantDomain.getName(), structureWindow);
         new Thread(structureWindow).start();
 
-        proteinViewport.getAlignment().deleteSequence(variantDomain);
-        
         List<SequenceI> bigGroupL = new ArrayList<SequenceI>();
         for (SequenceI seq : avMSA.getAlignment().getSequencesArray())
         {
@@ -395,11 +447,11 @@ public class Analysis implements Runnable
         
         if (!recalcing)
         {
-          new JvPieChart(String.format("Variant Distribution of column %d", selectedEP), histogramMapForPie, selectedSequence, true);
+          new JvPieChart(String.format(variantPieTemplate, selectedEP), histogramMapForPie, selectedSequence, true);
         }
       }
       
-    clean();
+    //clean();
     } catch (Exception q)
     {
       Console.error("Error analysing:  " + q.getMessage());
@@ -407,17 +459,26 @@ public class Analysis implements Runnable
     }
   }
   
+  /*
+   * only for frequenciesonly
+   */
   public void prepare()
   {
+    if (!frequenciesonly)
+      return;
+    
     try
     {
       erf = EpReferenceFile.loadReference(refFile);
+      
+      this.geneProteinMapping = new int[]{0};
 
       // set reverse strand
-      this.isReverse = erf.getReverse();
+      this.isReverse = new boolean[]{false};
+      
       
       //set frame offset
-      this.frameOffset = erf.getDomainOffset();
+      this.frameOffset = new HashMap<String, Integer>();
       
       String sampleSequenceName;
       if (erf.getDomainGroups().size() > 1)
@@ -429,12 +490,12 @@ public class Analysis implements Runnable
         sampleSequenceName = (String) erf.getDomainGroups().get(key).toArray()[0];
       }
 
-      this.protSeq = erf.getGaplessSequence(sampleSequenceName);
-      this.protSeqName = sampleSequenceName;
+      this.protSeq = new SequenceI[]{erf.getGaplessSequence(sampleSequenceName)};
+      this.protSeqName = new String[]{sampleSequenceName};
 
-      proteinViewport = new AlignViewport(new Alignment(new SequenceI[]{protSeq}));
+      proteinViewport = new AlignViewport(new Alignment(protSeq));
         
-      this.foundDomainGroup = addDomainMSAPopup(protSeqName, null);
+      this.foundDomainGroup = addDomainMSAPopup(protSeqName[0], null);
 
       if (frequenciesonly && (avMSA != null))
         avMSA.setAnalysis(this);
@@ -467,58 +528,87 @@ public class Analysis implements Runnable
     
     //load the EP-GP HashMap
     HashMap<String, LinkedList<HashMap<Character, int[]>>> domain = erf.getDomain();
+    
+    HashMap<String, LinkedHashSet<String>> domainGroups = erf.getDomainGroups();
 
-    for (String domainName : domain.keySet())   // adding all domains from reference to AlignmentViewport
+    for (String dG : domainGroups.keySet())
     {
-      if ((target != null) && (domainName.equals(target)))
+      for (String domainName : domainGroups.get(dG))   // adding all domains from reference to AlignmentViewport
       {
-        proteinViewport.getAlignment().addSequence(erf.getGaplessSequence(domainName));  // adding domain to AlignmentViewport seqs
-        break;
-      } else if (target == null)
-      {
-        proteinViewport.getAlignment().addSequence(erf.getGaplessSequence(domainName));  // adding domain to AlignmentViewport seqs
+        if ((target != null) && (domainName.equals(target)))
+        {
+          proteinViewport.getAlignment().addSequence(erf.getGaplessSequence(domainName));  // adding domain to AlignmentViewport seqs
+          break;
+        } else if (target == null)
+        {
+          proteinViewport.getAlignment().addSequence(erf.getGaplessSequence(domainName));  // adding domain to AlignmentViewport seqs
+        }
       }
     }
     
     SequenceI[] sequences = proteinViewport.getAlignment().getSequencesArray();  // SequenceI array having the input prot seq at 0
-    byte skip = 1;
+    int skip = protSeq.length;
     float highestMatch = -1f;
+
     AlignSeq correctAlignment = null;  // alignment to be used later, contains ref seq and found domain
 
     // do the alignment
-    for ( int i = skip; i < proteinViewport.getAlignment().getHeight(); i++)
+    for (int j = 0; j < skip; j++)  // for reference protein
     {
-      SequenceGroup sg = new SequenceGroup();
-      sg.addSequence(protSeq, false);
-      sg.addSequence(sequences[i], false);
+      int firstOneOfNextGroup = j < geneProteinMapping.length-1 ? geneProteinMapping[j+1] + skip : proteinViewport.getAlignment().getHeight();
+      int firstOneOfThisGroup = j == 0 ? skip : geneProteinMapping[j] + skip;
       
-      // copying code from gui/PairwiseAlignPanel
-      SequenceI[] forAlignment = new SequenceI[2];
-      forAlignment[0] = protSeq;
-      forAlignment[1] = sequences[i];
-      
-      String[] seqStrings = new String[2];
-      seqStrings[0] = forAlignment[0].getSequenceAsString();
-      seqStrings[1] = forAlignment[1].getSequenceAsString();
+      firstOneOfNextGroup = recalcing && j >= geneProteinMapping.length - 1 ? Integer.MAX_VALUE : firstOneOfNextGroup;
 
-      AlignSeq as = new AlignSeq(forAlignment[0], seqStrings[0], forAlignment[1], seqStrings[1], AlignSeq.PEP); // align the 2 sequences
-      as.calcScoreMatrix();
-      as.traceAlignment();
-      as.scoreAlignment();
-      //as.printAlignment(System.out);
-      
-      if ((as.getSeq1Start()-1 <= residue) && (as.getSeq1End() > residue)) // if residue is inside the alignment
+      //selectedSequence only set here if recalcing
+      if (recalcing && findSelfIndex(selectedSequence) != j)
       {
-        System.out.println(sequences[i].getName());
-        if (as.getAlignmentScore() > highestMatch)
-        {
-          highestMatch = as.getAlignmentScore();
-          correctAlignment = as;
-        }
+        continue;
+      } else if (recalcing) {
+        firstOneOfThisGroup = skip;
+        firstOneOfNextGroup = proteinViewport.getAlignment().getHeight();
       }
       
-      if (!recalcing)
-        pcSupport.firePropertyChange(PROGRESS, progress, ++progress);
+      if (!recalcing && startReferenceSequence != null)
+      {
+        if (!protSeq[j].getName().equals(startReferenceSequence))
+          continue;
+      }
+      
+      for ( int i = firstOneOfThisGroup; i < firstOneOfNextGroup; i++)  // for protein from domain group
+      {
+        // copying code from gui/PairwiseAlignPanel
+        SequenceI[] forAlignment = new SequenceI[2];
+        
+        forAlignment[0] = protSeq[j];
+        forAlignment[1] = sequences[i];
+        
+        String[] seqStrings = new String[2];
+        seqStrings[0] = forAlignment[0].getSequenceAsString();
+        seqStrings[1] = forAlignment[1].getSequenceAsString();
+
+        AlignSeq as = new AlignSeq(forAlignment[0], seqStrings[0], forAlignment[1], seqStrings[1], AlignSeq.PEP); // align the 2 sequences
+        as.calcScoreMatrix();
+        as.traceAlignment();
+        as.scoreAlignment();
+        //as.printAlignment(System.out);
+        
+        if ((as.getSeq1Start()-1 <= residue) && (as.getSeq1End() > residue)) // if residue is inside the alignment
+        {
+          if (as.getAlignmentScore() > highestMatch)
+          {
+            highestMatch = as.getAlignmentScore();
+            correctAlignment = as;
+            correctRefSeqIndex = j;
+          }
+        }
+        
+        if (!recalcing)
+        {
+          //&!
+          //pcSupport.firePropertyChange(PROGRESS, progress, ++progress);
+        }
+      }
     }
 
     if (correctAlignment == null) // check if a domain was found at the position
@@ -534,7 +624,7 @@ public class Analysis implements Runnable
     selectedSequence = correctAlignment.s2.getName();
           
     // get the natural frequency map from the reference file
-    HashMap<String[], LinkedList<HashMap<Character, Float>>> nF = erf.getNaturalFrequency();
+    HashMap<String[], LinkedList<HashMap<Character, float[]>>> nF = erf.getNaturalFrequency();
       
     LinkedList<HashMap<Character, int[]>> aaList = domain.get(selectedSequence);  // in AA sequence order lists AA -> [EP, GP1, GP2, GP3]
     char[] aas = new char[aaList.size()];   // AA sequence of the domain  (has to convert the keys of each map in the list into one array
@@ -551,12 +641,11 @@ public class Analysis implements Runnable
       csv.append(String.format("Domain: %s\t(Columns %d - %d)\n", selectedSequence, aaList.peekFirst().get(aas[0])[0], aaList.peekLast().get(aas[aas.length-1])[0]));
     } else {
       csv.append(String.format("Domain: %s\t(Columns %d - %d; Nucleotides %d - %d)\n", selectedSequence, aaList.peekFirst().get(aas[0])[0], aaList.peekLast().get(aas[aas.length-1])[0], aaList.peekFirst().get(aas[0])[1], aaList.peekLast().get(aas[aas.length-1])[3]));
-      csv.append(String.format("aligns to %s from %d - %d\n", protSeqName, correctAlignment.getSeq1Start(), correctAlignment.getSeq1End()));
+      csv.append(String.format("aligns to %s from %d - %d\n", protSeqName[correctRefSeqIndex], correctAlignment.getSeq1Start(), correctAlignment.getSeq1End()));
     }
     
     
     int posInDomain = correctAlignment.getSeq2Start() + (residue - correctAlignment.getSeq1Start());  // residue number in the domain without gaps !! not the EP (base 0)
-    System.out.println(String.format("%d = %d + (%d - %d)", posInDomain, correctAlignment.getSeq2Start(), residue, correctAlignment.getSeq1Start()));
 
     // abort if input residue is too big
     if (posInDomain >= aaList.size())
@@ -576,29 +665,43 @@ public class Analysis implements Runnable
     {
       csv.append(String.format("%s (%s) Column %d\n", selectedSequence, aaAtPos, epgp[0]));
     } else {
-      csv.append(String.format("%s residue %d (%c): %s (%s) Column %d, Nucleotides [%d, %d, %d]\n", protSeqName, residue + 1, protSeq.getCharAt(residue), selectedSequence, aaAtPos, epgp[0], epgp[1], epgp[2], epgp[3]));
+      csv.append(String.format("%s residue %d (%c): %s (%s) Column %d, Nucleotides [%d, %d, %d]\n", protSeqName[correctRefSeqIndex], residue + 1, protSeq[correctRefSeqIndex].getCharAt(residue), selectedSequence, aaAtPos, epgp[0], epgp[1], epgp[2], epgp[3]));
     }
     
     //natural frequencies
-    LinkedList<HashMap<Character, Float>> nfList = new LinkedList<HashMap<Character, Float>>();   // need to initialize because else error
+    LinkedList<HashMap<Character, float[]>> nfList = new LinkedList<HashMap<Character, float[]>>();   // need to initialize because else error
+    int total = -1;
     for (String[] listofdomains : nF.keySet())
     {
       if (Arrays.asList(listofdomains).contains(selectedSequence))  // has to be true one time
+      {
         nfList = nF.get(listofdomains);
+        total = listofdomains.length;
+      }
     } 
     
+    if (total < 0)
+    {
+      csv.append(String.format("No frequencies for %s found.", selectedSequence));
+      return;
+    }
+    
     //output the nf header and information
-    csv.append("\nNatural frequencies at this position:\n");
+    csv.append("\nAmino acid frequencies at this position:\n");
+
     nfAtThisPosition = nfList.get(selectedEP-1);
     float[] nFsUnsorted = new float[nfAtThisPosition.size()];
+    int[] nFsAbsoluteUnsorted = new int [nfAtThisPosition.size()];
     char[] allAAatPosUnsorted = new char[nfAtThisPosition.size()];
     int l = 0;
     for (char aa : nfAtThisPosition.keySet())
     {
       allAAatPosUnsorted[l] = aa;
-      nFsUnsorted[l++] = nfAtThisPosition.get(aa);
+      nFsUnsorted[l] = nfAtThisPosition.get(aa)[0];
+      nFsAbsoluteUnsorted[l++] = (int) nfAtThisPosition.get(aa)[1];
     }
     nFs = new Float[nFsUnsorted.length];
+    nFsAbsolute = new Integer[nFsAbsoluteUnsorted.length];
     allAAatPos = new char[allAAatPosUnsorted.length];
     for (int i = 0; i < nFs.length; i++)
     {
@@ -616,17 +719,17 @@ public class Analysis implements Runnable
           if (nFsUnsorted[i] == nFs[j] && !ignore.contains(j))
           {
             allAAatPos[j] = allAAatPosUnsorted[i];
+            nFsAbsolute[j] = nFsAbsoluteUnsorted[i];
             ignore.add(j);
             break;
           }
         }
       }
     }
-    int brek = 1;
     for (int i = 0; i < nFs.length; i++)
     {
-      csv.append(String.format("%c: %1.2f%%, ", allAAatPos[i], nFs[i]));
-      if (i == brek * 7)
+      csv.append(String.format("%c: %1.2f%% [%d/%d], ", allAAatPos[i], nFs[i], nFsAbsolute[i], total));
+      if ((i+1) % 4 == 0)
         csv.append("\n");
     }
     
@@ -634,7 +737,7 @@ public class Analysis implements Runnable
     //variants found at this position (epgp[1] - 3)
     if (doVariant())
     {
-     MapList mapping = geneSeq.getGeneLoci().getMapping();
+     MapList mapping = geneSeq[correctRefSeqIndex].getGeneLoci().getMapping();
      aaChanges = searchAndAnalyse(mapping, epgp[1], epgp[3], true);   
 
      TreeMap<Integer, String[]> variantResidues = scanDomain(selectedSequence, aaList.peekFirst().get(aas[0])[1], aaList.peekLast().get(aas[aas.length-1])[3]); // all residues of domain that have variant
@@ -670,7 +773,12 @@ public class Analysis implements Runnable
     //Frequence Pie Chart
     if (!recalcing || selectedEP != oldEP)
     {
-      new JvPieChart(String.format("Frequency Distribution of %s at column %d", foundDomainGroup, selectedEP), nfAtThisPosition, selectedSequence);
+      HashMap <Character, Float> map = new HashMap<Character, Float>();
+      for (Character c : nfAtThisPosition.keySet())
+      {
+        map.put(c, nfAtThisPosition.get(c)[0]);
+      }
+      new JvPieChart(String.format(frequencyPieTemplate, selectedEP), map, selectedSequence);
     }
 
     // pie for variance
@@ -693,7 +801,7 @@ public class Analysis implements Runnable
       
       if (!recalcing || selectedEP != oldEP)
       {
-        new JvPieChart(String.format("Variant Distribution of column %d", selectedEP), histogramMapForPie, selectedSequence, true);
+        new JvPieChart(String.format(variantPieTemplate, selectedEP), histogramMapForPie, selectedSequence, true);
       }
     }
     
@@ -708,9 +816,10 @@ public class Analysis implements Runnable
    */
   private TreeMap<Integer, String[]> scanDomain(String domain, int start, int end)
   {
-    MapList mapping = geneSeq.getGeneLoci().getMapping();
+    int refIndex = findSelfIndex(domain);
+    MapList mapping = geneSeq[refIndex].getGeneLoci().getMapping();
     int[] featureRange = mapping.locateInFrom(start, end);   // nucleotide numbers of gene seq where mutated codon (!! start @1)
-    List<SequenceFeature> variants = geneSeq.findFeatures(featureRange[0], featureRange[1]);   // start@1
+    List<SequenceFeature> variants = geneSeq[refIndex].findFeatures(featureRange[0], featureRange[1]);   // start@1
     TreeSet<Integer> variantPos = new TreeSet<Integer>();
     for (SequenceFeature variant : variants)
     {
@@ -734,7 +843,8 @@ public class Analysis implements Runnable
         continue;
 
       int[] oldRange = mapping.locateInTo(nuc1, nuc1+2);  // convert back, searchAndAnalyse needs vcf numbering
-      char[][] allSAVChanges = searchAndAnalyse(mapping, oldRange[0], oldRange[1], false);
+
+      char[][] allSAVChanges = searchAndAnalyse(mapping, oldRange[0], oldRange[1], false, refIndex);
       String[] savAsString = new String[allSAVChanges.length];
       for (int i = 0; i < allSAVChanges.length; i++)
       {
@@ -770,6 +880,7 @@ public class Analysis implements Runnable
         char c = (char) aaepPair.keySet().toArray()[0]; 
         aas[i] = c;
       }
+
       TreeMap<Integer, String[]> variantResidues = scanDomain(domain, aaList.peekFirst().get(aas[0])[1], aaList.peekLast().get(aas[aas.length-1])[3]);
       result.put(domain, variantResidues);
     }
@@ -802,8 +913,12 @@ public class Analysis implements Runnable
    */
   private char[][] searchAndAnalyse(MapList map, int start, int end, boolean output)
   {
+    return searchAndAnalyse(map, start, end, output, correctRefSeqIndex);
+  }
+  private char[][] searchAndAnalyse(MapList map, int start, int end, boolean output, int refIndex)
+  {
     int[] featureRange = map.locateInFrom(start, end);   // nucleotide numbers of gene seq where mutated codon (!! start @1)
-    List<SequenceFeature> variants = geneSeq.findFeatures(featureRange[0], featureRange[1]);   // start@1
+    List<SequenceFeature> variants = geneSeq[refIndex].findFeatures(featureRange[0], featureRange[1]);   // start@1
     
     StringBuffer gpListingsBuffer = new StringBuffer();
     StringBuffer briefSummaryBuffer = new StringBuffer();
@@ -822,7 +937,7 @@ public class Analysis implements Runnable
       char[] origCodon = new char[3];   //original codon
       for (int i = 0; i < 3; i++)
       {
-        origCodon[i] = geneSeq.getCharAt(featureRange[0] - 1 + i);    //!! start @0
+        origCodon[i] = geneSeq[refIndex].getCharAt(featureRange[0] - 1 + i);    //!! start @0
       }
       
       int pos = Integer.parseInt(feature.otherDetails.get("POS").toString());  // GP of snv
@@ -838,7 +953,7 @@ public class Analysis implements Runnable
           snvStrings[0] += Character.toString(Character.toLowerCase(origCodon[i]));
           snvStrings[1] += Character.toString(Character.toLowerCase(origCodon[i]));
         }
-        s = isReverse ? s - 1 : s + 1;
+        s = isReverse[refIndex] ? s - 1 : s + 1;
       }
 
       char oldAA = translateCodon(snvStrings[0]);
@@ -859,8 +974,8 @@ public class Analysis implements Runnable
         if (isFirstLoop)
           briefSummaryBuffer.append("\nBrief summary:\n");
    
-        float freqFrom = nfAtThisPosition.keySet().contains(protSeq.getCharAt(residue)) ? nfAtThisPosition.get(protSeq.getCharAt(residue)) : 0f;
-        float freqTo = nfAtThisPosition.keySet().contains(newAA) ? nfAtThisPosition.get(newAA) : 0f;
+        float freqFrom = nfAtThisPosition.keySet().contains(protSeq[refIndex].getCharAt(residue)) ? nfAtThisPosition.get(protSeq[refIndex].getCharAt(residue))[0] : 0f;
+        float freqTo = nfAtThisPosition.keySet().contains(newAA) ? nfAtThisPosition.get(newAA)[0] : 0f;
      
         //gather nfs for all groups
         for (char aa : aaGroups.keySet())
@@ -894,6 +1009,7 @@ public class Analysis implements Runnable
             groupDistribution.put(group,  differentAAs);
         }
         
+        /*
         String thisDistribution = "";    // saying how much broadly distributed this position is
         if (presentGroups.size() == 1 && (groupDistribution.get(groupDistribution.keySet().toArray()[0]) <= 2))
           thisDistribution = distribution[0];
@@ -903,65 +1019,58 @@ public class Analysis implements Runnable
           thisDistribution = distribution[2];
         else if (presentGroups.size() > 2)
           thisDistribution = distribution[3];
+          */
         
         String fromLikely = "";
-        //int fromIndex = 0;
         String toLikely = "";
-        int toIndex = 0;
-        /*
-        if (freqFrom <= 0f)
-        {
-          fromLikely = String.format("%s (%s)", likelyness[4], likelyness[5]);
-          fromIndex = 4;
-        }
-        else if (freqFrom <= 4f)
-        {
-          fromLikely = likelyness[3];
-          fromIndex = 3;
-        }
-        else if (freqFrom <= 15f)
-        {
-          fromLikely = likelyness[2];
-          fromIndex = 2;
-        }
-        else if (freqFrom < 50f)
-        {
-          fromLikely = likelyness[1];
-          fromIndex = 1;
-        }
-        else
-        {
-          fromLikely = likelyness[0];
-          fromIndex = 0;
-        }
-        */
-
+        //int toIndex = 0;
         if (freqTo <= 0f)
         {
-          toLikely = String.format("%s (%s)", likelyness[4], likelyness[5]);
-          toIndex = 4;
+          toLikely = likelyness[4];
+          //toIndex = 4;
         }
-        else if (freqTo <= 4f)
+        else if (freqTo <= 2f)
         {
           toLikely = likelyness[3];
-          toIndex = 3;
+          //toIndex = 3;
         }
-        else if (freqTo <= 15f)
+        else if (freqTo <= 10f)
         {
           toLikely = likelyness[2];
-          toIndex = 2;
+          //toIndex = 2;
         }
         else if (freqTo < 50f)
         {
           toLikely = likelyness[1];
-          toIndex = 1;
+          //toIndex = 1;
         }
         else
         {
           toLikely = likelyness[0];
-          toIndex = 0;
+          //toIndex = 0;
         }
 
+        if (freqFrom <= 0f)
+        {
+          fromLikely = likelyness[4];
+        }
+        else if (freqFrom <= 2f)
+        {
+          fromLikely = likelyness[3];
+        }
+        else if (freqFrom <= 10f)
+        {
+          fromLikely = likelyness[2];
+        }
+        else if (freqTo < 50f)
+        {
+          fromLikely = likelyness[1];
+        }
+        else
+        {
+          fromLikely = likelyness[0];
+        }
+        /*
         if (isFirstLoop)
           briefSummaryBuffer.append(String.format("Residue %d is %s.\n", residue + 1, thisDistribution));
 
@@ -979,6 +1088,11 @@ public class Analysis implements Runnable
         tmpVerdictIndex = tmpVerdictIndex >= verdict.length ? verdict.length - 1 : tmpVerdictIndex;
         String overallLikely = verdict[ (int) (0.5 * (tmpVerdictIndex + Math.sqrt(Math.pow(tmpVerdictIndex, 2)))) ];
         exchangeBuffer.append(String.format("This change is considered %s\n\n", overallLikely));
+        exchangeBuffer.append(String.format("It changes from a %s residue (%c : %2.3f%%)", aaGroups.get(oldAA), oldAA, freqFrom));
+        exchangeBuffer.append(String.format(", to a\n%s residue (%c : %2.3f%%).\n", aaGroups.get(newAA), newAA, freqTo));
+        */
+        exchangeBuffer.append(String.format("It changes from a %s residue (%c : %2.3f%%)", fromLikely, oldAA, freqFrom));
+        exchangeBuffer.append(String.format(", to a\n%s residue (%c : %2.3f%%).\n", toLikely, newAA, freqTo));
       }
       isFirstLoop = false;
     }
@@ -1005,10 +1119,10 @@ public class Analysis implements Runnable
    */
   private void addDomainDNAtoComplement(SequenceI domain, int start, int end)
   {
-    MapList mapping = geneSeq.getGeneLoci().getMapping();
+    MapList mapping = geneSeq[correctRefSeqIndex].getGeneLoci().getMapping();
     int[] domainRegion = mapping.locateInFrom(start, end);   // nucleotide numbers of domain (!! start @1)
-    List<SequenceFeature> variants = geneSeq.findFeatures(domainRegion[0], domainRegion[1]);   // start@1
-    char[] parsedDNA = geneSeq.getSequence(domainRegion[0], domainRegion[1] + 1);
+    List<SequenceFeature> variants = geneSeq[correctRefSeqIndex].findFeatures(domainRegion[0], domainRegion[1]);   // start@1
+    char[] parsedDNA = geneSeq[correctRefSeqIndex].getSequence(domainRegion[0], domainRegion[1] + 1);
     SequenceI cDNA = new Sequence(domain.getName(), parsedDNA, 1, parsedDNA.length);
     
     List<SequenceFeature> transformedVariants = new ArrayList<SequenceFeature>();
@@ -1056,7 +1170,7 @@ public class Analysis implements Runnable
     if (!frequenciesonly)
       wholeGroupVariants = searchVariantsRecursive(thisDomainGroup);
     
-    HashSet<String> domainNamesInThisGroup = domainGroups.get(thisDomainGroup);
+    LinkedHashSet<String> domainNamesInThisGroup = domainGroups.get(thisDomainGroup);
     SequenceI[] domainsInThisGroup = new SequenceI[domainNamesInThisGroup.size()];  // fetch all sequences
     
     HashMap<String, char[]> allDomains = erf.getAlignedDomains();
@@ -1083,26 +1197,10 @@ public class Analysis implements Runnable
     if (!frequenciesonly)
     {
       colourVariants(af, domain, var, true, 1);
-      //af.getCurrentView().setAnalysis(this);
       
       af.getCurrentView().autoCalculateVariance = true;
       af.getCurrentView().setShowVariance(true);
       af.getCurrentView().setShowVarianceHistogram(true);
-
-      //af.getCurrentView().setShowGroupConsensus(false);
-      //af.alignPanel.updateAnnotation(true);
-      //af.setAnnotationsVisibility(true, true, false);
-      //av.updateConsensus(af.getAlignPanels().get(0));
-
-      //List<SequenceI> bigGroupL = new ArrayList<SequenceI>();
-      //for (SequenceI seq : av.getAlignment().getSequencesArray())
-      //{
-        //bigGroupL.add(seq);
-      //}
-      //SequenceGroup bigGroup = new SequenceGroup(bigGroupL, "All", null, false, true, false, av.getAlignment().getStartRes(), av.getAlignment().getEndRes());
-      //av.getAlignment().addGroup(bigGroup);
-      //av.getAlignment().addAnnotation(bigGroup.getVariance(), 0);
-      //bigGroup.recalcVariance();
 
       ap.updateAnnotation(true);
     }
@@ -1278,15 +1376,6 @@ public class Analysis implements Runnable
         boolean isFrom = false;
         boolean isTo = false;
         
-        /*
-        SequenceI selSequence = av.getAlignment().getSequencesByName().get(selectedSequence).get(0);
-        for (Object seq : foundDomains.keySet().toArray())
-        {
-          SequenceI seqq = (SequenceI) seq;
-          if (seqq.getName().equals(selectedSequence))
-            selSequence = seqq;
-        }
-        */
         Color outline;
         if ((wholeGroupVariants.containsKey(selectedSequence)) && (wholeGroupVariants.get(selectedSequence).containsKey(selectedRes)))
         {
@@ -1442,9 +1531,9 @@ public class Analysis implements Runnable
    */
   public void createFirstSequenceFrequencyTable()
   {
-    String seq1Name = frequenciesonly ? protSeqName : avMSA.getAlignment().getSequenceAt(0).getName();
+    String seq1Name = avMSA.getAlignment().getSequenceAt(0).getName();
     SequenceI firstSeq = erf.getGaplessSequence(seq1Name); // gapless
-    LinkedList<HashMap<Character, Float>> nFs = null;
+    LinkedList<HashMap<Character, float[]>> nFs = null;
     boolean found = false;
     for (String[] sequences : erf.getNaturalFrequency().keySet())
     {
@@ -1481,7 +1570,7 @@ public class Analysis implements Runnable
 
     i = 0;      // index of gappless
     int ep = 0; // index of msa
-    for (HashMap<Character, Float> freq : nFs)
+    for (HashMap<Character, float[]> freq : nFs)
     {
       if (ep >= epsToCover.length)
         break;
@@ -1497,7 +1586,7 @@ public class Analysis implements Runnable
       {
         if (freq.containsKey(aa))
         {
-          frequencyTable.append(String.format("%3.3f%%,", freq.get(aa)));
+          frequencyTable.append(String.format("%3.3f%%,", freq.get(aa)[0]));
         } else {
           frequencyTable.append("0.0%,");
         }
@@ -1555,7 +1644,6 @@ public class Analysis implements Runnable
     al.deleteAllGroups();
     al.deleteAllAnnotations(false);
     
-    //int epAsRes = selectedRes -1;
     int epAsRes = selectedRes;
 
     if (!frequenciesonly)
@@ -1646,6 +1734,9 @@ public class Analysis implements Runnable
   public void recalc(SequenceGroup sg, AlignmentViewport av)
   {
     recalcing = true;
+
+    //clean();
+
     oldEP = selectedEP;
     if (sg.getSequences().size() == 1)
     {
@@ -1658,13 +1749,23 @@ public class Analysis implements Runnable
     
     if (frequenciesonly || geneViewport == null)
     {
-      this.protSeq = sg.getSequences().get(0);
-      this.proteinViewport.setAlignment(new Alignment(new SequenceI[]{protSeq}));
+      Object[] tmp = sg.getSequences().toArray();
+      SequenceI[] tmpAsSequence = new SequenceI[tmp.length];
+      int i = 0;
+      for (Object t : tmp)
+      {
+        tmpAsSequence[i++] = (SequenceI) t;
+      }
+      protSeq = tmpAsSequence;
+      proteinViewport.setAlignment(new Alignment(protSeq));
     }
+    
+    
+    correctRefSeqIndex = findSelfIndex(selectedSequence);
 
     // copying code from gui/PairwiseAlignPanel
     SequenceI[] forAlignment = new SequenceI[2];
-    forAlignment[0] = protSeq;
+    forAlignment[0] = protSeq[correctRefSeqIndex];
     forAlignment[1] = sg.getSequences().get(0);
     
     String[] seqStrings = new String[2];
@@ -1675,13 +1776,65 @@ public class Analysis implements Runnable
     as.calcScoreMatrix();
     as.traceAlignment();
     as.scoreAlignment();
-    
+    as.printAlignment(System.out);
+
     residue = as.getSeq1Start() + selectedRes - 1;  // base 1, need to be base 0
-    as = null;
 
     produceSummary(selectedSequence);
     
     updateFocus(sg, av);
+  }
+  
+  /**
+   * returns appropriate index region of geneProteinMapping for the domain with name
+   * @param name
+   * @return
+   */
+  private int findSelfIndex(String name)
+  {
+    LinkedHashSet<String> domainNames = null;
+    HashMap<String, LinkedHashSet<String>> groups = erf.getDomainGroups();
+    for (String group : groups.keySet())
+    {
+      for (String n : groups.get(group))
+      {
+        if (n.equals(name))
+        {
+          domainNames = groups.get(group);
+          break;
+        }
+      }
+      if (domainNames != null)
+        break;
+    }
+    
+    if (domainNames == null)
+    {
+      JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("%s not in reference file %s", name, refFile), "Sequence Not Found Error", JvOptionPane.ERROR_MESSAGE);
+      throw new RuntimeException();
+    }
+
+    int msaIndex = -1;
+    for (String s : domainNames)
+    {
+      msaIndex++;
+
+      if (s.equals(name))
+        break;
+    }
+    
+    int refIndex = 0;
+    for (int thisGroupStartsAt : geneProteinMapping)
+    {
+      int nextGroupStartsAt = refIndex == geneProteinMapping.length -1 ? domainNames.size() : geneProteinMapping[refIndex + 1];
+      if ((msaIndex >= thisGroupStartsAt && msaIndex < nextGroupStartsAt) || (refIndex >= geneProteinMapping.length - 1))
+        break;
+      
+      refIndex++;
+    }
+    
+    return refIndex;
+
   }
   
   /**
@@ -1694,22 +1847,44 @@ public class Analysis implements Runnable
     
     for (SequenceI seq : proteinViewport.getAlignment().getSequencesArray())
     {
-      if (!seq.getName().equals(protSeqName))
+      boolean delete = true;
+      for (String jmolName : activeJmols.keySet())
+      {
+        if (seq.getName().equals(jmolName)) //active jmol
+          delete = false;
+      }
+      for (String refName : protSeqName)
+      {
+        if (seq.getName().equals(refName))  // input reference sequence
+          delete = false;
+      }
+      if (delete)
         proteinViewport.getAlignment().deleteSequence(seq);
     }
     if (geneViewport != null)
     {
       for (SequenceI seq : geneViewport.getAlignment().getSequencesArray())
       {
-        if (!seq.getName().equals(geneSeq.getName())) // == protSeqName
-          geneViewport.getAlignment().deleteSequence(seq);
+        boolean delete = true;
+        for (String jmolName : activeJmols.keySet())
+        {
+          if (seq.getName().equals(jmolName)) //active jmol
+            delete = false;
+        }
+        for (SequenceI refSeq : geneSeq)
+        {
+          if (seq.getName().equals(refSeq.getName()))  // input reference sequence
+            delete = false;
+        }
+        if (delete)
+          proteinViewport.getAlignment().deleteSequence(seq);
       }
     }
   }
   
   private boolean doVariant()
   {
-    return (geneSeq != null) && (geneSeq.getGeneLoci() != null);
+    return (geneSeq != null) && (geneSeq[correctRefSeqIndex].getGeneLoci() != null);
   }
   
   public void addPropertyChangeListener(PropertyChangeListener listener)

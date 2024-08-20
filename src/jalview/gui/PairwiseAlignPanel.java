@@ -31,10 +31,7 @@ import jalview.util.MessageManager;
 import jalview.viewmodel.AlignmentViewport;
 
 import java.awt.event.ActionEvent;
-import java.beans.PropertyChangeListener;
 import java.util.Vector;
-
-import javax.swing.event.SwingPropertyChangeSupport;
 
 /**
  * DOCUMENT ME!
@@ -145,7 +142,6 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
       alignmentScores[i - 1][i - 1] = Float.NaN;
       for (int j = 0; j < i; j++)
       {
-        System.out.println(String.format("i: %d ; j: %d", i, j));
         AlignSeq as = new AlignSeq(seqs[i], seqStrings[i], seqs[j], seqStrings[j], type);
         //as.seqInit(seqs[i], seqStrings[i], seqs[j], seqStrings[j], type);
 
@@ -279,19 +275,6 @@ public class PairwiseAlignPanel extends GPairwiseAlignPanel
             AlignFrame.DEFAULT_WIDTH, AlignFrame.DEFAULT_HEIGHT);
   }
   
-  //&!
-  /*
-  public void addPropertyChangeListener(PropertyChangeListener listener)
-  {
-    System.out.println(pcSupport != null);
-    pcSupport.addPropertyChangeListener(listener);
-  }
-  
-  public void removePropertyChangeListener(PropertyChangeListener listener)
-  {
-    pcSupport.removePropertyChangeListener(listener);
-  }
-  */
   
   public long getTotal()
   {

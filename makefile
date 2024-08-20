@@ -13,10 +13,10 @@ BUILD_JAR := $(BUILD_PATH)$(JAR_NAME)
 INSTALL_JAR := $(DEST_PATH)jalviewVar.jar
 #REF_FILE := $(CONFIG_PATH)TTN.ref
 REF_STRUCS := $(CONFIG_PATH)STRUCS
-REF_VCF := $(CONFIG_PATH)Titin-ClinVar-SNVs.vcf
-REF_GENE := $(CONFIG_PATH)Titin-gene-inferred_complete.fa
-REF_PROTEIN := $(CONFIG_PATH)Titin-protein-inferred_complete.fa
-REF_MSA := $(CONFIG_PATH)Titin-Ig-PaSiMap-group-C.fa
+REF_VCF := $(CONFIG_PATH)TTN-ClinVar-SNVs.vcf $(CONFIG_PATH)OBSCN-ClinVar-SNVs.vcf
+REF_GENE := $(CONFIG_PATH)TTN-OBSCN-gene-sequence.fa
+REF_PROTEIN := $(CONFIG_PATH)TTN-OBSCN-protein-sequence.fa
+REF_MSA := $(CONFIG_PATH)TTN-PaSiMap-group-C_OBSCN-n-conserved.fa
 
 REFS := $(REF_STRUCS) $(REF_VCF) $(REF_GENE) $(REF_PROTEIN) $(REF_MSA) #$(REF_FILE)
 

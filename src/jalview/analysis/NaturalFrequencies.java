@@ -26,8 +26,6 @@ import jalview.datamodel.AlignmentI; // not for pasimap
 import jalview.datamodel.ProfilesI;
 import jalview.datamodel.SequenceI;
 import jalview.datamodel.ResidueCount; // not for pasimap
-import jalview.gui.Desktop;
-import jalview.gui.JvOptionPane;
 import jalview.io.EpReferenceFile;
 import jalview.math.MiscMath;  // not for pasimap
 import jalview.viewmodel.AlignmentViewport;
@@ -54,7 +52,7 @@ public class NaturalFrequencies implements Runnable
   /*
    * outputs
    */
-  private HashMap<String[], LinkedList<HashMap<Character, Float>>> naturalFrequency;
+  private HashMap<String[], LinkedList<HashMap<Character, float[]>>> naturalFrequency;
 
   /**
    * Constructor given the sequences
@@ -81,7 +79,6 @@ public class NaturalFrequencies implements Runnable
 
       //getting the consensus information from the alignment aka the counts of each AA
       AlignmentAnnotation consensus = seqs.getAlignmentConsensusAnnotation();
-      System.out.println(consensus.toString());
       
       SequenceI[] aseqs = al.getSequencesArray();
       ProfilesI hconsensus = AAFrequency.calculate(aseqs, width, 0, width, true);   // calculating the consensus data
@@ -94,10 +91,10 @@ public class NaturalFrequencies implements Runnable
       String[] sequenceNames = Arrays.copyOf(al.getSequenceNames().toArray(), al.getHeight(), String[].class);  // for saving as reference
       
       if (naturalFrequency ==  null)
-        naturalFrequency = new HashMap<String[], LinkedList<HashMap<Character, Float>>>();  // create a new map if empty
+        naturalFrequency = new HashMap<String[], LinkedList<HashMap<Character, float[]>>>();  // create a new map if empty
       
-      LinkedList<HashMap<Character, Float>> listofPairs = new LinkedList<HashMap<Character, Float>>(); //for saving referefence
-      HashMap<Character, Float> aapcPairs;  // for saving as reference
+      LinkedList<HashMap<Character, float[]>> listofPairs = new LinkedList<HashMap<Character, float[]>>(); //for saving referefence
+      HashMap<Character, float[]> aapcPairs;  // for saving as reference
       
       //get all the counts of all AAs of each position from the consensus information
       ResidueCount[] residueCountses = new ResidueCount[hconsensus.getEndColumn() + 1];
@@ -106,13 +103,13 @@ public class NaturalFrequencies implements Runnable
         residueCountses[i] = hconsensus.get(i).getCounts();
       }
       
-      char[] AaList = new char[]{'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', '-'};
+      char[] AaList = EpReferenceFile.ALLAMINOACIDS;
       int nSeqs = aseqs.length;
       
       //calculating the %
       for (ResidueCount rc : residueCountses)
       {
-        aapcPairs = new HashMap<Character, Float>();
+        aapcPairs = new HashMap<Character, float[]>();
         
         float[] percentages = new float[AaList.length];
 
@@ -129,13 +126,13 @@ public class NaturalFrequencies implements Runnable
           int indexOfAa = new String(AaList).indexOf(AA);
           percentages[indexOfAa] = pc;
           
-          aapcPairs.put(AA, pc);
+          aapcPairs.put(AA, new float[]{pc, (float) n});
         }
         if (gapCnt > 0)  // % of gaps
         {
           float gapPC = MiscMath.round(((float) gapCnt / (float) nSeqs) * 100, 4);
           percentages[percentages.length - 1] = gapPC;
-          aapcPairs.put('-', gapPC);
+          aapcPairs.put('-', new float[]{gapPC, (float) gapCnt});
         }
         listofPairs.add(aapcPairs);
       }
@@ -146,15 +143,6 @@ public class NaturalFrequencies implements Runnable
       erf.setNaturalFrequency(naturalFrequency);
       erf.saveReference();
       
-      //test
-      HashMap<String[], LinkedList<HashMap<Character, Float>>> nf = erf.getNaturalFrequency();
-      String[] key = (String[]) nf.keySet().toArray()[0];
-      if (Arrays.asList(key).contains("I65"))
-      {
-        LinkedList<HashMap<Character, Float>> nfs = nf.get(key);
-        System.out.println(nfs.get(7).get('P'));
-      }
-
     } catch (Exception q)
     {
       Console.error("Error computing Natural Frequencies:  " + q.getMessage());

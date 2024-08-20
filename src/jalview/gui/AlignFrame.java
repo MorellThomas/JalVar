@@ -2923,7 +2923,6 @@ public class AlignFrame extends GAlignFrame implements DropTargetListener,
   @Override
   public void newView_actionPerformed(ActionEvent e)
   {
-System.out.println("AlingFrame @newView_actionPerformed button pressed");
     newView(null, true);
   }
 
@@ -2938,7 +2937,6 @@ System.out.println("AlingFrame @newView_actionPerformed button pressed");
    */
   public AlignmentPanel newView(String viewTitle, boolean copyAnnotation)
   {
-System.out.println("@AlignFrame newView");
     /*
      * Create a new AlignmentPanel (with its own, new Viewport)
      */
@@ -5694,7 +5692,6 @@ System.out.println("@AlignFrame newView");
   @Override
   protected void applyAutoAnnotationSettings_actionPerformed(ActionEvent e)
   {
-    System.out.println(String.format("AlignFrame @applyAutoAnnotationSettings_actionPerformed ap.updateAnnotation(%b)", applyAutoAnnotationSettings.getState()));
     alignPanel.updateAnnotation(applyAutoAnnotationSettings.getState());
   }
 
@@ -6063,11 +6060,16 @@ System.out.println("@AlignFrame newView");
 
   }
   
-  //&!
   @Override
   protected void loadVcfWithInfo_actionPerformed()
   {
-    new VcfInfoInput(this);
+    for (int i = 0; i < alignPanel.getAlignment().getHeight(); i++)
+    {
+      if (alignPanel.getAlignment().getSequenceAt(i).getGeneLoci() == null)
+      {
+        new VcfInfoInput(this, i);
+      }
+    }
   }
   
   private Rectangle lastFeatureSettingsBounds = null;
