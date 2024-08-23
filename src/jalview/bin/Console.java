@@ -1,6 +1,6 @@
 /*
- * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
- * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * Jalview - A Sequence Alignment Editor and Viewer (2.11.3.2)
+ * Copyright (C) 2023 The Jalview Authors
  * 
  * This file is part of Jalview.
  * 
@@ -20,10 +20,9 @@
  */
 package jalview.bin;
 
-import java.util.Locale;
+import java.io.PrintStream;
 
 import jalview.log.JLogger;
-import jalview.log.JLoggerI;
 import jalview.log.JLoggerI.LogLevel;
 import jalview.log.JLoggerLog4j;
 import jalview.util.ChannelProperties;
@@ -43,8 +42,8 @@ public class Console
     }
     else
     {
-      System.out.println(message);
-      t.printStackTrace();
+      outPrintln(message);
+      Console.printStackTrace(t);
     }
 
   }
@@ -57,7 +56,7 @@ public class Console
     }
     else
     {
-      System.out.println(message);
+      outPrintln(message);
     }
 
   }
@@ -70,8 +69,8 @@ public class Console
     }
     else
     {
-      System.out.println(message);
-      t.printStackTrace();
+      outPrintln(message);
+      Console.printStackTrace(t);
     }
   }
 
@@ -83,7 +82,7 @@ public class Console
     }
     else
     {
-      System.out.println(message);
+      outPrintln(message);
     }
 
   }
@@ -96,8 +95,8 @@ public class Console
     }
     else
     {
-      System.out.println(message);
-      t.printStackTrace();
+      outPrintln(message);
+      Console.printStackTrace(t);
     }
 
   }
@@ -110,7 +109,7 @@ public class Console
     }
     else
     {
-      System.out.println(message);
+      outPrintln(message);
     }
 
   }
@@ -123,7 +122,7 @@ public class Console
     }
     else
     {
-      System.out.println(message);
+      outPrintln(message);
     }
   }
 
@@ -135,8 +134,8 @@ public class Console
     }
     else
     {
-      System.out.println(message);
-      t.printStackTrace();
+      outPrintln(message);
+      Console.printStackTrace(t);
     }
 
   }
@@ -149,7 +148,7 @@ public class Console
     }
     else
     {
-      System.err.println(message);
+      jalview.bin.Console.errPrintln(message);
     }
 
   }
@@ -162,8 +161,8 @@ public class Console
     }
     else
     {
-      System.err.println(message);
-      t.printStackTrace(System.err);
+      jalview.bin.Console.errPrintln(message);
+      Console.printStackTrace(t);
     }
 
   }
@@ -176,7 +175,7 @@ public class Console
     }
     else
     {
-      System.err.println(message);
+      jalview.bin.Console.errPrintln(message);
     }
 
   }
@@ -189,8 +188,8 @@ public class Console
     }
     else
     {
-      System.err.println(message);
-      t.printStackTrace(System.err);
+      jalview.bin.Console.errPrintln(message);
+      Console.printStackTrace(t);
     }
 
   }
@@ -240,7 +239,7 @@ public class Console
     {
       JLogger.LogLevel logLevel = JLogger.LogLevel.INFO;
 
-      if (JLogger.isLevel(providedLogLevel))
+      if (providedLogLevel != null && JLogger.isLevel(providedLogLevel))
       {
         logLevel = Console.getLogLevel(providedLogLevel);
       }
@@ -253,7 +252,7 @@ public class Console
       {
         if (!Jalview.quiet())
         {
-          System.err.println(
+          jalview.bin.Console.errPrintln(
                   "Setting initial log level to " + logLevel.name());
         }
         Log4j.init(logLevel);
@@ -267,8 +266,9 @@ public class Console
       log = JLoggerLog4j.getLogger(Cache.JALVIEW_LOGGER_NAME, logLevel);
     } catch (NoClassDefFoundError e)
     {
-      System.err.println("Could not initialise the logger framework");
-      e.printStackTrace();
+      jalview.bin.Console
+              .errPrintln("Could not initialise the logger framework");
+      Console.printStackTrace(e);
     }
 
     // Test message
@@ -290,20 +290,114 @@ public class Console
 
   public static void setLogLevel(String logLevelString)
   {
-    for (LogLevel logLevel : JLoggerI.LogLevel.values())
+    LogLevel l = null;
+    try
     {
-      if (logLevel.toString().toLowerCase(Locale.ROOT)
-              .equals(logLevelString.toLowerCase(Locale.ROOT)))
-      {
-        log.setLevel(logLevel);
-        if (!Platform.isJS())
-        {
-          Log4j.init(logLevel);
-        }
-        JLoggerLog4j.getLogger("org.apache.axis", logLevel);
-        break;
-      }
+      l = LogLevel.valueOf(logLevelString);
+    } catch (IllegalArgumentException | NullPointerException e1)
+    {
+      Console.debug("Invalid log level '" + logLevelString + "'");
+      return;
     }
+    if (l != null)
+    {
+      log.setLevel(l);
+      if (!Platform.isJS())
+      {
+        Log4j.init(l);
+      }
+      JLoggerLog4j.getLogger("org.apache.axis", l);
+    }
+  }
+
+  public static void outPrint()
+  {
+    outPrint("");
+  }
+
+  public static void outPrintln()
+  {
+    outPrintln("");
+  }
+
+  public static void outPrint(Object message)
+  {
+    outPrintMessage(message, false, false);
+  }
+
+  public static void outPrint(Object message, boolean forceStdout)
+  {
+    outPrintMessage(message, false, forceStdout);
+  }
+
+  public static void outPrintln(Object message)
+  {
+    outPrintMessage(message, true, false);
+  }
+
+  public static PrintStream outputStream(boolean forceStdout)
+  {
+    // send message to stderr if an output file to stdout is expected
+    if (!forceStdout && Jalview.getInstance() != null
+            && Jalview.getInstance().getBootstrapArgs() != null
+            && Jalview.getInstance().getBootstrapArgs().outputToStdout())
+    {
+      return System.err;
+    }
+    else
+    {
+      return System.out;
+    }
+  }
+
+  public static void outPrintMessage(Object message, boolean newline,
+          boolean forceStdout)
+  {
+    PrintStream ps = outputStream(forceStdout);
+    if (newline)
+    {
+      ps.println(message);
+    }
+    else
+    {
+      ps.print(message);
+    }
+  }
+
+  public static void errPrint()
+  {
+    errPrint("");
+  }
+
+  public static void errPrintln()
+  {
+    errPrintln("");
+  }
+
+  public static void errPrint(Object message)
+  {
+    System.err.print(message);
+  }
+
+  public static void errPrintln(Object message)
+  {
+    System.err.println(message);
+  }
+
+  public static void debugPrintStackTrace(Throwable t)
+  {
+    if (!isDebugEnabled())
+    {
+      return;
+    }
+    // send message to stderr if output to stdout is expected
+    printStackTrace(t);
+  }
+
+  public static void printStackTrace(Throwable t)
+  {
+    // send message to stderr if output to stdout is expected
+    t.printStackTrace(System.err);
   }
 
   public final static String LOGGING_TEST_MESSAGE = "Logging to STDERR";
