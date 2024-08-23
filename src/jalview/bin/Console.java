@@ -338,9 +338,9 @@ public class Console
   public static PrintStream outputStream(boolean forceStdout)
   {
     // send message to stderr if an output file to stdout is expected
-    if (!forceStdout && Jalview.getInstance() != null
-            && Jalview.getInstance().getBootstrapArgs() != null
-            && Jalview.getInstance().getBootstrapArgs().outputToStdout())
+    if (!forceStdout && Jalview.getInstance() != null)
+            //&& Jalview.getInstance().getBootstrapArgs() != null
+            //&& Jalview.getInstance().getBootstrapArgs().outputToStdout())
     {
       return System.err;
     }
