@@ -18,6 +18,7 @@ TESTNG
 /jalviewApplet.jar
 /benchmarking/lib
 *.class
+*.zip
 *.patch
 *.diff
 *.orig
@@ -51,3 +52,11 @@ TESTNG
 /help/help/html/whatsNew.html
 *.ref
 !build/libs/jalview-all-2.11.3.0-j11.jar
+authors.props
+FEATURETODO
+JAVA-11-README
+modules
+THIRDPARTYLIBS
+/srcjar_unused/*
+temp/*
+unused/*
