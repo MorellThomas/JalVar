@@ -1,34 +1,14 @@
-Jalview README
-==============
+# JaVar
 
-Welcome !  
+JaVar is a fork of the sequence analysis workbench Jalview. Its aim is to provide a fully customisable and private workflow for combining the analysis of amino acid frequencies in protein sequence MSAs with the assessment of pathogenicity of SNVs.
 
-Jalview is free (GPLv3 licensed) software for creation, interactive
-visualisation and analysis of alignments of biological sequences. It
-was developed by Michele Clamp in 1996, and now maintained by the
-Jalview Development team in the Barton group at the University of
-Dundee.
+Please consider looking at following publications for further info:
 
-If you'd like to help out please check out the website
-(www.jalview.org) and get in touch. See CITATION for the canonical
-reference if you need to cite Jalview.
+(wrong links)
+[![DOI](https://zenodo.org/badge/704411927.svg)](https://zenodo.org/doi/10.5281/zenodo.12605086) 
+Explains installation and usage in great detail using the example data provided in this repository.
 
-To build the Jalview Desktop application and JalviewJS, the JavaScript
-transpiled version (with the help of java2script, courtesy of Bob
-Hanson), you will need a Java 11 JDK and a recent version of
-Gradle. For development we recommend Eclipse - you should be able to
-import Jalview as a Gradle project with the Buildship plugin.
 
-Most likely you'll want to take a look at doc/building.md to find out
-exactly what is needed. If you already have Java 11 and Gradle, then
-the tldr:
+[![DOI](https://zenodo.org/badge/704411927.svg)](https://zenodo.org/doi/10.5281/zenodo.12605086)
+Demonstrates three use-cases of JaVar with biological relevant examples.
 
-gradle test # run functional test suite
-
-gradle shadowJar # build a single executable Jar under build/libs/
-
-gradle jalviewjs # builds JalviewJS under build/jalviewjs  
-
-If you want to build JalviewJS then you will also need to download
-Eclipse for your platform, since transpilation requires an Eclipse
-plugin.
