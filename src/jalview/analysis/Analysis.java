@@ -521,7 +521,7 @@ public class Analysis implements Runnable
   {
     //create the output StringBuffer and add the heading line
     csv = new StringBuffer();
-    csv.append(String.format("Information on the domains found at position %d\n\n", residue + 1));
+    csv.append(String.format("Information on the amino acids found at position %d\n\n", residue + 1));
     
     // clean up the AlignmentViewport by removing all added sequences again
     clean();
