@@ -5,12 +5,12 @@ endif
 ifeq ($(shell uname),Linux)
 DEST_PATH := /usr/bin/
 endif
-CONFIG_PATH := ~/JalviewVar/
+CONFIG_PATH := ~/JalVar/
 
 BUILD_PATH := build/libs/
 JAR_NAME := jalview-all-2.11.3.0-j11.jar
 BUILD_JAR := $(BUILD_PATH)$(JAR_NAME)
-INSTALL_JAR := $(DEST_PATH)jalviewVar.jar
+INSTALL_JAR := $(DEST_PATH)JalVar.jar
 #REF_FILE := $(CONFIG_PATH)TTN.ref
 REF_STRUCS := $(CONFIG_PATH)STRUCS
 REF_VCF := $(CONFIG_PATH)TTN-ClinVar-SNVs.vcf $(CONFIG_PATH)OBSCN-ClinVar-SNVs.vcf

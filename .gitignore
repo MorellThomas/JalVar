@@ -27,6 +27,11 @@ TESTNG
 /libjs
 /.gradle
 /build
+!build
+build/*
+!build/libs
+build/libs/*
+!build/libs/jalview-all-2.11.3.0-j11.jar
 /local.properties
 /utils/HelpLinksChecker.out
 /getdown/website
@@ -51,7 +56,6 @@ TESTNG
 /help/help/html/releases.html
 /help/help/html/whatsNew.html
 *.ref
-!build/libs/jalview-all-2.11.3.0-j11.jar
 authors.props
 FEATURETODO
 JAVA-11-README
