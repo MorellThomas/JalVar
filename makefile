@@ -1,11 +1,13 @@
 DEST_PATH := ./
+CONFIG_PATH := ./JalVar/
 ifeq ($(shell uname),Darwin)
 DEST_PATH := /Applications/
+CONFIG_PATH := /Users/$(SUDO_USER)/
 endif
 ifeq ($(shell uname),Linux)
 DEST_PATH := /usr/bin/
+CONFIG_PATH := /home/$(SUDO_USER)/JalVar/
 endif
-CONFIG_PATH := ~/JalVar/
 
 BUILD_PATH := build/libs/
 JAR_NAME := jalview-all-2.11.3.0-j11.jar

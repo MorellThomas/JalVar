@@ -58,7 +58,7 @@ public class EpReferenceFile
   
   public static final char GAP_CHARACTER = '-';
   
-  public static final char[] ALLAMINOACIDS = new char[]{'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', '-'};
+  public static final char[] ALLAMINOACIDS = new char[]{'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', '-', 'B', 'Z', 'X', '*'};
   
   private final String path;
   
