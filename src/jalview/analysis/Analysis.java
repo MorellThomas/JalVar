@@ -454,6 +454,7 @@ public class Analysis implements Runnable
     //clean();
     } catch (Exception q)
     {
+        JvOptionPane.showInternalMessageDialog(Desktop.desktop, String.format("Analysis failed: %s", q.getMessage()), "Analysis Error", JvOptionPane.ERROR_MESSAGE);
       Console.error("Error analysing:  " + q.getMessage());
       q.printStackTrace();
     }
