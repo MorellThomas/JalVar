@@ -356,7 +356,8 @@ public class EquivalentPositions implements Runnable
       erf.saveReference();
       
       // run natural Frequencies
-      runNf();
+      Thread nfThread = runNf();
+      nfThread.join();
       
       JvOptionPane.showInternalMessageDialog(Desktop.desktop, "Finished creating the Reference", "Reference Finished", JvOptionPane.INFORMATION_MESSAGE);
       
@@ -370,7 +371,7 @@ public class EquivalentPositions implements Runnable
   /**
    * performs the Natural Frequencies Analysis
    */
-  private void runNf()
+  private Thread runNf()
   {
     for (SequenceI seq : seqs.getAlignment().getSequencesArray())
     {
@@ -385,7 +386,9 @@ public class EquivalentPositions implements Runnable
      * construct the panel and kick off its custom thread
      */
     NFPanel nfPanel = new NFPanel(af.alignPanel, refFile);
-    new Thread(nfPanel).start();
+    Thread nfThread = new Thread(nfPanel);
+    nfThread.start();
+    return nfThread;
   }
   
   /*
