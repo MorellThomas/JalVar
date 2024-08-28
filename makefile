@@ -2,7 +2,7 @@ DEST_PATH := ./
 CONFIG_PATH := ./JalVar/
 ifeq ($(shell uname),Darwin)
 DEST_PATH := /Applications/
-CONFIG_PATH := /Users/$(SUDO_USER)/
+CONFIG_PATH := /Users/$(SUDO_USER)/JalVar/
 endif
 ifeq ($(shell uname),Linux)
 DEST_PATH := /usr/bin/
