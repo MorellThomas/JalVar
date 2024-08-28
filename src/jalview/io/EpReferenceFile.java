@@ -54,7 +54,7 @@ public class EpReferenceFile
 {
   private static final long serialVersionUID = 6529685098267757690L;  // need this to be able to load the file again
   
-  public static final String REFERENCE_PATH = Files.exists(System.getProperty("user.home") + "/JalVar/") ? System.getProperty("user.home") + "/JalVar/" : "sample/;
+  public static final String REFERENCE_PATH = new File(System.getProperty("user.home") + "/JalVar/").isDirectory() ? System.getProperty("user.home") + "/JalVar/" : "sample/";
   
   public static final char GAP_CHARACTER = '-';
   

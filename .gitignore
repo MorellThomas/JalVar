@@ -64,3 +64,4 @@ THIRDPARTYLIBS
 /srcjar_unused/*
 temp/*
 unused/*
+/build/
