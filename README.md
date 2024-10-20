@@ -2,13 +2,7 @@
 
 JalVar is a fork of the sequence analysis workbench Jalview. Its aim is to provide a fully customisable and private workflow for combining the analysis of amino acid frequencies in protein sequence MSAs with the assessment of pathogenicity of SNVs.
 
-Please consider looking at following publications for further info:
+Please consider looking at following publicationfor further info:
 
-(wrong links)
-[![DOI](https://zenodo.org/badge/704411927.svg)](https://zenodo.org/doi/10.5281/zenodo.12605086) 
+[![DOI](https://zenodo.org/badge/716071301.svg)](https://doi.org/10.5281/zenodo.13957252)
 Explains installation and usage in great detail using the example data provided in this repository.
-
-
-[![DOI](https://zenodo.org/badge/704411927.svg)](https://zenodo.org/doi/10.5281/zenodo.12605086)
-Demonstrates three use-cases of JalVar with biological relevant examples.
-
