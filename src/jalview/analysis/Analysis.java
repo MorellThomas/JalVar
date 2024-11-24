@@ -833,8 +833,17 @@ public class Analysis implements Runnable
     }
     TreeMap<Integer, String[]> result = new TreeMap<Integer, String[]>();
     HashSet<Integer> alreadyChecked = new HashSet<Integer>();
+int[] ps = new int[variantPos.size()];
+int[] ogs = new int[variantPos.size()];
+int[] ofs = new int[variantPos.size()];
+int m = 0;
     for (int p : variantPos)
     {
+int[] a = mapping.locateInTo(p, p+1);
+ogs[m] = p;
+ofs[m] = this.frameOffset.get(domain);
+ps[m] = a[0];
+m++;
       int nuc1 = p;
       int[] baseOfFrame = new int[]{1, 2, 0};
       while (nuc1 % 3 != baseOfFrame[this.frameOffset.get(domain)])   // nucleotide numbering starts at 1
@@ -851,9 +860,25 @@ public class Analysis implements Runnable
       {
         savAsString[i] = String.format("%c,%c", allSAVChanges[i][0], allSAVChanges[i][1]);
       }
+if (p == 5109) {
+System.out.println(String.format("%f = (%d - %d = %d) / 3", (float) (nuc1-featureRange[0])/3, nuc1, featureRange[0], nuc1-featureRange[0]));
+//result.put(40, savAsString);
+//alreadyChecked.add(nuc1);
+//continue;
+}
+// TODO p (was) or nuc1?????
       result.put((int) Math.floor((p - featureRange[0]) / 3), savAsString);
       alreadyChecked.add(nuc1);
     }
+if (domain.equals("TTN-IgZ1"))
+{
+int b = 0;
+for (Integer i : result.keySet())
+{
+System.out.println(String.format("%s %d %d (%d %d)", result.get(i)[0], i, ps[b], ogs[b], ofs[b]));
+b++;
+}
+}
     
     return result;
   }
@@ -1475,12 +1500,18 @@ public class Analysis implements Runnable
 
     LinkedList<HashMap<Character, int[]>> list = erf.getDomain().get(name);
     char[] domainWithoutGaps = new char[list.size()];
+    int[] domainReferenceResidue = new int[list.size()];
     for (int i = 0; i < domainWithoutGaps.length; i++)
     {
-      domainWithoutGaps[i] = (char) list.get(i).keySet().toArray()[0];
+      char aa = (char) list.get(i).keySet().toArray()[0];
+      domainWithoutGaps[i] = aa;
+      domainReferenceResidue[i] = list.get(i).get(aa)[4];
     }
     
 
+int[] keys2 = new int[res.size()];
+int ö = 0;
+int[] ks = new int[res.size()];
     char[] domainWithGaps = erf.getAlignedDomains().get(name);
     j = 0;  // index of nongap-sequence
     int k = 0; // index of keys
@@ -1490,12 +1521,24 @@ public class Analysis implements Runnable
       {
         if (domainWithGaps[i] == domainWithoutGaps[j])
         {
-          if (j == keys[k])
+          if (domainReferenceResidue[j] == keys[k])
+{
+ks[ö] = k;
             ep.put(i, res.get(keys[k++]));
+keys2[ö++] = i;
+}
           j++;
         }
       }
     }
+if (name.equals("TTN-IgZ1") || name.equals("TTN-IgI14"))
+{
+System.out.println(Arrays.toString(domainReferenceResidue));
+System.out.println(Arrays.toString(keys));
+System.out.println(Arrays.toString(keys2));
+System.out.println(Arrays.toString(ks));
+System.out.println(Arrays.toString(domainWithGaps));
+}
     
     return ep;
   }

@@ -239,6 +239,7 @@ public class EquivalentPositions implements Runnable
           //get the scores of the alignments and their CBs (3 because all frames)
           float[] alignmentScores = new float[3];
           int[] correspondingBases = new int[3];
+	  AlignSeq[] alignments = new AlignSeq[3];
 
           for (int j = 1; j < 4; j++)   
           {
@@ -261,16 +262,37 @@ public class EquivalentPositions implements Runnable
             correspondingBases[j-1] = as.getSeq2Start();
             
             alignmentScores[j-1] = as.getAlignmentScore();
+	    alignments[j-1] = as;
           }
             
           frameOffset = (int) MiscMath.findMax(alignmentScores)[0]; //find the best alignement
           int correspondingBase = correspondingBases[frameOffset];
+	  AlignSeq correctAlignment = alignments[frameOffset];
+	  alignments = null;
+System.out.println(sequences[i].getSequenceAsString());
+System.out.println(correctAlignment.astr1);
+System.out.println(correctAlignment.astr2);
           
           int epCalc = 1;
+	  // counters for checking mismatches in the domain-to-reference alignment
+	  int domainReferenceResidue = 0;
           for (int ep = 0; ep < width; ep++) // ep is actually real ep; ep for calculation (epCalc) does not increase at gap to not skip a GP by accident
           {
             if (sequences[i].getCharAt(ep) == '-')
+	    { // go to next ep if gap in msa
               continue;
+	    }
+	    if (correctAlignment.astr1.charAt(domainReferenceResidue) == '-')
+	    { // if domain has gap in alignment of domain to reference, go to next residue of alignment but keep ep
+	      domainReferenceResidue++;
+	      epCalc++;
+	      ep--;
+	      continue;
+	    }
+	    if (correctAlignment.astr2.charAt(domainReferenceResidue) == '-')
+	    {  // if reference has gap in alignment to domain, keep gp map
+	      epCalc--;
+	    }
 
             int _basePosition;
             int[] currentEPandGPs;
@@ -278,16 +300,18 @@ public class EquivalentPositions implements Runnable
             {
               _basePosition = startingPosition[currentGeneGroup] + (epCalc + correspondingBase - 2) * 3 + frameOffset;     
               
-              currentEPandGPs = new int[]{ep+1, _basePosition, _basePosition + 1, _basePosition + 2};
+              currentEPandGPs = new int[]{ep+1, _basePosition, _basePosition + 1, _basePosition + 2, domainReferenceResidue};
             } else {
               _basePosition = startingPosition[currentGeneGroup] - (epCalc + correspondingBase - 2) * 3 - frameOffset;
-              currentEPandGPs = new int[]{ep+1, _basePosition, _basePosition - 1, _basePosition - 2};
+              currentEPandGPs = new int[]{ep+1, _basePosition, _basePosition - 1, _basePosition - 2, domainReferenceResidue};
             }
             //output information to reference
             aaepgpPairs = new HashMap<Character, int[]>();
             aaepgpPairs.put(sequences[i].getCharAt(ep), currentEPandGPs);  // gaps will be skipped!!!!!
             sequencePlusInfoList.add(aaepgpPairs);
+System.out.println(String.format("%c %d | %d (%d) | %c %d", sequences[i].getCharAt(ep), ep, epCalc, _basePosition, correctAlignment.astr1.charAt(domainReferenceResidue), domainReferenceResidue));
             
+	    domainReferenceResidue++;
             epCalc++;
           }
           
